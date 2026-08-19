@@ -90,13 +90,39 @@ v0 ships one generic accessible-form engine. `devpost`, `easychair`, and `openre
 
 When a real FIRE entry exposes repeated portal-specific behavior, add the smallest adapter necessary. Playwright codegen can help capture the first interaction, but generated selectors should be cleaned up into accessible locators where possible.
 
+## Conversion control plane
+
+A stacked follow-up keeps v0 as the clerical browser operator while adding a shared opportunity/evidence layer for jobs, PhDs, competitions, grants, incubators, commercial leads, and research routes.
+
+The control plane is intentionally separate from Playwright:
+
+```text
+Spectator research / verification
+             ↓
+canonical opportunity dossier
+             ↓
+REJECT | HOLD | READY
+             ↓
+truthful claim/evidence projection
+             ↓
+Blowback inspect / prepare
+             ↓
+          HUMAN GATE
+             ↓
+external outcome ledger
+```
+
+It preserves the `$0` / `$POST` / `$UPFRONT` gauntlet doctrine, refuses `READY` when required evidence is missing, and prevents application projections from promoting `INFERRED` or `UNPROVEN` claims into `PROVEN` facts.
+
+See `docs/CONVERSION_CONTROL_PLANE.md` for the full contract.
+
 ## Tests
 
 ```bash
 npm run check
 ```
 
-Core tests verify manifest resolution and the non-submission contract. Browser CI launches Chromium against a local fixture and proves Blowback fills mapped fields without clicking the form's Submit button.
+Core tests verify manifest resolution, conversion-policy boundaries, evidence/claim projection rules, and the non-submission contract. Browser CI launches Chromium against a local fixture and proves Blowback fills mapped fields without clicking the form's Submit button.
 
 ## Non-goals
 
@@ -105,7 +131,8 @@ Core tests verify manifest resolution and the non-submission contract. Browser C
 - automatic legal attestations;
 - automatic payment;
 - inventing teammates/advisers/affiliations;
-- opportunity discovery/ranking in v0;
+- autonomous opportunity discovery/ranking inside the browser operator;
+- spray-and-pray job/PhD applications;
 - another frontend/SaaS product.
 
-Blowback is clerical infrastructure: **make gauntlet entries boring, reproducible, and cheap.**
+Blowback is conversion infrastructure: **make external applications boring, reproducible, truthful, and cheap.**
