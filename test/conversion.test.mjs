@@ -37,9 +37,12 @@ test('failed eligibility is REJECT, not a prompt to rewrite the applicant', () =
   assert.equal(result.decision, 'REJECT');
 });
 
-test('required evidence gaps remain explicit', () => {
+test('required evidence gaps remain explicit and block READY state', () => {
   const opportunity = baseOpportunity({ required_evidence: ['claim:agentic', 'claim:physical'], available_evidence: ['claim:agentic'] });
   assert.deepEqual(missingEvidence(opportunity), ['claim:physical']);
+  const decision = evaluateOpportunity(opportunity);
+  assert.equal(decision.decision, 'HOLD');
+  assert.deepEqual(decision.evidence_gaps, ['claim:physical']);
 });
 
 test('projection excludes unproven claims and preserves inference labels', () => {
