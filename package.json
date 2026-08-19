@@ -1,0 +1,23 @@
+{
+  "name": "gauntlet-blowback",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Local-first Playwright operator for preparing gauntlet submissions from canonical project evidence.",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "blowback": "node src/cli.mjs",
+    "validate": "node src/cli.mjs validate examples/opportunities/animalhack-2026.json",
+    "plan": "node src/cli.mjs plan examples/opportunities/animalhack-2026.json",
+    "test:core": "node --test test/core.test.mjs",
+    "test:browser": "node --test test/browser.test.mjs",
+    "test": "npm run test:core",
+    "check": "node scripts/check-syntax.mjs && npm run test:core",
+    "install:browsers": "playwright install chromium"
+  },
+  "dependencies": {
+    "playwright": "1.62.1",
+    "yaml": "2.9.0"
+  },
+  "license": "MIT"
+}
