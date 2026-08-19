@@ -4,6 +4,11 @@ const ELIGIBILITY = new Set(['PASS', 'FAIL', 'UNKNOWN']);
 const FIT = new Set(['HIGH', 'MEDIUM', 'LOW', 'UNKNOWN']);
 const WORK = new Set(['LOW', 'MEDIUM', 'HIGH', 'UNKNOWN']);
 
+export function missingEvidence(opportunity) {
+  const available = new Set(opportunity.available_evidence ?? []);
+  return (opportunity.required_evidence ?? []).filter((ref) => !available.has(ref));
+}
+
 export function evaluateOpportunity(opportunity) {
   const errors = [];
   if (!opportunity?.id) errors.push('missing opportunity id');
@@ -15,6 +20,7 @@ export function evaluateOpportunity(opportunity) {
   if (errors.length) return { ok: false, errors };
 
   const reasons = [];
+  const evidenceGaps = missingEvidence(opportunity);
   let decision = 'HOLD';
 
   if (opportunity.eligibility.state === 'FAIL') {
@@ -26,6 +32,8 @@ export function evaluateOpportunity(opportunity) {
     reasons.push('submission dependency is outside direct control');
   } else if ((opportunity.hard_blockers ?? []).length > 0) {
     reasons.push(`hard blockers: ${opportunity.hard_blockers.join(', ')}`);
+  } else if (evidenceGaps.length > 0) {
+    reasons.push(`required evidence missing: ${evidenceGaps.join(', ')}`);
   } else if (opportunity.cost_tag === '$UPFRONT') {
     reasons.push('upfront spend requires explicit human approval');
   } else if (opportunity.fit.state === 'LOW' || opportunity.fit.state === 'UNKNOWN') {
@@ -34,21 +42,17 @@ export function evaluateOpportunity(opportunity) {
     reasons.push(`marginal work is ${opportunity.marginal_work.state.toLowerCase()}`);
   } else {
     decision = 'READY';
-    reasons.push('eligibility passed, fit credible, marginal work bounded, and no pre-verdict spend blocker');
+    reasons.push('eligibility passed, required evidence is present, fit credible, marginal work bounded, and no pre-verdict spend blocker');
   }
 
   return {
     ok: true,
     decision,
     reasons,
+    evidence_gaps: evidenceGaps,
     doctrine: {
       cost_tag: opportunity.cost_tag,
       fire: decision === 'READY' && opportunity.cost_tag !== '$UPFRONT'
     }
   };
-}
-
-export function missingEvidence(opportunity) {
-  const available = new Set(opportunity.available_evidence ?? []);
-  return (opportunity.required_evidence ?? []).filter((ref) => !available.has(ref));
 }
