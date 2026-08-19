@@ -1,0 +1,28 @@
+{
+  "id": "animalhack-2026",
+  "name": "AnimalHack 2026",
+  "portal": "devpost",
+  "entry_url": "https://animalhack2026.devpost.com/",
+  "mode": "inspect",
+  "direct_control": true,
+  "profile": "../profiles/christ.json",
+  "project": "../projects/public-good-control.json",
+  "fields": {
+    "project_name": "$project.name",
+    "tagline": "$project.pitch_50",
+    "description": "$project.description",
+    "participant_name": "$profile.name",
+    "affiliation": "$profile.affiliation",
+    "repo_url": "$project.repo_url"
+  },
+  "field_map": {
+    "project_name": { "label": "Project name" },
+    "tagline": { "label": "Tagline" },
+    "description": { "label": "Description" },
+    "participant_name": { "label": "Name" },
+    "affiliation": { "label": "School" },
+    "repo_url": { "label": "Repository URL" }
+  },
+  "uploads": [],
+  "human_required": ["login", "eligibility_attestation", "terms_acceptance", "final_submit"]
+}
