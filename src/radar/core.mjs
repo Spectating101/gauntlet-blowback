@@ -21,6 +21,13 @@ function slug(value) {
   return text(value).replace(/[^\p{L}\p{N}]+/gu, '-').replace(/^-|-$/g, '').slice(0, 96) || 'unknown';
 }
 
+function containsTerm(haystack, term) {
+  const normalizedHaystack = ` ${text(haystack)} `;
+  const normalizedTerm = text(term);
+  if (!normalizedTerm) return false;
+  return normalizedHaystack.includes(` ${normalizedTerm} `);
+}
+
 export function normalizeOpportunity(raw, { source = 'unknown', retrievedAt = new Date().toISOString() } = {}) {
   if (!raw?.title) throw new Error('opportunity title is required');
 
@@ -45,6 +52,16 @@ export function normalizeOpportunity(raw, { source = 'unknown', retrievedAt = ne
     funding: raw.funding ?? null,
     raw_ref: raw.raw_ref ?? null
   };
+}
+
+export function isOpportunityActive(opportunity, { asOf = new Date() } = {}) {
+  const status = text(opportunity?.status);
+  if (status === 'closed' || status === 'archived') return false;
+  if (!opportunity?.deadline) return true;
+  const deadline = new Date(opportunity.deadline);
+  if (Number.isNaN(deadline.valueOf())) return true;
+  const endOfDeadlineDay = new Date(deadline.valueOf() + 24 * 60 * 60 * 1000);
+  return endOfDeadlineDay > asOf;
 }
 
 function dedupeKey(opportunity) {
@@ -97,8 +114,8 @@ export function scoreOpportunityForProject(opportunity, project) {
   const positive = weightedTerms(project.keywords);
   const negative = weightedTerms(project.negative_keywords, 0.5);
   const totalWeight = positive.reduce((sum, item) => sum + item.weight, 0) || 1;
-  const matched = positive.filter((item) => haystack.includes(item.term));
-  const negatives = negative.filter((item) => haystack.includes(item.term));
+  const matched = positive.filter((item) => containsTerm(haystack, item.term));
+  const negatives = negative.filter((item) => containsTerm(haystack, item.term));
   const positiveScore = matched.reduce((sum, item) => sum + item.weight, 0) / totalWeight;
   const penalty = negatives.reduce((sum, item) => sum + item.weight, 0) / totalWeight;
   const score = Math.max(0, Math.min(1, positiveScore - penalty));
@@ -113,9 +130,10 @@ export function scoreOpportunityForProject(opportunity, project) {
   };
 }
 
-export function rankPortfolioMatches(opportunities, projects, { minimumScore = 0.08 } = {}) {
+export function rankPortfolioMatches(opportunities, projects, { minimumScore = 0.08, activeOnly = true, asOf = new Date() } = {}) {
   const rows = [];
   for (const opportunity of deduplicateOpportunities(opportunities)) {
+    if (activeOnly && !isOpportunityActive(opportunity, { asOf })) continue;
     for (const project of projects) {
       const match = scoreOpportunityForProject(opportunity, project);
       if (match.score < minimumScore) continue;
