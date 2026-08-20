@@ -1,0 +1,107 @@
+{
+  "projects": [
+    {
+      "id": "hardware-splicer",
+      "name": "Hardware-Splicer",
+      "opportunity_types": ["grant"],
+      "discovery_queries": ["semiconductor AI", "hardware validation", "advanced manufacturing AI", "electronics testing", "physical AI"],
+      "keywords": [
+        {"term": "semiconductor", "weight": 3},
+        {"term": "hardware", "weight": 2},
+        {"term": "electronics", "weight": 2},
+        {"term": "manufacturing", "weight": 1.5},
+        {"term": "validation", "weight": 2},
+        {"term": "testing", "weight": 1.5},
+        {"term": "artificial intelligence", "weight": 1},
+        {"term": "AI", "weight": 1}
+      ]
+    },
+    {
+      "id": "nocturnal",
+      "name": "Nocturnal",
+      "opportunity_types": ["grant"],
+      "discovery_queries": ["civic technology", "journalism technology", "information integrity", "public interest technology", "government accountability"],
+      "keywords": [
+        {"term": "civic", "weight": 2},
+        {"term": "journalism", "weight": 3},
+        {"term": "information integrity", "weight": 3},
+        {"term": "public interest technology", "weight": 3},
+        {"term": "accountability", "weight": 2},
+        {"term": "governance", "weight": 2},
+        {"term": "disinformation", "weight": 2},
+        {"term": "media", "weight": 1}
+      ]
+    },
+    {
+      "id": "cite-agent",
+      "name": "Cite-Agent",
+      "opportunity_types": ["grant"],
+      "discovery_queries": ["research infrastructure AI", "scholarly communication AI", "scientific reproducibility", "research software", "AI research tools"],
+      "keywords": [
+        {"term": "research infrastructure", "weight": 3},
+        {"term": "scholarly", "weight": 2},
+        {"term": "reproducibility", "weight": 3},
+        {"term": "research software", "weight": 3},
+        {"term": "scientific", "weight": 1.5},
+        {"term": "artificial intelligence", "weight": 1},
+        {"term": "AI", "weight": 1}
+      ]
+    },
+    {
+      "id": "yzu-cluster",
+      "name": "YZU-Cluster",
+      "opportunity_types": ["grant"],
+      "discovery_queries": ["research computing", "cyberinfrastructure", "research infrastructure", "university computing", "data infrastructure"],
+      "keywords": [
+        {"term": "cyberinfrastructure", "weight": 3},
+        {"term": "research computing", "weight": 3},
+        {"term": "research infrastructure", "weight": 2},
+        {"term": "data infrastructure", "weight": 2},
+        {"term": "computing", "weight": 1}
+      ]
+    },
+    {
+      "id": "refinery",
+      "name": "Refinery",
+      "opportunity_types": ["grant"],
+      "discovery_queries": ["software engineering AI", "AI software engineering", "software reliability", "developer tools research", "agentic AI software"],
+      "keywords": [
+        {"term": "software engineering", "weight": 3},
+        {"term": "software reliability", "weight": 2},
+        {"term": "developer", "weight": 1},
+        {"term": "agentic", "weight": 2},
+        {"term": "artificial intelligence", "weight": 1},
+        {"term": "AI", "weight": 1}
+      ]
+    },
+    {
+      "id": "sharpe-terminus",
+      "name": "Sharpe-Terminus",
+      "opportunity_types": ["grant"],
+      "discovery_queries": ["financial technology research", "financial AI", "market risk research", "computational finance", "financial data science"],
+      "keywords": [
+        {"term": "financial", "weight": 2},
+        {"term": "finance", "weight": 2},
+        {"term": "market", "weight": 1},
+        {"term": "risk", "weight": 1},
+        {"term": "data science", "weight": 1.5},
+        {"term": "artificial intelligence", "weight": 1},
+        {"term": "AI", "weight": 1}
+      ]
+    },
+    {
+      "id": "invisible-ledger",
+      "name": "Invisible Ledger",
+      "opportunity_types": ["grant"],
+      "discovery_queries": ["digital assets research", "financial economics", "cryptocurrency research", "digital finance", "stablecoin research"],
+      "keywords": [
+        {"term": "digital assets", "weight": 3},
+        {"term": "financial economics", "weight": 3},
+        {"term": "cryptocurrency", "weight": 2},
+        {"term": "digital finance", "weight": 2},
+        {"term": "stablecoin", "weight": 3},
+        {"term": "financial", "weight": 1}
+      ]
+    }
+  ]
+}
