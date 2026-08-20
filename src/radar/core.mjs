@@ -7,6 +7,10 @@ function text(value) {
     .trim();
 }
 
+function matchText(value) {
+  return text(value).replace(/[-/]+/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
 function list(value) {
   return Array.isArray(value) ? value : value == null ? [] : [value];
 }
@@ -22,8 +26,8 @@ function slug(value) {
 }
 
 function containsTerm(haystack, term) {
-  const normalizedHaystack = ` ${text(haystack)} `;
-  const normalizedTerm = text(term);
+  const normalizedHaystack = ` ${matchText(haystack)} `;
+  const normalizedTerm = matchText(term);
   if (!normalizedTerm) return false;
   return normalizedHaystack.includes(` ${normalizedTerm} `);
 }
