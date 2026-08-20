@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {
   buildDiscoveryQueries,
   deduplicateOpportunities,
+  isOpportunityActive,
   normalizeOpportunity,
   rankPortfolioMatches,
   scoreOpportunityForProject
@@ -47,6 +48,24 @@ test('portfolio matching is deterministic, explainable, and type bounded', () =>
   const ranked = rankPortfolioMatches([opportunity], [nocturnal, hardware]);
   assert.equal(ranked.length, 1);
   assert.equal(ranked[0].project_id, 'hardware-splicer');
+});
+
+test('short terms use token boundaries instead of substring matches', () => {
+  const project = { id: 'ai', opportunity_types: ['grant'], keywords: [{ term: 'AI', weight: 1 }] };
+  const falsePositive = normalizeOpportunity({ id: '1', type: 'grant', title: 'Training for Journalists' }, { source: 'fixture' });
+  const truePositive = normalizeOpportunity({ id: '2', type: 'grant', title: 'AI for Journalists' }, { source: 'fixture' });
+  assert.equal(scoreOpportunityForProject(falsePositive, project).score, 0);
+  assert.equal(scoreOpportunityForProject(truePositive, project).score, 1);
+});
+
+test('expired deadlines are filtered while forecasted/no-deadline records remain visible', () => {
+  const asOf = new Date('2026-08-20T12:00:00Z');
+  const expired = normalizeOpportunity({ id: 'old', title: 'Old Grant', deadline: '2026-08-18', status: 'posted' }, { source: 'fixture' });
+  const today = normalizeOpportunity({ id: 'today', title: 'Today Grant', deadline: '2026-08-20', status: 'posted' }, { source: 'fixture' });
+  const forecast = normalizeOpportunity({ id: 'future', title: 'Forecast Grant', status: 'forecasted' }, { source: 'fixture' });
+  assert.equal(isOpportunityActive(expired, { asOf }), false);
+  assert.equal(isOpportunityActive(today, { asOf }), true);
+  assert.equal(isOpportunityActive(forecast, { asOf }), true);
 });
 
 test('explicit discovery queries are used before keyword fallbacks', () => {
