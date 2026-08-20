@@ -7,9 +7,10 @@
   "engines": { "node": ">=20" },
   "scripts": {
     "blowback": "node src/cli.mjs",
+    "radar:grants": "node src/radar/run-grants.mjs examples/radar/portfolio-scope.json",
     "validate": "node src/cli.mjs validate examples/opportunities/animalhack-2026.json",
     "plan": "node src/cli.mjs plan examples/opportunities/animalhack-2026.json",
-    "test:core": "node --test test/core.test.mjs test/conversion.test.mjs",
+    "test:core": "node --test test/core.test.mjs test/conversion.test.mjs test/radar.test.mjs",
     "test:browser": "node --test test/browser.test.mjs",
     "test": "npm run test:core",
     "check": "node scripts/check-syntax.mjs && npm run test:core",
