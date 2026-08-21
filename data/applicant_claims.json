@@ -1,0 +1,136 @@
+{
+  "version": "applicant-claims-v1",
+  "claims": [
+    {
+      "id": "background-finance-accounting",
+      "text": "The applicant is enrolled in Yuan Ze University's Master of Finance and Accounting programme.",
+      "status": "PROVEN",
+      "tags": ["background", "finance", "education"],
+      "evidence_refs": [
+        "repo:gauntlet-blowback:examples/profiles/christ.json"
+      ]
+    },
+    {
+      "id": "specialty-evidence-governed-agentic-systems",
+      "text": "The portfolio repeatedly implements evidence-governed agentic systems in which model reasoning is separated from deterministic evidence, constraints, and human authority.",
+      "status": "INFERRED",
+      "tags": ["identity", "agentic-ai", "research-engineering"],
+      "evidence_refs": [
+        "https://github.com/Spectating101/hardware-splicer/pull/56",
+        "https://github.com/Spectating101/research-drive-private/pull/45",
+        "https://github.com/Spectating101/animal-charity/pull/10",
+        "https://github.com/Spectating101/sharpe-terminus/pull/3"
+      ]
+    },
+    {
+      "id": "blowback-browser-operator",
+      "text": "Blowback implements a local-first Playwright application-preparation operator that fills declared fields and uploads while preserving an explicit human final-submit gate.",
+      "status": "PROVEN",
+      "tags": ["automation", "playwright", "human-in-the-loop"],
+      "evidence_refs": [
+        "https://github.com/Spectating101/gauntlet-blowback/pull/1",
+        "github-actions:gauntlet-blowback:32289067919"
+      ]
+    },
+    {
+      "id": "blowback-conversion-control-plane",
+      "text": "Blowback implements deterministic opportunity gating, provenance-safe claim projection, and external outcome recording above the browser operator.",
+      "status": "PROVEN",
+      "tags": ["conversion", "evidence", "decision-systems"],
+      "evidence_refs": [
+        "https://github.com/Spectating101/gauntlet-blowback/pull/2",
+        "github-actions:gauntlet-blowback:32290255561"
+      ]
+    },
+    {
+      "id": "hs-canonical-mcp-gateway",
+      "text": "Hardware-Splicer implements a current-SDK MCP gateway generated from the canonical FastAPI/OpenAPI backend rather than a separate hand-maintained truth store.",
+      "status": "PROVEN",
+      "tags": ["physical-ai", "mcp", "backend", "agentic-ai"],
+      "evidence_refs": [
+        "https://github.com/Spectating101/hardware-splicer/pull/68"
+      ]
+    },
+    {
+      "id": "hs-evidence-governed-hardware-workflow",
+      "text": "Hardware-Splicer implements a dual-agent engineering workflow that preserves identity, evidence provenance, deterministic engineering constraints, explicit unresolved state, and closed physical authority.",
+      "status": "PROVEN",
+      "tags": ["physical-ai", "engineering", "evidence", "authority"],
+      "evidence_refs": [
+        "https://github.com/Spectating101/hardware-splicer/pull/56",
+        "https://github.com/Spectating101/hardware-splicer/pull/65"
+      ]
+    },
+    {
+      "id": "research-drive-agent-directed-discovery",
+      "text": "Research Drive implements bounded MCP-directed public catalogue search planning with query provenance and a separate inspect-only agent review candidate set.",
+      "status": "PROVEN",
+      "tags": ["research-infrastructure", "mcp", "retrieval", "provenance"],
+      "evidence_refs": [
+        "https://github.com/Spectating101/research-drive-private/pull/45"
+      ]
+    },
+    {
+      "id": "public-good-cross-domain-control-plane",
+      "text": "Public-Good Control implements evidence-bounded, human-authority-preserving decision support across multiple public-good domains, including retrospective disaster replay and governance analysis.",
+      "status": "PROVEN",
+      "tags": ["governance", "public-good", "decision-systems", "research"],
+      "evidence_refs": [
+        "https://github.com/Spectating101/animal-charity/pull/10",
+        "https://github.com/Spectating101/animal-charity/pull/15"
+      ]
+    },
+    {
+      "id": "sharpe-causal-evidence-gates",
+      "text": "Sharpe Terminus implements a causal walk-forward promotion path, explicit statistical evidence gates, append-only research search accounting, and a separate capital-authorization boundary.",
+      "status": "PROVEN",
+      "tags": ["finance", "quant", "causal-evaluation", "evidence"],
+      "evidence_refs": [
+        "https://github.com/Spectating101/sharpe-terminus/pull/3"
+      ]
+    },
+    {
+      "id": "refinery-real-demand-observatory",
+      "text": "Refinery's Demand Observatory persists reviewed real demand observations while keeping attention, pain, adoption, commitment, and spend as separate evidence dimensions.",
+      "status": "PROVEN",
+      "tags": ["product-intelligence", "empirical-research", "demand", "evidence"],
+      "evidence_refs": [
+        "https://github.com/Spectating101/alpha-platform/pull/11"
+      ]
+    },
+    {
+      "id": "hs-live-unseen-competence",
+      "text": "Hardware-Splicer has demonstrated successful live unseen-model competence on the frozen SPI case.",
+      "status": "UNPROVEN",
+      "tags": ["physical-ai", "unseen-evaluation"],
+      "evidence_refs": [
+        "https://github.com/Spectating101/hardware-splicer/pull/61"
+      ]
+    },
+    {
+      "id": "hs-physical-validation",
+      "text": "Hardware-Splicer has demonstrated real physical correctness on the frozen SPI case.",
+      "status": "UNPROVEN",
+      "tags": ["physical-ai", "hardware", "external-proof"],
+      "evidence_refs": [
+        "https://github.com/Spectating101/hardware-splicer/pull/65"
+      ]
+    },
+    {
+      "id": "hs-independent-operator-success",
+      "text": "Hardware-Splicer has demonstrated successful use by an independent operator without maintainer engineering takeover.",
+      "status": "UNPROVEN",
+      "tags": ["usability", "external-proof"],
+      "evidence_refs": [
+        "https://github.com/Spectating101/hardware-splicer/pull/65"
+      ]
+    },
+    {
+      "id": "recurring-commercial-revenue",
+      "text": "The portfolio has demonstrated recurring commercial revenue from its flagship systems.",
+      "status": "UNPROVEN",
+      "tags": ["commercial", "revenue"],
+      "evidence_refs": []
+    }
+  ]
+}
