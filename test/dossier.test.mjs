@@ -4,6 +4,7 @@ import fs from 'node:fs/promises';
 import { validateOpportunityDossier, toConversionOpportunity } from '../src/core/dossier.mjs';
 import { evaluateOpportunity } from '../src/core/conversion.mjs';
 import { buildProjection } from '../src/core/claims.mjs';
+import { assessDossier } from '../src/commands/assess.mjs';
 
 function jobDossier(overrides = {}) {
   return {
@@ -118,4 +119,12 @@ test('first live Taiwan FDE dossier validates but remains HOLD while applicant-s
   const result = evaluateOpportunity(opportunity);
   assert.equal(result.decision, 'HOLD');
   assert.ok(result.reasons.includes('eligibility unresolved'));
+});
+
+test('one-command assessor returns decision, truthful projection, and no submit authority', async () => {
+  const result = await assessDossier('examples/dossiers/taiwan-fde-actgsys-2026-08-22.json');
+  assert.equal(result.decision.decision, 'HOLD');
+  assert.equal(result.final_submit_authorized, false);
+  assert.ok(result.projection.selected.some((claim) => claim.id === 'hs-canonical-mcp-gateway'));
+  assert.equal(result.projection.excluded.length, 0);
 });
