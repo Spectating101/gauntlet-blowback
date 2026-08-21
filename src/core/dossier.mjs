@@ -87,3 +87,19 @@ export function assertOpportunityDossier(dossier) {
   if (!result.ok) throw new Error(`Invalid opportunity dossier:\n- ${result.errors.join('\n- ')}`);
   return result;
 }
+
+export function toConversionOpportunity(dossier, { available_evidence = [] } = {}) {
+  assertOpportunityDossier(dossier);
+  return {
+    id: dossier.id,
+    type: dossier.type,
+    cost_tag: dossier.cost_tag,
+    eligibility: structuredClone(dossier.eligibility),
+    fit: structuredClone(dossier.fit),
+    marginal_work: structuredClone(dossier.marginal_work),
+    direct_control: dossier.direct_control,
+    hard_blockers: [...dossier.hard_blockers],
+    required_evidence: [...dossier.required_evidence],
+    available_evidence: [...available_evidence]
+  };
+}
