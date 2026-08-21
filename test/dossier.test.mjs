@@ -104,3 +104,18 @@ test('checked-in audience projections automatically exclude UNPROVEN claims', as
   });
   assert.ok(incubator.excluded.some((c) => c.id === 'recurring-commercial-revenue'));
 });
+
+test('first live Taiwan FDE dossier validates but remains HOLD while applicant-specific eligibility is unresolved', async () => {
+  const dossier = JSON.parse(await fs.readFile('examples/dossiers/taiwan-fde-actgsys-2026-08-22.json', 'utf8'));
+  assert.equal(validateOpportunityDossier(dossier).ok, true);
+  const opportunity = toConversionOpportunity(dossier, {
+    available_evidence: [
+      'specialty-evidence-governed-agentic-systems',
+      'hs-canonical-mcp-gateway',
+      'research-drive-agent-directed-discovery'
+    ]
+  });
+  const result = evaluateOpportunity(opportunity);
+  assert.equal(result.decision, 'HOLD');
+  assert.ok(result.reasons.includes('eligibility unresolved'));
+});
