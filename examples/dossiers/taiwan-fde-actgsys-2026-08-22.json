@@ -1,0 +1,63 @@
+{
+  "id": "tw-actgsys-fde-l2-91doo-2026-08-22",
+  "type": "job",
+  "organization": "三元科技有限公司 / ACTGSYS 藍圖思維",
+  "title": "Forward Deployed Engineer - L2 (台北區)",
+  "source": {
+    "url": "https://www.104.com.tw/job/91doo",
+    "retrieved_at": "2026-08-22T01:19:00+08:00"
+  },
+  "deadline": null,
+  "location": "Taipei, Taiwan",
+  "eligibility": {
+    "state": "UNKNOWN",
+    "evidence_refs": [
+      "https://www.104.com.tw/job/91doo"
+    ],
+    "notes": "Public listing states experience and education are unrestricted, but applicant-specific employment/work-authorization eligibility has not been verified against the full employer process."
+  },
+  "economics": {
+    "disclosure": "DISCLOSED",
+    "currency": "TWD",
+    "amount_min": 76000,
+    "amount_max": 198000,
+    "period": "month",
+    "evidence_refs": [
+      "https://www.104.com.tw/job/91doo"
+    ]
+  },
+  "cost_tag": "$0",
+  "fit": {
+    "state": "HIGH",
+    "basis": [
+      "enterprise AI Agent deployment",
+      "customer problem decomposition",
+      "workflow and system implementation",
+      "strong match to FDE/Agentic audience projection"
+    ]
+  },
+  "marginal_work": {
+    "state": "LOW",
+    "basis": [
+      "existing FDE/Agentic projection and canonical evidence inventory cover the core application narrative"
+    ]
+  },
+  "direct_control": true,
+  "hard_blockers": [],
+  "required_evidence": [
+    "specialty-evidence-governed-agentic-systems",
+    "hs-canonical-mcp-gateway",
+    "research-drive-agent-directed-discovery"
+  ],
+  "recommended_claim_ids": [
+    "specialty-evidence-governed-agentic-systems",
+    "hs-evidence-governed-hardware-workflow",
+    "hs-canonical-mcp-gateway",
+    "research-drive-agent-directed-discovery",
+    "blowback-conversion-control-plane"
+  ],
+  "freshness": {
+    "checked_at": "2026-08-22T01:19:00+08:00",
+    "expires_at": "2026-08-29T01:19:00+08:00"
+  }
+}
