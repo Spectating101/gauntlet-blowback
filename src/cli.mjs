@@ -5,12 +5,19 @@ import { resolveBundle } from './core/resolve.mjs';
 import { buildPlan } from './core/plan.mjs';
 
 function usage() {
-  console.log(`Blowback v0\n\nCommands:\n  validate <opportunity>\n  plan <opportunity>\n  run <opportunity> [--persist-auth]\n\nBlowback v0 never performs final submission.`);
+  console.log(`Blowback v0\n\nCommands:\n  assess <dossier>\n  validate <opportunity>\n  plan <opportunity>\n  run <opportunity> [--persist-auth]\n\nBlowback never performs final submission.`);
 }
 
 const [command, filePath, ...rest] = process.argv.slice(2);
 if (!command || ['-h', '--help', 'help'].includes(command)) { usage(); process.exit(0); }
 if (!filePath) { usage(); process.exit(2); }
+
+if (command === 'assess') {
+  const { assessDossier } = await import('./commands/assess.mjs');
+  const result = await assessDossier(filePath);
+  console.log(JSON.stringify(result, null, 2));
+  process.exit(result.decision.ok ? 0 : 1);
+}
 
 if (command === 'validate') {
   const opportunity = await loadOpportunity(filePath);
