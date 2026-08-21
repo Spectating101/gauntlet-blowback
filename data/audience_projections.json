@@ -1,0 +1,80 @@
+{
+  "version": "audience-projections-v1",
+  "projections": {
+    "fde_agentic_ai": {
+      "label": "Forward Deployed / Agentic AI",
+      "claim_ids": [
+        "specialty-evidence-governed-agentic-systems",
+        "hs-evidence-governed-hardware-workflow",
+        "hs-canonical-mcp-gateway",
+        "research-drive-agent-directed-discovery",
+        "blowback-browser-operator",
+        "blowback-conversion-control-plane"
+      ]
+    },
+    "research_engineer": {
+      "label": "Research Engineer / Applied AI Systems",
+      "claim_ids": [
+        "specialty-evidence-governed-agentic-systems",
+        "research-drive-agent-directed-discovery",
+        "public-good-cross-domain-control-plane",
+        "refinery-real-demand-observatory",
+        "sharpe-causal-evidence-gates"
+      ]
+    },
+    "finance_quant_ai": {
+      "label": "Finance / Quant AI",
+      "claim_ids": [
+        "background-finance-accounting",
+        "specialty-evidence-governed-agentic-systems",
+        "sharpe-causal-evidence-gates",
+        "research-drive-agent-directed-discovery"
+      ]
+    },
+    "physical_ai": {
+      "label": "Physical / Industrial AI",
+      "claim_ids": [
+        "specialty-evidence-governed-agentic-systems",
+        "hs-evidence-governed-hardware-workflow",
+        "hs-canonical-mcp-gateway",
+        "hs-live-unseen-competence",
+        "hs-physical-validation",
+        "hs-independent-operator-success"
+      ]
+    },
+    "interdisciplinary_phd": {
+      "label": "Interdisciplinary AI PhD",
+      "claim_ids": [
+        "background-finance-accounting",
+        "specialty-evidence-governed-agentic-systems",
+        "research-drive-agent-directed-discovery",
+        "public-good-cross-domain-control-plane",
+        "sharpe-causal-evidence-gates",
+        "refinery-real-demand-observatory"
+      ]
+    },
+    "technical_stretch_phd": {
+      "label": "Technical AI / Physical AI PhD",
+      "claim_ids": [
+        "specialty-evidence-governed-agentic-systems",
+        "hs-evidence-governed-hardware-workflow",
+        "hs-canonical-mcp-gateway",
+        "research-drive-agent-directed-discovery",
+        "public-good-cross-domain-control-plane",
+        "hs-physical-validation"
+      ]
+    },
+    "gauntlet_incubator": {
+      "label": "Gauntlet / Incubator",
+      "claim_ids": [
+        "specialty-evidence-governed-agentic-systems",
+        "hs-evidence-governed-hardware-workflow",
+        "research-drive-agent-directed-discovery",
+        "public-good-cross-domain-control-plane",
+        "refinery-real-demand-observatory",
+        "blowback-conversion-control-plane",
+        "recurring-commercial-revenue"
+      ]
+    }
+  }
+}
