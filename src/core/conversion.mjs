@@ -1,4 +1,4 @@
-const TYPES = new Set(['job', 'phd', 'competition', 'grant', 'incubator', 'commercial', 'research']);
+const TYPES = new Set(['job', 'phd', 'competition', 'grant', 'sponsorship', 'fellowship', 'institutional_pilot', 'incubator', 'commercial', 'research']);
 const COST_TAGS = new Set(['$0', '$POST', '$UPFRONT']);
 const ELIGIBILITY = new Set(['PASS', 'FAIL', 'UNKNOWN']);
 const FIT = new Set(['HIGH', 'MEDIUM', 'LOW', 'UNKNOWN']);
