@@ -1,0 +1,65 @@
+{
+  "sources": [
+    {
+      "id": "nlnet-propose",
+      "source": "nlnet",
+      "source_id": "apply-for-a-grant",
+      "type": "grant",
+      "title": "NLnet open internet / digital commons funding calls",
+      "organization": "NLnet Foundation",
+      "url": "https://nlnet.nl/propose/",
+      "summary": "Open-source and digital-commons project funding. Treat call-specific eligibility and programme scope as unresolved until hydrated.",
+      "tags": ["open source", "digital commons", "software commons", "internet infrastructure", "research software"],
+      "open_markers": ["submit a proposal", "deadline", "apply for a grant"],
+      "closed_markers": ["not possible to submit proposals", "calls will reopen"],
+      "eligibility_text": ["Call-specific eligibility must be verified before READY."],
+      "funding": {"currency": "EUR", "amount": null}
+    },
+    {
+      "id": "twnic-community-grants-2026",
+      "source": "twnic",
+      "source_id": "community-grants-2026",
+      "type": "grant",
+      "title": "TWNIC Community Grants 2026",
+      "organization": "Taiwan Network Information Center",
+      "url": "https://twgrants.tw/en/announcement.html",
+      "summary": "Taiwan Internet policy, Internet technology, and digital-equality project grants.",
+      "deadline": "2026-09-30T23:59:00+08:00",
+      "tags": ["internet technology", "internet policy", "digital equality", "resilience", "civic technology"],
+      "open_markers": ["applications for project proposals", "september 30, 2026"],
+      "closed_markers": ["applications closed"],
+      "eligibility_text": ["Applicant must be a domestic or foreign legally registered entity; each organization may submit one proposal."],
+      "funding": {"currency": "TWD", "ceiling": 1500000}
+    },
+    {
+      "id": "github-sponsors",
+      "source": "github-sponsors",
+      "source_id": "maintainer-sponsorship",
+      "type": "sponsorship",
+      "title": "GitHub Sponsors for open-source contributors",
+      "organization": "GitHub",
+      "url": "https://docs.github.com/en/sponsors/receiving-sponsorships-through-github-sponsors/about-github-sponsors-for-open-source-contributors",
+      "summary": "One-time and recurring sponsorship mechanism for eligible open-source contributors in supported regions.",
+      "tags": ["open source", "maintainer", "sponsorship", "recurring funding"],
+      "open_markers": ["eligible to become a sponsored developer", "sponsorship tiers"],
+      "closed_markers": [],
+      "eligibility_text": ["Contributor must live in a GitHub Sponsors supported region and complete payment/tax onboarding."],
+      "funding": {"currency": "USD", "amount": null}
+    },
+    {
+      "id": "open-source-collective",
+      "source": "open-source-collective",
+      "source_id": "fiscal-host-application",
+      "type": "sponsorship",
+      "title": "Open Source Collective fiscal sponsorship",
+      "organization": "Open Source Collective",
+      "url": "https://opencollective.com/opensource/apply/intro",
+      "summary": "Fiscal-host route allowing qualifying open-source projects to receive and manage grants, donations, and sponsorship without creating their own legal entity.",
+      "tags": ["open source", "fiscal sponsorship", "donations", "project funding"],
+      "open_markers": ["open source projects are invited", "apply with your collective"],
+      "closed_markers": [],
+      "eligibility_text": ["Project must satisfy Open Source Collective verification criteria; current host fee is stated on the source page."],
+      "funding": {"currency": null, "amount": null}
+    }
+  ]
+}
