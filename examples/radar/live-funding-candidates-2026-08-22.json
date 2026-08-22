@@ -1,0 +1,45 @@
+{
+  "as_of": "2026-08-22",
+  "candidates": [
+    {
+      "id": "nlnet-2026-sep-reopen",
+      "type": "grant",
+      "project_ids": ["refinery", "nocturnal", "public-good-control", "policy-lab"],
+      "state": "WATCH_VERIFY_ON_OPEN",
+      "title": "NLnet calls reopening September 3, 2026",
+      "deadline": "2026-11-03T12:00:00+01:00",
+      "why": "High potential fit for open-source/digital-commons work; exact call-specific eligibility and scope must be verified after reopening.",
+      "source": "https://nlnet.nl/propose/"
+    },
+    {
+      "id": "twnic-community-grants-2026",
+      "type": "grant",
+      "project_ids": ["nocturnal", "public-good-control", "policy-lab"],
+      "state": "HOLD_ENTITY_DEPENDENCY",
+      "title": "TWNIC Community Grants 2026",
+      "deadline": "2026-09-30T23:59:00+08:00",
+      "why": "Strong Taiwan public-interest/internet fit, but the 2026 announcement requires a legally registered entity and one proposal per organization.",
+      "source": "https://twgrants.tw/en/announcement.html"
+    },
+    {
+      "id": "github-sponsors",
+      "type": "sponsorship",
+      "project_ids": ["refinery", "cite-agent", "nocturnal", "hardware-splicer"],
+      "state": "MECHANISM_AVAILABLE_VERIFY_ACCOUNT",
+      "title": "GitHub Sponsors",
+      "deadline": null,
+      "why": "Direct one-time/monthly sponsorship mechanism for open-source contributors in supported regions; this is a funding rail, not proof of sponsor demand.",
+      "source": "https://docs.github.com/en/sponsors/receiving-sponsorships-through-github-sponsors/about-github-sponsors-for-open-source-contributors"
+    },
+    {
+      "id": "open-source-collective-fiscal-host",
+      "type": "sponsorship",
+      "project_ids": ["refinery", "cite-agent", "nocturnal"],
+      "state": "HOST_APPLICATION_AVAILABLE",
+      "title": "Open Source Collective fiscal sponsorship",
+      "deadline": null,
+      "why": "Potential legal/financial umbrella for qualifying open-source projects; current public page states a 10% host fee and project verification criteria.",
+      "source": "https://opencollective.com/opensource/apply/intro"
+    }
+  ]
+}
