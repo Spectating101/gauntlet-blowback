@@ -2,7 +2,7 @@
 
 **Local-first gauntlet entry automation for finished projects.**
 
-Blowback is a JavaScript + Playwright operator for competitions, grants, hackathons, conferences, fellowships, awards, and other external-validation routes.
+Blowback is a JavaScript + Playwright operator for competitions, grants, sponsorships, fellowships, institutional pilots, hackathons, conferences, awards, and other external-validation routes.
 
 It exists for one reason: once the underlying project is finished, repeated portal clerical work should not become another development campaign.
 
@@ -52,10 +52,12 @@ src/
   adapters/        thin Playwright portal adapters
   commands/        executable workflows
   core/            load/validate/resolve/plan/record/browser primitives
+  radar/           opportunity discovery, normalization and ranking
 examples/
   profiles/        canonical applicant data examples
   projects/        canonical project evidence examples
   opportunities/   venue-specific manifests
+  radar/            discovery scopes and funding-source configuration
 submission-records/  local run evidence (git-ignored)
 .auth/                local Playwright storage state (git-ignored)
 docs/
@@ -92,7 +94,7 @@ When a real FIRE entry exposes repeated portal-specific behavior, add the smalle
 
 ## Conversion control plane
 
-A stacked follow-up keeps v0 as the clerical browser operator while adding a shared opportunity/evidence layer for jobs, PhDs, competitions, grants, incubators, commercial leads, and research routes.
+A stacked follow-up keeps v0 as the clerical browser operator while adding a shared opportunity/evidence layer for jobs, PhDs, competitions, grants, sponsorships, fellowships, institutional pilots, incubators, commercial leads, and research routes.
 
 The control plane is intentionally separate from Playwright:
 
@@ -115,6 +117,19 @@ external outcome ledger
 It preserves the `$0` / `$POST` / `$UPFRONT` gauntlet doctrine, refuses `READY` when required evidence is missing, and prevents application projections from promoting `INFERRED` or `UNPROVEN` claims into `PROVEN` facts.
 
 See `docs/CONVERSION_CONTROL_PLANE.md` for the full contract.
+
+## Opportunity Radar
+
+The Radar is a discovery/recall layer, not semantic authority. The existing v0 collector uses the public Grants.gov API and then project-scopes/ranks candidates. Funding Radar v1 extends the shared opportunity ontology so non-grant routes can be represented explicitly:
+
+- `grant`
+- `sponsorship`
+- `fellowship`
+- `institutional_pilot`
+
+`examples/radar/funding-scope-v1.json` is the funding-oriented portfolio scope. It adds Public-Good Control and Policy Lab and updates Refinery to its Generative Software Commons / open-source infrastructure identity.
+
+A source-specific detector may discover a candidate, but a candidate still must be hydrated and verified before the conversion policy can produce `READY`.
 
 ## Tests
 
