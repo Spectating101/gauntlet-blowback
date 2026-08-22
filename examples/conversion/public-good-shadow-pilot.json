@@ -1,0 +1,51 @@
+{
+  "campaign_id": "public-good:shadow-pilot-demo",
+  "project": {
+    "id": "public-good-control",
+    "name": "Public-Good Control",
+    "canonical_ref": "github:Spectating101/animal-charity",
+    "pitch": "Evidence-bounded disaster decision-support for prospective non-consequential shadow use with competent operators.",
+    "claims": [
+      {
+        "id": "historical-replay",
+        "status": "PROVEN",
+        "text": "The repository contains machine-checkable historical disaster replay contracts.",
+        "evidence_refs": ["repo:disaster-replay-corpus"]
+      },
+      {
+        "id": "authority-boundary",
+        "status": "PROVEN",
+        "text": "The disaster control plane keeps dispatch, incident command, aviation, clinical and coercive authority outside the software.",
+        "evidence_refs": ["repo:disaster-constitution"]
+      },
+      {
+        "id": "field-effectiveness",
+        "status": "UNPROVEN",
+        "text": "The system improves real-world disaster outcomes.",
+        "evidence_refs": []
+      }
+    ]
+  },
+  "opportunity": {
+    "id": "institutional-pilot:shadow-demo",
+    "type": "institutional_pilot",
+    "title": "Prospective disaster-management shadow pilot",
+    "cost_tag": "$0",
+    "direct_control": false,
+    "eligibility": { "state": "PASS" },
+    "fit": { "state": "HIGH" },
+    "marginal_work": { "state": "LOW" },
+    "required_evidence": ["repo:disaster-replay-corpus", "repo:disaster-constitution"],
+    "available_evidence": ["repo:disaster-replay-corpus", "repo:disaster-constitution"],
+    "claim_ids": ["historical-replay", "authority-boundary", "field-effectiveness"]
+  },
+  "dependencies": [
+    {
+      "id": "competent-field-partner",
+      "kind": "partner",
+      "state": "OPEN",
+      "description": "A competent emergency-management, NGO, university or public-sector partner must agree to the non-consequential pilot.",
+      "owner": "human"
+    }
+  ]
+}
