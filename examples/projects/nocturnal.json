@@ -1,0 +1,8 @@
+{
+  "id": "nocturnal",
+  "name": "Nocturnal Oversight",
+  "repo_url": "https://github.com/Spectating101/nocturnal-oversight",
+  "pitch_50": "Open longitudinal public-memory infrastructure that keeps later outcomes, corrections, and source evidence attached to the public matters they change, so researchers can reconstruct what happened next and the bounded current documented state without an automated verdict engine.",
+  "description": "Nocturnal 1.2 is an engineering-frozen public-memory system whose canonical object is a source-linked matter history: documented events, state transitions, corrections, unresolved ambiguity, and the evidence supporting a bounded current documented state. The technical baseline includes separated public/intake/operator trust surfaces, correction isolation, backup/restore, deterministic public snapshots, synthetic end-to-end pilot gates, and 5k/50k scale gates. Its next evidence must come from independent external review, a finite open-infrastructure tranche, or a bounded real pilot.",
+  "limitations": "No external partner, institutional adoption, real workflow time savings, recurring demand, comparative superiority, or jurisdiction-specific real-person publication approval is currently claimed. The repository is currently private despite AGPL-3.0-or-later license text."
+}
