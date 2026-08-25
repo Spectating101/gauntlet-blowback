@@ -1,0 +1,29 @@
+{
+  "id": "date-2027-lbr-hardware-splicer",
+  "name": "DATE 2027 — Late Breaking Results — Hardware-Splicer",
+  "portal": "generic",
+  "entry_url": "https://date27.date-conference.com/call-for-papers",
+  "deadline": "2026-11-29T23:59:00-12:00",
+  "mode": "inspect",
+  "direct_control": true,
+  "profile": "../profiles/christ.json",
+  "project": "../projects/hardware-splicer.json",
+  "packet_source": "https://github.com/Spectating101/hardware-splicer/blob/agent/submission-package-2026q3/docs/external_assessment/submissions/DATE_2027_LBR_DRAFT.md",
+  "route_state": "FIRE_LATER_AFTER_EXTERNAL_PROOF",
+  "fields": {
+    "paper_title": "Late Breaking Results: Evidence-Constrained Agentic Engineering with Revision-Bound Physical Authority",
+    "author_name": "$profile.name",
+    "affiliation": "$profile.affiliation",
+    "project_summary": "$project.description",
+    "limitations": "$project.limitations"
+  },
+  "field_map": {
+    "paper_title": {"label": "Title"},
+    "author_name": {"label": "Author"},
+    "affiliation": {"label": "Affiliation"},
+    "project_summary": {"label": "Abstract"},
+    "limitations": {"label": "Limitations"}
+  },
+  "uploads": [],
+  "human_required": ["login", "authorship_attestation", "originality_attestation", "terms_acceptance", "payment", "final_submit"]
+}
