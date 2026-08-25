@@ -1,0 +1,33 @@
+{
+  "id": "wanrun-innovation-2026",
+  "name": "WanRun 2026 Innovation & Creativity Competition — College Division",
+  "portal": "generic",
+  "entry_url": "https://iaa.ncku.edu.tw/p/405-1104-302028%2Cc83.php?Lang=zh-tw",
+  "deadline": "2026-08-31T23:59:00+08:00",
+  "mode": "inspect",
+  "direct_control": true,
+  "profile": "../profiles/christ.json",
+  "project": "../projects/hardware-splicer.json",
+  "packet_source": "https://github.com/Spectating101/hardware-splicer/blob/agent/submission-package-2026q3/docs/external_assessment/overlays/WANRUN_2026.md",
+  "single_member_gate": "If live registration requires more than one student, mark route KILL; do not recruit peers.",
+  "fields": {
+    "project_name": "Hardware-Splicer: Auditable AI Agent for Semiconductor Validation Hardware",
+    "category": "AI Smart Systems",
+    "project_summary": "$project.description",
+    "participant_name": "$profile.name",
+    "affiliation": "$profile.affiliation",
+    "repo_url": "$project.repo_url",
+    "limitations": "$project.limitations"
+  },
+  "field_map": {
+    "project_name": {"label": "Project name"},
+    "category": {"label": "Category"},
+    "project_summary": {"label": "Project description"},
+    "participant_name": {"label": "Name"},
+    "affiliation": {"label": "School"},
+    "repo_url": {"label": "Repository"},
+    "limitations": {"label": "Limitations"}
+  },
+  "uploads": [],
+  "human_required": ["login", "eligibility_attestation", "team_confirmation", "originality_attestation", "terms_acceptance", "final_submit"]
+}
