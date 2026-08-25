@@ -1,0 +1,30 @@
+{
+  "id": "taia-ai-creative-design-2026",
+  "name": "TAIA 2026 AI Creative Design Competition — Graduate Track",
+  "portal": "generic",
+  "entry_url": "https://www.aiatw.org/aida2026-info/",
+  "deadline": "2026-08-31T23:59:00+08:00",
+  "mode": "inspect",
+  "direct_control": true,
+  "profile": "../profiles/christ.json",
+  "project": "../projects/hardware-splicer.json",
+  "packet_source": "https://github.com/Spectating101/hardware-splicer/blob/agent/submission-package-2026q3/docs/external_assessment/submissions/TAIA_2026_IDEA_DECK.md",
+  "fields": {
+    "project_name": "Hardware-Splicer: A Bounded Engineering Environment for Tool-Using AI Agents",
+    "project_summary": "$project.description",
+    "participant_name": "$profile.name",
+    "affiliation": "$profile.affiliation",
+    "repo_url": "$project.repo_url",
+    "limitations": "$project.limitations"
+  },
+  "field_map": {
+    "project_name": {"label": "Project name"},
+    "project_summary": {"label": "Project description"},
+    "participant_name": {"label": "Name"},
+    "affiliation": {"label": "School"},
+    "repo_url": {"label": "Repository"},
+    "limitations": {"label": "Limitations"}
+  },
+  "uploads": [],
+  "human_required": ["login", "eligibility_attestation", "originality_attestation", "terms_acceptance", "final_submit"]
+}
