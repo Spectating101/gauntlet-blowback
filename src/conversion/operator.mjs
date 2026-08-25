@@ -1,6 +1,7 @@
 import { buildProjection } from '../core/claims.mjs';
 import { evaluateOpportunity } from '../core/conversion.mjs';
 import { normalizeOutcome } from '../core/outcomes.mjs';
+import { assessEconomicOpportunity } from './economic-triage.mjs';
 
 const DEPENDENCY_STATES = new Set(['SATISFIED', 'OPEN', 'BLOCKED']);
 const DEPENDENCY_KINDS = new Set([
@@ -87,6 +88,7 @@ export function buildConversionCampaign(input) {
   const dependencies = (input.dependencies ?? opportunity.dependencies ?? []).map(normalizeDependency);
   const dependencySummary = summarizeDependencies(dependencies);
   const evaluation = evaluateOpportunity(opportunity);
+  const economicTriage = assessEconomicOpportunity(opportunity, input.economic_policy ?? {});
   const projection = buildProjection({
     claims: input.claims ?? project.claims ?? [],
     claim_ids: input.claim_ids ?? opportunity.claim_ids ?? []
@@ -104,6 +106,7 @@ export function buildConversionCampaign(input) {
     project: { id: project.id, name: project.name ?? project.id, canonical_ref: project.canonical_ref ?? null },
     opportunity,
     evaluation,
+    economic_triage: economicTriage,
     dependencies,
     dependency_summary: {
       open: dependencySummary.open.map((item) => item.id),
