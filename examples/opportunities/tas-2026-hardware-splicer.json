@@ -1,0 +1,29 @@
+{
+  "id": "tas-2026-hardware-splicer",
+  "name": "TAS 2026 — Trustworthy Agentic Systems — Hardware-Splicer",
+  "portal": "openreview",
+  "entry_url": "https://tas2026.github.io/call-for-papers/",
+  "deadline": "2026-09-01T23:59:00-12:00",
+  "mode": "inspect",
+  "direct_control": true,
+  "profile": "../profiles/christ.json",
+  "project": "../projects/hardware-splicer.json",
+  "packet_source": "https://github.com/Spectating101/hardware-splicer/blob/agent/submission-package-2026q3/docs/external_assessment/submissions/TAS_2026_SHORT_PAPER_DRAFT.md",
+  "route_state": "HOLD_LOW_MARGINAL_WORK_ONLY",
+  "fields": {
+    "paper_title": "Hardware-Splicer: Keeping Tool-Using AI Agents Below the Physical-Authority Boundary",
+    "author_name": "$profile.name",
+    "affiliation": "$profile.affiliation",
+    "project_summary": "$project.description",
+    "limitations": "$project.limitations"
+  },
+  "field_map": {
+    "paper_title": {"label": "Title"},
+    "author_name": {"label": "Author"},
+    "affiliation": {"label": "Affiliation"},
+    "project_summary": {"label": "Abstract"},
+    "limitations": {"label": "Limitations"}
+  },
+  "uploads": [],
+  "human_required": ["login", "authorship_attestation", "originality_attestation", "terms_acceptance", "payment", "final_submit"]
+}
