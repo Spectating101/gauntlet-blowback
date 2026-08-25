@@ -1,0 +1,1 @@
+This branch adds Hardware-Splicer conversion routes on top of feat/funding-radar-v1. It does not change Blowback's no-autonomous-submit safety boundary.
