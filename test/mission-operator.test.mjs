@@ -1,7 +1,14 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { buildBrowserMission, rankGauntlet } from '../src/mission/operator.mjs';
-import { validateCheckpoint } from '../src/mission/checkpoint.mjs';
+import { fileURLToPath } from 'node:url';
+import { buildMasterRegistry } from '../scripts/build-gauntlet-master.mjs';
+import { buildBrowserMission, nextBrowserMission, rankGauntlet } from '../src/mission/operator.mjs';
+import { persistCheckpoint, validateCheckpoint } from '../src/mission/checkpoint.mjs';
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const STATE_DIR = path.join(ROOT, '.blowback', 'missions');
 
 function record(overrides = {}) {
   return {
@@ -51,6 +58,23 @@ test('rankGauntlet prefers immediate FIRE over WATCH and KILL', () => {
   assert.deepEqual(ranked.map((item) => item.record.id), ['fire', 'watch']);
 });
 
+test('WAITING_HUMAN route does not freeze next dispatch', () => {
+  fs.rmSync(STATE_DIR, { recursive: true, force: true });
+  persistCheckpoint({
+    mission_id: 'mission:route-a',
+    route_id: 'route-a',
+    status: 'WAITING_HUMAN',
+    stage: 'FINAL_REVIEW',
+    human_required: ['final submit'],
+  });
+  const ranked = rankGauntlet([
+    record({ id: 'route-a', status: 'FIRE_NOW' }),
+    record({ id: 'route-b', status: 'FIRE', deadline: '2026-09-01' }),
+  ]);
+  assert.deepEqual(ranked.map((item) => item.record.id), ['route-b']);
+  fs.rmSync(STATE_DIR, { recursive: true, force: true });
+});
+
 test('checkpoint rejects secret-bearing payloads', () => {
   assert.throws(() => validateCheckpoint({
     mission_id: 'mission:route-a',
@@ -73,4 +97,12 @@ test('checkpoint accepts resumable non-secret browser state', () => {
   });
   assert.equal(checkpoint.status, 'WAITING_HUMAN');
   assert.deepEqual(checkpoint.completed_actions, ['metadata_completed', 'files_uploaded']);
+});
+
+test('real master registry produces a Codex browser mission', () => {
+  fs.rmSync(STATE_DIR, { recursive: true, force: true });
+  const mission = nextBrowserMission(buildMasterRegistry());
+  assert.ok(mission?.route_id);
+  assert.equal(mission.browser.adaptive_navigation_required, true);
+  assert.equal(mission.browser.hardcoded_portal_recipe_required, false);
 });
