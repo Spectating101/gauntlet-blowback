@@ -4,6 +4,27 @@ Snapshot: 2026-08-26.
 
 This queue is not permission to submit incompatible entries. It is the candidate campaign space. Hard gates must be resolved centrally before FIRE.
 
+## Tier -1 — Policy Lab hard route
+
+Policy Lab now has a frozen submission package, so its immediate work is execution rather than further research development. Full state and receipt protocol: [`policy-lab-gauntlet.md`](./policy-lab-gauntlet.md).
+
+| Order | Campaign | State | Date | Gate / next action |
+|---:|---|---|---|---|
+| 1 | Global AI Finance 2026 WIP poster | `FIRE_NOW / PORTAL_READY` | 2026-08-31 | owner-only ConfTool account/consent fields → paste RC5 values → upload PDF if requested → inspect unexpected terms → submit → preserve ID/receipt |
+| 2 | NLnet Restack | `HOLD / CALL_GATED` | 2026-09-03 checkpoint | re-check call-specific scope + European-dimension criteria; make hard FIRE/KILL decision |
+| 3 | Financial Cryptography 2027 short paper | `PRIMARY_FIRE` | 2026-09-17 | continue exclusive 8-page manuscript lane; preserve overlap stop condition |
+| 4 | Global AI Finance 2026 notification | `OUTCOME_WAIT` | 2026-09-30 | preserve verdict and propagate external-impact signal into DPG/JOSS/portfolio ledger |
+| 5 | Software Sustainability Institute Fellowship 2027 | `FIRE` | 2026-10-05 | adapt open research-software practice narrative; final application remains human-gated |
+
+Rolling Policy Lab rails:
+
+- **Digital Public Goods Registry — `READY_TO_SUBMIT`**: re-check the live DPGA questionnaire, then submit for external review after human inspection of consequential attestations. Do not call Policy Lab a Digital Public Good before approval.
+- **JOSS — `PREPARE / EXTERNAL_IMPACT_GATED`**: the missing condition is external research/community impact, not more internal code. No fake deadline.
+- **Shih Hsin Finance 2026 — `BACKUP_CHEAP`**: Sep 17 abstract deadline; do not duplicate the active FC'27 manuscript.
+- **Asia University FTSID 2026 — `BACKUP`**: Sep 30 deadline; do not submit substantially overlapping work while FC'27 is under review.
+
+Canonical Global AI Finance RC5 submission snapshot: `fdb8605a1a400b4c0054af0b78f01eaf6e3e1a51` in `Spectating101/solarpunk-coin`. Later research-surface publication commits do not redefine the frozen submission artifact.
+
 ## Tier 0 — resolve immediately
 
 | Order | Campaign | Asset | Economic target | Gate / next action |
@@ -56,6 +77,8 @@ After every eligible external academic competition:
 5. preserve eligible expense receipts;
 6. trigger YZU competition-subsidy eligibility check while student status remains valid;
 7. record reimbursement as `cost_displaced_ntd`, not competition-prize cash.
+
+For Policy Lab's Global AI Finance route, the equivalent receipt stack is mandatory even though the route is a research conference rather than a prize competition: exact submitted artifact, submission ID, confirmation, accepted terms/fees, and eventual verdict.
 
 ## InnoServe optimization requirement
 
