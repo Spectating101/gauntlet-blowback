@@ -7,7 +7,7 @@
   "source_url": "https://www.aifinconf.org/",
   "registration_url": "https://www.conftool.net/aifinconf2026/register.php",
   "recon_stage": "registration",
-  "deadline": "2026-08-31T23:59:00+08:00",
+  "deadline": "2026-08-31",
   "mode": "inspect",
   "execution_state": "PORTAL_RECON_REQUIRED",
   "direct_control": true,
