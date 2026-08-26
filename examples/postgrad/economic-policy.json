@@ -1,0 +1,14 @@
+{
+  "schema": "blowback.economic_policy.v1",
+  "snapshot": "2026-08-26",
+  "job_backstop_floor_annual_ntd": 1200000,
+  "job_serious_floor_annual_ntd": 1500000,
+  "job_high_value_floor_annual_ntd": 2000000,
+  "phd_min_monthly_funding_ntd": 30000,
+  "notes": [
+    "These are search and triage thresholds, not claims of guaranteed personal market value.",
+    "Undisclosed compensation remains PRICE_DISCOVERY until an employer provides reliable compensation evidence.",
+    "PhD startup/commercial option value is not positive unless founder, outside-income and IP terms are verified.",
+    "Offer-stage comparison should use actual base/bonus/equity, workload, IP, visa and exit terms rather than posting-level assumptions."
+  ]
+}

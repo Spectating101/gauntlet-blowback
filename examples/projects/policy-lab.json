@@ -1,0 +1,10 @@
+{
+  "id": "policy-lab",
+  "name": "Policy Lab",
+  "repo_url": "https://github.com/Spectating101/solarpunk-coin",
+  "pitch_50": "A deterministic research workbench for separating external evidence, policy admission, supported physical quantity, and settlement outcomes in energy-linked financial claims.",
+  "description": "Policy Lab studies the handoff from external evidence to bounded financial-claim authority. Its worked research case holds one evidence object fixed while varying declared policy and settlement constraints so source assurance, policy admission, supported physical quantity, and settlement can fail independently.",
+  "limitations": "Research workbench only. No operator validation, legal issuance authority, enforceable redemption, market adoption, monetary valuation, calibrated policy thresholds, or general external validity is claimed.",
+  "canonical_repo_snapshot": "fdb8605a1a400b4c0054af0b78f01eaf6e3e1a51",
+  "submission_state": "PORTAL_READY"
+}

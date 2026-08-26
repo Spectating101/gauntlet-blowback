@@ -1,0 +1,78 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Gauntlet Blowback//Policy Lab 2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Policy Lab Gauntlet 2026
+X-WR-TIMEZONE:Asia/Taipei
+BEGIN:VEVENT
+UID:policy-lab-gaf-submit-20260831@gauntlet-blowback
+DTSTAMP:20260826T100000Z
+DTSTART;VALUE=DATE:20260831
+DTEND;VALUE=DATE:20260901
+SUMMARY:[FIRE NOW] Policy Lab — Global AI Finance 2026 submission
+DESCRIPTION:RC5 is PORTAL_READY and frozen at fdb8605a1a400b4c0054af0b78f01eaf6e3e1a51. Owner action only: ConfTool account/login; paste prepared fields; upload final PDF if requested; inspect terms; submit; preserve submission ID/receipt and exact artifact. Do not reopen research-writing unless the live form reveals a genuinely new requirement.
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:policy-lab-nlnet-restack-check-20260903@gauntlet-blowback
+DTSTAMP:20260826T100000Z
+DTSTART;VALUE=DATE:20260903
+DTEND;VALUE=DATE:20260904
+SUMMARY:[GATE] Policy Lab — NLnet Restack FIRE/KILL check
+DESCRIPTION:Re-check call-specific hard criteria and required European dimension. Keep HOLD until criteria genuinely pass; then make a hard FIRE/KILL decision. No optimistic eligibility assumption.
+STATUS:TENTATIVE
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:policy-lab-fc27-submit-20260917@gauntlet-blowback
+DTSTAMP:20260826T100000Z
+DTSTART;VALUE=DATE:20260917
+DTEND;VALUE=DATE:20260918
+SUMMARY:[PRIMARY FIRE] Policy Lab — Financial Cryptography 2027 short paper
+DESCRIPTION:Primary exclusive manuscript lane. Target the 8-page contribution on non-promotion semantics across evidence, authorization, supported quantity and settlement. Preserve the no-overlapping-peer-reviewed-submission rule.
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:policy-lab-shihhsin-backup-20260917@gauntlet-blowback
+DTSTAMP:20260826T100000Z
+DTSTART;VALUE=DATE:20260917
+DTEND;VALUE=DATE:20260918
+SUMMARY:[BACKUP] Policy Lab — Shih Hsin Finance abstract deadline
+DESCRIPTION:Cheap fallback/exposure route only. Do not submit a substantially overlapping manuscript while the FC'27 lane is active.
+STATUS:TENTATIVE
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:policy-lab-gaf-notification-20260930@gauntlet-blowback
+DTSTAMP:20260826T100000Z
+DTSTART;VALUE=DATE:20260930
+DTEND;VALUE=DATE:20261001
+SUMMARY:[OUTCOME] Policy Lab — Global AI Finance 2026 notification
+DESCRIPTION:Record accept/reject/other verdict and preserve external evidence. If accepted, inspect any registration/payment/attendance commitment before acting. Feed the result into the Policy Lab external-impact ledger and JOSS/DPG conversion state.
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:policy-lab-ftsid-backup-20260930@gauntlet-blowback
+DTSTAMP:20260826T100000Z
+DTSTART;VALUE=DATE:20260930
+DTEND;VALUE=DATE:20261001
+SUMMARY:[BACKUP] Policy Lab — Asia University FTSID 2026 deadline
+DESCRIPTION:Backup manuscript route. Do not submit a substantially overlapping paper while FC'27 is under review.
+STATUS:TENTATIVE
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:policy-lab-ssi-fellowship-20261005@gauntlet-blowback
+DTSTAMP:20260826T100000Z
+DTSTART;VALUE=DATE:20261005
+DTEND;VALUE=DATE:20261006
+SUMMARY:[FIRE] Policy Lab — SSI Fellowship 2027 deadline
+DESCRIPTION:Use Policy Lab as evidence for broader open research-software practice and research-software sustainability. Keep the application broader than a product pitch. Final submission remains human-gated.
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR
