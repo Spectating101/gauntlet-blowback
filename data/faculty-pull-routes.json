@@ -1,0 +1,25 @@
+{
+  "schema": "blowback.faculty_pull_routes.v1",
+  "snapshot": "2026-08-27",
+  "routes": [
+    {
+      "id": "faculty-nthu-shan-hung-wu-ai-2026",
+      "lane": "PHD_FACULTY",
+      "organization": "National Tsing Hua University / Shan-Hung Wu Lab",
+      "opportunity": "Prospective graduate-student research chat — AI-powered DB/IR, Generative AI, Business Intelligence",
+      "route_class": "FACULTY_PULL",
+      "assets": "Cite|YZU Cluster|Citation Engine|Finance|Research Papers",
+      "contribution_view": "Accountable AI research systems x AI-powered database/information retrieval",
+      "status": "FIRE_NOW",
+      "execution_state": "OUTREACH_READY",
+      "deadline": "ROLLING",
+      "gate": "Official lab page verifies active graduate-student recruiting. Lab stipend/RA compensation is not stated. Verify funding, degree route, start timing, and mutual research fit in the faculty conversation before commitment.",
+      "shared_evidence_family": "phd-ai-taiwan",
+      "mutual_exclusion_group": "",
+      "parent_route": "",
+      "source_state": "RECRUITING_VERIFIED_2026-08-27_FUNDING_UNKNOWN",
+      "source": "https://www.cs.nthu.edu.tw/~shwu/",
+      "origin": "live faculty-recruitment discovery; official lab page verified 2026-08-27"
+    }
+  ]
+}
