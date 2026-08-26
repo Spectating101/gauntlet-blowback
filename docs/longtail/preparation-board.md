@@ -14,6 +14,49 @@ This is the concrete pre-firing worklist. Finish reusable materials once; do not
 - [ ] Create common screenshot / demo index so competition packets reference existing assets rather than regenerating media.
 - [ ] Establish receipt directory/naming convention for application confirmations, emails, finalist notices, invoices, credits, reimbursements and rejections.
 
+## P0 — Policy Lab / Global AI Finance Aug-31
+
+Research preparation is complete. Do **not** reopen the abstract or Policy Lab development unless the logged-in portal exposes a genuinely new requirement.
+
+Completed and frozen:
+
+- [x] RC5 submission capsule marked `PORTAL_READY`.
+- [x] Canonical submission snapshot pinned to `fdb8605a1a400b4c0054af0b78f01eaf6e3e1a51`.
+- [x] Final one-page reviewer PDF rendered and visually inspected.
+- [x] Editable DOCX source prepared.
+- [x] ConfTool copy/paste sheet prepared.
+- [x] Complete submission-ready ZIP prepared.
+- [x] Private one-page research brief prepared.
+- [x] 308-word portal abstract prepared.
+- [x] 184-word fallback abstract prepared.
+- [x] Author / affiliation / topic / keyword metadata frozen.
+- [x] Code / reproducibility link included.
+- [x] Manifest and SHA-256 checksums prepared.
+- [x] Claim boundaries preserved: no operator validation, legal issuance, enforceable redemption, adoption, monetary valuation, calibrated-policy or general-validity claim.
+
+Owner-action gate:
+
+- [ ] create or log into ConfTool account;
+- [ ] choose submission e-mail / username / password;
+- [ ] enter/confirm postal or contact-address fields;
+- [ ] inspect and personally accept privacy terms;
+- [ ] paste the frozen RC5 submission fields;
+- [ ] upload the final reviewer PDF if the live form requests a file;
+- [ ] inspect any authorship/originality/copyright declaration;
+- [ ] stop and inspect any unexpected submission fee, registration charge or attendance commitment;
+- [ ] final-submit only after the live form still matches the prepared route;
+- [ ] preserve submission ID, confirmation, exact submitted PDF/hash, abstract variant, timestamp and accepted terms;
+- [ ] update Policy Lab state from `PORTAL_READY` to `SUBMITTED` only after a real receipt exists.
+
+Next Policy Lab gates after GAF submission:
+
+- [ ] 2026-09-03 — re-check NLnet Restack call-specific criteria; hard FIRE/KILL after verification.
+- [ ] 2026-09-17 — Financial Cryptography 2027 short-paper deadline; primary exclusive manuscript lane.
+- [ ] Rolling — re-check live DPGA questionnaire and submit DPG application for external review after human inspection of attestations.
+- [ ] 2026-09-30 — capture Global AI Finance verdict and feed it into the external-impact ledger.
+- [ ] JOSS — keep prepared but gated on genuine external research/community impact, not more code.
+- [ ] 2026-10-05 — Software Sustainability Institute Fellowship 2027 deadline.
+
 ## P0 — immediate campaign packets
 
 ### Citation Engine / OSS
@@ -73,10 +116,13 @@ This is the concrete pre-firing worklist. Finish reusable materials once; do not
 - [ ] institutional workflow diagnostic one-pager.
 
 ### Policy Lab
-- [ ] governance/open-data/finance evidence narratives.
-- [ ] reproducibility/evidence-integrity summary.
-- [ ] one representative bounded analysis sample.
+- [x] governance/open-data/finance evidence narratives.
+- [x] reproducibility/evidence-integrity summary.
+- [x] one representative bounded analysis sample.
 - [ ] paid evidence/evaluation sprint one-pager.
+- [x] GAF2026 one-page academic route package.
+- [x] DPG governance/privacy/security/public-interest package.
+- [ ] external-impact evidence sufficient to clear JOSS gate.
 
 ### Nocturnal
 - [ ] cold-review packet.
