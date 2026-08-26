@@ -194,7 +194,6 @@ export function writeMasterRegistry(options = {}) {
   const outputJson = options.outputJson ?? DEFAULTS.outputJson;
   const payload = {
     schema: 'blowback.gauntlet_master.v1',
-    generated_at: new Date().toISOString(),
     source_snapshot: '2026-08-26',
     summary: summarizeMasterRegistry(records),
     records,
