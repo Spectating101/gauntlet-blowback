@@ -5,6 +5,28 @@ const REQUIRED_HUMAN_GATES = new Set([
   'originality_attestation', 'authorship_attestation', 'terms_acceptance',
   'payment', 'advisor_confirmation', 'team_confirmation', 'final_submit'
 ]);
+const RECIPE_ACTIONS = new Set(['fill', 'select', 'check', 'upload', 'click', 'wait', 'stop']);
+
+function validateRecipe(o, errors, warnings) {
+  if (o?.portal !== 'recipe') return;
+  if (!Array.isArray(o?.recipe?.steps) || o.recipe.steps.length === 0) {
+    errors.push('recipe portal requires recipe.steps');
+    return;
+  }
+  for (const [index, step] of o.recipe.steps.entries()) {
+    const prefix = `recipe.steps[${index}]`;
+    if (!RECIPE_ACTIONS.has(step?.action)) {
+      errors.push(`${prefix} has unsupported action: ${step?.action ?? '(missing)'}`);
+      continue;
+    }
+    if (step.action === 'click' && step.safe_navigation !== true) {
+      warnings.push(`${prefix} click will be refused unless safe_navigation=true`);
+    }
+    if (step.action === 'stop' && !step.reason) {
+      warnings.push(`${prefix} stop should declare a human-gate reason`);
+    }
+  }
+}
 
 export function validateOpportunity(o) {
   const errors = [];
@@ -38,6 +60,7 @@ export function validateOpportunity(o) {
   }
   if (!o?.fields || typeof o.fields !== 'object') errors.push('fields must be an object');
   if (o?.uploads && !Array.isArray(o.uploads)) errors.push('uploads must be an array');
+  validateRecipe(o, errors, warnings);
   return { ok: errors.length === 0, errors, warnings };
 }
 

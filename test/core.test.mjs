@@ -44,10 +44,13 @@ test('local private profile overrides repo profile without replacing public defa
   assert.equal(bundle.fields.participant_name, 'Private Override');
 });
 
-test('plan contains no submit action', async () => {
+test('plan contains no submit action and redacts resolved values by default', async () => {
   const opportunity = await loadOpportunity(example);
   const bundle = await resolveBundle(opportunity);
   const plan = buildPlan(bundle);
+  assert.equal(plan.values_redacted, true);
   assert.equal(plan.steps.some((step) => step.kind === 'submit'), false);
+  assert.equal(plan.steps.some((step) => step.kind === 'field' && Object.hasOwn(step, 'value')), false);
+  assert.equal(plan.steps.some((step) => step.kind === 'upload' && Object.hasOwn(step, 'path')), false);
   assert.equal(plan.steps.at(-1).gate, 'final_submit');
 });
