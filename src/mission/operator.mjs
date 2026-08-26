@@ -30,6 +30,7 @@ const STATUS_PRIORITY = new Map([
   ['KILL', 90],
 ]);
 
+const PAUSED_CHECKPOINTS = new Set(['WAITING_HUMAN', 'SAFE_COMPLETE', 'BLOCKED']);
 const TERMINAL_CHECKPOINTS = new Set(['SUBMITTED', 'ABANDONED', 'EXPIRED']);
 
 function normalizeStatus(value = '') {
@@ -69,17 +70,19 @@ function loadCheckpoint(routeId) {
   }
 }
 
-function isSuppressed(record, checkpoint) {
+function isSuppressed(record, checkpoint, { includePaused = false } = {}) {
   const status = normalizeStatus(record.status);
   if (status.includes('KILL') || status.includes('REJECT')) return true;
-  if (checkpoint && TERMINAL_CHECKPOINTS.has(checkpoint.status)) return true;
+  if (!checkpoint) return false;
+  if (TERMINAL_CHECKPOINTS.has(checkpoint.status)) return true;
+  if (!includePaused && PAUSED_CHECKPOINTS.has(checkpoint.status)) return true;
   return false;
 }
 
-export function rankGauntlet(records = buildMasterRegistry()) {
+export function rankGauntlet(records = buildMasterRegistry(), options = {}) {
   const ranked = records
     .map((record) => ({ record, checkpoint: loadCheckpoint(record.id) }))
-    .filter(({ record, checkpoint }) => !isSuppressed(record, checkpoint))
+    .filter(({ record, checkpoint }) => !isSuppressed(record, checkpoint, options))
     .sort((a, b) =>
       statusPriority(a.record) - statusPriority(b.record) ||
       deadlineValue(a.record.deadline) - deadlineValue(b.record.deadline) ||
@@ -182,6 +185,13 @@ export function buildBrowserMission(record, checkpoint = null) {
     } : null,
     record,
   };
+}
+
+export function browserMissionForRoute(routeId, records = buildMasterRegistry()) {
+  const record = records.find((item) => item.id === routeId);
+  if (!record) throw new Error(`route not found in Gauntlet master: ${routeId}`);
+  const checkpoint = loadCheckpoint(routeId);
+  return buildBrowserMission(record, checkpoint);
 }
 
 export function nextBrowserMission(records = buildMasterRegistry()) {
