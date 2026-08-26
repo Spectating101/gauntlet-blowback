@@ -92,6 +92,8 @@ v0 ships one generic accessible-form engine. `devpost`, `easychair`, and `openre
 
 When a real FIRE entry exposes repeated portal-specific behavior, add the smallest adapter necessary. Playwright codegen can help capture the first interaction, but generated selectors should be cleaned up into accessible locators where possible.
 
+**Execution readiness is separate from campaign readiness.** A `READY`/`FIRE` opportunity is not automatically browser-executable until its real registration/submission route and field/upload map have been inspected. The current live-portal audit and box-deployment requirements are in `docs/PORTAL_EXECUTION_AUDIT_2026-08-26.md`.
+
 ## Conversion control plane
 
 A stacked follow-up keeps v0 as the clerical browser operator while adding a shared opportunity/evidence layer for jobs, PhDs, competitions, grants, sponsorships, fellowships, institutional pilots, incubators, commercial leads, and research routes.
