@@ -4,6 +4,12 @@ Snapshot: 2026-08-26.
 
 This is the post-semester counterpart to the long-tail Blowback radar. The long-tail lane seeks frequent smaller external conversion during the final semester; this lane seeks the strongest external state to enter after graduation.
 
+## Canonical gate audit
+
+Before treating `FIRE_NOW`, `PRICE_DISCOVERY`, `WATCH`, `BACKSTOP`, or `KILL` as sufficient by themselves, consult [`../GAUNTLET_GATE_AUDIT_2026-08-26.md`](../GAUNTLET_GATE_AUDIT_2026-08-26.md).
+
+The audit is the current semantic overlay for live-role hydration, gate classes `G0`–`G6`, job/PhD corrections, and acceptance-stage economics. It overrides stale fit/status assumptions until `postgrad-market.csv` is reconciled. A role can be cheap to apply to while still carrying a major `G5` selection blocker or `G6` workload/IP/commercial-optionality cost.
+
 ## Objective
 
 Do not choose `JOB` or `PHD` as an identity in advance.
@@ -28,6 +34,8 @@ Applications should be cheap; acceptance should be hard.
 - Never count hypothetical startup upside as realized value.
 - Never count university project funding as personal income.
 - Never count employer equity/bonus that is not in an actual offer.
+- Rehydrate the exact live requisition/call immediately before FIRE; employer/program-family watch records are not proof that a specific role remains open.
+- Apply the gate taxonomy: `G0/G1/G2` clear aggressively; `G3` must earn its work; `G4` waits for reality; `G5` kills; `G6` belongs in offer/acceptance economics.
 
 ## Economic search policy
 
@@ -54,6 +62,8 @@ For jobs:
 - degree/seniority/language blockers;
 - employer signal and future compensation re-rating;
 - moonlighting / IP restrictions;
+- pre-existing IP carve-outs;
+- portfolio-commerce retention;
 - exit flexibility.
 
 For PhDs:
@@ -83,25 +93,26 @@ Unknowns stay `UNKNOWN`; they are not scored as positive merely because the inst
 - Hong Wen Capital — ML / quantitative research lane, published upper-tail compensation on current company board.
 - Point72 / Cubist — Quantitative Finance Researcher, Taipei; finance MSc explicitly accepted, compensation undisclosed.
 - Point72 / Cubist — Macro Quant Researcher, Taipei; current Taipei board.
-- WorldQuant — Quantitative Researcher, Taipei; degree wording varies by posting, so credential fit must be checked per requisition.
+- WorldQuant — Quantitative Researcher, Taipei; FIRE as a stretch and verify degree/quant/C++ wording per requisition.
 - WorldQuant — Quant Macro, Taipei.
-- WorldQuant — Data Scientist, Taipei.
+- WorldQuant — Data Scientist, Taipei; cleaner portfolio fit than pure QR.
 - Kronos Research — Quantitative Research Graduate Program (2026), Taiwan.
 
 **Agent / applied AI**
 
 - Binance — AI Agent Engineer, Taiwan/Asia.
 - Binance — Software Engineer (AI).
-- Binance Accelerator — Applied AI Agent Engineer, AI Agent Engineer, AI Agent Quality, Applied Data Scientist, On-chain Research, Agent Infrastructure, Computer Vision (Agentic AI).
-- Google Taiwan — Applied AI / Pixel and GenAI-agent-related openings when live.
-- Gogolook — Data Research Engineer, ML Engineer, Credit Risk Data Analyst.
+- Binance Accelerator — Applied AI Agent Engineer, AI Agent Engineer, AI Agent Quality, Applied Data Scientist, On-chain Research, Agent Infrastructure, Computer Vision (Agentic AI). Treat full-time multi-month commitment as a `G6` acceptance gate.
+- Google Taiwan — Applied AI / Pixel and GenAI-agent-related openings when live; ceiling/stretch probe, not core identity.
+- Gogolook — Data Research Engineer and ML Engineer; Credit Risk should be downgraded if production credit-risk experience remains required.
 - DataMunger / 數邁科技 — AI Application Engineer, published NT$1.2M–1.8M/year.
+- WANDA ML / applied-AI — upgrade to active price discovery when the live requisition remains aligned.
 
 **Industrial AI / CV**
 
 - Berry AI / 華捷智能 — Senior ML Engineer, current published range roughly NT$1.4M–2.2M/year on company board.
-- NVIDIA Taiwan — PCB / EDA / AI and AI-agent / inference roles when live.
-- Qualcomm Taiwan — AI/ML and CV roles.
+- NVIDIA Taiwan — PCB / EDA / AI and AI-agent / inference roles when live; current senior AI-agent variants are not core, while HS-led NCG roles remain interesting subject to degree filters.
+- Qualcomm Taiwan — selective/watch unless current requisition clears degree, embedded-depth and seniority filters.
 - MediaTek — AI application / CV / AI-for-EDA roles.
 - Synopsys / AMD / TSMC / Delta — selective hardware/AI lanes; degree filters are common and must be treated as real screening risk.
 
@@ -110,17 +121,17 @@ Unknowns stay `UNKNOWN`; they are not scored as positive merely because the inst
 **Immediate hard deadlines**
 
 - USN — AI-based Business Model Innovation in Incumbent Industries — 2026-08-31.
-- USN — AI Industrial Solutions for Sustainable Maritime Operations — 2026-08-31.
+- USN — AI Industrial Solutions for Sustainable Maritime Operations — 2026-08-31; verify exact degree/technical-scope fit before spending heavily.
 - USN — Political Economy and Management — 2026-08-31.
 - TU Delft — Realising Business Impact from Construction Software — 2026-09-08.
 - VU Amsterdam — Social Data Science — 2026-09-14.
-- VU Amsterdam — ATLANTIS Competition Law & AI, computational track — 2026-09-15.
+- VU Amsterdam — ATLANTIS Competition Law & AI, computational track — 2026-09-15; degree preference remains a real stretch.
 - NHH — Finance — 2026-09-15 early round.
 - NHH — Business & Management Science — 2026-09-15.
-- NHH — Economics — 2026-09-15.
-- NHH — Strategy & Management — 2026-09-15.
-- NHH — Accounting, Auditing & Law — 2026-09-15.
-- USN — AI transformation of the auditing sector — 2026-10-16.
+- NHH — Economics — 2026-09-15; selective rather than automatic.
+- NHH — Strategy & Management — 2026-09-15; fire only with coherent proposal fit.
+- NHH — Accounting, Auditing & Law — 2026-09-15; becomes strong if exact project maps to AI/audit/governance evidence.
+- USN — AI transformation of the auditing sector — 2026-10-16; one of the strongest portfolio/thematic matches if the vacancy remains as mapped.
 - NHH main admission round — 2027-01-15.
 
 **Taiwan high-priority WATCH**
