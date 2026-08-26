@@ -2,6 +2,12 @@
 
 This package turns Gauntlet/Blowback from an application-opportunity tracker into a high-volume conversion engine for the active portfolio.
 
+## Canonical gate audit
+
+Before treating any stored `FIRE`, `VERIFY`, `HOLD`, or `KILL` label as authoritative, consult [`../GAUNTLET_GATE_AUDIT_2026-08-26.md`](../GAUNTLET_GATE_AUDIT_2026-08-26.md).
+
+The audit introduces gate classes `G0`–`G6`, records live-source corrections discovered on 2026-08-26, and explicitly overrides stale campaign labels until the machine-readable records are reconciled. In particular, it distinguishes owner/admin friction from integration work, external-evidence gaps, hard blockers, and economic/optionality gates.
+
 ## Operating objective
 
 Primary empirical target:
@@ -44,6 +50,16 @@ Each project x track pairing is a separate campaign candidate until cross-campai
 - `DUPLICATE_OR_CATEGORY_LIMIT` — a parent program limits number of tracks/projects that may be entered.
 - `SOURCE_ANOMALY` — official page contains conflicting or unusual published data and requires manual confirmation.
 
+These legacy hard-gate labels remain useful, but pre-firing triage should additionally map them to the audit's semantic gate classes:
+
+- `G0` owner / portal
+- `G1` eligibility / administration
+- `G2` packet / application
+- `G3` integration / domain adaptation
+- `G4` external evidence
+- `G5` hard blocker / mismatch
+- `G6` economics / optionality
+
 ## Default lifecycle
 
 `DISCOVER -> VERIFIED -> ELIGIBLE -> READY -> FIRED -> RECEIPT -> OUTCOME -> CONVERSION`
@@ -66,6 +82,7 @@ Every campaign should capture at minimum:
 
 ## Files in this package
 
+- `../GAUNTLET_GATE_AUDIT_2026-08-26.md` — canonical audit overlay and gate taxonomy; consult before FIRE.
 - `opportunity-radar.md` — current researched opportunity families and project matches.
 - `firing-queue.md` — prioritized campaign queue and near-term deadlines.
 - `preparation-packets.md` — canonical reusable dossier and per-project packet requirements.
