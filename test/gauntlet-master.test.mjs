@@ -25,6 +25,17 @@ test('restores cross-thread flagship routes', () => {
   ]) assert.ok(byId.has(id), `missing restored route ${id}`);
 });
 
+test('includes verified live faculty-pull routes without inventing funding', () => {
+  const route = byId.get('faculty-nthu-shan-hung-wu-ai-2026');
+  assert.ok(route, 'missing Shan-Hung Wu faculty-pull route');
+  assert.equal(route.route_class, 'FACULTY_PULL');
+  assert.equal(route.status, 'FIRE_NOW');
+  assert.equal(route.execution_state, 'OUTREACH_READY');
+  assert.match(route.source_state, /RECRUITING_VERIFIED/);
+  assert.match(route.source_state, /FUNDING_UNKNOWN/);
+  assert.match(route.gate, /stipend\/RA compensation is not stated/i);
+});
+
 test('preserves research-family ownership and manuscript exclusivity', () => {
   assert.equal(byId.get('ftsid-2026-cl-eci').contribution_view, 'CL-ECI');
   assert.equal(byId.get('ftsid-2026-cl-eci').mutual_exclusion_group, 'cl-eci-manuscript-2026');
@@ -54,6 +65,7 @@ test('summary exposes portfolio-wide lane mix', () => {
   assert.equal(summary.total, records.length);
   assert.ok(summary.lanes.JOB > 0);
   assert.ok(summary.lanes.PhD > 0 || summary.lanes.PHD > 0);
+  assert.ok(summary.lanes.PHD_FACULTY > 0);
   assert.ok(summary.lanes.RESEARCH > 0);
   assert.ok(summary.lanes.FIELD > 0);
 });
