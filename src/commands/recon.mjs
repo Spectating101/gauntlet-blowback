@@ -6,6 +6,7 @@ import { openBrowser } from '../core/browser.mjs';
 import { resolveRouteUrls } from '../core/routes.mjs';
 
 const ROUTE_WORDS = /(apply|application|register|registration|sign\s*in|log\s*in|create\s*account|submit|submission|報名|报名|申請|申请|投稿|徵件|征件|參賽|参赛)/i;
+const RECON_STAGES = new Set(['source', 'registration', 'submission']);
 
 function classifyCandidate(text) {
   if (/(sign\s*in|log\s*in|create\s*account)/i.test(text)) return 'auth';
@@ -16,6 +17,14 @@ function classifyCandidate(text) {
 
 function unique(values) {
   return [...new Set(values.filter(Boolean))];
+}
+
+function urlForStage(routes, stage) {
+  if (!RECON_STAGES.has(stage)) throw new Error(`unknown recon stage: ${stage}`);
+  const key = `${stage}_url`;
+  const url = routes[key];
+  if (!url) throw new Error(`recon stage ${stage} has no ${key} in the manifest`);
+  return url;
 }
 
 export async function collectReconSnapshot(page) {
@@ -101,13 +110,14 @@ export async function collectReconSnapshot(page) {
   };
 }
 
-export async function reconOpportunity(filePath, { persistAuth = false } = {}) {
+export async function reconOpportunity(filePath, { persistAuth = false, stage = null } = {}) {
   const opportunity = await loadOpportunity(filePath);
   assertOpportunity(opportunity);
   const routes = resolveRouteUrls(opportunity);
-  if (!routes.recon_url) throw new Error('recon requires source_url, registration_url, submission_url, or entry_url');
+  const reconStage = stage ?? opportunity.recon_stage ?? 'source';
+  const reconUrl = urlForStage(routes, reconStage);
 
-  const recordDir = await createRecordDir(`${opportunity.id}-recon`);
+  const recordDir = await createRecordDir(`${opportunity.id}-recon-${reconStage}`);
   const session = await openBrowser(opportunity);
   const navigations = [];
   const onNavigation = (frame) => {
@@ -116,7 +126,7 @@ export async function reconOpportunity(filePath, { persistAuth = false } = {}) {
   session.page.on('framenavigated', onNavigation);
 
   try {
-    await session.page.goto(routes.recon_url, { waitUntil: 'domcontentloaded' });
+    await session.page.goto(reconUrl, { waitUntil: 'domcontentloaded' });
     const snapshot = await collectReconSnapshot(session.page);
     await session.page.screenshot({ path: path.join(recordDir, 'recon.png'), fullPage: true });
     if (persistAuth) await session.persistAuth();
@@ -127,6 +137,8 @@ export async function reconOpportunity(filePath, { persistAuth = false } = {}) {
       portal: opportunity.portal,
       auth_scope: session.authScope,
       routes,
+      recon_stage: reconStage,
+      recon_url: reconUrl,
       observed: snapshot,
       navigations: unique(navigations),
       mutations_performed: false,
