@@ -1,0 +1,39 @@
+{
+  "id": "taia-ai-creative-design-2026",
+  "name": "TAIA 2026 AI Creative Design Competition — Graduate Track",
+  "portal": "generic",
+  "portal_family": "google_forms",
+  "auth_scope": "google-forms-taia-aida2026",
+  "source_url": "https://www.aiatw.org/aida2026-info/",
+  "registration_url": "https://docs.google.com/forms/d/e/1FAIpQLScnJJ3LE8DYKShRc1lP_-3hRgkr-_nJm8OCq-vJJ_A3Zqi9nw/viewform",
+  "submission_url": "https://docs.google.com/forms/d/e/1FAIpQLScnJJ3LE8DYKShRc1lP_-3hRgkr-_nJm8OCq-vJJ_A3Zqi9nw/viewform",
+  "recon_stage": "registration",
+  "mode": "inspect",
+  "execution_state": "PORTAL_RECON_REQUIRED",
+  "direct_control": true,
+  "profile": "../profiles/christ.json",
+  "project": "../projects/hardware-splicer.json",
+  "fields": {},
+  "field_map": {},
+  "uploads": [],
+  "milestones": [
+    { "date": "2026-08-31", "event": "initial review begins; initial materials should be complete before this date" },
+    { "date": "2026-10-12", "event": "selection cutoff and finalist announcement" },
+    { "date": "2026-11-08", "event": "final presentation and showcase" }
+  ],
+  "packet_requirements": [
+    {
+      "id": "idea_deck",
+      "description": "Initial-round Idea deck; official guidance recommends 15 pages or fewer.",
+      "status": "PACKET_READY",
+      "canonical_ref": "https://github.com/Spectating101/hardware-splicer/blob/agent/submission-package-2026q3/docs/external_assessment/submissions/TAIA_2026_IDEA_DECK.md"
+    }
+  ],
+  "route_evidence": {
+    "verified_at": "2026-08-26",
+    "source": "official TAIA competition site",
+    "registration_link_verified": true,
+    "form_fields_verified": false
+  },
+  "human_required": ["login", "eligibility_attestation", "terms_acceptance", "final_submit"]
+}

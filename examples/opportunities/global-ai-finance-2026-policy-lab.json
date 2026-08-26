@@ -1,0 +1,57 @@
+{
+  "id": "global-ai-finance-2026-policy-lab",
+  "name": "2026 Global AI Finance Research Conference — Policy Lab",
+  "portal": "generic",
+  "portal_family": "conftool",
+  "auth_scope": "conftool-aifinconf2026",
+  "source_url": "https://www.aifinconf.org/",
+  "registration_url": "https://www.conftool.net/aifinconf2026/register.php",
+  "recon_stage": "registration",
+  "deadline": "2026-08-31T23:59:00+08:00",
+  "mode": "inspect",
+  "execution_state": "PORTAL_RECON_REQUIRED",
+  "direct_control": true,
+  "profile": "../profiles/christ.json",
+  "project": "../projects/policy-lab.json",
+  "fields": {},
+  "field_map": {},
+  "uploads": [],
+  "required_private_fields": [
+    "address_line_1",
+    "city",
+    "country",
+    "username",
+    "password",
+    "password_confirmation"
+  ],
+  "registration_requirements": [
+    "organization/company",
+    "title",
+    "first name",
+    "last name",
+    "address line 1",
+    "city",
+    "country",
+    "email",
+    "data privacy agreement",
+    "username",
+    "password",
+    "password confirmation"
+  ],
+  "workflow_requirements": [
+    "create or reuse conference-specific ConfTool account",
+    "login",
+    "open submission area",
+    "select submission type",
+    "enter contribution metadata and authors",
+    "upload manuscript",
+    "review prepared submission",
+    "human final submit"
+  ],
+  "route_evidence": {
+    "verified_at": "2026-08-26",
+    "registration_page_verified": true,
+    "authenticated_submission_route_verified": false
+  },
+  "human_required": ["login", "terms_acceptance", "authorship_attestation", "final_submit"]
+}

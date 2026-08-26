@@ -12,7 +12,7 @@
     "validate": "node src/cli.mjs validate examples/opportunities/animalhack-2026.json",
     "plan": "node src/cli.mjs plan examples/opportunities/animalhack-2026.json",
     "recon": "node src/cli.mjs recon examples/opportunities/animalhack-2026.json",
-    "test:core": "node --test test/core.test.mjs test/conversion.test.mjs test/radar.test.mjs test/funding-radar.test.mjs test/conversion-operator.test.mjs test/conversion-queue.test.mjs test/conversion-execute.test.mjs test/economic-triage.test.mjs test/routes.test.mjs",
+    "test:core": "node --test test/core.test.mjs test/conversion.test.mjs test/radar.test.mjs test/funding-radar.test.mjs test/conversion-operator.test.mjs test/conversion-queue.test.mjs test/conversion-execute.test.mjs test/economic-triage.test.mjs test/routes.test.mjs test/portal-manifests.test.mjs",
     "test:browser": "node --test test/browser.test.mjs",
     "test": "npm run test:core",
     "check": "node scripts/check-syntax.mjs && npm run test:core",
