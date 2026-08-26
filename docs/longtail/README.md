@@ -8,6 +8,17 @@ Before treating any stored `FIRE`, `VERIFY`, `HOLD`, or `KILL` label as authorit
 
 The audit introduces gate classes `G0`–`G6`, records live-source corrections discovered on 2026-08-26, and explicitly overrides stale campaign labels until the machine-readable records are reconciled. In particular, it distinguishes owner/admin friction from integration work, external-evidence gaps, hard blockers, and economic/optionality gates.
 
+## Research-asset tranche
+
+The current Invisible Ledger / CL / ECI / CL-ECI opportunity tranche is tracked separately from generic long-tail discovery so publication overlap, manuscript quality, and domain-specific fit remain explicit:
+
+- [`research-asset-gauntlet-2026-08-26.md`](research-asset-gauntlet-2026-08-26.md) — canonical FIRE/HOLD/VERIFY doctrine and source registry for IL, CL, ECI and CL-ECI.
+- [`research-asset-load-model-2026-08-26.md`](research-asset-load-model-2026-08-26.md) — marginal-work and sequencing model so near-term CFPs do not become simultaneous paper rewrites.
+- [`../../examples/radar/research-asset-candidates-2026-08-26.json`](../../examples/radar/research-asset-candidates-2026-08-26.json) — machine-readable candidate/gate records.
+- [`../../calendar/research-assets-gauntlet-2026-2027.ics`](../../calendar/research-assets-gauntlet-2026-2027.ics) — verified hard dates only; rolling and unverified-deadline routes are deliberately omitted.
+
+The existing [`policy-lab-gauntlet.md`](policy-lab-gauntlet.md) and Policy Lab calendar remain canonical for the already-frozen Global AI Finance packet, FC'27 primary manuscript lane, SSI, DPG and the Sep-3 NLnet gate. The research-asset tranche adds ECI- and IL-native routes without reopening those frozen decisions.
+
 ## Operating objective
 
 Primary empirical target:
@@ -40,6 +51,8 @@ Example:
 
 Each project x track pairing is a separate campaign candidate until cross-campaign restrictions are applied.
 
+For research assets, the same rule applies to contribution lanes rather than merely repositories: `Invisible Ledger -> tax grant`, `ECI -> sustainable-finance paper`, `CL -> protocol/authorization call`, and `CL-ECI -> integrated FinTech/research-software route` are separate campaigns only when their contribution and submission rules genuinely differ.
+
 ## Hard gates
 
 - `USER_ELIGIBILITY_REQUIRED` — enrollment/graduation/residence/nationality/etc. cannot be inferred.
@@ -59,6 +72,8 @@ These legacy hard-gate labels remain useful, but pre-firing triage should additi
 - `G4` external evidence
 - `G5` hard blocker / mismatch
 - `G6` economics / optionality
+
+Research-paper campaigns add one mandatory overlap check before `READY_TO_PREPARE`: publication/proceedings status, originality/exclusivity terms, active overlapping submissions, and whether the proposed route requires a genuinely distinct contribution or only new packaging.
 
 ## Default lifecycle
 
@@ -85,10 +100,14 @@ Every campaign should capture at minimum:
 - `../GAUNTLET_GATE_AUDIT_2026-08-26.md` — canonical audit overlay and gate taxonomy; consult before FIRE.
 - `opportunity-radar.md` — current researched opportunity families and project matches.
 - `firing-queue.md` — prioritized campaign queue and near-term deadlines.
+- `research-asset-gauntlet-2026-08-26.md` — IL / CL / ECI / CL-ECI conversion tranche.
+- `research-asset-load-model-2026-08-26.md` — workload and sequencing guard for the research tranche.
 - `preparation-packets.md` — canonical reusable dossier and per-project packet requirements.
 - `source-registry.md` — sources Blowback should poll continuously.
 - `outbound-playbook.md` — manufactured conversion campaigns for mature portfolio assets.
-- `longtail-campaigns.csv` — machine-friendly seed inventory for campaign ingestion.
+- `longtail-campaigns.csv` — machine-friendly seed inventory for generic campaign ingestion.
+- `../../examples/radar/research-asset-candidates-2026-08-26.json` — structured research-asset candidate records.
+- `../../calendar/research-assets-gauntlet-2026-2027.ics` — research-asset hard-date calendar.
 
 ## Portfolio scope
 
@@ -96,7 +115,10 @@ Active assets only:
 
 - Cite-Agent
 - YZU / Research Drive
-- Policy Lab
+- Policy Lab / CL-ECI
+- Invisible Ledger
+- CL architecture lane
+- ECI energy-finance lane
 - Nocturnal Oversight
 - Hardware Splicer
 - Public-Good Control
@@ -105,5 +127,7 @@ Active assets only:
 - research papers / thesis line
 - Citation Engine
 - Gauntlet / Blowback as the conversion control layer
+
+CL and ECI are contribution lanes, not automatically separate deployable products or repositories. Use them independently only when a venue's native problem makes the narrower framing more credible than the integrated Policy Lab submission.
 
 Dormant repositories are excluded unless external evidence later justifies resurrection.
