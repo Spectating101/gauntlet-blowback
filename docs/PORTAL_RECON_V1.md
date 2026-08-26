@@ -70,6 +70,18 @@ If `auth_scope` is absent, Blowback derives a safe scope from the execution/reco
 
 Authentication state remains local under `.auth/` and must never be committed.
 
+## Private profile overlay
+
+The checked-in profile remains the non-sensitive canonical baseline. Portal-only personal data belongs in a local JSON/YAML file and is shallow-merged over that baseline when `BLOWBACK_PROFILE_FILE` is set.
+
+Example:
+
+```bash
+export BLOWBACK_PROFILE_FILE=/secure/path/profile.local.json
+```
+
+Use a `*.local.json` / `*.local.yaml` filename when the file lives inside the checkout; those patterns are ignored by Git. Passwords and browser cookies do not belong in the profile file: passwords remain human/account-manager input and browser state remains under `.auth/`.
+
 ## Execution readiness
 
 Portal readiness is separate from strategic campaign readiness:
