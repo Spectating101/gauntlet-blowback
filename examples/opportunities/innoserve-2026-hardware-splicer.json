@@ -1,0 +1,32 @@
+{
+  "id": "innoserve-2026-hardware-splicer",
+  "name": "InnoServe 2026 — Hardware-Splicer",
+  "portal": "generic",
+  "entry_url": "https://innoserve.tca.org.tw/Rules/Detail?category=College",
+  "deadline": "2026-10-05T16:00:00+08:00",
+  "mode": "inspect",
+  "direct_control": true,
+  "profile": "../profiles/christ.json",
+  "project": "../projects/hardware-splicer.json",
+  "packet_source": "https://github.com/Spectating101/hardware-splicer/blob/agent/submission-package-2026q3/docs/external_assessment/submissions/INNOSERVE_2026_SYSTEM_OVERVIEW.md",
+  "fields": {
+    "project_name": "Hardware-Splicer: Evidence-Constrained Agentic Engineering for Semiconductor Test and Validation Support Hardware",
+    "category": "ADIAI — Industrial AI Innovation",
+    "project_summary": "$project.description",
+    "participant_name": "$profile.name",
+    "affiliation": "$profile.affiliation",
+    "repo_url": "$project.repo_url",
+    "limitations": "$project.limitations"
+  },
+  "field_map": {
+    "project_name": {"label": "Project name"},
+    "category": {"label": "Category"},
+    "project_summary": {"label": "System overview"},
+    "participant_name": {"label": "Student name"},
+    "affiliation": {"label": "School"},
+    "repo_url": {"label": "Repository"},
+    "limitations": {"label": "Limitations"}
+  },
+  "uploads": [],
+  "human_required": ["login", "eligibility_attestation", "advisor_confirmation", "originality_attestation", "terms_acceptance", "final_submit"]
+}

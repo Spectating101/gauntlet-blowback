@@ -1,0 +1,11 @@
+{
+  "id": "hardware-splicer",
+  "name": "Hardware-Splicer",
+  "repo_url": "https://github.com/Spectating101/hardware-splicer",
+  "pitch_50": "Hardware-Splicer lets general-purpose AI agents perform bounded hardware-engineering work while deterministic constraints, provenance-bearing evidence, exact revision state, and scoped human authority prevent model confidence from silently becoming physical truth.",
+  "description": "Hardware-Splicer is model-independent infrastructure for auditable agentic hardware engineering. A general-purpose agent can reason, inspect evidence, propose engineering changes, and operate the canonical engineering backend through MCP/API, while deterministic constraints, project/revision state, provenance-bearing evidence, physical-proof records, and scoped human authorization remain independently authoritative. The current external-proof checkpoint validates a frozen ten-case adversarial SPI-flash corpus, real MCP stdio and Streamable HTTP clients, stateful canonical project write/read/delete, 193 canonical backend operations, and an external-agent trace/replay harness that cannot independently grant physical authority. The primary bounded application is semiconductor test and validation support hardware such as adapter boards, carrier boards, fixtures, and lab/NPI support hardware.",
+  "limitations": "Live external-model execution on the unchanged ten-case corpus, fresh revision-bound SPI physical correctness, independent human-operator completion, industrial economics, and production readiness are not currently claimed. Software/MCP verification is not physical proof. Hardware-Splicer does not claim universal hardware correctness, zero hallucination, autonomous certification, or replacement of a qualified hardware engineer.",
+  "submission_package": "https://github.com/Spectating101/hardware-splicer/tree/agent/submission-package-2026q3/docs/external_assessment",
+  "deck_source": "https://github.com/Spectating101/hardware-splicer/blob/agent/submission-package-2026q3/docs/external_assessment/MASTER_DECK_12_SLIDES.md",
+  "demo_source": "https://github.com/Spectating101/hardware-splicer/blob/agent/submission-package-2026q3/docs/external_assessment/demos/DEMO_3_MINUTES.md"
+}

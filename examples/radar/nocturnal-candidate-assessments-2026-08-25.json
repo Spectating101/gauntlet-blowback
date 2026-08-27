@@ -1,0 +1,134 @@
+{
+  "as_of": "2026-08-25",
+  "project_id": "nocturnal",
+  "doctrine": "Use the deterministic conversion policy. Small award size is not a blocker; failed or unresolved eligibility, external dependencies, hard blockers, missing evidence, upfront spend, low fit, or high marginal work remain blockers.",
+  "assessments": [
+    {
+      "id": "nlnet-2026-sep-reopen--nocturnal",
+      "source_candidate_id": "nlnet-2026-sep-reopen",
+      "type": "grant",
+      "cost_tag": "$0",
+      "eligibility": {
+        "state": "UNKNOWN",
+        "basis": "NLnet calls reopen 2026-09-03; the exact live sub-call and any call-specific European-dimension or other hard eligibility rules must be checked before READY."
+      },
+      "direct_control": true,
+      "hard_blockers": [],
+      "fit": {
+        "state": "HIGH",
+        "basis": "Nocturnal can be presented as a finite open matter-history infrastructure tranche: versioned schema, conformance tests, interoperability, reproducible self-hosting, security/accessibility hardening, and open release tooling."
+      },
+      "marginal_work": {
+        "state": "LOW",
+        "basis": "The canonical Nocturnal firing packet and Restack preparation pack already contain the core narrative, milestones, non-claims, and evidence boundary."
+      },
+      "required_evidence": [
+        "nocturnal-fire-packet",
+        "nocturnal-evidence-packet",
+        "live-call-specific-guide"
+      ],
+      "available_evidence": [
+        "nocturnal-fire-packet",
+        "nocturnal-evidence-packet"
+      ],
+      "expected_decision": "HOLD",
+      "re_evaluate_when": "2026-09-03 live calls and call-specific applicant guides are available",
+      "source": "https://nlnet.nl/propose/"
+    },
+    {
+      "id": "twnic-community-grants-2026--nocturnal",
+      "source_candidate_id": "twnic-community-grants-2026",
+      "type": "grant",
+      "cost_tag": "$0",
+      "eligibility": {
+        "state": "UNKNOWN",
+        "basis": "The programme requires a legally registered domestic or foreign entity. No eligible host/applicant is currently attached to Nocturnal."
+      },
+      "direct_control": false,
+      "hard_blockers": [
+        "registered applicant/host absent",
+        "bounded Taiwan pilot and responsible publication authority absent"
+      ],
+      "fit": {
+        "state": "MEDIUM",
+        "basis": "A nonpartisan Taiwan public-information resilience pilot could fit Internet Technology / resilient network objectives, but the present standalone project cannot satisfy the institutional execution model truthfully."
+      },
+      "marginal_work": {
+        "state": "MEDIUM",
+        "basis": "Application prose is prepared, but a real host, budget, corpus, governance, legal/source-rights path, and institutional documents cannot be automated into existence."
+      },
+      "required_evidence": [
+        "eligible-registered-host",
+        "bounded-taiwan-pilot",
+        "responsible-steward",
+        "institutional-budget"
+      ],
+      "available_evidence": [],
+      "expected_decision": "HOLD",
+      "re_evaluate_when": "a legitimate registered host independently exists and wants a bounded Taiwan pilot",
+      "source": "https://twgrants.tw/en/announcement.html"
+    },
+    {
+      "id": "github-sponsors--nocturnal",
+      "source_candidate_id": "github-sponsors",
+      "type": "sponsorship",
+      "cost_tag": "$0",
+      "eligibility": {
+        "state": "UNKNOWN",
+        "basis": "GitHub Sponsors requires the sponsored developer to live in a supported region. Current public documentation lists Indonesia but not Taiwan; actual account/residence eligibility must be verified truthfully in GitHub onboarding."
+      },
+      "direct_control": true,
+      "hard_blockers": [
+        "Nocturnal repository is currently private and therefore is not yet a public open-source sponsorship surface"
+      ],
+      "fit": {
+        "state": "MEDIUM",
+        "basis": "Maintainer sponsorship is structurally compatible with an open public-good project, but a sponsor button does not create sponsor demand and is weak before public release/external use."
+      },
+      "marginal_work": {
+        "state": "LOW",
+        "basis": "If eligibility and public release clear, profile/tier setup is bounded clerical work and fits Blowback's low-cost doctrine."
+      },
+      "required_evidence": [
+        "supported-recipient-region",
+        "public-open-source-nocturnal"
+      ],
+      "available_evidence": [],
+      "expected_decision": "HOLD",
+      "re_evaluate_when": "GitHub onboarding confirms eligible recipient status and Nocturnal is genuinely public/open source",
+      "source": "https://docs.github.com/en/sponsors/receiving-sponsorships-through-github-sponsors/about-github-sponsors-for-open-source-contributors"
+    },
+    {
+      "id": "open-source-collective-fiscal-host--nocturnal",
+      "source_candidate_id": "open-source-collective-fiscal-host",
+      "type": "sponsorship",
+      "cost_tag": "$POST",
+      "eligibility": {
+        "state": "FAIL",
+        "basis": "Open Source Collective requires open-source software with a recognized license and an organizational repository rather than a personal repository. Nocturnal is currently private under Spectating101/nocturnal-oversight."
+      },
+      "direct_control": true,
+      "hard_blockers": [
+        "repository is private",
+        "repository is under a personal account rather than an organization"
+      ],
+      "fit": {
+        "state": "MEDIUM",
+        "basis": "Fiscal hosting could later be useful for grants/donations without creating a legal entity, but OSC itself notes that the structure may be unnecessary for solo projects with little funding flow."
+      },
+      "marginal_work": {
+        "state": "LOW",
+        "basis": "The application itself is small; the real work is satisfying open-release/governance prerequisites, which should only be done when independently useful."
+      },
+      "required_evidence": [
+        "public-open-source-nocturnal",
+        "organizational-repository",
+        "real-fiscal-hosting-need"
+      ],
+      "available_evidence": [],
+      "expected_decision": "REJECT",
+      "re_evaluate_when": "Nocturnal is public under an organizational repository and has a genuine grant/donation/payment flow that benefits from fiscal hosting",
+      "source": "https://opencollective.com/opensource/apply/intro"
+    }
+  ]
+}
