@@ -9,6 +9,7 @@ const DEFAULTS = {
   longtail: path.join(ROOT, 'docs/longtail/longtail-campaigns.csv'),
   postgrad: path.join(ROOT, 'docs/postgrad/postgrad-market.csv'),
   supplement: path.join(ROOT, 'data/gauntlet-master-supplement.json'),
+  facultyPulls: path.join(ROOT, 'data/faculty-pull-routes.json'),
   outputCsv: path.join(ROOT, 'docs/gauntlet-master.csv'),
   outputJson: path.join(ROOT, 'docs/gauntlet-master.json'),
 };
@@ -144,14 +145,22 @@ function applyOverride(record, override) {
   return updated;
 }
 
-export function buildMasterRegistry({ longtailPath = DEFAULTS.longtail, postgradPath = DEFAULTS.postgrad, supplementPath = DEFAULTS.supplement } = {}) {
+export function buildMasterRegistry({ longtailPath = DEFAULTS.longtail, postgradPath = DEFAULTS.postgrad, supplementPath = DEFAULTS.supplement, facultyPullsPath = DEFAULTS.facultyPulls } = {}) {
   const longtail = parseCsv(fs.readFileSync(longtailPath, 'utf8')).map(normalizeLongtail);
   const postgrad = parseCsv(fs.readFileSync(postgradPath, 'utf8')).map(normalizePostgrad);
   const supplement = JSON.parse(fs.readFileSync(supplementPath, 'utf8'));
+  const facultyPulls = JSON.parse(fs.readFileSync(facultyPullsPath, 'utf8'));
 
   const records = new Map();
   for (const record of [...longtail, ...postgrad]) {
     if (records.has(record.id)) throw new Error(`duplicate source route id: ${record.id}`);
+    records.set(record.id, record);
+  }
+
+  for (const row of facultyPulls.routes ?? []) {
+    const record = normalizeSupplement(row);
+    if (!record.id) throw new Error('faculty-pull route missing id');
+    if (records.has(record.id)) throw new Error(`faculty-pull route collides with current source id: ${record.id}`);
     records.set(record.id, record);
   }
 
@@ -194,7 +203,7 @@ export function writeMasterRegistry(options = {}) {
   const outputJson = options.outputJson ?? DEFAULTS.outputJson;
   const payload = {
     schema: 'blowback.gauntlet_master.v1',
-    source_snapshot: '2026-08-26',
+    source_snapshot: '2026-08-27',
     summary: summarizeMasterRegistry(records),
     records,
   };
