@@ -6,7 +6,7 @@ import { resolveBundle } from './core/resolve.mjs';
 import { buildPlan } from './core/plan.mjs';
 
 function usage() {
-  console.log(`Blowback v0\n\nCommands:\n  next\n  mission <route-id>\n  checkpoint <checkpoint.json>\n  validate <opportunity>\n  plan <opportunity>\n  run <opportunity> [--persist-auth]\n\n\`next\` emits the highest-priority unpaused Codex+Chrome browser mission.\n\`mission\` emits a specific route, including its local resume checkpoint.\nBlowback never performs final submission.`);
+  console.log(`Blowback v0\n\nCommands:\n  next\n  mission <route-id>\n  checkpoint <checkpoint.json>\n  validate <opportunity>\n  plan <opportunity>\n  recon <opportunity> [--stage=source|registration|submission] [--persist-auth]\n  run <opportunity> [--persist-auth]\n\n\`next\` emits the highest-priority unpaused Codex+Chrome browser mission.\n\`mission\` emits a specific route, including its local resume checkpoint.\nRecon is observation-only and never promotes a route to prepare. Blowback never performs final submission.`);
 }
 
 const [command, filePath, ...rest] = process.argv.slice(2);
@@ -54,6 +54,18 @@ if (command === 'plan') {
   if (!validation.ok) { console.error(JSON.stringify(validation, null, 2)); process.exit(1); }
   const bundle = await resolveBundle(opportunity);
   console.log(JSON.stringify(buildPlan(bundle), null, 2));
+  process.exit(0);
+}
+
+if (command === 'recon') {
+  const { reconOpportunity } = await import('./commands/recon.mjs');
+  const stageArg = rest.find((arg) => arg.startsWith('--stage='));
+  const stage = stageArg ? stageArg.slice('--stage='.length) : null;
+  const result = await reconOpportunity(filePath, {
+    persistAuth: rest.includes('--persist-auth'),
+    stage
+  });
+  console.log(JSON.stringify(result, null, 2));
   process.exit(0);
 }
 

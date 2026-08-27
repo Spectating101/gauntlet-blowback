@@ -5,10 +5,19 @@ function getByPath(obj, dotted) {
   return dotted.split('.').reduce((value, key) => value?.[key], obj);
 }
 
+async function loadProfile(opportunity) {
+  const publicProfilePath = path.resolve(opportunity.__dir, opportunity.profile);
+  const publicProfile = await loadStructured(publicProfilePath);
+  const privateOverride = process.env.BLOWBACK_PROFILE_FILE;
+  if (!privateOverride) return publicProfile;
+
+  const privateProfile = await loadStructured(path.resolve(privateOverride));
+  return { ...publicProfile, ...privateProfile };
+}
+
 export async function resolveBundle(opportunity) {
-  const profilePath = path.resolve(opportunity.__dir, opportunity.profile);
   const projectPath = path.resolve(opportunity.__dir, opportunity.project);
-  const profile = await loadStructured(profilePath);
+  const profile = await loadProfile(opportunity);
   const project = await loadStructured(projectPath);
   const context = { opportunity, profile, project };
 

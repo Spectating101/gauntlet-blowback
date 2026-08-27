@@ -2,31 +2,63 @@
   "id": "innoserve-2026-hardware-splicer",
   "name": "InnoServe 2026 — Hardware-Splicer",
   "portal": "generic",
-  "entry_url": "https://innoserve.tca.org.tw/Rules/Detail?category=College",
+  "portal_family": "innoserve",
+  "auth_scope": "innoserve.tca.org.tw",
+  "source_url": "https://innoserve.tca.org.tw/Rules/Detail?category=College",
+  "recon_stage": "source",
   "deadline": "2026-10-05T16:00:00+08:00",
   "mode": "inspect",
+  "execution_state": "PORTAL_RECON_REQUIRED",
   "direct_control": true,
   "profile": "../profiles/christ.json",
   "project": "../projects/hardware-splicer.json",
-  "packet_source": "https://github.com/Spectating101/hardware-splicer/blob/agent/submission-package-2026q3/docs/external_assessment/submissions/INNOSERVE_2026_SYSTEM_OVERVIEW.md",
-  "fields": {
-    "project_name": "Hardware-Splicer: Evidence-Constrained Agentic Engineering for Semiconductor Test and Validation Support Hardware",
-    "category": "ADIAI — Industrial AI Innovation",
-    "project_summary": "$project.description",
-    "participant_name": "$profile.name",
-    "affiliation": "$profile.affiliation",
-    "repo_url": "$project.repo_url",
-    "limitations": "$project.limitations"
-  },
-  "field_map": {
-    "project_name": {"label": "Project name"},
-    "category": {"label": "Category"},
-    "project_summary": {"label": "System overview"},
-    "participant_name": {"label": "Student name"},
-    "affiliation": {"label": "School"},
-    "repo_url": {"label": "Repository"},
-    "limitations": {"label": "Limitations"}
-  },
+  "fields": {},
+  "field_map": {},
   "uploads": [],
+  "target_category": "ADIAI — Industrial AI Innovation",
+  "packet_requirements": [
+    {
+      "id": "system_overview",
+      "description": "System overview in Word format, BiauKai 14pt, no more than 5 pages, maximum 4 MB.",
+      "status": "PACKET_SOURCE_READY",
+      "canonical_ref": "https://github.com/Spectating101/hardware-splicer/blob/agent/submission-package-2026q3/docs/external_assessment/submissions/INNOSERVE_2026_SYSTEM_OVERVIEW.md"
+    },
+    {
+      "id": "signed_declaration_privacy_portrait",
+      "description": "Signed competition declaration plus personal-data notice and portrait consent form.",
+      "status": "HUMAN_REQUIRED"
+    },
+    {
+      "id": "student_status_evidence",
+      "description": "Student ID front/back; add enrollment certificate when department/registration status is not visible.",
+      "status": "PRIVATE_HUMAN_INPUT"
+    },
+    {
+      "id": "demo_video_url",
+      "description": "Three-minute project video uploaded to YouTube as unlisted; portal receives the URL.",
+      "status": "PACKET_REQUIRED"
+    },
+    {
+      "id": "team_photo",
+      "description": "Landscape 16:9 JPG, greater than 1280x720, no more than 2 MB.",
+      "status": "PRIVATE_PACKET_REQUIRED"
+    },
+    {
+      "id": "category_specific_files",
+      "description": "Additional files only when required by the selected category or special award.",
+      "status": "VERIFY_FOR_CATEGORY"
+    }
+  ],
+  "compliance_checks": [
+    "reviewed materials and video must not reveal school logo, school name, or adviser name",
+    "YouTube account name used for the submission must not reveal school identity",
+    "team/adviser requirements must be verified for the selected category before preparation"
+  ],
+  "route_evidence": {
+    "verified_at": "2026-08-26",
+    "source_and_packet_rules_verified": true,
+    "registration_endpoint_verified": false,
+    "form_fields_verified": false
+  },
   "human_required": ["login", "eligibility_attestation", "advisor_confirmation", "originality_attestation", "terms_acceptance", "final_submit"]
 }
