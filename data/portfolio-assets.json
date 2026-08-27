@@ -1,0 +1,167 @@
+{
+  "schema": "blowback.portfolio_asset_maturity.v1",
+  "as_of": "2026-08-27",
+  "doctrine": {
+    "asset_maturity_is_not_route_status": true,
+    "internal_validation_is_not_external_validation": true,
+    "deployment_is_not_external_validation": true,
+    "external_evidence_cannot_be_manufactured_by_internal_polish": true,
+    "unknowns_remain_unknown": true,
+    "notes": "This registry describes evidence maturity of portfolio assets. Gauntlet opportunity status, execution state, and G0-G6 gates remain separate authorities. A route may use multiple assets with different maturity and must not inherit a fabricated single maturity score."
+  },
+  "allowed_values": {
+    "implementation_stage": [
+      "unknown",
+      "concept",
+      "implemented",
+      "internally_validated"
+    ],
+    "external_evidence_stage": [
+      "unknown",
+      "none",
+      "limited",
+      "partner_validated",
+      "independently_replicated",
+      "adopted"
+    ],
+    "deployment_stage": [
+      "unknown",
+      "none",
+      "public_demo",
+      "shadow",
+      "internal_live",
+      "external_operational"
+    ],
+    "canonicalization_state": [
+      "unknown",
+      "canonical",
+      "release_branch_ahead",
+      "integration_in_progress",
+      "branch_archaeology_required",
+      "research_repair_required"
+    ]
+  },
+  "assets": [
+    {
+      "id": "cite-agent",
+      "name": "Cite-Agent",
+      "repo": "",
+      "implementation_stage": "implemented",
+      "external_evidence_stage": "unknown",
+      "deployment_stage": "unknown",
+      "canonicalization_state": "unknown",
+      "strongest_known_gap": "Current repository/deployment/external-use state has not yet been re-audited in this canonicalization pass.",
+      "evidence_basis": "Existing portfolio asset; intentionally conservative until current source state is re-audited."
+    },
+    {
+      "id": "research-drive",
+      "name": "YZU / Research Drive",
+      "repo": "Spectating101/research-drive-private",
+      "implementation_stage": "internally_validated",
+      "external_evidence_stage": "limited",
+      "deployment_stage": "internal_live",
+      "canonicalization_state": "canonical",
+      "strongest_known_gap": "External adoption/independent validation remains distinct from the known internal live deployment.",
+      "evidence_basis": "Canonical main reconciled 2026-08-27 to deployed backend lineage after Backend release proof and Private runtime contract passed; exact deployed ref remains separately pinned."
+    },
+    {
+      "id": "policy-lab",
+      "name": "Policy Lab / CL-ECI",
+      "repo": "Spectating101/solarpunk-coin",
+      "implementation_stage": "internally_validated",
+      "external_evidence_stage": "none",
+      "deployment_stage": "public_demo",
+      "canonicalization_state": "release_branch_ahead",
+      "strongest_known_gap": "External research/community adoption or independent replication is not established.",
+      "evidence_basis": "Executable research software with reproducibility gates and a public-data checkpoint; GAF portal-ready RC5 work remains on a small release branch ahead of main."
+    },
+    {
+      "id": "nocturnal-oversight",
+      "name": "Nocturnal Oversight",
+      "repo": "Spectating101/research-drive-private",
+      "implementation_stage": "implemented",
+      "external_evidence_stage": "none",
+      "deployment_stage": "none",
+      "canonicalization_state": "canonical",
+      "strongest_known_gap": "G4 external comprehension, partner, or pilot evidence.",
+      "evidence_basis": "Gauntlet gate audit classifies the next meaningful step as reality/external evidence rather than another feature sprint; subsystem shares the Research Drive repository."
+    },
+    {
+      "id": "hardware-splicer",
+      "name": "Hardware Splicer",
+      "repo": "Spectating101/hardware-splicer",
+      "implementation_stage": "internally_validated",
+      "external_evidence_stage": "limited",
+      "deployment_stage": "none",
+      "canonicalization_state": "branch_archaeology_required",
+      "strongest_known_gap": "Revision-bound physical/live unseen proof and design-partner validation remain G4.",
+      "evidence_basis": "Substantial alpha code and internal verification exist; limited zero-help usability evidence does not establish physical or third-party hardware validation."
+    },
+    {
+      "id": "public-good-control",
+      "name": "Public-Good Control",
+      "repo": "Spectating101/animal-charity",
+      "implementation_stage": "internally_validated",
+      "external_evidence_stage": "none",
+      "deployment_stage": "none",
+      "canonicalization_state": "canonical",
+      "strongest_known_gap": "Real operator / bounded coordination case remains G4.",
+      "evidence_basis": "Canonical main established 2026-08-27 after two independent development heads were integrated; GitHub Actions passed make verify and Docker build; no field outcome or partner adoption is claimed."
+    },
+    {
+      "id": "refinery-commons",
+      "name": "Refinery / Commons",
+      "repo": "",
+      "implementation_stage": "implemented",
+      "external_evidence_stage": "none",
+      "deployment_stage": "none",
+      "canonicalization_state": "unknown",
+      "strongest_known_gap": "External evidence-audit case / adoption remains G4; current repository authority still needs a dedicated canonicalization audit.",
+      "evidence_basis": "Gauntlet gate audit treats the missing step as external evidence rather than more internal polish; repository mapping is intentionally left unresolved here."
+    },
+    {
+      "id": "sharpe-terminus",
+      "name": "Sharpe Terminus",
+      "repo": "Spectating101/research-drive-private",
+      "implementation_stage": "implemented",
+      "external_evidence_stage": "none",
+      "deployment_stage": "none",
+      "canonicalization_state": "canonical",
+      "strongest_known_gap": "Genuine forward observations remain G4; subsystem/repository licensing and packaging should be audited separately before external release claims.",
+      "evidence_basis": "Quant subsystem is present in the canonical Research Drive repository; Gauntlet audit explicitly identifies forward evidence as the missing maturity gate."
+    },
+    {
+      "id": "research-papers",
+      "name": "Research papers / thesis line",
+      "repo": "Spectating101/solarpunk-portfolio-review",
+      "implementation_stage": "implemented",
+      "external_evidence_stage": "limited",
+      "deployment_stage": "none",
+      "canonicalization_state": "research_repair_required",
+      "strongest_known_gap": "Confirmed empirical/reproducibility defects must be repaired before portfolio-readiness claims are upgraded.",
+      "evidence_basis": "Manuscripts exist and Invisible Ledger has conference acceptance evidence, but the current audit records confirmed empirical errors and an ECI raw-source reproducibility gap."
+    },
+    {
+      "id": "citation-engine",
+      "name": "Citation Engine",
+      "repo": "Spectating101/citation-engine",
+      "implementation_stage": "internally_validated",
+      "external_evidence_stage": "none",
+      "deployment_stage": "none",
+      "canonicalization_state": "canonical",
+      "strongest_known_gap": "External adoption/community use and independent pressure-testing are not established.",
+      "evidence_basis": "Public reusable kernel with tests and internal cross-domain pressure testing; repository itself explicitly does not claim production-framework maturity."
+    },
+    {
+      "id": "gauntlet-blowback",
+      "name": "Gauntlet / Blowback",
+      "repo": "Spectating101/gauntlet-blowback",
+      "implementation_stage": "internally_validated",
+      "external_evidence_stage": "none",
+      "deployment_stage": "none",
+      "canonicalization_state": "integration_in_progress",
+      "strongest_known_gap": "Canonical default-branch publication is being reconciled from cumulative operator, registry, faculty, HS, and portal-recon lines.",
+      "evidence_basis": "Current consolidation branch contains the master registry, conversion operator, Codex mission operator, faculty-pull routes, and HS/Nocturnal route packages; portal-recon semantics remain a separate conflict boundary."
+    }
+  ]
+}
