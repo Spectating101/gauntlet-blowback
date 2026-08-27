@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head><title>Recipe Fixture</title></head>
+  <body>
+    <div id="step1">
+      <label>Project name <input name="project_name"></label>
+      <label>Password <input type="password" name="password"></label>
+      <label>Privacy agreement <input type="checkbox" name="privacy"></label>
+      <button type="button" id="next" onclick="document.getElementById('step1').hidden=true; document.getElementById('step2').hidden=false">Next</button>
+    </div>
+    <div id="step2" hidden>
+      <label>Description <textarea name="description"></textarea></label>
+      <label>Deck <input type="file" name="deck"></label>
+      <button type="button" id="submit" onclick="window.finalSubmitClicks=(window.finalSubmitClicks||0)+1">Submit</button>
+    </div>
+    <script>window.finalSubmitClicks = 0;</script>
+  </body>
+</html>

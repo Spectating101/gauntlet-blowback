@@ -1,0 +1,8 @@
+{
+  "id": "public-good-control",
+  "name": "Public-Good Control",
+  "repo_url": "https://github.com/Spectating101/animal-charity",
+  "pitch_50": "Evidence-governed decision-support infrastructure for preventive animal welfare and public-good resource routing, with explicit provenance, bounded authority, audit history, and human control over irreversible actions.",
+  "description": "Public-Good Control is a research and shadow-pilot system that lets software observe structured evidence, diagnose bounded welfare or resource-access problems, propose the smallest feasible intervention, preserve provenance and audit history, and stop before irreversible institutional authority. The animal-welfare domain is the primary public demonstration.",
+  "limitations": "No real welfare intervention, legal authority, or autonomous institutional decision is claimed."
+}

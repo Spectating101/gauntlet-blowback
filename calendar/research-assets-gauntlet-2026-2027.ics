@@ -1,0 +1,148 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Gauntlet Blowback//Research Assets 2026-2027//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:IL CL ECI CL-ECI Research Asset Gauntlet
+X-WR-TIMEZONE:Asia/Taipei
+BEGIN:VEVENT
+UID:eci-grasfi-submit-20260831@gauntlet-blowback
+DTSTAMP:20260826T141500Z
+DTSTART;VALUE=DATE:20260831
+DTEND;VALUE=DATE:20260901
+SUMMARY:[FIRE AFTER MANUSCRIPT GATE] ECI — GRASFI-Asia 2027
+DESCRIPTION:High-signal sustainable-finance route at SMU/SGFC/GRASFI. Fire only if standalone ECI is an original unpublished submission-ready paper without contorting CL-ECI. Preserve exact submitted artifact and receipt.
+STATUS:TENTATIVE
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:il-shihhsin-abstract-20260917@gauntlet-blowback
+DTSTAMP:20260826T141500Z
+DTSTART;VALUE=DATE:20260917
+DTEND;VALUE=DATE:20260918
+SUMMARY:[LOW-COST FIRE] Invisible Ledger — Shih Hsin Finance abstract
+DESCRIPTION:IL local presentation route. Official abstract deadline 17 Sep 2026. Registration requires follow-up confirmation with the department. Keep this as a presentation/feedback lane and avoid redundant publication conflict.
+STATUS:TENTATIVE
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:cl-eci-cht-submit-20260918@gauntlet-blowback
+DTSTAMP:20260826T141500Z
+DTSTART;TZID=Asia/Taipei:20260918T120000
+DTEND;TZID=Asia/Taipei:20260918T120500
+SUMMARY:[TEAM-GATED FIRE] CL-ECI / ECI — Chunghwa Telecom competition deadline
+DESCRIPTION:Official registration deadline 12:00 Taiwan. Do not prepare a final entry unless the team rule is truthfully satisfied, including at least one Taiwan-national member. No fake teammate recruitment. Product proposal and final submit remain human-gated.
+STATUS:TENTATIVE
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:il-shihhsin-notification-20260924@gauntlet-blowback
+DTSTAMP:20260826T141500Z
+DTSTART;VALUE=DATE:20260924
+DTEND;VALUE=DATE:20260925
+SUMMARY:[OUTCOME] Invisible Ledger — Shih Hsin Finance notification
+DESCRIPTION:Record accept/reject verdict and any attendance/full-paper requirements. Do not infer publication value beyond the actual organizer terms.
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:cl-eci-ntub-submit-20260928@gauntlet-blowback
+DTSTAMP:20260826T141500Z
+DTSTART;TZID=Asia/Taipei:20260928T235900
+DTEND;TZID=Asia/Taipei:20260929T000000
+SUMMARY:[VERIFY THEN FIRE] CL-ECI — NTUB FinTech competition
+DESCRIPTION:Official registration cutoff 23:59 Taiwan. Required packet includes registration data, declaration, proposal and student proof. Inspect the official rules for team/adviser constraints before READY_TO_PREPARE.
+STATUS:TENTATIVE
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:il-ftsid-submit-20260930@gauntlet-blowback
+DTSTAMP:20260826T141500Z
+DTSTART;VALUE=DATE:20260930
+DTEND;VALUE=DATE:20261001
+SUMMARY:[FIRE] Invisible Ledger — Asia University FTSID full paper
+DESCRIPTION:Official full-paper deadline. Double-blind PDF/Word via CMT. Accepted papers require at least one author to register and present. Use IL as the distinct paper lane; do not repurpose the CL-ECI FC manuscript.
+STATUS:TENTATIVE
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:cl-eci-ntub-finalist-20261012@gauntlet-blowback
+DTSTAMP:20260826T141500Z
+DTSTART;VALUE=DATE:20261012
+DTEND;VALUE=DATE:20261013
+SUMMARY:[OUTCOME] CL-ECI — NTUB FinTech finalist announcement
+DESCRIPTION:Record verdict and preserve external evidence. If selected, prepare presentation/poster without upgrading technical claims beyond the submitted project evidence.
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:cl-eci-cht-finalist-20261016@gauntlet-blowback
+DTSTAMP:20260826T141500Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261017
+SUMMARY:[OUTCOME] CL-ECI / ECI — Chunghwa Telecom finalist notification
+DESCRIPTION:If entered, record finalist verdict and inspect final demo/presentation obligations. Any team/travel/legal commitments remain human-controlled.
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:cl-eci-ntub-final-20261030@gauntlet-blowback
+DTSTAMP:20260826T141500Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+SUMMARY:[FINAL IF QUALIFIED] CL-ECI — NTUB FinTech finals
+DESCRIPTION:Finals at National Taipei University of Business. Only active if the entry reaches the final round.
+STATUS:TENTATIVE
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:il-shihhsin-fullpaper-20261031@gauntlet-blowback
+DTSTAMP:20260826T141500Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:[IF ACCEPTED] Invisible Ledger — Shih Hsin Finance full paper
+DESCRIPTION:Full-paper deadline following abstract acceptance. Do not invest marginal work before the abstract verdict unless it also improves the canonical IL manuscript.
+STATUS:TENTATIVE
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:cl-eci-cht-final-20261031@gauntlet-blowback
+DTSTAMP:20260826T141500Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:[FINAL IF QUALIFIED] CL-ECI / ECI — Chunghwa Telecom finals
+DESCRIPTION:Tentative final at Chunghwa Telecom Banqiao Academy per official rules. Only active if finalist notification is positive.
+STATUS:TENTATIVE
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:il-shihhsin-conference-20261107@gauntlet-blowback
+DTSTAMP:20260826T141500Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261108
+SUMMARY:[PRESENT IF ACCEPTED] Invisible Ledger — Shih Hsin Finance conference
+DESCRIPTION:Taipei presentation route. Record attendance/presentation as external-validation evidence, not as peer-reviewed publication unless the organizer explicitly establishes that status.
+STATUS:TENTATIVE
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:cl-eci-nlnet-deadline-20261103@gauntlet-blowback
+DTSTAMP:20260826T141500Z
+DTSTART;TZID=Europe/Amsterdam:20261103T120000
+DTEND;TZID=Europe/Amsterdam:20261103T120500
+SUMMARY:[IF SEP-3 GATE PASSES] CL-ECI — NLnet call deadline
+DESCRIPTION:NLnet states 3 Nov 2026 12:00 CEST. This is not a FIRE event by itself: read the Sep-3 live call-specific guides first and keep HOLD if scope/geography/open-standards criteria fail. GenAI disclosure requirements must be followed.
+STATUS:TENTATIVE
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:il-global-tax-symposium-submit-20270201@gauntlet-blowback
+DTSTAMP:20260826T141500Z
+DTSTART;VALUE=DATE:20270201
+DTEND;VALUE=DATE:20270202
+SUMMARY:[FIRE LATER] Invisible Ledger — 2027 Global Tax Symposium
+DESCRIPTION:Long-horizon prestige tax lane. Submit only a full-quality draft with international/comparative framing. Preserve travel economics as an acceptance-stage gate rather than a pre-submission blocker.
+STATUS:TENTATIVE
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

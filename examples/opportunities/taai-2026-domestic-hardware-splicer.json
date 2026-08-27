@@ -1,0 +1,30 @@
+{
+  "id": "taai-2026-domestic-hardware-splicer",
+  "name": "TAAI 2026 — Domestic Track — Hardware-Splicer",
+  "portal": "generic",
+  "entry_url": "https://taai2026.github.io/",
+  "deadline": "2026-09-14T23:59:00-12:00",
+  "mode": "inspect",
+  "direct_control": true,
+  "profile": "../profiles/christ.json",
+  "project": "../projects/hardware-splicer.json",
+  "packet_source": "https://github.com/Spectating101/hardware-splicer/blob/agent/submission-package-2026q3/docs/external_assessment/submissions/TAAI_2026_EXTENDED_ABSTRACT.md",
+  "fields": {
+    "paper_title": "Separating Model Reasoning from Physical Authority in Agentic Hardware Engineering",
+    "author_name": "$profile.name",
+    "affiliation": "$profile.affiliation",
+    "project_summary": "$project.description",
+    "repo_url": "$project.repo_url",
+    "limitations": "$project.limitations"
+  },
+  "field_map": {
+    "paper_title": {"label": "Title"},
+    "author_name": {"label": "Author"},
+    "affiliation": {"label": "Affiliation"},
+    "project_summary": {"label": "Abstract"},
+    "repo_url": {"label": "Repository"},
+    "limitations": {"label": "Limitations"}
+  },
+  "uploads": [],
+  "human_required": ["login", "authorship_attestation", "originality_attestation", "terms_acceptance", "payment", "final_submit"]
+}

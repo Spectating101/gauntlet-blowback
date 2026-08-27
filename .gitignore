@@ -1,0 +1,14 @@
+node_modules/
+.auth/
+.blowback/
+artifacts/
+submission-records/
+playwright-report/
+test-results/
+.env
+.env.*
+!.env.example
+*.local.yaml
+*.local.yml
+*.local.json
+.DS_Store

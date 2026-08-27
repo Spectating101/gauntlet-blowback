@@ -1,0 +1,67 @@
+{
+  "projects": [
+    {
+      "id": "hardware-splicer",
+      "name": "Hardware-Splicer",
+      "opportunity_types": ["grant", "sponsorship", "fellowship", "institutional_pilot"],
+      "discovery_queries": ["semiconductor AI funding", "hardware validation grant", "advanced manufacturing AI funding", "physical AI research grant", "engineering research sponsorship"],
+      "keywords": ["semiconductor", "hardware validation", "advanced manufacturing", "physical AI", "electronics testing"]
+    },
+    {
+      "id": "nocturnal",
+      "name": "Nocturnal",
+      "opportunity_types": ["grant", "sponsorship", "fellowship", "institutional_pilot"],
+      "discovery_queries": ["journalism innovation grant", "information integrity funding", "public interest technology grant", "civic technology funding", "newsroom technology sponsorship"],
+      "keywords": ["journalism", "information integrity", "public interest technology", "civic technology", "press freedom", "accountability"]
+    },
+    {
+      "id": "public-good-control",
+      "name": "Public-Good Control",
+      "opportunity_types": ["grant", "sponsorship", "fellowship", "institutional_pilot"],
+      "discovery_queries": ["humanitarian technology grant", "disaster risk reduction innovation funding", "digital public infrastructure grant", "public nutrition innovation funding", "animal welfare technology grant"],
+      "keywords": ["humanitarian technology", "disaster risk reduction", "emergency management", "digital public infrastructure", "public nutrition", "animal welfare", "resilience"]
+    },
+    {
+      "id": "cite-agent",
+      "name": "Cite-Agent",
+      "opportunity_types": ["grant", "sponsorship", "fellowship", "institutional_pilot"],
+      "discovery_queries": ["research infrastructure AI funding", "scholarly communication grant", "scientific reproducibility funding", "research software grant", "research tool sponsorship"],
+      "keywords": ["research infrastructure", "scholarly communication", "reproducibility", "research software", "open science"]
+    },
+    {
+      "id": "yzu-cluster",
+      "name": "YZU-Cluster",
+      "opportunity_types": ["grant", "sponsorship", "institutional_pilot"],
+      "discovery_queries": ["research computing funding", "cyberinfrastructure grant", "AI infrastructure funding", "open science infrastructure", "data infrastructure sponsorship"],
+      "keywords": ["research computing", "cyberinfrastructure", "research infrastructure", "AI infrastructure", "open science", "data infrastructure"]
+    },
+    {
+      "id": "refinery",
+      "name": "Refinery / Generative Software Commons",
+      "opportunity_types": ["grant", "sponsorship", "fellowship", "institutional_pilot"],
+      "discovery_queries": ["open source infrastructure funding", "digital commons grant", "software supply chain funding", "software provenance grant", "research software infrastructure", "open source maintainer sponsorship"],
+      "keywords": ["open source", "digital commons", "software commons", "software supply chain", "software provenance", "attestation", "research software", "developer infrastructure", "open source security"]
+    },
+    {
+      "id": "policy-lab",
+      "name": "Policy Lab",
+      "opportunity_types": ["grant", "sponsorship", "fellowship", "institutional_pilot"],
+      "discovery_queries": ["energy governance research grant", "climate policy technology funding", "public policy technology grant", "infrastructure verification funding", "evidence assurance grant"],
+      "keywords": ["energy governance", "climate policy", "public policy", "verification", "evidence assurance", "digital public infrastructure"]
+    },
+    {
+      "id": "sharpe-terminus",
+      "name": "Sharpe-Terminus",
+      "opportunity_types": ["grant", "sponsorship", "fellowship", "institutional_pilot"],
+      "discovery_queries": ["financial technology research funding", "financial AI grant", "computational finance fellowship", "fintech research sponsorship"],
+      "keywords": ["financial technology", "fintech", "computational finance", "market risk", "financial data science"]
+    },
+    {
+      "id": "invisible-ledger",
+      "name": "Invisible Ledger",
+      "opportunity_types": ["grant", "sponsorship", "fellowship"],
+      "discovery_queries": ["digital assets research grant", "financial economics fellowship", "stablecoin research grant", "monetary economics research funding"],
+      "keywords": ["digital assets", "financial economics", "stablecoin", "monetary economics", "digital finance"]
+    }
+  ]
+}

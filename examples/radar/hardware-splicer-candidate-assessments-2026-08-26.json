@@ -1,0 +1,81 @@
+{
+  "as_of": "2026-08-26",
+  "project_id": "hardware-splicer",
+  "policy": "solo-first; do not recruit peer teammates; adviser-only dependencies may remain HOLD/FIRE_FACULTY",
+  "candidates": [
+    {
+      "id": "taia-ai-creative-design-2026-graduate",
+      "type": "competition",
+      "state": "FIRE",
+      "title": "TAIA 2026 AI Creative Design Competition — Graduate Track",
+      "deadline": "2026-08-31T23:59:00+08:00",
+      "eligibility": "Graduate track permits 1–3 participants; solo is explicitly compatible.",
+      "fit": "Advanced AI Agent architecture, research/industry deployment, and Smart Manufacturing align directly with Hardware-Splicer.",
+      "marginal_work": "Render the prepared <=15-slide Idea deck, insert real screenshots/media, complete identity fields, upload, human final-submit gate.",
+      "blockers": [],
+      "source": "https://www.aiatw.org/aida2026-info/"
+    },
+    {
+      "id": "wanrun-innovation-2026-college",
+      "type": "competition",
+      "state": "READY_VERIFY_SINGLE_MEMBER_FORM",
+      "title": "WanRun 2026 Innovation & Creativity Competition — College Division",
+      "deadline": "2026-08-31T23:59:00+08:00",
+      "eligibility": "University students; public notice states teams up to five but does not expose a minimum.",
+      "fit": "AI Smart Systems and Engineering Applications are direct routes; prize upside is high relative to package reuse cost.",
+      "marginal_work": "Use prepared WanRun application copy/master deck and verify that the live form accepts one student.",
+      "blockers": ["single_member_form_acceptance"],
+      "kill_rule": "If the live form requires more than one student, kill the route rather than recruit peers.",
+      "source": "https://iaa.ncku.edu.tw/p/405-1104-302028%2Cc83.php?Lang=zh-tw"
+    },
+    {
+      "id": "tas-2026-trustworthy-agentic-systems",
+      "type": "conference",
+      "state": "HOLD_LOW_MARGINAL_WORK_ONLY",
+      "title": "AAAI Fall Symposium — Trustworthy Agentic Systems 2026",
+      "deadline": "2026-09-01T23:59:00-12:00",
+      "eligibility": "Ordinary authorship; no student-team formation required.",
+      "fit": "Exceptional conceptual fit: safe tool use, constraint enforcement, permissions, provenance, auditing, assurance, agent evaluation, and human oversight.",
+      "marginal_work": "Derive a 2–4 page short paper or 1-page abstract from the prepared package/TAAI source.",
+      "blockers": ["in_person_arlington_attendance_if_archival", "travel_cost"],
+      "kill_rule": "Do not divert a major writing cycle or accept an archival route if required travel is irrational.",
+      "source": "https://tas2026.github.io/call-for-papers/"
+    },
+    {
+      "id": "taai-2026-domestic",
+      "type": "conference",
+      "state": "FIRE",
+      "title": "TAAI 2026 — Domestic Track",
+      "deadline": "2026-09-14T23:59:00-12:00",
+      "eligibility": "Academic authorship can be single-author; no student-team formation required.",
+      "fit": "2026 theme explicitly combines Agentic AI and Physical AI; Hardware-Splicer directly tests reasoning-versus-physical-authority separation.",
+      "marginal_work": "Use prepared extended abstract; upgrade only if live/physical evidence closes before deadline.",
+      "blockers": [],
+      "source": "https://taai2026.github.io/"
+    },
+    {
+      "id": "innoserve-2026-college",
+      "type": "competition",
+      "state": "FIRE_FACULTY",
+      "title": "InnoServe 2026 — College Category",
+      "deadline": "2026-10-05T16:00:00+08:00",
+      "eligibility": "Current university students including graduate students; rules specify up to eight students and require 1–2 school advisers.",
+      "fit": "Industrial AI / AI Tool / Information Application routes fit the semiconductor validation-support and trustworthy-agent story.",
+      "marginal_work": "Use prepared system overview and canonical 3-minute video; only adviser identity/signoff remains structurally external.",
+      "blockers": ["school_adviser_confirmation"],
+      "source": "https://innoserve.tca.org.tw/Rules/Detail?category=College"
+    },
+    {
+      "id": "date-2027-late-breaking-results",
+      "type": "conference",
+      "state": "FIRE_LATER",
+      "title": "DATE 2027 — Late Breaking Results",
+      "deadline": "2026-11-29T23:59:00-12:00",
+      "eligibility": "Ordinary academic authorship; no student-team formation required.",
+      "fit": "Electronic-system design/test, AI-native design automation, embedded/cyberphysical engineering, and verification/safety overlap strongly.",
+      "marginal_work": "Use prepared two-page LBR source once at least one real live-agent, physical, independent-operator, or cross-model result exists.",
+      "blockers": ["substantive_external_proof_result_preferred"],
+      "source": "https://date27.date-conference.com/call-for-papers"
+    }
+  ]
+}

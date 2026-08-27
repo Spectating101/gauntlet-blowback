@@ -1,0 +1,28 @@
+{
+  "name": "gauntlet-blowback",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Local-first evidence-bounded conversion operator for portfolio opportunities and prepared external submissions.",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "blowback": "node src/cli.mjs",
+    "radar:grants": "node src/radar/run-grants.mjs examples/radar/portfolio-scope.json",
+    "conversion:demo": "node src/conversion/run-campaign.mjs examples/conversion/public-good-shadow-pilot.json",
+    "gauntlet:master": "node scripts/build-gauntlet-master.mjs",
+    "mission:next": "node src/cli.mjs next",
+    "validate": "node src/cli.mjs validate examples/opportunities/animalhack-2026.json",
+    "plan": "node src/cli.mjs plan examples/opportunities/animalhack-2026.json",
+    "recon": "node src/cli.mjs recon examples/opportunities/animalhack-2026.json",
+    "test:core": "node --test test/core.test.mjs test/conversion.test.mjs test/radar.test.mjs test/funding-radar.test.mjs test/conversion-operator.test.mjs test/conversion-queue.test.mjs test/conversion-execute.test.mjs test/economic-triage.test.mjs test/gauntlet-master.test.mjs test/asset-maturity.test.mjs test/mission-operator.test.mjs test/routes.test.mjs test/portal-manifests.test.mjs",
+    "test:browser": "node --test test/browser.test.mjs",
+    "test": "npm run test:core",
+    "check": "node scripts/check-syntax.mjs && npm run gauntlet:master && npm run test:core",
+    "install:browsers": "playwright install chromium"
+  },
+  "dependencies": {
+    "playwright": "1.62.1",
+    "yaml": "2.9.0"
+  },
+  "license": "MIT"
+}

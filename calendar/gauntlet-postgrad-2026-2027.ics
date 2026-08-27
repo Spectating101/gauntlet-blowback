@@ -1,0 +1,255 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Gauntlet Blowback//Postgrad Conversion//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Gauntlet Blowback — Conversion + Postgrad
+X-WR-TIMEZONE:Asia/Taipei
+BEGIN:VEVENT
+UID:agentrust-20260829@blowback
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20260829
+DTEND;VALUE=DATE:20260830
+SUMMARY:[FIRE IF FIT] AgenTrust Fellowship deadline
+DESCRIPTION:Citation Engine / Commons. Verify commitment economics and genuine standards fit before human-gated submission.
+END:VEVENT
+BEGIN:VEVENT
+UID:wanrun-20260831@blowback
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20260831
+DTEND;VALUE=DATE:20260901
+SUMMARY:[VERIFY/FIRE] Wanrun Graduate Research deadline
+DESCRIPTION:Hardware Splicer / research paper. Verify graduate-paper and prior-publication eligibility.
+END:VEVENT
+BEGIN:VEVENT
+UID:usn-ai-business-20260831@blowback
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20260831
+DTEND;VALUE=DATE:20260901
+SUMMARY:[FIRE] USN PhD — AI Business Model Innovation
+DESCRIPTION:Salaried Norway PhD. Strong interdisciplinary fit. Prepare research/application packet immediately.
+END:VEVENT
+BEGIN:VEVENT
+UID:usn-maritime-ai-20260831@blowback
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20260831
+DTEND;VALUE=DATE:20260901
+SUMMARY:[STRETCH FIRE] USN PhD — AI Industrial Maritime Solutions
+DESCRIPTION:Hardware Splicer / AI systems. Fire only if exact technical requirements clear.
+END:VEVENT
+BEGIN:VEVENT
+UID:usn-political-economy-20260831@blowback
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20260831
+DTEND;VALUE=DATE:20260901
+SUMMARY:[FIRE] USN PhD — Political Economy and Management
+DESCRIPTION:Finance / Policy Lab / empirical research route.
+END:VEVENT
+BEGIN:VEVENT
+UID:postgrad-job-kickoff-20260901@blowback
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20260901
+DTEND;VALUE=DATE:20260902
+SUMMARY:[POSTGRAD] Upper-tail employment campaign starts
+DESCRIPTION:Do not wait for graduation. Begin price discovery across quant/AI/research-engineering roles with Jan-2027 availability stated truthfully.
+END:VEVENT
+BEGIN:VEVENT
+UID:nycu-diligence-20260903@blowback
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20260903
+DTEND;VALUE=DATE:20260904
+RRULE:FREQ=WEEKLY;COUNT=4
+SUMMARY:[DUE DILIGENCE] NYCU IAIS commercial/IP terms
+DESCRIPTION:Seek written answers on pre-existing IP, founder/director status, founder compensation, consulting/pilot revenue, research-created improvements, teaching/admin load and advisor fit. Do not price UNKNOWN as positive.
+END:VEVENT
+BEGIN:VEVENT
+UID:fas-ai-policy-20260907@blowback
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20260907
+DTEND;VALUE=DATE:20260908
+SUMMARY:[FIRE IF FIT] FAS AI Safety Policy Fellowship deadline
+DESCRIPTION:Policy Lab / Citation Engine governance. Reject if thesis must be forced.
+END:VEVENT
+BEGIN:VEVENT
+UID:tudelft-business-software-20260908@blowback
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20260908
+DTEND;VALUE=DATE:20260909
+SUMMARY:[FIRE] TU Delft PhD — Business Impact from Construction Software
+DESCRIPTION:38h/week salaried PhD. Interdisciplinary technology/organization/finance fit.
+END:VEVENT
+BEGIN:VEVENT
+UID:vu-social-data-20260914@blowback
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20260914
+DTEND;VALUE=DATE:20260915
+SUMMARY:[FIRE] VU Amsterdam PhD — Social Data Science
+DESCRIPTION:Fully funded 4-year position. Nocturnal / Policy Lab / finance-data research fit. Low application burden.
+END:VEVENT
+BEGIN:VEVENT
+UID:vu-atlantis-20260915@blowback
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20260915
+DTEND;VALUE=DATE:20260916
+SUMMARY:[STRETCH FIRE] VU ATLANTIS — Competition Law & AI computational PhD
+DESCRIPTION:Computational track. Citation Engine / Policy Lab / evaluation fit; degree preference is a real stretch.
+END:VEVENT
+BEGIN:VEVENT
+UID:nhh-early-20260915@blowback
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20260915
+DTEND;VALUE=DATE:20260916
+SUMMARY:[FIRE] NHH 2027 PhD early round
+DESCRIPTION:Finance + Business/Management Science prioritized. Also hydrate Accounting/Auditing/Law, Economics and Strategy only where proposal fit is genuine. Master's need only be complete before start.
+END:VEVENT
+BEGIN:VEVENT
+UID:smartliving-20260918@blowback
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20260918
+DTEND;VALUE=DATE:20260919
+SUMMARY:[VERIFY/FIRE] Smart Living competition deadline
+DESCRIPTION:HS / Public-Good. Existing long-tail campaign; verify current category eligibility before submit.
+END:VEVENT
+BEGIN:VEVENT
+UID:awesome-climate-20260925@blowback
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20260925
+DTEND;VALUE=DATE:20260926
+SUMMARY:[FIRE IF FIT] Awesome Conservation & Climate microgrant
+DESCRIPTION:Public-Good / Policy Lab. US$1k; fire only for a concrete bounded action.
+END:VEVENT
+BEGIN:VEVENT
+UID:freeway-ai-20260930@blowback
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20260930
+DTEND;VALUE=DATE:20261001
+SUMMARY:[FIRE] Freeway AI challenge deadline
+DESCRIPTION:Policy Lab congestion pricing and/or HS bridge deterioration campaigns after exact rules verified.
+END:VEVENT
+BEGIN:VEVENT
+UID:innoserve-20261005@blowback
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20261005
+DTEND;VALUE=DATE:20261006
+SUMMARY:[FIRE AFTER GLOBAL GATE] InnoServe registration deadline
+DESCRIPTION:Solve project x track portfolio allocation centrally before submission. Candidate lanes include Cite/YZU/Citation Engine/Policy Lab/Nocturnal/HS.
+END:VEVENT
+BEGIN:VEVENT
+UID:iii-ai-register-20261011@blowback
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20261011
+DTEND;VALUE=DATE:20261012
+SUMMARY:[VERIFY/FIRE] III 智策AI registration deadline
+DESCRIPTION:Existing AI portfolio fit. Verify final eligibility and rules before human-gated registration.
+END:VEVENT
+BEGIN:VEVENT
+UID:usn-ai-audit-20261016@blowback
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261017
+SUMMARY:[HIGH PRIORITY FIRE] USN PhD — AI transformation of auditing
+DESCRIPTION:Finance + AI + governance unusually strong thematic match. Use September to build a targeted proposal and verify commercial/outside-work terms.
+END:VEVENT
+BEGIN:VEVENT
+UID:iii-ai-proposal-20261018@blowback
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20261018
+DTEND;VALUE=DATE:20261019
+SUMMARY:[FIRE] III 智策AI proposal deadline
+DESCRIPTION:Submit only existing-project evidence; do not trigger a new build merely for the contest.
+END:VEVENT
+BEGIN:VEVENT
+UID:industry-academia-20261022@blowback
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20261022
+DTEND;VALUE=DATE:20261023
+SUMMARY:[FIRE] National Industry–Academia Innovation competition deadline
+DESCRIPTION:HS / Cite / YZU / Citation Engine candidates. Dense prize tail; solve division/project constraints centrally.
+END:VEVENT
+BEGIN:VEVENT
+UID:interledger-local-impact-20261111@blowback
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20261111
+DTEND;VALUE=DATE:20261112
+SUMMARY:[ROLLING CLOSE] Interledger Local Impact mini-grant
+DESCRIPTION:US$500–3k. Fire only where financial-access/open-payments/public-infrastructure fit is genuine.
+END:VEVENT
+BEGIN:VEVENT
+UID:awesome-climate-nov-20261127@blowback
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261128
+SUMMARY:[FIRE IF FIT] Awesome Conservation & Climate microgrant
+DESCRIPTION:Second 2026 checkpoint for concrete Public-Good action.
+END:VEVENT
+BEGIN:VEVENT
+UID:legaltech-20261130@blowback
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:[VERIFY/FIRE] LegalTech / Computer Audit competition
+DESCRIPTION:Policy Lab / Citation Engine. Verify current prize table and track fit before firing.
+END:VEVENT
+BEGIN:VEVENT
+UID:nhh-main-20270115@blowback
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20270115
+DTEND;VALUE=DATE:20270116
+SUMMARY:[WATCH/FIRE] NHH 2027 main PhD admission round
+DESCRIPTION:Refresh vacancy set in mid-November 2026 and fire only departments that dominate current best options.
+END:VEVENT
+BEGIN:VEVENT
+UID:job-refresh-weekly@blowback
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20260907
+DTEND;VALUE=DATE:20260908
+RRULE:FREQ=WEEKLY;BYDAY=MO;UNTIL=20261228
+SUMMARY:[RADAR] Refresh upper-tail job market
+DESCRIPTION:Refresh Point72/Cubist, WorldQuant, Kronos, Binance, Google, NVIDIA, Qualcomm, Hong Wen, Gogolook, Berry, MediaTek and discovered peers. Expire stale roles. Do not use median-pay roles to pad the queue.
+END:VEVENT
+BEGIN:VEVENT
+UID:quant-fire-weekly@blowback
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20260908
+DTEND;VALUE=DATE:20260909
+RRULE:FREQ=WEEKLY;BYDAY=TU;UNTIL=20261229
+SUMMARY:[FIRE BATCH] Quant / finance research applications
+DESCRIPTION:Target upper-tail quant and finance+ML roles. Lead with Finance MSc, empirical research, Sharpe, large-data work and Python. Track screen/interview/offer as market-price evidence.
+END:VEVENT
+BEGIN:VEVENT
+UID:ai-fire-weekly@blowback
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20260903
+DTEND;VALUE=DATE:20260904
+RRULE:FREQ=WEEKLY;BYDAY=TH;UNTIL=20261231
+SUMMARY:[FIRE BATCH] Agent / AI / research-engineering applications
+DESCRIPTION:Target Binance, Google, Gogolook, DataMunger, Berry and high-value discovered peers. Lead with Cite/YZU/Citation Engine/Blowback or HS depending role.
+END:VEVENT
+BEGIN:VEVENT
+UID:outcome-price-weekly@blowback
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20260904
+DTEND;VALUE=DATE:20260905
+RRULE:FREQ=WEEKLY;BYDAY=FR;UNTIL=20261225
+SUMMARY:[LEDGER] Update screens, interviews, offers and market price
+DESCRIPTION:Record stage, rejection reason, compensation evidence, workload evidence and offer terms. Do not promote project claims automatically from outcomes.
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-phd-refresh@blowback
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20260901
+DTEND;VALUE=DATE:20260902
+RRULE:FREQ=MONTHLY;BYMONTHDAY=1,15;UNTIL=20261215
+SUMMARY:[WATCH] Refresh Taiwan 116 PhD calls
+DESCRIPTION:NYCU IAIS first, then NCCU TIIPM/MIS, NTU IM, NYCU alternatives, NCU, NTHU, NTUST, YZU backstop. Add hard dates only after official calls publish.
+END:VEVENT
+BEGIN:VEVENT
+UID:postgrad-decision-review@blowback
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20260930
+DTEND;VALUE=DATE:20261001
+RRULE:FREQ=MONTHLY;BYMONTHDAY=30;COUNT=3
+SUMMARY:[REVIEW] Post-grad market pricing checkpoint
+DESCRIPTION:Compare application funnel by lane. Increase exposure where screens/interviews/offers appear; reduce categories producing repeated zero conversion. Do not choose job vs PhD before concrete evidence.
+END:VEVENT
+END:VCALENDAR
