@@ -2,13 +2,13 @@ import { buildBrowserMission, rankGauntlet } from '../mission/operator.mjs';
 
 const APPLICATION_LANES = new Set([
   'JOB', 'RESEARCH_JOB', 'RESEARCH_LAB', 'PREDOC', 'RESEARCH_FELLOWSHIP', 'POLICY_FELLOWSHIP',
-  'RESEARCH_RESIDENCY', 'FUNDED_VISITING_RESEARCH', 'RESEARCH_CAREER_PROGRAM', 'PHD', 'PhD', 'PHD_FACULTY',
+  'RESEARCH_RESIDENCY', 'FUNDED_VISITING_RESEARCH', 'RESEARCH_CAREER_PROGRAM', 'PHD', 'PHD_FACULTY',
   'CAREER', 'FELLOWSHIP'
 ]);
 
 const APPLICATION_ROUTE_CLASSES = new Set([
   'JOB', 'LAB_STAFF', 'RESEARCH_ENGINEER', 'PREDOC', 'RESEARCH_FELLOWSHIP', 'RESEARCH_RESIDENCY',
-  'POLICY_FELLOWSHIP', 'FUNDED_VISITING_PROGRAM', 'FACULTY_PULL', 'RESEARCH_ENGINEERING_PROGRAM', 'PhD'
+  'POLICY_FELLOWSHIP', 'FUNDED_VISITING_PROGRAM', 'FACULTY_PULL', 'RESEARCH_ENGINEERING_PROGRAM', 'PHD'
 ]);
 
 const FIREISH = /(FIRE|READY|PRICE_DISCOVERY|PRIMARY)/i;
@@ -21,7 +21,7 @@ function normalized(value = '') {
 }
 
 export function isApplicationRoute(record) {
-  return APPLICATION_LANES.has(record?.lane) || APPLICATION_ROUTE_CLASSES.has(record?.route_class);
+  return APPLICATION_LANES.has(normalized(record?.lane)) || APPLICATION_ROUTE_CLASSES.has(normalized(record?.route_class));
 }
 
 export function applicationKind(record) {
