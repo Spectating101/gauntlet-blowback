@@ -60,7 +60,7 @@ test('source quality and opportunity type are conservative and explainable', () 
   assert.equal(classifySourceQuality('https://facebook.com/post/1', policy), 'blocked');
   assert.equal(inferOpportunityType('Technical Associate / Predoctoral Research Assistant'), 'predoc');
   assert.equal(inferOpportunityType('AI Research Engineer'), 'research_engineer');
-  assert.equal(inferOpportunityType('科技政策 Fellowship'), 'fellowship');
+  assert.equal(inferOpportunityType('科技政策 Fellowship'), 'research_fellowship');
 });
 
 test('Bing RSS adapter returns DISCOVERY_ONLY candidates without promoting snippets to verified state', async () => {
