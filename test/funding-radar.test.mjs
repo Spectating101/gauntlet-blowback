@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 
 import { evaluateOpportunity } from '../src/core/conversion.mjs';
-import { monitorFundingPage } from '../src/radar/sources/funding-page.mjs';
+import { monitorFundingPage, monitorFundingRegistryDetailed } from '../src/radar/sources/funding-page.mjs';
 import { scoreOpportunityForProject } from '../src/radar/core.mjs';
 
 test('conversion policy accepts sponsorship and institutional pilot types without weakening gates', () => {
@@ -53,6 +53,22 @@ test('funding page monitor preserves configured semantics and only derives marke
   assert.equal(opportunity.funding.ceiling, 50000);
   assert.deepEqual(opportunity.eligibility_text, ['Must be verified downstream.']);
   assert.equal(opportunity.raw_ref.live_marker_state, 'posted');
+});
+
+test('funding registry isolates one hostile source instead of aborting the whole sweep', async () => {
+  const fetchImpl = async (url) => {
+    if (String(url).includes('blocked')) return { ok: false, status: 426, async text() { return ''; } };
+    return { ok: true, status: 200, async text() { return '<p>Apply now</p>'; } };
+  };
+  const monitored = await monitorFundingRegistryDetailed([
+    { id: 'blocked', title: 'Blocked fund', url: 'https://blocked.test', open_markers: ['apply now'] },
+    { id: 'healthy', title: 'Healthy fund', url: 'https://healthy.test', open_markers: ['apply now'] }
+  ], { fetchImpl });
+  assert.equal(monitored.opportunities.length, 1);
+  assert.equal(monitored.opportunities[0].title, 'Healthy fund');
+  assert.equal(monitored.source_errors.length, 1);
+  assert.equal(monitored.source_errors[0].id, 'blocked');
+  assert.match(monitored.source_errors[0].error, /HTTP 426/);
 });
 
 test('funding source type bounds prevent grant-only candidates leaking into sponsorship-only project scope', () => {
