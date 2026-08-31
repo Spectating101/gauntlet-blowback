@@ -7,8 +7,9 @@
   "gauntlet": {
     "repository": "Spectating101/gauntlet-blowback",
     "base_branch": "main",
-    "base_commit": "b79968c1e60e37bfaff14857309991857515071c",
-    "master_snapshot": "2026-09-01"
+    "package_base_commit": "58d77592d849b913ce6f3a988a9a1d798ee14c9c",
+    "master_snapshot": "2026-09-01",
+    "route_state_note": "Package decisions use the 2026-09-01 verified master/radar state. The package base also contains later autonomous discovery machinery; discovery-only candidates are not silently promoted into verified routes."
   },
   "nocturnal": {
     "repository": "Spectating101/nocturnal-oversight",
