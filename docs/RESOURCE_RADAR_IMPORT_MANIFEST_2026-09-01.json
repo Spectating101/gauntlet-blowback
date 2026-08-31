@@ -1,0 +1,17 @@
+{
+  "schema": "blowback.resource_radar_import_manifest.v1",
+  "snapshot": "2026-09-01",
+  "source": "neighboring-chat research result reverified against current official sources",
+  "canonical_data": "data/student-research-infrastructure-radar-2026-09-01.json",
+  "live_monitor_registry": "examples/radar/infrastructure-source-registry.json",
+  "campaign_doc": "docs/STUDENT_RESEARCH_INFRASTRUCTURE_CAMPAIGN_2026-09.md",
+  "package_map": "docs/RESOURCE_RADAR_PACKAGE_MAP_2026-09.json",
+  "verification_notes": "docs/RESOURCE_RADAR_VERIFICATION_NOTES_2026-09-01.md",
+  "firing_order": "docs/RESOURCE_RADAR_ORDER_2026-09.md",
+  "runtime": {
+    "master_builder": "scripts/build-gauntlet-master.mjs",
+    "conversion_policy": "src/core/conversion.mjs",
+    "application_compiler": "src/application/operator.mjs",
+    "daily_command": "npm run radar:infrastructure"
+  }
+}

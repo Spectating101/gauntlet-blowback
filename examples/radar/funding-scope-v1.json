@@ -3,65 +3,65 @@
     {
       "id": "hardware-splicer",
       "name": "Hardware-Splicer",
-      "opportunity_types": ["grant", "sponsorship", "fellowship", "institutional_pilot", "research_assistant", "research_staff", "research_engineer", "predoc", "research_fellowship", "research_residency", "funded_visiting", "faculty_pull"],
-      "discovery_queries": ["semiconductor AI funding", "hardware validation grant", "advanced manufacturing AI funding", "physical AI research grant", "research engineer embodied AI", "research assistant robotics computer vision", "research engineer semiconductor AI", "physical AI fellowship residency"],
-      "keywords": ["semiconductor", "hardware validation", "advanced manufacturing", "physical AI", "electronics testing", "computer vision", "robotics", "embodied AI", "digital twin", "VLA", "agent", "AI safety", "machine learning"]
+      "opportunity_types": ["grant", "sponsorship", "fellowship", "institutional_pilot", "research_assistant", "research_staff", "research_engineer", "predoc", "research_fellowship", "research_residency", "funded_visiting", "faculty_pull", "student_benefit", "institutional_entitlement", "research_credit", "pi_sponsored_credit", "research_preview", "pi_sponsored_access"],
+      "discovery_queries": ["semiconductor AI funding", "hardware validation grant", "advanced manufacturing AI funding", "physical AI research grant", "research engineer embodied AI", "research assistant robotics computer vision", "research engineer semiconductor AI", "physical AI fellowship residency", "electronics AI research credits", "physical AI hardware research preview"],
+      "keywords": ["semiconductor", "hardware validation", "advanced manufacturing", "physical AI", "electronics testing", "computer vision", "robotics", "embodied AI", "digital twin", "VLA", "agent", "AI safety", "machine learning", "research credits", "cloud", "MCP"]
     },
     {
       "id": "nocturnal",
       "name": "Nocturnal",
-      "opportunity_types": ["grant", "sponsorship", "fellowship", "institutional_pilot", "research_assistant", "research_staff", "research_engineer", "predoc", "research_fellowship", "research_residency", "policy_fellowship", "funded_visiting", "faculty_pull"],
-      "discovery_queries": ["journalism innovation grant", "information integrity funding", "public interest technology grant", "civic technology funding", "information controls fellowship", "research assistant misinformation social media", "research assistant surveillance information integrity", "tech policy fellowship AI governance"],
-      "keywords": ["journalism", "information integrity", "public interest technology", "civic technology", "press freedom", "accountability", "misinformation", "fake news", "social media", "surveillance", "information controls", "digital rights", "LLM", "data mining"]
+      "opportunity_types": ["grant", "sponsorship", "fellowship", "institutional_pilot", "research_assistant", "research_staff", "research_engineer", "predoc", "research_fellowship", "research_residency", "policy_fellowship", "funded_visiting", "faculty_pull", "student_benefit", "institutional_entitlement", "research_credit", "pi_sponsored_credit"],
+      "discovery_queries": ["journalism innovation grant", "information integrity funding", "public interest technology grant", "civic technology funding", "information controls fellowship", "research assistant misinformation social media", "research assistant surveillance information integrity", "tech policy fellowship AI governance", "information integrity research credits"],
+      "keywords": ["journalism", "information integrity", "public interest technology", "civic technology", "press freedom", "accountability", "misinformation", "fake news", "social media", "surveillance", "information controls", "digital rights", "LLM", "data mining", "research credits", "cloud"]
     },
     {
       "id": "public-good-control",
       "name": "Public-Good Control",
-      "opportunity_types": ["grant", "sponsorship", "fellowship", "institutional_pilot", "research_assistant", "research_staff", "research_engineer", "predoc", "research_fellowship", "funded_visiting"],
-      "discovery_queries": ["humanitarian technology grant", "disaster risk reduction innovation funding", "digital public infrastructure grant", "public nutrition innovation funding", "animal welfare technology grant", "public interest technology research assistant", "humanitarian data research fellow"],
-      "keywords": ["humanitarian technology", "disaster risk reduction", "emergency management", "digital public infrastructure", "public nutrition", "animal welfare", "resilience", "public interest", "coordination", "data science"]
+      "opportunity_types": ["grant", "sponsorship", "fellowship", "institutional_pilot", "research_assistant", "research_staff", "research_engineer", "predoc", "research_fellowship", "funded_visiting", "student_benefit", "institutional_entitlement", "research_credit", "pi_sponsored_credit"],
+      "discovery_queries": ["humanitarian technology grant", "disaster risk reduction innovation funding", "digital public infrastructure grant", "public nutrition innovation funding", "animal welfare technology grant", "public interest technology research assistant", "humanitarian data research fellow", "public interest research cloud credits"],
+      "keywords": ["humanitarian technology", "disaster risk reduction", "emergency management", "digital public infrastructure", "public nutrition", "animal welfare", "resilience", "public interest", "coordination", "data science", "cloud"]
     },
     {
       "id": "cite-agent",
       "name": "Cite-Agent",
-      "opportunity_types": ["grant", "sponsorship", "fellowship", "institutional_pilot", "research_assistant", "research_staff", "research_engineer", "predoc", "research_fellowship", "research_residency", "funded_visiting", "faculty_pull"],
-      "discovery_queries": ["research infrastructure AI funding", "scholarly communication grant", "scientific reproducibility funding", "research software grant", "research assistant LLM RAG", "research engineer MCP agents", "research software fellowship", "AI research assistant scholarly communication"],
-      "keywords": ["research infrastructure", "scholarly communication", "reproducibility", "research software", "open science", "LLM", "RAG", "MCP", "agent", "tool calling", "evidence", "citation", "natural language processing"]
+      "opportunity_types": ["grant", "sponsorship", "fellowship", "institutional_pilot", "research_assistant", "research_staff", "research_engineer", "predoc", "research_fellowship", "research_residency", "funded_visiting", "faculty_pull", "student_benefit", "institutional_entitlement", "research_credit", "pi_sponsored_credit", "research_preview", "pi_sponsored_access"],
+      "discovery_queries": ["research infrastructure AI funding", "scholarly communication grant", "scientific reproducibility funding", "research software grant", "research assistant LLM RAG", "research engineer MCP agents", "research software fellowship", "AI research assistant scholarly communication", "responsible AI research API credits", "LLM research credits citation grounding"],
+      "keywords": ["research infrastructure", "scholarly communication", "reproducibility", "research software", "open science", "LLM", "RAG", "MCP", "agent", "tool calling", "evidence", "citation", "natural language processing", "research credits", "API credits"]
     },
     {
       "id": "yzu-cluster",
       "name": "YZU-Cluster / Research Drive",
-      "opportunity_types": ["grant", "sponsorship", "institutional_pilot", "research_assistant", "research_staff", "research_engineer", "predoc", "research_fellowship", "funded_visiting", "faculty_pull"],
-      "discovery_queries": ["research computing funding", "cyberinfrastructure grant", "AI infrastructure funding", "open science infrastructure", "research engineer AI infrastructure", "research assistant data systems", "MCP agent research engineer"],
-      "keywords": ["research computing", "cyberinfrastructure", "research infrastructure", "AI infrastructure", "open science", "data infrastructure", "LLM", "MCP", "agent", "Python", "data engineering", "research data"]
+      "opportunity_types": ["grant", "sponsorship", "institutional_pilot", "research_assistant", "research_staff", "research_engineer", "predoc", "research_fellowship", "funded_visiting", "faculty_pull", "student_benefit", "institutional_entitlement", "research_credit", "pi_sponsored_credit", "pi_sponsored_access"],
+      "discovery_queries": ["research computing funding", "cyberinfrastructure grant", "AI infrastructure funding", "open science infrastructure", "research engineer AI infrastructure", "research assistant data systems", "MCP agent research engineer", "student cloud credits research", "academic cloud research credits"],
+      "keywords": ["research computing", "cyberinfrastructure", "research infrastructure", "AI infrastructure", "open science", "data infrastructure", "LLM", "MCP", "agent", "Python", "data engineering", "research data", "cloud", "research credits"]
     },
     {
       "id": "refinery",
       "name": "Refinery / Generative Software Commons",
-      "opportunity_types": ["grant", "sponsorship", "fellowship", "institutional_pilot", "research_assistant", "research_staff", "research_engineer", "predoc", "research_fellowship", "research_residency", "funded_visiting"],
-      "discovery_queries": ["open source infrastructure funding", "digital commons grant", "software supply chain funding", "research software infrastructure", "research software fellowship", "research engineer software provenance", "open source research fellow"],
-      "keywords": ["open source", "digital commons", "software commons", "software supply chain", "software provenance", "attestation", "research software", "developer infrastructure", "open source security", "reproducibility", "software engineering"]
+      "opportunity_types": ["grant", "sponsorship", "fellowship", "institutional_pilot", "research_assistant", "research_staff", "research_engineer", "predoc", "research_fellowship", "research_residency", "funded_visiting", "student_benefit", "institutional_entitlement", "research_credit"],
+      "discovery_queries": ["open source infrastructure funding", "digital commons grant", "software supply chain funding", "research software infrastructure", "research software fellowship", "research engineer software provenance", "open source research fellow", "research software cloud credits"],
+      "keywords": ["open source", "digital commons", "software commons", "software supply chain", "software provenance", "attestation", "research software", "developer infrastructure", "open source security", "reproducibility", "software engineering", "cloud"]
     },
     {
       "id": "policy-lab",
       "name": "Policy Lab",
-      "opportunity_types": ["grant", "sponsorship", "fellowship", "institutional_pilot", "research_assistant", "research_staff", "research_engineer", "predoc", "research_fellowship", "research_residency", "policy_fellowship", "funded_visiting", "faculty_pull"],
-      "discovery_queries": ["energy governance research grant", "climate policy technology funding", "public policy technology grant", "AI governance fellowship", "tech policy research assistant", "AI economics policy predoc", "public policy data research officer"],
-      "keywords": ["energy governance", "climate policy", "public policy", "verification", "evidence assurance", "digital public infrastructure", "AI governance", "technology policy", "economics", "political economy", "data science", "AI"]
+      "opportunity_types": ["grant", "sponsorship", "fellowship", "institutional_pilot", "research_assistant", "research_staff", "research_engineer", "predoc", "research_fellowship", "research_residency", "policy_fellowship", "funded_visiting", "faculty_pull", "student_benefit", "institutional_entitlement", "research_credit", "pi_sponsored_credit", "pi_sponsored_access"],
+      "discovery_queries": ["energy governance research grant", "climate policy technology funding", "public policy technology grant", "AI governance fellowship", "tech policy research assistant", "AI economics policy predoc", "public policy data research officer", "responsible AI research credits governance"],
+      "keywords": ["energy governance", "climate policy", "public policy", "verification", "evidence assurance", "digital public infrastructure", "AI governance", "technology policy", "economics", "political economy", "data science", "AI", "research credits"]
     },
     {
       "id": "sharpe-terminus",
       "name": "Sharpe-Terminus / Finance Research",
-      "opportunity_types": ["grant", "sponsorship", "fellowship", "institutional_pilot", "research_assistant", "research_staff", "research_engineer", "predoc", "research_fellowship", "research_residency", "funded_visiting"],
-      "discovery_queries": ["financial technology research funding", "financial AI grant", "computational finance fellowship", "finance research assistant Python", "economics predoc AI finance", "research professional finance data science", "reinforcement learning finance research assistant"],
-      "keywords": ["financial technology", "fintech", "computational finance", "market risk", "financial data science", "finance", "economics", "econometrics", "Python", "reinforcement learning", "machine learning", "data science"]
+      "opportunity_types": ["grant", "sponsorship", "fellowship", "institutional_pilot", "research_assistant", "research_staff", "research_engineer", "predoc", "research_fellowship", "research_residency", "funded_visiting", "student_benefit", "institutional_entitlement", "research_credit", "pi_sponsored_credit"],
+      "discovery_queries": ["financial technology research funding", "financial AI grant", "computational finance fellowship", "finance research assistant Python", "economics predoc AI finance", "research professional finance data science", "reinforcement learning finance research assistant", "financial economics cloud research credits"],
+      "keywords": ["financial technology", "fintech", "computational finance", "market risk", "financial data science", "finance", "economics", "econometrics", "Python", "reinforcement learning", "machine learning", "data science", "research credits", "cloud"]
     },
     {
       "id": "invisible-ledger",
       "name": "Invisible Ledger",
-      "opportunity_types": ["grant", "sponsorship", "fellowship", "research_assistant", "research_staff", "predoc", "research_fellowship", "policy_fellowship", "funded_visiting"],
-      "discovery_queries": ["digital assets research grant", "financial economics fellowship", "stablecoin research grant", "monetary economics research funding", "digital economics predoc", "tax policy research assistant", "platform economy research fellow"],
-      "keywords": ["digital assets", "financial economics", "stablecoin", "monetary economics", "digital finance", "economics", "econometrics", "tax", "platform economy", "public policy", "data science"]
+      "opportunity_types": ["grant", "sponsorship", "fellowship", "research_assistant", "research_staff", "predoc", "research_fellowship", "policy_fellowship", "funded_visiting", "student_benefit", "institutional_entitlement", "research_credit", "pi_sponsored_credit"],
+      "discovery_queries": ["digital assets research grant", "financial economics fellowship", "stablecoin research grant", "monetary economics research funding", "digital economics predoc", "tax policy research assistant", "platform economy research fellow", "blockchain research cloud credits"],
+      "keywords": ["digital assets", "financial economics", "stablecoin", "monetary economics", "digital finance", "economics", "econometrics", "tax", "platform economy", "public policy", "data science", "research credits", "cloud", "BigQuery"]
     }
   ]
 }

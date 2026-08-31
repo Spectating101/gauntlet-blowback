@@ -1,0 +1,41 @@
+{
+  "schema": "blowback.resource_package_map.v1",
+  "packages": [
+    {
+      "id": "package-a-reliable-ai-research",
+      "assets": ["Cite", "Citation Engine", "Policy Lab", "Research Drive"],
+      "thesis": "Evidence-Structured Human-AI Research: Measuring Citation Grounding, Unsupported Claims, and Corrective Reliability.",
+      "routes": ["openai-researcher"],
+      "required_artifacts": ["academic_cv", "research_question", "experimental_design", "usage_budget", "expected_outputs"]
+    },
+    {
+      "id": "package-b-bounded-physical-agents",
+      "assets": ["Hardware Splicer"],
+      "thesis": "Evidence- and Authority-Constrained AI Agents for Electronic-System Engineering.",
+      "routes": ["anthropic-mhs-preview-2026", "anthropic-ai-for-science-general-2026"],
+      "required_artifacts": ["academic_cv", "hs_evidence_packet", "experimental_design", "benchmark_metrics", "usage_budget"]
+    },
+    {
+      "id": "package-c-reproducible-research-cloud",
+      "assets": ["Research Drive", "Finance", "Research Papers", "Digital-Asset Data Infrastructure"],
+      "thesis": "Reproducible Cloud Infrastructure for Longitudinal Digital-Asset and Blockchain Research.",
+      "routes": ["google-cloud-research-credits-pi-2026", "oracle-for-research-project-award-2026", "aws-cloud-credit-research-2026"],
+      "required_artifacts": ["academic_cv", "pi_review_sheet", "research_summary", "architecture", "milestones", "provider_cost_model", "expected_public_outputs"]
+    }
+  ],
+  "shared_dossier": [
+    "academic_cv_2p",
+    "technical_cv_1p",
+    "affiliation_and_student_proof",
+    "bios_50_100_200_words",
+    "publications_and_preprints",
+    "repository_and_demo_index",
+    "preliminary_results",
+    "architecture_figures",
+    "research_and_data_ethics_statement",
+    "milestones",
+    "cost_models",
+    "sponsor_answer_bank",
+    "claim_evidence_limitations_ledger"
+  ]
+}

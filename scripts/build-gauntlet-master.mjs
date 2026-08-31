@@ -11,6 +11,7 @@ const DEFAULTS = {
   supplement: path.join(ROOT, 'data/gauntlet-master-supplement.json'),
   facultyPulls: path.join(ROOT, 'data/faculty-pull-routes.json'),
   deepRadar: path.join(ROOT, 'data/deep-opportunity-radar-2026-09-01.json'),
+  infrastructureRadar: path.join(ROOT, 'data/student-research-infrastructure-radar-2026-09-01.json'),
   outputCsv: path.join(ROOT, 'docs/gauntlet-master.csv'),
   outputJson: path.join(ROOT, 'docs/gauntlet-master.json'),
 };
@@ -168,12 +169,14 @@ export function buildMasterRegistry({
   supplementPath = DEFAULTS.supplement,
   facultyPullsPath = DEFAULTS.facultyPulls,
   deepRadarPath = DEFAULTS.deepRadar,
+  infrastructureRadarPath = DEFAULTS.infrastructureRadar,
 } = {}) {
   const longtail = parseCsv(fs.readFileSync(longtailPath, 'utf8')).map(normalizeLongtail);
   const postgrad = parseCsv(fs.readFileSync(postgradPath, 'utf8')).map(normalizePostgrad);
   const supplement = JSON.parse(fs.readFileSync(supplementPath, 'utf8'));
   const facultyPulls = JSON.parse(fs.readFileSync(facultyPullsPath, 'utf8'));
   const deepRadar = JSON.parse(fs.readFileSync(deepRadarPath, 'utf8'));
+  const infrastructureRadar = JSON.parse(fs.readFileSync(infrastructureRadarPath, 'utf8'));
 
   const records = new Map();
   for (const record of [...longtail, ...postgrad]) {
@@ -185,11 +188,13 @@ export function buildMasterRegistry({
   addSupplementRoutes(records, supplement.restored_routes, 'restored');
   applyOverrides(records, supplement.overrides, 'supplement');
 
-  // The deep radar is intentionally applied last. It contains newly discovered
-  // research-labor/fellowship routes plus evidence-backed corrections to stale
-  // older rows (for example, hard administrative KILL gates or a newly live call).
+  // Deep research layers are applied after the older boards so verified new routes
+  // and evidence-backed corrections can supersede stale generic rows without
+  // duplicating IDs. Later focused audits may override earlier broad audits.
   addSupplementRoutes(records, deepRadar.routes, 'deep-radar');
   applyOverrides(records, deepRadar.overrides, 'deep-radar');
+  addSupplementRoutes(records, infrastructureRadar.routes, 'student-research-infrastructure-radar');
+  applyOverrides(records, infrastructureRadar.overrides, 'student-research-infrastructure-radar');
 
   const output = [...records.values()];
   const ids = new Set(output.map((record) => record.id));
