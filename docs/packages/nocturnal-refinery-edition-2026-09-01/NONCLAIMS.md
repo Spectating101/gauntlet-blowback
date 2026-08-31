@@ -2,6 +2,17 @@
 
 These statements are prohibited unless later evidence changes the project state.
 
+## Portfolio allocation
+
+Do **not** claim:
+
+- an opportunity belongs to Nocturnal merely because a project-specific radar says it fits;
+- a polished/deployed project outranks a more literal portfolio asset without checking the venue's submission unit and scarcity;
+- person-level jobs/fellowships/PhDs require separate competing applications for each project;
+- a team/entity/manuscript/resource slot is unlimited unless the current rules say so;
+- an account-level cloud/student benefit should be reserved for the most prestigious project rather than the workload that actually needs it;
+- one project's FIRE status overrides an explicit portfolio bake-off or mutual-exclusion rule.
+
 ## Nocturnal / Edition
 
 Do **not** claim:
@@ -48,5 +59,6 @@ Strong claims are encouraged when bounded:
 - Edition RC1 is a deployed public-review reader surface with authority-separated presentation/media contracts.
 - Refinery has both a negative generic reuse control and one bounded licensed curated-state result with a +50 percentage-point correctness difference.
 - The stack has a coherent end-to-end architecture from observation abundance to persistent documented state to interactive human-facing presentation.
+- Portfolio allocation is explicitly separated from project fit: scarce entity/team/manuscript/resource slots are compared across assets before final FIRE.
 
 The credibility advantage comes from saying **exactly what is proven and stopping there**.
