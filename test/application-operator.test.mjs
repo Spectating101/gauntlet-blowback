@@ -88,6 +88,19 @@ test('application queue ignores non-application lanes and preserves ranking orde
   assert.deepEqual(queue.missions.map((mission) => mission.route_id), ['job-1', 'job-2']);
 });
 
+test('canonical Gauntlet master compiles a real bounded application queue', () => {
+  const queue = applicationQueue(undefined, { limit: 8 });
+  assert.equal(queue.schema, 'blowback.application_queue.v1');
+  assert.ok(queue.count > 0);
+  assert.ok(queue.count <= 8);
+  for (const mission of queue.missions) {
+    assert.equal(mission.schema, 'blowback.application_mission.v1');
+    assert.ok(mission.route_id);
+    assert.ok(mission.application.packet_profile.length >= 5);
+    assert.equal(isApplicationRoute(mission.record), true);
+  }
+});
+
 test('conversion policy accepts newly explicit research-labor opportunity types', () => {
   for (const type of ['research_assistant', 'research_engineer', 'predoc', 'research_fellowship', 'research_residency', 'policy_fellowship', 'faculty_pull']) {
     const result = evaluateOpportunity({
