@@ -154,6 +154,13 @@ export function rankApplicationRoutes(records, options = {}) {
   return rankGauntlet(records, options).filter(({ record }) => isApplicationRoute(record));
 }
 
+export function applicationMissionForRoute(routeId, records, options = {}) {
+  const ranked = rankGauntlet(records, { ...options, includePaused: true });
+  const found = ranked.find(({ record }) => record.id === routeId);
+  if (!found) throw new Error(`active application route not found in Gauntlet master: ${routeId}`);
+  return buildApplicationMission(found.record, found.checkpoint, options);
+}
+
 export function nextApplicationMission(records, options = {}) {
   const ranked = rankApplicationRoutes(records, options);
   if (!ranked.length) return null;
@@ -162,7 +169,14 @@ export function nextApplicationMission(records, options = {}) {
 }
 
 export function applicationQueue(records, { limit = 10, ...options } = {}) {
-  return rankApplicationRoutes(records, options)
+  const missions = rankApplicationRoutes(records, options)
     .slice(0, Math.max(1, Number(limit) || 10))
     .map(({ record, checkpoint }) => buildApplicationMission(record, checkpoint, options));
+  return {
+    schema: 'blowback.application_queue.v1',
+    generated_at: new Date().toISOString(),
+    count: missions.length,
+    runtime_authority: options.submitIfSafe === true ? 'SUBMIT_IF_SAFE' : 'PREPARE_ONLY',
+    missions
+  };
 }
