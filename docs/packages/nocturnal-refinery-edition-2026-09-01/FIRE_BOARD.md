@@ -1,25 +1,27 @@
 # Fire Board — package impact on the Gauntlet
 
-This board answers one question: **does the completed Nocturnal + Refinery + Edition stack materially improve our ability to convert current opportunities?**
+This board answers two separate questions:
 
-## Immediate answer
+1. does the completed Nocturnal + Refinery + Edition stack improve conversion? **Yes**;
+2. should Nocturnal consume every opportunity it fits? **No.**
 
-**Yes, strongly — but mostly by reducing proof/explanation cost, not by deleting eligibility gates.**
+The second question is now governed by `PORTFOLIO_COLLISION_AUDIT.md`.
 
-### Highest-leverage current actions
+## Corrected highest-leverage actions
 
-| Priority | Route/family | Packet state | Why |
+| Priority | Route/family | Correct portfolio posture | Why |
 |---:|---|---|---|
-| 1 | OTF ICRP | core packet ready; eligibility recon first | unusually direct public-interest/information-controls research fit if exclusion gate clears |
-| 2 | Academia Sinica Ku + Der-Nian Yang | outreach dossier ready after binary gate checks | turns the stack into paid research-labor evidence; low marginal packaging work |
-| 3 | NLnet Restack | core open-infrastructure packet ready; live call must be rehydrated from Sep 3 | strongest reusable grant/infrastructure projection once specific call fit clears |
-| 4 | Refinery MSR Technical / Data & Tool | evidence packet ready; manuscript/artifact scope remains | mature empirical contribution with positive and negative controls |
-| 5 | Tech Policy Press | application projection cheap; selective fire | Edition substantially improves public-facing credibility, but base rate is extremely low |
-| 6 | TWNIC | package-ready / dependency-blocked | potentially excellent Taiwan pilot; no technical work can manufacture the required host/corpus/legal path |
+| 1 | OTF ICRP | **Nocturnal-derived concept currently strongest; run final concept/eligibility bake-off** | unusually direct match to information-controls research; supporting methods can come from Citation Engine/Research Drive; current deadline 2026-09-07 23:59 GMT |
+| 2 | Academia Sinica Ku + Der-Nian Yang | **candidate-level evidence bundle, not Nocturnal-exclusive** | converts several strong portfolio assets into paid research-labor evidence without consuming a project slot |
+| 3 | NLnet family | **MANDATORY PORTFOLIO BAKE-OFF** | Policy Lab and Nocturnal both have Restack routes; first-grant scarcity means we should choose the strongest whole-portfolio proposal after the live call is rehydrated |
+| 4 | Refinery MSR / SANER family | **Refinery-native; preserve manuscript exclusivity** | mature empirical contribution with positive and negative controls; Nocturnal remains downstream evidence only |
+| 5 | Tech Policy Press | **one applicant/focus; Nocturnal currently best lead, other assets support** | Edition improves public-facing credibility; do not create competing project applications to the same fellowship |
+| 6 | TWNIC | **PORTFOLIO + HOST BAKE-OFF REQUIRED** | official one-proposal-per-entity rule makes this a scarce institutional slot even though Nocturnal currently appears to fit best |
+| 7 | DPG | **parallel solution nominations; Policy Lab first on current readiness** | Nocturnal should not displace or delay the already-more-ready Policy Lab DPG route |
 
 ## What the package fixes
 
-Before Edition, Nocturnal required a cold reviewer to infer the application from a technically strong backend/reviewer packet. Now the first minute can demonstrate the outcome directly:
+Edition lowers cold-review and demonstration cost:
 
 ```text
 Global / Region / Country edition
@@ -33,43 +35,37 @@ Timeline / Sources / Impact
 inspect Nocturnal evidence authority
 ```
 
-That improves:
-
-- reviewer comprehension;
-- demo strength;
-- perceived product completeness;
-- proposal concreteness;
-- reuse across grants/labs/PhDs;
-- ability to ask for a bounded pilot rather than vague “support.”
-
-Refinery similarly benefits from having a consequential downstream consumer, while its own research venues remain grounded in the paired empirical controls and evidence-identity thesis.
+That improves reviewer comprehension, demo strength, product completeness, proposal concreteness and reuse across public-interest/research routes.
 
 ## What the package does not fix
 
-- TWNIC host/legal/corpus dependency;
-- FIJ/Pulitzer journalism partner/applicant dependency;
-- DPG public/open-source eligibility;
-- OTF program exclusion/eligibility;
+- portfolio slot scarcity;
+- TWNIC's one-proposal-per-applying-entity limit;
+- NLnet first-grant allocation between multiple otherwise-valid proposals;
+- OTF's current applicant/affiliate/host surveillance-technology exclusion and full-time research commitment;
+- partner/applicant requirements for journalism routes;
+- DPG solution-specific open/public requirements;
 - lab degree/work-permit/IP gates;
-- Tech Policy Press references/public-work requirement and base rate;
-- manuscript originality/venue fit for MSR/SANER;
-- lack of external pilot/adoption evidence.
+- Tech Policy Press publication/reference requirements and low base rate;
+- manuscript originality/overlap;
+- lack of real external pilot/adoption evidence.
 
 ## Conversion assessment
 
-Architecturally, the stack is no longer the limiting factor for these routes. The bottleneck has moved to one of three external categories:
+The remaining bottlenecks are now four categories, not three:
 
-1. **binary eligibility/dependency** — host, partner, degree, visa, open-source/public state;
-2. **venue-specific intellectual contribution** — manuscript/research question;
-3. **external evidence** — real users, pilot, adoption, measured outcome.
-
-That is a good stopping condition. More generic product development would have lower expected conversion value than resolving gates and generating external evidence.
+1. **portfolio allocation** — which asset deserves a scarce applicant/entity/manuscript slot;
+2. **binary eligibility/dependency** — host, partner, degree, visa, OSS/public state;
+3. **venue-specific contribution** — manuscript/research question;
+4. **external evidence** — real users, pilot, adoption, measured outcome.
 
 ## Packaging doctrine from here
 
+- A project-specific radar hit is not permission to spend a portfolio-scoped slot.
+- Identify the venue's submission unit before preparing an application.
+- For person-level applications, bundle the strongest portfolio evidence rather than manufacturing project-vs-project applications.
+- For entity/first-grant/manuscript scarcity, run an internal portfolio bake-off first.
 - Keep `Nocturnal + Edition` one evidence family.
 - Keep Refinery separate when it is the actual research contribution.
-- Attach only the evidence needed by the route.
 - Rehydrate current source immediately before final FIRE.
-- Do not merge/submit automatically.
-- Feed every external verdict, reviewer packet, interview, rejection reason and pilot result back into Gauntlet.
+- Final submit remains controlled by the Gauntlet authority model.
