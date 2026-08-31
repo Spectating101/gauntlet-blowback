@@ -157,6 +157,20 @@ function addSupplementRoutes(records, rows, sourceLabel) {
   }
 }
 
+function addThreadRecoveredRoutes(records, rows) {
+  const skippedExisting = [];
+  for (const row of rows ?? []) {
+    const record = normalizeSupplement(row);
+    if (!record.id) throw new Error('thread-recovered route missing id');
+    if (records.has(record.id)) {
+      skippedExisting.push(record.id);
+      continue;
+    }
+    records.set(record.id, record);
+  }
+  return skippedExisting;
+}
+
 function applyOverrides(records, overrides, sourceLabel) {
   for (const override of overrides ?? []) {
     if (!records.has(override.id)) throw new Error(`${sourceLabel} override target not found: ${override.id}`);
@@ -192,11 +206,9 @@ export function buildMasterRegistry({
   applyOverrides(records, supplement.overrides, 'supplement');
 
   // Conversation/thread recovery is continuity evidence, not live verification.
-  // It is loaded before the verified deep-radar layers so a later official audit
-  // can explicitly override a recovered state without conversation memory being
-  // treated as semantic authority.
-  addSupplementRoutes(records, threadRecovered.routes, 'thread-recovered');
-  applyOverrides(records, threadRecovered.overrides, 'thread-recovered');
+  // An existing canonical route always wins; thread recovery only fills gaps.
+  // This is intentionally more permissive than every live/verified source layer.
+  addThreadRecoveredRoutes(records, threadRecovered.routes);
 
   // Deep research layers are applied after the older boards so verified new routes
   // and evidence-backed corrections can supersede stale generic rows without
