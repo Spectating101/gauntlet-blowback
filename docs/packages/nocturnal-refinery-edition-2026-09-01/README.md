@@ -27,8 +27,7 @@ Edition RC1
 - Refinery closure branch: `release/refinery-closure-2026q3`
 - Refinery closure head: `3811f1e23dfa8fd0466329de701332e963927d52`
 - Gauntlet master snapshot: `2026-09-01`
-- Gauntlet package base commit: `f58bdc750fb6463241396ec8aa17cd8610a96568`
-- This base includes autonomous Radar discovery and the application-autopilot compiler. Package route decisions still use verified master/radar state; discovery-only candidates are not silently promoted.
+- This package rides the current Gauntlet control plane; opportunity truth remains in the generated master/radar sources rather than this packet.
 
 ## How to use this packet
 
@@ -40,14 +39,19 @@ Do **not** submit one generic story everywhere. Use one immutable evidence core 
 
 The facts do not change between views. Only emphasis changes.
 
-Before selecting any lead asset, run the portfolio-collision audit. **A project-specific fit is not permission to consume a portfolio-scoped slot.** TWNIC, NLnet, person-level fellowships/lab applications and manuscript lanes have different scarcity semantics.
+Before selecting Nocturnal as lead, consult both:
+
+- `PORTFOLIO_COLLISION_AUDIT.md` for Nocturnal-family collisions; and
+- repository-level `docs/PORTFOLIO_SLOT_ALLOCATION_2026-09-01.md` / `data/portfolio-slot-allocation-2026-09-01.json` for the whole portfolio.
+
+**A project-specific fit is not permission to consume a portfolio-scoped slot.**
 
 ## Package contents
 
 - `CORE_NARRATIVE.md` — reusable short/medium/full descriptions.
 - `EVIDENCE_MATRIX.md` — claim → proof → limitation.
 - `ROUTE_MATRIX.md` / `route-matrix.json` — routing plus submission-unit / collision semantics.
-- `PORTFOLIO_COLLISION_AUDIT.md` — whole-portfolio slot audit and internal bake-off rules.
+- `PORTFOLIO_COLLISION_AUDIT.md` — Nocturnal-family slot audit and internal bake-off rules.
 - `AUDIENCE_PROJECTIONS.md` — what to lead with for each audience.
 - `DEMO_SCRIPT.md` — 30-second, 3-minute and technical demos.
 - `PILOT_EVIDENCE_PLAN.md` — the next empirical proof tranche.
