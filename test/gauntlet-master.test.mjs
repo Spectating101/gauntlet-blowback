@@ -67,15 +67,96 @@ test('integrates fellowships and residencies without flattening their economics'
   assert.equal(byId.get('fellowship-anthropic-fellows-2026').status, 'VERIFY');
 });
 
+test('focused Nocturnal audit turns external-pilot evidence into a first-class campaign', () => {
+  for (const id of [
+    'partner-doublethink-nocturnal-pilot',
+    'partner-tfc-nocturnal-pilot',
+    'partner-ocf-nocturnal-pilot',
+  ]) {
+    const route = byId.get(id);
+    assert.ok(route, `missing Nocturnal pilot route ${id}`);
+    assert.equal(route.route_class, 'PILOT');
+    assert.equal(route.status, 'PARTNER_NOW');
+    assert.equal(route.execution_state, 'OUTREACH_READY');
+    assert.equal(route.mutual_exclusion_group, 'nocturnal-first-serious-pilot');
+    assert.match(route.gate, /no funding is implied|not a grant|not a guaranteed funding/i);
+  }
+});
+
+test('focused Nocturnal audit upgrades ICRP, TWNIC and NLnet gate semantics', () => {
+  const otf = byId.get('otf-nocturnal');
+  assert.equal(otf.status, 'FIRE_IF_GATES_CLEAR');
+  assert.equal(otf.deadline, '2026-09-07T23:59:00+00:00');
+  assert.match(otf.gate, /full-time/i);
+  assert.match(otf.gate, /host is not required at Stage 1/i);
+  assert.match(otf.gate, /surveillance software\/hardware/i);
+
+  const twnic = byId.get('twnic-community-grant-2026-nocturnal');
+  assert.equal(twnic.status, 'HOST_PORTFOLIO_BAKEOFF_REQUIRED');
+  assert.equal(twnic.mutual_exclusion_group, 'twnic-one-proposal-per-host-2026');
+  assert.match(twnic.gate, /one proposal/i);
+  assert.match(twnic.gate, /NT\$1\.5M/i);
+
+  const nlnet = byId.get('nlnet-restack-nocturnal');
+  assert.equal(nlnet.status, 'MANDATORY_PORTFOLIO_BAKEOFF');
+  assert.equal(nlnet.mutual_exclusion_group, 'nlnet-first-grant-portfolio-2026');
+  assert.match(nlnet.gate, /€5k-50k/);
+  assert.match(nlnet.gate, /libre\/open/i);
+  assert.match(nlnet.gate, /focus/i);
+});
+
+test('focused Nocturnal audit adds pilot-gated publication routes', () => {
+  const icwsm = byId.get('icwsm-2027-demo-nocturnal');
+  const websci = byId.get('websci-2027-nocturnal');
+  assert.ok(icwsm);
+  assert.ok(websci);
+  assert.equal(icwsm.status, 'PREP_AFTER_PILOT');
+  assert.equal(websci.status, 'PILOT_GATED_PREP');
+  assert.equal(icwsm.mutual_exclusion_group, 'nocturnal-active-research-publication');
+  assert.equal(websci.mutual_exclusion_group, 'nocturnal-active-research-publication');
+  assert.match(icwsm.gate, /pilot/i);
+  assert.match(websci.gate, /pilot/i);
+});
+
+test('focused Nocturnal audit preserves partner and journalism dependencies', () => {
+  const moda = byId.get('moda-ai-ecosystem-2026-nocturnal');
+  assert.equal(moda.status, 'PARTNER_ONLY_KILL_IF_FORCED');
+  assert.match(moda.gate, /Taiwan-registered eligible information-services business/i);
+  assert.match(moda.gate, /does not state the award ceiling/i);
+
+  const fij = byId.get('fij-2026-nocturnal');
+  assert.equal(fij.status, 'PARTNER_OR_SKIP_CURRENT_CYCLE');
+  assert.match(fij.gate, /journalists|reporters|media outlets/i);
+
+  const pulitzer = byId.get('pulitzer-nocturnal');
+  assert.equal(pulitzer.status, 'WATCH_NEXT_ROUND_PARTNER_FIRST');
+  assert.match(pulitzer.deadline, /CLOSED_2026-08-27/);
+});
+
+test('focused Nocturnal audit keeps EU and ISIF routes bounded by actual institutional eligibility', () => {
+  const eu = byId.get('watch-eu-information-integrity-consortium-2026');
+  assert.equal(eu.status, 'CONSORTIUM_PARTNER_VERIFY');
+  assert.equal(eu.execution_state, 'DEPENDENCY_RECON_REQUIRED');
+  assert.match(eu.source_state, /OFFICIAL_EC_CALL_VERIFIED/);
+  assert.match(eu.gate, /€6M/);
+  assert.match(eu.gate, /60% redistribution/i);
+  assert.match(eu.gate, /Taiwan-based individual/i);
+
+  const isif = byId.get('isif-asia-2027-nocturnal-watch');
+  assert.equal(isif.status, 'WATCH_2027');
+  assert.match(isif.gate, /Individuals are not eligible/i);
+  assert.match(isif.gate, /US\$20k\/50k\/75k/i);
+});
+
 test('deep-radar overrides stale route states instead of duplicating them', () => {
   assert.equal(byId.get('wanrun-grad-2026').status, 'KILL');
   assert.equal(byId.get('wanrun-grad-2026').execution_state, 'BLOCKED');
   assert.match(byId.get('wanrun-grad-2026').gate, /genuine adviser/i);
 
   assert.equal(byId.get('otf-nocturnal').opportunity, 'Information Controls Research Program 2026');
-  assert.equal(byId.get('otf-nocturnal').status, 'FIRE_AFTER_GATE');
+  assert.equal(byId.get('otf-nocturnal').status, 'FIRE_IF_GATES_CLEAR');
   assert.equal(byId.get('otf-nocturnal').deadline, '2026-09-07T23:59:00+00:00');
-  assert.match(byId.get('otf-nocturnal').gate, /surveillance-technology exclusion/i);
+  assert.match(byId.get('otf-nocturnal').gate, /surveillance software\/hardware/i);
 
   assert.equal(byId.get('taia-2026-hardware-splicer').status, 'FIRE');
   assert.equal(byId.get('taia-2026-hardware-splicer').deadline, '2026-09-14');
@@ -117,4 +198,5 @@ test('summary exposes portfolio-wide lane mix including new research labor', () 
   assert.ok(summary.lanes.RESEARCH_JOB > 0);
   assert.ok(summary.lanes.RESEARCH_FELLOWSHIP > 0);
   assert.ok(summary.lanes.PREDOC > 0);
+  assert.ok(summary.lanes.PILOT > 0);
 });
