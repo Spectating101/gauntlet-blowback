@@ -40,11 +40,14 @@ Do **not** submit one generic story everywhere. Use one immutable evidence core 
 
 The facts do not change between views. Only emphasis changes.
 
+Before selecting any lead asset, run the portfolio-collision audit. **A project-specific fit is not permission to consume a portfolio-scoped slot.** TWNIC, NLnet, person-level fellowships/lab applications and manuscript lanes have different scarcity semantics.
+
 ## Package contents
 
 - `CORE_NARRATIVE.md` — reusable short/medium/full descriptions.
 - `EVIDENCE_MATRIX.md` — claim → proof → limitation.
-- `ROUTE_MATRIX.md` / `route-matrix.json` — current Gauntlet routing.
+- `ROUTE_MATRIX.md` / `route-matrix.json` — routing plus submission-unit / collision semantics.
+- `PORTFOLIO_COLLISION_AUDIT.md` — whole-portfolio slot audit and internal bake-off rules.
 - `AUDIENCE_PROJECTIONS.md` — what to lead with for each audience.
 - `DEMO_SCRIPT.md` — 30-second, 3-minute and technical demos.
 - `PILOT_EVIDENCE_PLAN.md` — the next empirical proof tranche.
@@ -56,8 +59,8 @@ The facts do not change between views. Only emphasis changes.
 
 ## Operating rule
 
-**Package broadly; submit narrowly.**
+**Package broadly; allocate portfolio slots first; submit narrowly.**
 
-A good interface can improve cold comprehension, demo quality and product completeness. It does **not** clear an institutional-host requirement, journalism-applicant requirement, open-source/public-release requirement, visa/degree gate, source-rights review, or venue-specific exclusion.
+A good interface can improve cold comprehension, demo quality and product completeness. It does **not** clear an institutional-host requirement, journalism-applicant requirement, open-source/public-release requirement, visa/degree gate, source-rights review, venue-specific exclusion, or portfolio-level exclusivity rule.
 
 Final submission remains human-gated unless the user separately grants bounded runtime authority under the Gauntlet application-autopilot contract.
