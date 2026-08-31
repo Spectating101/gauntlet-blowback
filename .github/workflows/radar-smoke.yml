@@ -43,6 +43,24 @@ jobs:
           path: radar-funding.json
           if-no-files-found: warn
 
+  infrastructure-live:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install
+      - name: Monitor student benefits and research-credit programs
+        run: npm run radar:infrastructure > radar-infrastructure.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: radar-infrastructure-live
+          path: radar-infrastructure.json
+          if-no-files-found: warn
+
   research-labor-live:
     runs-on: ubuntu-latest
     continue-on-error: true
