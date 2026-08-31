@@ -83,8 +83,9 @@
       "external_evidence_stage": "none",
       "deployment_stage": "none",
       "canonicalization_state": "canonical",
-      "strongest_known_gap": "G4 external comprehension, partner, or pilot evidence.",
-      "evidence_basis": "Gauntlet gate audit classifies the next meaningful step as reality/external evidence rather than another feature sprint; subsystem shares the Research Drive repository."
+      "last_audited": "2026-09-01",
+      "strongest_known_gap": "One bounded externally witnessed analyst/fact-checker/steward pilot showing measurable workflow or correctness benefit. Do not reopen architecture before external use exposes an actual failure.",
+      "evidence_basis": "The 2026-09-01 focused conversion audit identifies G4 pilot evidence—not another feature sprint—as the highest-leverage unlock across OTF, TWNIC, NLnet, WebSci, ICWSM and future journalism/public-interest funding. The first serious pilot must remain bounded and independently witnessed; no partner outcome is claimed yet."
     },
     {
       "id": "hardware-splicer",
