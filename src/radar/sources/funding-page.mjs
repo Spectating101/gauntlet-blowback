@@ -61,8 +61,23 @@ export async function monitorFundingPage(entry, { fetchImpl = fetch, retrievedAt
   }, { source: entry.source ?? 'funding-page', retrievedAt });
 }
 
+export async function monitorFundingRegistryDetailed(entries, options = {}) {
+  const opportunities = [];
+  const source_errors = [];
+  for (const entry of entries ?? []) {
+    try {
+      opportunities.push(await monitorFundingPage(entry, options));
+    } catch (error) {
+      source_errors.push({
+        id: entry?.id ?? entry?.source_id ?? null,
+        url: entry?.url ?? null,
+        error: String(error?.message ?? error)
+      });
+    }
+  }
+  return { opportunities, source_errors };
+}
+
 export async function monitorFundingRegistry(entries, options = {}) {
-  const rows = [];
-  for (const entry of entries ?? []) rows.push(await monitorFundingPage(entry, options));
-  return rows;
+  return (await monitorFundingRegistryDetailed(entries, options)).opportunities;
 }
