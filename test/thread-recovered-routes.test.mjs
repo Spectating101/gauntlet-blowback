@@ -26,14 +26,34 @@ const recoveredIds = [
   'watch-eu-information-integrity-consortium-2026',
 ];
 
-test('thread-recovered routes enter the canonical master', () => {
+const threadOwnedIds = [
+  'bck26-research-paper',
+  'icdlt-2026-research-paper',
+  'digital-tax-icpa-2026',
+  'climatechain-2026-policy-eci',
+  'jcdl-2026-workshop-tutorial-cite',
+  'jcdl-2026-full-paper-cite',
+  'nlnet-zero-commons-2026-cite',
+  'field-tairos-automation-taipei-2026',
+  'field-futuremode-2026',
+  'procure-taitra-isourcing-electronics-2026',
+  'outbound-geomap-procurement-intelligence',
+  'nstc-research-entrepreneurship-2026',
+  'ethonline-2026-policy-lab',
+  'field-kubesummit-2026',
+  'watch-g0v-nocturnal',
+  'watch-civicus-ddi-civic-tech-nocturnal',
+  'watch-eu-information-integrity-consortium-2026',
+];
+
+test('thread-recovered identities are represented in the canonical master', () => {
   for (const id of recoveredIds) {
-    assert.ok(byId.has(id), `missing thread-recovered route ${id}`);
+    assert.ok(byId.has(id), `missing recovered route identity ${id}`);
   }
 });
 
-test('conversation memory never masquerades as live verification', () => {
-  for (const id of recoveredIds) {
+test('thread recovery fills missing routes but does not overwrite canonical owners', () => {
+  for (const id of threadOwnedIds) {
     const route = byId.get(id);
     assert.match(
       route.source_state,
@@ -42,11 +62,18 @@ test('conversation memory never masquerades as live verification', () => {
     );
   }
 
+  // DADH was already present in a stronger canonical source. Thread recovery must
+  // dedupe against that record rather than replacing it with conversation memory.
+  const dadh = byId.get('dadh-2026-policy-research');
+  assert.ok(dadh);
+  assert.doesNotMatch(dadh.source_state, /THREAD_RECOVERED/);
+});
+
+test('conversation memory never promotes unresolved recovered routes to live-ready state', () => {
   assert.equal(byId.get('climatechain-2026-policy-eci').status, 'WATCH_REVERIFY');
   assert.equal(byId.get('climatechain-2026-policy-eci').deadline, '2026-10-25');
   assert.match(byId.get('climatechain-2026-policy-eci').gate, /Oct 5-25/);
 
-  assert.equal(byId.get('dadh-2026-policy-research').status, 'EXPIRED_RETAIN');
   assert.equal(byId.get('jcdl-2026-full-paper-cite').status, 'EXPIRED_RETAIN');
 
   const nstc = byId.get('nstc-research-entrepreneurship-2026');
