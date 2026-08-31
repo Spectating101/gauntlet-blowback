@@ -10,6 +10,7 @@ const DEFAULTS = {
   postgrad: path.join(ROOT, 'docs/postgrad/postgrad-market.csv'),
   supplement: path.join(ROOT, 'data/gauntlet-master-supplement.json'),
   facultyPulls: path.join(ROOT, 'data/faculty-pull-routes.json'),
+  deepRadar: path.join(ROOT, 'data/deep-opportunity-radar-2026-09-01.json'),
   outputCsv: path.join(ROOT, 'docs/gauntlet-master.csv'),
   outputJson: path.join(ROOT, 'docs/gauntlet-master.json'),
 };
@@ -145,11 +146,34 @@ function applyOverride(record, override) {
   return updated;
 }
 
-export function buildMasterRegistry({ longtailPath = DEFAULTS.longtail, postgradPath = DEFAULTS.postgrad, supplementPath = DEFAULTS.supplement, facultyPullsPath = DEFAULTS.facultyPulls } = {}) {
+function addSupplementRoutes(records, rows, sourceLabel) {
+  for (const row of rows ?? []) {
+    const record = normalizeSupplement(row);
+    if (!record.id) throw new Error(`${sourceLabel} route missing id`);
+    if (records.has(record.id)) throw new Error(`${sourceLabel} route collides with current source id: ${record.id}`);
+    records.set(record.id, record);
+  }
+}
+
+function applyOverrides(records, overrides, sourceLabel) {
+  for (const override of overrides ?? []) {
+    if (!records.has(override.id)) throw new Error(`${sourceLabel} override target not found: ${override.id}`);
+    records.set(override.id, applyOverride(records.get(override.id), override));
+  }
+}
+
+export function buildMasterRegistry({
+  longtailPath = DEFAULTS.longtail,
+  postgradPath = DEFAULTS.postgrad,
+  supplementPath = DEFAULTS.supplement,
+  facultyPullsPath = DEFAULTS.facultyPulls,
+  deepRadarPath = DEFAULTS.deepRadar,
+} = {}) {
   const longtail = parseCsv(fs.readFileSync(longtailPath, 'utf8')).map(normalizeLongtail);
   const postgrad = parseCsv(fs.readFileSync(postgradPath, 'utf8')).map(normalizePostgrad);
   const supplement = JSON.parse(fs.readFileSync(supplementPath, 'utf8'));
   const facultyPulls = JSON.parse(fs.readFileSync(facultyPullsPath, 'utf8'));
+  const deepRadar = JSON.parse(fs.readFileSync(deepRadarPath, 'utf8'));
 
   const records = new Map();
   for (const record of [...longtail, ...postgrad]) {
@@ -157,24 +181,15 @@ export function buildMasterRegistry({ longtailPath = DEFAULTS.longtail, postgrad
     records.set(record.id, record);
   }
 
-  for (const row of facultyPulls.routes ?? []) {
-    const record = normalizeSupplement(row);
-    if (!record.id) throw new Error('faculty-pull route missing id');
-    if (records.has(record.id)) throw new Error(`faculty-pull route collides with current source id: ${record.id}`);
-    records.set(record.id, record);
-  }
+  addSupplementRoutes(records, facultyPulls.routes, 'faculty-pull');
+  addSupplementRoutes(records, supplement.restored_routes, 'restored');
+  applyOverrides(records, supplement.overrides, 'supplement');
 
-  for (const row of supplement.restored_routes ?? []) {
-    const record = normalizeSupplement(row);
-    if (!record.id) throw new Error('restored route missing id');
-    if (records.has(record.id)) throw new Error(`restored route collides with current source id: ${record.id}`);
-    records.set(record.id, record);
-  }
-
-  for (const override of supplement.overrides ?? []) {
-    if (!records.has(override.id)) throw new Error(`override target not found: ${override.id}`);
-    records.set(override.id, applyOverride(records.get(override.id), override));
-  }
+  // The deep radar is intentionally applied last. It contains newly discovered
+  // research-labor/fellowship routes plus evidence-backed corrections to stale
+  // older rows (for example, hard administrative KILL gates or a newly live call).
+  addSupplementRoutes(records, deepRadar.routes, 'deep-radar');
+  applyOverrides(records, deepRadar.overrides, 'deep-radar');
 
   const output = [...records.values()];
   const ids = new Set(output.map((record) => record.id));
@@ -203,7 +218,7 @@ export function writeMasterRegistry(options = {}) {
   const outputJson = options.outputJson ?? DEFAULTS.outputJson;
   const payload = {
     schema: 'blowback.gauntlet_master.v1',
-    source_snapshot: '2026-08-27',
+    source_snapshot: '2026-09-01',
     summary: summarizeMasterRegistry(records),
     records,
   };
