@@ -18,7 +18,7 @@ It may establish that:
 - a historical deadline or window was recorded;
 - a project mapping was considered;
 - a prior FIRE/HOLD/WATCH judgment existed;
-- a field/procurement/pilot channel was worth preserving.
+- a field/procurement/pilot/partner channel was worth preserving.
 
 It does **not** establish that the opportunity is still open, that eligibility still holds, that compensation is unchanged, or that the remembered deadline/source is currently authoritative.
 
@@ -34,28 +34,37 @@ Current live state must be rehydrated from the official source before a recovere
 - BCK26 historical four-page-paper route;
 - ICDLT 2026 historical full-paper route;
 - Digital Tax / ICPA historical abstract route;
-- ClimateChain 2026 Policy Lab / ECI window, retained as `WATCH_REVERIFY` rather than presumed live.
+- ClimateChain 2026 Policy Lab / ECI window, retained as `WATCH_REVERIFY` rather than presumed live;
+- ETHOnline 2026 as a bounded web3-adjacent builder route with an explicit no-force-fit gate.
 
 ### Cite / Research Drive / research-software threads
 
 - JCDL 2026 workshop/tutorial proposal;
 - JCDL 2026 full paper;
-- NLnet NGI Zero Commons Fund historical Cite/Citation/Commons route.
+- NLnet NGI Zero Commons Fund historical Cite/Citation/Commons route;
+- KubeSummit 2026 field/networking route, retained on HOLD unless it creates concrete employer/partner/infrastructure value.
 
 These past calls remain useful as future-cycle source families but cannot receive invented next-cycle deadlines.
 
-### Hardware / field / procurement threads
+### Hardware / research-commercialization / procurement threads
 
 - TAIROS + Automation Taipei 2026 field-intelligence route;
-- FUTUREMODE watch/reverify route;
+- FUTUREMODE Sep 4-6 recovered field/watch route;
+- NSTC Research Entrepreneurship / 科研創業計畫 Sep 3 recovered route, requiring immediate official rehydration rather than panic preparation;
 - TAITRA / iSourcing electronics-PCB-chip-module-machinery buyer-demand channel;
 - manufactured GeoMap supplier/buyer evidence pilot.
 
 The GeoMap rule remains narrow: evidence-backed technical procurement matching can be tested, while generic scraping/lead-generation positioning remains killed.
 
+### Nocturnal / civic-tech / information-integrity threads
+
+- g0v civic-tech collaboration/future-call watch, with no invented 2026/27 round;
+- CIVICUS DDI / Civic Tech Lab partner-first watch;
+- EU information-integrity consortium/downstream-subgrant watch, preserving the distinction between consortium funding and direct personal funding.
+
 ## Already present and therefore not duplicated
 
-Thread reconciliation also confirmed that many older discoveries were already present in the master/supplement layers, including major Policy Lab routes, TEA/IBFD/NTA continuity, FinTech Taipei, Taiwan Innotech/Energy Taiwan/TAITRONICS-style field routes, SEMICON/Meet Taipei, Hardware-Splicer competition routes, Nocturnal funding routes, Refinery MSR/SANER routes, post-grad jobs/PhDs, and the newer deep-researched fellowship/lab/research-credit layers.
+Thread reconciliation also confirmed that many older discoveries were already present in the master/supplement layers, including major Policy Lab routes, TEA/IBFD/NTA continuity, FinTech Taipei, Taiwan Innotech/Energy Taiwan/TAITRONICS-style field routes, SEMICON/Meet Taipei, Hardware-Splicer competition routes, Nocturnal funding routes, Refinery MSR/SANER routes, post-grad jobs/PhDs, MIT Solve, and the newer deep-researched fellowship/lab/research-credit layers.
 
 The recovery pass therefore adds only missing route identities. Existing canonical IDs are not copied into the thread file.
 
