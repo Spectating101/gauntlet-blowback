@@ -50,8 +50,8 @@ export function applicationKind(record) {
 export function packetProfileFor(record) {
   const kind = applicationKind(record);
   const common = ['canonical_profile', 'resume_or_cv', 'portfolio_index', 'truthful_claim_projection', 'source_snapshot'];
-  if (kind === 'STUDENT_BENEFIT_CLAIM') return ['canonical_profile', 'student_status_proof', 'eligible_account_status', 'source_snapshot'];
-  if (kind === 'INSTITUTIONAL_ENTITLEMENT_CLAIM') return ['canonical_profile', 'institutional_affiliation_proof', 'resource_scope_and_terms', 'source_snapshot'];
+  if (kind === 'STUDENT_BENEFIT_CLAIM') return ['canonical_profile', 'student_status_proof', 'eligible_account_status', 'benefit_terms_and_use_restrictions', 'activation_plan', 'source_snapshot'];
+  if (kind === 'INSTITUTIONAL_ENTITLEMENT_CLAIM') return ['canonical_profile', 'institutional_affiliation_proof', 'resource_scope_and_terms', 'activation_or_access_plan', 'use_restrictions', 'source_snapshot'];
   if (kind === 'RESOURCE_OFFSET_APPLICATION') return ['canonical_profile', 'eligibility_proof', 'intended_use', 'activation_and_expiration_terms', 'cost_displacement_plan', 'source_snapshot'];
   if (kind === 'RESEARCH_CREDIT_APPLICATION') return [...common, 'research_question', 'experiment_or_infrastructure_plan', 'budget_or_usage_model', 'research_outputs_and_milestones'];
   if (kind === 'PI_SPONSORED_RESOURCE_APPLICATION') return [...common, 'pi_packet', 'research_question', 'experiment_or_infrastructure_plan', 'budget_or_usage_model', 'milestones', 'institutional_approval_requirements'];
