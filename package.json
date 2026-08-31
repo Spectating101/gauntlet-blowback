@@ -8,6 +8,8 @@
   "scripts": {
     "blowback": "node src/cli.mjs",
     "radar:grants": "node src/radar/run-grants.mjs examples/radar/portfolio-scope.json",
+    "radar:funding": "node src/radar/run-funding.mjs examples/radar/funding-source-registry.json examples/radar/funding-scope-v1.json",
+    "radar:opportunities": "node src/radar/run-opportunities.mjs examples/radar/research-labor-source-registry.json examples/radar/funding-scope-v1.json",
     "conversion:demo": "node src/conversion/run-campaign.mjs examples/conversion/public-good-shadow-pilot.json",
     "gauntlet:master": "node scripts/build-gauntlet-master.mjs",
     "mission:next": "node src/cli.mjs next",
