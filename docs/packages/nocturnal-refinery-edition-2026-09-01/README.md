@@ -27,7 +27,8 @@ Edition RC1
 - Refinery closure branch: `release/refinery-closure-2026q3`
 - Refinery closure head: `3811f1e23dfa8fd0466329de701332e963927d52`
 - Gauntlet master snapshot: `2026-09-01`
-- Gauntlet base commit: `b79968c1e60e37bfaff14857309991857515071c`
+- Gauntlet package base commit: `58d77592d849b913ce6f3a988a9a1d798ee14c9c`
+- The package route decisions still refer to the 2026-09-01 verified master/radar state; the newer base commit adds autonomous discovery machinery without silently promoting discovery-only candidates into verified routes.
 
 ## How to use this packet
 
