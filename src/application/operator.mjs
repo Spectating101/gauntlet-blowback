@@ -3,14 +3,14 @@ import { buildBrowserMission, rankGauntlet } from '../mission/operator.mjs';
 const APPLICATION_LANES = new Set([
   'JOB', 'RESEARCH_JOB', 'RESEARCH_LAB', 'PREDOC', 'RESEARCH_FELLOWSHIP', 'POLICY_FELLOWSHIP',
   'RESEARCH_RESIDENCY', 'FUNDED_VISITING_RESEARCH', 'RESEARCH_CAREER_PROGRAM', 'PHD', 'PHD_FACULTY',
-  'CAREER', 'FELLOWSHIP', 'STUDENT_INFRASTRUCTURE', 'RESEARCH_ACCESS', 'RESEARCH_CREDIT'
+  'CAREER', 'FELLOWSHIP', 'STUDENT_INFRASTRUCTURE', 'RESEARCH_ACCESS', 'RESEARCH_CREDIT', 'OFFSET'
 ]);
 
 const APPLICATION_ROUTE_CLASSES = new Set([
   'JOB', 'LAB_STAFF', 'RESEARCH_ENGINEER', 'PREDOC', 'RESEARCH_FELLOWSHIP', 'RESEARCH_RESIDENCY',
   'POLICY_FELLOWSHIP', 'FUNDED_VISITING_PROGRAM', 'FACULTY_PULL', 'RESEARCH_ENGINEERING_PROGRAM', 'PHD',
   'STUDENT_BENEFIT', 'INSTITUTIONAL_ENTITLEMENT', 'RESEARCH_CREDIT', 'PI_SPONSORED_CREDIT',
-  'RESEARCH_PREVIEW', 'PI_SPONSORED_ACCESS'
+  'RESEARCH_PREVIEW', 'PI_SPONSORED_ACCESS', 'OFFSET'
 ]);
 
 const FIREISH = /(FIRE|READY|PRICE_DISCOVERY|PRIMARY)/i;
@@ -29,11 +29,14 @@ export function isApplicationRoute(record) {
 export function applicationKind(record) {
   const lane = normalized(record?.lane);
   const route = normalized(record?.route_class);
+  const description = `${record?.organization ?? ''} ${record?.opportunity ?? ''} ${record?.shared_evidence_family ?? ''}`;
   if (route === 'STUDENT_BENEFIT') return 'STUDENT_BENEFIT_CLAIM';
   if (route === 'INSTITUTIONAL_ENTITLEMENT') return 'INSTITUTIONAL_ENTITLEMENT_CLAIM';
   if (route === 'PI_SPONSORED_CREDIT' || route === 'PI_SPONSORED_ACCESS') return 'PI_SPONSORED_RESOURCE_APPLICATION';
   if (route === 'RESEARCH_PREVIEW') return 'RESEARCH_PREVIEW_APPLICATION';
   if (lane === 'RESEARCH_CREDIT' || route === 'RESEARCH_CREDIT') return 'RESEARCH_CREDIT_APPLICATION';
+  if ((lane === 'OFFSET' || route === 'OFFSET') && /research|researcher|scient|academic|api credit/i.test(description)) return 'RESEARCH_CREDIT_APPLICATION';
+  if (lane === 'OFFSET' || route === 'OFFSET') return 'RESOURCE_OFFSET_APPLICATION';
   if (route === 'FACULTY_PULL') return 'LAB_OUTREACH';
   if (lane === 'RESEARCH_LAB' || route === 'LAB_STAFF') return 'LAB_APPLICATION';
   if (lane === 'PREDOC' || route === 'PREDOC') return 'PREDOC_APPLICATION';
@@ -49,6 +52,7 @@ export function packetProfileFor(record) {
   const common = ['canonical_profile', 'resume_or_cv', 'portfolio_index', 'truthful_claim_projection', 'source_snapshot'];
   if (kind === 'STUDENT_BENEFIT_CLAIM') return ['canonical_profile', 'student_status_proof', 'eligible_account_status', 'source_snapshot'];
   if (kind === 'INSTITUTIONAL_ENTITLEMENT_CLAIM') return ['canonical_profile', 'institutional_affiliation_proof', 'resource_scope_and_terms', 'source_snapshot'];
+  if (kind === 'RESOURCE_OFFSET_APPLICATION') return ['canonical_profile', 'eligibility_proof', 'intended_use', 'activation_and_expiration_terms', 'cost_displacement_plan', 'source_snapshot'];
   if (kind === 'RESEARCH_CREDIT_APPLICATION') return [...common, 'research_question', 'experiment_or_infrastructure_plan', 'budget_or_usage_model', 'research_outputs_and_milestones'];
   if (kind === 'PI_SPONSORED_RESOURCE_APPLICATION') return [...common, 'pi_packet', 'research_question', 'experiment_or_infrastructure_plan', 'budget_or_usage_model', 'milestones', 'institutional_approval_requirements'];
   if (kind === 'RESEARCH_PREVIEW_APPLICATION') return [...common, 'research_collaboration_note', 'technical_evidence_packet', 'evaluation_agenda', 'requested_access_and_partner_value'];
@@ -143,7 +147,7 @@ export function buildApplicationMission(record, checkpoint = null, options = {})
       ? `Resolve application-critical facts for ${record.organization || record.opportunity}, then prepare the truthful application or benefit claim as far as the verified facts allow.`
       : autoSubmit
         ? `Prepare and submit the truthful application or benefit claim to ${record.organization || record.opportunity} only if no protected gate, unresolved material fact, fee, legal attestation, institutional dependency, or use restriction is encountered; otherwise stop at WAITING_HUMAN.`
-        : `Prepare the truthful application or benefit claim to ${record.organization || record.opportunity} through the last safe reversible state and stop before final submit/send.` ,
+        : `Prepare the truthful application or benefit claim to ${record.organization || record.opportunity} through the last safe reversible state and stop before final submit/send.`,
     permissions: {
       ...base.permissions,
       auto: [
