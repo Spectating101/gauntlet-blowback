@@ -6,7 +6,7 @@ import { resolveBundle } from './core/resolve.mjs';
 import { buildPlan } from './core/plan.mjs';
 
 function usage() {
-  console.log(`Blowback v0\n\nCommands:\n  next\n  mission <route-id>\n  apply-next [--submit-if-safe]\n  apply <route-id> [--submit-if-safe]\n  apply-queue [--limit=N] [--submit-if-safe]\n  checkpoint <checkpoint.json>\n  validate <opportunity>\n  plan <opportunity>\n  recon <opportunity> [--stage=source|registration|submission] [--persist-auth]\n  run <opportunity> [--persist-auth]\n\n\`next\` emits the highest-priority unpaused Codex+Chrome browser mission.\n\`mission\` emits a specific route, including its local resume checkpoint.\n\`apply-next\` emits the highest-priority job/lab/predoc/fellowship/residency application mission.\n\`apply-queue\` emits a bounded portfolio-wide application queue. By default all application commands prepare to the last safe state. \`--submit-if-safe\` is explicit runtime authority to submit/send only when no protected gate or unresolved material fact is encountered.\nRecon is observation-only and never promotes a route to prepare. The direct Playwright \`run\` command never performs final submission.`);
+  console.log(`Blowback v0\n\nCommands:\n  next\n  mission <route-id>\n  apply-next [--submit-if-safe]\n  apply <route-id> [--submit-if-safe]\n  apply-queue [--limit=N] [--submit-if-safe]\n  checkpoint <checkpoint.json>\n  validate <opportunity>\n  plan <opportunity>\n  recon <opportunity> [--stage=source|registration|submission] [--persist-auth]\n  run <opportunity> [--persist-auth]\n\n\`next\` emits the highest-priority unpaused Codex+Chrome mission and automatically specializes application-like routes.\n\`mission\` emits a specific generic route, including its local resume checkpoint.\n\`apply-next\` emits the highest-priority job/lab/predoc/fellowship/residency application mission.\n\`apply-queue\` emits a bounded portfolio-wide application queue. By default all application commands prepare to the last safe state. \`--submit-if-safe\` is explicit runtime authority to submit/send only when no protected gate or unresolved material fact is encountered.\nRecon is observation-only and never promotes a route to prepare. The direct Playwright \`run\` command never performs final submission.`);
 }
 
 const [command, filePath, ...rest] = process.argv.slice(2);
@@ -28,7 +28,11 @@ if (command === 'next') {
     console.log(JSON.stringify({ schema: 'blowback.codex_browser_mission.v1', mission: null, reason: 'no actionable unpaused routes' }, null, 2));
     process.exit(0);
   }
-  console.log(JSON.stringify(mission, null, 2));
+  const { isApplicationRoute, applicationMissionForRoute } = await import('./application/operator.mjs');
+  const output = isApplicationRoute(mission.record)
+    ? applicationMissionForRoute(mission.route_id)
+    : mission;
+  console.log(JSON.stringify(output, null, 2));
   process.exit(0);
 }
 
