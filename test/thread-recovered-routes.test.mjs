@@ -18,6 +18,12 @@ const recoveredIds = [
   'field-futuremode-2026',
   'procure-taitra-isourcing-electronics-2026',
   'outbound-geomap-procurement-intelligence',
+  'nstc-research-entrepreneurship-2026',
+  'ethonline-2026-policy-lab',
+  'field-kubesummit-2026',
+  'watch-g0v-nocturnal',
+  'watch-civicus-ddi-civic-tech-nocturnal',
+  'watch-eu-information-integrity-consortium-2026',
 ];
 
 test('thread-recovered routes enter the canonical master', () => {
@@ -42,12 +48,27 @@ test('conversation memory never masquerades as live verification', () => {
 
   assert.equal(byId.get('dadh-2026-policy-research').status, 'EXPIRED_RETAIN');
   assert.equal(byId.get('jcdl-2026-full-paper-cite').status, 'EXPIRED_RETAIN');
+
+  const nstc = byId.get('nstc-research-entrepreneurship-2026');
+  assert.equal(nstc.status, 'VERIFY');
+  assert.match(nstc.gate, /Recovered calendar point only/);
+
+  const eu = byId.get('watch-eu-information-integrity-consortium-2026');
+  assert.match(eu.gate, /do not treat consortium funding as direct personal funding/i);
 });
 
-test('thread recovery preserves field and manufactured-outbound semantics', () => {
+test('thread recovery preserves field, partner-watch and manufactured-outbound semantics', () => {
   const tairos = byId.get('field-tairos-automation-taipei-2026');
   assert.equal(tairos.route_class, 'FIELD');
   assert.equal(tairos.execution_state, 'NOT_APPLICABLE');
+
+  const futuremode = byId.get('field-futuremode-2026');
+  assert.equal(futuremode.deadline, '2026-09-04');
+  assert.equal(futuremode.execution_state, 'NOT_APPLICABLE');
+
+  const g0v = byId.get('watch-g0v-nocturnal');
+  assert.equal(g0v.route_class, 'PARTNER');
+  assert.equal(g0v.deadline, 'CYCLE_NOT_YET_VERIFIED');
 
   const geomap = byId.get('outbound-geomap-procurement-intelligence');
   assert.equal(geomap.route_class, 'PILOT');
