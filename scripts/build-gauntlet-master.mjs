@@ -10,6 +10,7 @@ const DEFAULTS = {
   postgrad: path.join(ROOT, 'docs/postgrad/postgrad-market.csv'),
   supplement: path.join(ROOT, 'data/gauntlet-master-supplement.json'),
   facultyPulls: path.join(ROOT, 'data/faculty-pull-routes.json'),
+  threadRecovered: path.join(ROOT, 'data/thread-recovered-routes-2026-09-01.json'),
   deepRadar: path.join(ROOT, 'data/deep-opportunity-radar-2026-09-01.json'),
   infrastructureRadar: path.join(ROOT, 'data/student-research-infrastructure-radar-2026-09-01.json'),
   outputCsv: path.join(ROOT, 'docs/gauntlet-master.csv'),
@@ -156,6 +157,20 @@ function addSupplementRoutes(records, rows, sourceLabel) {
   }
 }
 
+function addThreadRecoveredRoutes(records, rows) {
+  const skippedExisting = [];
+  for (const row of rows ?? []) {
+    const record = normalizeSupplement(row);
+    if (!record.id) throw new Error('thread-recovered route missing id');
+    if (records.has(record.id)) {
+      skippedExisting.push(record.id);
+      continue;
+    }
+    records.set(record.id, record);
+  }
+  return skippedExisting;
+}
+
 function applyOverrides(records, overrides, sourceLabel) {
   for (const override of overrides ?? []) {
     if (!records.has(override.id)) throw new Error(`${sourceLabel} override target not found: ${override.id}`);
@@ -168,6 +183,7 @@ export function buildMasterRegistry({
   postgradPath = DEFAULTS.postgrad,
   supplementPath = DEFAULTS.supplement,
   facultyPullsPath = DEFAULTS.facultyPulls,
+  threadRecoveredPath = DEFAULTS.threadRecovered,
   deepRadarPath = DEFAULTS.deepRadar,
   infrastructureRadarPath = DEFAULTS.infrastructureRadar,
 } = {}) {
@@ -175,6 +191,7 @@ export function buildMasterRegistry({
   const postgrad = parseCsv(fs.readFileSync(postgradPath, 'utf8')).map(normalizePostgrad);
   const supplement = JSON.parse(fs.readFileSync(supplementPath, 'utf8'));
   const facultyPulls = JSON.parse(fs.readFileSync(facultyPullsPath, 'utf8'));
+  const threadRecovered = JSON.parse(fs.readFileSync(threadRecoveredPath, 'utf8'));
   const deepRadar = JSON.parse(fs.readFileSync(deepRadarPath, 'utf8'));
   const infrastructureRadar = JSON.parse(fs.readFileSync(infrastructureRadarPath, 'utf8'));
 
@@ -187,6 +204,11 @@ export function buildMasterRegistry({
   addSupplementRoutes(records, facultyPulls.routes, 'faculty-pull');
   addSupplementRoutes(records, supplement.restored_routes, 'restored');
   applyOverrides(records, supplement.overrides, 'supplement');
+
+  // Conversation/thread recovery is continuity evidence, not live verification.
+  // An existing canonical route always wins; thread recovery only fills gaps.
+  // This is intentionally more permissive than every live/verified source layer.
+  addThreadRecoveredRoutes(records, threadRecovered.routes);
 
   // Deep research layers are applied after the older boards so verified new routes
   // and evidence-backed corrections can supersede stale generic rows without
