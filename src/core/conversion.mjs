@@ -1,7 +1,8 @@
 const TYPES = new Set([
   'job', 'phd', 'competition', 'grant', 'sponsorship', 'fellowship', 'institutional_pilot', 'incubator', 'commercial', 'research',
   'research_assistant', 'research_staff', 'research_engineer', 'predoc', 'research_fellowship', 'research_residency',
-  'policy_fellowship', 'funded_visiting', 'faculty_pull', 'project_staff', 'research_officer', 'technical_associate'
+  'policy_fellowship', 'funded_visiting', 'faculty_pull', 'project_staff', 'research_officer', 'technical_associate',
+  'student_benefit', 'institutional_entitlement', 'research_credit', 'pi_sponsored_credit', 'research_preview', 'pi_sponsored_access'
 ]);
 const COST_TAGS = new Set(['$0', '$POST', '$UPFRONT']);
 const ELIGIBILITY = new Set(['PASS', 'FAIL', 'UNKNOWN']);
