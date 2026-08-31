@@ -54,11 +54,36 @@ function canonicalUrl(value) {
   return url.href.replace(/\/$/, '');
 }
 
-async function hydrateCandidate(candidate, source, { fetchImpl, maxSummaryChars }) {
+async function fetchWithTimeout(fetchImpl, url, options = {}, timeoutMs = 10000) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await fetchImpl(url, { ...options, signal: controller.signal });
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+async function mapConcurrent(items, limit, worker) {
+  const results = new Array(items.length);
+  let cursor = 0;
+  async function run() {
+    while (cursor < items.length) {
+      const index = cursor++;
+      results[index] = await worker(items[index], index);
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(Math.max(1, limit), Math.max(1, items.length)) }, run));
+  return results;
+}
+
+async function hydrateCandidate(candidate, source, { fetchImpl, maxSummaryChars, fetchTimeoutMs }) {
   let summary = '';
   let detailStatus = 'unfetched';
   try {
-    const response = await fetchImpl(candidate.url, { headers: { 'user-agent': 'gauntlet-blowback-opportunity-radar/1.0' } });
+    const response = await fetchWithTimeout(fetchImpl, candidate.url, {
+      headers: { 'user-agent': 'gauntlet-blowback-opportunity-radar/1.0' }
+    }, fetchTimeoutMs);
     if (response.ok) {
       summary = stripHtml(await response.text()).slice(0, maxSummaryChars);
       detailStatus = 'fetched';
@@ -94,17 +119,22 @@ async function hydrateCandidate(candidate, source, { fetchImpl, maxSummaryChars 
 
 export async function discoverSourceFamily(source, {
   fetchImpl = fetch,
-  maxCandidates = 40,
-  maxSummaryChars = 7000
+  maxCandidates = 24,
+  maxSummaryChars = 7000,
+  hydrateConcurrency = 6,
+  fetchTimeoutMs = 10000
 } = {}) {
   if (!source?.id) throw new Error('source family id is required');
   if (!source?.url) throw new Error('source family url is required');
 
-  const response = await fetchImpl(source.url, { headers: { 'user-agent': 'gauntlet-blowback-opportunity-radar/1.0' } });
+  const response = await fetchWithTimeout(fetchImpl, source.url, {
+    headers: { 'user-agent': 'gauntlet-blowback-opportunity-radar/1.0' }
+  }, fetchTimeoutMs);
   if (!response.ok) throw new Error(`Source-family page HTTP ${response.status}: ${source.url}`);
   const html = await response.text();
   const indexHost = new URL(source.url).host;
   const seen = new Set();
+  const candidateCap = Math.min(Number(source.max_candidates ?? maxCandidates), Number(maxCandidates));
 
   const candidates = extractAnchors(html, source.url)
     .filter((candidate) => {
@@ -117,22 +147,32 @@ export async function discoverSourceFamily(source, {
       seen.add(key);
       return true;
     })
-    .slice(0, source.max_candidates ?? maxCandidates);
+    .slice(0, candidateCap);
 
-  const rows = [];
-  for (const candidate of candidates) rows.push(await hydrateCandidate(candidate, source, { fetchImpl, maxSummaryChars }));
-  return rows;
+  return mapConcurrent(candidates, hydrateConcurrency, (candidate) => hydrateCandidate(candidate, source, {
+    fetchImpl,
+    maxSummaryChars,
+    fetchTimeoutMs
+  }));
 }
 
-export async function discoverSourceRegistry(sources, options = {}) {
-  const opportunities = [];
-  const source_errors = [];
-  for (const source of sources ?? []) {
+export async function discoverSourceRegistry(sources, {
+  sourceConcurrency = 3,
+  ...options
+} = {}) {
+  const results = await mapConcurrent(sources ?? [], sourceConcurrency, async (source) => {
     try {
-      opportunities.push(...await discoverSourceFamily(source, options));
+      return { opportunities: await discoverSourceFamily(source, options), error: null };
     } catch (error) {
-      source_errors.push({ id: source?.id ?? null, url: source?.url ?? null, error: String(error?.message ?? error) });
+      return {
+        opportunities: [],
+        error: { id: source?.id ?? null, url: source?.url ?? null, error: String(error?.message ?? error) }
+      };
     }
-  }
-  return { opportunities, source_errors };
+  });
+
+  return {
+    opportunities: results.flatMap((row) => row.opportunities),
+    source_errors: results.map((row) => row.error).filter(Boolean)
+  };
 }
