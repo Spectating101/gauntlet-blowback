@@ -3,6 +3,8 @@ name: radar-smoke
 on:
   pull_request:
   workflow_dispatch:
+  schedule:
+    - cron: '17 22 * * *'
 
 jobs:
   grants-gov-live:
@@ -15,10 +17,67 @@ jobs:
           node-version: 22
       - run: npm install
       - name: Run live Grants.gov radar
-        run: npm run radar:grants > radar-output.json
+        run: npm run radar:grants > radar-grants.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: radar-grants-live
-          path: radar-output.json
+          path: radar-grants.json
+          if-no-files-found: warn
+
+  funding-pages-live:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install
+      - name: Run known funding/fellowship page radar
+        run: npm run radar:funding > radar-funding.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: radar-funding-live
+          path: radar-funding.json
+          if-no-files-found: warn
+
+  research-labor-live:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install
+      - name: Discover lab, RA, research-engineering and predoc postings
+        run: npm run radar:opportunities > radar-opportunities.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: radar-opportunities-live
+          path: radar-opportunities.json
+          if-no-files-found: warn
+
+  open-web-discovery-live:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    env:
+      BRAVE_SEARCH_API_KEY: ${{ secrets.BRAVE_SEARCH_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install
+      - name: Search beyond known source families
+        run: npm run radar:discover > radar-discovery.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: radar-open-web-discovery
+          path: radar-discovery.json
           if-no-files-found: warn

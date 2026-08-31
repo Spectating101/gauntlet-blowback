@@ -1,0 +1,91 @@
+{
+  "schema": "blowback.source_family_registry.v1",
+  "sources": [
+    {
+      "id": "sinica-recruitment",
+      "source": "academia-sinica",
+      "title": "Academia Sinica recruitment",
+      "organization": "Academia Sinica",
+      "url": "https://www.sinica.edu.tw/en/recruitment/53",
+      "type": "research_staff",
+      "tags": ["taiwan", "research institute", "research staff"],
+      "include_terms": ["Research Assistant", "Research Engineer", "Research Associate", "Project", "Technical", "研究助理", "工程師", "專任助理", "兼任助理"],
+      "exclude_terms": ["faculty", "tenure-track", "principal investigator", "administrative officer"],
+      "max_candidates": 50
+    },
+    {
+      "id": "sinica-iis-assistants",
+      "source": "academia-sinica-iis",
+      "title": "Academia Sinica IIS assistants",
+      "organization": "Academia Sinica Institute of Information Science",
+      "url": "https://www.iis.sinica.edu.tw/zh/page/Recruitment/Assistants.html",
+      "type": "research_assistant",
+      "tags": ["taiwan", "computer science", "AI", "research assistant"],
+      "include_terms": ["研究助理", "專任", "兼任", "assistant", "AI", "LLM", "資料", "深度學習", "agent"],
+      "exclude_terms": ["行政助理"],
+      "max_candidates": 50
+    },
+    {
+      "id": "sinica-citi-assistants",
+      "source": "academia-sinica-citi",
+      "title": "Academia Sinica CITI assistants",
+      "organization": "Academia Sinica Research Center for Information Technology Innovation",
+      "url": "https://www.citi.sinica.edu.tw/main/recruit-assistants",
+      "type": "research_assistant",
+      "tags": ["taiwan", "AI", "computer vision", "robotics", "research assistant"],
+      "include_terms": ["研究助理", "專任", "兼任", "assistant", "AI", "RL", "robot", "vision", "LLM"],
+      "exclude_terms": ["行政"],
+      "max_candidates": 50
+    },
+    {
+      "id": "hku-research-jobs",
+      "source": "hku-jobs",
+      "title": "University of Hong Kong research jobs",
+      "organization": "University of Hong Kong",
+      "url": "https://jobs.hku.hk/cw/en/listing/",
+      "type": "research_staff",
+      "tags": ["hong kong", "university", "research staff"],
+      "include_terms": ["Research Assistant", "Research Officer", "Research Associate", "AI Engineer", "Research Engineer", "Post-doctoral", "Student Research Assistant"],
+      "exclude_terms": ["Professor", "Lecturer", "Clerk", "Secretary"],
+      "max_candidates": 60
+    },
+    {
+      "id": "predoc-opportunities",
+      "source": "predoc-org",
+      "title": "Predoc.org opportunities",
+      "organization": "Pathways to Research and Doctoral Careers",
+      "url": "https://www.predoc.org/opportunities",
+      "type": "predoc",
+      "tags": ["predoc", "economics", "data science", "research professional"],
+      "include_terms": ["Pre-Doctoral", "Predoc", "Research Professional", "Research Assistant", "Research Fellow", "Technical Associate", "Applied AI", "Digital Economics", "Finance"],
+      "exclude_terms": ["closed", "expired"],
+      "same_host_only": false,
+      "max_candidates": 80
+    },
+    {
+      "id": "predoc-part-time-ra",
+      "source": "predoc-org",
+      "title": "Predoc.org part-time RA opportunities",
+      "organization": "Pathways to Research and Doctoral Careers",
+      "url": "https://www.predoc.org/ra-opportunities",
+      "type": "research_assistant",
+      "tags": ["part-time", "research assistant", "economics", "policy"],
+      "include_terms": ["Research Assistant", "Research Fellow", "Intern", "AI", "Data"],
+      "exclude_terms": ["closed", "expired"],
+      "same_host_only": false,
+      "max_candidates": 60
+    },
+    {
+      "id": "astar-careers",
+      "source": "astar-careers",
+      "title": "A*STAR research careers",
+      "organization": "A*STAR Singapore",
+      "url": "https://careers.a-star.edu.sg/",
+      "type": "research_engineer",
+      "tags": ["singapore", "research engineer", "AI", "robotics", "industrial AI"],
+      "include_terms": ["Research Engineer", "Research Officer", "AI", "Robotics", "Autonomous", "Machine Learning", "Computer Vision"],
+      "exclude_terms": ["HR", "Finance Officer", "Administrative"],
+      "max_candidates": 60
+    }
+  ]
+}
