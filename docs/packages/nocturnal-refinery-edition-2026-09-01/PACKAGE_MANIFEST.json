@@ -1,0 +1,35 @@
+{
+  "schema": "gauntlet.nocturnal_refinery_edition.package_manifest.v1",
+  "snapshot": "2026-09-01",
+  "status": "PRODUCT_COMPLETE_EXTERNAL_VALIDATION_ACTIVE",
+  "final_submit_human_gated": true,
+  "package_branch": "package/nocturnal-refinery-edition-2026q3",
+  "gauntlet": {
+    "repository": "Spectating101/gauntlet-blowback",
+    "base_branch": "main",
+    "base_commit": "b79968c1e60e37bfaff14857309991857515071c",
+    "master_snapshot": "2026-09-01"
+  },
+  "nocturnal": {
+    "repository": "Spectating101/nocturnal-oversight",
+    "release": "1.2.0",
+    "edition_branch": "release/edition-rc1",
+    "edition_branch_head": "3572c062e3dc22b083a6298144a5d63164191fb4",
+    "posture": "ENGINEERING_FROZEN_EXTERNAL_VALIDATION_ACTIVE",
+    "preview": "https://edition-nocturnal-preview.vercel.app"
+  },
+  "refinery": {
+    "repository": "Spectating101/alpha-platform",
+    "closure_branch": "release/refinery-closure-2026q3",
+    "closure_head": "3811f1e23dfa8fd0466329de701332e963927d52",
+    "package": "slop-refinery-poc==0.8.0rc1",
+    "posture": "RC_ARCHITECTURE_FROZEN_BY_DEFAULT"
+  },
+  "evidence_family_rule": "Edition is a Nocturnal presentation surface, not a separate independent accomplishment. Refinery is separate where its empirical research contribution is the venue target.",
+  "audience_variants": [
+    "PUBLIC_INTEREST",
+    "RESEARCH_SOFTWARE",
+    "RESEARCH_LAB_PHD"
+  ],
+  "release_rule": "Do not reopen product architecture absent observed pilot/reviewer failure. Rehydrate opportunity-specific gates before final submission."
+}
