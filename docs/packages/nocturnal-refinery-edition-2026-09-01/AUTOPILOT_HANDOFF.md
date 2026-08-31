@@ -1,43 +1,43 @@
 # Application Autopilot Handoff
 
-This package was prepared independently of the application-autopilot implementation. It is structurally compatible with that compiler, but **no automatic ingestion/integration is claimed in this packet yet**.
+The application-autopilot compiler is now present on the Gauntlet base. This package is structurally compatible with its route-specific profiles, but **no automatic evidence-directory ingestion adapter is claimed yet**.
 
 ## Packet-profile mapping
 
-| Gauntlet/application route | Package projection | Autopilot profile use |
+| Route | Package projection | Application-autopilot profile |
 |---|---|---|
-| Academia Sinica Ku / Der-Nian Yang RA | `RESEARCH_LAB_PHD` | Lab/RA: research-interest note + 1–2 strongest evidence links + systems evidence packet |
+| Academia Sinica Ku / Der-Nian Yang RA | `RESEARCH_LAB_PHD` | Lab/RA: research-interest note + 1–2 strongest project evidence links + systems evidence packet |
 | Tech Policy Press fellowship | `PUBLIC_INTEREST` | Fellowship: program-specific statement + bounded research/output agenda |
 | VU / future PhD or faculty-pull route | `RESEARCH_LAB_PHD` | PhD/faculty pull: research statement + academic evidence + exact fit note |
-| research engineer / lab staff route using Nocturnal evidence | `RESEARCH_LAB_PHD` | Research job/engineer: technical evidence packet + demanded-stack evidence |
+| research engineer / lab staff route using this stack | `RESEARCH_LAB_PHD` | Research job/engineer: technical evidence packet + demanded-stack evidence |
 | MSR / SANER | `RESEARCH_SOFTWARE` | not an application-autopilot route; retain research/manuscript workflow |
-| OTF / NLnet / TWNIC / DPG / Pulitzer / FIJ | `PUBLIC_INTEREST` or `RESEARCH_SOFTWARE` as mapped | grants/standards/pilots remain on broader mission operator, not the job-application compiler |
+| OTF / NLnet / TWNIC / DPG / Pulitzer / FIJ | mapped `PUBLIC_INTEREST` / `RESEARCH_SOFTWARE` | grants/standards/pilots stay on the broader mission operator rather than the job-application compiler |
 
 ## Canonical evidence inputs
 
-The compiler should project from, not rewrite:
+A future adapter should project from, not rewrite:
 
 - `CORE_NARRATIVE.md`;
 - `EVIDENCE_MATRIX.md`;
 - `NONCLAIMS.md`;
 - the relevant `routes/*.md` card;
-- source repository/release identities in `PACKAGE_MANIFEST.json`.
+- source identities in `PACKAGE_MANIFEST.json`;
+- route posture in `route-matrix.json`.
 
-`UNPROVEN`/disallowed claims in `NONCLAIMS.md` remain excluded from external projections.
+`UNPROVEN`/disallowed claims remain excluded.
 
 ## Initial-stage guidance
 
-The package intentionally preserves unresolved material gates. Therefore:
-
-- Sinica routes remain `RECON` until degree/work-right/IP/economic gates are resolved;
-- Tech Policy Press can compile toward `PREPARE` only when required public-work/reference facts are available;
-- OTF remains broader-mission recon until the exclusion/eligibility audit clears;
+- Sinica routes remain `RECON` until degree/work-right/IP/economic gates resolve.
+- Tech Policy Press can move toward `PREPARE` only when required public-work/reference facts are available.
+- OTF remains broader-mission recon until exclusion/eligibility audit clears.
 - TWNIC remains dependency-blocked until a real host/corpus/legal path exists.
+- MSR/SANER are research submission routes, not application-autopilot targets.
 
 ## Runtime authority
 
-This handoff does not authorize `--submit-if-safe` and does not alter final-submit policy. The package-level rule remains **final submit human-gated** unless the user separately grants runtime authority under the autopilot safety contract.
+This handoff does not itself authorize `--submit-if-safe`. Package-level final submit remains human-gated unless the user separately grants runtime authority and the autopilot’s protected-gate checks all clear.
 
-## Future integration
+## Integration target
 
-If the autopilot branch is merged and a stable packet-input schema is added, `route-matrix.json` can become the machine-readable routing hint and this directory can become an evidence-family source. Until then, treat this file as a semantic handoff, not an implemented adapter.
+The next small Gauntlet integration, if useful, is a read-only evidence-family adapter that can ingest this directory’s manifest/route matrix and emit the appropriate route-specific packet projection. That is conversion tooling, not a new Nocturnal/Refinery/Edition development phase.

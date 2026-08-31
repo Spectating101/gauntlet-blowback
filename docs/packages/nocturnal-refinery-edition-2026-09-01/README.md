@@ -27,8 +27,8 @@ Edition RC1
 - Refinery closure branch: `release/refinery-closure-2026q3`
 - Refinery closure head: `3811f1e23dfa8fd0466329de701332e963927d52`
 - Gauntlet master snapshot: `2026-09-01`
-- Gauntlet package base commit: `58d77592d849b913ce6f3a988a9a1d798ee14c9c`
-- The package route decisions still refer to the 2026-09-01 verified master/radar state; the newer base commit adds autonomous discovery machinery without silently promoting discovery-only candidates into verified routes.
+- Gauntlet package base commit: `f58bdc750fb6463241396ec8aa17cd8610a96568`
+- This base includes autonomous Radar discovery and the application-autopilot compiler. Package route decisions still use verified master/radar state; discovery-only candidates are not silently promoted.
 
 ## How to use this packet
 
@@ -50,7 +50,7 @@ The facts do not change between views. Only emphasis changes.
 - `PILOT_EVIDENCE_PLAN.md` — the next empirical proof tranche.
 - `NONCLAIMS.md` — claims that must not be smuggled into submissions.
 - `FIRE_BOARD.md` — package-level priority and conversion assessment.
-- `AUTOPILOT_HANDOFF.md` — semantic mapping into the separate application-autopilot compiler without claiming a wired adapter.
+- `AUTOPILOT_HANDOFF.md` — mapping into the application-autopilot compiler; no automatic evidence adapter is claimed yet.
 - `routes/` — bounded route-specific one-pagers.
 - `PACKAGE_MANIFEST.json` — exact package/source identity.
 
@@ -60,4 +60,4 @@ The facts do not change between views. Only emphasis changes.
 
 A good interface can improve cold comprehension, demo quality and product completeness. It does **not** clear an institutional-host requirement, journalism-applicant requirement, open-source/public-release requirement, visa/degree gate, source-rights review, or venue-specific exclusion.
 
-Final submission remains human-gated.
+Final submission remains human-gated unless the user separately grants bounded runtime authority under the Gauntlet application-autopilot contract.
