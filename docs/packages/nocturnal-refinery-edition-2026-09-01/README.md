@@ -49,6 +49,8 @@ The facts do not change between views. Only emphasis changes.
 - `DEMO_SCRIPT.md` — 30-second, 3-minute and technical demos.
 - `PILOT_EVIDENCE_PLAN.md` — the next empirical proof tranche.
 - `NONCLAIMS.md` — claims that must not be smuggled into submissions.
+- `FIRE_BOARD.md` — package-level priority and conversion assessment.
+- `AUTOPILOT_HANDOFF.md` — semantic mapping into the separate application-autopilot compiler without claiming a wired adapter.
 - `routes/` — bounded route-specific one-pagers.
 - `PACKAGE_MANIFEST.json` — exact package/source identity.
 
