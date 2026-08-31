@@ -59,6 +59,7 @@ The current master already models manuscript mutual exclusion. This audit extend
 | **Anthropic AI for Science credits** | `PROJECT/RESEARCH_CREDIT` | Hardware Splicer; genuine scientific benchmark/research projects | **Hardware Splicer currently strongest mapped project.** | Per-project resource allocation; do not use for ordinary hosting. |
 | **Google Cloud Academic Research Credits** | `PI/YEARLY_RESOURCE`; current radar says MSc direct applicant ineligible | Research Drive / digital-asset data infrastructure / Finance research under eligible PI | **PI chooses the strongest real cloud-research workload; Nocturnal is not the default.** | **YES, PI/resource attention can be scarce.** |
 | **OpenAI Researcher Access** | `RESEARCH_SCOPE/ACCOUNT` | Cite/Citation/Policy research; whichever controlled study has real API budget and program fit | **Choose actual research need, not prettiest product.** | Practical budget/application scarcity. |
+| **Student infrastructure (Azure / Heroku / Appwrite / YZU entitlements)** | `ACCOUNT_ENTITLEMENT` | any eligible active project | **Use where it displaces real cost.** | Generally **no project collision**; terms/expiry/noncommercial limits govern use. |
 | **AnimalHack** | `PROJECT` | Public-Good Control | **Public-Good native.** | No meaningful portfolio collision. |
 | **Awesome Conservation & Climate** | `PROJECT/ACTION` | Public-Good; Policy Lab only if a concrete climate action exists | **Public-Good leads when an operational conservation action is real.** | Low-value slot; do not manufacture a Policy-Lab fit. |
 | **FAS AI Safety Policy Entrepreneurship** | `PERSON/AGENDA` | Policy Lab + Citation Engine | **Policy Lab/Citation native.** | No project submission collision; one coherent agenda. |
@@ -103,48 +104,50 @@ Fellowship plan: teach/share evidence-bounded research-software practice interna
 
 This uses the whole portfolio without double-counting it as five applications.
 
+## Resource-layer result
+
+The new student/research-infrastructure radar needs the same allocation discipline:
+
+- **Student entitlements** such as Azure for Students, Heroku student credits, Appwrite Education and YZU software/library access are account-level cost displacement. They should follow real workloads and terms, not be reserved for the most prestigious project.
+- **Anthropic Model Hardware Standard preview** is effectively Hardware-Splicer-native.
+- **Anthropic AI for Science** should go to a genuine scientific evaluation/benchmark; Hardware Splicer is currently the strongest mapped project, not because it is prestigious but because the scientific/electronics evaluation use is literal.
+- **Google Cloud Academic Research Credits** are PI/degree constrained; current radar says the MSc student cannot directly consume that route. If an eligible PI is involved, use the strongest cloud-heavy research workload (Research Drive/digital-asset data infrastructure/finance research) rather than generic hosting.
+- **OpenAI Researcher Access** should be allocated to the controlled study with the clearest responsible-AI/research question and actual API budget. It is not a prize for whichever app has the best frontend.
+
 ## Direct/native route map by asset
 
 ### Nocturnal + Edition
-
 Prioritize: OTF concept (if gate clears), TWNIC bake-off, Tech Policy Press thematic lead, bounded public-information pilots.  
 Secondary: InnoServe Security only if it beats the parent-program alternatives; DPG later; NLnet only after bake-off.  
 Do not chase: generic cybersecurity, original-journalism funding without partner, generic agent competitions.
 
 ### Refinery
-
 Prioritize: MSR Technical / Data & Tool, SANER Research/Tool, research-software evaluation, possible NLnet/CodeSupply family if literal call fit.  
 Use SSI as evidence inside a person-level application.  
 Do not convert the paired empirical controls into a generic AI-product pitch.
 
 ### Policy Lab / CL-ECI / Invisible Ledger
-
 Prioritize: finance/policy academic routes, FC'27 primary manuscript, DPG current ready route, FAS policy fellowship, Freeway pricing, finance/tax calls, Commercial Governance AI if InnoServe allocation permits.  
 NLnet remains a real competitor to Nocturnal, not an automatic backup.  
 Preserve manuscript exclusivity.
 
 ### Hardware Splicer
-
 Prioritize: TAAI, DATE LBR when proof threshold clears, InnoServe Industrial AI, industry-academia mechanical/electronics, embodied/physical-AI labs, Anthropic MHS preview, scientific/evaluation credits.  
 Its physical-validation gap matters for claims, but does not erase its direct industrial-AI fit.
 
 ### Public-Good Control
-
 Prioritize: AnimalHack, bounded conservation/climate grants, civic/NGO/public-sector pilots, Education Open Data/Taipei civic only when the actual dataset/use case is real.  
 Do not spend finance/open-payments routes unless the operational mechanism genuinely uses them.
 
 ### Citation Engine / Commons
-
 Prioritize: Codex/Open-Source eligibility if clear, SSI evidence, bounded OSS grants/tasks, evidence/agent-governance fellowships, technical tracks where a real kernel/tool is the submission.  
 Often strongest as infrastructure evidence inside another application's bundle.
 
 ### Research Drive / Cite
-
 Prioritize: AI/research-engineering jobs and labs, AMD/education/campus-agent competition tracks if ecosystem integration is bounded, student/research infrastructure benefits, research-workflow pilots.  
 Because Research Drive is internally live, it can outrank prettier but synthetic demos when a venue rewards operational software.
 
 ### Sharpe / Finance / papers
-
 Prioritize: finance/econ predocs/jobs, finance/tax manuscript routes, real forward-evidence work.  
 Do not use Sharpe as generic AI proof until its forward-observation gap is closed.
 
@@ -177,7 +180,7 @@ MUTUALLY_EXCLUSIVE
 HOLD_UNVERIFIED
 ```
 
-Until the master schema is migrated, this document and the Nocturnal package's machine-readable collision fields are the controlling allocation notes.
+Until the master schema is migrated, this document and `data/portfolio-slot-allocation-2026-09-01.json` are the controlling portfolio-allocation notes.
 
 ## Bottom line
 
