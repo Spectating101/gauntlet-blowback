@@ -14,6 +14,7 @@ const APPLICATION_ROUTE_CLASSES = new Set([
 const FIREISH = /(FIRE|READY|PRICE_DISCOVERY|PRIMARY)/i;
 const KNOWN_GATE_STATUS = /(AFTER_GATE|IF_ELIGIBLE|VERIFY|RECON|DEPENDENCY|HOLD|WATCH|KILL|REJECT)/i;
 const BLOCKING_GATE_TEXT = /(advisor|adviser|team|partner|host|payment|fee|citizen|citizenship|work authorization|visa|sponsor|eligib|attest|originality|authorship|ip\b|outside[- ]work|moonlight|company|legal entity)/i;
+const FINAL_SUBMIT_GATE = 'final_submit_send_apply_confirm';
 
 function normalized(value = '') {
   return String(value).trim().toUpperCase();
@@ -83,6 +84,9 @@ export function buildApplicationMission(record, checkpoint = null, options = {})
   const autoSubmit = mayAutoSubmit(record, options);
   const stage = applicationStage(record);
   const channel = inferChannel(record);
+  const protectedHumanGates = autoSubmit
+    ? base.permissions.human_gate.filter((gate) => gate !== FINAL_SUBMIT_GATE)
+    : [...new Set([...base.permissions.human_gate, FINAL_SUBMIT_GATE])];
 
   return {
     ...base,
@@ -135,9 +139,7 @@ export function buildApplicationMission(record, checkpoint = null, options = {})
         'capture_application_status_and_follow_up_dates',
         ...(autoSubmit ? ['final_submit_or_send_only_if_runtime_policy_and_dynamic_gate_checks_pass'] : [])
       ],
-      human_gate: autoSubmit
-        ? base.permissions.human_gate
-        : [...new Set([...base.permissions.human_gate, 'final_submit_send_apply_confirm'])]
+      human_gate: protectedHumanGates
     },
     success: {
       ...base.success,
