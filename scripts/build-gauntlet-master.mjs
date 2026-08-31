@@ -10,6 +10,7 @@ const DEFAULTS = {
   postgrad: path.join(ROOT, 'docs/postgrad/postgrad-market.csv'),
   supplement: path.join(ROOT, 'data/gauntlet-master-supplement.json'),
   facultyPulls: path.join(ROOT, 'data/faculty-pull-routes.json'),
+  threadRecovered: path.join(ROOT, 'data/thread-recovered-routes-2026-09-01.json'),
   deepRadar: path.join(ROOT, 'data/deep-opportunity-radar-2026-09-01.json'),
   infrastructureRadar: path.join(ROOT, 'data/student-research-infrastructure-radar-2026-09-01.json'),
   outputCsv: path.join(ROOT, 'docs/gauntlet-master.csv'),
@@ -168,6 +169,7 @@ export function buildMasterRegistry({
   postgradPath = DEFAULTS.postgrad,
   supplementPath = DEFAULTS.supplement,
   facultyPullsPath = DEFAULTS.facultyPulls,
+  threadRecoveredPath = DEFAULTS.threadRecovered,
   deepRadarPath = DEFAULTS.deepRadar,
   infrastructureRadarPath = DEFAULTS.infrastructureRadar,
 } = {}) {
@@ -175,6 +177,7 @@ export function buildMasterRegistry({
   const postgrad = parseCsv(fs.readFileSync(postgradPath, 'utf8')).map(normalizePostgrad);
   const supplement = JSON.parse(fs.readFileSync(supplementPath, 'utf8'));
   const facultyPulls = JSON.parse(fs.readFileSync(facultyPullsPath, 'utf8'));
+  const threadRecovered = JSON.parse(fs.readFileSync(threadRecoveredPath, 'utf8'));
   const deepRadar = JSON.parse(fs.readFileSync(deepRadarPath, 'utf8'));
   const infrastructureRadar = JSON.parse(fs.readFileSync(infrastructureRadarPath, 'utf8'));
 
@@ -187,6 +190,13 @@ export function buildMasterRegistry({
   addSupplementRoutes(records, facultyPulls.routes, 'faculty-pull');
   addSupplementRoutes(records, supplement.restored_routes, 'restored');
   applyOverrides(records, supplement.overrides, 'supplement');
+
+  // Conversation/thread recovery is continuity evidence, not live verification.
+  // It is loaded before the verified deep-radar layers so a later official audit
+  // can explicitly override a recovered state without conversation memory being
+  // treated as semantic authority.
+  addSupplementRoutes(records, threadRecovered.routes, 'thread-recovered');
+  applyOverrides(records, threadRecovered.overrides, 'thread-recovered');
 
   // Deep research layers are applied after the older boards so verified new routes
   // and evidence-backed corrections can supersede stale generic rows without
