@@ -1,38 +1,50 @@
 # Blowback
 
-**Local-first gauntlet entry automation for finished projects.**
+**Local-first conversion automation for finished portfolio assets.**
 
-Blowback is a JavaScript + Playwright operator for competitions, grants, sponsorships, fellowships, institutional pilots, hackathons, conferences, awards, and other external-validation routes.
+Blowback is a JavaScript + Playwright/Codex mission substrate for competitions, grants, sponsorships, fellowships, research residencies, lab recruitment, RAs, predocs, research jobs, PhDs, institutional pilots, conferences, awards, and other external-conversion routes.
 
-It exists for one reason: once the underlying project is finished, repeated portal clerical work should not become another development campaign.
+It exists for one reason: once the underlying project is credible, repeated discovery, eligibility recon, packet projection, portal clerical work and follow-up should not become another development campaign.
 
 ```text
-canonical profile + project evidence + opportunity manifest
-                         ↓
-                    validate/plan
-                         ↓
-                portal reconnaissance
-                         ↓
-              human-verified route map
-                         ↓
-               Playwright preparation
-                         ↓
-             screenshots + run record
-                         ↓
-                    HUMAN GATE
-                         ↓
-                    final submit
+portfolio evidence
+      ↓
+Radar discovery + official-source verification
+      ↓
+Gauntlet master + G0–G6 gates
+      ↓
+truthful route-specific projection
+      ↓
+mission / application compiler
+      ↓
+Codex + authenticated Chrome / bounded Playwright
+      ↓
+recon → fill → upload → save draft
+      ↓
+protected gate OR explicitly-authorized safe submit/send
+      ↓
+receipt + outcome ledger
 ```
 
-## Safety boundary
+## Safety and authority boundary
 
-Blowback **does not autonomously submit entries**.
+The deterministic Playwright `run` command **never performs final submission**. It remains a bounded inspect/prepare mechanism for already-mapped portals.
 
-`recon` observes an unknown route without filling or clicking and never promotes its own candidate links into executable mappings. `inspect` checks an already-declared map on the current page. `prepare` may fill ordinary fields, upload declared files, and follow explicitly verified reversible navigation, but every manifest must retain `final_submit` as an explicit human gate.
+The adaptive application-mission layer can optionally receive explicit runtime authority with `--submit-if-safe`. That flag releases only the final submit/send action and only for application-like routes already in a fire/ready posture with no known material gate. Runtime discovery of any protected condition still forces `WAITING_HUMAN`.
 
-Passwords, OTP/2FA, CAPTCHA, eligibility/originality/authorship attestations, privacy/terms/consent controls, payments, adviser/team confirmations, and final submission remain human-controlled. The execution adapters refuse protected controls rather than trusting a bad recipe to classify them as safe.
+Protected conditions include:
 
-The system does not bypass anti-bot controls and does not fabricate eligibility.
+- CAPTCHA;
+- required OTP/2FA/password choice;
+- legal/privacy/terms consent;
+- eligibility, originality or authorship attestations;
+- payment/purchase/fees;
+- adviser/team/partner/host commitments;
+- unresolved work authorization or visa answers;
+- unresolved IP/moonlighting/outside-work terms;
+- any material question that cannot be answered from verified canonical evidence.
+
+The system does not bypass anti-bot controls and does not fabricate eligibility, credentials, evidence, experience or external validation.
 
 ## Quick start
 
@@ -42,13 +54,29 @@ Requires Node.js 20+.
 npm install
 npx playwright install chromium
 
+npm run check
+npm run gauntlet:master
+
+# Broad Gauntlet mission
+npm run mission:next
+
+# Highest-priority job/lab/predoc/fellowship/residency application
+npm run application:next
+
+# Top application queue
+npm run application:queue
+
+# Explicit runtime authority for safe final submit/send
+npm run blowback -- apply-next --submit-if-safe
+npm run blowback -- apply-queue --limit=20 --submit-if-safe
+```
+
+For mapped deterministic manifests:
+
+```bash
 npm run validate
 npm run plan
-
-# Observe a declared source/registration/submission stage without mutation
 npm run blowback -- recon examples/opportunities/animalhack-2026.json --stage=source
-
-# Inspect/prepare only after a route map has been verified
 npm run blowback -- run examples/opportunities/animalhack-2026.json
 ```
 
@@ -59,33 +87,58 @@ Older manifests remain in `inspect` mode on purpose. Switch an opportunity to `p
 ```text
 src/
   adapters/        bounded Playwright field/recipe adapters
+  application/     job/lab/predoc/fellowship/residency application missions
   commands/        executable workflows and reconnaissance
   core/            load/validate/resolve/plan/record/browser primitives
-  radar/           opportunity discovery, normalization and ranking
+  mission/         portfolio-wide Codex+Chrome mission operator
+  radar/           open-web, source-family and structured opportunity discovery
 examples/
   profiles/        repo-safe canonical applicant data examples
   projects/        canonical project evidence examples
   opportunities/   venue-specific manifests
-  radar/            discovery scopes and funding-source configuration
+  radar/            discovery policies, scopes and source registries
 submission-records/  local run evidence (git-ignored)
 .auth/                local Playwright storage state (git-ignored)
+.blowback/             local mission/checkpoint state (git-ignored)
 docs/
 ```
 
 ## Commands
 
 ```bash
+node src/cli.mjs next
+node src/cli.mjs mission <route-id>
+node src/cli.mjs apply-next [--submit-if-safe]
+node src/cli.mjs apply <route-id> [--submit-if-safe]
+node src/cli.mjs apply-queue [--limit=N] [--submit-if-safe]
+node src/cli.mjs checkpoint <checkpoint.json>
 node src/cli.mjs validate <opportunity.json|yaml>
 node src/cli.mjs plan <opportunity.json|yaml>
 node src/cli.mjs recon <opportunity.json|yaml> --stage=source|registration|submission
-node src/cli.mjs recon <opportunity.json|yaml> --stage=registration --persist-auth
 node src/cli.mjs run <opportunity.json|yaml>
-node src/cli.mjs run <opportunity.json|yaml> --persist-auth
 ```
 
-`--persist-auth` writes Playwright storage state under `.auth/<auth-scope>.json`. Manifests should declare an explicit `auth_scope` for a specific portal/account scope; otherwise Blowback derives it from the route host. Storage-state files are credentials and must never be committed.
+`--persist-auth` is available for `recon`/`run` and writes Playwright storage state under `.auth/<auth-scope>.json`. Storage-state files are credentials and must never be committed.
 
-`plan` and `inspect` redact resolved field values by default.
+`plan` and deterministic `inspect` redact resolved field values by default.
+
+## Application Autopilot
+
+Application routes are compiled by market rather than flattened into a generic resume blast.
+
+- **Job:** resume/CV + portfolio + role-specific claim projection.
+- **Research job / Research Engineer:** adds technical evidence packet.
+- **Lab / RA:** adds research-interest note and strongest relevant project evidence.
+- **Predoc:** adds empirical research sample and code/data/reproducibility evidence.
+- **Fellowship:** adds program-specific statement and bounded research/project agenda.
+- **Residency:** adds research agenda, technical evidence and availability/location facts.
+- **PhD/faculty pull:** adds research statement, academic evidence and faculty/program fit.
+
+Routes with unresolved eligibility or portal facts start at `RECON`; verified fire/ready routes start at `PREPARE`.
+
+The objective is not application count. The objective is conversion of real evidence into cash, funded research, interviews, offers, institutional relationships and post-graduation options.
+
+See `docs/APPLICATION_AUTOPILOT.md`.
 
 ## Private profile data
 
@@ -99,30 +152,35 @@ The local JSON/YAML object is shallow-merged over the repo profile. `*.local.jso
 
 ## Manifest philosophy
 
-Blowback keeps browser execution dumb.
+Applications should not be rewritten from memory.
 
-The browser adapter should not invent application prose, decide eligibility, or discover a route while preparing it. It consumes explicit values from three sources:
+The operator consumes explicit values from:
 
 - **profile** — applicant identity/affiliation boilerplate, optionally overlaid locally with private fields;
-- **project** — canonical title, pitch, evidence, repo/demo links, limitations;
-- **opportunity** — source/registration/submission routes, execution state, required fields/uploads, human gates, and verified portal mapping/recipe.
+- **project** — canonical title, pitch, evidence, repo/demo links and limitations;
+- **opportunity/Gauntlet route** — source, deadline, economics, execution state, gates and verified route facts.
 
-This keeps entry preparation auditable and makes it possible to diff what changed between two submissions.
+Canonical claim status remains authoritative:
+
+- `PROVEN` — may be projected with evidence references;
+- `INFERRED` — may appear only with inference status preserved;
+- `UNPROVEN` — excluded from external application projections.
 
 ## Portal strategy
 
-The first execution layer has two bounded mechanisms:
+There are two complementary execution mechanisms.
 
-- the generic accessible-form adapter for a single mapped page;
-- the deterministic `recipe` adapter for verified multi-page flows such as fill → Next → upload → stop at human gate.
+### Bounded deterministic Playwright
 
-The recipe adapter is not an autonomous browser agent. It only executes declared steps, only clicks when `safe_navigation: true`, and still refuses consequential-looking controls such as Submit, payment, account creation, privacy/consent, or attestations.
+The generic and recipe adapters are useful for verified portal mappings and regression/replay. Recipes execute declared steps only and protected commitment controls remain refused.
 
-When a real FIRE entry exposes repeated portal-specific behavior, add the smallest family adapter or recipe generator necessary. Do not build a universal improvising browser.
+### Adaptive Codex + Chrome missions
 
-**Execution readiness is separate from campaign readiness.** A `READY`/`FIRE` opportunity is not automatically browser-executable until its real registration/submission route and field/upload map have been inspected and verified.
+Novel portals are normal. The mission operator supplies strategy, evidence boundaries, permissions, checkpoints and receipts while Codex performs adaptive navigation in the authenticated browser.
 
-Portal readiness states are:
+Do not hardcode a new adapter for every website. Promote repeated mechanics only when evidence shows a reusable helper has value.
+
+Portal readiness remains separate from campaign readiness:
 
 ```text
 RESEARCH_ONLY
@@ -134,42 +192,45 @@ RESEARCH_ONLY
   -> SUBMITTED
 ```
 
-See `docs/PORTAL_RECON_V1.md` for the runtime contract and `docs/PORTAL_EXECUTION_AUDIT_2026-08-26.md` for the live-portal audit and box-deployment acceptance tests.
-
 ## Conversion control plane
 
-A stacked follow-up keeps the browser operator separate from the shared opportunity/evidence layer for jobs, PhDs, competitions, grants, sponsorships, fellowships, institutional pilots, incubators, commercial leads, and research routes.
+The control plane covers normal employment and the hidden research-labor market as well as competitions and grants.
 
-```text
-Spectator research / verification
-             ↓
-canonical opportunity dossier
-             ↓
-REJECT | HOLD | READY
-             ↓
-truthful claim/evidence projection
-             ↓
-Blowback recon / inspect / prepare
-             ↓
-          HUMAN GATE
-             ↓
-external outcome ledger
-```
+Supported application-oriented classes include:
 
-It preserves the `$0` / `$POST` / `$UPFRONT` gauntlet doctrine, refuses `READY` when required evidence is missing, and prevents application projections from promoting `INFERRED` or `UNPROVEN` claims into `PROVEN` facts.
+- `job`
+- `research_assistant`
+- `research_staff`
+- `research_engineer`
+- `research_officer`
+- `technical_associate`
+- `project_staff`
+- `predoc`
+- `research_fellowship`
+- `research_residency`
+- `policy_fellowship`
+- `funded_visiting`
+- `faculty_pull`
+- `phd`
 
-See `docs/CONVERSION_CONTROL_PLANE.md` for the full contract.
+Alongside grants, sponsorships, competitions, pilots, commercial and research routes.
+
+It preserves the `$0` / `$POST` / `$UPFRONT` doctrine, refuses `READY` when required evidence is missing, and prevents projections from silently upgrading claims.
+
+See `docs/CONVERSION_CONTROL_PLANE.md`.
 
 ## Opportunity Radar
 
-The Radar is a discovery/recall layer, not semantic authority. The existing collector uses the public Grants.gov API and then project-scopes/ranks candidates. Funding Radar v1 extends the shared opportunity ontology so non-grant routes can be represented explicitly:
+Radar now has multiple discovery layers:
 
-- `grant`
-- `sponsorship`
-- `fellowship`
-- `institutional_pilot`
+1. **open-web discovery** — bounded multilingual portfolio × opportunity queries to find ecosystems Radar has never seen;
+2. **source-family crawling** — recurring high-yield lab/university/research-job boards;
+3. **known-program monitoring** — named fellowships, residencies and grant pages;
+4. **structured APIs** — e.g. Grants.gov.
 
-`examples/radar/funding-scope-v1.json` is the funding-oriented portfolio scope. A source-specific detector may discover a candidate, but a candidate still must be hydrated and verified before conversion policy can produce `READY`.
+Search hits remain `DISCOVERY_ONLY`. They cannot become `ELIGIBLE`, `READY` or submit-authorized merely because a search snippet looks relevant. Official-source hydration and Gauntlet verification remain required.
+
+Research-labor vocabulary includes Research Assistant, Research Engineer, Research Officer, Predoc, Research Professional, Technical Associate, Project Staff, Fellow, Resident, Visiting Researcher, Join Us/Openings and Traditional-Chinese equivalents.
 
 ## Tests
 
@@ -178,18 +239,17 @@ npm run check
 npm run test:browser
 ```
 
-Core tests cover manifest resolution, execution-state gating, auth isolation, private-profile overlay and redacted planning. Browser tests prove reconnaissance is non-mutating, ordinary mapped fields can be prepared, protected controls are refused, verified reversible navigation can cross pages, uploads work, and the final Submit control is never clicked.
+Core tests cover manifest resolution, application-route compilation, explicit submit-if-safe authority, protected-gate preservation, Radar discovery, execution-state gating, auth isolation, private-profile overlay and redacted planning. Browser tests cover deterministic reconnaissance/preparation and continue to prove the direct Playwright runner never clicks final Submit.
 
 ## Non-goals
 
-- universal autonomous web agent;
 - CAPTCHA/2FA bypass;
-- automatic legal/privacy/authorship attestations;
+- automatic legal/privacy/authorship/eligibility attestations;
 - automatic payment;
-- autonomous account/password creation;
-- inventing teammates/advisers/affiliations;
-- autonomous opportunity discovery/ranking inside the browser operator;
-- spray-and-pray job/PhD applications;
-- another frontend/SaaS product.
+- autonomous password/account creation;
+- inventing teammates/advisers/affiliations/credentials/evidence;
+- indiscriminate spray-and-pray applications;
+- pretending search snippets are verified opportunity facts;
+- another frontend/SaaS product before conversion volume requires it.
 
-Blowback is conversion infrastructure: **make external applications boring, reproducible, truthful, and cheap.**
+Blowback is conversion infrastructure: **discover broadly, verify strictly, project truthfully, make applications boring, and collect receipts.**
