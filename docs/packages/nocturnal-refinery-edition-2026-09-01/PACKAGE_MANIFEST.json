@@ -7,10 +7,13 @@
   "gauntlet": {
     "repository": "Spectating101/gauntlet-blowback",
     "base_branch": "main",
-    "package_base_commit": "f58bdc750fb6463241396ec8aa17cd8610a96568",
     "master_snapshot": "2026-09-01",
-    "base_capabilities": ["autonomous_radar_discovery", "application_autopilot"],
-    "route_state_note": "Package decisions use verified master/radar state. Discovery-only candidates are not silently promoted into verified routes."
+    "base_capabilities": ["autonomous_radar_discovery", "application_autopilot", "student_and_research_resource_radar"],
+    "portfolio_allocation_controls": [
+      "docs/PORTFOLIO_SLOT_ALLOCATION_2026-09-01.md",
+      "data/portfolio-slot-allocation-2026-09-01.json"
+    ],
+    "route_state_note": "Project-specific route state is subordinate to portfolio slot allocation when the submission unit is scarce. Discovery-only candidates are not silently promoted."
   },
   "nocturnal": {
     "repository": "Spectating101/nocturnal-oversight",
@@ -30,5 +33,5 @@
   "evidence_family_rule": "Edition is a Nocturnal presentation surface, not a separate independent accomplishment. Refinery is separate where its empirical research contribution is the venue target.",
   "audience_variants": ["PUBLIC_INTEREST", "RESEARCH_SOFTWARE", "RESEARCH_LAB_PHD"],
   "autopilot_handoff": "Semantic mapping supplied. Direct automatic ingestion of this evidence-family directory is not claimed until a stable adapter/source schema exists.",
-  "release_rule": "Do not reopen product architecture absent observed pilot/reviewer failure. Rehydrate opportunity-specific gates before final submission."
+  "release_rule": "Do not reopen product architecture absent observed pilot/reviewer failure. Allocate scarce portfolio slots and rehydrate opportunity-specific gates before final submission."
 }
