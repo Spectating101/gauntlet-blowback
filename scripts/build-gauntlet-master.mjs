@@ -12,6 +12,7 @@ const DEFAULTS = {
   facultyPulls: path.join(ROOT, 'data/faculty-pull-routes.json'),
   threadRecovered: path.join(ROOT, 'data/thread-recovered-routes-2026-09-01.json'),
   deepRadar: path.join(ROOT, 'data/deep-opportunity-radar-2026-09-01.json'),
+  nocturnalRadar: path.join(ROOT, 'data/nocturnal-conversion-radar-2026-09-01.json'),
   infrastructureRadar: path.join(ROOT, 'data/student-research-infrastructure-radar-2026-09-01.json'),
   outputCsv: path.join(ROOT, 'docs/gauntlet-master.csv'),
   outputJson: path.join(ROOT, 'docs/gauntlet-master.json'),
@@ -185,6 +186,7 @@ export function buildMasterRegistry({
   facultyPullsPath = DEFAULTS.facultyPulls,
   threadRecoveredPath = DEFAULTS.threadRecovered,
   deepRadarPath = DEFAULTS.deepRadar,
+  nocturnalRadarPath = DEFAULTS.nocturnalRadar,
   infrastructureRadarPath = DEFAULTS.infrastructureRadar,
 } = {}) {
   const longtail = parseCsv(fs.readFileSync(longtailPath, 'utf8')).map(normalizeLongtail);
@@ -193,6 +195,7 @@ export function buildMasterRegistry({
   const facultyPulls = JSON.parse(fs.readFileSync(facultyPullsPath, 'utf8'));
   const threadRecovered = JSON.parse(fs.readFileSync(threadRecoveredPath, 'utf8'));
   const deepRadar = JSON.parse(fs.readFileSync(deepRadarPath, 'utf8'));
+  const nocturnalRadar = JSON.parse(fs.readFileSync(nocturnalRadarPath, 'utf8'));
   const infrastructureRadar = JSON.parse(fs.readFileSync(infrastructureRadarPath, 'utf8'));
 
   const records = new Map();
@@ -210,11 +213,17 @@ export function buildMasterRegistry({
   // This is intentionally more permissive than every live/verified source layer.
   addThreadRecoveredRoutes(records, threadRecovered.routes);
 
-  // Deep research layers are applied after the older boards so verified new routes
-  // and evidence-backed corrections can supersede stale generic rows without
-  // duplicating IDs. Later focused audits may override earlier broad audits.
+  // Broad deep research restores verified market routes and supersedes stale generic rows.
   addSupplementRoutes(records, deepRadar.routes, 'deep-radar');
   applyOverrides(records, deepRadar.overrides, 'deep-radar');
+
+  // Focused project audits load after broad/thread discovery so newer, more specific
+  // route/gate/economics evidence can refine existing IDs without creating duplicates.
+  addSupplementRoutes(records, nocturnalRadar.routes, 'nocturnal-conversion-radar');
+  applyOverrides(records, nocturnalRadar.overrides, 'nocturnal-conversion-radar');
+
+  // Resource/credit audits are independent economic objects and load last among
+  // current focused sources so their verified claim/PI semantics remain authoritative.
   addSupplementRoutes(records, infrastructureRadar.routes, 'student-research-infrastructure-radar');
   applyOverrides(records, infrastructureRadar.overrides, 'student-research-infrastructure-radar');
 

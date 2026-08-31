@@ -67,6 +67,15 @@ test('known G4 assets stay explicitly short of external validation', () => {
   assert.match(byId.get('hardware-splicer').strongest_known_gap, /physical|live unseen|G4/i);
 });
 
+test('Nocturnal maturity points to one bounded external pilot, not another feature sprint', () => {
+  const nocturnal = byId.get('nocturnal-oversight');
+  assert.equal(nocturnal.external_evidence_stage, 'none');
+  assert.equal(nocturnal.last_audited, '2026-09-01');
+  assert.match(nocturnal.strongest_known_gap, /externally witnessed.*pilot/i);
+  assert.match(nocturnal.strongest_known_gap, /Do not reopen architecture/i);
+  assert.match(nocturnal.evidence_basis, /OTF.*TWNIC.*NLnet.*WebSci.*ICWSM/i);
+});
+
 test('asset maturity is explicitly not a route status field', () => {
   assert.equal(registry.doctrine.asset_maturity_is_not_route_status, true);
   assert.equal(registry.doctrine.internal_validation_is_not_external_validation, true);
