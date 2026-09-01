@@ -1,0 +1,125 @@
+{
+  "schema": "blowback.portfolio_route_allocation.v1",
+  "snapshot": "2026-09-01",
+  "doctrine": {
+    "one_route_one_lead_narrative": true,
+    "person_level_programs_use_evidence_bundles_not_project_competition": true,
+    "support_assets_do_not_consume_project_slots": true,
+    "citation_engine_is_support_only": true,
+    "gauntlet_blowback_is_support_only": true,
+    "scarce_slots_require_explicit_portfolio_bakeoff": true,
+    "no_new_project_to_fit_route": true,
+    "external_validation_is_not_inferred_from_internal_maturity": true,
+    "final_submit_human_gated": true
+  },
+  "support_only_assets": ["citation-engine", "gauntlet-blowback"],
+  "packages": {
+    "hardware-splicer-physical-agents": {
+      "lead_asset": "hardware-splicer",
+      "core_claim": "Evidence- and authority-constrained AI systems for electronics, mechanical geometry and bounded physical engineering workflows.",
+      "do_not_claim": ["physical certification", "whole-assembly closure", "connector electrical compatibility", "fabrication or release authority", "external design-partner validation"]
+    },
+    "cite-reliable-research-ai": {
+      "lead_asset": "cite-agent",
+      "core_claim": "Research-accountability workspace binding literature and empirical evidence to the claims a manuscript is currently allowed to make.",
+      "do_not_claim": ["broad external adoption", "fully attested backend release", "provider-calibrated quality superiority"]
+    },
+    "research-drive-research-infrastructure": {
+      "lead_asset": "research-drive",
+      "core_claim": "Evidence-first research platform spanning acquisition, Library, synthesis, connected-source authority and reproducible research workflows.",
+      "do_not_claim": ["external institutional adoption", "automatic cloud-byte ownership", "production promotion beyond the certified candidate pair"]
+    },
+    "nocturnal-information-integrity": {
+      "lead_asset": "nocturnal-oversight",
+      "core_claim": "Correction-aware longitudinal public memory for reconstructing how documented information states evolve across claims, denials, corrections, supersession and outcomes.",
+      "do_not_claim": ["partner validation", "newsroom adoption", "surveillance or punitive-person dossiers", "general truth scoring"]
+    },
+    "policy-lab-fintech-assurance": {
+      "lead_asset": "policy-lab",
+      "core_claim": "Evidence-to-admission-to-supported-quantity-to-settlement research and assurance infrastructure for bounded financial and policy claims.",
+      "do_not_claim": ["legal entitlement", "operator adoption", "calibrated policy endorsement", "general financial-product validity"]
+    },
+    "refinery-research-software": {
+      "lead_asset": "refinery-commons",
+      "core_claim": "Capability-first research-software evidence system separating semantic capability, exact implementation, exact-subject claims, freshness and execution authority.",
+      "do_not_claim": ["general PMF", "universal reuse superiority", "execution authority", "external adoption beyond bounded published evidence"]
+    },
+    "sharpe-quant-research": {
+      "lead_asset": "sharpe-terminus",
+      "core_claim": "Causal, evidence-gated quantitative research architecture separating research promotion, portfolio authorization and genuine forward evidence.",
+      "do_not_claim": ["proven profitability", "live trading readiness", "future alpha", "seeded or historical observations as genuine forward proof"]
+    },
+    "public-good-control": {
+      "lead_asset": "public-good-control",
+      "core_claim": "Evidence-bounded public-good control plane for needs, constraints, coordination and domain-specific decision support.",
+      "do_not_claim": ["field outcomes", "partner adoption", "operational authority", "intervention effectiveness without domain evidence"]
+    },
+    "geomap-procurement": {
+      "lead_asset": "geomap-arbitrage",
+      "core_claim": "Evidence-backed local economic and procurement opportunity assessment under explicit skill, capital, mobility, legal and economics gates.",
+      "do_not_claim": ["live income proof", "generic lead-generation value", "market demand from synthetic fixtures", "automatic procurement authority"]
+    },
+    "finance-research-paper": {
+      "lead_asset": "research-papers",
+      "core_claim": "Audited empirical finance/digital-economy research used claim-by-claim with current reproducibility state preserved.",
+      "do_not_claim": ["stale superseded numerical estimates", "unrepaired empirical claims", "portfolio-wide paper validity from one accepted manuscript"]
+    }
+  },
+  "exact_allocations": {
+    "taia-2026-hardware-splicer": {"mode":"PROJECT_LEAD","lead_asset":"hardware-splicer","support_assets":["citation-engine"],"package_family":"hardware-splicer-physical-agents","confidence":"HIGH","reason":"Physical/Agentic AI is Hardware Splicer's native contribution; Citation Engine only strengthens authority/evidence framing."},
+    "anthropic-mhs-preview-2026": {"mode":"PROJECT_LEAD","lead_asset":"hardware-splicer","support_assets":["citation-engine"],"package_family":"hardware-splicer-physical-agents","confidence":"HIGH","reason":"MHS is a direct hardware-interface/evaluation route."},
+    "anthropic-ai-for-science-general-2026": {"mode":"PROJECT_LEAD","lead_asset":"hardware-splicer","support_assets":["citation-engine","research-drive"],"package_family":"hardware-splicer-physical-agents","confidence":"HIGH","reason":"Use the bounded physical-agent experiment rather than generic hosting or product-credit framing."},
+    "openai-researcher": {"mode":"PROJECT_LEAD","lead_asset":"cite-agent","support_assets":["citation-engine","research-papers"],"package_family":"cite-reliable-research-ai","confidence":"HIGH","reason":"Cite supplies the cleanest controlled research question on citation/provenance reliability."},
+    "fas-ai-policy-2026": {"mode":"PROJECT_LEAD","lead_asset":"policy-lab","support_assets":["cite-agent","citation-engine"],"package_family":"policy-lab-fintech-assurance","confidence":"HIGH","reason":"Lead only with a genuine frontier-AI policy implementation thesis; HS/Cite are evidence, not separate proposals."},
+    "otf-nocturnal": {"mode":"PROJECT_LEAD","lead_asset":"nocturnal-oversight","support_assets":["citation-engine","research-drive"],"package_family":"nocturnal-information-integrity","confidence":"HIGH","reason":"Information-controls research is Nocturnal-native; must clear student/full-time and surveillance-affiliation gates."},
+    "otf-iff-nocturnal": {"mode":"PROJECT_LEAD","lead_asset":"nocturnal-oversight","support_assets":["citation-engine","research-drive"],"package_family":"nocturnal-information-integrity","confidence":"HIGH","reason":"Applied Internet-freedom route should follow a concrete user/pilot problem."},
+    "partner-doublethink-nocturnal-pilot": {"mode":"PROJECT_LEAD","lead_asset":"nocturnal-oversight","support_assets":["citation-engine"],"package_family":"nocturnal-information-integrity","confidence":"HIGH","reason":"Highest-value next evidence is one bounded analyst pilot."},
+    "partner-tfc-nocturnal-pilot": {"mode":"PROJECT_LEAD","lead_asset":"nocturnal-oversight","support_assets":["citation-engine"],"package_family":"nocturnal-information-integrity","confidence":"HIGH","reason":"Highest-value next evidence is one bounded fact-checking pilot."},
+    "partner-ocf-nocturnal-pilot": {"mode":"PROJECT_LEAD","lead_asset":"nocturnal-oversight","support_assets":["citation-engine","refinery-commons"],"package_family":"nocturnal-information-integrity","confidence":"HIGH","reason":"Public-memory use case leads; Refinery can support provenance/freshness only."},
+    "twnic-community-grant-2026-nocturnal": {"mode":"PORTFOLIO_BAKEOFF","lead_asset":"nocturnal-oversight","support_assets":["citation-engine"],"package_family":"nocturnal-information-integrity","scarce_slot_group":"twnic-one-proposal-per-host-2026","confidence":"MEDIUM","reason":"Nocturnal is provisional lead, but one proposal per legal entity means host plus whole-portfolio bake-off before reserving the slot."},
+    "nlnet-restack-nocturnal": {"mode":"PORTFOLIO_BAKEOFF","lead_asset":"refinery-commons","support_assets":["nocturnal-oversight","citation-engine"],"package_family":"refinery-research-software","scarce_slot_group":"nlnet-first-grant-portfolio-2026","confidence":"MEDIUM","reason":"Refinery currently has the cleanest native open/research-software thesis; exact live call criteria decide before consuming first-grant attention."},
+    "nlnet-restack-policy-lab-2026": {"mode":"PORTFOLIO_BAKEOFF","lead_asset":"refinery-commons","support_assets":["policy-lab","citation-engine"],"package_family":"refinery-research-software","scarce_slot_group":"nlnet-first-grant-portfolio-2026","confidence":"MEDIUM","reason":"Do not let an older Policy-Lab row reserve NLnet by inertia; perform one portfolio bake-off."},
+    "nlnet-codesupply-refinery": {"mode":"PORTFOLIO_BAKEOFF","lead_asset":"refinery-commons","support_assets":["citation-engine"],"package_family":"refinery-research-software","scarce_slot_group":"nlnet-first-grant-portfolio-2026","confidence":"HIGH","reason":"Refinery is native to software supply/evidence; still respects first-grant focus and call-specific criteria."},
+    "ssi-fellowship-2027-policy-lab": {"mode":"PERSON_BUNDLE","lead_asset":"refinery-commons","lead_projects":["refinery-commons","research-drive","cite-agent"],"support_assets":["policy-lab","citation-engine"],"package_family":"refinery-research-software","confidence":"HIGH","reason":"SSI funds the person/community activity; Refinery is the strongest research-software lead while RD/Cite demonstrate broader research-infrastructure practice."},
+    "fellowship-tech-policy-press-2027": {"mode":"PERSON_BUNDLE","lead_asset":"nocturnal-oversight","lead_projects":["nocturnal-oversight","policy-lab"],"support_assets":["citation-engine","research-papers"],"package_family":"nocturnal-information-integrity","confidence":"HIGH","reason":"One thematic applicant narrative: Nocturnal leads information integrity, Policy Lab supports policy/research credibility."},
+    "residency-mats-winter-2027": {"mode":"PERSON_BUNDLE","lead_asset":"hardware-splicer","lead_projects":["hardware-splicer","cite-agent"],"support_assets":["citation-engine","research-drive"],"package_family":"hardware-splicer-physical-agents","confidence":"MEDIUM","reason":"Use one coherent technical-safety agenda around checkable authority; acceptance is a career decision, not a project prize."},
+    "residency-mats-2027": {"mode":"PERSON_BUNDLE","lead_asset":"hardware-splicer","lead_projects":["hardware-splicer","cite-agent"],"support_assets":["citation-engine","research-drive"],"package_family":"hardware-splicer-physical-agents","confidence":"MEDIUM","reason":"Career-scale research employment; strongest distinct agenda is bounded consequential/physical authority, with Cite as evidence-control support."},
+    "fellowship-era-ai-winter-2027": {"mode":"PERSON_BUNDLE","lead_asset":"hardware-splicer","lead_projects":["hardware-splicer","cite-agent"],"support_assets":["citation-engine"],"package_family":"hardware-splicer-physical-agents","confidence":"MEDIUM","reason":"Low application cost justifies firing one coherent technical-governance/safety agenda rather than multiple project pitches."},
+    "fellowship-astra-2027": {"mode":"PERSON_BUNDLE","lead_asset":"hardware-splicer","lead_projects":["hardware-splicer","cite-agent"],"support_assets":["citation-engine"],"package_family":"hardware-splicer-physical-agents","confidence":"MEDIUM","reason":"Use bounded authority/evaluation agenda; do not manufacture AI-safety motivation beyond the actual work."},
+    "lab-sinica-ku-nlp-ra-2026": {"mode":"PERSON_BUNDLE","lead_asset":"cite-agent","lead_projects":["cite-agent","nocturnal-oversight"],"support_assets":["research-drive","citation-engine"],"package_family":"cite-reliable-research-ai","confidence":"HIGH","reason":"LLM/RAG/news-literacy work maps directly to Cite, with Nocturnal as the information-integrity second proof."},
+    "lab-sinica-aiiu-embodied-ai-ra-2026": {"mode":"PERSON_BUNDLE","lead_asset":"hardware-splicer","lead_projects":["hardware-splicer"],"support_assets":["citation-engine"],"package_family":"hardware-splicer-physical-agents","confidence":"HIGH","reason":"Embodied AI/CV/3D/AI-safety work is HS-native."},
+    "job-hku-ai-engineer-mcp-ra2-2026": {"mode":"PERSON_BUNDLE","lead_asset":"research-drive","lead_projects":["research-drive","cite-agent"],"support_assets":["gauntlet-blowback","citation-engine"],"package_family":"research-drive-research-infrastructure","confidence":"HIGH","reason":"The role explicitly overlaps MCP, agent tool calls, TypeScript/Python and AI application infrastructure; Blowback is supporting engineering evidence only."},
+    "predoc-mit-futuretech-ai-econ-2026": {"mode":"PERSON_BUNDLE","lead_asset":"policy-lab","lead_projects":["policy-lab","sharpe-terminus","research-drive"],"support_assets":["research-papers"],"package_family":"policy-lab-fintech-assurance","confidence":"HIGH","reason":"AI/economics research is a person-level bundle; lead with empirical finance/policy work, supported by data-system execution."},
+    "lab-aist-eart-ra-2026": {"mode":"PERSON_BUNDLE","lead_asset":"hardware-splicer","lead_projects":["hardware-splicer"],"support_assets":["citation-engine"],"package_family":"hardware-splicer-physical-agents","confidence":"HIGH","reason":"Embodied/robotics route is HS-native."},
+    "job-astar-embodied-ai-research-engineer-2026": {"mode":"PERSON_BUNDLE","lead_asset":"hardware-splicer","lead_projects":["hardware-splicer"],"support_assets":["citation-engine"],"package_family":"hardware-splicer-physical-agents","confidence":"HIGH","reason":"Embodied AI/robotics research-engineering route is HS-native."},
+    "faculty-nthu-shan-hung-wu-ai-2026": {"mode":"PERSON_BUNDLE","lead_asset":"cite-agent","lead_projects":["cite-agent","research-drive"],"support_assets":["policy-lab","citation-engine"],"package_family":"cite-reliable-research-ai","confidence":"HIGH","reason":"Generative AI + AI-powered DB/IR + business intelligence maps best to Cite/RD, not HS."},
+    "msr-2027-technical-refinery": {"mode":"PROJECT_LEAD","lead_asset":"refinery-commons","support_assets":["citation-engine"],"package_family":"refinery-research-software","confidence":"HIGH","reason":"Refinery owns the software-engineering research contribution."},
+    "msr-2027-data-tool-refinery": {"mode":"PROJECT_LEAD","lead_asset":"refinery-commons","support_assets":["citation-engine"],"package_family":"refinery-research-software","confidence":"HIGH","reason":"Refinery owns the tool/data contribution; Technical track remains preferred when it preserves the stronger research question."},
+    "saner-2027-research-refinery": {"mode":"PROJECT_LEAD","lead_asset":"refinery-commons","support_assets":["citation-engine"],"package_family":"refinery-research-software","confidence":"HIGH","reason":"Refinery-native research route; only fire if it does not dilute MSR or create manuscript overlap."},
+    "fc27-cl-eci": {"mode":"PROJECT_LEAD","lead_asset":"policy-lab","support_assets":["citation-engine"],"package_family":"policy-lab-fintech-assurance","scarce_slot_group":"cl-eci-manuscript-2026","confidence":"HIGH","reason":"FC27 is the protected primary CL-ECI manuscript lane."},
+    "ftsid-2026-cl-eci": {"mode":"PROJECT_LEAD","lead_asset":"policy-lab","support_assets":["citation-engine"],"package_family":"policy-lab-fintech-assurance","scarce_slot_group":"cl-eci-manuscript-2026","confidence":"HIGH","reason":"Fallback only if FC27 is stopped or the contribution is demonstrably non-overlapping."},
+    "shih-hsin-finance-2026-il": {"mode":"PROJECT_LEAD","lead_asset":"research-papers","support_assets":["policy-lab"],"package_family":"finance-research-paper","confidence":"HIGH","reason":"Invisible Ledger owns this finance-paper route; do not misallocate it back to Policy Lab."},
+    "dpg-policy-lab": {"mode":"PROJECT_LEAD","lead_asset":"policy-lab","support_assets":["citation-engine"],"package_family":"policy-lab-fintech-assurance","confidence":"HIGH","reason":"Policy Lab already has the governance/privacy/security/public-interest packet; do not delay the ready route for another asset."},
+    "innoserve-2026-policy-lab-ip": {"mode":"PROJECT_LEAD","lead_asset":"policy-lab","support_assets":["citation-engine"],"package_family":"policy-lab-fintech-assurance","scarce_slot_group":"innoserve-portfolio-category-cap-2026","confidence":"HIGH","reason":"Prepared IP packet exists; use only if adviser/team/category gates clear."},
+    "innoserve-2026-hs-industrial-ai": {"mode":"PROJECT_LEAD","lead_asset":"hardware-splicer","support_assets":["citation-engine"],"package_family":"hardware-splicer-physical-agents","scarce_slot_group":"innoserve-portfolio-category-cap-2026","confidence":"HIGH","reason":"Industrial AI is the strongest InnoServe-native HS route; adviser/team rules remain external."},
+    "google-cloud-research-credits-pi-2026": {"mode":"PERSON_BUNDLE","lead_asset":"research-drive","lead_projects":["research-drive","research-papers"],"support_assets":["cite-agent"],"package_family":"research-drive-research-infrastructure","confidence":"HIGH","reason":"PI-sponsored research-cloud infrastructure route; MSc cannot apply directly."},
+    "oracle-for-research-project-award-2026": {"mode":"PERSON_BUNDLE","lead_asset":"research-drive","lead_projects":["research-drive","research-papers"],"support_assets":["cite-agent"],"package_family":"research-drive-research-infrastructure","confidence":"HIGH","reason":"PI/institutional cloud-resource route; lead with reproducible research infrastructure and a defensible cost model."},
+    "outbound-geomap-procurement-intelligence": {"mode":"PROJECT_LEAD","lead_asset":"geomap-arbitrage","support_assets":["citation-engine","hardware-splicer"],"package_family":"geomap-procurement","confidence":"MEDIUM","reason":"GeoMap may lead only a specific buyer/supplier evidence problem with executable delivery; generic lead generation remains killed."},
+    "procure-taitra-isourcing-electronics-2026": {"mode":"PORTFOLIO_BAKEOFF","lead_asset":"geomap-arbitrage","support_assets":["hardware-splicer","citation-engine"],"package_family":"geomap-procurement","confidence":"LOW","reason":"Verify a real current buyer/supplier problem first; otherwise keep this as market intelligence rather than a campaign."}
+  },
+  "pattern_rules": [
+    {"id":"student-entitlements","lane_regex":"^(STUDENT_INFRASTRUCTURE)$","mode":"SHARED_ENTITLEMENT","package_family":"student-infrastructure","confidence":"HIGH","reason":"Entitlements serve the portfolio and do not consume a project slot."},
+    {"id":"quant-careers","text_regex":"quant|trading|portfolio|alpha|market research|financial trading","application_only":true,"mode":"PERSON_BUNDLE","lead_asset":"sharpe-terminus","lead_projects":["sharpe-terminus","research-papers"],"support_assets":["research-drive"],"package_family":"sharpe-quant-research","confidence":"HIGH","reason":"Quant jobs hire the person; Sharpe is the lead work sample and papers/finance are supporting research evidence."},
+    {"id":"hardware-careers","text_regex":"pcb|eda|computer vision|\bcv\b|robot|robotics|embodied|physical ai|semiconductor|mechanical|electronics|manufacturing","application_only":true,"mode":"PERSON_BUNDLE","lead_asset":"hardware-splicer","lead_projects":["hardware-splicer"],"support_assets":["citation-engine"],"package_family":"hardware-splicer-physical-agents","confidence":"HIGH","reason":"Hardware/CV/robotics jobs are person-level applications led by HS evidence."},
+    {"id":"research-platform-careers","text_regex":"mcp|agent infrastructure|ai agent|research engineer|full.?stack|data infrastructure|research platform|rag|llm application","application_only":true,"mode":"PERSON_BUNDLE","lead_asset":"research-drive","lead_projects":["research-drive","cite-agent"],"support_assets":["gauntlet-blowback","citation-engine"],"package_family":"research-drive-research-infrastructure","confidence":"MEDIUM","reason":"General AI/research-engineering jobs should use RD+Cite as the main dossier; infrastructure projects remain supporting proof."},
+    {"id":"information-integrity","text_regex":"information integrity|fact.?check|censorship|internet freedom|public memory|news|social media|misinformation|disinformation|information controls","mode":"PROJECT_LEAD","lead_asset":"nocturnal-oversight","support_assets":["citation-engine","research-drive"],"package_family":"nocturnal-information-integrity","confidence":"HIGH","reason":"Nocturnal owns longitudinal information-state and information-integrity routes."},
+    {"id":"research-software","text_regex":"software sustainability|software engineering|open source|software supply|provenance|slsa|sbom|reuse|commons","mode":"PROJECT_LEAD","lead_asset":"refinery-commons","support_assets":["citation-engine"],"package_family":"refinery-research-software","confidence":"MEDIUM","reason":"Refinery is the native research-software/reuse/evidence artifact; call-specific scarcity can still force bake-off."},
+    {"id":"public-good","text_regex":"animal|disaster|humanitarian|nutrition|public.good|conservation|civic application","mode":"PROJECT_LEAD","lead_asset":"public-good-control","support_assets":["citation-engine","nocturnal-oversight"],"package_family":"public-good-control","confidence":"MEDIUM","reason":"Public-Good leads only when the route has a real domain use case; field/operator evidence remains G4."},
+    {"id":"fintech-policy","text_regex":"fintech|financial claim|settlement|financial governance|energy anchoring|sustainable finance|climate finance","mode":"PROJECT_LEAD","lead_asset":"policy-lab","support_assets":["citation-engine","research-papers"],"package_family":"policy-lab-fintech-assurance","confidence":"MEDIUM","reason":"Policy Lab owns finance/settlement/assurance routes unless an explicit empirical-paper route owns the contribution."},
+    {"id":"researcher-ai","text_regex":"citation|literature|researcher|research workflow|academic writing|evidence grounding","mode":"PROJECT_LEAD","lead_asset":"cite-agent","support_assets":["citation-engine","research-drive"],"package_family":"cite-reliable-research-ai","confidence":"MEDIUM","reason":"Cite owns researcher-facing reliability/workflow routes."},
+    {"id":"procurement-geomap","text_regex":"procurement|supplier|buyer|sourcing","mode":"PORTFOLIO_BAKEOFF","lead_asset":"geomap-arbitrage","support_assets":["hardware-splicer","citation-engine"],"package_family":"geomap-procurement","confidence":"LOW","reason":"GeoMap is only provisional until a real buyer/supplier problem and delivery economics are verified."},
+    {"id":"generic-person-application","application_only":true,"mode":"PERSON_BUNDLE","lead_asset":"PERSON","lead_projects":[],"support_assets":[],"package_family":"person-portfolio","confidence":"MEDIUM","reason":"Person-level opportunity: choose the strongest relevant existing evidence without creating project-vs-project applications."},
+    {"id":"single-project-fallback","single_project_only":true,"mode":"PROJECT_LEAD","package_family":"asset-default","confidence":"MEDIUM","reason":"Only one lead-capable canonical project is named by the route."},
+    {"id":"multi-project-fallback","mode":"PORTFOLIO_BAKEOFF","package_family":"portfolio-bakeoff","confidence":"LOW","reason":"Multiple lead-capable projects remain and no stronger ownership rule resolves the route; verify before spending a scarce slot."}
+  ]
+}
