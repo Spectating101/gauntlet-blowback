@@ -1,0 +1,129 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Gauntlet Blowback//Historical Calendar through 2026-09-01//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Gauntlet Blowback — History through 2026-09-01 20:35 Taipei
+X-WR-TIMEZONE:Asia/Taipei
+X-GAUNTLET-CUTOFF:20260901T203500+0800
+X-GAUNTLET-POLICY:Historical entries remain intelligence. If a receipt exists, the route belongs in OUTCOME rather than EXPIRED; no receipt means never call it submitted.
+BEGIN:VEVENT
+UID:jcdl-workshop-20260531@blowback
+DTSTART;VALUE=DATE:20260531
+DTEND;VALUE=DATE:20260601
+SUMMARY:[EXPIRED/HISTORY] JCDL 2026 workshop/tutorial — Cite
+DESCRIPTION:Historical researcher-workflow route. Retain as a future-cycle Radar seed; do not invent a new deadline.
+END:VEVENT
+BEGIN:VEVENT
+UID:nlnet-zero-commons-20260601@blowback
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+SUMMARY:[EXPIRED/HISTORY] NLnet NGI Zero Commons — Cite/Commons
+DESCRIPTION:Historical call only. Do not conflate it with current Restack/CodeSupply calls.
+END:VEVENT
+BEGIN:VEVENT
+UID:jcdl-full-20260630@blowback
+DTSTART;VALUE=DATE:20260630
+DTEND;VALUE=DATE:20260701
+SUMMARY:[EXPIRED/HISTORY] JCDL 2026 full paper — Cite
+DESCRIPTION:Retain for future-cycle discovery only; any future submission requires a research-native contribution and new official CFP verification.
+END:VEVENT
+BEGIN:VEVENT
+UID:dadh-20260810@blowback
+DTSTART;VALUE=DATE:20260810
+DTEND;VALUE=DATE:20260811
+SUMMARY:[EXPIRED/HISTORY] DADH 2026 research route
+DESCRIPTION:Past abstract gate. Preserve route identity and lessons; rehydrate exact future cycle before reuse.
+END:VEVENT
+BEGIN:VEVENT
+UID:tairos-20260822@blowback
+DTSTART;VALUE=DATE:20260822
+DTEND;VALUE=DATE:20260823
+SUMMARY:[DONE/HISTORY] TAIROS + Automation Taipei
+DESCRIPTION:Historical Hardware Splicer field-intelligence route. Retain contacts/leads/observations as evidence; attendance is not a submission verdict.
+END:VEVENT
+BEGIN:VEVENT
+UID:apixta-taiwan-20260827@blowback
+DTSTART;VALUE=DATE:20260827
+DTEND;VALUE=DATE:20260828
+SUMMARY:[PAST/HISTORY] III / APICTA Taiwan selection path
+DESCRIPTION:Current cycle date passed. Retain as future APICTA/III discovery family if applicable.
+END:VEVENT
+BEGIN:VEVENT
+UID:pulitzer-ai-accountability-20260827@blowback
+DTSTART;VALUE=DATE:20260827
+DTEND;VALUE=DATE:20260828
+SUMMARY:[CLOSED/WATCH NEXT ROUND] Pulitzer Center AI Accountability route
+DESCRIPTION:Current round closed. Nocturnal remains partner/use-case gated for a future round; closed funding is not active funding.
+END:VEVENT
+BEGIN:VEVENT
+UID:agentrust-20260829@blowback
+DTSTART;VALUE=DATE:20260829
+DTEND;VALUE=DATE:20260830
+SUMMARY:[EXPIRED/HISTORY] AgenTrust Fellowship
+DESCRIPTION:Past deadline. Retain only for cycle intelligence and future re-verification.
+END:VEVENT
+BEGIN:VEVENT
+UID:wanrun-20260831@blowback
+DTSTART;VALUE=DATE:20260831
+DTEND;VALUE=DATE:20260901
+SUMMARY:[KILL + EXPIRED] Wanrun Graduate Research 2026
+DESCRIPTION:Mandatory adviser-signature gate was not truthfully satisfiable. Preserve Hardware Splicer package; do not manufacture an adviser or revive this cycle.
+END:VEVENT
+BEGIN:VEVENT
+UID:usn-ai-business-20260831@blowback
+DTSTART;VALUE=DATE:20260831
+DTEND;VALUE=DATE:20260901
+SUMMARY:[EXPIRED OR OUTCOME IF FIRED] USN PhD — AI Business Model Innovation
+DESCRIPTION:Deadline passed. If a receipt exists, track outcome; otherwise remove from live firing queue.
+END:VEVENT
+BEGIN:VEVENT
+UID:usn-maritime-ai-20260831@blowback
+DTSTART;VALUE=DATE:20260831
+DTEND;VALUE=DATE:20260901
+SUMMARY:[EXPIRED OR OUTCOME IF FIRED] USN PhD — AI Industrial Maritime Solutions
+DESCRIPTION:Deadline passed. If a receipt exists, track outcome; otherwise historical only.
+END:VEVENT
+BEGIN:VEVENT
+UID:usn-political-economy-20260831@blowback
+DTSTART;VALUE=DATE:20260831
+DTEND;VALUE=DATE:20260901
+SUMMARY:[EXPIRED OR OUTCOME IF FIRED] USN PhD — Political Economy and Management
+DESCRIPTION:Deadline passed. If a receipt exists, track outcome; otherwise historical only.
+END:VEVENT
+BEGIN:VEVENT
+UID:gaf-submit-20260831@blowback
+DTSTART;VALUE=DATE:20260831
+DTEND;VALUE=DATE:20260901
+SUMMARY:[PAST SUBMISSION GATE] Global AI Finance 2026
+DESCRIPTION:Portal-ready packet existed, but preparation is not proof of submission. If a receipt exists, the route is OUTCOME with Sep-30 notification; otherwise submission window is closed.
+END:VEVENT
+BEGIN:VEVENT
+UID:grasfi-asia-20260831@blowback
+DTSTART;VALUE=DATE:20260831
+DTEND;VALUE=DATE:20260901
+SUMMARY:[EXPIRED OR OUTCOME IF FIRED] GRASFI Asia 2027 — ECI
+DESCRIPTION:Submission gate passed. Track external verdict only if an actual receipt exists.
+END:VEVENT
+BEGIN:VEVENT
+UID:bck26-20260831@blowback
+DTSTART;VALUE=DATE:20260831
+DTEND;VALUE=DATE:20260901
+SUMMARY:[EXPIRED/HISTORY] BCK26 research-paper route
+DESCRIPTION:Past four-page-paper route recovered from project threads. Exact future venue/cycle requires re-verification.
+END:VEVENT
+BEGIN:VEVENT
+UID:icdlt-20260831@blowback
+DTSTART;VALUE=DATE:20260831
+DTEND;VALUE=DATE:20260901
+SUMMARY:[EXPIRED/HISTORY] ICDLT 2026 full-paper route
+DESCRIPTION:Past route. Retain as future-cycle intelligence only after official rehydration.
+END:VEVENT
+BEGIN:VEVENT
+UID:digital-tax-icpa-20260831@blowback
+DTSTART;VALUE=DATE:20260831
+DTEND;VALUE=DATE:20260901
+SUMMARY:[EXPIRED/HISTORY] Digital Tax / ICPA 2026 abstract route
+DESCRIPTION:Past Invisible Ledger/digital-tax route. Future-cycle mechanics require official re-verification.
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,592 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Gauntlet Blowback//Consolidated Active Calendar 2026-2027//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Gauntlet Blowback — Active from 2026-09-01 20:35 Taipei
+X-WR-TIMEZONE:Asia/Taipei
+X-GAUNTLET-CUTOFF:20260901T203500+0800
+X-GAUNTLET-POLICY:Past deadlines move to history or outcome; unknown cycles stay WATCH/REVERIFY; exact allocation authority wins over legacy calendar labels.
+BEGIN:VEVENT
+UID:postgrad-job-kickoff-20260901@blowback
+DTSTART;VALUE=DATE:20260901
+DTEND;VALUE=DATE:20260902
+SUMMARY:[NOW] Upper-tail employment campaign active
+DESCRIPTION:Person-level campaign is active from the Sep-1 cutoff. Quant roles lead with Sharpe + audited papers; MCP/agent/research-engineering roles lead with Research Drive + Cite; physical/embodied/EDA roles lead with Hardware Splicer.
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-phd-refresh-20260901@blowback
+DTSTART;VALUE=DATE:20260901
+DTEND;VALUE=DATE:20260902
+RRULE:FREQ=MONTHLY;BYMONTHDAY=1,15;UNTIL=20261215
+SUMMARY:[NOW/WATCH] Taiwan 116 PhD call refresh
+DESCRIPTION:Refresh NYCU IAIS first, then NCCU TIIPM/MIS, NTU IM, NYCU alternatives, NCU, NTHU, NTUST and YZU backstop. Add hard dates only after official calls publish.
+END:VEVENT
+BEGIN:VEVENT
+UID:yzu-semiconductor-final-20260902@blowback
+DTSTART;VALUE=DATE:20260902
+DTEND;VALUE=DATE:20260903
+SUMMARY:[ACTIVE HOME FIELD] YZU Semiconductor AI Agent final presentation
+DESCRIPTION:Hardware Splicer home-field presentation. Preserve external reviewer/questions/outcome evidence separately from internal CI.
+END:VEVENT
+BEGIN:VEVENT
+UID:nstc-research-entrepreneurship-20260903@blowback
+DTSTART;VALUE=DATE:20260903
+DTEND;VALUE=DATE:20260904
+SUMMARY:[VERIFY] NSTC Research Entrepreneurship / 科研創業計畫
+DESCRIPTION:Recovered Sep-3 calendar point. Verify exact stage, PI/institution requirements, commercialization maturity and funding mechanics before any rush application.
+END:VEVENT
+BEGIN:VEVENT
+UID:nycu-diligence-20260903@blowback
+DTSTART;VALUE=DATE:20260903
+DTEND;VALUE=DATE:20260904
+RRULE:FREQ=WEEKLY;COUNT=4
+SUMMARY:[DUE DILIGENCE] NYCU IAIS commercial/IP terms
+DESCRIPTION:Seek written answers on pre-existing IP, founder/director status, founder compensation, consulting/pilot revenue, research-created improvements, teaching/admin load and adviser fit. Unknown is not positive.
+END:VEVENT
+BEGIN:VEVENT
+UID:ai-fire-weekly-20260903@blowback
+DTSTART;VALUE=DATE:20260903
+DTEND;VALUE=DATE:20260904
+RRULE:FREQ=WEEKLY;BYDAY=TH;UNTIL=20261231
+SUMMARY:[FIRE BATCH] Agent / AI / research-engineering applications
+DESCRIPTION:Target high-value MCP/agent/data/full-stack research engineering and embodied/CV roles. Select lead package by portfolio allocation authority.
+END:VEVENT
+BEGIN:VEVENT
+UID:futuremode-20260904@blowback
+DTSTART;VALUE=DATE:20260904
+DTEND;VALUE=DATE:20260907
+SUMMARY:[WATCH/REVERIFY] FUTUREMODE field route
+DESCRIPTION:Recovered Sep 4-6 field/networking window. Attend only if it creates concrete evaluator, employer, supplier, sponsor or pilot conversion.
+END:VEVENT
+BEGIN:VEVENT
+UID:ethonline-20260904@blowback
+DTSTART;VALUE=DATE:20260904
+DTEND;VALUE=DATE:20260917
+SUMMARY:[HOLD NO FORCE FIT] ETHOnline 2026
+DESCRIPTION:Recovered Sep 4-16 builder window. Use Policy Lab/CL-ECI only if the live challenge accepts existing work without cosmetic Web3 reconstruction or a new project.
+END:VEVENT
+BEGIN:VEVENT
+UID:outcome-ledger-weekly-20260904@blowback
+DTSTART;VALUE=DATE:20260904
+DTEND;VALUE=DATE:20260905
+RRULE:FREQ=WEEKLY;BYDAY=FR;UNTIL=20261225
+SUMMARY:[LEDGER] Update receipts, screens, interviews, offers and awards
+DESCRIPTION:Record receipt IDs, outcome stage, compensation evidence, rejection reasons and next event. Never infer external validation from internal maturity.
+END:VEVENT
+BEGIN:VEVENT
+UID:mats-winter-20260906@blowback
+DTSTART;VALUE=DATE:20260906
+DTEND;VALUE=DATE:20260907
+SUMMARY:[FIRE IF FIT] MATS Winter 2027 deadline
+DESCRIPTION:Person-level application led by Hardware Splicer with Cite/Citation support. Fire only with a genuine AI-safety research agenda; acceptance is a career/research decision.
+END:VEVENT
+BEGIN:VEVENT
+UID:fas-ai-policy-20260907@blowback
+DTSTART;VALUE=DATE:20260907
+DTEND;VALUE=DATE:20260908
+SUMMARY:[FIRE IF THESIS CLEARS] FAS AI Safety Policy Fellowship
+DESCRIPTION:Policy Lab lead. Do not force generic AI-safety rhetoric; require a genuine frontier-AI policy implementation thesis.
+END:VEVENT
+BEGIN:VEVENT
+UID:otf-icrp-20260907@blowback
+DTSTART;VALUE=DATE:20260907
+DTEND;VALUE=DATE:20260908
+SUMMARY:[FIRE AFTER GATES] OTF Information Controls Research Program
+DESCRIPTION:Nocturnal lead with Citation Engine/Research Drive support. Clear student/support and surveillance-affiliation exclusions; proposal must be a specific censorship/information-controls research question.
+END:VEVENT
+BEGIN:VEVENT
+UID:yzu-subsidy-open-20260907@blowback
+DTSTART;VALUE=DATE:20260907
+DTEND;VALUE=DATE:20260908
+SUMMARY:[CLAIM WINDOW OPENS] YZU off-campus competition subsidy
+DESCRIPTION:Every eligible competition entry should trigger the reimbursement check. 115-1 application window runs Sep 7 through Nov 20, 2026.
+END:VEVENT
+BEGIN:VEVENT
+UID:job-refresh-weekly-20260907@blowback
+DTSTART;VALUE=DATE:20260907
+DTEND;VALUE=DATE:20260908
+RRULE:FREQ=WEEKLY;BYDAY=MO;UNTIL=20261228
+SUMMARY:[RADAR] Refresh upper-tail job/lab/predoc market
+DESCRIPTION:Expire stale roles and add serious quant, AI/research-engineering, lab, predoc and embodied-AI peers. Do not pad with low-value median-pay roles.
+END:VEVENT
+BEGIN:VEVENT
+UID:tudelft-business-software-20260908@blowback
+DTSTART;VALUE=DATE:20260908
+DTEND;VALUE=DATE:20260909
+SUMMARY:[FIRE] TU Delft PhD — Business Impact from Construction Software
+DESCRIPTION:Salaried interdisciplinary technology/organization route. Person-level application; verify outside-work/IP economics before acceptance.
+END:VEVENT
+BEGIN:VEVENT
+UID:quant-fire-weekly-20260908@blowback
+DTSTART;VALUE=DATE:20260908
+DTEND;VALUE=DATE:20260909
+RRULE:FREQ=WEEKLY;BYDAY=TU;UNTIL=20261229
+SUMMARY:[FIRE BATCH] Quant / finance research applications
+DESCRIPTION:Lead with Sharpe Terminus + audited finance/econ papers; Research Drive/data work supports. Track screens/interviews/offers as price-discovery evidence.
+END:VEVENT
+BEGIN:VEVENT
+UID:external-evidence-weekly-20260909@blowback
+DTSTART;VALUE=DATE:20260909
+DTEND;VALUE=DATE:20260910
+RRULE:FREQ=WEEKLY;BYDAY=WE;UNTIL=20261230
+SUMMARY:[G4 BLOCK] External pilot / reviewer / professor outreach
+DESCRIPTION:Prioritize one Nocturnal pilot, one Research Drive external user, one Refinery cold reviewer, and route-specific HS external evidence. No generalized feature sprint.
+END:VEVENT
+BEGIN:VEVENT
+UID:tea-ibfd-reverify-20260910@blowback
+DTSTART;VALUE=DATE:20260910
+DTEND;VALUE=DATE:20260911
+SUMMARY:[REVERIFY] TEA / IBFD finance-tax research routes
+DESCRIPTION:Recovered Sep-10 research-route checkpoint. Verify exact current CFPs/eligibility before spending manuscript effort.
+END:VEVENT
+BEGIN:VEVENT
+UID:kubesummit-20260910@blowback
+DTSTART;VALUE=DATE:20260910
+DTEND;VALUE=DATE:20260912
+SUMMARY:[HOLD] KubeSummit 2026
+DESCRIPTION:Sep 10-11 infrastructure field route. Attend only if it creates concrete employer/partner/infrastructure conversion.
+END:VEVENT
+BEGIN:VEVENT
+UID:era-ai-20260913@blowback
+DTSTART;VALUE=DATE:20260913
+DTEND;VALUE=DATE:20260914
+SUMMARY:[FIRE IF FIT] ERA:AI Winter 2027 deadline
+DESCRIPTION:Person-level HS/Cite bundle. Low application burden relative to funded research upside; preserve a coherent research question.
+END:VEVENT
+BEGIN:VEVENT
+UID:vu-social-data-20260914@blowback
+DTSTART;VALUE=DATE:20260914
+DTEND;VALUE=DATE:20260915
+SUMMARY:[FIRE] VU Amsterdam PhD — Social Data Science
+DESCRIPTION:Nocturnal/Policy/finance-data person-level bundle. Preserve location/outside-work economics for acceptance.
+END:VEVENT
+BEGIN:VEVENT
+UID:taai-hs-paper-20260914@blowback
+DTSTART;VALUE=DATE:20260914
+DTEND;VALUE=DATE:20260915
+SUMMARY:[FIRE] TAAI 2026 — Hardware Splicer paper
+DESCRIPTION:Hardware Splicer owns the paper contribution. Submit a research-native paper, not a product deck; Citation Engine only supports evidence boundaries.
+END:VEVENT
+BEGIN:VEVENT
+UID:taia-hs-creative-20260914@blowback
+DTSTART;VALUE=DATE:20260914
+DTEND;VALUE=DATE:20260915
+SUMMARY:[FIRE] TAIA AI Creative Design — Hardware Splicer graduate track
+DESCRIPTION:Separate HS competition route sharing the Sep-14 date. Preserve category/adviser/team truth.
+END:VEVENT
+BEGIN:VEVENT
+UID:fij-20260914@blowback
+DTSTART;VALUE=DATE:20260914
+DTEND;VALUE=DATE:20260915
+SUMMARY:[PARTNER OR SKIP] Fund for Investigative Journalism
+DESCRIPTION:Nocturnal-related only with a genuine investigative partner/use case. Do not treat as a solo generic AI funding route.
+END:VEVENT
+BEGIN:VEVENT
+UID:vu-atlantis-20260915@blowback
+DTSTART;VALUE=DATE:20260915
+DTEND;VALUE=DATE:20260916
+SUMMARY:[STRETCH FIRE] VU ATLANTIS — Competition Law & AI PhD
+DESCRIPTION:Person-level computational policy/evidence application. Degree preference is a real stretch; do not overstate fit.
+END:VEVENT
+BEGIN:VEVENT
+UID:nhh-early-20260915@blowback
+DTSTART;VALUE=DATE:20260915
+DTEND;VALUE=DATE:20260916
+SUMMARY:[FIRE] NHH 2027 PhD early round
+DESCRIPTION:Finance and Business/Management Science prioritized; selective economics/strategy/accounting only where proposal fit is genuine.
+END:VEVENT
+BEGIN:VEVENT
+UID:hku-ai-engineer-20260915@blowback
+DTSTART;VALUE=DATE:20260915
+DTEND;VALUE=DATE:20260916
+SUMMARY:[FIRE] HKU AI Engineer / RA II — MCP + agents
+DESCRIPTION:Research Drive + Cite lead. Blowback/Citation Engine are supporting proof only. Verify appointment/work-authorization terms.
+END:VEVENT
+BEGIN:VEVENT
+UID:e2-reverify-20260915@blowback
+DTSTART;VALUE=DATE:20260915
+DTEND;VALUE=DATE:20260916
+SUMMARY:[REVERIFY] E2 / 1 Hotels fellowship route
+DESCRIPTION:Deep-research discovery with Sep-15 timing; verify geography/current cycle before treating as live.
+END:VEVENT
+BEGIN:VEVENT
+UID:fc27-cl-eci-20260917@blowback
+DTSTART;VALUE=DATE:20260917
+DTEND;VALUE=DATE:20260918
+SUMMARY:[PRIMARY FIRE] Financial Cryptography 2027 — CL-ECI
+DESCRIPTION:Policy Lab protected primary manuscript lane. Preserve no-overlapping-peer-reviewed-submission rule.
+END:VEVENT
+BEGIN:VEVENT
+UID:il-shihhsin-20260917@blowback
+DTSTART;VALUE=DATE:20260917
+DTEND;VALUE=DATE:20260918
+SUMMARY:[LOW-COST FIRE] Invisible Ledger — Shih Hsin Finance abstract
+DESCRIPTION:Research-papers lead; Policy Lab only supports. Use current audited Invisible Ledger framing, not superseded headline numbers.
+END:VEVENT
+BEGIN:VEVENT
+UID:taiwan-innotech-20260917@blowback
+DTSTART;VALUE=DATE:20260917
+DTEND;VALUE=DATE:20260920
+SUMMARY:[CHECK FIRE] Taiwan Innotech Expo 2026
+DESCRIPTION:Field/exposure route Sep 17-19. Use only where a concrete evaluator/partner/commercialization objective exists.
+END:VEVENT
+BEGIN:VEVENT
+UID:smartliving-20260918@blowback
+DTSTART;VALUE=DATE:20260918
+DTEND;VALUE=DATE:20260919
+SUMMARY:[VERIFY/FIRE] Smart Living competition
+DESCRIPTION:Public-Good or HS only if the current category is native to an existing asset; no new project.
+END:VEVENT
+BEGIN:VEVENT
+UID:cht-cl-eci-20260918@blowback
+DTSTART;TZID=Asia/Taipei:20260918T120000
+DTEND;TZID=Asia/Taipei:20260918T120500
+SUMMARY:[TEAM-GATED FIRE] Chunghwa Telecom competition deadline
+DESCRIPTION:Policy/ECI route. Deadline 12:00 Asia/Taipei. Do not fabricate the Taiwan-national teammate requirement.
+END:VEVENT
+BEGIN:VEVENT
+UID:ntnu-maritime-20260920@blowback
+DTSTART;VALUE=DATE:20260920
+DTEND;VALUE=DATE:20260921
+SUMMARY:[REHYDRATE LIVE] NTNU Interactive AI Agents for Maritime Training PhD
+DESCRIPTION:Hardware Splicer/agent-systems person-level route. Verify live vacancy and exact degree/location terms before application.
+END:VEVENT
+BEGIN:VEVENT
+UID:lasr-reverify-20260920@blowback
+DTSTART;VALUE=DATE:20260920
+DTEND;VALUE=DATE:20260921
+SUMMARY:[REVERIFY] LASR Labs Winter 2027
+DESCRIPTION:Deep-research fellowship discovery. Reverify exact current deadline/cycle before FIRE; do not preserve a stale date as authority.
+END:VEVENT
+BEGIN:VEVENT
+UID:tpp-20260924@blowback
+DTSTART;VALUE=DATE:20260924
+DTEND;VALUE=DATE:20260925
+SUMMARY:[SELECTIVE FIRE] Tech Policy Press 2027 Fellowship
+DESCRIPTION:Person-level Nocturnal-led information-integrity/policy bundle. Keep effort bounded due to extreme competitiveness.
+END:VEVENT
+BEGIN:VEVENT
+UID:tudelft-dtai-20260924@blowback
+DTSTART;VALUE=DATE:20260924
+DTEND;VALUE=DATE:20260925
+SUMMARY:[REHYDRATE LIVE] TU Delft — Decentralized & Trustworthy AI Pipelines PhD
+DESCRIPTION:Reverify live vacancy and application conditions; use Cite/RD/Policy evidence only where native.
+END:VEVENT
+BEGIN:VEVENT
+UID:il-shihhsin-outcome-20260924@blowback
+DTSTART;VALUE=DATE:20260924
+DTEND;VALUE=DATE:20260925
+SUMMARY:[OUTCOME IF FIRED] Invisible Ledger — Shih Hsin Finance notification
+DESCRIPTION:Only active if submitted. Record accept/reject and any full-paper/presentation requirements.
+END:VEVENT
+BEGIN:VEVENT
+UID:awesome-climate-20260925@blowback
+DTSTART;VALUE=DATE:20260925
+DTEND;VALUE=DATE:20260926
+SUMMARY:[FIRE IF FIT] Awesome Conservation & Climate microgrant
+DESCRIPTION:Public-Good only with a concrete bounded action/operator use case.
+END:VEVENT
+BEGIN:VEVENT
+UID:saner-research-20260925@blowback
+DTSTART;VALUE=DATE:20260925
+DTEND;VALUE=DATE:20260926
+SUMMARY:[HOLD CONDITIONAL] SANER 2027 Research Track
+DESCRIPTION:Refinery-native only if it does not dilute the stronger MSR contribution or create manuscript overlap.
+END:VEVENT
+BEGIN:VEVENT
+UID:astra-watch-20260926@blowback
+DTSTART;VALUE=DATE:20260926
+DTEND;VALUE=DATE:20260927
+SUMMARY:[WATCH/REVERIFY] Constellation / Astra next cohort
+DESCRIPTION:Do not treat Sep 26 as a verified hard application deadline. Use this as a recheck point for the next cohort/call.
+END:VEVENT
+BEGIN:VEVENT
+UID:ntub-fintech-20260928@blowback
+DTSTART;TZID=Asia/Taipei:20260928T235900
+DTEND;TZID=Asia/Taipei:20260929T000000
+SUMMARY:[VERIFY THEN FIRE] NTUB FinTech competition
+DESCRIPTION:Policy/CL-ECI route; verify team/adviser constraints. Registration cutoff 23:59 Asia/Taipei.
+END:VEVENT
+BEGIN:VEVENT
+UID:freeway-ai-20260930@blowback
+DTSTART;VALUE=DATE:20260930
+DTEND;VALUE=DATE:20261001
+SUMMARY:[FIRE] Freeway AI challenge
+DESCRIPTION:Policy Lab congestion pricing and/or HS bridge deterioration only after exact rules and project fit are verified.
+END:VEVENT
+BEGIN:VEVENT
+UID:twnic-20260930@blowback
+DTSTART;VALUE=DATE:20260930
+DTEND;VALUE=DATE:20261001
+SUMMARY:[HOST + PORTFOLIO BAKEOFF] TWNIC Community Grants
+DESCRIPTION:One proposal per applying legal entity. Nocturnal is provisional lead, but host + whole-portfolio bakeoff must clear before submission.
+END:VEVENT
+BEGIN:VEVENT
+UID:ftsid-20260930@blowback
+DTSTART;VALUE=DATE:20260930
+DTEND;VALUE=DATE:20261001
+SUMMARY:[FALLBACK ONLY] FTSID 2026 — CL-ECI
+DESCRIPTION:Policy Lab/CL-ECI fallback only while FC27 is the primary manuscript lane. No materially overlapping concurrent submission.
+END:VEVENT
+BEGIN:VEVENT
+UID:gaf-outcome-20260930@blowback
+DTSTART;VALUE=DATE:20260930
+DTEND;VALUE=DATE:20261001
+SUMMARY:[OUTCOME IF FIRED] Global AI Finance 2026 notification
+DESCRIPTION:Only active if a receipt exists. Record the external verdict; inspect registration/payment/attendance before accepting commitments.
+END:VEVENT
+BEGIN:VEVENT
+UID:postgrad-review-20260930@blowback
+DTSTART;VALUE=DATE:20260930
+DTEND;VALUE=DATE:20261001
+RRULE:FREQ=MONTHLY;BYMONTHDAY=30;COUNT=3
+SUMMARY:[REVIEW] Post-grad market pricing checkpoint
+DESCRIPTION:Compare funnel by lane; increase exposure where screens/interviews/offers appear and reduce zero-conversion categories.
+END:VEVENT
+BEGIN:VEVENT
+UID:eu-info-integrity-20261001@blowback
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+SUMMARY:[PARTNER/CONSORTIUM VERIFY] EU information-integrity framework
+DESCRIPTION:Nocturnal/Citation/Policy watch. Verify exact instrument, geography, consortium role and downstream subgrant eligibility; consortium funding is not personal funding.
+END:VEVENT
+BEGIN:VEVENT
+UID:innoserve-20261005@blowback
+DTSTART;VALUE=DATE:20261005
+DTEND;VALUE=DATE:20261006
+SUMMARY:[FIRE AFTER PORTFOLIO BAKEOFF] InnoServe registration
+DESCRIPTION:Resolve category/adviser/team constraints centrally. Likely leaders: HS Industrial AI; Policy prepared IP/IC; Cite/RD only if category capacity remains.
+END:VEVENT
+BEGIN:VEVENT
+UID:ssi-20261005@blowback
+DTSTART;VALUE=DATE:20261005
+DTEND;VALUE=DATE:20261006
+SUMMARY:[FIRE] Software Sustainability Institute Fellowship 2027
+DESCRIPTION:Person-level Refinery-led research-software bundle with RD/Cite support. The award is an activity budget, not salary; preserve screencast/application requirements.
+END:VEVENT
+BEGIN:VEVENT
+UID:sinica-der-nian-20261006@blowback
+DTSTART;VALUE=DATE:20261006
+DTEND;VALUE=DATE:20261007
+SUMMARY:[FIRE AFTER GATE] Academia Sinica Der-Nian Yang RA
+DESCRIPTION:Nocturnal/Cite/RD person-level research bundle for data mining, LLM, networks/graphs. Verify appointment terms.
+END:VEVENT
+BEGIN:VEVENT
+UID:iii-register-20261011@blowback
+DTSTART;VALUE=DATE:20261011
+DTEND;VALUE=DATE:20261012
+SUMMARY:[VERIFY/FIRE] III 智策AI registration
+DESCRIPTION:Use existing portfolio assets only. Verify eligibility and current competition rules before registration.
+END:VEVENT
+BEGIN:VEVENT
+UID:ntub-finalist-20261012@blowback
+DTSTART;VALUE=DATE:20261012
+DTEND;VALUE=DATE:20261013
+SUMMARY:[OUTCOME IF FIRED] NTUB FinTech finalist announcement
+DESCRIPTION:Conditional on submission. Preserve verdict and prepare only if selected.
+END:VEVENT
+BEGIN:VEVENT
+UID:energy-taiwan-20261014@blowback
+DTSTART;VALUE=DATE:20261014
+DTEND;VALUE=DATE:20261017
+SUMMARY:[CHECK FIRE] Energy Taiwan / Net-Zero Taiwan
+DESCRIPTION:Field/commercialization route Oct 14-16. Use only with concrete partner, climate-finance, energy or hardware objective.
+END:VEVENT
+BEGIN:VEVENT
+UID:oist-internship-20261015@blowback
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261016
+SUMMARY:[FIRE AFTER GATE] OIST Research Internship
+DESCRIPTION:Person-level research route. Verify eligibility, lab fit, dates and opportunity cost.
+END:VEVENT
+BEGIN:VEVENT
+UID:usn-ai-audit-20261016@blowback
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261017
+SUMMARY:[HIGH PRIORITY FIRE] USN PhD — AI transformation of auditing
+DESCRIPTION:Finance + AI + governance thematic match. Targeted person-level proposal; verify commercial/outside-work terms.
+END:VEVENT
+BEGIN:VEVENT
+UID:cht-finalist-20261016@blowback
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261017
+SUMMARY:[OUTCOME IF FIRED] Chunghwa Telecom finalist notification
+DESCRIPTION:Conditional on entry. Record verdict and inspect final/demo obligations.
+END:VEVENT
+BEGIN:VEVENT
+UID:iii-proposal-20261018@blowback
+DTSTART;VALUE=DATE:20261018
+DTEND;VALUE=DATE:20261019
+SUMMARY:[FIRE] III 智策AI proposal deadline
+DESCRIPTION:Submit only existing-project evidence; do not trigger a new build for the contest.
+END:VEVENT
+BEGIN:VEVENT
+UID:taitronics-20261020@blowback
+DTSTART;VALUE=DATE:20261020
+DTEND;VALUE=DATE:20261023
+SUMMARY:[FIRE/FIELD] TAITRONICS + AIoT Taiwan + Taiwan Industry Week
+DESCRIPTION:Field/commercialization route Oct 20-22. Set explicit employer/supplier/partner/pilot objectives.
+END:VEVENT
+BEGIN:VEVENT
+UID:industry-academia-20261022@blowback
+DTSTART;VALUE=DATE:20261022
+DTEND;VALUE=DATE:20261023
+SUMMARY:[FIRE] National Industry–Academia Innovation
+DESCRIPTION:Solve project x division allocation centrally. HS strongest for AI/Information/Mechanical; other assets only where natively eligible.
+END:VEVENT
+BEGIN:VEVENT
+UID:msr-technical-20261023@blowback
+DTSTART;VALUE=DATE:20261023
+DTEND;VALUE=DATE:20261024
+SUMMARY:[DEFAULT PRIMARY] MSR 2027 Technical Papers — Refinery
+DESCRIPTION:Refinery owns the research-software contribution. Preserve exact bounded falsification/provenance evidence.
+END:VEVENT
+BEGIN:VEVENT
+UID:saner-tool-20261023@blowback
+DTSTART;VALUE=DATE:20261023
+DTEND;VALUE=DATE:20261024
+SUMMARY:[ARTIFACT ROUTE] SANER 2027 Tool Demo
+DESCRIPTION:Refinery artifact route; only if distinct from MSR manuscript and worth marginal effort.
+END:VEVENT
+BEGIN:VEVENT
+UID:saner-agentic-20261023@blowback
+DTSTART;VALUE=DATE:20261023
+DTEND;VALUE=DATE:20261024
+SUMMARY:[HOLD/KILL] SANER Agentic AI4SE
+DESCRIPTION:Do not force an agentic-AI narrative onto Refinery unless the actual contribution is native.
+END:VEVENT
+BEGIN:VEVENT
+UID:fintech-taipei-20261023@blowback
+DTSTART;VALUE=DATE:20261023
+DTEND;VALUE=DATE:20261025
+SUMMARY:[WATCH/FIRE] FinTech Taipei 2026
+DESCRIPTION:Field/career/partner route Oct 23-24. Policy, Sharpe or RD/Cite leads depending objective.
+END:VEVENT
+BEGIN:VEVENT
+UID:ntub-final-20261030@blowback
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+SUMMARY:[FINAL IF QUALIFIED] NTUB FinTech finals
+DESCRIPTION:Conditional on finalist selection.
+END:VEVENT
+BEGIN:VEVENT
+UID:mats-residency-20261031@blowback
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:[FIRE IF FIT] MATS Residency 2027
+DESCRIPTION:Career-scale person-level HS/Cite research application. Evaluate acceptance as employment/research runway, not a project prize.
+END:VEVENT
+BEGIN:VEVENT
+UID:shihhsin-full-20261031@blowback
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:[IF ACCEPTED] Invisible Ledger — Shih Hsin full paper
+DESCRIPTION:Conditional on abstract acceptance. Repair only claims required for the current manuscript.
+END:VEVENT
+BEGIN:VEVENT
+UID:cht-final-20261031@blowback
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:[FINAL IF QUALIFIED] Chunghwa Telecom finals
+DESCRIPTION:Conditional on finalist notification.
+END:VEVENT
+BEGIN:VEVENT
+UID:nlnet-20261103@blowback
+DTSTART;TZID=Europe/Amsterdam:20261103T120000
+DTEND;TZID=Europe/Amsterdam:20261103T120500
+SUMMARY:[PORTFOLIO BAKEOFF] NLnet Restack / CodeSupply deadline
+DESCRIPTION:Refinery is provisional lead; Nocturnal/Policy/Cite/RD compete only under the exact live call. First-grant focus prevents spray submissions.
+END:VEVENT
+BEGIN:VEVENT
+UID:innoserve-final-20261107@blowback
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261108
+SUMMARY:[FINAL IF QUALIFIED] InnoServe final
+DESCRIPTION:Conditional on advancement. Preserve external verdict and YZU reimbursement evidence.
+END:VEVENT
+BEGIN:VEVENT
+UID:shihhsin-conference-20261107@blowback
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261108
+SUMMARY:[PRESENT IF ACCEPTED] Invisible Ledger — Shih Hsin conference
+DESCRIPTION:Treat presentation as external-validation evidence, not peer-reviewed publication unless organizer terms establish it.
+END:VEVENT
+BEGIN:VEVENT
+UID:msr-data-tool-20261110@blowback
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261111
+SUMMARY:[SECONDARY IF DISTINCT] MSR 2027 Data & Tool Showcase
+DESCRIPTION:Refinery secondary lane after Technical Paper. Fire only if distinct and non-dilutive.
+END:VEVENT
+BEGIN:VEVENT
+UID:interledger-20261111@blowback
+DTSTART;VALUE=DATE:20261111
+DTEND;VALUE=DATE:20261112
+SUMMARY:[ROLLING CLOSE] Interledger Local Impact mini-grant
+DESCRIPTION:Fire only where open-payments/financial-access/public-infrastructure fit is genuine.
+END:VEVENT
+BEGIN:VEVENT
+UID:meet-taipei-20261119@blowback
+DTSTART;VALUE=DATE:20261119
+DTEND;VALUE=DATE:20261122
+SUMMARY:[NETWORK] Meet Taipei 2026
+DESCRIPTION:Field/commercialization route Nov 19-21. Set explicit sponsor/customer/employer objectives.
+END:VEVENT
+BEGIN:VEVENT
+UID:yzu-subsidy-close-20261120@blowback
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261121
+SUMMARY:[CLAIM WINDOW CLOSES] YZU off-campus competition subsidy
+DESCRIPTION:Final day of 115-1 subsidy window. Participation can be sufficient; preserve competition and expense evidence.
+END:VEVENT
+BEGIN:VEVENT
+UID:awesome-climate-nov-20261127@blowback
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261128
+SUMMARY:[FIRE IF FIT] Awesome Conservation & Climate microgrant
+DESCRIPTION:Second 2026 bounded Public-Good checkpoint.
+END:VEVENT
+BEGIN:VEVENT
+UID:legaltech-20261130@blowback
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:[VERIFY/FIRE] LegalTech / Computer Audit competition
+DESCRIPTION:Policy/Citation route only if the current tracks and prize economics justify it.
+END:VEVENT
+BEGIN:VEVENT
+UID:sinica-year-end-20261231@blowback
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:[DEADLINE CLUSTER] Sinica research staff year-end roles
+DESCRIPTION:AIIU embodied/CV/AI safety and Ti-Rong Wu RL/agents roles share year-end windows in the current registry; verify each exact posting before submission.
+END:VEVENT
+BEGIN:VEVENT
+UID:nhh-main-20270115@blowback
+DTSTART;VALUE=DATE:20270115
+DTEND;VALUE=DATE:20270116
+SUMMARY:[WATCH/FIRE] NHH 2027 main PhD round
+DESCRIPTION:Refresh vacancies in November/December and apply only where the funded option still dominates alternatives.
+END:VEVENT
+BEGIN:VEVENT
+UID:hku-aec-20270131@blowback
+DTSTART;VALUE=DATE:20270131
+DTEND;VALUE=DATE:20270201
+SUMMARY:[FIRE] HKU AI Agents for Architecture & Construction
+DESCRIPTION:Person-level HS + RD evidence bundle. Verify appointment/work-authorization specifics.
+END:VEVENT
+BEGIN:VEVENT
+UID:global-tax-20270201@blowback
+DTSTART;VALUE=DATE:20270201
+DTEND;VALUE=DATE:20270202
+SUMMARY:[FIRE LATER] Global Tax Symposium 2027
+DESCRIPTION:Invisible Ledger/tax research lane. Submit only full-quality audited comparative research; travel economics are acceptance-stage gate.
+END:VEVENT
+BEGIN:VEVENT
+UID:sinica-ku-20270531@blowback
+DTSTART;VALUE=DATE:20270531
+DTEND;VALUE=DATE:20270601
+SUMMARY:[FIRE AFTER GATE] Sinica Ku NLP/RAG/news-literacy RA
+DESCRIPTION:Cite + Nocturnal lead person-level bundle; verify the exact posting remains open and appointment terms.
+END:VEVENT
+END:VCALENDAR

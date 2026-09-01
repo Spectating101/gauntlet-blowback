@@ -1,0 +1,118 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Gauntlet Blowback//Rolling and Watch Calendar 2026-2027//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Gauntlet Blowback — Rolling + Watch Routes
+X-WR-TIMEZONE:Asia/Taipei
+X-GAUNTLET-CUTOFF:20260901T203500+0800
+BEGIN:VEVENT
+UID:student-infrastructure-claim-20260902@blowback
+DTSTART;VALUE=DATE:20260902
+DTEND;VALUE=DATE:20260903
+SUMMARY:[BORING GOLD] Student infrastructure claim block
+DESCRIPTION:Claim/verify Heroku Student, Appwrite Education, YZU campus software/library and Azure for Students where eligible. MongoDB stays hold-until-needed. Credits count only as realized cost displacement.
+END:VEVENT
+BEGIN:VEVENT
+UID:openai-researcher-20260902@blowback
+DTSTART;VALUE=DATE:20260902
+DTEND;VALUE=DATE:20260903
+SUMMARY:[FIRE NOW] OpenAI Researcher Access — Cite
+DESCRIPTION:Cite leads a bounded citation/provenance reliability research question. Build the experiment/API budget from the frozen candidate; do not add unrelated product work.
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic-research-access-20260903@blowback
+DTSTART;VALUE=DATE:20260903
+DTEND;VALUE=DATE:20260904
+SUMMARY:[FIRE AFTER PACKET] Anthropic MHS + AI for Science
+DESCRIPTION:Hardware Splicer leads. MHS is strategic research access/collaboration, not cash. AI for Science is research credits; package a bounded physical-agent/electronics experiment and usage model.
+END:VEVENT
+BEGIN:VEVENT
+UID:rolling-money-review-20260905@blowback
+DTSTART;VALUE=DATE:20260905
+DTEND;VALUE=DATE:20260906
+RRULE:FREQ=MONTHLY;BYMONTHDAY=5;UNTIL=20261205
+SUMMARY:[ROLLING MONEY] Review grants, bounties and cost-displacement routes
+DESCRIPTION:Recheck Emergent Ventures, AsyncAPI microgrants, Interledger bounties, Opire, ProjectDiscovery, Lambda/Cohere research support, student benefits and newly discovered boring-gold routes. Fire only native low-effort value.
+END:VEVENT
+BEGIN:VEVENT
+UID:rolling-research-labor-20260907@blowback
+DTSTART;VALUE=DATE:20260907
+DTEND;VALUE=DATE:20260908
+RRULE:FREQ=WEEKLY;BYDAY=MO;UNTIL=20261228
+SUMMARY:[ROLLING LABS] Faculty pull, lab, predoc and research-staff batch
+DESCRIPTION:Recheck Sinica, HKU, MIT FutureTech, AIST, A*STAR, OIST/ETH/Oxford/UChicago/Predoc.org and newly discovered research labor. Person-level bundle; preserve salary/work-auth/IP gates.
+END:VEVENT
+BEGIN:VEVENT
+UID:nocturnal-pilot-outreach-20260909@blowback
+DTSTART;VALUE=DATE:20260909
+DTEND;VALUE=DATE:20260910
+RRULE:FREQ=WEEKLY;BYDAY=WE;COUNT=6
+SUMMARY:[PILOT] Nocturnal external-witness outreach
+DESCRIPTION:One serious bounded pilot at a time: Doublethink Lab, Taiwan FactCheck Center or Open Culture Foundation. Goal is external workflow/correctness evidence, not generic partnership collection.
+END:VEVENT
+BEGIN:VEVENT
+UID:research-cloud-pi-20260911@blowback
+DTSTART;VALUE=DATE:20260911
+DTEND;VALUE=DATE:20260912
+RRULE:FREQ=BIWEEKLY;COUNT=4
+SUMMARY:[PI DEPENDENCY] Research-cloud credit packet
+DESCRIPTION:Research Drive/research-data package for Google Cloud Academic Research Credits and Oracle for Research; Claude Team for Scientists where relevant. MSc-direct ineligibility/PI dependency remains explicit. AWS remains HOLD until Taiwan eligibility is clarified.
+END:VEVENT
+BEGIN:VEVENT
+UID:rolling-public-good-pilot-20260912@blowback
+DTSTART;VALUE=DATE:20260912
+DTEND;VALUE=DATE:20260913
+RRULE:FREQ=MONTHLY;BYMONTHDAY=12;UNTIL=20261212
+SUMMARY:[PILOT GATE] Public-Good operator/use-case review
+DESCRIPTION:Only activate Public-Good grants or competitions when a real operator/shadow case exists. Do not add domains to manufacture fit.
+END:VEVENT
+BEGIN:VEVENT
+UID:rolling-procurement-20260912@blowback
+DTSTART;VALUE=DATE:20260912
+DTEND;VALUE=DATE:20260913
+RRULE:FREQ=MONTHLY;BYMONTHDAY=12;UNTIL=20261212
+SUMMARY:[LOW PRIORITY] GeoMap procurement-demand review
+DESCRIPTION:Check TAITRA/iSourcing or direct buyer/supplier problems. Fire GeoMap only on a concrete deliverable with verified economics; generic scraping/lead-gen remains KILL.
+END:VEVENT
+BEGIN:VEVENT
+UID:next-cycle-fellowships-20260915@blowback
+DTSTART;VALUE=DATE:20260915
+DTEND;VALUE=DATE:20260916
+RRULE:FREQ=MONTHLY;BYMONTHDAY=15;UNTIL=20261215
+SUMMARY:[WATCH] Next-cycle fellowship / residency radar
+DESCRIPTION:Recheck Astra/Constellation, APNIC Foundation, Asia House, AI Singapore, Stanford SIEPR, Anthropic Economic Futures and other next-cycle programs. Do not preserve old deadlines as current authority.
+END:VEVENT
+BEGIN:VEVENT
+UID:partner-watch-20260916@blowback
+DTSTART;VALUE=DATE:20260916
+DTEND;VALUE=DATE:20260917
+RRULE:FREQ=MONTHLY;BYMONTHDAY=16;UNTIL=20261216
+SUMMARY:[WATCH] Civic-tech / information-integrity partner ecosystem
+DESCRIPTION:Recheck g0v, CIVICUS DDI/Civic Tech Lab, OTF IFF and downstream information-integrity subgrant/consortium routes. Partner ecosystems are not automatically direct personal funding.
+END:VEVENT
+BEGIN:VEVENT
+UID:rolling-publications-20260919@blowback
+DTSTART;VALUE=DATE:20260919
+DTEND;VALUE=DATE:20260920
+RRULE:FREQ=MONTHLY;BYMONTHDAY=19;UNTIL=20261219
+SUMMARY:[WATCH] Future-cycle research venue refresh
+DESCRIPTION:Reverify future JCDL, TEA/IBFD/ATTA/NTA/ITPF/FAccT/FINEC, iFS, ICSE and other paper-native routes. Add a hard deadline only from the current official CFP.
+END:VEVENT
+BEGIN:VEVENT
+UID:dpg-policy-lab-20260921@blowback
+DTSTART;VALUE=DATE:20260921
+DTEND;VALUE=DATE:20260922
+RRULE:FREQ=MONTHLY;BYMONTHDAY=21;COUNT=3
+SUMMARY:[ROLLING FIRE] DPG Registry — Policy Lab
+DESCRIPTION:Policy Lab remains first project because governance/privacy/security/public-interest packet is ready. Final submission and organization/legal assertions remain human-controlled.
+END:VEVENT
+BEGIN:VEVENT
+UID:outbound-pilot-review-20260923@blowback
+DTSTART;VALUE=DATE:20260923
+DTEND;VALUE=DATE:20260924
+RRULE:FREQ=MONTHLY;BYMONTHDAY=23;UNTIL=20261223
+SUMMARY:[OUTBOUND] Manufactured pilot and service conversion review
+DESCRIPTION:Review Cite researcher evaluation, RD workflow diagnostic, Policy evidence sprint, Nocturnal monitoring pilot, HS inspection PoC, Public-Good coordination pilot, Commons evidence audit and Citation integration review. Require a specific buyer/user problem and bounded deliverable.
+END:VEVENT
+END:VCALENDAR
