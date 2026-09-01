@@ -66,7 +66,7 @@ test('history calendar contains the clearly closed current-cycle routes', () => 
 });
 
 test('current allocation authority replaces stale legacy calendar ownership', () => {
-  assert.match(active, /SSI Fellowship 2027[\s\S]*Refinery-led/i);
+  assert.match(active, /Software Sustainability Institute Fellowship 2027[\s\S]*Refinery-led/i);
   assert.match(active, /Invisible Ledger — Shih Hsin Finance abstract/);
   assert.match(active, /FTSID 2026 — CL-ECI/);
   assert.match(active, /NLnet Restack \/ CodeSupply[\s\S]*Refinery is provisional lead/i);
