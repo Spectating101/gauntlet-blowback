@@ -1,4 +1,5 @@
 import { buildBrowserMission, rankGauntlet } from '../mission/operator.mjs';
+import { allocationAllowsAutonomousFinalSubmit, resolvePortfolioAllocation } from '../allocation/portfolio.mjs';
 
 const APPLICATION_LANES = new Set([
   'JOB', 'RESEARCH_JOB', 'RESEARCH_LAB', 'PREDOC', 'RESEARCH_FELLOWSHIP', 'POLICY_FELLOWSHIP',
@@ -77,6 +78,7 @@ export function applicationStage(record) {
 export function mayAutoSubmit(record, { submitIfSafe = false } = {}) {
   if (!submitIfSafe) return false;
   if (!isApplicationRoute(record)) return false;
+  if (!allocationAllowsAutonomousFinalSubmit(record)) return false;
   const status = normalized(record?.status);
   const execution = normalized(record?.execution_state);
   const gateText = `${record?.gate ?? ''} ${record?.source_state ?? ''}`;
@@ -99,12 +101,17 @@ function inferChannel(record) {
 export function buildApplicationMission(record, checkpoint = null, options = {}) {
   if (!isApplicationRoute(record)) throw new Error(`route is not application-like: ${record?.id ?? '(missing)'}`);
   const base = buildBrowserMission(record, checkpoint);
+  const allocation = resolvePortfolioAllocation(record);
   const autoSubmit = mayAutoSubmit(record, options);
-  const stage = applicationStage(record);
+  const baseStage = applicationStage(record);
+  const stage = allocation.allocation_clear ? baseStage : 'ALLOCATION_RECON';
   const channel = inferChannel(record);
   const protectedHumanGates = autoSubmit
     ? base.permissions.human_gate.filter((gate) => gate !== FINAL_SUBMIT_GATE)
     : [...new Set([...base.permissions.human_gate, FINAL_SUBMIT_GATE])];
+  const allocationPacket = allocation.mode === 'SHARED_ENTITLEMENT'
+    ? []
+    : ['lead_package_evidence', 'supporting_asset_evidence_if_relevant'];
 
   return {
     ...base,
@@ -113,12 +120,17 @@ export function buildApplicationMission(record, checkpoint = null, options = {})
       kind: applicationKind(record),
       stage,
       channel,
-      packet_profile: packetProfileFor(record),
+      packet_profile: [...packetProfileFor(record), ...allocationPacket],
       evidence_family: record.shared_evidence_family ?? null,
       asset_projection: record.contribution_view ?? null,
+      portfolio_allocation: allocation,
+      lead_claim_projection: allocation.package?.core_claim ?? null,
+      explicit_nonclaims: allocation.package?.do_not_claim ?? [],
       application_policy: {
         mode: autoSubmit ? 'SUBMIT_IF_SAFE' : 'PREPARE_TO_LAST_SAFE_STATE',
         runtime_authority: autoSubmit,
+        portfolio_allocation_clear: allocation.allocation_clear,
+        stop_on_portfolio_bakeoff: true,
         require_official_source_before_submission: true,
         require_truthful_canonical_profile: true,
         require_existing_or_evidence_grounded_artifacts: true,
@@ -143,11 +155,13 @@ export function buildApplicationMission(record, checkpoint = null, options = {})
         capture_realized_cost_displacement_not_nominal_face_value: true
       }
     },
-    objective: stage === 'RECON'
-      ? `Resolve application-critical facts for ${record.organization || record.opportunity}, then prepare the truthful application or benefit claim as far as the verified facts allow.`
-      : autoSubmit
-        ? `Prepare and submit the truthful application or benefit claim to ${record.organization || record.opportunity} only if no protected gate, unresolved material fact, fee, legal attestation, institutional dependency, or use restriction is encountered; otherwise stop at WAITING_HUMAN.`
-        : `Prepare the truthful application or benefit claim to ${record.organization || record.opportunity} through the last safe reversible state and stop before final submit/send.`,
+    objective: !allocation.allocation_clear
+      ? `Resolve the portfolio allocation/bake-off for ${record.organization || record.opportunity} before preparing or submitting a package. Preserve the provisional lead, supporting evidence and scarce-slot rule; do not let an older multi-asset route consume the slot by inertia.`
+      : stage === 'RECON'
+        ? `Resolve application-critical facts for ${record.organization || record.opportunity}, then prepare the truthful ${allocation.package_family} application or benefit claim as far as the verified facts allow.`
+        : autoSubmit
+          ? `Prepare and submit the truthful ${allocation.package_family} application or benefit claim to ${record.organization || record.opportunity} only if no protected gate, unresolved material fact, fee, legal attestation, institutional dependency, allocation conflict or use restriction is encountered; otherwise stop at WAITING_HUMAN.`
+          : `Prepare the truthful ${allocation.package_family} application or benefit claim to ${record.organization || record.opportunity} through the last safe reversible state and stop before final submit/send.`,
     permissions: {
       ...base.permissions,
       auto: [
@@ -155,6 +169,8 @@ export function buildApplicationMission(record, checkpoint = null, options = {})
         'identify_application_or_benefit_channel',
         'map_application_fields_from_verified_profile',
         'select_route_specific_existing_evidence',
+        'select_lead_package_from_portfolio_allocation',
+        'use_support_assets_only_as_supporting_evidence',
         'draft_role_specific_cover_or_research_note_from_canonical_claims',
         'build_pi_review_packet_from_verified_research_plan',
         'answer_only_questions_resolved_by_verified_profile_or_route_evidence',
@@ -170,8 +186,8 @@ export function buildApplicationMission(record, checkpoint = null, options = {})
       preferred_terminal_state: autoSubmit ? 'SUBMITTED_OR_WAITING_HUMAN' : 'WAITING_HUMAN',
       acceptable_states: ['SAFE_COMPLETE', 'WAITING_HUMAN', 'SUBMITTED', 'BLOCKED'],
       instruction: autoSubmit
-        ? 'Submit only when runtime authority is explicit and every dynamic protected-gate and use-restriction check passes. Otherwise stop at the last safe state and preserve exactly what blocked submission.'
-        : 'Prepare completely, save draft where possible, and stop at the final submit/send boundary.'
+        ? 'Submit only when runtime authority is explicit and every dynamic protected-gate, portfolio-allocation and use-restriction check passes. Otherwise stop at the last safe state and preserve exactly what blocked submission.'
+        : 'Prepare completely, save draft where possible, and stop at the final submit/send boundary or unresolved portfolio-allocation gate.'
     }
   };
 }

@@ -1,68 +1,56 @@
 {
   "schema": "blowback.portfolio_asset_maturity.v1",
-  "as_of": "2026-08-27",
+  "as_of": "2026-09-01",
   "doctrine": {
     "asset_maturity_is_not_route_status": true,
     "internal_validation_is_not_external_validation": true,
     "deployment_is_not_external_validation": true,
     "external_evidence_cannot_be_manufactured_by_internal_polish": true,
     "unknowns_remain_unknown": true,
-    "notes": "This registry describes evidence maturity of portfolio assets. Gauntlet opportunity status, execution state, and G0-G6 gates remain separate authorities. A route may use multiple assets with different maturity and must not inherit a fabricated single maturity score."
+    "effective_candidate_may_be_a_release_branch": true,
+    "package_claims_must_bind_to_the_named_candidate": true,
+    "notes": "This registry describes evidence maturity of portfolio assets. Gauntlet opportunity status, route allocation, execution state, and G0-G6 gates remain separate authorities. A route may use multiple assets with different maturity; the portfolio-allocation authority chooses lead versus support without fabricating a single maturity score."
   },
   "allowed_values": {
-    "implementation_stage": [
-      "unknown",
-      "concept",
-      "implemented",
-      "internally_validated"
-    ],
-    "external_evidence_stage": [
-      "unknown",
-      "none",
-      "limited",
-      "partner_validated",
-      "independently_replicated",
-      "adopted"
-    ],
-    "deployment_stage": [
-      "unknown",
-      "none",
-      "public_demo",
-      "shadow",
-      "internal_live",
-      "external_operational"
-    ],
-    "canonicalization_state": [
-      "unknown",
-      "canonical",
-      "release_branch_ahead",
-      "integration_in_progress",
-      "branch_archaeology_required",
-      "research_repair_required"
-    ]
+    "implementation_stage": ["unknown", "concept", "implemented", "internally_validated"],
+    "external_evidence_stage": ["unknown", "none", "limited", "partner_validated", "independently_replicated", "adopted"],
+    "deployment_stage": ["unknown", "none", "public_demo", "shadow", "internal_live", "external_operational"],
+    "canonicalization_state": ["unknown", "canonical", "release_branch_ahead", "integration_in_progress", "branch_archaeology_required", "research_repair_required"]
   },
   "assets": [
     {
       "id": "cite-agent",
       "name": "Cite-Agent",
-      "repo": "",
-      "implementation_stage": "implemented",
-      "external_evidence_stage": "unknown",
-      "deployment_stage": "unknown",
-      "canonicalization_state": "unknown",
-      "strongest_known_gap": "Current repository/deployment/external-use state has not yet been re-audited in this canonicalization pass.",
-      "evidence_basis": "Existing portfolio asset; intentionally conservative until current source state is re-audited."
+      "repo": "Spectating101/cite-agent",
+      "implementation_stage": "internally_validated",
+      "external_evidence_stage": "none",
+      "deployment_stage": "public_demo",
+      "canonicalization_state": "release_branch_ahead",
+      "last_audited": "2026-09-01",
+      "effective_candidate": "PR #11 frozen frontend candidate f351d79a698cba25ddc6602acd0bfe3626655bf6; later branch heads are not allowed to silently replace the release claim.",
+      "packaging_role": "Primary researcher-facing reliable-AI / evidence-grounded research package.",
+      "strongest_known_gap": "Execute and attest the exact paired backend/frontend release, live DB migration/restart path and funded/live quality calibration; then obtain external researcher use.",
+      "allowed_claims": ["169/169 frontend tests on the frozen candidate", "production compile and TypeScript pass", "59 generated pages", "major /analyze First Load JS reduction", "explicit release-bundle and migration/restartability authority design"],
+      "forbidden_claims": ["broad external adoption", "fully attested paired production release", "provider-calibrated quality superiority"],
+      "next_evidence_action": "Use the frozen Cite candidate for OpenAI Researcher Access and research/lab/job applications; finish only the release/evaluation evidence required by those routes.",
+      "evidence_basis": "Current Cite PR #11 freezes an exact frontend candidate with Vercel READY deployment, 36/36 test files, 169/169 tests, production compile, TypeScript pass and explicit release/reproducibility contracts. Remaining gates are backend/live-release and external calibration, not another feature phase."
     },
     {
       "id": "research-drive",
       "name": "YZU / Research Drive",
-      "repo": "Spectating101/research-drive-private",
+      "repo": "Spectating101/yzu-cluster",
       "implementation_stage": "internally_validated",
       "external_evidence_stage": "limited",
       "deployment_stage": "internal_live",
-      "canonicalization_state": "canonical",
-      "strongest_known_gap": "External adoption/independent validation remains distinct from the known internal live deployment.",
-      "evidence_basis": "Canonical main reconciled 2026-08-27 to deployed backend lineage after Backend release proof and Private runtime contract passed; exact deployed ref remains separately pinned."
+      "canonicalization_state": "release_branch_ahead",
+      "last_audited": "2026-09-01",
+      "effective_candidate": "PR #88 frontend 9b4e8b7d90f95c28afeec36263cbfc6093995256 paired with backend e984f941cdc03d2495b544eccf422e4fb8dfca9c.",
+      "packaging_role": "Primary research-platform / MCP / data-infrastructure / full-stack research-engineering package.",
+      "strongest_known_gap": "Promote or stage the exact paired release with restartability evidence and obtain an outside professor/lab/researcher user; internal live operation is not external adoption.",
+      "allowed_claims": ["Synthesis + Library + Discover + HPS + lifecycle convergence", "native Runtime validation passed on exact frontend candidate", "Library package validation passed", "connected-storage and research-bootstrap authority are explicit"],
+      "forbidden_claims": ["external institutional adoption", "production promotion beyond the named pair", "ownership of connected cloud bytes merely because metadata is indexed"],
+      "next_evidence_action": "Use the exact RC pair as the work sample for HKU/Sinica/research-engineering jobs and PI-sponsored research-cloud packets; pursue one external lab/professor user.",
+      "evidence_basis": "PR #88 converges Research Drive around a named frontend/backend pair with successful native Runtime and Library validation. Remaining work is release promotion/restartability and external use rather than surface construction."
     },
     {
       "id": "policy-lab",
@@ -71,21 +59,32 @@
       "implementation_stage": "internally_validated",
       "external_evidence_stage": "none",
       "deployment_stage": "public_demo",
-      "canonicalization_state": "release_branch_ahead",
-      "strongest_known_gap": "External research/community adoption or independent replication is not established.",
-      "evidence_basis": "Executable research software with reproducibility gates and a public-data checkpoint; GAF portal-ready RC5 work remains on a small release branch ahead of main."
+      "canonicalization_state": "canonical",
+      "last_audited": "2026-09-01",
+      "effective_candidate": "Canonical main including merged GAF RC5 portal package, DPG readiness package and InnoServe packaging freeze.",
+      "packaging_role": "Primary FinTech / evidence-to-settlement / assurance / policy-research package.",
+      "strongest_known_gap": "External verdicts, submission receipts and independent adoption remain missing; further general product engineering has lower value than firing the prepared packets.",
+      "allowed_claims": ["GAF RC5 portal-ready research package", "DPG governance/privacy/security/public-interest packet", "FC27 primary manuscript plan", "InnoServe IP/IC packets frozen subject to adviser/team/admin gates"],
+      "forbidden_claims": ["DPG recognition before DPGA verdict", "legal entitlement or settlement authority", "operator adoption", "calibrated/endorsed policy rules"],
+      "next_evidence_action": "Fire DPG/FC27/InnoServe/other verified routes according to overlap and admin gates; collect receipts and reviewer verdicts instead of reopening code.",
+      "evidence_basis": "Recent merged Policy Lab PRs moved the asset from product construction to submission execution: GAF RC5, DPG readiness, verified venue map and frozen InnoServe package are canonical."
     },
     {
       "id": "nocturnal-oversight",
       "name": "Nocturnal Oversight",
-      "repo": "Spectating101/research-drive-private",
-      "implementation_stage": "implemented",
+      "repo": "Spectating101/nocturnal-oversight",
+      "implementation_stage": "internally_validated",
       "external_evidence_stage": "none",
-      "deployment_stage": "none",
-      "canonicalization_state": "canonical",
+      "deployment_stage": "public_demo",
+      "canonicalization_state": "release_branch_ahead",
       "last_audited": "2026-09-01",
+      "effective_candidate": "Canonical Nocturnal 1.2 core plus Edition RC1 public-review branch; external adopter/Refinery adapter remains preview-only.",
+      "packaging_role": "Primary information-integrity / Internet-freedom / correction-aware public-memory package.",
       "strongest_known_gap": "One bounded externally witnessed analyst/fact-checker/steward pilot showing measurable workflow or correctness benefit. Do not reopen architecture before external use exposes an actual failure.",
-      "evidence_basis": "The 2026-09-01 focused conversion audit identifies G4 pilot evidence—not another feature sprint—as the highest-leverage unlock across OTF, TWNIC, NLnet, WebSci, ICWSM and future journalism/public-interest funding. The first serious pilot must remain bounded and independently witnessed; no partner outcome is claimed yet."
+      "allowed_claims": ["pilot-ready Nocturnal 1.2 architecture", "correction/supersession-aware matter history", "public/intake/operator authority separation", "Edition RC1 product-complete review surface"],
+      "forbidden_claims": ["existing partner/newsroom adoption", "surveillance or punitive-person dossiers", "global truth/reliability scoring", "external workflow improvement before pilot evidence"],
+      "next_evidence_action": "Run one serious bounded pilot first; use that evidence to unlock OTF IFF, WebSci/ICWSM and stronger public-interest funding. In parallel, audit OTF ICRP eligibility before Sep 7.",
+      "evidence_basis": "The focused 2026-09-01 Nocturnal conversion radar identifies G4 pilot evidence—not another feature sprint—as the highest-leverage unlock across OTF, TWNIC, NLnet, WebSci, ICWSM and future journalism/public-interest funding."
     },
     {
       "id": "hardware-splicer",
@@ -94,42 +93,66 @@
       "implementation_stage": "internally_validated",
       "external_evidence_stage": "limited",
       "deployment_stage": "none",
-      "canonicalization_state": "branch_archaeology_required",
-      "strongest_known_gap": "Revision-bound physical/live unseen proof and design-partner validation remain G4.",
-      "evidence_basis": "Substantial alpha code and internal verification exist; limited zero-help usability evidence does not establish physical or third-party hardware validation."
+      "canonicalization_state": "release_branch_ahead",
+      "last_audited": "2026-09-01",
+      "effective_candidate": "PR #77 head f5ca55920ae0517b9c90dd590c9b02104cf6bf5d is the broad green machine-workbench evidence baseline; later Sept-1 stacked interaction/bench branches are route-specific candidate evidence only.",
+      "packaging_role": "Primary physical-agent / electronics / CV / 3D / robotics / EDA engineering package.",
+      "strongest_known_gap": "Revision-bound physical/live unseen proof, whole-assembly/electrical boundaries and independent design-partner evidence remain G4. Stop adding general workbench surface unless a target route or real user exposes the need.",
+      "allowed_claims": ["22/22 workflows green on PR77", "9/9 Chromium workbench paths green", "exact STEP/BREP parsing and pair geometry evidence", "surface anchors, mating geometry and sampled path evidence", "explicit physical-authority/nonclaim boundaries"],
+      "forbidden_claims": ["physical metrology/certification", "connector electrical compatibility", "whole-assembly closure", "fabrication/power-on/motion/release authority", "external design-partner validation"],
+      "next_evidence_action": "Freeze general construction around the PR77 evidence baseline; fire TAAI, Anthropic MHS/AI-for-Science and HS-native research/job routes, adding only route-specific physical evidence where it materially changes selection odds.",
+      "evidence_basis": "PR #77 is a fully green machine-scale spatial workbench candidate. Several newer Sept-1 stacked PRs deepen reuse, bench capture, pose and interrogation, but should not silently inflate the broad evidence claim until their inherited gates are resolved."
     },
     {
       "id": "public-good-control",
-      "name": "Public-Good Control",
+      "name": "Public-Good Control Plane",
       "repo": "Spectating101/animal-charity",
       "implementation_stage": "internally_validated",
       "external_evidence_stage": "none",
       "deployment_stage": "none",
       "canonicalization_state": "canonical",
-      "strongest_known_gap": "Real operator / bounded coordination case remains G4.",
-      "evidence_basis": "Canonical main established 2026-08-27 after two independent development heads were integrated; GitHub Actions passed make verify and Docker build; no field outcome or partner adoption is claimed."
+      "last_audited": "2026-09-01",
+      "effective_candidate": "Canonical main after PR #26/#27 consolidation and metadata alignment.",
+      "packaging_role": "Primary bounded public-good coordination/pilot package; not a generic AI competition asset.",
+      "strongest_known_gap": "Real operator / prospective shadow case remains G4. Adding another domain would not close the missing evidence.",
+      "allowed_claims": ["canonical shared control core", "animal-welfare/MBG/disaster/coordination/governance domain adapters", "182-test local integration evidence plus green make verify/Docker CI on canonicalization path", "explicit time-aware opportunity and safety/access boundaries"],
+      "forbidden_claims": ["field outcome", "partner adoption", "operational authorization", "scientific intervention effectiveness without domain evidence"],
+      "next_evidence_action": "Find one competent operator and run a bounded shadow/pilot case; use microgrant/partner routes only when that operator/use case is real.",
+      "evidence_basis": "The full control plane is canonical and internally verified. The repository itself explicitly separates that from prospective shadow use, partner adoption and demonstrated public-good outcomes."
     },
     {
       "id": "refinery-commons",
       "name": "Refinery / Commons",
-      "repo": "",
-      "implementation_stage": "implemented",
+      "repo": "Spectating101/alpha-platform",
+      "implementation_stage": "internally_validated",
       "external_evidence_stage": "none",
-      "deployment_stage": "none",
-      "canonicalization_state": "unknown",
-      "strongest_known_gap": "External evidence-audit case / adoption remains G4; current repository authority still needs a dedicated canonicalization audit.",
-      "evidence_basis": "Gauntlet gate audit treats the missing step as external evidence rather than more internal polish; repository mapping is intentionally left unresolved here."
+      "deployment_stage": "public_demo",
+      "canonicalization_state": "release_branch_ahead",
+      "last_audited": "2026-09-01",
+      "effective_candidate": "PR #21 bounded RC plus PR #23 portable refinery-tool 0.1.0rc1/operator candidate; exact private hosted CI remains blocked by runner provisioning.",
+      "packaging_role": "Primary research-software / software-evidence / reuse-before-rebuild package.",
+      "strongest_known_gap": "Exact-head private execution plus one genuine cold reviewer/outside use remain. Current bounded evidence supports a research artifact, not general PMF or adoption.",
+      "allowed_claims": ["RFC3986 negative control: reuse 42/42 and rebuild 42/42", "licensed Public Suffix List reuse 78/78 versus generic rebuild 39/78", "independent uv OCI/SLSA exact-subject verification", "portable capability/implementation/claim operator design"],
+      "forbidden_claims": ["universal reuse superiority", "product-market fit", "execution authority", "general external adoption", "rights beyond exact published licenses/notices"],
+      "next_evidence_action": "Lead MSR/SSI and the NLnet portfolio bake-off; obtain one cold reviewer/outside use and avoid enlarging the ontology/operator without consumer evidence.",
+      "evidence_basis": "Refinery now has paired falsification evidence, independent public provenance proof and a portable RC/operator surface. The remaining gap is exact-head/private execution and genuine external use, not another general architecture tranche."
     },
     {
       "id": "sharpe-terminus",
       "name": "Sharpe Terminus",
-      "repo": "Spectating101/research-drive-private",
-      "implementation_stage": "implemented",
+      "repo": "Spectating101/sharpe-terminus",
+      "implementation_stage": "internally_validated",
       "external_evidence_stage": "none",
       "deployment_stage": "none",
-      "canonicalization_state": "canonical",
-      "strongest_known_gap": "Genuine forward observations remain G4; subsystem/repository licensing and packaging should be audited separately before external release claims.",
-      "evidence_basis": "Quant subsystem is present in the canonical Research Drive repository; Gauntlet audit explicitly identifies forward evidence as the missing maturity gate."
+      "canonicalization_state": "release_branch_ahead",
+      "last_audited": "2026-09-01",
+      "effective_candidate": "Canonical Compass foundation on main; PR #3 causal-capital architecture and PR #4 plan-only transaction bridge are candidate evidence, not proven live performance.",
+      "packaging_role": "Primary quant/finance research work sample for jobs, predocs and finance PhDs.",
+      "strongest_known_gap": "Genuine forward paper observations and exact execution of the causal-promotion branch remain; no historical or seeded result substitutes for forward evidence.",
+      "allowed_claims": ["causal/no-lookahead evaluation architecture", "explicit DSR/PBO/Sharpe policy floors in candidate research branch", "research promotion separated from capital authorization", "transaction planner stops before broker authority"],
+      "forbidden_claims": ["proven profitability", "live-trading readiness", "future alpha certainty", "seeded/backfilled history as forward proof"],
+      "next_evidence_action": "Use Sharpe aggressively for quant/research career pricing now while the paper ledger accumulates genuine forward observations; do not wait for trading proof before applying to jobs.",
+      "evidence_basis": "The merged Compass foundation is internally validated. PR #3 materially strengthens the causal evidence design but explicitly remains short of genuine forward proof and has suffered runner-level execution blockage."
     },
     {
       "id": "research-papers",
@@ -139,8 +162,14 @@
       "external_evidence_stage": "limited",
       "deployment_stage": "none",
       "canonicalization_state": "research_repair_required",
-      "strongest_known_gap": "Confirmed empirical/reproducibility defects must be repaired before portfolio-readiness claims are upgraded.",
-      "evidence_basis": "Manuscripts exist and Invisible Ledger has conference acceptance evidence, but the current audit records confirmed empirical errors and an ECI raw-source reproducibility gap."
+      "last_audited": "2026-09-01",
+      "effective_candidate": "Use only claim-audited current manuscript versions; Invisible Ledger current framing supersedes older headline numbers.",
+      "packaging_role": "Supporting academic evidence and lead asset only for genuinely paper-native finance/economics venues.",
+      "strongest_known_gap": "Confirmed empirical/reproducibility issues must be repaired claim-by-claim before stronger portfolio-readiness claims are made.",
+      "allowed_claims": ["existing manuscripts/preprints", "bounded conference/academic external signals", "current audited empirical results when their exact source and method are preserved"],
+      "forbidden_claims": ["old Invisible Ledger $82.8B/12.5x headline as current truth", "unrepaired ECI/empirical claims", "blanket validity of all papers from one acceptance"],
+      "next_evidence_action": "Use papers selectively for finance jobs/predocs/PhDs and paper-native venues; repair only the empirical claims required by those routes.",
+      "evidence_basis": "The paper line has real external academic signal but also known repair requirements. Gauntlet must project specific audited claims rather than treating the whole manuscript family as uniformly validated."
     },
     {
       "id": "citation-engine",
@@ -150,8 +179,31 @@
       "external_evidence_stage": "none",
       "deployment_stage": "none",
       "canonicalization_state": "canonical",
-      "strongest_known_gap": "External adoption/community use and independent pressure-testing are not established.",
-      "evidence_basis": "Public reusable kernel with tests and internal cross-domain pressure testing; repository itself explicitly does not claim production-framework maturity."
+      "last_audited": "2026-09-01",
+      "effective_candidate": "Canonical public kernel with merged cross-domain adapters and independent public verification harnesses.",
+      "packaging_role": "Support-only evidence/authority kernel. It must not consume a standalone calendar/application slot.",
+      "strongest_known_gap": "External community adoption remains unproven, but the more important portfolio role is to strengthen exact-subject evidence and authority boundaries of lead assets.",
+      "allowed_claims": ["public tested kernel", "cross-domain pressure-test adapters", "independent uv exact-subject provenance verification", "licensed PSL bounded reuse experiment"],
+      "forbidden_claims": ["standalone external adoption", "universal ontology", "automatic recommendation authority", "standalone Gauntlet slot ownership"],
+      "next_evidence_action": "Embed Citation Engine evidence into Cite/HS/Nocturnal/Refinery/Policy applications. Do not create a separate submission merely to give the kernel another route.",
+      "evidence_basis": "Citation Engine has proven useful as a portfolio-wide evidence authority and independent verification harness. Its conversion value is multiplicative, so allocation policy marks it support-only."
+    },
+    {
+      "id": "geomap-arbitrage",
+      "name": "GeoMap Arbitrage",
+      "repo": "Spectating101/geomap-arbitrage",
+      "implementation_stage": "internally_validated",
+      "external_evidence_stage": "none",
+      "deployment_stage": "none",
+      "canonicalization_state": "canonical",
+      "last_audited": "2026-09-01",
+      "effective_candidate": "v0.1 merged opportunity engine, PR #1 head 03418dbf93f02bc67bc714d73bbd01718c9fffaa.",
+      "packaging_role": "Low-priority bounded procurement/economic-opportunity probe only when a real buyer/supplier problem exists.",
+      "strongest_known_gap": "All current opportunity fixtures are synthetic; no live market, buyer, supplier or income result exists.",
+      "allowed_claims": ["deterministic capital/time/mobility/legal/evidence/economics gates", "full-cost downside-surplus reasoning", "10 native tests passed on Python 3.11 and 3.13", "Citation Engine evidence integration"],
+      "forbidden_claims": ["live arbitrage profit", "generic lead-generation value", "market demand from synthetic North Harbor fixtures", "automatic procurement authority"],
+      "next_evidence_action": "Only run a bounded TAITRA/iSourcing or direct buyer/supplier pilot if a concrete opportunity can be verified and delivered cheaply; otherwise keep GeoMap off the active firing queue.",
+      "evidence_basis": "GeoMap v0.1 is technically clean but deliberately has no live market proof. It should not displace stronger portfolio assets unless a real procurement/economic problem appears."
     },
     {
       "id": "gauntlet-blowback",
@@ -160,9 +212,15 @@
       "implementation_stage": "internally_validated",
       "external_evidence_stage": "none",
       "deployment_stage": "none",
-      "canonicalization_state": "integration_in_progress",
-      "strongest_known_gap": "Canonical default-branch publication is being reconciled from cumulative operator, registry, faculty, HS, and portal-recon lines.",
-      "evidence_basis": "Current consolidation branch contains the master registry, conversion operator, Codex mission operator, faculty-pull routes, and HS/Nocturnal route packages; portal-recon semantics remain a separate conflict boundary."
+      "canonicalization_state": "canonical",
+      "last_audited": "2026-09-01",
+      "effective_candidate": "Canonical main including autonomous Radar, application autopilot, thread recovery, student/research resources and focused Nocturnal conversion radar.",
+      "packaging_role": "Support-only conversion-control and research-engineering evidence. It is not primary ammunition and must not consume a standalone route slot.",
+      "strongest_known_gap": "Actual external receipts/outcomes and measured campaign conversion now matter more than further control-plane engineering.",
+      "allowed_claims": ["federated opportunity master", "daily Radar/source-family discovery", "human-gated browser/application missions", "receipt/outcome state model", "portfolio-wide gate/economic semantics"],
+      "forbidden_claims": ["autonomous eligibility judgment without official verification", "unsupervised consequential submissions", "external market validation from internal test coverage", "standalone project-slot ownership"],
+      "next_evidence_action": "Use the machine. Reopen Gauntlet engineering only for defects observed while firing real routes and collecting receipts/outcomes.",
+      "evidence_basis": "The canonical repo has moved well beyond the Aug-27 integration state: research-labor/fellowship Radar, autonomous discovery, application autopilot, resource credits, thread recovery and focused Nocturnal conversion logic are merged and tested."
     }
   ]
 }

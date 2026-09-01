@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildMasterRegistry } from '../../scripts/build-gauntlet-master.mjs';
+import { resolvePortfolioAllocation } from '../allocation/portfolio.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '../..');
@@ -113,11 +114,19 @@ function inferHumanGates(record) {
 
 export function buildBrowserMission(record, checkpoint = null) {
   if (!record?.id) throw new Error('master record with id required');
+  const allocation = resolvePortfolioAllocation(record);
+  const leadLabel = allocation.lead_asset && allocation.lead_asset !== 'PERSON'
+    ? ` Use ${allocation.lead_asset} as the lead evidence package.`
+    : allocation.mode === 'PERSON_BUNDLE'
+      ? ' Treat this as a person-level portfolio application, not competing project submissions.'
+      : allocation.mode === 'PORTFOLIO_BAKEOFF'
+        ? ' Resolve the portfolio/slot bake-off before committing a submission package.'
+        : '';
   return {
     schema: 'blowback.codex_browser_mission.v1',
     mission_id: `mission:${record.id}`,
     route_id: record.id,
-    objective: `Advance ${record.organization || record.opportunity}: ${record.opportunity || record.id} through the live web workflow to the last safe reversible state.`,
+    objective: `Advance ${record.organization || record.opportunity}: ${record.opportunity || record.id} through the live web workflow to the last safe reversible state.${leadLabel}`,
     strategic: {
       lane: record.lane,
       route_class: record.route_class,
@@ -130,6 +139,7 @@ export function buildBrowserMission(record, checkpoint = null) {
       mutual_exclusion_group: record.mutual_exclusion_group,
       parent_route: record.parent_route,
       source_state: record.source_state,
+      portfolio_allocation: allocation,
     },
     browser: {
       starting_url: record.source || null,
@@ -160,6 +170,7 @@ export function buildBrowserMission(record, checkpoint = null) {
         'known_project_title_description_and_dates',
         'previously_established_eligibility_facts',
         'designated_existing_artifact_for_route',
+        'lead_vs_support_project_assignment_from_portfolio_allocation',
       ],
       human_gate: inferHumanGates(record),
       forbidden: [
@@ -167,12 +178,14 @@ export function buildBrowserMission(record, checkpoint = null) {
         'invent_credentials',
         'invent_eligibility_affiliation_team_advisor_or_evidence',
         'store_password_otp_card_or_secret_in_checkpoint',
+        'promote_support_only_asset_into_standalone_project_slot',
+        'consume_scarce_portfolio_slot_before_required_bakeoff',
       ],
     },
     success: {
       preferred_terminal_state: 'WAITING_HUMAN',
       acceptable_states: ['SAFE_COMPLETE', 'WAITING_HUMAN', 'SUBMITTED', 'BLOCKED'],
-      instruction: 'Do not stop because the portal is unfamiliar. Stop only at a genuine protected gate, verified blocker, or last safe state.',
+      instruction: 'Do not stop because the portal is unfamiliar. Stop only at a genuine protected gate, verified blocker, allocation bake-off, or last safe state.',
     },
     resume: checkpoint ? {
       checkpoint_status: checkpoint.status,
