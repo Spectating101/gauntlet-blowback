@@ -1,0 +1,51 @@
+{
+  "id": "aws-community-day-taiwan-2026-hardware-splicer",
+  "name": "AWS Community Day Taiwan 2026 CFP — Hardware-Splicer",
+  "portal": "generic",
+  "portal_family": "conference_cfp",
+  "auth_scope": "awscmd.tw",
+  "source_url": "https://awscmd.tw/",
+  "recon_stage": "registration",
+  "deadline": "2026-09-07T23:59:00+08:00",
+  "deadline_note": "Official source verifies the Sep 7 date; exact cutoff time is not yet verified, so do not rely on 23:59.",
+  "mode": "inspect",
+  "execution_state": "PORTAL_RECON_REQUIRED",
+  "direct_control": true,
+  "profile": "../profiles/christ.json",
+  "project": "../projects/hardware-splicer.json",
+  "packet_source": "https://github.com/Spectating101/hardware-splicer/blob/docs/research-access-conversion-2026q3/docs/external_assessment/research_access/AWS_COMMUNITY_DAY_TAIWAN_2026.md",
+  "fields": {
+    "talk_title": "When an AI Agent Can Touch Hardware: Evidence, Authority, and Failure Boundaries",
+    "topic": "Agentic AI",
+    "speaker_name": "$profile.name",
+    "affiliation": "$profile.affiliation",
+    "repo_url": "$project.repo_url"
+  },
+  "field_map": {},
+  "uploads": [],
+  "packet_requirements": [
+    {
+      "id": "talk_copy",
+      "description": "Prepared title, 100/250-word abstracts, takeaways, session outline and bio variants.",
+      "status": "PACKET_SOURCE_READY",
+      "canonical_ref": "https://github.com/Spectating101/hardware-splicer/blob/docs/research-access-conversion-2026q3/docs/external_assessment/research_access/AWS_COMMUNITY_DAY_TAIWAN_2026.md"
+    },
+    {
+      "id": "live_form_map",
+      "description": "Inspect the current CFP form and capture exact required fields, word limits, session length and cutoff time before switching to prepare mode.",
+      "status": "PORTAL_RECON_REQUIRED"
+    }
+  ],
+  "compliance_checks": [
+    "Do not claim Hardware-Splicer currently uses AWS services unless that becomes true before submission/event.",
+    "Present Hardware-Splicer as a technical case study, not a sales pitch.",
+    "Do not claim live external-model corpus competence or fresh physical proof while canonical evidence remains pending."
+  ],
+  "route_evidence": {
+    "verified_at": "2026-09-04",
+    "source_rules_verified": true,
+    "registration_endpoint_verified": false,
+    "form_fields_verified": false
+  },
+  "human_required": ["login", "authorship_attestation", "terms_acceptance", "final_submit"]
+}
