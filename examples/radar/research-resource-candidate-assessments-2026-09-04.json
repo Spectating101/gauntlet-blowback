@@ -1,6 +1,7 @@
 {
   "as_of": "2026-09-04",
-  "policy": "conversion-first: prioritize external receipts, research access, compute/API resources and institutional relationships over low-value titles; hard eligibility and applicant authority remain separate from portfolio fit; candidate ids should match canonical Gauntlet master ids whenever a master route exists",
+  "packet_revision": "f822fc5a4b2355ae945955969dcad7428a71c835",
+  "policy": "conversion-first: prioritize external receipts, research access, compute/API resources and institutional relationships over low-value titles; hard eligibility and applicant authority remain separate from portfolio fit; candidate ids should match canonical Gauntlet master ids whenever a master route exists; packet references are immutable audited Hardware-Splicer revisions",
   "candidates": [
     {
       "id": "aws-community-day-taiwan-2026-hardware-splicer",
@@ -17,7 +18,7 @@
       "value": "accepted-speaker receipt, Taiwan AWS/community network, reusable external technical validation",
       "marginal_work": "Transcribe the prepared title/abstract/takeaways/bio into the current Qualtrics CFP, review against claim boundaries and submit before the date cutoff; no new engineering required.",
       "blockers": ["live_form_field_map", "exact_deadline_time_unverified"],
-      "packet": "https://github.com/Spectating101/hardware-splicer/blob/docs/research-access-conversion-2026q3/docs/external_assessment/research_access/AWS_COMMUNITY_DAY_TAIWAN_2026.md",
+      "packet": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/AWS_COMMUNITY_DAY_TAIWAN_2026.md",
       "source": "https://awscmd.tw/"
     },
     {
@@ -34,7 +35,7 @@
       "value": "up to US$1,000 API credits plus an external research-award receipt and provider-model evaluation evidence",
       "marginal_work": "Run plan is now concrete: GPT-5.6 Sol primary 200 runs + Terra sensitivity 100 runs; US$300 working request if an amount is requested. Remaining work is current model/pricing recheck, award-relative project dates and live application field mapping.",
       "blockers": ["live_form_field_map", "current_model_pricing_recheck", "project_dates_from_award_timing"],
-      "packet": "https://github.com/Spectating101/hardware-splicer/blob/docs/research-access-conversion-2026q3/docs/external_assessment/research_access/OPENAI_RESEARCHER_ACCESS.md",
+      "packet": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/OPENAI_RESEARCHER_ACCESS.md",
       "source": "https://openai.com/form/researcher-access-program/"
     },
     {
@@ -49,9 +50,9 @@
       "eligibility": "No PhD/faculty requirement is stated on the current program page; proposed work must genuinely address high-priority AI safety/alignment research.",
       "fit": "The strongest honest fit is agent control/oversight under consequential tool use: authority escalation, evidence-gated autonomy, safe abstention, stale-authority carryover and recovery after evidence/tool conflict.",
       "value": "normally US$1,000 Claude API credits plus external safety-research receipt and Claude benchmark evidence",
-      "marginal_work": "Run plan is now concrete: Claude Sonnet 5 primary 200 runs + Opus 5 confirmatory 100 runs. Remaining work is current model/pricing recheck, project window and live application field mapping.",
+      "marginal_work": "Run plan is now concrete: Claude Sonnet 5 primary 200 runs + Opus 5 confirmatory 100 runs. Fable 5.1 remains optional exploratory escalation. Remaining work is current model/pricing recheck, project window and official Google Form field mapping.",
       "blockers": ["live_form_field_map", "current_claude_model_pricing_recheck", "project_window"],
-      "packet": "https://github.com/Spectating101/hardware-splicer/blob/docs/research-access-conversion-2026q3/docs/external_assessment/research_access/ANTHROPIC_EXTERNAL_RESEARCHER_ACCESS.md",
+      "packet": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/ANTHROPIC_EXTERNAL_RESEARCHER_ACCESS.md",
       "source": "https://support.claude.com/en/articles/9125743-what-is-the-external-researcher-access-program"
     },
     {
@@ -67,7 +68,7 @@
       "value": "research-preview access, direct ecosystem relationship, physical-agent safety evidence and potentially unusually strong external validation",
       "marginal_work": "Name a real programmable device/interface and inspect the live applicant fields; route through YZU faculty/lab if required.",
       "blockers": ["concrete_programmable_device", "programmable_interface", "applicant_structure_verification"],
-      "packet": "https://github.com/Spectating101/hardware-splicer/blob/docs/research-access-conversion-2026q3/docs/external_assessment/research_access/ANTHROPIC_MHS_RESEARCH_PREVIEW.md",
+      "packet": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/ANTHROPIC_MHS_RESEARCH_PREVIEW.md",
       "source": "https://www.anthropic.com/news/model-hardware-standard-research-preview"
     },
     {
@@ -84,7 +85,7 @@
       "value": "discounted H200/CPU access, national compute infrastructure, institutional research relationship and larger reproducible evaluation capacity",
       "marginal_work": "Identify YZU faculty/unit/campus contact, select actual open-weight models, derive measured/benchmark-based GPU-hours, convert at NT$30/H200-GPU-hour and send the internal brief.",
       "blockers": ["yzu_institutional_contact", "faculty_or_unit_sponsor", "open_model_workload", "gpu_hour_estimate"],
-      "packet": "https://github.com/Spectating101/hardware-splicer/blob/docs/research-access-conversion-2026q3/docs/external_assessment/research_access/NCHC_YZU_AI_COMPUTE_BRIEF.md",
+      "packet": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/NCHC_YZU_AI_COMPUTE_BRIEF.md",
       "source": "https://www.nchc.org.tw/Active/ActiveView?id=1795&menutype=0&mid=47&sitemenuid=3"
     },
     {
@@ -100,7 +101,7 @@
       "value": "up to US$5,000 AWS Promotional Credit and a cloud-research award receipt",
       "marginal_work": "First obtain a written Taiwan-eligibility answer. Current official review cycle is 90–120 days; only after a written yes should architecture, milestones, sharing plan and pricing-based budget be built.",
       "blockers": ["taiwan_geographic_eligibility_confirmation"],
-      "packet": "https://github.com/Spectating101/hardware-splicer/blob/docs/research-access-conversion-2026q3/docs/external_assessment/research_access/AWS_CLOUD_CREDIT_FOR_RESEARCH.md",
+      "packet": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/AWS_CLOUD_CREDIT_FOR_RESEARCH.md",
       "source": "https://aws.amazon.com/government-education/research-and-technical-computing/cloud-credit-for-research/"
     },
     {
@@ -116,7 +117,7 @@
       "value": "up to US$50,000 Claude credits plus major external scientific-resource validation",
       "marginal_work": "Hold until external evidence closes; then re-check current applicant rules, receiving organization/account, publicity/participation terms, data/IP boundary, scientific aims and workload-derived credit budget.",
       "blockers": ["live_external_model_evidence", "fresh_physical_evidence", "clean_data_ip_boundary", "applicant_jurisdiction_rules_recheck", "institutional_consent_path", "receiving_org_account"],
-      "packet": "https://github.com/Spectating101/hardware-splicer/blob/docs/research-access-conversion-2026q3/docs/external_assessment/research_access/ANTHROPIC_AI_FOR_SCIENCE.md",
+      "packet": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/ANTHROPIC_AI_FOR_SCIENCE.md",
       "source": "https://www.anthropic.com/news/expanding-support-for-scientists"
     },
     {
