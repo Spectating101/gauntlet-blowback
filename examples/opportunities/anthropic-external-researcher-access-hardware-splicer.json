@@ -24,30 +24,36 @@
   "packet_requirements": [
     {
       "id": "safety_research_copy",
-      "description": "Prepared AI-control/oversight framing, research summary, team positioning and expected outputs.",
+      "description": "Prepared AI-control/oversight framing, research summary, team positioning, expected outputs and explicit nonclaims.",
       "status": "PACKET_SOURCE_READY",
       "canonical_ref": "https://github.com/Spectating101/hardware-splicer/blob/docs/research-access-conversion-2026q3/docs/external_assessment/research_access/ANTHROPIC_EXTERNAL_RESEARCHER_ACCESS.md"
     },
     {
       "id": "core_protocol",
-      "description": "Canonical experiment; provider variant must preserve the same evidence/authority hypothesis rather than becoming generic product development.",
+      "description": "Frozen matched-condition design with dry-run reference boundary, 300-run default, explicit adjudication rubric, trace requirements and clustering-aware analysis.",
       "status": "PACKET_SOURCE_READY",
       "canonical_ref": "https://github.com/Spectating101/hardware-splicer/blob/docs/research-access-conversion-2026q3/docs/external_assessment/research_access/CORE_RESEARCH_PROTOCOL.md"
     },
     {
       "id": "api_budget",
-      "description": "Choose Claude model(s), repetitions per case and derive expected API use.",
-      "status": "PACKET_REQUIRED"
+      "description": "Working default: Claude Sonnet 5 primary 200 runs + Opus 5 confirmatory 100 runs. Core scored-run estimate is far below the ordinary US$1,000 successful award; re-check current pricing/model availability before execution.",
+      "status": "PACKET_SOURCE_READY"
+    },
+    {
+      "id": "project_window",
+      "description": "Set exact project start/end dates in the live application while preserving the bounded evaluation scope.",
+      "status": "LIVE_FORM_VALUE_REQUIRED"
     },
     {
       "id": "live_form_map",
-      "description": "Inspect the current application form and capture exact team/research-topic fields and limits.",
+      "description": "Inspect the current application and capture exact team/research-topic fields and limits; do not assume a specific form provider.",
       "status": "PORTAL_RECON_REQUIRED"
     }
   ],
   "compliance_checks": [
     "The application must remain a genuine AI safety/control study, not a generic hardware-product funding request.",
     "Use agent control, oversight, safe consequential tool use and authority gating language rather than making a broad alignment claim.",
+    "Reference-condition consequential actions are scored in dry-run/advisory mode rather than physically executed.",
     "Do not claim Claude has passed the corpus before a live execution exists.",
     "Do not promote software/MCP evidence into fresh physical correctness."
   ],
@@ -55,6 +61,7 @@
     "verified_at": "2026-09-04",
     "program_scope_verified": true,
     "review_cadence_verified": true,
+    "model_and_pricing_snapshot_verified": true,
     "registration_endpoint_verified": false,
     "form_fields_verified": false
   },
