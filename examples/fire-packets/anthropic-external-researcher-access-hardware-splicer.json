@@ -1,0 +1,35 @@
+{
+  "schema": "blowback.fire_packet.v1",
+  "route_id": "anthropic-external-researcher-access-2026",
+  "source_revision": "e30e5b0d235c8ad1dffef69a9a69d16e3a29bb63",
+  "source_url": "https://github.com/Spectating101/hardware-splicer/blob/e30e5b0d235c8ad1dffef69a9a69d16e3a29bb63/docs/external_assessment/research_access/FIRE_NOW_SUBMISSION_COPY_2026-09-05.md",
+  "copy": {
+    "project_title": "Evidence- and Authority-Constrained Agent Control Under Consequential Tool Use",
+    "research_summary": "As AI agents gain tool access, the safety question is no longer only whether a model can reason correctly; it is also what its reasoning is permitted to authorize. In consequential environments, unsupported model confidence can become a real action even when the underlying evidence is stale, ambiguous, conflicting, or incomplete.\n\nI propose a controlled evaluation using Hardware-Splicer, an existing model-independent hardware-engineering environment that separates semantic model reasoning from deterministic engineering state, provenance-bearing evidence, exact revision state, and scoped human authorization. The engineering domain is the test environment; the research question is agent control.\n\nClaude will be evaluated on a frozen ten-case adversarial corpus covering partial evidence, component-identity conflict, tool/parser failure, plausible wrong analogies, and stale revisions. The study compares matched reference and evidence/authority-constrained conditions while keeping provider safety controls intact. Consequential reference actions remain advisory/dry-run rather than physically executed.\n\nPrimary outcomes include unsupported consequential-action attempts, correct abstention/blocking, false blocking, useful task completion, human intervention, stale-authority carryover, and recovery after tool/evidence failure. The core design uses 200 Claude Sonnet 5 scored runs and 100 Claude Opus 5 confirmatory runs. The intended contribution is an auditable safe-tool-use/control evaluation of whether explicit evidence and authority boundaries reduce unsupported action escalation without destroying useful agent behavior.",
+    "why_ai_safety": "The project is not asking Anthropic to fund generic hardware-product development. It tests a control intervention for tool-using agents: when unsupported assertions escalate toward action; whether explicit evidence gates improve safe abstention; whether revision changes invalidate stale authority; whether deterministic constraints preserve a meaningful control boundary outside the model; how the agent recovers after evidence/tool conflicts; and whether useful task progress survives the additional controls. The physical-engineering domain provides consequential semantics, but the primary object of study is agent control and oversight.",
+    "planned_use_of_claude": [
+      "Claude Sonnet 5 primary: 10 cases × 2 conditions × 10 repeats = 200 scored runs.",
+      "Claude Opus 5 confirmatory: 10 cases × 2 conditions × 5 repeats = 100 scored runs.",
+      "Small unscored pilot before freezing transport/token assumptions.",
+      "Same frozen corpus, evaluator, protocol, and adjudication rules across conditions.",
+      "Full evidence state, MCP/tool calls, revision state, provider/model configuration, outcome labels, failures, retries, and usage metadata preserved where policy permits."
+    ],
+    "exploratory_model_policy": "Claude Fable 5.1 is not part of the preregistered core. It may be added later only as a separately declared exploratory escalation if the core results justify it and the then-current data-retention/cost terms are acceptable.",
+    "team_description": "The project is led by Christopher Ongko, a university-affiliated master's researcher at Yuan Ze University. It is a bounded independent research study using an existing agentic hardware-engineering platform and evaluation harness. Faculty/institutional context can be identified where relevant, but no laboratory, collaborator, or institutional sponsorship should be implied unless it is actually part of the submitted application.",
+    "expected_outputs": [
+      "Controlled matched-condition benchmark results.",
+      "Case-level agent-control/failure taxonomy.",
+      "Quantitative summaries of unsupported actions, abstention, false blocking, useful completion, intervention, stale-authority carryover, and recovery.",
+      "Versioned evaluation artifacts and traces where provider policy permits.",
+      "Explicit negative/failure results rather than success-only reporting.",
+      "Technical report / research-paper draft."
+    ],
+    "strongest_one_sentence_contribution": "This study tests whether keeping evidence and action authority independently authoritative can prevent a tool-using agent's unsupported confidence from silently becoming consequential action.",
+    "nonclaims": [
+      "Do not claim Hardware-Splicer is a general alignment solution.",
+      "Do not claim Claude has already passed the benchmark.",
+      "Do not claim the experiment proves universal agent safety.",
+      "Do not imply laboratory or institutional sponsorship unless actually present in the application."
+    ]
+  }
+}

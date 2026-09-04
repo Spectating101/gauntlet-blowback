@@ -1,0 +1,42 @@
+{
+  "schema": "blowback.fire_packet.v1",
+  "route_id": "openai-researcher-access-hardware-splicer",
+  "source_revision": "e30e5b0d235c8ad1dffef69a9a69d16e3a29bb63",
+  "source_url": "https://github.com/Spectating101/hardware-splicer/blob/e30e5b0d235c8ad1dffef69a9a69d16e3a29bb63/docs/external_assessment/research_access/FIRE_NOW_SUBMISSION_COPY_2026-09-05.md",
+  "copy": {
+    "project_title": "Evidence- and Authority-Constrained Agent Control Under Consequential Hardware Tool Use",
+    "research_question": "Do evidence gating, deterministic engineering constraints, and explicit authorization reduce unsupported consequential actions by tool-using AI agents without eliminating useful task completion?",
+    "project_summary": "Most agent evaluations ask whether a model can produce a correct answer. This project asks a different deployment question: when should a model-generated answer be allowed to acquire authority to act?\n\nHardware engineering provides a consequential test environment because a plausible but unsupported model response can become a fabricated artifact, power-on decision, or released change before component identity, evidence provenance, revision state, or physical behavior has actually been established.\n\nI will evaluate this problem using Hardware-Splicer, an existing model-independent agentic hardware-engineering environment that keeps deterministic constraints, provenance-bearing evidence, exact project/revision state, and scoped human authorization outside the model. A frozen ten-case adversarial corpus includes partial evidence, identity conflicts, parser/tool failure, plausible wrong analogies, and stale-revision evidence.\n\nThe study uses matched reference and constrained conditions. Consequential reference actions remain advisory/dry-run rather than being physically executed. The primary outcomes are unsupported consequential-action attempts, correct abstention, false blocking, useful task completion, human intervention, stale-authority carryover, and recovery after evidence/tool failure.\n\nThe planned core consists of 300 scored runs: 200 runs using GPT-5.6 Sol and 100 sensitivity runs using GPT-5.6 Terra, with protocol, corpus, evaluator, prompts, model configuration, and adjudication rules frozen before scored execution. The intended output is a reproducible benchmark, trace-level failure taxonomy, and technical research report suitable for later academic submission.",
+    "planned_use_of_openai_products": "OpenAI API models are the experimental agents under evaluation, not generic writing or coding assistants for the project. GPT-5.6 Sol will serve as the primary model and GPT-5.6 Terra as a lower-cost sensitivity model. Each model will receive the same bounded engineering cases and operate through controlled MCP/tool interfaces.\n\nAPI access will support repeated matched-condition runs, preservation of model/tool traces, and sensitivity analysis while keeping the underlying corpus fixed after the experiment begins. The design specifically measures whether external evidence/authority constraints change behavior under incomplete, stale, conflicting, or tool-failure conditions.",
+    "experimental_plan": [
+      "10 frozen adversarial cases.",
+      "2 matched conditions: reference vs Hardware-Splicer constrained.",
+      "GPT-5.6 Sol: 10 repeats per case/condition = 200 scored runs.",
+      "GPT-5.6 Terra: 5 repeats per case/condition = 100 scored runs.",
+      "300 scored runs total plus a small unscored transport/token pilot.",
+      "Consequential reference actions scored in advisory/dry-run mode.",
+      "Exact repository/corpus/evaluator/model/prompt revisions preserved.",
+      "Human adjudication for ambiguous traces; evaluated model is not its own sole judge.",
+      "Case-level and cluster-aware analysis so stochastic repeats are not treated as 300 independent cases."
+    ],
+    "why_it_matters": "Tool-using agents increasingly operate in environments where model output can affect real state. A system can therefore fail even when its model is generally capable: unsupported confidence may silently become action authority. The project tests whether a narrow architectural intervention—keeping evidence, revision state, deterministic constraints, and authorization independently authoritative—reduces that failure mode while preserving useful agent progress.",
+    "expected_outputs": [
+      "Reproducible frozen evaluation protocol.",
+      "Versioned benchmark and evaluator.",
+      "Provider/model run traces where publication policy permits.",
+      "Machine-readable failure/control taxonomy.",
+      "Quantitative and case-level analysis of unsupported actions, abstention, false blocking, intervention, completion, and recovery.",
+      "Technical research report / paper draft.",
+      "Public reproducibility artifacts that do not expose restricted or confidential material."
+    ],
+    "working_credit_request_usd": 300,
+    "credit_justification": "The request is deliberately below the program maximum. It is intended to cover the 300-run matched-condition experiment plus transport pilots, retries, and limited validation/ablation headroom. Recalculate immediately before submission against current model pricing and the pilot's measured token/tool-use profile.",
+    "researcher_positioning": "I am a university-affiliated master's researcher at Yuan Ze University working on evidence-governed agentic systems and empirical research. My formal degree is in Finance and Accounting; my current research/engineering work is interdisciplinary and includes agentic hardware systems, reproducible research-data infrastructure, and evidence-grounded research tooling. Existing academic work provides experience in empirical question formulation, evidence construction, and bounded claims, while Hardware-Splicer supplies the concrete experimental system for this study.",
+    "why_subsidized_access": "The project is independently developed in a university research context without a large institutional AI-compute budget. Subsidized API access would make it practical to run repeated matched-condition evaluations rather than relying on anecdotal one-off demonstrations, while keeping the study small enough to complete within the current university affiliation window.",
+    "nonclaims": [
+      "Do not state that an OpenAI model has already passed this benchmark.",
+      "Do not promote software/MCP evidence into physical proof.",
+      "Do not imply provider endorsement before an award receipt exists."
+    ]
+  }
+}
