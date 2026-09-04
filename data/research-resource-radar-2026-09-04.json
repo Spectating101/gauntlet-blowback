@@ -28,6 +28,23 @@
       "origin": "2026-09-04 research/resource conversion audit"
     },
     {
+      "id": "openai-researcher-access-hardware-splicer",
+      "lane": "RESEARCH_CREDIT",
+      "organization": "OpenAI",
+      "opportunity": "Researcher Access Program — Hardware-Splicer agent-control evaluation",
+      "route_class": "RESEARCH_CREDIT",
+      "assets": "Hardware Splicer",
+      "contribution_view": "Bounded 8–12 week evaluation of whether evidence gating, deterministic constraints and explicit authorization reduce unsupported consequential actions by tool-using agents while preserving useful task completion.",
+      "status": "FIRE_NOW",
+      "execution_state": "PORTAL_RECON_REQUIRED",
+      "deadline": "ROLLING_QUARTERLY_REVIEW",
+      "gate": "G1 active YZU research affiliation and supported API country. Program offers up to US$1,000 API credits; reviews occur in March, June, September and December with no exact September cutoff published. Resolve model/run count/API budget/window and map the live SurveyMonkey fields. Canonical Hardware-Splicer packet prepared in PR #87.",
+      "shared_evidence_family": "hardware-splicer-agent-control",
+      "source_state": "OFFICIAL_OPENAI_RESEARCHER_ACCESS_REVERIFIED_2026-09-04",
+      "source": "https://openai.com/form/researcher-access-program/",
+      "origin": "2026-09-04 research/resource conversion audit"
+    },
+    {
       "id": "anthropic-external-researcher-access-2026",
       "lane": "RESEARCH_CREDIT",
       "organization": "Anthropic",
@@ -116,16 +133,11 @@
   "overrides": [
     {
       "id": "openai-researcher",
-      "assets": "Hardware Splicer|Research Papers",
-      "contribution_view": "Bounded 8–12 week evaluation of whether evidence gating, deterministic constraints and explicit authorization reduce unsupported consequential actions by tool-using agents while preserving useful task completion.",
-      "status": "FIRE_NOW",
-      "execution_state": "PORTAL_RECON_REQUIRED",
-      "deadline": "ROLLING_QUARTERLY_REVIEW",
-      "gate": "G1 active YZU research affiliation and supported API country. Program offers up to US$1,000 API credits; reviews occur in March, June, September and December with no exact September cutoff published. Resolve model/run count/API budget/window and map the live SurveyMonkey fields. Canonical Hardware-Splicer packet prepared in PR #87.",
-      "shared_evidence_family": "hardware-splicer-agent-control",
-      "source_state": "OFFICIAL_OPENAI_RESEARCHER_ACCESS_REVERIFIED_2026-09-04",
-      "source": "https://openai.com/form/researcher-access-program/",
-      "reason": "Reallocate this application from generic citation/research reliability to the stronger current Hardware-Splicer consequential-agent control experiment."
+      "status": "KILL_SUPERSEDED",
+      "execution_state": "RESEARCH_ONLY",
+      "gate": "Superseded by openai-researcher-access-hardware-splicer after the 2026-09-04 packaging audit. Preserve this legacy Cite allocation for history but do not let it compete with the current Hardware-Splicer research packet in the live queue.",
+      "source_state": "SUPERSEDED_BY_2026-09-04_HARDWARE_SPLICER_ROUTE",
+      "reason": "Create one canonical current OpenAI Researcher Access route with a matching Hardware-Splicer manifest and package rather than silently mutating the legacy Cite allocation."
     },
     {
       "id": "anthropic-mhs-preview-2026",
