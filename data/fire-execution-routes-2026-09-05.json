@@ -1,0 +1,21 @@
+{
+  "schema": "blowback.fire_execution_routes.v1",
+  "snapshot": "2026-09-05",
+  "overrides": [
+    {
+      "id": "aws-community-day-taiwan-2026-hardware-splicer",
+      "execution_manifest": "examples/opportunities/aws-community-day-taiwan-2026-hardware-splicer.json",
+      "reason": "Attach the paste-ready AWS CFP manifest to the live FIRE route for deterministic browser-agent handoff."
+    },
+    {
+      "id": "openai-researcher-access-hardware-splicer",
+      "execution_manifest": "examples/opportunities/openai-researcher-access-hardware-splicer.json",
+      "reason": "Attach the audited OpenAI Researcher Access manifest and fire packet to the live FIRE route."
+    },
+    {
+      "id": "anthropic-external-researcher-access-2026",
+      "execution_manifest": "examples/opportunities/anthropic-external-researcher-access-hardware-splicer.json",
+      "reason": "Attach the audited Anthropic ERAP manifest and fire packet to the live FIRE route."
+    }
+  ]
+}
