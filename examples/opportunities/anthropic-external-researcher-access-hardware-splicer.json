@@ -5,6 +5,7 @@
   "portal_family": "research_access",
   "auth_scope": "anthropic-research-access",
   "source_url": "https://support.claude.com/en/articles/9125743-what-is-the-external-researcher-access-program",
+  "registration_url": "https://forms.gle/pZYC8f6qYqSKvRWn9",
   "recon_stage": "registration",
   "mode": "inspect",
   "execution_state": "PORTAL_RECON_REQUIRED",
@@ -36,7 +37,7 @@
     },
     {
       "id": "api_budget",
-      "description": "Working default: Claude Sonnet 5 primary 200 runs + Opus 5 confirmatory 100 runs. Core scored-run estimate is far below the ordinary US$1,000 successful award; re-check current pricing/model availability before execution.",
+      "description": "Working core: Claude Sonnet 5 primary 200 runs + Opus 5 confirmatory 100 runs. Fable 5.1 is optional exploratory escalation only if cost, Covered Model retention terms and pilot evidence justify it.",
       "status": "PACKET_SOURCE_READY"
     },
     {
@@ -46,7 +47,7 @@
     },
     {
       "id": "live_form_map",
-      "description": "Inspect the current application and capture exact team/research-topic fields and limits; do not assume a specific form provider.",
+      "description": "Official program page currently links a Google Form. Inspect it and capture exact team/research-topic fields and limits before prepare mode.",
       "status": "PORTAL_RECON_REQUIRED"
     }
   ],
@@ -55,14 +56,15 @@
     "Use agent control, oversight, safe consequential tool use and authority gating language rather than making a broad alignment claim.",
     "Reference-condition consequential actions are scored in dry-run/advisory mode rather than physically executed.",
     "Do not claim Claude has passed the corpus before a live execution exists.",
-    "Do not promote software/MCP evidence into fresh physical correctness."
+    "Do not promote software/MCP evidence into fresh physical correctness.",
+    "If Claude Fable 5.1 is added, review its Covered Model data-retention requirements before sending any evaluation data."
   ],
   "route_evidence": {
     "verified_at": "2026-09-04",
     "program_scope_verified": true,
     "review_cadence_verified": true,
+    "official_google_form_link_verified": true,
     "model_and_pricing_snapshot_verified": true,
-    "registration_endpoint_verified": false,
     "form_fields_verified": false
   },
   "human_required": ["login", "eligibility_attestation", "terms_acceptance", "final_submit"]
