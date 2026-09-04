@@ -13,21 +13,24 @@
   "project": "../projects/hardware-splicer.json",
   "packet_revision": "f822fc5a4b2355ae945955969dcad7428a71c835",
   "packet_source": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/OPENAI_RESEARCHER_ACCESS.md",
+  "final_copy_revision": "e30e5b0d235c8ad1dffef69a9a69d16e3a29bb63",
+  "final_copy_source": "https://github.com/Spectating101/hardware-splicer/blob/e30e5b0d235c8ad1dffef69a9a69d16e3a29bb63/docs/external_assessment/research_access/FIRE_NOW_SUBMISSION_COPY_2026-09-05.md",
   "fields": {
     "project_title": "Evidence- and Authority-Constrained Agent Control Under Consequential Hardware Tool Use",
     "applicant_name": "$profile.name",
     "affiliation": "$profile.affiliation",
     "repo_url": "$project.repo_url",
-    "limitations": "$project.limitations"
+    "limitations": "$project.limitations",
+    "working_credit_request_usd": 300
   },
   "field_map": {},
   "uploads": [],
   "packet_requirements": [
     {
-      "id": "research_copy",
-      "description": "Prepared 150/300-word project summaries, research question, OpenAI-product-use statement, outputs and claim-safe positioning.",
+      "id": "final_research_copy",
+      "description": "Paste-ready research question, project summary, planned OpenAI-product use, method, outputs, researcher positioning and US$300 working credit justification.",
       "status": "PACKET_SOURCE_READY",
-      "canonical_ref": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/OPENAI_RESEARCHER_ACCESS.md"
+      "canonical_ref": "https://github.com/Spectating101/hardware-splicer/blob/e30e5b0d235c8ad1dffef69a9a69d16e3a29bb63/docs/external_assessment/research_access/FIRE_NOW_SUBMISSION_COPY_2026-09-05.md"
     },
     {
       "id": "core_protocol",
@@ -37,7 +40,7 @@
     },
     {
       "id": "api_budget",
-      "description": "Working default: GPT-5.6 Sol primary 200 runs + Terra sensitivity 100 runs; US$300 request if an amount is required, re-priced against the current model catalog and pilot before submission.",
+      "description": "Current working design: GPT-5.6 Sol primary 200 runs + GPT-5.6 Terra sensitivity 100 runs; US$300 request if an amount is required, re-priced against the current API catalog and pilot before final submission.",
       "status": "PACKET_SOURCE_READY"
     },
     {
@@ -47,7 +50,7 @@
     },
     {
       "id": "live_form_map",
-      "description": "Map current application fields and character limits before prepare mode; do not assume the third-party form layout is stable.",
+      "description": "Map current SurveyMonkey Apply fields and character limits before prepare mode; do not assume the third-party form layout is stable.",
       "status": "PORTAL_RECON_REQUIRED"
     }
   ],
@@ -60,10 +63,11 @@
     "Request only a workload-derived amount of credits rather than defaulting to the program maximum."
   ],
   "route_evidence": {
-    "verified_at": "2026-09-04",
+    "verified_at": "2026-09-05",
     "eligibility_mechanics_verified": true,
     "source_and_program_mechanics_verified": true,
     "model_and_pricing_snapshot_verified": true,
+    "final_submission_copy_ready": true,
     "registration_endpoint_verified": false,
     "form_fields_verified": false
   },
