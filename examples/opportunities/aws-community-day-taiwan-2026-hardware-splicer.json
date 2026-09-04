@@ -14,7 +14,8 @@
   "direct_control": true,
   "profile": "../profiles/christ.json",
   "project": "../projects/hardware-splicer.json",
-  "packet_source": "https://github.com/Spectating101/hardware-splicer/blob/docs/research-access-conversion-2026q3/docs/external_assessment/research_access/AWS_COMMUNITY_DAY_TAIWAN_2026.md",
+  "packet_revision": "f822fc5a4b2355ae945955969dcad7428a71c835",
+  "packet_source": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/AWS_COMMUNITY_DAY_TAIWAN_2026.md",
   "fields": {
     "talk_title": "When AI Agents Touch Hardware: Designing Evidence and Authority Boundaries",
     "topic": "Agentic AI",
@@ -29,7 +30,7 @@
       "id": "talk_copy",
       "description": "Prepared preferred title, 100/250-word abstracts, takeaways, audience framing, session outline, bio variants and demo fallback guidance.",
       "status": "PACKET_SOURCE_READY",
-      "canonical_ref": "https://github.com/Spectating101/hardware-splicer/blob/docs/research-access-conversion-2026q3/docs/external_assessment/research_access/AWS_COMMUNITY_DAY_TAIWAN_2026.md"
+      "canonical_ref": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/AWS_COMMUNITY_DAY_TAIWAN_2026.md"
     },
     {
       "id": "live_form_map",
