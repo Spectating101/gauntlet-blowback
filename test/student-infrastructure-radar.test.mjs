@@ -10,6 +10,8 @@ const radar = JSON.parse(fs.readFileSync(new URL('../data/student-research-infra
 const routes = new Map(radar.routes.map((route) => [route.id, route]));
 const refreshedRadar = JSON.parse(fs.readFileSync(new URL('../data/research-resource-radar-2026-09-04.json', import.meta.url), 'utf8'));
 const refreshedRoutes = new Map(refreshedRadar.routes.map((route) => [route.id, route]));
+const candidateAssessment = JSON.parse(fs.readFileSync(new URL('../examples/radar/research-resource-candidate-assessments-2026-09-04.json', import.meta.url), 'utf8'));
+const candidateIds = candidateAssessment.candidates.map((candidate) => candidate.id);
 const master = new Map(buildMasterRegistry().map((route) => [route.id, route]));
 
 test('student infrastructure radar has unique canonical route ids', () => {
@@ -75,16 +77,50 @@ test('Sep-4 research/resource tranche enters the Gauntlet master with explicit e
   assert.equal(openai.status, 'FIRE_NOW');
   assert.equal(openai.execution_state, 'PORTAL_RECON_REQUIRED');
   assert.equal(openai.assets, 'Hardware Splicer');
+  assert.match(openai.gate, /300-run default/i);
 
   const anthropic = master.get('anthropic-external-researcher-access-2026');
   assert.equal(anthropic.status, 'FIRE_NOW');
   assert.equal(anthropic.execution_state, 'PORTAL_RECON_REQUIRED');
   assert.match(anthropic.gate, /AI safety\/control work/i);
+  assert.match(anthropic.gate, /300-run default/i);
 
   const nchc = master.get('nchc-university-ai-compute-yzu-2026');
   assert.equal(nchc.status, 'DEPENDENCY_REQUIRED');
   assert.equal(nchc.execution_state, 'ELIGIBILITY_RECON_REQUIRED');
   assert.match(nchc.gate, /university is the applicant/i);
+  assert.match(nchc.gate, /NT\$30\/H200-GPU-hour/i);
+});
+
+test('Sep-4 candidate assessment uses canonical Gauntlet ids and contains no stale aliases', () => {
+  assert.equal(new Set(candidateIds).size, candidateIds.length, 'candidate assessment contains duplicate ids');
+
+  const canonicalIds = [
+    'aws-community-day-taiwan-2026-hardware-splicer',
+    'openai-researcher-access-hardware-splicer',
+    'anthropic-external-researcher-access-2026',
+    'anthropic-mhs-preview-2026',
+    'nchc-university-ai-compute-yzu-2026',
+    'aws-cloud-credit-research-2026',
+    'anthropic-ai-for-science-general-2026',
+    'microsoft-student-ambassadors-2026',
+    'aws-educate-taiwan-campus-ambassador-9-2026',
+    'claude-campus-status-2026-09-04'
+  ];
+
+  for (const id of canonicalIds) {
+    assert.ok(candidateIds.includes(id), `candidate assessment missing canonical id ${id}`);
+    assert.ok(master.has(id), `canonical candidate id ${id} is not represented in master`);
+  }
+
+  for (const stale of [
+    'anthropic-external-researcher-access-hardware-splicer',
+    'anthropic-mhs-preview-hardware-splicer',
+    'aws-cloud-credit-research-yzu',
+    'anthropic-ai-for-science-hardware-splicer',
+    'aws-educate-taiwan-campus-ambassador-9',
+    'claude-campus-program-status-2026-09-04'
+  ]) assert.equal(candidateIds.includes(stale), false, `stale alias survived: ${stale}`);
 });
 
 test('Sep-4 overrides keep high-upside routes from outrunning eligibility or evidence', () => {
@@ -97,11 +133,13 @@ test('Sep-4 overrides keep high-upside routes from outrunning eligibility or evi
   assert.equal(science.status, 'HOLD');
   assert.equal(science.execution_state, 'RESEARCH_ONLY');
   assert.match(science.gate, /live-model evidence/i);
+  assert.match(science.gate, /jurisdiction\/residency/i);
 
   const awsResearch = master.get('aws-cloud-credit-research-2026');
   assert.equal(awsResearch.status, 'HOLD');
   assert.equal(awsResearch.execution_state, 'ELIGIBILITY_RECON_REQUIRED');
   assert.match(awsResearch.gate, /written AWS confirmation/i);
+  assert.match(awsResearch.gate, /90-120 days/i);
 
   const claudeCampus = master.get('claude-campus-status-2026-09-04');
   assert.equal(claudeCampus.status, 'HOLD');
