@@ -5,17 +5,20 @@
     {
       "id": "aws-community-day-taiwan-2026-hardware-splicer",
       "execution_manifest": "examples/opportunities/aws-community-day-taiwan-2026-hardware-splicer.json",
-      "reason": "Attach the paste-ready AWS CFP manifest to the live FIRE route for deterministic browser-agent handoff."
+      "fire_priority": 0,
+      "reason": "Attach the paste-ready AWS CFP manifest to the live FIRE route and keep the Sep-7 deadline first."
     },
     {
       "id": "openai-researcher-access-hardware-splicer",
       "execution_manifest": "examples/opportunities/openai-researcher-access-hardware-splicer.json",
-      "reason": "Attach the audited OpenAI Researcher Access manifest and fire packet to the live FIRE route."
+      "fire_priority": 1,
+      "reason": "Attach the audited OpenAI Researcher Access manifest and fire packet as the second immediate shot."
     },
     {
       "id": "anthropic-external-researcher-access-2026",
       "execution_manifest": "examples/opportunities/anthropic-external-researcher-access-hardware-splicer.json",
-      "reason": "Attach the audited Anthropic ERAP manifest and fire packet to the live FIRE route."
+      "fire_priority": 2,
+      "reason": "Attach the audited Anthropic ERAP manifest and fire packet as the third immediate shot."
     }
   ]
 }
