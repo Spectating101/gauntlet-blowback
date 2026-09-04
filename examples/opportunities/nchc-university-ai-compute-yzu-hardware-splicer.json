@@ -1,0 +1,55 @@
+{
+  "id": "nchc-university-ai-compute-yzu-hardware-splicer",
+  "name": "NCHC University AI Compute — YZU / Hardware-Splicer",
+  "portal": "generic",
+  "portal_family": "institutional_compute",
+  "auth_scope": "nchc-yzu",
+  "source_url": "https://www.nchc.org.tw/Active/ActiveView?id=1795&menutype=0&mid=47&sitemenuid=3",
+  "recon_stage": "source",
+  "deadline": "2026-10-31T23:59:00+08:00",
+  "mode": "inspect",
+  "execution_state": "RESEARCH_ONLY",
+  "direct_control": false,
+  "profile": "../profiles/christ.json",
+  "project": "../projects/hardware-splicer.json",
+  "packet_source": "https://github.com/Spectating101/hardware-splicer/blob/docs/research-access-conversion-2026q3/docs/external_assessment/research_access/NCHC_YZU_AI_COMPUTE_BRIEF.md",
+  "fields": {
+    "research_project": "Reproducible Evaluation of Evidence-Constrained AI Agents for Consequential Engineering Workflows",
+    "researcher_name": "$profile.name",
+    "affiliation": "$profile.affiliation",
+    "repo_url": "$project.repo_url"
+  },
+  "field_map": {},
+  "uploads": [],
+  "packet_requirements": [
+    {
+      "id": "internal_compute_brief",
+      "description": "Prepared YZU-facing one-page rationale, expected outputs and compute-estimation method.",
+      "status": "PACKET_SOURCE_READY",
+      "canonical_ref": "https://github.com/Spectating101/hardware-splicer/blob/docs/research-access-conversion-2026q3/docs/external_assessment/research_access/NCHC_YZU_AI_COMPUTE_BRIEF.md"
+    },
+    {
+      "id": "institutional_contact",
+      "description": "Identify YZU faculty/unit sponsor and the university contact or existing NCHC program window.",
+      "status": "BLOCKING_DEPENDENCY"
+    },
+    {
+      "id": "compute_workload",
+      "description": "Select real open-weight model(s), GPU memory requirement and workload-derived GPU-hour estimate.",
+      "status": "BLOCKING_DEPENDENCY"
+    }
+  ],
+  "compliance_checks": [
+    "The university is the program applicant; do not present this as an individual student grant.",
+    "The current offer is discounted compute, not free H200 allocation.",
+    "Do not justify H200 resources with API-only OpenAI/Anthropic runs; identify an actual local/open-model workload.",
+    "Do not inflate GPU-hour estimates to maximize allocation."
+  ],
+  "route_evidence": {
+    "verified_at": "2026-09-04",
+    "master_student_beneficiary_verified": true,
+    "university_applicant_verified": true,
+    "internal_yzu_route_verified": false
+  },
+  "human_required": ["advisor_confirmation", "eligibility_attestation", "terms_acceptance", "final_submit"]
+}
