@@ -14,6 +14,7 @@ const DEFAULTS = {
   deepRadar: path.join(ROOT, 'data/deep-opportunity-radar-2026-09-01.json'),
   nocturnalRadar: path.join(ROOT, 'data/nocturnal-conversion-radar-2026-09-01.json'),
   infrastructureRadar: path.join(ROOT, 'data/student-research-infrastructure-radar-2026-09-01.json'),
+  researchResourceRadar: path.join(ROOT, 'data/research-resource-radar-2026-09-04.json'),
   outputCsv: path.join(ROOT, 'docs/gauntlet-master.csv'),
   outputJson: path.join(ROOT, 'docs/gauntlet-master.json'),
 };
@@ -188,6 +189,7 @@ export function buildMasterRegistry({
   deepRadarPath = DEFAULTS.deepRadar,
   nocturnalRadarPath = DEFAULTS.nocturnalRadar,
   infrastructureRadarPath = DEFAULTS.infrastructureRadar,
+  researchResourceRadarPath = DEFAULTS.researchResourceRadar,
 } = {}) {
   const longtail = parseCsv(fs.readFileSync(longtailPath, 'utf8')).map(normalizeLongtail);
   const postgrad = parseCsv(fs.readFileSync(postgradPath, 'utf8')).map(normalizePostgrad);
@@ -197,6 +199,7 @@ export function buildMasterRegistry({
   const deepRadar = JSON.parse(fs.readFileSync(deepRadarPath, 'utf8'));
   const nocturnalRadar = JSON.parse(fs.readFileSync(nocturnalRadarPath, 'utf8'));
   const infrastructureRadar = JSON.parse(fs.readFileSync(infrastructureRadarPath, 'utf8'));
+  const researchResourceRadar = JSON.parse(fs.readFileSync(researchResourceRadarPath, 'utf8'));
 
   const records = new Map();
   for (const record of [...longtail, ...postgrad]) {
@@ -222,10 +225,16 @@ export function buildMasterRegistry({
   addSupplementRoutes(records, nocturnalRadar.routes, 'nocturnal-conversion-radar');
   applyOverrides(records, nocturnalRadar.overrides, 'nocturnal-conversion-radar');
 
-  // Resource/credit audits are independent economic objects and load last among
-  // current focused sources so their verified claim/PI semantics remain authoritative.
+  // Resource/credit audits are independent economic objects and load after broad
+  // project sources so their verified claim/PI semantics remain authoritative.
   addSupplementRoutes(records, infrastructureRadar.routes, 'student-research-infrastructure-radar');
   applyOverrides(records, infrastructureRadar.overrides, 'student-research-infrastructure-radar');
+
+  // The Sep-4 research/resource tranche is the newest program-mechanics and packaging
+  // audit. It loads last so explicit eligibility, applicant-authority and evidence gates
+  // supersede older optimistic resource rows without deleting their provenance.
+  addSupplementRoutes(records, researchResourceRadar.routes, 'research-resource-radar');
+  applyOverrides(records, researchResourceRadar.overrides, 'research-resource-radar');
 
   const output = [...records.values()];
   const ids = new Set(output.map((record) => record.id));
@@ -254,7 +263,7 @@ export function writeMasterRegistry(options = {}) {
   const outputJson = options.outputJson ?? DEFAULTS.outputJson;
   const payload = {
     schema: 'blowback.gauntlet_master.v1',
-    source_snapshot: '2026-09-01',
+    source_snapshot: '2026-09-04',
     summary: summarizeMasterRegistry(records),
     records,
   };

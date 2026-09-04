@@ -1,0 +1,56 @@
+{
+  "id": "anthropic-mhs-preview-2026",
+  "name": "Anthropic Model Hardware Standard Research Preview — Hardware-Splicer",
+  "portal": "generic",
+  "portal_family": "research_preview",
+  "auth_scope": "anthropic-mhs-preview",
+  "source_url": "https://www.anthropic.com/news/model-hardware-standard-research-preview",
+  "recon_stage": "registration",
+  "mode": "inspect",
+  "execution_state": "RESEARCH_ONLY",
+  "direct_control": false,
+  "profile": "../profiles/christ.json",
+  "project": "../projects/hardware-splicer.json",
+  "packet_revision": "f822fc5a4b2355ae945955969dcad7428a71c835",
+  "packet_source": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/ANTHROPIC_MHS_RESEARCH_PREVIEW.md",
+  "fields": {
+    "project_name": "$project.name",
+    "applicant_name": "$profile.name",
+    "affiliation": "$profile.affiliation",
+    "repo_url": "$project.repo_url",
+    "proposed_contribution": "Independent safety-evaluation/control harness for testing evidence sufficiency, authority escalation and failure recovery around an MHS-enabled programmable physical device."
+  },
+  "field_map": {},
+  "uploads": [],
+  "packet_requirements": [
+    {
+      "id": "capability_note",
+      "description": "Prepared MHS capability/contribution note with integration, adversarial safety evaluation, recovery analysis and reusable-output work packages.",
+      "status": "PACKET_SOURCE_READY",
+      "canonical_ref": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/ANTHROPIC_MHS_RESEARCH_PREVIEW.md"
+    },
+    {
+      "id": "programmable_device",
+      "description": "Name a real programmable physical device/model, its interface, bounded actions and location/access plan.",
+      "status": "BLOCKING_DEPENDENCY"
+    },
+    {
+      "id": "applicant_class",
+      "description": "Inspect the live interest form and verify whether an individual university researcher is accepted; if not, identify a YZU faculty/lab route.",
+      "status": "BLOCKING_DEPENDENCY"
+    }
+  ],
+  "compliance_checks": [
+    "Do not claim Hardware-Splicer implements MHS before preview integration exists.",
+    "Do not represent the applicant as a manufacturing lab or institutional stakeholder unless that is actually true.",
+    "Do not fire a software-only interest pitch without a concrete programmable hardware surface.",
+    "Keep pending live-model and physical evidence pending."
+  ],
+  "route_evidence": {
+    "verified_at": "2026-09-04",
+    "program_scope_verified": true,
+    "individual_applicant_class_verified": false,
+    "form_fields_verified": false
+  },
+  "human_required": ["login", "eligibility_attestation", "advisor_confirmation", "terms_acceptance", "final_submit"]
+}

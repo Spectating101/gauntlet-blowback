@@ -1,0 +1,59 @@
+{
+  "id": "aws-cloud-credit-research-2026",
+  "name": "AWS Cloud Credit for Research — YZU / Hardware-Splicer",
+  "portal": "generic",
+  "portal_family": "research_credit",
+  "auth_scope": "aws-research-credit",
+  "source_url": "https://aws.amazon.com/government-education/research-and-technical-computing/cloud-credit-for-research/",
+  "recon_stage": "source",
+  "mode": "inspect",
+  "execution_state": "RESEARCH_ONLY",
+  "direct_control": false,
+  "profile": "../profiles/christ.json",
+  "project": "../projects/hardware-splicer.json",
+  "packet_revision": "f822fc5a4b2355ae945955969dcad7428a71c835",
+  "packet_source": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/AWS_CLOUD_CREDIT_FOR_RESEARCH.md",
+  "fields": {
+    "project_title": "Cloud-Reproducible Benchmarking of Evidence-Constrained AI Agents for Consequential Engineering Workflows",
+    "applicant_name": "$profile.name",
+    "affiliation": "$profile.affiliation",
+    "repo_url": "$project.repo_url"
+  },
+  "field_map": {},
+  "uploads": [],
+  "packet_requirements": [
+    {
+      "id": "geographic_eligibility",
+      "description": "Obtain written AWS confirmation that a graduate student enrolled at Yuan Ze University in Taiwan is currently eligible under the program's 'greater China region' exclusion wording.",
+      "status": "BLOCKING_DEPENDENCY"
+    },
+    {
+      "id": "proposal_source",
+      "description": "Prepared route note with finite-project framing, milestones, sharing plan, service-map guardrails, 90–120 day review timing and eligibility-email wording.",
+      "status": "PACKET_SOURCE_READY",
+      "canonical_ref": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/AWS_CLOUD_CREDIT_FOR_RESEARCH.md"
+    },
+    {
+      "id": "aws_architecture",
+      "description": "After eligibility is confirmed, choose only AWS services genuinely required by the research workload and calculate a pricing-based budget.",
+      "status": "BLOCKED_BY_ELIGIBILITY"
+    }
+  ],
+  "compliance_checks": [
+    "Do not infer Taiwan eligibility from unrelated Taiwan AWS programs; obtain a program-specific answer.",
+    "Do not submit a service salad or promise AWS dependencies that the research does not need.",
+    "Do not request the US$5,000 student cap automatically; derive the ask from actual service usage.",
+    "Do not build a time-critical project around rapid approval; official typical review cycle is 90–120 days and expedited review is unavailable.",
+    "Consider Research Drive as the lead asset if its repeatable/shareable cloud workflow is a stronger fit than Hardware-Splicer."
+  ],
+  "route_evidence": {
+    "verified_at": "2026-09-04",
+    "graduate_student_class_verified": true,
+    "student_award_cap_verified": true,
+    "official_review_cycle_days": "90-120",
+    "expedited_review_available": false,
+    "taiwan_eligibility_verified": false,
+    "form_fields_verified": false
+  },
+  "human_required": ["login", "eligibility_attestation", "terms_acceptance", "final_submit"]
+}

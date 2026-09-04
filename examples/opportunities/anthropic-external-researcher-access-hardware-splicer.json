@@ -1,0 +1,72 @@
+{
+  "id": "anthropic-external-researcher-access-2026",
+  "name": "Anthropic External Researcher Access — Hardware-Splicer Agent-Control Study",
+  "portal": "generic",
+  "portal_family": "research_access",
+  "auth_scope": "anthropic-research-access",
+  "source_url": "https://support.claude.com/en/articles/9125743-what-is-the-external-researcher-access-program",
+  "registration_url": "https://forms.gle/pZYC8f6qYqSKvRWn9",
+  "recon_stage": "registration",
+  "mode": "inspect",
+  "execution_state": "PORTAL_RECON_REQUIRED",
+  "direct_control": true,
+  "profile": "../profiles/christ.json",
+  "project": "../projects/hardware-splicer.json",
+  "packet_revision": "f822fc5a4b2355ae945955969dcad7428a71c835",
+  "packet_source": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/ANTHROPIC_EXTERNAL_RESEARCHER_ACCESS.md",
+  "fields": {
+    "project_title": "Evidence- and Authority-Constrained Agent Control Under Consequential Tool Use",
+    "applicant_name": "$profile.name",
+    "affiliation": "$profile.affiliation",
+    "repo_url": "$project.repo_url",
+    "limitations": "$project.limitations"
+  },
+  "field_map": {},
+  "uploads": [],
+  "packet_requirements": [
+    {
+      "id": "safety_research_copy",
+      "description": "Prepared AI-control/oversight framing, research summary, team positioning, expected outputs and explicit nonclaims.",
+      "status": "PACKET_SOURCE_READY",
+      "canonical_ref": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/ANTHROPIC_EXTERNAL_RESEARCHER_ACCESS.md"
+    },
+    {
+      "id": "core_protocol",
+      "description": "Frozen matched-condition design with dry-run reference boundary, 300-run default, explicit adjudication rubric, trace requirements and clustering-aware analysis.",
+      "status": "PACKET_SOURCE_READY",
+      "canonical_ref": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/CORE_RESEARCH_PROTOCOL.md"
+    },
+    {
+      "id": "api_budget",
+      "description": "Working core: Claude Sonnet 5 primary 200 runs + Opus 5 confirmatory 100 runs. Fable 5.1 is optional exploratory escalation only if cost, Covered Model retention terms and pilot evidence justify it.",
+      "status": "PACKET_SOURCE_READY"
+    },
+    {
+      "id": "project_window",
+      "description": "Set exact project start/end dates in the live application while preserving the bounded evaluation scope.",
+      "status": "LIVE_FORM_VALUE_REQUIRED"
+    },
+    {
+      "id": "live_form_map",
+      "description": "Official program page currently links a Google Form. Inspect it and capture exact team/research-topic fields and limits before prepare mode.",
+      "status": "PORTAL_RECON_REQUIRED"
+    }
+  ],
+  "compliance_checks": [
+    "The application must remain a genuine AI safety/control study, not a generic hardware-product funding request.",
+    "Use agent control, oversight, safe consequential tool use and authority gating language rather than making a broad alignment claim.",
+    "Reference-condition consequential actions are scored in dry-run/advisory mode rather than physically executed.",
+    "Do not claim Claude has passed the corpus before a live execution exists.",
+    "Do not promote software/MCP evidence into fresh physical correctness.",
+    "If Claude Fable 5.1 is added, review its Covered Model data-retention requirements before sending any evaluation data."
+  ],
+  "route_evidence": {
+    "verified_at": "2026-09-04",
+    "program_scope_verified": true,
+    "review_cadence_verified": true,
+    "official_google_form_link_verified": true,
+    "model_and_pricing_snapshot_verified": true,
+    "form_fields_verified": false
+  },
+  "human_required": ["login", "eligibility_attestation", "terms_acceptance", "final_submit"]
+}

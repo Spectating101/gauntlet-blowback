@@ -1,0 +1,71 @@
+{
+  "id": "openai-researcher-access-hardware-splicer",
+  "name": "OpenAI Researcher Access Program — Hardware-Splicer",
+  "portal": "generic",
+  "portal_family": "research_access",
+  "auth_scope": "openai-researcher-access",
+  "source_url": "https://openai.com/form/researcher-access-program/",
+  "recon_stage": "registration",
+  "mode": "inspect",
+  "execution_state": "PORTAL_RECON_REQUIRED",
+  "direct_control": true,
+  "profile": "../profiles/christ.json",
+  "project": "../projects/hardware-splicer.json",
+  "packet_revision": "f822fc5a4b2355ae945955969dcad7428a71c835",
+  "packet_source": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/OPENAI_RESEARCHER_ACCESS.md",
+  "fields": {
+    "project_title": "Evidence- and Authority-Constrained Agent Control Under Consequential Hardware Tool Use",
+    "applicant_name": "$profile.name",
+    "affiliation": "$profile.affiliation",
+    "repo_url": "$project.repo_url",
+    "limitations": "$project.limitations"
+  },
+  "field_map": {},
+  "uploads": [],
+  "packet_requirements": [
+    {
+      "id": "research_copy",
+      "description": "Prepared 150/300-word project summaries, research question, OpenAI-product-use statement, outputs and claim-safe positioning.",
+      "status": "PACKET_SOURCE_READY",
+      "canonical_ref": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/OPENAI_RESEARCHER_ACCESS.md"
+    },
+    {
+      "id": "core_protocol",
+      "description": "Frozen matched-condition design with dry-run reference boundary, 300-run default, explicit adjudication rubric, trace requirements and clustering-aware analysis.",
+      "status": "PACKET_SOURCE_READY",
+      "canonical_ref": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/CORE_RESEARCH_PROTOCOL.md"
+    },
+    {
+      "id": "api_budget",
+      "description": "Working default: GPT-5.6 Sol primary 200 runs + Terra sensitivity 100 runs; US$300 request if an amount is required, re-priced against the current model catalog and pilot before submission.",
+      "status": "PACKET_SOURCE_READY"
+    },
+    {
+      "id": "project_window",
+      "description": "Use an 8–12 week execution window beginning after award/credit activation; exact dates remain award-timing dependent.",
+      "status": "LIVE_FORM_VALUE_REQUIRED"
+    },
+    {
+      "id": "live_form_map",
+      "description": "Map current application fields and character limits before prepare mode; do not assume the third-party form layout is stable.",
+      "status": "PORTAL_RECON_REQUIRED"
+    }
+  ],
+  "compliance_checks": [
+    "Active YZU research affiliation must still be true on submission.",
+    "Supported API country requirement must be re-checked at submission.",
+    "Do not state or imply that an OpenAI model has already passed the frozen ten-case corpus.",
+    "Do not promote software/MCP evidence into physical proof.",
+    "Reference-condition consequential actions are scored in dry-run/advisory mode rather than physically executed.",
+    "Request only a workload-derived amount of credits rather than defaulting to the program maximum."
+  ],
+  "route_evidence": {
+    "verified_at": "2026-09-04",
+    "eligibility_mechanics_verified": true,
+    "source_and_program_mechanics_verified": true,
+    "model_and_pricing_snapshot_verified": true,
+    "registration_endpoint_verified": false,
+    "form_fields_verified": false
+  },
+  "human_required": ["login", "eligibility_attestation", "terms_acceptance", "final_submit"]
+}

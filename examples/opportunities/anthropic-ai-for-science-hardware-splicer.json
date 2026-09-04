@@ -1,0 +1,80 @@
+{
+  "id": "anthropic-ai-for-science-general-2026",
+  "name": "Anthropic AI for Science — Hardware-Splicer Physical-Agent Study",
+  "portal": "generic",
+  "portal_family": "research_credit",
+  "auth_scope": "anthropic-ai-for-science",
+  "source_url": "https://www.anthropic.com/news/expanding-support-for-scientists",
+  "recon_stage": "source",
+  "mode": "inspect",
+  "execution_state": "RESEARCH_ONLY",
+  "direct_control": false,
+  "profile": "../profiles/christ.json",
+  "project": "../projects/hardware-splicer.json",
+  "packet_revision": "f822fc5a4b2355ae945955969dcad7428a71c835",
+  "packet_source": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/ANTHROPIC_AI_FOR_SCIENCE.md",
+  "fields": {
+    "project_title": "Evidence-Constrained Multimodal Agents for Reproducible Physical Engineering Experiments",
+    "applicant_name": "$profile.name",
+    "affiliation": "$profile.affiliation",
+    "repo_url": "$project.repo_url"
+  },
+  "field_map": {},
+  "uploads": [],
+  "packet_requirements": [
+    {
+      "id": "scientific_proposal_source",
+      "description": "Prepared future proposal skeleton covering aims, Claude's experimental role, outputs, budget method and data/IP/participation guardrails.",
+      "status": "PACKET_SOURCE_READY",
+      "canonical_ref": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/ANTHROPIC_AI_FOR_SCIENCE.md"
+    },
+    {
+      "id": "live_model_evidence",
+      "description": "At least one artifact-backed live external-model run on the unchanged corpus.",
+      "status": "BLOCKING_DEPENDENCY"
+    },
+    {
+      "id": "fresh_physical_evidence",
+      "description": "At least one fresh revision-bound physical case with measurement and failure/repair lineage.",
+      "status": "BLOCKING_DEPENDENCY"
+    },
+    {
+      "id": "applicant_rules_recheck",
+      "description": "Re-read current age/residency/jurisdiction, sanctions/export-control and eligibility rules for the actual applicant before promotion from HOLD.",
+      "status": "BLOCKING_DEPENDENCY"
+    },
+    {
+      "id": "data_ip_rights",
+      "description": "Document a clean corpus/data/IP rights boundary and obtain any institutional consent required by current program rules.",
+      "status": "BLOCKING_DEPENDENCY"
+    },
+    {
+      "id": "receiving_org_account",
+      "description": "Fix the applicant/organization/account that would receive credits and confirm its terms before submission.",
+      "status": "BLOCKING_DEPENDENCY"
+    },
+    {
+      "id": "publicity_participation_terms",
+      "description": "Review current publicity/release and research-survey/interview obligations before accepting a selected-researcher position.",
+      "status": "BLOCKING_DEPENDENCY"
+    }
+  ],
+  "compliance_checks": [
+    "Do not fire solely because the maximum credit award is large.",
+    "Do not treat 'any researcher may apply' as overriding the official jurisdiction, sanctions/export-control, rights or institutional-consent rules.",
+    "Do not include confidential professor/partner/industry data without explicit authority under the then-current program terms.",
+    "Do not claim external-model or fresh physical results before artifacts exist.",
+    "Derive the requested credit amount from the actual scientific workload rather than automatically requesting US$50,000."
+  ],
+  "route_evidence": {
+    "verified_at": "2026-09-04",
+    "any_researcher_announcement_language_verified": true,
+    "up_to_50000_credits_verified": true,
+    "institutional_consent_requirement_verified": true,
+    "jurisdiction_and_rights_rules_verified_as_existing": true,
+    "applicant_specific_rules_cleared": false,
+    "external_proof_ready": false,
+    "form_fields_verified": false
+  },
+  "human_required": ["login", "eligibility_attestation", "terms_acceptance", "final_submit"]
+}
