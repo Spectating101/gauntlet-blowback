@@ -23,7 +23,7 @@
   "packet_requirements": [
     {
       "id": "scientific_proposal_source",
-      "description": "Prepared future proposal skeleton covering aims, Claude's experimental role, outputs, budget method and data/IP guardrails.",
+      "description": "Prepared future proposal skeleton covering aims, Claude's experimental role, outputs, budget method and data/IP/participation guardrails.",
       "status": "PACKET_SOURCE_READY",
       "canonical_ref": "https://github.com/Spectating101/hardware-splicer/blob/docs/research-access-conversion-2026q3/docs/external_assessment/research_access/ANTHROPIC_AI_FOR_SCIENCE.md"
     },
@@ -38,22 +38,40 @@
       "status": "BLOCKING_DEPENDENCY"
     },
     {
+      "id": "applicant_rules_recheck",
+      "description": "Re-read current age/residency/jurisdiction, sanctions/export-control and eligibility rules for the actual applicant before promotion from HOLD.",
+      "status": "BLOCKING_DEPENDENCY"
+    },
+    {
       "id": "data_ip_rights",
-      "description": "Document a clean corpus/data/IP boundary and obtain any institutional consent required by current program rules.",
+      "description": "Document a clean corpus/data/IP rights boundary and obtain any institutional consent required by current program rules.",
+      "status": "BLOCKING_DEPENDENCY"
+    },
+    {
+      "id": "receiving_org_account",
+      "description": "Fix the applicant/organization/account that would receive credits and confirm its terms before submission.",
+      "status": "BLOCKING_DEPENDENCY"
+    },
+    {
+      "id": "publicity_participation_terms",
+      "description": "Review current publicity/release and research-survey/interview obligations before accepting a selected-researcher position.",
       "status": "BLOCKING_DEPENDENCY"
     }
   ],
   "compliance_checks": [
     "Do not fire solely because the maximum credit award is large.",
+    "Do not treat 'any researcher may apply' as overriding the official jurisdiction, sanctions/export-control, rights or institutional-consent rules.",
     "Do not include confidential professor/partner/industry data without explicit authority under the then-current program terms.",
     "Do not claim external-model or fresh physical results before artifacts exist.",
     "Derive the requested credit amount from the actual scientific workload rather than automatically requesting US$50,000."
   ],
   "route_evidence": {
     "verified_at": "2026-09-04",
-    "any_researcher_language_verified": true,
+    "any_researcher_announcement_language_verified": true,
     "up_to_50000_credits_verified": true,
     "institutional_consent_requirement_verified": true,
+    "jurisdiction_and_rights_rules_verified_as_existing": true,
+    "applicant_specific_rules_cleared": false,
     "external_proof_ready": false,
     "form_fields_verified": false
   },
