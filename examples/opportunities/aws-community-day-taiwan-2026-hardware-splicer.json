@@ -3,11 +3,12 @@
   "name": "AWS Community Day Taiwan 2026 CFP — Hardware-Splicer",
   "portal": "generic",
   "portal_family": "conference_cfp",
-  "auth_scope": "awscmd.tw",
+  "auth_scope": "aws-community-day-taiwan-cfp",
   "source_url": "https://awscmd.tw/",
+  "registration_url": "https://go.awscmd.tw/cfp",
   "recon_stage": "registration",
-  "deadline": "2026-09-07T23:59:00+08:00",
-  "deadline_note": "Official source verifies the Sep 7 date; exact cutoff time is not yet verified, so do not rely on 23:59.",
+  "deadline": "2026-09-07",
+  "deadline_note": "Official source verifies the Sep 7 date; exact cutoff time is not yet verified, so do not rely on an invented end-of-day timestamp.",
   "mode": "inspect",
   "execution_state": "PORTAL_RECON_REQUIRED",
   "direct_control": true,
@@ -15,7 +16,7 @@
   "project": "../projects/hardware-splicer.json",
   "packet_source": "https://github.com/Spectating101/hardware-splicer/blob/docs/research-access-conversion-2026q3/docs/external_assessment/research_access/AWS_COMMUNITY_DAY_TAIWAN_2026.md",
   "fields": {
-    "talk_title": "When an AI Agent Can Touch Hardware: Evidence, Authority, and Failure Boundaries",
+    "talk_title": "When AI Agents Touch Hardware: Designing Evidence and Authority Boundaries",
     "topic": "Agentic AI",
     "speaker_name": "$profile.name",
     "affiliation": "$profile.affiliation",
@@ -26,25 +27,28 @@
   "packet_requirements": [
     {
       "id": "talk_copy",
-      "description": "Prepared title, 100/250-word abstracts, takeaways, session outline and bio variants.",
+      "description": "Prepared preferred title, 100/250-word abstracts, takeaways, audience framing, session outline, bio variants and demo fallback guidance.",
       "status": "PACKET_SOURCE_READY",
       "canonical_ref": "https://github.com/Spectating101/hardware-splicer/blob/docs/research-access-conversion-2026q3/docs/external_assessment/research_access/AWS_COMMUNITY_DAY_TAIWAN_2026.md"
     },
     {
       "id": "live_form_map",
-      "description": "Inspect the current CFP form and capture exact required fields, word limits, session length and cutoff time before switching to prepare mode.",
+      "description": "Official CFP short link currently redirects to an external Qualtrics form. Capture exact required fields, limits, language/session options and cutoff time before switching to prepare mode.",
       "status": "PORTAL_RECON_REQUIRED"
     }
   ],
   "compliance_checks": [
     "Do not claim Hardware-Splicer currently uses AWS services unless that becomes true before submission/event.",
-    "Present Hardware-Splicer as a technical case study, not a sales pitch.",
-    "Do not claim live external-model corpus competence or fresh physical proof while canonical evidence remains pending."
+    "Present Hardware-Splicer as a technical case study and reusable agent-architecture pattern, not a sales pitch.",
+    "Do not claim live external-model corpus competence or fresh physical proof while canonical evidence remains pending.",
+    "Do not infer an exact Sep 7 cutoff time from the date-only official CFP notice."
   ],
   "route_evidence": {
     "verified_at": "2026-09-04",
     "source_rules_verified": true,
-    "registration_endpoint_verified": false,
+    "official_cfp_shortlink_verified": true,
+    "current_redirect_provider_observed": "Qualtrics",
+    "exact_cutoff_time_verified": false,
     "form_fields_verified": false
   },
   "human_required": ["login", "authorship_attestation", "terms_acceptance", "final_submit"]
