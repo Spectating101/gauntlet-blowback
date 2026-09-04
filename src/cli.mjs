@@ -6,7 +6,7 @@ import { resolveBundle } from './core/resolve.mjs';
 import { buildPlan } from './core/plan.mjs';
 
 function usage() {
-  console.log(`Blowback v0\n\nCommands:\n  next\n  mission <route-id>\n  apply-next [--submit-if-safe]\n  apply <route-id> [--submit-if-safe]\n  apply-queue [--limit=N] [--submit-if-safe]\n  checkpoint <checkpoint.json>\n  validate <opportunity>\n  plan <opportunity>\n  recon <opportunity> [--stage=source|registration|submission] [--persist-auth]\n  run <opportunity> [--persist-auth]\n\n\`next\` emits the highest-priority unpaused Codex+Chrome mission and automatically specializes application-like routes.\n\`mission\` emits a specific generic route, including its local resume checkpoint.\n\`apply-next\` emits the highest-priority job/lab/predoc/fellowship/residency application mission.\n\`apply-queue\` emits a bounded portfolio-wide application queue. By default all application commands prepare to the last safe state. \`--submit-if-safe\` is explicit runtime authority to submit/send only when no protected gate or unresolved material fact is encountered.\nRecon is observation-only and never promotes a route to prepare. The direct Playwright \`run\` command never performs final submission.`);
+  console.log(`Blowback v0\n\nCommands:\n  next\n  mission <route-id>\n  fire-next\n  fire <route-id>\n  fire-queue [--limit=N]\n  fire-receipt <receipt.json>\n  apply-next [--submit-if-safe]\n  apply <route-id> [--submit-if-safe]\n  apply-queue [--limit=N] [--submit-if-safe]\n  checkpoint <checkpoint.json>\n  validate <opportunity>\n  plan <opportunity>\n  recon <opportunity> [--stage=source|registration|submission] [--persist-auth]\n  run <opportunity> [--persist-auth]\n\n\`next\` emits the highest-priority unpaused Codex+Chrome mission and automatically specializes application-like routes.\n\`fire-next\` emits the highest-priority fully packaged immediate FIRE handoff for a browser/repo agent.\n\`fire\` emits one deterministic route handoff containing resolved applicant fields, local paste-ready submission copy, live route URLs, protected gates and the receipt contract.\n\`fire-receipt\` validates and persists a returned browser-agent receipt, then updates the route checkpoint.\n\`apply-next\` emits the highest-priority job/lab/predoc/fellowship/residency application mission.\n\`apply-queue\` emits a bounded portfolio-wide application queue. By default all application commands prepare to the last safe state. \`--submit-if-safe\` is explicit runtime authority to submit/send only when no protected gate or unresolved material fact is encountered.\nRecon is observation-only and never promotes a route to prepare. The direct Playwright \`run\` command never performs final submission.`);
 }
 
 const [command, filePath, ...rest] = process.argv.slice(2);
@@ -19,6 +19,12 @@ function runtimeApplicationOptions(args = []) {
     submitIfSafe: args.includes('--submit-if-safe'),
     limit: Number.isFinite(parsedLimit) && parsedLimit > 0 ? Math.floor(parsedLimit) : 10
   };
+}
+
+function runtimeFireOptions(args = []) {
+  const limitArg = args.find((arg) => arg.startsWith('--limit='));
+  const parsedLimit = limitArg ? Number(limitArg.slice('--limit='.length)) : 10;
+  return { limit: Number.isFinite(parsedLimit) && parsedLimit > 0 ? Math.floor(parsedLimit) : 10 };
 }
 
 if (command === 'next') {
@@ -40,6 +46,35 @@ if (command === 'mission') {
   if (!filePath) { usage(); process.exit(2); }
   const { browserMissionForRoute } = await import('./mission/operator.mjs');
   console.log(JSON.stringify(browserMissionForRoute(filePath), null, 2));
+  process.exit(0);
+}
+
+if (command === 'fire-next') {
+  const { nextFireHandoff } = await import('./application/fire.mjs');
+  const handoff = await nextFireHandoff();
+  console.log(JSON.stringify(handoff ?? { schema: 'blowback.fire_handoff.v1', handoff: null, reason: 'no executable immediate FIRE routes' }, null, 2));
+  process.exit(0);
+}
+
+if (command === 'fire') {
+  if (!filePath) { usage(); process.exit(2); }
+  const { fireHandoffForRoute } = await import('./application/fire.mjs');
+  console.log(JSON.stringify(await fireHandoffForRoute(filePath), null, 2));
+  process.exit(0);
+}
+
+if (command === 'fire-queue') {
+  const args = [filePath, ...rest].filter(Boolean);
+  const { fireHandoffQueue } = await import('./application/fire.mjs');
+  console.log(JSON.stringify(await fireHandoffQueue(undefined, runtimeFireOptions(args)), null, 2));
+  process.exit(0);
+}
+
+if (command === 'fire-receipt') {
+  if (!filePath) { usage(); process.exit(2); }
+  const raw = JSON.parse(await fs.readFile(filePath, 'utf8'));
+  const { persistFireReceipt } = await import('./application/fire.mjs');
+  console.log(JSON.stringify(persistFireReceipt(raw), null, 2));
   process.exit(0);
 }
 
