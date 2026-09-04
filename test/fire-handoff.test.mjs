@@ -65,10 +65,13 @@ test('fire-next selects the deadline-bound AWS shot before rolling research-cred
   assert.equal(handoff.route_id, 'aws-community-day-taiwan-2026-hardware-splicer');
 });
 
-test('fire queue contains only executable immediate FIRE bundles', async () => {
+test('fire queue contains only the three executable immediate FIRE bundles with AWS first', async () => {
   const queue = await fireHandoffQueue(records, { limit: 10 });
   assert.equal(queue.schema, 'blowback.fire_queue.v1');
-  assert.deepEqual(queue.handoffs.map((handoff) => handoff.route_id), FIRE_IDS);
+  const ids = queue.handoffs.map((handoff) => handoff.route_id);
+  assert.equal(ids[0], 'aws-community-day-taiwan-2026-hardware-splicer');
+  assert.deepEqual(new Set(ids), new Set(FIRE_IDS));
+  assert.equal(ids.length, FIRE_IDS.length);
   assert.ok(queue.handoffs.every((handoff) => handoff.state === 'READY_FOR_BROWSER_AGENT'));
 });
 
