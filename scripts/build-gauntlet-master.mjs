@@ -15,6 +15,7 @@ const DEFAULTS = {
   nocturnalRadar: path.join(ROOT, 'data/nocturnal-conversion-radar-2026-09-01.json'),
   infrastructureRadar: path.join(ROOT, 'data/student-research-infrastructure-radar-2026-09-01.json'),
   researchResourceRadar: path.join(ROOT, 'data/research-resource-radar-2026-09-04.json'),
+  fireExecutionRoutes: path.join(ROOT, 'data/fire-execution-routes-2026-09-05.json'),
   outputCsv: path.join(ROOT, 'docs/gauntlet-master.csv'),
   outputJson: path.join(ROOT, 'docs/gauntlet-master.json'),
 };
@@ -193,6 +194,7 @@ export function buildMasterRegistry({
   nocturnalRadarPath = DEFAULTS.nocturnalRadar,
   infrastructureRadarPath = DEFAULTS.infrastructureRadar,
   researchResourceRadarPath = DEFAULTS.researchResourceRadar,
+  fireExecutionRoutesPath = DEFAULTS.fireExecutionRoutes,
 } = {}) {
   const longtail = parseCsv(fs.readFileSync(longtailPath, 'utf8')).map(normalizeLongtail);
   const postgrad = parseCsv(fs.readFileSync(postgradPath, 'utf8')).map(normalizePostgrad);
@@ -203,6 +205,7 @@ export function buildMasterRegistry({
   const nocturnalRadar = JSON.parse(fs.readFileSync(nocturnalRadarPath, 'utf8'));
   const infrastructureRadar = JSON.parse(fs.readFileSync(infrastructureRadarPath, 'utf8'));
   const researchResourceRadar = JSON.parse(fs.readFileSync(researchResourceRadarPath, 'utf8'));
+  const fireExecutionRoutes = JSON.parse(fs.readFileSync(fireExecutionRoutesPath, 'utf8'));
 
   const records = new Map();
   for (const record of [...longtail, ...postgrad]) {
@@ -234,10 +237,14 @@ export function buildMasterRegistry({
   applyOverrides(records, infrastructureRadar.overrides, 'student-research-infrastructure-radar');
 
   // The Sep-4 research/resource tranche is the newest program-mechanics and packaging
-  // audit. It loads last so explicit eligibility, applicant-authority and evidence gates
-  // supersede older optimistic resource rows without deleting their provenance.
+  // audit. It loads after older opportunity sources so explicit eligibility, applicant-authority
+  // and evidence gates supersede optimistic historical rows without deleting provenance.
   addSupplementRoutes(records, researchResourceRadar.routes, 'research-resource-radar');
   applyOverrides(records, researchResourceRadar.overrides, 'research-resource-radar');
+
+  // FIRE execution mapping is intentionally separate from opportunity truth. It only
+  // attaches a vetted local manifest to routes whose application copy is already ready.
+  applyOverrides(records, fireExecutionRoutes.overrides, 'fire-execution-routes');
 
   const output = [...records.values()];
   const ids = new Set(output.map((record) => record.id));
@@ -266,7 +273,7 @@ export function writeMasterRegistry(options = {}) {
   const outputJson = options.outputJson ?? DEFAULTS.outputJson;
   const payload = {
     schema: 'blowback.gauntlet_master.v1',
-    source_snapshot: '2026-09-04',
+    source_snapshot: '2026-09-05',
     summary: summarizeMasterRegistry(records),
     records,
   };
