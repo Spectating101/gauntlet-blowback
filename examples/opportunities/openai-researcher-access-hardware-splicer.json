@@ -1,0 +1,67 @@
+{
+  "id": "openai-researcher-access-hardware-splicer",
+  "name": "OpenAI Researcher Access Program — Hardware-Splicer",
+  "portal": "generic",
+  "portal_family": "research_access",
+  "auth_scope": "openai-surveymonkey-apply",
+  "source_url": "https://openai.com/form/researcher-access-program/",
+  "recon_stage": "registration",
+  "mode": "inspect",
+  "execution_state": "PORTAL_RECON_REQUIRED",
+  "direct_control": true,
+  "profile": "../profiles/christ.json",
+  "project": "../projects/hardware-splicer.json",
+  "packet_source": "https://github.com/Spectating101/hardware-splicer/blob/docs/research-access-conversion-2026q3/docs/external_assessment/research_access/OPENAI_RESEARCHER_ACCESS.md",
+  "fields": {
+    "project_title": "Evidence- and Authority-Constrained Agent Control Under Consequential Hardware Tool Use",
+    "applicant_name": "$profile.name",
+    "affiliation": "$profile.affiliation",
+    "repo_url": "$project.repo_url",
+    "limitations": "$project.limitations"
+  },
+  "field_map": {},
+  "uploads": [],
+  "packet_requirements": [
+    {
+      "id": "research_copy",
+      "description": "Prepared 150/300-word project summaries, research question, OpenAI-product-use statement, outputs and claim-safe positioning.",
+      "status": "PACKET_SOURCE_READY",
+      "canonical_ref": "https://github.com/Spectating101/hardware-splicer/blob/docs/research-access-conversion-2026q3/docs/external_assessment/research_access/OPENAI_RESEARCHER_ACCESS.md"
+    },
+    {
+      "id": "core_protocol",
+      "description": "Canonical baseline-vs-constrained experiment, metrics, trace requirements and physical extension.",
+      "status": "PACKET_SOURCE_READY",
+      "canonical_ref": "https://github.com/Spectating101/hardware-splicer/blob/docs/research-access-conversion-2026q3/docs/external_assessment/research_access/CORE_RESEARCH_PROTOCOL.md"
+    },
+    {
+      "id": "api_budget",
+      "description": "Choose model(s), repetitions per case and derive the requested credits from actual API workload.",
+      "status": "PACKET_REQUIRED"
+    },
+    {
+      "id": "project_window",
+      "description": "Set a bounded 8–12 week YZU-affiliated study window.",
+      "status": "PACKET_REQUIRED"
+    },
+    {
+      "id": "live_form_map",
+      "description": "Map current SurveyMonkey Apply fields and character limits before prepare mode.",
+      "status": "PORTAL_RECON_REQUIRED"
+    }
+  ],
+  "compliance_checks": [
+    "Active YZU research affiliation must still be true on submission.",
+    "Do not state or imply that an OpenAI model has already passed the frozen ten-case corpus.",
+    "Do not promote software/MCP evidence into physical proof.",
+    "Request only a workload-derived amount of credits rather than defaulting to the program maximum."
+  ],
+  "route_evidence": {
+    "verified_at": "2026-09-04",
+    "eligibility_verified": true,
+    "source_and_program_mechanics_verified": true,
+    "registration_endpoint_verified": false,
+    "form_fields_verified": false
+  },
+  "human_required": ["login", "eligibility_attestation", "terms_acceptance", "final_submit"]
+}
