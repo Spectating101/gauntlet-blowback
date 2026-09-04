@@ -14,6 +14,8 @@
   "project": "../projects/hardware-splicer.json",
   "packet_revision": "f822fc5a4b2355ae945955969dcad7428a71c835",
   "packet_source": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/ANTHROPIC_EXTERNAL_RESEARCHER_ACCESS.md",
+  "final_copy_revision": "e30e5b0d235c8ad1dffef69a9a69d16e3a29bb63",
+  "final_copy_source": "https://github.com/Spectating101/hardware-splicer/blob/e30e5b0d235c8ad1dffef69a9a69d16e3a29bb63/docs/external_assessment/research_access/FIRE_NOW_SUBMISSION_COPY_2026-09-05.md",
   "fields": {
     "project_title": "Evidence- and Authority-Constrained Agent Control Under Consequential Tool Use",
     "applicant_name": "$profile.name",
@@ -25,10 +27,10 @@
   "uploads": [],
   "packet_requirements": [
     {
-      "id": "safety_research_copy",
-      "description": "Prepared AI-control/oversight framing, research summary, team positioning, expected outputs and explicit nonclaims.",
+      "id": "final_safety_research_copy",
+      "description": "Paste-ready AI-control/safe-tool-use summary, safety relevance, Claude use plan, team description, outputs and strongest one-sentence contribution.",
       "status": "PACKET_SOURCE_READY",
-      "canonical_ref": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/ANTHROPIC_EXTERNAL_RESEARCHER_ACCESS.md"
+      "canonical_ref": "https://github.com/Spectating101/hardware-splicer/blob/e30e5b0d235c8ad1dffef69a9a69d16e3a29bb63/docs/external_assessment/research_access/FIRE_NOW_SUBMISSION_COPY_2026-09-05.md"
     },
     {
       "id": "core_protocol",
@@ -38,7 +40,7 @@
     },
     {
       "id": "api_budget",
-      "description": "Working core: Claude Sonnet 5 primary 200 runs + Opus 5 confirmatory 100 runs. Fable 5.1 is optional exploratory escalation only if cost, Covered Model retention terms and pilot evidence justify it.",
+      "description": "Current core: Claude Sonnet 5 primary 200 runs + Opus 5 confirmatory 100 runs. Fable 5.1 remains optional exploratory escalation only if the core results and then-current data-retention/cost terms justify it.",
       "status": "PACKET_SOURCE_READY"
     },
     {
@@ -58,14 +60,15 @@
     "Reference-condition consequential actions are scored in dry-run/advisory mode rather than physically executed.",
     "Do not claim Claude has passed the corpus before a live execution exists.",
     "Do not promote software/MCP evidence into fresh physical correctness.",
-    "If Claude Fable 5.1 is added, review its Covered Model data-retention requirements before sending any evaluation data."
+    "If Claude Fable 5.1 is added later, review its then-current Covered Model data-retention requirements before sending evaluation data."
   ],
   "route_evidence": {
-    "verified_at": "2026-09-04",
+    "verified_at": "2026-09-05",
     "program_scope_verified": true,
     "review_cadence_verified": true,
     "official_google_form_link_verified": true,
     "model_and_pricing_snapshot_verified": true,
+    "final_submission_copy_ready": true,
     "form_fields_verified": false
   },
   "human_required": ["login", "eligibility_attestation", "terms_acceptance", "final_submit"]

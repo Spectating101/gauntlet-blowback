@@ -16,8 +16,10 @@
   "project": "../projects/hardware-splicer.json",
   "packet_revision": "f822fc5a4b2355ae945955969dcad7428a71c835",
   "packet_source": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/AWS_COMMUNITY_DAY_TAIWAN_2026.md",
+  "final_copy_revision": "e30e5b0d235c8ad1dffef69a9a69d16e3a29bb63",
+  "final_copy_source": "https://github.com/Spectating101/hardware-splicer/blob/e30e5b0d235c8ad1dffef69a9a69d16e3a29bb63/docs/external_assessment/research_access/FIRE_NOW_SUBMISSION_COPY_2026-09-05.md",
   "fields": {
-    "talk_title": "When AI Agents Touch Hardware: Designing Evidence and Authority Boundaries",
+    "talk_title": "From Model Output to Physical Action: Evidence and Authority Gates for Agentic AI",
     "topic": "Agentic AI",
     "speaker_name": "$profile.name",
     "affiliation": "$profile.affiliation",
@@ -27,10 +29,10 @@
   "uploads": [],
   "packet_requirements": [
     {
-      "id": "talk_copy",
-      "description": "Prepared preferred title, 100/250-word abstracts, takeaways, audience framing, session outline, bio variants and demo fallback guidance.",
+      "id": "final_talk_copy",
+      "description": "Paste-ready preferred title, final abstract, audience takeaways, bio and session framing for the current CFP.",
       "status": "PACKET_SOURCE_READY",
-      "canonical_ref": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/AWS_COMMUNITY_DAY_TAIWAN_2026.md"
+      "canonical_ref": "https://github.com/Spectating101/hardware-splicer/blob/e30e5b0d235c8ad1dffef69a9a69d16e3a29bb63/docs/external_assessment/research_access/FIRE_NOW_SUBMISSION_COPY_2026-09-05.md"
     },
     {
       "id": "live_form_map",
@@ -45,10 +47,11 @@
     "Do not infer an exact Sep 7 cutoff time from the date-only official CFP notice."
   ],
   "route_evidence": {
-    "verified_at": "2026-09-04",
+    "verified_at": "2026-09-05",
     "source_rules_verified": true,
     "official_cfp_shortlink_verified": true,
     "current_redirect_provider_observed": "Qualtrics",
+    "final_submission_copy_ready": true,
     "exact_cutoff_time_verified": false,
     "form_fields_verified": false
   },
