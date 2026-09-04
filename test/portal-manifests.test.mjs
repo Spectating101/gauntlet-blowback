@@ -41,3 +41,18 @@ for (const manifestPath of blockedResearchManifests) {
     assert.ok(opportunity.human_required.includes('final_submit'));
   });
 }
+
+test('AWS Community Day manifest preserves date-only deadline truth and official CFP route', async () => {
+  const opportunity = await loadOpportunity('examples/opportunities/aws-community-day-taiwan-2026-hardware-splicer.json');
+  assert.equal(opportunity.deadline, '2026-09-07');
+  assert.equal(opportunity.registration_url, 'https://go.awscmd.tw/cfp');
+  assert.match(opportunity.deadline_note, /exact cutoff time is not yet verified/i);
+  assert.doesNotMatch(opportunity.deadline, /23:59/);
+});
+
+test('Anthropic ERAP manifest uses the application linked by the official help page', async () => {
+  const opportunity = await loadOpportunity('examples/opportunities/anthropic-external-researcher-access-hardware-splicer.json');
+  assert.equal(opportunity.registration_url, 'https://forms.gle/pZYC8f6qYqSKvRWn9');
+  assert.equal(opportunity.route_evidence.official_google_form_link_verified, true);
+  assert.equal(opportunity.route_evidence.form_fields_verified, false);
+});
