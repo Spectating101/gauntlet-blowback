@@ -15,7 +15,7 @@ function ensureStringArray(value, key) {
   return value;
 }
 
-function assertNoSecretKeys(value, trail = '') {
+export function assertNoSecretKeys(value, trail = '') {
   if (!value || typeof value !== 'object') return;
   for (const [key, child] of Object.entries(value)) {
     const full = trail ? `${trail}.${key}` : key;
