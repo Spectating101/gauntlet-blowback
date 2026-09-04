@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import { loadOpportunity } from '../src/core/load.mjs';
 import { validateOpportunity } from '../src/core/validate.mjs';
 
+const AUDITED_PACKET_REVISION = 'f822fc5a4b2355ae945955969dcad7428a71c835';
+
 const liveReconManifests = [
   'examples/opportunities/taia-ai-creative-design-2026.json',
   'examples/opportunities/global-ai-finance-2026-policy-lab.json',
@@ -17,6 +19,13 @@ const blockedResearchManifests = [
   'examples/opportunities/nchc-university-ai-compute-yzu-hardware-splicer.json',
   'examples/opportunities/aws-cloud-credit-research-yzu-hardware-splicer.json',
   'examples/opportunities/anthropic-ai-for-science-hardware-splicer.json'
+];
+
+const researchPacketManifests = [
+  'examples/opportunities/aws-community-day-taiwan-2026-hardware-splicer.json',
+  'examples/opportunities/openai-researcher-access-hardware-splicer.json',
+  'examples/opportunities/anthropic-external-researcher-access-hardware-splicer.json',
+  ...blockedResearchManifests
 ];
 
 for (const manifestPath of liveReconManifests) {
@@ -39,6 +48,18 @@ for (const manifestPath of blockedResearchManifests) {
     assert.equal(opportunity.execution_state, 'RESEARCH_ONLY');
     assert.equal(opportunity.direct_control, false);
     assert.ok(opportunity.human_required.includes('final_submit'));
+  });
+}
+
+for (const manifestPath of researchPacketManifests) {
+  test(`research packet is pinned to audited Hardware-Splicer revision: ${manifestPath}`, async () => {
+    const opportunity = await loadOpportunity(manifestPath);
+    assert.equal(opportunity.packet_revision, AUDITED_PACKET_REVISION);
+    assert.match(opportunity.packet_source, new RegExp(`/blob/${AUDITED_PACKET_REVISION}/`));
+    for (const requirement of opportunity.packet_requirements ?? []) {
+      if (!requirement.canonical_ref) continue;
+      assert.match(requirement.canonical_ref, new RegExp(`/blob/${AUDITED_PACKET_REVISION}/`));
+    }
   });
 }
 
