@@ -14,6 +14,7 @@
   "direct_control": true,
   "profile": "../profiles/christ.json",
   "project": "../projects/hardware-splicer.json",
+  "fire_packet": "../fire-packets/aws-community-day-taiwan-2026-hardware-splicer.json",
   "packet_revision": "f822fc5a4b2355ae945955969dcad7428a71c835",
   "packet_source": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/AWS_COMMUNITY_DAY_TAIWAN_2026.md",
   "final_copy_revision": "e30e5b0d235c8ad1dffef69a9a69d16e3a29bb63",
