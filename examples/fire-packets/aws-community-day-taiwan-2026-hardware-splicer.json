@@ -1,29 +1,29 @@
 {
   "schema": "blowback.fire_packet.v1",
   "route_id": "aws-community-day-taiwan-2026-hardware-splicer",
-  "source_revision": "e30e5b0d235c8ad1dffef69a9a69d16e3a29bb63",
-  "source_url": "https://github.com/Spectating101/hardware-splicer/blob/e30e5b0d235c8ad1dffef69a9a69d16e3a29bb63/docs/external_assessment/research_access/FIRE_NOW_SUBMISSION_COPY_2026-09-05.md",
+  "source_revision": "328b80b4ca720a04e4bbdfabc481f4dfb68c548b",
+  "source_url": "https://github.com/Spectating101/hardware-splicer/blob/328b80b4ca720a04e4bbdfabc481f4dfb68c548b/docs/external_assessment/research_access/FIRE_NOW_SUBMISSION_COPY_2026-09-05.md",
   "copy": {
-    "title": "From Model Output to Physical Action: Evidence and Authority Gates for Agentic AI",
+    "title": "When an AI Agent Can Touch Hardware: Designing the Checks Between the Model and the Machine",
     "topic": "Agentic AI",
     "language": "English",
     "level": "Intermediate / advanced practical session",
-    "one_line_summary": "A practical systems pattern for keeping tool-using AI agents useful without letting unsupported model confidence silently become consequential action.",
-    "abstract": "Agentic AI becomes a different engineering problem once model output can modify state, operate tools, or trigger physical work. In those settings, the most important failure is not simply a wrong answer: it is a plausible answer acquiring authority it has not earned.\n\nThis session presents a practical systems pattern developed through Hardware-Splicer, an agentic hardware-engineering environment built around a strict separation between model reasoning and independently authoritative state. The agent can inspect evidence, reason, propose changes, and use engineering tools, while deterministic constraints, exact revision state, provenance-bearing evidence, and scoped human authorization remain outside the model.\n\nUsing adversarial hardware cases involving partial evidence, component-identity conflict, tool failure, plausible wrong analogy, and stale revisions, the talk shows how to design for failure instead of assuming perfect model behavior. The focus is on reusable production principles: fail closed on unresolved evidence, invalidate authority when revisions change, distinguish reasoning from verified state, preserve traceability, and measure abstention, recovery, false blocking, intervention, and useful task completion—not only successful answers.\n\nHardware-Splicer is the concrete case study, but the architecture generalizes to other consequential agent workflows where an AI system can act rather than merely advise.",
+    "one_line_summary": "A practical look at the checks I put between an AI agent and real hardware work, and how they behave when the evidence is stale, conflicting, or incomplete.",
+    "abstract": "When I started letting an AI agent work inside a hardware-engineering environment, model accuracy turned out to be only half the problem. The harder question was what to do with a plausible answer when the evidence behind it was incomplete, stale, or tied to the wrong board revision.\n\nIn Hardware-Splicer, the model can inspect sources, plan work, and call engineering tools, but it cannot decide by itself that a component has been identified, that a revision is current, or that a physical action is approved. Those checks live in deterministic project state and a separate human approval step.\n\nThis talk walks through the design and the failures that shaped it: partial evidence, conflicting component identity, parser failure, attractive but wrong analogies, and stale revisions. I will show what the system blocks, what it allows to continue, and why I now evaluate agents with metrics such as abstention, recovery, false blocking, and task completion instead of only asking whether the final answer was correct.\n\nHardware-Splicer is the concrete test case, but the pattern applies to other tool-using agents that can change real state rather than merely answer a question. The goal is not to make the model infallible. It is to keep a model mistake from automatically becoming permission to act.",
     "takeaways": [
-      "Reasoning and authority should be separate system concepts. A model proposal should not automatically become verified state or permission to act.",
-      "Evidence must be bound to identity and revision. Stale, conflicting, or incomplete evidence should invalidate authority rather than silently carry forward.",
-      "Production agent evaluation needs failure metrics. Abstention, recovery, false blocking, intervention, and unauthorized action attempts matter as much as task completion."
+      "Keep the model's proposal separate from system state and permission to act. A good-looking answer is still only a proposal until the rest of the system can support it.",
+      "Tie evidence to the exact object and revision it describes. Old or conflicting evidence should not quietly survive a change in the underlying work.",
+      "Test how the agent fails, not only whether it finishes. Abstention, recovery, false blocking, and intervention are useful production metrics alongside task completion."
     ],
-    "speaker_bio": "Christopher Ongko is a master's researcher at Yuan Ze University working on evidence-governed agentic systems, research-data infrastructure, and empirical research. His current technical work includes Hardware-Splicer, a model-independent environment for bounded AI-assisted hardware engineering, and research systems focused on provenance and reproducibility. His recurring research interest is how AI systems can remain useful while maintaining explicit boundaries between model inference, evidence, verified state, and consequential authority.",
-    "short_bio": "Christopher Ongko is a Yuan Ze University master's researcher building evidence-governed agentic and research-data systems. His work focuses on keeping model inference, evidence, revision state, and consequential authority explicitly separated in real AI workflows.",
+    "speaker_bio": "Christopher Ongko is a master's student at Yuan Ze University in Taiwan. He builds AI-assisted research and engineering systems, including Hardware-Splicer, a hardware-engineering environment that keeps model suggestions separate from deterministic checks and human approval. His broader work includes research-data infrastructure and tools for tracking sources, revisions, and reproducibility.",
+    "short_bio": "Christopher Ongko is a master's student at Yuan Ze University in Taiwan building AI-assisted research and engineering systems. His current work includes Hardware-Splicer and research-data tools focused on reproducibility and traceable evidence.",
     "session_flow": [
-      "Why tool-using agents create a new failure boundary.",
-      "Hardware-Splicer as a concrete case study.",
-      "Four-layer pattern: model reasoning → deterministic constraints → provenance/revision evidence → human authority.",
-      "Adversarial cases and what goes wrong.",
-      "Metrics for abstention, recovery, false blocking, intervention, and useful completion.",
-      "Generalization to production agentic systems beyond hardware."
+      "The problem I ran into when the agent could do more than answer questions.",
+      "Hardware-Splicer as the concrete system.",
+      "What stays outside the model: project state, checks, evidence, and approval.",
+      "Five failure cases and what the system does with them.",
+      "What I measure now besides answer accuracy.",
+      "Where the same pattern is useful outside hardware."
     ],
     "nonclaims": [
       "Do not claim AWS services are currently part of Hardware-Splicer unless that becomes true.",
