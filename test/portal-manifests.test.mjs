@@ -4,7 +4,7 @@ import { loadOpportunity } from '../src/core/load.mjs';
 import { validateOpportunity } from '../src/core/validate.mjs';
 
 const AUDITED_PACKET_REVISION = 'f822fc5a4b2355ae945955969dcad7428a71c835';
-const FIRE_COPY_REVISION = 'fd274a31aac881056c0a513bdd6e3b4e12c94f61';
+const FIRE_COPY_REVISION = '328b80b4ca720a04e4bbdfabc481f4dfb68c548b';
 
 const liveReconManifests = [
   'examples/opportunities/taia-ai-creative-design-2026.json',
