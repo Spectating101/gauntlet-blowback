@@ -32,7 +32,8 @@ test('AWS FIRE handoff is self-contained and remains human-submit gated', async 
   assert.equal(handoff.schema, 'blowback.fire_handoff.v1');
   assert.equal(handoff.state, 'READY_FOR_BROWSER_AGENT');
   assert.equal(handoff.target.registration_url, 'https://go.awscmd.tw/cfp');
-  assert.equal(handoff.submission_copy.title, 'From Model Output to Physical Action: Evidence and Authority Gates for Agentic AI');
+  assert.equal(handoff.submission_copy.title, 'When an AI Agent Can Touch Hardware: Designing the Checks Between the Model and the Machine');
+  assert.match(handoff.submission_copy.abstract, /When I started letting an AI agent work inside a hardware-engineering environment/i);
   assert.ok(handoff.submission_copy.abstract.length > 500);
   assert.equal(handoff.browser_agent_contract.final_submit_policy, 'HUMAN_PROTECTED');
   assert.ok(handoff.browser_agent_contract.human_gate.includes('final_submit_send_apply_confirm'));
@@ -44,18 +45,19 @@ test('OpenAI FIRE handoff carries the concrete experiment and credit ask inline'
   const handoff = await fireHandoffForRoute('openai-researcher-access-hardware-splicer', records);
   assert.equal(handoff.applicant_fields.working_credit_request_usd, 300);
   assert.equal(handoff.submission_copy.working_credit_request_usd, 300);
-  assert.match(handoff.submission_copy.research_question, /unsupported consequential actions/i);
+  assert.match(handoff.submission_copy.research_question, /unsupported action attempts/i);
   assert.match(handoff.submission_copy.project_summary, /300 scored runs/i);
-  assert.match(handoff.submission_copy.planned_use_of_openai_products, /experimental agents under evaluation/i);
+  assert.match(handoff.submission_copy.planned_use_of_openai_products, /agents being evaluated/i);
+  assert.match(handoff.submission_copy.project_summary, /I built Hardware-Splicer/i);
   assert.match(handoff.packet.final_copy_source, /FIRE_NOW_SUBMISSION_COPY_2026-09-05/);
 });
 
-test('Anthropic FIRE handoff preserves AI-control framing instead of generic product development', async () => {
+test('Anthropic FIRE handoff preserves narrow AI-control framing instead of generic product development', async () => {
   const handoff = await fireHandoffForRoute('anthropic-external-researcher-access-2026', records);
   assert.equal(handoff.target.registration_url, 'https://forms.gle/pZYC8f6qYqSKvRWn9');
-  assert.match(handoff.submission_copy.why_ai_safety, /control intervention/i);
-  assert.match(handoff.submission_copy.research_summary, /200 Claude Sonnet 5 scored runs/i);
-  assert.match(handoff.submission_copy.strongest_one_sentence_contribution, /unsupported confidence/i);
+  assert.match(handoff.submission_copy.why_ai_safety, /safety claim I want to test is deliberately small/i);
+  assert.match(handoff.submission_copy.research_summary, /200 Claude Sonnet 5 runs/i);
+  assert.match(handoff.submission_copy.strongest_one_sentence_contribution, /simple checks outside the model/i);
   assert.ok(handoff.submission_copy.nonclaims.some((claim) => /general alignment solution/i.test(claim)));
 });
 
