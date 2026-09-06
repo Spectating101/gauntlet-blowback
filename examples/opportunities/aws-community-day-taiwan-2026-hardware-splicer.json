@@ -17,8 +17,8 @@
   "fire_packet": "../fire-packets/aws-community-day-taiwan-2026-hardware-splicer.json",
   "packet_revision": "f822fc5a4b2355ae945955969dcad7428a71c835",
   "packet_source": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/AWS_COMMUNITY_DAY_TAIWAN_2026.md",
-  "final_copy_revision": "fd274a31aac881056c0a513bdd6e3b4e12c94f61",
-  "final_copy_source": "https://github.com/Spectating101/hardware-splicer/blob/fd274a31aac881056c0a513bdd6e3b4e12c94f61/docs/external_assessment/research_access/FIRE_NOW_SUBMISSION_COPY_2026-09-05.md",
+  "final_copy_revision": "328b80b4ca720a04e4bbdfabc481f4dfb68c548b",
+  "final_copy_source": "https://github.com/Spectating101/hardware-splicer/blob/328b80b4ca720a04e4bbdfabc481f4dfb68c548b/docs/external_assessment/research_access/FIRE_NOW_SUBMISSION_COPY_2026-09-05.md",
   "fields": {
     "talk_title": "When an AI Agent Can Touch Hardware: Designing the Checks Between the Model and the Machine",
     "topic": "Agentic AI",
@@ -33,7 +33,7 @@
       "id": "final_talk_copy",
       "description": "Paste-ready preferred title, final abstract, audience takeaways, bio and session framing for the current CFP.",
       "status": "PACKET_SOURCE_READY",
-      "canonical_ref": "https://github.com/Spectating101/hardware-splicer/blob/fd274a31aac881056c0a513bdd6e3b4e12c94f61/docs/external_assessment/research_access/FIRE_NOW_SUBMISSION_COPY_2026-09-05.md"
+      "canonical_ref": "https://github.com/Spectating101/hardware-splicer/blob/328b80b4ca720a04e4bbdfabc481f4dfb68c548b/docs/external_assessment/research_access/FIRE_NOW_SUBMISSION_COPY_2026-09-05.md"
     },
     {
       "id": "live_form_map",
