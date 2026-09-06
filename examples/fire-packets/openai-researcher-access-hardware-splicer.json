@@ -1,8 +1,8 @@
 {
   "schema": "blowback.fire_packet.v1",
   "route_id": "openai-researcher-access-hardware-splicer",
-  "source_revision": "fd274a31aac881056c0a513bdd6e3b4e12c94f61",
-  "source_url": "https://github.com/Spectating101/hardware-splicer/blob/fd274a31aac881056c0a513bdd6e3b4e12c94f61/docs/external_assessment/research_access/FIRE_NOW_SUBMISSION_COPY_2026-09-05.md",
+  "source_revision": "328b80b4ca720a04e4bbdfabc481f4dfb68c548b",
+  "source_url": "https://github.com/Spectating101/hardware-splicer/blob/328b80b4ca720a04e4bbdfabc481f4dfb68c548b/docs/external_assessment/research_access/FIRE_NOW_SUBMISSION_COPY_2026-09-05.md",
   "copy": {
     "project_title": "Testing Whether Evidence Checks Reduce Unsupported Actions in Tool-Using AI Agents",
     "research_question": "When an AI agent can call tools, do explicit evidence, revision, and approval checks reduce unsupported action attempts without making the agent too conservative to be useful?",
