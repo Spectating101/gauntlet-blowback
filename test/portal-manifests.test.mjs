@@ -4,7 +4,7 @@ import { loadOpportunity } from '../src/core/load.mjs';
 import { validateOpportunity } from '../src/core/validate.mjs';
 
 const AUDITED_PACKET_REVISION = 'f822fc5a4b2355ae945955969dcad7428a71c835';
-const FIRE_COPY_REVISION = 'e30e5b0d235c8ad1dffef69a9a69d16e3a29bb63';
+const FIRE_COPY_REVISION = 'fd274a31aac881056c0a513bdd6e3b4e12c94f61';
 
 const liveReconManifests = [
   'examples/opportunities/taia-ai-creative-design-2026.json',
@@ -82,11 +82,12 @@ test('AWS Community Day manifest preserves date-only deadline truth and official
   assert.equal(opportunity.registration_url, 'https://go.awscmd.tw/cfp');
   assert.match(opportunity.deadline_note, /exact cutoff time is not yet verified/i);
   assert.doesNotMatch(opportunity.deadline, /23:59/);
-  assert.equal(opportunity.fields.talk_title, 'From Model Output to Physical Action: Evidence and Authority Gates for Agentic AI');
+  assert.equal(opportunity.fields.talk_title, 'When an AI Agent Can Touch Hardware: Designing the Checks Between the Model and the Machine');
 });
 
 test('OpenAI FIRE manifest carries the current concrete run and budget plan', async () => {
   const opportunity = await loadOpportunity('examples/opportunities/openai-researcher-access-hardware-splicer.json');
+  assert.equal(opportunity.fields.project_title, 'Testing Whether Evidence Checks Reduce Unsupported Actions in Tool-Using AI Agents');
   assert.equal(opportunity.fields.working_credit_request_usd, 300);
   assert.equal(opportunity.route_evidence.final_submission_copy_ready, true);
   assert.match(opportunity.packet_requirements.find((r) => r.id === 'api_budget').description, /Sol primary 200 runs.*Terra sensitivity 100 runs/i);
@@ -94,6 +95,7 @@ test('OpenAI FIRE manifest carries the current concrete run and budget plan', as
 
 test('Anthropic ERAP manifest uses the application linked by the official help page', async () => {
   const opportunity = await loadOpportunity('examples/opportunities/anthropic-external-researcher-access-hardware-splicer.json');
+  assert.equal(opportunity.fields.project_title, 'Testing Evidence and Authorization Checks for Tool-Using Agents');
   assert.equal(opportunity.registration_url, 'https://forms.gle/pZYC8f6qYqSKvRWn9');
   assert.equal(opportunity.route_evidence.official_google_form_link_verified, true);
   assert.equal(opportunity.route_evidence.final_submission_copy_ready, true);
