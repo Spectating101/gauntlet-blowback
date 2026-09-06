@@ -75,6 +75,23 @@ A FIRE handoff is executable packaging, not permission to improvise claims.
 - If the portal can be safely completed but the final commitment is protected, return `WAITING_HUMAN` with the smallest concrete action needed.
 - `SUBMITTED` is valid only after real external receipt evidence exists. Do not equate a completed draft, review page or clicked Next button with submission.
 
+## Submission voice discipline
+
+The browser agent must preserve the voice of the supplied FIRE packet rather than polishing it into generic AI/grant language.
+
+- Write like the researcher or engineer describing work they actually did: concrete problem, concrete system choice, concrete test.
+- Prefer plain verbs and specific examples over abstract noun stacks. `I built`, `I will compare`, `the case contains stale revision evidence`, and `the system blocks this action` are usually better than phrases such as `evidence-governed consequential authority architecture`.
+- Do not introduce internal Gauntlet vocabulary such as `FIRE`, `bounded`, `G4`, `authority gate`, `claim boundary`, or `conversion` into outward-facing prose unless the term is independently natural for that audience.
+- Do not repeat one slogan across title, abstract, takeaways, biography, and motivation. Each field should answer its own question.
+- Avoid gratuitous triads, symmetrical bullet padding, rhetorical oppositions, and repeated phrases such as `not X but Y` when a direct sentence is clearer.
+- Do not inflate ordinary engineering choices into universal safety, alignment, governance, or production claims.
+- Do not fabricate personal anecdotes. First-person language may only describe facts already supported by the project/evidence package.
+- When the portal asks a short question, answer the short question. Do not paste a miniature grant proposal into every field.
+- Preserve useful imperfection: varied sentence length, direct wording, and field-specific emphasis are preferable to making every answer sound equally polished.
+- If compression is needed, remove framework language before removing the concrete example or experimental method.
+
+The goal is **credible human technical writing**, not evasion of an AI detector. Never misrepresent authorship, application rules, or whether AI assistance is permitted by the venue.
+
 ## Navigation policy
 
 The default policy is **freely navigate, tightly gate commitments**.
