@@ -62,19 +62,28 @@ test('Anthropic FIRE handoff preserves narrow AI-control framing instead of gene
 });
 
 test('fire-next selects the deadline-bound AWS shot before rolling research-credit routes', async () => {
-  const handoff = await nextFireHandoff(records);
+  const handoff = await nextFireHandoff(records, { asOf: '2026-09-06T00:00:00+08:00' });
   assert.ok(handoff);
   assert.equal(handoff.route_id, 'aws-community-day-taiwan-2026-hardware-splicer');
 });
 
 test('fire queue contains only the three executable immediate FIRE bundles with AWS first', async () => {
-  const queue = await fireHandoffQueue(records, { limit: 10 });
+  const queue = await fireHandoffQueue(records, { limit: 10, asOf: '2026-09-06T00:00:00+08:00' });
   assert.equal(queue.schema, 'blowback.fire_queue.v1');
   const ids = queue.handoffs.map((handoff) => handoff.route_id);
   assert.equal(ids[0], 'aws-community-day-taiwan-2026-hardware-splicer');
   assert.deepEqual(new Set(ids), new Set(FIRE_IDS));
   assert.equal(ids.length, FIRE_IDS.length);
   assert.ok(queue.handoffs.every((handoff) => handoff.state === 'READY_FOR_BROWSER_AGENT'));
+});
+
+test('expired hard-date FIRE routes do not stay in the live execution queue', async () => {
+  const queue = await fireHandoffQueue(records, { limit: 10, asOf: '2026-09-09T00:00:00+08:00' });
+  assert.ok(!queue.handoffs.some((handoff) => handoff.route_id === 'aws-community-day-taiwan-2026-hardware-splicer'));
+  assert.deepEqual(queue.handoffs.map((handoff) => handoff.route_id), [
+    'anthropic-external-researcher-access-2026',
+    'openai-researcher-access-hardware-splicer',
+  ]);
 });
 
 test('submitted fire receipts require durable receipt evidence and become checkpoints', () => {

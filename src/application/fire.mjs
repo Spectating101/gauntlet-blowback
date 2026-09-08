@@ -15,6 +15,17 @@ const RECEIPT_DIR = path.join(ROOT, '.blowback', 'receipts');
 const FIRE_STATUS = /^(PORTAL_READY|FIRE_NOW|PRIMARY_FIRE|FIRE)$/i;
 const RECEIPT_STATUSES = new Set(['IN_PROGRESS', 'WAITING_HUMAN', 'SAFE_COMPLETE', 'SUBMITTED', 'BLOCKED', 'ABANDONED', 'EXPIRED']);
 
+function currentDateKey(asOf = new Date()) {
+  const date = asOf instanceof Date ? asOf : new Date(asOf);
+  if (Number.isNaN(date.getTime())) throw new Error(`invalid FIRE queue date: ${asOf}`);
+  return date.toISOString().slice(0, 10);
+}
+
+function currentCycleExpired(record, asOf) {
+  const deadline = String(record?.deadline ?? '').match(/\d{4}-\d{2}-\d{2}/)?.[0];
+  return Boolean(deadline && deadline < currentDateKey(asOf));
+}
+
 function withinRoot(file) {
   const resolved = path.resolve(file);
   if (resolved !== ROOT && !resolved.startsWith(`${ROOT}${path.sep}`)) {
@@ -163,9 +174,9 @@ export async function fireHandoffForRoute(routeId, records = buildMasterRegistry
   return buildFireHandoff(found.record, found.checkpoint);
 }
 
-export async function nextFireHandoff(records = buildMasterRegistry()) {
+export async function nextFireHandoff(records = buildMasterRegistry(), { asOf = new Date() } = {}) {
   const ranked = rankGauntlet(records)
-    .filter(({ record }) => record.execution_manifest && FIRE_STATUS.test(String(record.status ?? '')));
+    .filter(({ record }) => record.execution_manifest && FIRE_STATUS.test(String(record.status ?? '')) && !currentCycleExpired(record, asOf));
   for (const item of ranked) {
     try {
       return await buildFireHandoff(item.record, item.checkpoint);
@@ -177,9 +188,9 @@ export async function nextFireHandoff(records = buildMasterRegistry()) {
   return null;
 }
 
-export async function fireHandoffQueue(records = buildMasterRegistry(), { limit = 10 } = {}) {
+export async function fireHandoffQueue(records = buildMasterRegistry(), { limit = 10, asOf = new Date() } = {}) {
   const ranked = rankGauntlet(records)
-    .filter(({ record }) => record.execution_manifest && FIRE_STATUS.test(String(record.status ?? '')));
+    .filter(({ record }) => record.execution_manifest && FIRE_STATUS.test(String(record.status ?? '')) && !currentCycleExpired(record, asOf));
   const handoffs = [];
   for (const item of ranked) {
     if (handoffs.length >= Math.max(1, Number(limit) || 10)) break;
