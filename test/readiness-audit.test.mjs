@@ -22,6 +22,14 @@ test('readiness selection limits public auditing to near-term and executable rol
   assert.deepEqual(selection.routes.map((item) => item.route_id), ['sample-route', 'rolling-fire']);
 });
 
+test('full readiness selection includes all current-cycle routes but excludes past hard deadlines', () => {
+  const selection = selectReadinessRoutes({
+    today: '2026-09-09', scope: 'all', limit: 20,
+    records: [route(), route({ id: 'rolling', deadline: 'ROLLING' }), route({ id: 'expired', deadline: '2026-09-08' })],
+  });
+  assert.deepEqual(selection.routes.map((item) => item.route_id), ['sample-route', 'rolling']);
+});
+
 test('readiness classifier records an observed login requirement without claiming it can create an account', () => {
   const result = classifyPublicReadiness({ signals: { password_inputs: 1, login: true }, forms: [], controls: [], file_inputs: [] });
   assert.equal(result.readiness, 'ACCOUNT_OR_LOGIN_GATE_OBSERVED');

@@ -30,9 +30,12 @@ it does not crawl every historical or long-horizon row.
 
 ```bash
 npm run application:readiness
+node src/cli.mjs readiness-audit --scope=all --limit=200
 ```
 
-The audit uses a fresh browser context for each public source. It does not use
+`--scope=all` includes every current-cycle application-like route, deduplicates
+shared public URLs, and pauses at least one second between requests to a given
+host. The audit uses a fresh browser context for each public source. It does not use
 saved auth state, create accounts, fill fields, upload files, save drafts,
 accept consent, interact with CAPTCHA, or submit. `NOT_OBSERVED_ON_CURRENT_PAGE`
 does not mean an account will never be required; it is deliberately weaker

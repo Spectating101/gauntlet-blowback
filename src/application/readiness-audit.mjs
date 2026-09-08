@@ -1,4 +1,5 @@
 import { chromium } from 'playwright';
+import { setTimeout as wait } from 'node:timers/promises';
 import { buildMasterRegistry } from '../../scripts/build-gauntlet-master.mjs';
 import { collectReconSnapshot } from '../commands/recon.mjs';
 import { isApplicationRoute } from './operator.mjs';
@@ -82,16 +83,22 @@ function hasApplicationFormEvidence(snapshot = {}) {
  * Select only time-bounded work plus directly executable rolling FIRE routes.
  * This prevents the public audit from indiscriminately crawling the portfolio.
  */
-export function selectReadinessRoutes({ records = buildMasterRegistry(), today = new Date(), days = 35, limit = 30 } = {}) {
+export function selectReadinessRoutes({ records = buildMasterRegistry(), today = new Date(), days = 35, limit = 30, scope = 'near_term' } = {}) {
+  if (!['near_term', 'all'].includes(scope)) throw new Error(`unsupported readiness-audit scope: ${scope}`);
   const from = dateKey(today);
   const through = plusDays(from, Math.max(0, Number(days) || 0));
+  const numericLimit = Number(limit);
+  const maxRoutes = scope === 'all'
+    ? (Number.isFinite(numericLimit) && numericLimit > 0 ? Math.floor(numericLimit) : 500)
+    : (Number.isFinite(numericLimit) && numericLimit > 0 ? Math.floor(numericLimit) : 30);
   const routes = records
     .filter((record) => isApplicationRoute(record) && !TERMINAL_STATUS.test(String(record.status ?? '')))
     .filter((record) => {
       const deadline = hardDeadline(record);
+      const currentCycle = !(deadline && deadline < from);
       const inWindow = deadline && deadline >= from && deadline <= through;
       const rollingFire = !deadline && FIRE_STATUS.test(String(record.status ?? '')) && Boolean(record.execution_manifest);
-      return inWindow || rollingFire;
+      return scope === 'all' ? currentCycle : inWindow || rollingFire;
     })
     .map((record) => ({
       route_id: record.id,
@@ -113,8 +120,8 @@ export function selectReadinessRoutes({ records = buildMasterRegistry(), today =
     .sort((a, b) => priority(a._record) - priority(b._record)
       || String(a.deadline ?? '9999-12-31').localeCompare(String(b.deadline ?? '9999-12-31'))
       || a.route_id.localeCompare(b.route_id))
-    .slice(0, Math.max(1, Number(limit) || 30));
-  return { from, through, routes };
+    .slice(0, maxRoutes);
+  return { scope, from, through, routes };
 }
 
 /** Classify only what a public, unauthenticated page actually shows. */
@@ -198,21 +205,48 @@ async function auditOneRoute(route, browser) {
   }
 }
 
+async function waitForHost(url, lastSeen, rateLimitMs) {
+  try {
+    const host = new URL(url).hostname.toLowerCase();
+    const now = Date.now();
+    const remaining = Number(rateLimitMs) - (now - (lastSeen.get(host) ?? 0));
+    if (remaining > 0) await wait(remaining);
+    lastSeen.set(host, Date.now());
+  } catch {
+    // auditOneRoute reports invalid/unreachable URLs without attempting a request.
+  }
+}
+
 /**
  * Public, headless, observation-only readiness scan. It never loads auth
  * state, fills a field, follows a postback, persists storage, or saves a file.
  */
-export async function auditApplicationReadiness({ records = buildMasterRegistry(), today = new Date(), days = 35, limit = 30 } = {}) {
-  const selection = selectReadinessRoutes({ records, today, days, limit });
+export async function auditApplicationReadiness({ records = buildMasterRegistry(), today = new Date(), days = 35, limit = 30, scope = 'near_term', rateLimitMs = 1_000 } = {}) {
+  const selection = selectReadinessRoutes({ records, today, days, limit, scope });
   const browser = await chromium.launch({ headless: true });
   try {
     const routes = [];
-    for (const route of selection.routes) routes.push(await auditOneRoute(route, browser));
+    const observations = new Map();
+    const lastSeen = new Map();
+    for (const route of selection.routes) {
+      const cacheKey = route.source_url ?? `missing:${route.route_id}`;
+      let observation = observations.get(cacheKey);
+      if (!observation) {
+        if (route.source_url) await waitForHost(route.source_url, lastSeen, rateLimitMs);
+        const audited = await auditOneRoute(route, browser);
+        const { _record, route_id, organization, opportunity, deadline, status, execution_state, source_url, execution_manifest, audit_reason, static_readiness, ...shared } = audited;
+        observation = shared;
+        observations.set(cacheKey, observation);
+      }
+      routes.push({ ...route, ...observation });
+    }
     const count = (predicate) => routes.filter(predicate).length;
     return {
       schema: 'blowback.application_readiness_audit.v1', generated_at: new Date().toISOString(),
       scope: {
-        from: selection.from, through: selection.through, route_count: routes.length,
+        mode: selection.scope, from: selection.from, through: selection.through, route_count: routes.length,
+        unique_public_sources_checked: observations.size - routes.filter((route) => !route.source_url).length,
+        per_host_minimum_delay_ms: Number(rateLimitMs),
         network_policy: 'public headless observation only; no auth state, form fill, upload, account creation, consent, CAPTCHA interaction, draft save, or submission',
       },
       summary: {
