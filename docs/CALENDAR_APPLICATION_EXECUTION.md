@@ -21,6 +21,23 @@ The immediate `fire-next` and `fire-queue` interfaces apply the same
 current-cycle check, so a date-bound package cannot remain the default live
 browser handoff after its verified deadline passes.
 
+## Public readiness audit
+
+Use the headless audit to distinguish a public page that can be inspected now
+from a page where an account/login gate was actually observed. It covers only
+the near-term hard-deadline queue plus directly executable rolling FIRE routes;
+it does not crawl every historical or long-horizon row.
+
+```bash
+npm run application:readiness
+```
+
+The audit uses a fresh browser context for each public source. It does not use
+saved auth state, create accounts, fill fields, upload files, save drafts,
+accept consent, interact with CAPTCHA, or submit. `NOT_OBSERVED_ON_CURRENT_PAGE`
+does not mean an account will never be required; it is deliberately weaker
+than an observed account gate.
+
 ## Non-secret account checkpoints
 
 An account checkpoint records only a portal scope and a coarse state. It is
