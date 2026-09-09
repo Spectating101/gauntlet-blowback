@@ -45,3 +45,54 @@ test('queue prioritizes ready work by deadline and separates human attention', (
   assert.equal(queue.human_attention_queue[0].campaign_id, 'partnered');
   assert.equal(queue.human_attention_queue[0].state, 'DEPENDENCY_REQUIRED');
 });
+
+test('queue isolates malformed campaigns instead of stalling valid routes', () => {
+  const queue = compileConversionQueue([
+    { campaign_id: 'broken', project: { id: 'refinery' } },
+    input('ready'),
+  ]);
+  assert.deepEqual(queue.auto_prepare_queue.map((row) => row.campaign_id), ['ready']);
+  assert.equal(queue.failures.length, 1);
+  assert.equal(queue.failures[0].campaign_id, 'broken');
+  assert.equal(queue.counts.INVALID, 1);
+});
+
+test('queue collapses timestamp-only rediscovery', () => {
+  const first = input('same', { retrieved_at: '2026-09-01T00:00:00Z' });
+  const second = structuredClone(first);
+  second.generated_at = '2026-09-02T00:00:00Z';
+  second.opportunity.retrieved_at = '2026-09-02T00:00:00Z';
+  const queue = compileConversionQueue([first, second]);
+  assert.equal(queue.campaigns.length, 1);
+  assert.equal(queue.collapsed_duplicates.length, 1);
+});
+
+test('queue fingerprint treats evidence and claim ordering as non-material', () => {
+  const first = input('same', {
+    required_evidence: ['e:kernel', 'e:extra'],
+    available_evidence: ['e:kernel', 'e:extra'],
+  });
+  first.project.claims.push({ id: 'extra', status: 'PROVEN', text: 'extra exists', evidence_refs: ['e:extra'] });
+  first.opportunity.claim_ids = ['kernel', 'extra'];
+  const second = structuredClone(first);
+  second.project.claims.reverse();
+  second.opportunity.claim_ids.reverse();
+  second.opportunity.required_evidence.reverse();
+  second.opportunity.available_evidence.reverse();
+  const queue = compileConversionQueue([first, second]);
+  assert.equal(queue.campaigns.length, 1);
+  assert.equal(queue.collapsed_duplicates.length, 1);
+  assert.equal(queue.revision_conflicts.length, 0);
+});
+
+test('queue holds materially changed rediscovery for revision review', () => {
+  const first = input('same');
+  const second = structuredClone(first);
+  second.opportunity.eligibility = { state: 'UNKNOWN' };
+  const queue = compileConversionQueue([first, second]);
+  assert.equal(queue.campaigns.length, 1);
+  assert.equal(queue.auto_prepare_queue.length, 0);
+  assert.equal(queue.counts.VERIFICATION_REQUIRED, 1);
+  assert.equal(queue.revision_conflicts.length, 1);
+  assert.equal(queue.campaigns[0].deduplication.status, 'REVISION_REVIEW_REQUIRED');
+});
