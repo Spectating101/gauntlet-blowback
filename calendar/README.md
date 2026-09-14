@@ -1,5 +1,16 @@
 # Gauntlet calendar authority
 
+## Sep-14 freeze candidate
+
+The draft Sep-14 conversion freeze lives in:
+
+- `gauntlet-freeze-active-2026-09-14.ics` — source-verified hard-deadline spine;
+- `gauntlet-freeze-rolling-watch-2026-09-14.ics` — rolling/resource/watch actions without fabricated deadlines;
+- `../data/gauntlet-freeze-2026-09-14.json` — machine-readable route and allocation snapshot;
+- `../docs/GAUNTLET_FREEZE_2026-09-14.md` — human-readable doctrine, route corrections and development gate.
+
+While the Sep-14 freeze PR is under review, the Sep-1 consolidated files remain the committed-main authority. Once accepted, the Sep-14 freeze supersedes stale Sep-1 timing/ownership assertions for the Sep 15–Nov 30 conversion window. In particular, do not use the old Sep-6 MATS Winter Fellowship event as the current MATS authority: the verified live route is the separate MATS Residency window ending Oct 31, 2026 AoE.
+
 Cutoff: **2026-09-01 20:35 Asia/Taipei**.
 
 The calendar layer is now separated by execution semantics instead of by legacy project family.
