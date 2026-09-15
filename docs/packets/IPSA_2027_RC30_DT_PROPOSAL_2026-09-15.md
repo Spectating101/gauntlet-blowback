@@ -61,7 +61,7 @@ Fallback panel only if PL-4684 closes or rejects scope before submission:
 
 Do not submit the same paper to multiple panels.
 
-## 3. Recommended title — 12 words
+## 3. Recommended title — 13 words
 
 **Fiscal Choke Points: Institutional Design and Administrative Capacity in Southeast Asian Digital-Tax Implementation**
 
