@@ -2,45 +2,200 @@
 
 ## Scope
 
-This campaign covers **academic research conversion only**: papers, thesis-linked research, conference/workshop validation, research grants attached to papers, working-paper/archive release, and journal publication.
+This campaign covers **academic research conversion only**: papers, thesis-linked research, conference/workshop validation, research grants attached to papers, working-paper/archive release, peer-reviewed proceedings, and journal publication.
 
-It does **not** own PhD applications, jobs, research employment, fellowships whose primary purpose is placement, or other Main Quest routes. Academic outcomes may strengthen those routes later, but they are downstream consumers rather than objectives of this campaign.
+It does **not** own PhD applications, jobs, research employment, or Main Quest placement. Academic outcomes may strengthen those systems later, but they are downstream consumers rather than objectives of this campaign.
 
-The operating unit is the **research asset**, not the calendar entry.
+The operating unit is the **research asset or research program**, not the calendar entry.
 
-A route exists only because it advances a research asset toward a defined academic outcome. Deadlines constrain execution; they do not define the plan.
+A route exists only because it advances a defined research object toward a defined academic outcome. Deadlines constrain execution; they do not define the plan.
 
 ## Portfolio doctrine
 
 1. Every active paper has one current academic objective and one current stage.
-2. Every external route must have a role: `FUND_EXTEND`, `SPECIALIST_VALIDATE`, `CROSS_DOMAIN_STRESS_TEST`, `DISSEMINATE`, or `PUBLISH`.
-3. Conference count is not a success metric. Useful external feedback, funding, presentation, publication, and durable scholarly artifacts are.
-4. A route must not pull a paper backward into a weaker or superseded framing merely to fit a call.
-5. Evidence and sample gates outrank opportunity deadlines.
-6. Only one overlapping journal review may be active for a manuscript at a time.
-7. Secondary papers remain queued until their internal empirical/reproducibility gate is cleared. Gauntlet must not manufacture route activity for immature papers.
-8. Project repositories such as Policy Lab, Hardware Splicer, Cite, YZUC, Refinery, and others do not automatically become academic campaigns. They spawn an academic derivative only when a separable research contribution and a paper/system-paper object actually exist.
+2. A research program may contain several distinct papers. Related does not mean interchangeable.
+3. Every external route must have a role: `FUND_EXTEND`, `SPECIALIST_VALIDATE`, `CROSS_DOMAIN_STRESS_TEST`, `DISSEMINATE`, or `PUBLISH`.
+4. Conference count is not a success metric. Useful external feedback, funding, presentation, publication, and durable scholarly artifacts are.
+5. A route must not pull a paper backward into a weaker or superseded framing merely to fit a call.
+6. Evidence and sample gates outrank opportunity deadlines.
+7. Only one substantially overlapping peer-review lane may be active for a manuscript unless the artifacts are demonstrably non-overlapping.
+8. ECI, CL, and CL-ECI must retain explicit overlap/originality boundaries.
+9. Secondary papers remain queued until their internal empirical/reproducibility gate is cleared.
+10. Product repositories do not automatically become academic campaigns. They enter Academics only when a separable paper, system paper, dataset paper, or equivalent scholarly object exists.
 
 ## Academic portfolio board
 
 | Campaign | Current objective | Current stage | Current decisive gate | Route posture |
 |---|---|---|---|---|
-| **Fiscal Choke Points / DT** | External validation -> journal-quality paper | `EXTERNAL_VALIDATION` | convert specialist feedback/funding without diluting the frozen contribution | active outward conversion |
+| **CL-ECI synthesis** | integrated framework -> external peer review | `PRIMARY_EXTERNAL_REVIEW` | protect the integrated manuscript and clear overlap/originality | **active primary manuscript** |
+| **ECI** | standalone energy/economic-admissibility paper | `STANDALONE_MANUSCRIPT_REVALIDATION` | prove it remains distinct and reproducible after synthesis freeze | active selective |
+| **CL** | standalone institutional-constraint architecture paper | `ARCHITECTURE_LANE_SELECTION` | freeze its independent contribution vs the synthesis | active selective |
+| **Fiscal Choke Points / DT** | external validation -> journal-quality paper | `EXTERNAL_VALIDATION` | convert specialist feedback/funding without diluting the frozen contribution | active outward conversion |
 | **Invisible Ledger / IL** | empirical authority -> thesis-backed flagship paper | `EMPIRICAL_AUTHORITY_GATE` | freeze issuer/sample perimeter and rerun canonical results | outward routes held behind evidence gate |
-| **CEIR / Energy Anchoring** | reconstruct into a reproducible publication candidate | `INTERNAL_RESEARCH_UPGRADE` | replication + identification audit | no active external route yet |
-| **ESG Rebrand** | complete a defensible empirical paper | `INTERNAL_RESEARCH_UPGRADE` | data/identification completion | no active external route yet |
+| **CEIR / Energy Anchoring** | replicate and decide whether it is a distinct paper or supporting falsification result | `INTERNAL_RESEARCH_UPGRADE` | replication + identification + relation to ECI/CL-ECI | no route hunting yet |
+| **ESG Rebrand** | complete a defensible empirical paper | `INTERNAL_RESEARCH_UPGRADE` | data/identification completion | no route hunting yet |
 
-The practical WIP rule is therefore: **DT and IL are the two active academic campaigns. CEIR and ESG are queued research assets, not deadline-hunting campaigns.**
+The key correction is that **CL-ECI is not a synonym for Policy Lab**. The academic program has three paper-level objects:
+
+- **ECI — _When Does Energy Track the Real Economy?_**: measurement/admissibility;
+- **CL — _The Constrained Ledger: When Does Energy Actually Discipline Digital Money?_**: institutional constraint architecture;
+- **CL-ECI — _From Energy Signals to Constrained Claims_**: the synthesis and authority for how ECI and CL fit together.
+
+Policy Lab is an executable research environment that can demonstrate bounded mechanisms from those papers. Its runtime does not automatically upgrade their empirical or institutional claims.
 
 ---
 
-# Campaign A — Fiscal Choke Points / DT
+# Program A — CL-ECI
+
+## Program map
+
+```text
+energy-adjacent observation
+        ↓
+ECI
+when does the signal deserve economic interpretation?
+        ↓
+claim-level evidence boundary
+        ↓
+CL
+when does evidence become a binding financial constraint?
+        ↓
+CL-ECI synthesis
+how measurement, evidence and institutional closure fit together
+        ↓
+external peer review
+        ↓
+revision / publication decision
+```
+
+The papers are related, but **they are not three labels for the same manuscript**.
+
+## Campaign A1 — CL-ECI synthesis
+
+### Terminal objective
+
+Obtain an external peer-reviewed verdict on the integrated framework while preserving the four separations:
+
+1. energy adjacency -> economic information;
+2. economic information -> claim-level evidence;
+3. claim-level evidence -> binding financial constraint;
+4. constrained financial claim -> monetary performance/legal status.
+
+The current programme does not claim Boundary 4 has been crossed.
+
+### Conversion sequence
+
+```text
+synthesis authority freeze
+        ↓
+overlap/originality check against ECI + CL
+        ↓
+PRIMARY PEER-REVIEW ROUTE
+        └─ Financial Cryptography 2027
+        ↓
+external verdict / feedback
+        ↓
+revision under explicit nonclaims
+        ↓
+next publication decision
+```
+
+### Current routes
+
+| Route | Role | Why it exists | Rule |
+|---|---|---|---|
+| **Financial Cryptography 2027** | `PUBLISH` | strongest current peer-reviewed proceedings test for the integrated authorization / financial-instrument / evidence-governance architecture | primary manuscript lane; fit/page/originality check first |
+| **FTSID 2026** | `PUBLISH` fallback | local integrated finance/institutional full-paper fallback | only if FC'27 is stopped or the artifact is demonstrably non-overlapping |
+
+**Live correction:** the official FC'27 CFP now lists **24 September 2026, 23:59 AoE as the firm paper deadline**. The older Gauntlet registry still carries 17 September and must not control this campaign until reconciled.
+
+### Immediate actions
+
+1. Audit the current synthesis against FC'27's short-paper scope and page budget.
+2. Freeze a contribution/overlap map for ECI, CL, and synthesis.
+3. Package FC'27 from the synthesis authority rather than from generic Policy Lab marketing copy.
+4. Keep FTSID dormant unless the primary route is stopped or a genuinely different artifact is proven.
+5. Record reviewer feedback against the academic boundary model, not as automatic validation of the Policy Lab implementation.
+
+### Stop rules
+
+Do not claim that the prototype proves physical source truth, economically optimal issuance, production-suitable pricing, legal enforceability, bounded governance, market adoption, circulation, liquidity, general acceptability, or money.
+
+---
+
+## Campaign A2 — ECI
+
+### Research object
+
+**_When Does Energy Track the Real Economy?_**
+
+ECI owns the **measurement/admissibility** question: when an energy-adjacent signal deserves economic interpretation for a defined real-activity purpose.
+
+### Terminal objective
+
+A standalone, reproducible empirical paper whose contribution remains distinct from the institutional CL paper and from the integrated synthesis.
+
+### Required sequence
+
+```text
+standalone contribution check
+        ↓
+empirical reproduction
+        ↓
+overlap map vs CL-ECI synthesis
+        ↓
+targeted energy/sustainable-finance route census
+        ↓
+specialist validation
+        ↓
+publication decision
+```
+
+The expired **GRASFI-Asia 2027** route remains useful evidence of native venue fit: energy finance, sustainable finance, sustainability metrics/reporting and sustainable asset pricing. It is **not** a current firing route after its 31 August 2026 deadline.
+
+The next census should therefore look for ECI-native energy/sustainable-finance audiences, not generic software or crypto calls.
+
+---
+
+## Campaign A3 — CL
+
+### Research object
+
+**_The Constrained Ledger: When Does Energy Actually Discipline Digital Money?_**
+
+CL owns the **institutional constraint** question: what additional conditions make a well-evidenced financial claim non-arbitrary and meaningfully constrained.
+
+Its architecture concerns rule-bound issuance, pricing/uncertainty, settlement/shortfall consequences, and governance boundaries.
+
+### Terminal objective
+
+A distinct institutional architecture paper, not a retitled extraction of the CL-ECI synthesis.
+
+### Required sequence
+
+```text
+independent CL contribution freeze
+        ↓
+overlap map vs synthesis
+        ↓
+architecture / institutional venue recon
+        ↓
+external validation
+        ↓
+publication decision
+```
+
+The existing **WU Tax Law Technology 2027 IL × CL** route is a conditional derivative only. It belongs here only if there is a genuine tax-workflow / agentic-AI research question using CL's evidence-to-authority architecture. It is not the default CL manuscript destination.
+
+---
+
+# Campaign B — Fiscal Choke Points / DT
 
 ## Terminal objective
 
 Turn the current source-controlled comparative digital-tax paper into an **externally tested, archived, journal-submission-ready research object**, then choose one journal route and submit the strongest version.
 
-The paper's comparative unit remains the transaction path, with activation specificity, transaction-control constraint, and Stage A versus Stage B capacity preserved. Venue fit must not turn it back into a descriptive country-rate survey or an identification claim it does not make.
+The paper's comparative unit remains the transaction path, with activation specificity, transaction-control constraint, and Stage A versus Stage B capacity preserved.
 
 ## Conversion sequence
 
@@ -55,9 +210,9 @@ fund-or-extend + specialist validation
         └─ ATAx 2027 → tax-administration systems test
         ↓
 optional cross-domain stress test
-        ├─ IPSA RC30 → institutional-design / implementation audience
-        ├─ ICPP8 → public-policy panel if genuine match appears
-        └─ IRSPM → public-management route if live panel fit clears
+        ├─ IPSA RC30
+        ├─ ICPP8
+        └─ IRSPM
         ↓
 revision from serious external feedback
         ↓
@@ -66,55 +221,24 @@ one journal choice
         ├─ World Tax Journal
         ├─ eJournal of Tax Research
         └─ Journal of Comparative Policy Analysis
-        ↓
-journal submission + outcome tracking
 ```
 
-## What each current route is doing
+### Route roles
 
-| Route | Role in the plan | Why it exists | Fire rule |
-|---|---|---|---|
-| Tax Academy Singapore Research Grant | `FUND_EXTEND` | fund a bounded Singapore out-of-sample extension and obtain practitioner-facing validation | clear live mechanics/eligibility; do not represent the core paper as unfinished |
-| ATTA 2027 | `SPECIALIST_VALIDATE` | test the contribution with tax academics at low packet cost | submit the frozen abstract; attendance economics remain a later gate |
-| ATAx 2027 | `SPECIALIST_VALIDATE` | stress-test the administrative-capacity framing with a tax-administration audience | abstract can fire; registration/travel remain acceptance-stage gates |
-| IPSA RC30 | `CROSS_DOMAIN_STRESS_TEST` | test whether the institutional-design contribution travels beyond tax scholarship | only if Rome participation/funding is credible |
-| ICPP8 | `CROSS_DOMAIN_STRESS_TEST` | test the public-policy implementation contribution in a genuine accepted panel | wait for the paper-call/panel catalogue; no synthetic panel fit |
-| IRSPM | `CROSS_DOMAIN_STRESS_TEST` | public-management validation of implementation and administrative distance | watch until a real abstract/panel route exists |
-| JLTR conference | `SPECIALIST_VALIDATE` / selective | legal-tax specialist route with potentially useful review linkage | secondary only; exclusivity and travel cannot disrupt stronger sequence |
-| Regulation & Governance | `PUBLISH` | highest-upside cross-domain journal expression | after serious external feedback and final argument freeze |
-| World Tax Journal | `PUBLISH` | strongest specialist comparative/international tax alternative | mutually exclusive with overlapping journal review |
-| eJournal of Tax Research | `PUBLISH` | realistic Asia-Pacific tax-administration publication route | use if it dominates on fit/conversion after feedback |
-| Journal of Comparative Policy Analysis | `PUBLISH` | comparative-method outlet if transaction-path resolution becomes the lead contribution | do not erase the tax mechanism for generic policy language |
-
-## Current execution order
-
-1. **Tax Academy mechanics + Singapore extension packet** — closest route to converting the finished paper into funded additional evidence.
-2. **ATTA** — first specialist abstract deadline and cleanest tax-academic validation route.
-3. **ATAx** — second specialist test, with higher attendance cost retained as a later gate.
-4. **IPSA** — keep ready, but fire only if participation funding/economics clear.
-5. **ICPP8 / IRSPM** — wait for real panel/call state; preparation follows fit, not the reverse.
-6. **Journal choice** — deliberately deferred until the paper has received useful external challenge or the conference path ceases to add value.
-
-## DT success criteria
-
-The campaign is not successful because several abstracts were generated. It advances when one or more of the following occur:
-
-- external research funding for a bounded extension;
-- accepted/presented specialist conference paper with useful feedback;
-- documented revision caused by external scholarly feedback;
-- stable public/archive research object with provenance;
-- one deliberate journal submission;
-- eventual peer-reviewed publication.
+- **Tax Academy** — `FUND_EXTEND`: fund a bounded Singapore extension rather than pretending the core paper is unfinished.
+- **ATTA / ATAx** — `SPECIALIST_VALIDATE`: tax-academic / tax-administration tests.
+- **IPSA / ICPP8 / IRSPM** — `CROSS_DOMAIN_STRESS_TEST`: test whether the institutional-design contribution travels.
+- **Journal queue** — `PUBLISH`: terminal scholarly conversion after useful external feedback.
 
 ---
 
-# Campaign B — Invisible Ledger / IL
+# Campaign C — Invisible Ledger / IL
 
 ## Terminal objective
 
 Turn IL from a thesis evidence base into a **frozen, reproducible, thesis-backed flagship paper** on cross-record economic observability, then test it with the correct digital-economy/institutional audience and proceed to journal review.
 
-The campaign explicitly rejects the superseded hidden-economy residual framing. GTV, issuer revenue, merchant sales, payment flows, GDP/value added, and taxable base remain distinct objects.
+The campaign rejects the superseded hidden-economy residual framing. GTV, issuer revenue, merchant sales, payment flows, GDP/value added, and taxable base remain distinct objects.
 
 ## Conversion sequence
 
@@ -127,131 +251,82 @@ canonical empirical hierarchy freeze
         ↓
 reproducibility / certification rerun
         ↓
-thesis integration + committee/advisor authority
+thesis integration
         ↓
-external field validation
-        └─ SASE Network J by default, only after evidence gate
+SASE / field validation
         ↓
 full manuscript revision
         ↓
-journal route
-        └─ ECRA first current candidate
+ECRA or later journal choice
+```
+
+The decisive work remains the sample/perimeter authority gate. More venue discovery before that is negative-value activity.
+
+---
+
+# Campaign D — CEIR / Energy Anchoring
+
+CEIR must not be silently merged into ECI.
+
+Within the current CL-ECI research authority, the historical Bitcoin cumulative-mining-expenditure result is a **shortcut falsification**: it tests whether raw physical expenditure can bypass claim-level evidence and constraint architecture. It is not itself the ECI admissibility paper and is not a generic claim-evidence test.
+
+Required sequence:
+
+```text
+replicate original estimates
         ↓
-submission + outcome tracking
+data/code provenance audit
+        ↓
+identification/specification audit
+        ↓
+freeze relation to ECI + CL-ECI
+        ↓
+decide: standalone paper OR supporting falsification result
+        ↓
+route census only if independently publishable
 ```
-
-## What each current route is doing
-
-| Route | Role in the plan | Why it exists | Fire rule |
-|---|---|---|---|
-| SASE 2027 / Network J | `SPECIALIST_VALIDATE` | test the institutional production of economic visibility with a digital-economy/platform audience | no empirical-core submission until the longitudinal admission/perimeter rule is frozen |
-| Electronic Commerce Research and Applications | `PUBLISH` | current leading journal route for the cross-record/platform-measurement contribution | sample lock + reproducibility rerun first |
-
-## Immediate IL work is not conference work
-
-The decisive academic action is the sample/perimeter decision. Until that is resolved, adding more venues is negative-value activity because it creates pressure to describe an empirical object whose authority is still open.
-
-The correct order is:
-
-1. obtain explicit advisor ratification or rejection of the proposed scope-labelled issuer rule;
-2. update the canonical authority files only after that decision;
-3. rerun certification/reproducibility under the approved rule;
-4. integrate the frozen hierarchy into the thesis/manuscript;
-5. then convert SASE or another genuinely matching route;
-6. move to journal preparation only after the research object is stable.
-
-## IL success criteria
-
-- explicit sample/perimeter authority;
-- reproducible canonical results under that authority;
-- thesis/manuscript alignment with the same empirical hierarchy;
-- useful external field feedback without relaxing comparability;
-- one deliberate journal submission;
-- eventual peer-reviewed publication.
 
 ---
 
-# Campaign C — CEIR / Energy Anchoring
+# Campaign E — ESG Rebrand
 
-## Current objective
-
-Reconstruct the existing result into a publication candidate that survives a modern reproducibility and identification audit.
-
-## Stage
-
-`INTERNAL_RESEARCH_UPGRADE`
-
-## Required sequence
+Required sequence:
 
 ```text
-historical result
-   ↓
-replication of original estimates
-   ↓
-data + code provenance audit
-   ↓
-identification / specification audit
-   ↓
-robustness and contribution decision
-   ↓
-publication-candidate freeze
-   ↓
-route census
-```
-
-Gauntlet should **not** attach conference deadlines yet. The next action is research verification, not opportunity discovery. Once the publication candidate clears, a new route census can be run against the actual surviving contribution.
-
----
-
-# Campaign D — ESG Rebrand
-
-## Current objective
-
-Complete a defensible empirical paper around the CRSP/rebranding design before spending conversion effort on venues.
-
-## Stage
-
-`INTERNAL_RESEARCH_UPGRADE`
-
-## Required sequence
-
-```text
-current project state
-   ↓
 data completeness + sample audit
-   ↓
-identification / DiD design audit
-   ↓
+        ↓
+identification / DiD audit
+        ↓
 robustness + mechanism checks
-   ↓
+        ↓
 contribution freeze
-   ↓
+        ↓
 working-paper candidate
-   ↓
+        ↓
 route census
 ```
 
-As with CEIR, no external route count should be treated as progress before this gate is cleared.
+No external route count is progress before the research object clears this gate.
 
 ---
 
-# Academic derivative rule for portfolio projects
+# Academic derivative rule for software/projects
 
-A project can later spawn an academic campaign, but only when all of the following exist:
+A project such as Policy Lab, Hardware Splicer, Cite, YZUC/Research Drive, Refinery, or another portfolio system enters Academics only when all of the following exist:
 
 1. a separable research question or systems contribution;
 2. a stable evaluation object or empirical dataset;
 3. claim/evidence boundaries that can survive scholarly review;
-4. a manuscript, extended abstract, software-paper, dataset-paper, or equivalent academic object;
-5. a reason the academic output adds value beyond the project's own product/competition plan.
+4. a manuscript, system paper, software paper, dataset paper, or equivalent academic object;
+5. a reason the academic output adds value beyond the project's product/competition plan.
 
-This prevents the Academics plan from absorbing Policy Lab, Hardware Splicer, Cite, YZUC, Refinery, or other project campaigns merely because they could someday produce a paper.
+For Policy Lab specifically, the current ECI / CL / CL-ECI papers already satisfy the research-object requirement. The software implementation is supporting evidence and an executable demonstration, not a fourth synonym for those papers.
 
 # Relationship to Main Quest
 
 Academic conversion is an **upstream evidence producer** for Main Quest, not part of Main Quest itself.
 
-Useful spillovers include accepted conference papers, funding, archived working papers, advisor-validated thesis results, reproducible research artifacts, and journal submissions/publications. Main Quest may consume those as evidence later, but its placement/application logic remains separately governed.
+Useful spillovers include accepted conference papers, peer-review feedback, funded extensions, archived working papers, advisor-validated thesis results, reproducible research artifacts, and journal/proceedings outcomes. Main Quest may consume those later; placement logic remains separately governed.
 
 # Machine-readable source
 
@@ -259,4 +334,4 @@ Campaign truth for this layer is stored in:
 
 `data/academic-conversion-campaign-2026-09-16.json`
 
-The existing `data/research-conversion-radar-2026-09-15.json` remains the route registry. The new campaign layer explains **why each route exists, which paper it advances, what stage must precede it, and when opportunity discovery should stop**.
+The route registries remain the source for canonical opportunity records. This campaign layer explains **why a route exists, which paper it advances, which gate must precede it, and when route discovery should stop**.
