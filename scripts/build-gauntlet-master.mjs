@@ -263,7 +263,7 @@ export function buildMasterRegistry({
 export function summarizeMasterRegistry(records) {
   const countBy = (key) => Object.fromEntries(
     [...records.reduce((map, record) => map.set(record[key] || 'UNSPECIFIED', (map.get(record[key] || 'UNSPECIFIED') ?? 0) + 1), new Map()).entries()]
-      .sort((a, b) => b[1] - a[0].localeCompare(b[0])),
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])),
   );
 
   return {
