@@ -57,11 +57,18 @@
       "keywords": ["financial technology", "fintech", "computational finance", "market risk", "financial data science", "finance", "economics", "econometrics", "Python", "reinforcement learning", "machine learning", "data science", "research credits", "cloud"]
     },
     {
+      "id": "fiscal-choke-points",
+      "name": "Fiscal Choke Points / Digital Tax",
+      "opportunity_types": ["grant", "sponsorship", "fellowship", "research_assistant", "research_staff", "predoc", "research_fellowship", "policy_fellowship", "funded_visiting", "faculty_pull", "student_benefit", "institutional_entitlement", "research_credit", "pi_sponsored_credit"],
+      "discovery_queries": ["tax administration research grant", "digital economy tax research funding", "comparative tax policy fellowship", "platform VAT research", "regulatory intermediation public policy", "tax administration research assistant", "digital tax policy fellow", "fiscal capacity platform economy"],
+      "keywords": ["tax administration", "digital taxation", "digital economy tax", "VAT", "withholding", "platform liability", "regulatory intermediation", "comparative public policy", "fiscal capacity", "tax policy", "e-commerce", "ASEAN"]
+    },
+    {
       "id": "invisible-ledger",
       "name": "Invisible Ledger",
       "opportunity_types": ["grant", "sponsorship", "fellowship", "research_assistant", "research_staff", "predoc", "research_fellowship", "policy_fellowship", "funded_visiting", "student_benefit", "institutional_entitlement", "research_credit", "pi_sponsored_credit"],
-      "discovery_queries": ["digital assets research grant", "financial economics fellowship", "stablecoin research grant", "monetary economics research funding", "digital economics predoc", "tax policy research assistant", "platform economy research fellow", "blockchain research cloud credits"],
-      "keywords": ["digital assets", "financial economics", "stablecoin", "monetary economics", "digital finance", "economics", "econometrics", "tax", "platform economy", "public policy", "data science", "research credits", "cloud", "BigQuery"]
+      "discovery_queries": ["digital economy measurement grant", "platform economy research fellowship", "e-commerce measurement research", "official statistics digital economy funding", "digital payments measurement research", "platform accounting research", "administrative data economic measurement", "socioeconomics digital platforms"],
+      "keywords": ["digital economy", "platform economy", "e-commerce", "economic measurement", "accounting comparability", "official statistics", "digital payments", "administrative data", "economic observability", "Indonesia", "public policy", "data science", "research credits", "cloud", "BigQuery"]
     }
   ]
 }

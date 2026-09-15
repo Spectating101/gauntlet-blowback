@@ -15,6 +15,7 @@ const DEFAULTS = {
   nocturnalRadar: path.join(ROOT, 'data/nocturnal-conversion-radar-2026-09-01.json'),
   infrastructureRadar: path.join(ROOT, 'data/student-research-infrastructure-radar-2026-09-01.json'),
   researchResourceRadar: path.join(ROOT, 'data/research-resource-radar-2026-09-04.json'),
+  researchConversionRadar: path.join(ROOT, 'data/research-conversion-radar-2026-09-15.json'),
   fireExecutionRoutes: path.join(ROOT, 'data/fire-execution-routes-2026-09-05.json'),
   outputCsv: path.join(ROOT, 'docs/gauntlet-master.csv'),
   outputJson: path.join(ROOT, 'docs/gauntlet-master.json'),
@@ -194,6 +195,7 @@ export function buildMasterRegistry({
   nocturnalRadarPath = DEFAULTS.nocturnalRadar,
   infrastructureRadarPath = DEFAULTS.infrastructureRadar,
   researchResourceRadarPath = DEFAULTS.researchResourceRadar,
+  researchConversionRadarPath = DEFAULTS.researchConversionRadar,
   fireExecutionRoutesPath = DEFAULTS.fireExecutionRoutes,
 } = {}) {
   const longtail = parseCsv(fs.readFileSync(longtailPath, 'utf8')).map(normalizeLongtail);
@@ -205,6 +207,7 @@ export function buildMasterRegistry({
   const nocturnalRadar = JSON.parse(fs.readFileSync(nocturnalRadarPath, 'utf8'));
   const infrastructureRadar = JSON.parse(fs.readFileSync(infrastructureRadarPath, 'utf8'));
   const researchResourceRadar = JSON.parse(fs.readFileSync(researchResourceRadarPath, 'utf8'));
+  const researchConversionRadar = JSON.parse(fs.readFileSync(researchConversionRadarPath, 'utf8'));
   const fireExecutionRoutes = JSON.parse(fs.readFileSync(fireExecutionRoutesPath, 'utf8'));
 
   const records = new Map();
@@ -242,6 +245,12 @@ export function buildMasterRegistry({
   addSupplementRoutes(records, researchResourceRadar.routes, 'research-resource-radar');
   applyOverrides(records, researchResourceRadar.overrides, 'research-resource-radar');
 
+  // The Sep-15 research-conversion tranche is paper-native opportunity truth. It loads
+  // after resource/access routes so newly frozen contribution lanes can add or re-own
+  // conference, grant and journal routes without rewriting older discovery history.
+  addSupplementRoutes(records, researchConversionRadar.routes, 'research-conversion-radar');
+  applyOverrides(records, researchConversionRadar.overrides, 'research-conversion-radar');
+
   // FIRE execution mapping is intentionally separate from opportunity truth. It only
   // attaches a vetted local manifest to routes whose application copy is already ready.
   applyOverrides(records, fireExecutionRoutes.overrides, 'fire-execution-routes');
@@ -273,7 +282,7 @@ export function writeMasterRegistry(options = {}) {
   const outputJson = options.outputJson ?? DEFAULTS.outputJson;
   const payload = {
     schema: 'blowback.gauntlet_master.v1',
-    source_snapshot: '2026-09-05',
+    source_snapshot: '2026-09-15',
     summary: summarizeMasterRegistry(records),
     records,
   };
