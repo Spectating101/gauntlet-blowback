@@ -1,0 +1,242 @@
+{
+  "schema": "blowback.research_conversion_board.v1",
+  "snapshot": "2026-09-15",
+  "timezone": "Asia/Taipei",
+  "authority": "CURRENT_RESEARCH_CONVERSION_OVERLAY",
+  "human_gate": "final_submit",
+  "doctrine": {
+    "dt_and_il_are_distinct_assets": true,
+    "prepared_is_not_fired": true,
+    "fired_requires_durable_submission_evidence": true,
+    "receipt_requires_external_receipt_anchor": true,
+    "unknown_deadlines_remain_watch": true,
+    "zero_application_or_submission_fee_required": true,
+    "travel_commitment_requires_acceptance_or_funding_economics": true,
+    "thesis_remains_p0": true,
+    "main_quest_remains_phd_and_serious_employment": true
+  },
+  "assets": {
+    "dt": {
+      "canonical_label": "Fiscal Choke Points / DT",
+      "role": "comparative digital-tax and tax-administration framework",
+      "conversion_state": "CONFERENCE_GRANT_READY",
+      "lead_concepts": [
+        "activation_specificity",
+        "intermediary_placement",
+        "transaction_control_constraint",
+        "implementation_architecture"
+      ]
+    },
+    "il": {
+      "canonical_label": "The Invisible Ledger",
+      "role": "empirical platform observability and transaction-revenue research line",
+      "conversion_state": "SAMPLE_BOUNDARY_GATE",
+      "lead_concepts": [
+        "selective_distributed_observability",
+        "private_statistical_payment_administrative_ledgers",
+        "measurement_architecture"
+      ],
+      "next_gate": "freeze_indonesia_longitudinal_admission_perimeter"
+    },
+    "paired_program": {
+      "identity": "digital observability -> administrative visibility -> fiscal placement -> operational capacity",
+      "use_for": ["person_level_research_program", "phd_statement", "fellowship", "future_grant"],
+      "do_not_use_for": ["paper_merger", "duplicate_submission", "overlap_evasion"]
+    }
+  },
+  "ownership_overrides": [
+    {
+      "route_id": "tax-academy-sg-il",
+      "superseded_lead": "invisible-ledger",
+      "new_lead": "dt",
+      "effective_label": "tax-academy-sg-dt",
+      "reason": "Current Tax Academy themes and the finished comparative DT framework make DT the native lead. IL remains distinct support context only."
+    }
+  ],
+  "routes": [
+    {
+      "route_id": "tax-academy-sg-dt",
+      "lane": "GRANT",
+      "lead": "dt",
+      "support": ["il"],
+      "verification_state": "VERIFIED",
+      "application_state": "RECON",
+      "outcome_state": null,
+      "cycle_state": "CURRENT_OPEN_NO_PUBLIC_DEADLINE",
+      "strategic_status": "FIRE",
+      "deadline": null,
+      "value": {
+        "grant_max_sgd": 7500,
+        "conference_or_seminar_exposure_possible": true
+      },
+      "fit": "Digital Economy and Tax",
+      "packet_direction": "present DT as a finished comparative framework and propose Singapore/out-of-sample extension",
+      "source_verified_at": "2026-09-15",
+      "source": "https://www.taxacademy.sg/research-awards/call-for-papers/"
+    },
+    {
+      "route_id": "atta-melbourne-2027-dt",
+      "lane": "RESEARCH",
+      "lead": "dt",
+      "verification_state": "VERIFIED",
+      "application_state": "RECON",
+      "outcome_state": null,
+      "cycle_state": "CURRENT_OPEN",
+      "strategic_status": "FIRE",
+      "deadline": "2026-10-12",
+      "abstract_word_limit": 500,
+      "acceptance_notification": "2026-10-19",
+      "full_paper_deadlines": {
+        "prize_consideration": "2026-12-18",
+        "program_inclusion": "2027-01-04"
+      },
+      "conference_dates": ["2027-01-13", "2027-01-15"],
+      "location": "Monash University Caulfield Campus, Melbourne, Australia",
+      "strategic_angle": "activation specificity + transaction-control constraint + Philippine countercase",
+      "gate": "post_acceptance_travel_and_attendance_economics",
+      "source_verified_at": "2026-09-15",
+      "source": "https://atta-online.squarespace.com/melbourne-2027"
+    },
+    {
+      "route_id": "atax-tax-administration-2027-dt",
+      "lane": "RESEARCH",
+      "lead": "dt",
+      "verification_state": "VERIFIED",
+      "application_state": "RECON",
+      "outcome_state": null,
+      "cycle_state": "CURRENT_OPEN",
+      "strategic_status": "DEPENDENCY_REQUIRED",
+      "deadline": "2026-10-30",
+      "acceptance_notification": "END_2026_11",
+      "full_paper_deadline": "2027-01-12",
+      "conference_dates": ["2027-04-06", "2027-04-07"],
+      "location": "Sydney, Australia",
+      "cost_gate": {
+        "full_conference_early_bird_aud": 985,
+        "student_full_conference_aud": 590,
+        "commit_only_after_acceptance_or_funding_logic": true
+      },
+      "fit": "tax administration under technological and institutional change",
+      "source_verified_at": "2026-09-15",
+      "source": "https://www.unsw.edu.au/business/our-schools/accounting-auditing-taxation/news-events/17th-international-atax-tax-administration-conference"
+    },
+    {
+      "route_id": "ipsa-2027-rc30-dt",
+      "lane": "RESEARCH",
+      "lead": "dt",
+      "verification_state": "VERIFIED",
+      "application_state": "RECON",
+      "outcome_state": null,
+      "cycle_state": "CURRENT_OPEN",
+      "strategic_status": "DEPENDENCY_REQUIRED",
+      "deadline": "2026-11-04",
+      "conference_dates": ["2027-07-24", "2027-07-28"],
+      "location": "Rome, Italy",
+      "participation_mode": "IN_PERSON",
+      "submission_account": "FREE_IPSA_ONLINE_ACCOUNT",
+      "participation_gate": "IPSA membership and registration required if accepted",
+      "strategic_angle": "regulatory intermediation + administrable placement + comparative implementation architecture",
+      "preferred_track": "RC30 Comparative Public Policy",
+      "source_verified_at": "2026-09-15",
+      "sources": [
+        "https://wc2027.ipsa.org/wc/submit-paper",
+        "https://wc2027.ipsa.org/page/rc30-comparative-public-policy"
+      ]
+    },
+    {
+      "route_id": "icpp8-rennes-2027-dt",
+      "lane": "RESEARCH",
+      "lead": "dt",
+      "verification_state": "VERIFIED",
+      "application_state": "RECON",
+      "outcome_state": null,
+      "cycle_state": "UPCOMING_CALL",
+      "strategic_status": "HOLD",
+      "call_open": "2026-11-16",
+      "deadline": "2027-01-29",
+      "conference_dates": ["2027-07-07", "2027-07-09"],
+      "location": "Rennes, France",
+      "participation_mode": "HYBRID_OR_VIRTUAL_BY_PANEL",
+      "gate": "match to a native activation/intermediation/administrative-capacity/digital-government panel",
+      "source_verified_at": "2026-09-15",
+      "source": "https://www.ippapublicpolicy.org/conference/icpp8-rennes-2027/29"
+    },
+    {
+      "route_id": "sase-2027-il",
+      "lane": "RESEARCH",
+      "lead": "il",
+      "verification_state": "VERIFIED",
+      "application_state": "RECON",
+      "outcome_state": null,
+      "cycle_state": "UPCOMING_GENERAL_SUBMISSIONS",
+      "strategic_status": "HOLD",
+      "deadlines": {
+        "mini_conference": "2026-11-01",
+        "standing_network": "2026-12-16"
+      },
+      "virtual_conference_dates": ["2027-06-16", "2027-06-18"],
+      "fit": "platforms + digitalization + measurement + institutions + market/state visibility",
+      "gate": "choose one native mini-conference or standing network after stream publication; do not duplicate",
+      "source_verified_at": "2026-09-15",
+      "source": "https://sase.org/events/2027-glasgow/"
+    },
+    {
+      "route_id": "irspm-trondheim-2027-dt",
+      "lane": "RESEARCH",
+      "lead": "dt",
+      "verification_state": "VERIFIED_STAGE_ONLY",
+      "application_state": "RECON",
+      "outcome_state": null,
+      "cycle_state": "WATCH_ABSTRACT_CALL",
+      "strategic_status": "HOLD",
+      "deadline": null,
+      "conference_dates": ["2027-04-28", "2027-04-30"],
+      "location": "Trondheim, Norway",
+      "current_stage": "CALL_FOR_PANELS",
+      "gate": "abstract call + native panel + travel/funding economics",
+      "source_verified_at": "2026-09-15",
+      "source": "https://www.irspm.org/conferences/conference-2027"
+    }
+  ],
+  "journal_tracks": {
+    "dt_after_first_conference_feedback": [
+      "Regulation & Governance",
+      "World Tax Journal",
+      "eJournal of Tax Research",
+      "Journal of Comparative Policy Analysis"
+    ],
+    "il_after_longitudinal_sample_freeze": [
+      "Electronic Commerce Research and Applications",
+      "Socio-Economic Review"
+    ]
+  },
+  "archive_lane": {
+    "dt_first": true,
+    "il_after_sample_freeze": true,
+    "artifacts": [
+      "versioned_research_release",
+      "zenodo_doi",
+      "CITATION.cff",
+      "release_manifest",
+      "claim_source_map",
+      "licensing_notes",
+      "checksums"
+    ],
+    "nonclaim": "archiving creates a citable frozen object; it is not external validation"
+  },
+  "kill_rules": [
+    "generic_economics_route_requires_unavailable_causal_identification",
+    "application_or_submission_fee_required",
+    "expensive_international_attendance_before_acceptance_or_funding_economics",
+    "ai_or_originality_declaration_incompatible_with_actual_manuscript_process",
+    "dt_intellectual_expansion_only_to_fit_route",
+    "il_route_depends_on_unfrozen_core_longitudinal_sample"
+  ],
+  "next_actions": [
+    "freeze_tax_academy_dt_proposal_packet",
+    "freeze_citable_dt_archive_release",
+    "draft_atta_500_word_abstract_from_existing_dt_contribution",
+    "freeze_il_indonesia_longitudinal_admission_perimeter",
+    "match_icpp8_and_sase_streams_when_calls_are live"
+  ]
+}
