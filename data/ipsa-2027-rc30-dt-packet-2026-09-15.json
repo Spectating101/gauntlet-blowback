@@ -1,0 +1,96 @@
+{
+  "schema": "blowback.conference_paper_proposal_packet.v1",
+  "snapshot": "2026-09-15",
+  "route_id": "ipsa-2027-rc30-fiscal-choke-points",
+  "primary_asset": "Fiscal Choke Points",
+  "state": "PROPOSAL_FROZEN_FUNDING_GATE",
+  "strategic_status": "FUNDING_GATED",
+  "execution_state": "DEPENDENCY_RECON_REQUIRED",
+  "human_gate": [
+    "inspect_live_ipsa_account_fields_and_declarations",
+    "final_online_submit",
+    "membership_registration_and_travel_commitment_if_accepted"
+  ],
+  "opportunity": {
+    "organization": "International Political Science Association",
+    "congress": "29th IPSA World Congress of Political Science",
+    "congress_theme": "Uncertain Democracies: Rethinking Governance in a Changing Global System",
+    "dates": ["2027-07-24", "2027-07-25", "2027-07-26", "2027-07-27", "2027-07-28"],
+    "location": "Rome, Italy",
+    "proposal_deadline": "2026-11-04",
+    "notification_date": "2027-01-22",
+    "registration_opens": "2027-01-22",
+    "early_bird_registration_deadline": "2027-03-18",
+    "conservative_final_registration_deadline": "2027-05-05",
+    "full_paper_upload_deadline": "2027-07-01",
+    "presentation_mode": "IN_PERSON_ONLY",
+    "free_account_sufficient_for_submission": true,
+    "membership_required_for_submission": false,
+    "membership_required_for_participation": true,
+    "title_word_limit": 25,
+    "abstract_word_limit": 350,
+    "abstract_must_cover": ["research_question", "brief_methodological_approach"],
+    "abstract_must_not_include": ["references", "bibliographic_notes", "contact_information"],
+    "official_submit_source": "https://wc2027.ipsa.org/wc/submit-paper",
+    "official_registration_source": "https://wc2027.ipsa.org/wc/registration",
+    "verified_at": "2026-09-15"
+  },
+  "panel": {
+    "primary_panel_id": "PL-4684",
+    "title": "Institutional Design for Policy Implementation: Arrangements, Capacities, and Performance",
+    "tracks": ["RC30 Comparative Public Policy", "RC32 Public Policy and Administration"],
+    "type": "Open Panel",
+    "language": "English",
+    "fit": "Direct match for implementation arrangements distributing authority/responsibility across public and private actors and for the relationship between institutional design and administrative capacity.",
+    "source": "https://wc2027.ipsa.org/wc/panel/institutional-design-policy-implementation-arrangements-capacities-and-performance",
+    "fallback_panel": {
+      "panel_id": "PL-4812",
+      "title": "New Theoretical and Methodological Perspectives in Comparative Policy Studies",
+      "use_only_if_primary_unavailable_or_scope_rejected": true
+    },
+    "duplicate_panel_submission": false
+  },
+  "proposal": {
+    "title": "Fiscal Choke Points: Institutional Design and Administrative Capacity in Southeast Asian Digital-Tax Implementation",
+    "title_word_count": 13,
+    "abstract_word_count": 316,
+    "language": "English",
+    "abstract": "How does institutional design determine which private actors become implementation nodes in digital-tax policy, and what administrative capacities are required for those arrangements to function? This paper answers that question through a transaction-path comparison of seven digital-tax arrangements in Malaysia, Indonesia, Vietnam, Thailand, and the Philippines.\n\nThe analysis treats the legally distinct transaction path, rather than the country, as the unit of comparison. Using current legislation, regulations, tax-administration guidance, and official procedural material, each path is coded through the taxable object, liable node, destination or nexus evidence, activation mechanism, transaction rail, filing or remittance cadence, and reconciliation power. A second layer distinguishes node locus—where implementation responsibility is placed—from event coupling—how closely the assigned fiscal function is connected to payment or transaction-confirmation events. Boundary cases within the same national regime are used to test whether the apparent implementing actor actually carries the duty under changed transaction conditions.\n\nTwo comparative propositions emerge. First, intermediary liability is activation-specific: platform participation alone does not constitute an implementation arrangement. Thailand conditions the selected platform VAT role on control of a continuous process from offering through payment and delivery; Vietnam’s selected withholding path turns on online-ordering and payment functionality; Indonesia’s PMSE collector role requires formal appointment; and a Philippine countercase shows that marketplace facilitation without control of payment does not activate the cited marketplace VAT liability. Second, transaction-level fiscal action is most tightly coupled where the assigned node has contemporaneous access to payment or transaction-confirmation information.\n\nThe paper contributes to comparative policy implementation by conceptualizing fiscal-node placement as an institutional-design choice that distributes authority and administrative burden across public and private actors. It also separates formal implementation architecture from operational capacity: filing, correction, refund, audit, appeal, enforcement, and observed outcomes are coded as a distinct layer rather than inferred from the existence of a legal duty. This allows comparison of implementation arrangements without converting documented institutional design into unsupported claims about performance."
+  },
+  "contribution_boundary": {
+    "core_claim": "Fiscal-node placement is an institutional implementation arrangement that allocates bounded public functions to specific public/private actors, with viability conditioned by transaction information and downstream administrative capacities.",
+    "new_empirical_results_added_for_venue": false,
+    "causal_effect_claim": false,
+    "country_ranking": false,
+    "universal_platform_superiority_claim": false,
+    "documented_procedure_equals_performance_claim": false
+  },
+  "funding_and_participation": {
+    "submission_fee_required": false,
+    "buy_membership_before_submission": false,
+    "in_person_gate_active": true,
+    "student_rate_eligibility_must_be_reverified_at_registration": true,
+    "registration_fee_depends_on_residence_group_and_category": true,
+    "general_travel_grant": {
+      "available": true,
+      "application_window": ["2026-12-04", "2027-02-03"],
+      "guaranteed": false
+    },
+    "stein_rokkan_travel_grant": {
+      "amount_usd": 1000,
+      "deadline": "2027-03-01",
+      "normally_doctoral": true,
+      "masters_exception_possible_under_published_criteria": true,
+      "guaranteed": false,
+      "source": "https://wc2027.ipsa.org/page/awards-stein-rokkan-travel-grant-award"
+    },
+    "decision_rule": "Submit because proposal submission is free and panel fit is native; do not commit to Rome spending until acceptance plus a credible funding/economics decision."
+  },
+  "known_source_discrepancy": {
+    "field": "final_participant_registration_deadline",
+    "proposal_and_registration_pages": "2027-05-05",
+    "one_faq_rendering": "later date shown",
+    "operational_rule": "use 2027-05-05 until IPSA reconciles the discrepancy"
+  },
+  "packet_doc": "docs/packets/IPSA_2027_RC30_DT_PROPOSAL_2026-09-15.md"
+}
