@@ -95,6 +95,26 @@ test('submitted fire receipts require durable receipt evidence and become checkp
   assert.equal(checkpoint.status, 'SUBMITTED');
   assert.equal(checkpoint.route_id, receipt.route_id);
   assert.deepEqual(checkpoint.receipt_refs, ['confirmation-screenshot.png']);
+  assert.equal(checkpoint.application_id, 'APP-123');
+  assert.equal(checkpoint.submitted_at, '2026-09-05T01:00:00+08:00');
+  assert.equal(checkpoint.next_expected_event, 'quarterly review');
+});
+
+test('fire receipts reject cross-route identity and malformed submission timestamps', () => {
+  assert.throws(() => validateFireReceipt({
+    mission_id: 'mission:other',
+    route_id: 'test',
+    status: 'WAITING_HUMAN',
+    stage: 'review',
+  }), /does not match route_id/i);
+  assert.throws(() => validateFireReceipt({
+    mission_id: 'mission:test',
+    route_id: 'test',
+    status: 'SUBMITTED',
+    stage: 'confirmation',
+    submitted_at: 'not-a-date',
+    application_id: 'APP-123',
+  }), /valid submitted_at/i);
 });
 
 test('fire receipts reject submission without receipt evidence', () => {

@@ -114,6 +114,10 @@ function inferHumanGates(record) {
 
 export function buildBrowserMission(record, checkpoint = null) {
   if (!record?.id) throw new Error('master record with id required');
+  const missionId = `mission:${record.id}`;
+  if (checkpoint && (checkpoint.route_id !== record.id || checkpoint.mission_id !== missionId)) {
+    throw new Error(`checkpoint identity does not match route: ${record.id}`);
+  }
   const allocation = resolvePortfolioAllocation(record);
   const leadLabel = allocation.lead_asset && allocation.lead_asset !== 'PERSON'
     ? ` Use ${allocation.lead_asset} as the lead evidence package.`
@@ -124,7 +128,7 @@ export function buildBrowserMission(record, checkpoint = null) {
         : '';
   return {
     schema: 'blowback.codex_browser_mission.v1',
-    mission_id: `mission:${record.id}`,
+    mission_id: missionId,
     route_id: record.id,
     objective: `Advance ${record.organization || record.opportunity}: ${record.opportunity || record.id} through the live web workflow to the last safe reversible state.${leadLabel}`,
     strategic: {

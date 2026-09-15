@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { randomUUID } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -30,6 +31,9 @@ export function validateCheckpoint(raw) {
   if (!raw || typeof raw !== 'object') throw new Error('checkpoint object required');
   if (!raw.route_id || typeof raw.route_id !== 'string') throw new Error('checkpoint route_id required');
   if (!raw.mission_id || typeof raw.mission_id !== 'string') throw new Error('checkpoint mission_id required');
+  if (raw.mission_id !== `mission:${raw.route_id}`) {
+    throw new Error(`checkpoint mission_id does not match route_id: ${raw.mission_id} != mission:${raw.route_id}`);
+  }
   if (!ALLOWED_STATUS.has(raw.status)) throw new Error(`unsupported checkpoint status: ${raw.status}`);
   if (!raw.stage || typeof raw.stage !== 'string') throw new Error('checkpoint stage required');
   assertNoSecretKeys(raw);
@@ -46,6 +50,10 @@ export function validateCheckpoint(raw) {
     unresolved_items: ensureStringArray(raw.unresolved_items, 'unresolved_items'),
     human_required: ensureStringArray(raw.human_required, 'human_required'),
     receipt_refs: ensureStringArray(raw.receipt_refs, 'receipt_refs'),
+    application_id: raw.application_id ?? null,
+    submitted_at: raw.submitted_at ?? null,
+    next_expected_event: raw.next_expected_event ?? null,
+    resource_or_award_terms: raw.resource_or_award_terms ?? null,
     note: raw.note ?? null,
     observed_at: raw.observed_at ?? new Date().toISOString(),
   };
@@ -55,6 +63,13 @@ export function persistCheckpoint(raw) {
   const checkpoint = validateCheckpoint(raw);
   fs.mkdirSync(STATE_DIR, { recursive: true });
   const file = path.join(STATE_DIR, `${checkpoint.route_id}.json`);
-  fs.writeFileSync(file, `${JSON.stringify(checkpoint, null, 2)}\n`, { mode: 0o600 });
+  const temporary = `${file}.${process.pid}.${randomUUID()}.tmp`;
+  try {
+    fs.writeFileSync(temporary, `${JSON.stringify(checkpoint, null, 2)}\n`, { mode: 0o600, flag: 'wx' });
+    fs.renameSync(temporary, file);
+  } catch (error) {
+    try { fs.unlinkSync(temporary); } catch {}
+    throw error;
+  }
   return { checkpoint, file };
 }
