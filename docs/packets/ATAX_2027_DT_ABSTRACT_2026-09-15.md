@@ -60,7 +60,7 @@ Second, transaction-level fiscal action is most tightly coupled where the liable
 
 For resilient tax-system design, the implication is that “taxing platforms” is too coarse a reform category. Administrations must specify which actor performs which fiscal function, for which transaction class, under what legal trigger, and with what information or transaction-control capability. The framework offers a source-controlled way to compare technology-enabled tax administration while preserving the distinction between legal assignment and operational performance.
 
-## 5. Short professional bio — 74 words
+## 5. Short professional bio — 73 words
 
 Christopher Ongko is a master's researcher in Finance at Yuan Ze University, Taiwan. His research examines digital-market measurement, tax-administration architecture, and the institutional design of technology-enabled financial systems. His current work on Fiscal Choke Points develops a source-controlled transaction-path framework for comparing how Southeast Asian tax administrations assign fiscal functions to foreign suppliers, digital platforms, buyers, and other intermediaries. He also develops research-software systems for evidence provenance, reproducible analysis, and computational research workflows.
 
