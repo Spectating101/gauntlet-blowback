@@ -1,15 +1,5 @@
 # Gauntlet calendar authority
 
-## Sep-15 DT + Invisible Ledger research-conversion overlay
-
-The research-paper lane now has a separate current overlay so Digital Tax / Fiscal Choke Points and Invisible Ledger are not collapsed into one route family:
-
-- `dt-il-conversion-2026-2027.ics` — verified DT/IL conference deadlines and conditional outcome dates;
-- `../data/dt-il-conversion-board-2026-09-15.json` — machine-readable route states, ownership override, journal/watch lanes and kill rules;
-- `../docs/DT_IL_CONVERSION_BOARD_2026-09-15.md` — human-readable Gauntlet list and sequencing.
-
-Current ownership correction: **Tax Academy Singapore is DT / Fiscal Choke Points led**, superseding the older `tax-academy-sg-il` assignment. **SASE 2027 is Invisible Ledger led.** ICPP8 remains a panel-match route; IRSPM remains WATCH until its abstract call is source-locked. Prepared is still not FIRED and no route becomes RECEIPT without durable external evidence.
-
 ## Sep-15 Main Quest overlay
 
 Primary career/degree routes are now separated from the broader opportunity calendar:
@@ -23,8 +13,10 @@ Main Quest semantics:
 - thesis completion remains P0;
 - Main Quest A = funded PhD option creation (NYCU, NTU, NTHU, NCCU);
 - Main Quest B = upper-tail full-time/research employment price discovery;
-- fellowships, competitions, grants, credits and pilots remain side quests unless a hard deadline or exceptional expected value justifies displacement;
+- fellowships, competitions, grants, credits, conferences and pilots remain side quests unless a hard deadline or exceptional expected value justifies displacement;
 - NTHU 116 exact dates remain `WATCH/REVERIFY` until an official 116 doctoral brochure is source-locked.
+
+The canonical Sep-15 DT/IL paper-native conversion tranche remains `../docs/longtail/research-conversion-gauntlet-2026-09-15.md` plus `../data/research-conversion-radar-2026-09-15.json`; this Main Quest overlay does not duplicate or override that authority.
 
 ## Sep-14 freeze candidate
 
@@ -35,7 +27,7 @@ The draft Sep-14 conversion freeze lives in:
 - `../data/gauntlet-freeze-2026-09-14.json` — machine-readable route and allocation snapshot;
 - `../docs/GAUNTLET_FREEZE_2026-09-14.md` — human-readable doctrine, route corrections and development gate.
 
-While the Sep-14 freeze PR is under review, the Sep-1 consolidated files remain the committed-main authority. Once accepted, the Sep-14 freeze supersedes stale Sep-1 timing/ownership assertions for the Sep 15–Nov 30 conversion window. In particular, do not use the old Sep-6 MATS Winter Fellowship event as the current MATS authority: the verified live route is the separate MATS Residency window ending Oct 31, 2026 AoE.
+Once accepted, the Sep-14 freeze supersedes stale Sep-1 timing/ownership assertions for the Sep 15–Nov 30 conversion window where it is more specific. It does not supersede the newer Sep-15 research-conversion tranche. In particular, do not use the old Sep-6 MATS Winter Fellowship event as the current MATS authority: the verified live route is the separate MATS Residency window ending Oct 31, 2026 AoE.
 
 Cutoff: **2026-09-01 20:35 Asia/Taipei**.
 
