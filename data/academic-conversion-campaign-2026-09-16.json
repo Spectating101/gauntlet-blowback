@@ -1,0 +1,182 @@
+{
+  "schema": "blowback.academic_conversion_campaign.v1",
+  "snapshot": "2026-09-16",
+  "scope": {
+    "includes": [
+      "paper development",
+      "thesis-linked research",
+      "research grants attached to papers",
+      "conference and workshop validation",
+      "working-paper and archive release",
+      "journal publication"
+    ],
+    "excludes": [
+      "phd",
+      "job",
+      "research employment",
+      "main quest placement"
+    ],
+    "main_quest_relationship": "UPSTREAM_EVIDENCE_PRODUCER"
+  },
+  "doctrine": {
+    "research_asset_is_planning_unit": true,
+    "calendar_entry_is_not_plan": true,
+    "route_requires_campaign_role": true,
+    "evidence_gate_overrides_deadline": true,
+    "conference_count_is_not_success_metric": true,
+    "single_overlapping_journal_review_per_manuscript": true,
+    "immature_papers_do_not_receive_external_route_pressure": true,
+    "portfolio_projects_require_separable_academic_derivative_before_entry": true
+  },
+  "route_roles": [
+    "FUND_EXTEND",
+    "SPECIALIST_VALIDATE",
+    "CROSS_DOMAIN_STRESS_TEST",
+    "DISSEMINATE",
+    "PUBLISH"
+  ],
+  "campaigns": [
+    {
+      "id": "academic-fiscal-choke-points",
+      "asset": "Fiscal Choke Points",
+      "alias": "DT",
+      "priority": 1,
+      "state": "ACTIVE",
+      "stage": "EXTERNAL_VALIDATION",
+      "terminal_objective": "Externally tested, archived, journal-submission-ready comparative digital-tax paper followed by one deliberate journal submission.",
+      "current_decisive_gate": "Convert specialist feedback and funding without diluting transaction-path comparison, activation specificity, transaction-control constraint, or Stage A versus Stage B capacity.",
+      "sequence": [
+        "FROZEN_RESEARCH_OBJECT",
+        "ARCHIVE_AND_PROVENANCE",
+        "FUND_OR_SPECIALIST_VALIDATE",
+        "OPTIONAL_CROSS_DOMAIN_STRESS_TEST",
+        "REVISION_FROM_EXTERNAL_FEEDBACK",
+        "ONE_JOURNAL_CHOICE",
+        "JOURNAL_SUBMISSION",
+        "OUTCOME_TRACKING"
+      ],
+      "routes": [
+        {"route_id": "tax-academy-sg-il", "role": "FUND_EXTEND", "order": 1},
+        {"route_id": "atta-2027-fiscal-choke-points", "role": "SPECIALIST_VALIDATE", "order": 2},
+        {"route_id": "atax-2027-fiscal-choke-points", "role": "SPECIALIST_VALIDATE", "order": 3},
+        {"route_id": "ipsa-2027-rc30-fiscal-choke-points", "role": "CROSS_DOMAIN_STRESS_TEST", "order": 4},
+        {"route_id": "icpp8-2027-fiscal-choke-points", "role": "CROSS_DOMAIN_STRESS_TEST", "order": 5},
+        {"route_id": "irspm-2027-fiscal-choke-points", "role": "CROSS_DOMAIN_STRESS_TEST", "order": 6},
+        {"route_id": "ata-jltr-2027-fiscal-choke-points", "role": "SPECIALIST_VALIDATE", "order": 7, "selective": true},
+        {"route_id": "journal-regulation-governance-fiscal-choke-points", "role": "PUBLISH", "order": 8},
+        {"route_id": "journal-world-tax-journal-fiscal-choke-points", "role": "PUBLISH", "order": 8},
+        {"route_id": "journal-ejtr-fiscal-choke-points", "role": "PUBLISH", "order": 8},
+        {"route_id": "journal-jcpa-fiscal-choke-points", "role": "PUBLISH", "order": 8}
+      ],
+      "next_actions": [
+        "Resolve Tax Academy live mechanics and eligibility for the already-prepared Singapore extension packet.",
+        "Keep ATTA abstract as the first specialist submission sequence.",
+        "Keep ATAx abstract second while preserving acceptance-stage cost gating.",
+        "Treat IPSA as funding-dependent rather than prestige-driven.",
+        "Wait for genuine ICPP8 and IRSPM panel/call fit before additional packet work.",
+        "Defer final journal choice until useful external feedback arrives or conference validation stops adding value."
+      ],
+      "success_signals": [
+        "external research funding",
+        "accepted and presented specialist conference paper",
+        "documented revision caused by external scholarly feedback",
+        "stable archived research object",
+        "one deliberate journal submission",
+        "peer-reviewed publication"
+      ]
+    },
+    {
+      "id": "academic-invisible-ledger",
+      "asset": "Invisible Ledger",
+      "alias": "IL",
+      "priority": 2,
+      "state": "ACTIVE_GATED",
+      "stage": "EMPIRICAL_AUTHORITY_GATE",
+      "terminal_objective": "Frozen, reproducible, thesis-backed flagship paper on cross-record economic observability followed by external field validation and journal submission.",
+      "current_decisive_gate": "Explicitly freeze the issuer/sample perimeter and canonical empirical hierarchy before presenting the empirical core externally.",
+      "sequence": [
+        "ISSUER_SAMPLE_PERIMETER_DECISION",
+        "CANONICAL_EMPIRICAL_HIERARCHY_FREEZE",
+        "REPRODUCIBILITY_CERTIFICATION_RERUN",
+        "THESIS_MANUSCRIPT_ALIGNMENT",
+        "EXTERNAL_FIELD_VALIDATION",
+        "FULL_MANUSCRIPT_REVISION",
+        "JOURNAL_SUBMISSION",
+        "OUTCOME_TRACKING"
+      ],
+      "routes": [
+        {"route_id": "sase-2027-invisible-ledger", "role": "SPECIALIST_VALIDATE", "order": 1, "blocked_by": "ISSUER_SAMPLE_PERIMETER_DECISION"},
+        {"route_id": "journal-ecra-invisible-ledger", "role": "PUBLISH", "order": 2, "blocked_by": "REPRODUCIBILITY_CERTIFICATION_RERUN"}
+      ],
+      "next_actions": [
+        "Obtain explicit advisor ratification or rejection of the proposed scope-labelled issuer rule.",
+        "Update canonical authority files only after that decision.",
+        "Rerun certification and reproducibility under the approved rule.",
+        "Align thesis and manuscript to the same empirical hierarchy.",
+        "Only then convert SASE Network J or another genuinely matching field-validation route."
+      ],
+      "nonclaims": [
+        "Do not revive the hidden-economy residual framing.",
+        "Do not equate GTV, issuer revenue, merchant sales, payment flows, GDP/value added, or taxable base.",
+        "Do not relax comparability to increase sample size for a venue."
+      ],
+      "success_signals": [
+        "explicit sample/perimeter authority",
+        "reproducible canonical results",
+        "thesis and manuscript alignment",
+        "useful external field feedback",
+        "one deliberate journal submission",
+        "peer-reviewed publication"
+      ]
+    },
+    {
+      "id": "academic-ceir-energy-anchoring",
+      "asset": "CEIR / Energy Anchoring",
+      "priority": 3,
+      "state": "QUEUED",
+      "stage": "INTERNAL_RESEARCH_UPGRADE",
+      "terminal_objective": "Reproducible publication candidate with a contribution that survives replication and identification audit.",
+      "current_decisive_gate": "Replicate original estimates and complete data/code provenance plus identification/specification audit before route discovery.",
+      "sequence": [
+        "REPLICATE_ORIGINAL_ESTIMATES",
+        "DATA_CODE_PROVENANCE_AUDIT",
+        "IDENTIFICATION_SPECIFICATION_AUDIT",
+        "ROBUSTNESS_AND_CONTRIBUTION_DECISION",
+        "PUBLICATION_CANDIDATE_FREEZE",
+        "ROUTE_CENSUS"
+      ],
+      "routes": [],
+      "route_discovery_allowed": false
+    },
+    {
+      "id": "academic-esg-rebrand",
+      "asset": "ESG Rebrand",
+      "priority": 4,
+      "state": "QUEUED",
+      "stage": "INTERNAL_RESEARCH_UPGRADE",
+      "terminal_objective": "Defensible empirical working paper with complete sample, identification, robustness, and contribution boundaries.",
+      "current_decisive_gate": "Complete data/sample audit and identification/DiD design audit before route discovery.",
+      "sequence": [
+        "DATA_COMPLETENESS_SAMPLE_AUDIT",
+        "IDENTIFICATION_DID_DESIGN_AUDIT",
+        "ROBUSTNESS_MECHANISM_CHECKS",
+        "CONTRIBUTION_FREEZE",
+        "WORKING_PAPER_CANDIDATE",
+        "ROUTE_CENSUS"
+      ],
+      "routes": [],
+      "route_discovery_allowed": false
+    }
+  ],
+  "portfolio_rules": {
+    "active_outward_campaigns": [
+      "academic-fiscal-choke-points",
+      "academic-invisible-ledger"
+    ],
+    "queued_internal_campaigns": [
+      "academic-ceir-energy-anchoring",
+      "academic-esg-rebrand"
+    ],
+    "default_new_project_policy": "NO_ACADEMIC_CAMPAIGN_UNTIL_SEPARABLE_RESEARCH_OBJECT_EXISTS"
+  }
+}
