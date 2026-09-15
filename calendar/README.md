@@ -1,5 +1,21 @@
 # Gauntlet calendar authority
 
+## Sep-15 Main Quest overlay
+
+Primary career/degree routes are now separated from the broader opportunity calendar:
+
+- `gauntlet-main-quest-2026-09-15.ics` — PhD + serious full-time/research-employment execution calendar;
+- `../data/main-quest-board-2026-09-15.json` — machine-readable PhD/job route board;
+- `../docs/MAIN_QUEST_BOARD_2026-09-15.md` — human-readable doctrine, route fit, dates, recommender allocation and operating rhythm.
+
+Main Quest semantics:
+
+- thesis completion remains P0;
+- Main Quest A = funded PhD option creation (NYCU, NTU, NTHU, NCCU);
+- Main Quest B = upper-tail full-time/research employment price discovery;
+- fellowships, competitions, grants, credits and pilots remain side quests unless a hard deadline or exceptional expected value justifies displacement;
+- NTHU 116 exact dates remain `WATCH/REVERIFY` until an official 116 doctoral brochure is source-locked.
+
 ## Sep-14 freeze candidate
 
 The draft Sep-14 conversion freeze lives in:
