@@ -1,5 +1,15 @@
 # Gauntlet calendar authority
 
+## Sep-15 DT + Invisible Ledger research-conversion overlay
+
+The research-paper lane now has a separate current overlay so Digital Tax / Fiscal Choke Points and Invisible Ledger are not collapsed into one route family:
+
+- `dt-il-conversion-2026-2027.ics` — verified DT/IL conference deadlines and conditional outcome dates;
+- `../data/dt-il-conversion-board-2026-09-15.json` — machine-readable route states, ownership override, journal/watch lanes and kill rules;
+- `../docs/DT_IL_CONVERSION_BOARD_2026-09-15.md` — human-readable Gauntlet list and sequencing.
+
+Current ownership correction: **Tax Academy Singapore is DT / Fiscal Choke Points led**, superseding the older `tax-academy-sg-il` assignment. **SASE 2027 is Invisible Ledger led.** ICPP8 remains a panel-match route; IRSPM remains WATCH until its abstract call is source-locked. Prepared is still not FIRED and no route becomes RECEIPT without durable external evidence.
+
 ## Sep-15 Main Quest overlay
 
 Primary career/degree routes are now separated from the broader opportunity calendar:
