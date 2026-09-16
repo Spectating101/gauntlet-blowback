@@ -442,10 +442,10 @@ Execution checkpoint on 2026-09-17:
 5. `HS-PKG-03` — complete; offline demonstration and packaging QA are prepared, with 49 SPI/FCT tests green and all new relative links resolving.
 6. `HS-ART-01` — scope inventory complete; third-party vendor PDFs and ambiguous media are explicitly excluded from the initial archive.
 7. `HS-ART-02` — metadata, CFF draft, and machine-readable archive manifest complete; actual archive assembly/publication remains gated.
-8. `HS-EVAL-01` — existing core research protocol is bound to the frozen release; the scenario corpus is the next autonomous research task.
+8. `HS-EVAL-01` — complete; the protocol, event rubric, and adjudication guide are bound to the frozen release. `HS-EVAL-02` is also complete because the ten-case corpus already exists and validates. The real missing engineering gate is a matched non-destructive reference/advisory runner; the current runner covers only the constrained condition.
 9. `HS-PHY-01` — complete; provider package identity, contents, and physical nonclaims were reverified without vendor contact.
 10. `HS-PLAN-01` — complete; Embedded World is registered in Gauntlet and the active calendar without entering FIRE.
 
-The next executable autonomous work is `HS-EVAL-02` (freeze the scenario corpus) and continued route packaging. The immediate human checkpoint is deliberately small: Embedded World account identity/attendance/attestations, license scope, archive-publication authority, and quotation budget authority.
+The next executable autonomous engineering work is the matched reference/advisory runner and continued route packaging. Paid scored runs remain blocked until treatment parity, a paired transport pilot, exact model snapshots, and cost authority exist. The immediate human checkpoint is deliberately small: Embedded World account identity/attendance/attestations, license scope, archive-publication authority, and quotation budget authority.
 
 The campaign is complete only when every active route is either receipted, deliberately held at a named human gate, closed with a reason, or moved to a future watch cycle—and the resulting external evidence is reconciled back into Hardware Splicer's canonical maturity record.

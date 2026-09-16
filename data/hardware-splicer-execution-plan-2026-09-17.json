@@ -110,7 +110,7 @@
     {
       "id": "WS6_RESEARCH",
       "objective": "Measure whether evidence gating reduces unsupported acceptance while preserving useful completion.",
-      "state": "PROTOCOL_FROZEN_CORPUS_NEXT",
+      "state": "REFERENCE_RUNNER_REQUIRED",
       "tasks": [
         "HS-EVAL-01",
         "HS-EVAL-02",
@@ -305,7 +305,7 @@
       "action": "Freeze the valid/stale/tampered/revision-mismatched/capability-inadequate/physically-unsupported scenario corpus.",
       "owner": "AGENT",
       "due": "2026-09-30",
-      "state": "READY",
+      "state": "COMPLETE_EXISTING_TEN_CASE_CORPUS",
       "external_mutation": false
     },
     {
@@ -314,7 +314,7 @@
       "action": "Run baseline and guarded workflows, preserve raw results, compute metrics, and audit reproducibility.",
       "owner": "AGENT",
       "due": "2026-10-20",
-      "state": "BLOCKED_BY_HS_EVAL_02",
+      "state": "BLOCKED_BY_REFERENCE_RUNNER_TREATMENT_PARITY_AND_COST_AUTHORITY",
       "external_mutation": false
     },
     {
