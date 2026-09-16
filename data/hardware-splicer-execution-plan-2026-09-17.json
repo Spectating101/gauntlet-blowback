@@ -1,0 +1,403 @@
+{
+  "schema": "blowback.asset_execution_plan.v1",
+  "generated_at": "2026-09-17T00:00:00+08:00",
+  "asset_id": "hardware-splicer",
+  "authority": {
+    "commit": "f892facd67c5124e2362860ebc999625afedc5d5",
+    "tag": "gauntlet-spi-flash-adapter-v1-20260916",
+    "release_url": "https://github.com/Spectating101/hardware-splicer/releases/tag/gauntlet-spi-flash-adapter-v1-20260916",
+    "artifact_sha256": "6d4c76feaeebdab1223ed6c4be21d63835212baea731aea9d3933f2525be1edd",
+    "physical_state": "PACKAGED_NOT_PHYSICAL"
+  },
+  "terminal_objective": "Create durable, truthful external evidence surfaces for the frozen Hardware Splicer candidate, cross the physical boundary only with revision-bound measurements, and obtain public technical evaluation without inventing authority or dependencies.",
+  "outcomes": [
+    "DURABLE_PUBLIC_AUTHORITY",
+    "AUDIENCE_SPECIFIC_PRODUCT_PACKAGING",
+    "OPEN_HARDWARE_CONFORMANCE",
+    "REVISION_BOUND_PHYSICAL_EVIDENCE",
+    "EXTERNAL_TECHNICAL_EVALUATION",
+    "REPRODUCIBLE_RESEARCH_CONTRIBUTION"
+  ],
+  "hard_nonclaims": [
+    "No board has been fabricated, assembled, powered, or physically tested.",
+    "Physical correctness and production readiness are unproven.",
+    "No independent evaluator, manufacturer, user, or reviewer has validated the candidate.",
+    "No DOI, OSHWA certification, venue acceptance, or benchmark result exists until a real external record is captured."
+  ],
+  "workstreams": [
+    {
+      "id": "WS1_ARTIFACT",
+      "objective": "Create a citable, independently preserved artifact without changing the frozen release.",
+      "state": "PREPARED_WAITING_LICENSE_AND_PUBLICATION",
+      "tasks": [
+        "HS-ART-01",
+        "HS-ART-02",
+        "HS-ART-03",
+        "HS-ART-04"
+      ],
+      "exit_criteria": [
+        "Release manifest binds commit, tag, assets, and hashes.",
+        "Every included object has origin and license classification.",
+        "Archive rebuild is deterministic.",
+        "Public record preserves PACKAGED_NOT_PHYSICAL.",
+        "Real DOI and SWHID are recorded only after issuance."
+      ]
+    },
+    {
+      "id": "WS2_OPEN_HARDWARE",
+      "objective": "Make creator-controlled hardware, software, and documentation eligible for OSHWA self-certification.",
+      "state": "WAITING_LICENSE_DECISION",
+      "tasks": [
+        "HS-LIC-01",
+        "HS-LIC-02",
+        "HS-OSHWA-01"
+      ],
+      "exit_criteria": [
+        "Creator-controlled scopes are explicitly licensed.",
+        "Third-party scopes are distinguished.",
+        "Editable sources, BOM, build information, and revision are public.",
+        "OSHWA record exists before any certification claim or logo use."
+      ]
+    },
+    {
+      "id": "WS3_PHYSICAL",
+      "objective": "Cross the physical boundary through ordinary procurement and revision-bound tests.",
+      "state": "WAITING_QUOTE_AUTHORITY",
+      "tasks": [
+        "HS-PHY-01",
+        "HS-PHY-02",
+        "HS-PHY-03",
+        "HS-PHY-04"
+      ],
+      "exit_criteria": [
+        "Fabricated unit identity is recorded.",
+        "Cold inspection and continuity are receipted.",
+        "Controlled power and OE bring-up are receipted.",
+        "Read-only 0x9F result is bound to procedure and revision.",
+        "A new artifact version is issued rather than mutating the frozen candidate."
+      ]
+    },
+    {
+      "id": "WS4_PACKAGING",
+      "objective": "Convert the frozen engineering system into a clear, credible, reproducible product package for each target audience without claim drift.",
+      "state": "READY_FOR_INTERNAL_REVIEW",
+      "tasks": [
+        "HS-PKG-01",
+        "HS-PKG-02",
+        "HS-PKG-03",
+        "HS-PKG-04"
+      ],
+      "exit_criteria": [
+        "An unfamiliar technical reader can state what HS is, what is proven, and what is unproven after the first screen.",
+        "Every outward claim maps to canonical evidence.",
+        "Quickstart, links, hashes, downloads, and reproduction commands are tested.",
+        "The primary demo runs offline.",
+        "Audience packages share one evidence spine while answering audience-specific questions.",
+        "PACKAGED_NOT_PHYSICAL remains prominent."
+      ]
+    },
+    {
+      "id": "WS5_EXTERNAL_SURFACES",
+      "objective": "Obtain technically relevant public evaluation and reusable external receipts.",
+      "state": "WAITING_HUMAN_ATTENDANCE_AND_ACCOUNT",
+      "tasks": [
+        "HS-EW-01",
+        "HS-EW-02",
+        "HS-FOSDEM-01",
+        "HS-DACENG-01"
+      ]
+    },
+    {
+      "id": "WS6_RESEARCH",
+      "objective": "Measure whether evidence gating reduces unsupported acceptance while preserving useful completion.",
+      "state": "PROTOCOL_FROZEN_CORPUS_NEXT",
+      "tasks": [
+        "HS-EVAL-01",
+        "HS-EVAL-02",
+        "HS-EVAL-03",
+        "HS-PUB-01"
+      ],
+      "required_metrics": [
+        "false_acceptance_rate",
+        "false_block_rate",
+        "safe_completion_rate",
+        "abstention_or_escalation_rate",
+        "provenance_completeness",
+        "reproducibility_across_runs"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "HS-PKG-01",
+      "workstream": "WS4_PACKAGING",
+      "action": "Freeze the positioning hypothesis, audience matrix, value hierarchy, proof hierarchy, and 30-second/two-minute/ten-minute explanations.",
+      "owner": "AGENT",
+      "due": "2026-09-19",
+      "state": "COMPLETE",
+      "external_mutation": false
+    },
+    {
+      "id": "HS-PKG-02",
+      "workstream": "WS4_PACKAGING",
+      "action": "Build the release landing page, message library, quickstart, visual evidence map, FAQ, evaluator kit, and audience-specific packet templates.",
+      "owner": "AGENT",
+      "due": "2026-09-22",
+      "state": "COMPLETE",
+      "external_mutation": false
+    },
+    {
+      "id": "HS-PKG-03",
+      "workstream": "WS4_PACKAGING",
+      "action": "Create the offline demonstration package and run comprehension, evidence-traceability, link, download, command, and claim-drift QA.",
+      "owner": "AGENT",
+      "due": "2026-09-24",
+      "state": "COMPLETE",
+      "external_mutation": false
+    },
+    {
+      "id": "HS-PKG-04",
+      "workstream": "WS4_PACKAGING",
+      "action": "Derive route-specific submission, demo, research, provider, and resource-access packages from the canonical core; record copy revision and evidence lineage for each.",
+      "owner": "AGENT",
+      "due": null,
+      "state": "ACTIVE_ONE_ROUTE_PACKAGED",
+      "external_mutation": false
+    },
+    {
+      "id": "HS-EW-01",
+      "workstream": "WS5_EXTERNAL_SURFACES",
+      "action": "Reconnoitre the Embedded World submission portal and capture exact fields, limits, required declarations, attendance obligations, and final-submit control.",
+      "owner": "AGENT",
+      "due": "2026-09-18",
+      "state": "PARTIAL_ACCOUNT_BOUND_FORM_REMAINS",
+      "external_mutation": false
+    },
+    {
+      "id": "HS-EW-02",
+      "workstream": "WS5_EXTERNAL_SURFACES",
+      "action": "Prepare title, abstract, biography, takeaways, SPI example, claims audit, and portal-mapped final copy.",
+      "owner": "AGENT",
+      "due": "2026-09-20",
+      "state": "COMPLETE",
+      "external_mutation": false
+    },
+    {
+      "id": "HS-EW-03",
+      "workstream": "WS5_EXTERNAL_SURFACES",
+      "action": "Review attendance feasibility, declarations, and final submission.",
+      "owner": "HUMAN",
+      "due": "2026-09-25",
+      "state": "WAITING_HUMAN_ACCOUNT_ATTENDANCE_AND_ATTESTATIONS",
+      "external_mutation": true
+    },
+    {
+      "id": "HS-ART-01",
+      "workstream": "WS1_ARTIFACT",
+      "action": "Inventory frozen release contents by origin, ownership, redistribution status, and proposed license scope.",
+      "owner": "AGENT",
+      "due": "2026-09-19",
+      "state": "COMPLETE_SCOPE_INVENTORY",
+      "external_mutation": false
+    },
+    {
+      "id": "HS-ART-02",
+      "workstream": "WS1_ARTIFACT",
+      "action": "Generate release-to-archive manifest, CITATION.cff draft, claims ledger, Zenodo metadata preview, and deterministic archive bundle.",
+      "owner": "AGENT",
+      "due": "2026-09-22",
+      "state": "PARTIAL_ARCHIVE_NOT_ASSEMBLED_OR_PUBLISHED",
+      "external_mutation": false
+    },
+    {
+      "id": "HS-ART-03",
+      "workstream": "WS1_ARTIFACT",
+      "action": "Confirm creator identity, ORCID if used, and public license scopes.",
+      "owner": "HUMAN",
+      "due": "2026-09-23",
+      "state": "WAITING_REVIEW",
+      "external_mutation": false
+    },
+    {
+      "id": "HS-ART-04",
+      "workstream": "WS1_ARTIFACT",
+      "action": "Authorize Zenodo publication and Software Heritage archival request; capture real identifiers and receipts.",
+      "owner": "HUMAN",
+      "due": null,
+      "state": "WAITING_LICENSE_AND_METADATA",
+      "external_mutation": true
+    },
+    {
+      "id": "HS-LIC-01",
+      "workstream": "WS2_OPEN_HARDWARE",
+      "action": "Produce file-level first-party and third-party license map without changing licenses.",
+      "owner": "AGENT",
+      "due": "2026-09-20",
+      "state": "COMPLETE_SCOPE_MAP",
+      "external_mutation": false
+    },
+    {
+      "id": "HS-LIC-02",
+      "workstream": "WS2_OPEN_HARDWARE",
+      "action": "Approve the hardware, software, and documentation licensing split and any exclusions.",
+      "owner": "HUMAN",
+      "due": null,
+      "state": "WAITING_HUMAN_LICENSE_DECISION",
+      "external_mutation": true
+    },
+    {
+      "id": "HS-OSHWA-01",
+      "workstream": "WS2_OPEN_HARDWARE",
+      "action": "Prepare the OSHWA checklist evidence page and application draft; stop before the certification-mark agreement and final submission.",
+      "owner": "AGENT",
+      "due": null,
+      "state": "BLOCKED_BY_HS_LIC_02",
+      "external_mutation": false
+    },
+    {
+      "id": "HS-PHY-01",
+      "workstream": "WS3_PHYSICAL",
+      "action": "Validate the provider-neutral fabrication/quotation packet, substitution policy, and evidence-return checklist without sending or ordering.",
+      "owner": "AGENT",
+      "due": "2026-09-20",
+      "state": "COMPLETE",
+      "external_mutation": false
+    },
+    {
+      "id": "HS-PHY-02",
+      "workstream": "WS3_PHYSICAL",
+      "action": "Approve whether quotations may be requested and set a maximum fabrication budget.",
+      "owner": "HUMAN",
+      "due": null,
+      "state": "WAITING_HUMAN_QUOTE_AUTHORITY_AND_BUDGET",
+      "external_mutation": true
+    },
+    {
+      "id": "HS-PHY-03",
+      "workstream": "WS3_PHYSICAL",
+      "action": "Compare real quotations; return vendor, substitutions, cost, lead time, and unresolved questions without ordering.",
+      "owner": "AGENT",
+      "due": null,
+      "state": "BLOCKED_BY_QUOTE_AUTHORITY",
+      "external_mutation": true
+    },
+    {
+      "id": "HS-PHY-04",
+      "workstream": "WS3_PHYSICAL",
+      "action": "Authorize vendor/payment/address and later physical test execution.",
+      "owner": "HUMAN",
+      "due": null,
+      "state": "WAITING_QUOTES",
+      "external_mutation": true
+    },
+    {
+      "id": "HS-EVAL-01",
+      "workstream": "WS6_RESEARCH",
+      "action": "Freeze research question, baseline, scenario taxonomy, expected safe decisions, metrics, and analysis plan.",
+      "owner": "AGENT",
+      "due": "2026-09-23",
+      "state": "COMPLETE_PROTOCOL_BOUND_TO_FROZEN_RELEASE",
+      "external_mutation": false
+    },
+    {
+      "id": "HS-EVAL-02",
+      "workstream": "WS6_RESEARCH",
+      "action": "Freeze the valid/stale/tampered/revision-mismatched/capability-inadequate/physically-unsupported scenario corpus.",
+      "owner": "AGENT",
+      "due": "2026-09-30",
+      "state": "READY",
+      "external_mutation": false
+    },
+    {
+      "id": "HS-EVAL-03",
+      "workstream": "WS6_RESEARCH",
+      "action": "Run baseline and guarded workflows, preserve raw results, compute metrics, and audit reproducibility.",
+      "owner": "AGENT",
+      "due": "2026-10-20",
+      "state": "BLOCKED_BY_HS_EVAL_02",
+      "external_mutation": false
+    },
+    {
+      "id": "HS-PUB-01",
+      "workstream": "WS6_RESEARCH",
+      "action": "Choose exactly one primary archival route based on completed evidence and preserve non-overlap constraints.",
+      "owner": "AGENT_WITH_HUMAN_COMMITMENT_GATE",
+      "due": "2026-10-24",
+      "state": "BLOCKED_BY_HS_EVAL_03",
+      "external_mutation": false
+    },
+    {
+      "id": "HS-FOSDEM-01",
+      "workstream": "WS5_EXTERNAL_SURFACES",
+      "action": "Prepare the reusable offline demonstration spine; do not submit until real attendance and travel feasibility are confirmed.",
+      "owner": "AGENT",
+      "due": "2026-10-08",
+      "state": "PREPARE_ASSET_ONLY",
+      "external_mutation": false
+    },
+    {
+      "id": "HS-FOSDEM-02",
+      "workstream": "WS5_EXTERNAL_SURFACES",
+      "action": "Decide whether at least one real person can staff a Brussels stand and accept the travel burden.",
+      "owner": "HUMAN",
+      "due": "2026-10-10",
+      "state": "WAITING",
+      "external_mutation": false
+    },
+    {
+      "id": "HS-DACENG-01",
+      "workstream": "WS5_EXTERNAL_SURFACES",
+      "action": "Build the DAC Engineering abstract and six-slide evidence package if measurable results support it.",
+      "owner": "AGENT",
+      "due": "2026-12-20",
+      "state": "BLOCKED_BY_EVALUATION_RESULTS",
+      "external_mutation": false
+    },
+    {
+      "id": "HS-PLAN-01",
+      "workstream": "CONTROL_PLANE",
+      "action": "Translate verified active routes into Gauntlet manifests, calendar entries, gates, and handoffs without promoting paused unrelated routes.",
+      "owner": "AGENT",
+      "due": "2026-09-19",
+      "state": "COMPLETE",
+      "external_mutation": false
+    }
+  ],
+  "publication_decision": {
+    "decision_date": "2026-10-24",
+    "rule": "Select one substantially overlapping archival manuscript at a time.",
+    "branches": {
+      "VTS": "Choose when test and validation methodology is the strongest contribution and official deadline, registration, and attendance obligations are acceptable.",
+      "DAC_RESEARCH": "Choose when quantitative agentic EDA novelty is strong enough for a finished six-page archival manuscript.",
+      "DATE_LBR": "Choose for a compact late or preliminary result when overlap policy permits.",
+      "ETS": "Choose when fail-closed evidence semantics and dependability form a distinct stronger contribution.",
+      "DAC_ENGINEERING": "Choose when system integration and demonstrated engineering evidence are stronger than research novelty."
+    }
+  },
+  "human_gates": [
+    "public_identity_and_orcid",
+    "license_scope_approval",
+    "public_archive_publication",
+    "oshwa_legal_agreement",
+    "conference_attendance_commitment",
+    "travel_and_registration_cost",
+    "fabrication_quote_authority",
+    "vendor_payment_address_and_substitutions",
+    "physical_bench_authority",
+    "authorship_originality_and_eligibility_attestations",
+    "final_submit"
+  ],
+  "success_metrics": [
+    "durable_external_identifiers",
+    "resolved_license_scopes",
+    "receipted_external_records",
+    "truthful_physical_stage_progression",
+    "reproducible_evaluation_scenarios",
+    "false_acceptance_rate",
+    "false_block_rate",
+    "external_review_outcomes",
+    "canonical_artifact_reuse_without_claim_drift",
+    "zero_unsupported_claims",
+    "zero_unauthorized_protected_commitments"
+  ]
+}
