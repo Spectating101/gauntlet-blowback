@@ -93,15 +93,15 @@
       "implementation_stage": "internally_validated",
       "external_evidence_stage": "limited",
       "deployment_stage": "none",
-      "canonicalization_state": "release_branch_ahead",
-      "last_audited": "2026-09-01",
-      "effective_candidate": "PR #77 head f5ca55920ae0517b9c90dd590c9b02104cf6bf5d is the broad green machine-workbench evidence baseline; later Sept-1 stacked interaction/bench branches are route-specific candidate evidence only.",
+      "canonicalization_state": "canonical",
+      "last_audited": "2026-09-16",
+      "effective_candidate": "Canonical main commit f892facd67c5124e2362860ebc999625afedc5d5 and prerelease gauntlet-spi-flash-adapter-v1-20260916 freeze the SPI flash adapter remote-FCT candidate and its exact package hash.",
       "packaging_role": "Primary physical-agent / electronics / CV / 3D / robotics / EDA engineering package.",
-      "strongest_known_gap": "Revision-bound physical/live unseen proof, whole-assembly/electrical boundaries and independent design-partner evidence remain G4. Stop adding general workbench surface unless a target route or real user exposes the need.",
-      "allowed_claims": ["22/22 workflows green on PR77", "9/9 Chromium workbench paths green", "exact STEP/BREP parsing and pair geometry evidence", "surface anchors, mating geometry and sampled path evidence", "explicit physical-authority/nonclaim boundaries"],
-      "forbidden_claims": ["physical metrology/certification", "connector electrical compatibility", "whole-assembly closure", "fabrication/power-on/motion/release authority", "external design-partner validation"],
-      "next_evidence_action": "Freeze general construction around the PR77 evidence baseline; fire TAAI, Anthropic MHS/AI-for-Science and HS-native research/job routes, adding only route-specific physical evidence where it materially changes selection odds.",
-      "evidence_basis": "PR #77 is a fully green machine-scale spatial workbench candidate. Several newer Sept-1 stacked PRs deepen reuse, bench capture, pose and interrogation, but should not silently inflate the broad evidence claim until their inherited gates are resolved."
+      "strongest_known_gap": "Provider/evaluator selection and fresh revision-bound fabrication, power-on, measurement, failure, and repair evidence remain absent. The frozen package must not be promoted into physical correctness or production readiness.",
+      "allowed_claims": ["canonical main and immutable prerelease identity", "document-grounded external Astra engineering result", "complete internally audited production artifact set", "14/14 main-push workflows and 22/22 tag-push workflows green", "64/64 current named package/reference/physical-handoff/FCT tests", "byte-reproducible release package with exact SHA-256", "explicit PACKAGED_NOT_PHYSICAL authority boundary"],
+      "forbidden_claims": ["provider engagement or endorsement", "fabrication authorization", "fabricated or assembled hardware", "powered or bench-tested hardware", "physical correctness", "production readiness or certification"],
+      "next_evidence_action": "Route the exact immutable release to a deliberately selected evaluator or quotation-only fabrication/FCT provider; preserve human gates for provider selection, terms, payment and fabrication authorization; ingest returned evidence through the release-bound receipt contract.",
+      "evidence_basis": "The f892fac candidate was independently downloaded, hash-verified, nested-archive checked, adversarially audited and rebuilt byte-identically with KiCad 9.0.2. The release remains explicitly PACKAGED_NOT_PHYSICAL and no external submission or physical execution has occurred."
     },
     {
       "id": "public-good-control",
