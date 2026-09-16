@@ -10,6 +10,7 @@ const liveReconManifests = [
   'examples/opportunities/taia-ai-creative-design-2026.json',
   'examples/opportunities/global-ai-finance-2026-policy-lab.json',
   'examples/opportunities/innoserve-2026-hardware-splicer.json',
+  'examples/opportunities/embedded-world-2027-hardware-splicer.json',
   'examples/opportunities/aws-community-day-taiwan-2026-hardware-splicer.json',
   'examples/opportunities/openai-researcher-access-hardware-splicer.json',
   'examples/opportunities/anthropic-external-researcher-access-hardware-splicer.json'
@@ -83,6 +84,19 @@ test('AWS Community Day manifest preserves date-only deadline truth and official
   assert.match(opportunity.deadline_note, /exact cutoff time is not yet verified/i);
   assert.doesNotMatch(opportunity.deadline, /23:59/);
   assert.equal(opportunity.fields.talk_title, 'When an AI Agent Can Touch Hardware: Designing the Checks Between the Model and the Machine');
+});
+
+test('Embedded World packet is prepared but remains outside FIRE until attendance and authenticated mapping are resolved', async () => {
+  const opportunity = await loadOpportunity('examples/opportunities/embedded-world-2027-hardware-splicer.json');
+  assert.equal(opportunity.deadline, '2026-09-28');
+  assert.equal(opportunity.execution_state, 'PORTAL_RECON_REQUIRED');
+  assert.equal(opportunity.route_evidence.final_submission_copy_ready, true);
+  assert.equal(opportunity.route_evidence.authenticated_submission_route_verified, false);
+  assert.equal(opportunity.route_evidence.physical_attendance_confirmed, false);
+  assert.equal(opportunity.final_copy_revision, 'ff0b36ffe93e12097d18957714dbc6562d2e0038');
+  assert.match(opportunity.final_copy_source, /blob\/ff0b36ffe93e12097d18957714dbc6562d2e0038\/docs\/product\/routes\/EMBEDDED_WORLD_2027\.md$/);
+  assert.match(opportunity.fields.topic, /10\.09 Eclipse Foundation/);
+  assert.match(opportunity.deadline_note, /must not invent an end-of-day timestamp/i);
 });
 
 test('OpenAI FIRE manifest carries the current concrete run and budget plan', async () => {

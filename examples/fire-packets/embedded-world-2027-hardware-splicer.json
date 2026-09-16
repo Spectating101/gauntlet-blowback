@@ -1,0 +1,40 @@
+{
+  "schema": "blowback.fire_packet.v1",
+  "route_id": "embedded-world-2027-hardware-splicer",
+  "source_revision": "ff0b36ffe93e12097d18957714dbc6562d2e0038",
+  "source_url": "https://github.com/Spectating101/hardware-splicer/blob/ff0b36ffe93e12097d18957714dbc6562d2e0038/docs/product/routes/EMBEDDED_WORLD_2027.md",
+  "copy": {
+    "title": "Evidence-Gated AI Agents for Open-Source Hardware Engineering",
+    "topic": "10.09 Eclipse Foundation",
+    "language": "English",
+    "presentation_length_minutes": 30,
+    "abstract": "AI agents can accelerate hardware engineering, but a plausible answer can reach fabrication or power-on before component identity, evidence provenance, revision state, or physical behavior is established. This talk presents Hardware Splicer, an open-source engineering workbench that lets a general-purpose agent propose and assemble work while deterministic checks, revision-bound evidence, and explicit human authorization remain independently authoritative. A frozen SPI-flash-adapter case shows the boundary in practice: source evidence, a derived virtual lab, manufacturer-model checks, KiCad ERC/DRC, and fabrication outputs can be inspected and replayed, yet the system continues to report PACKAGED_NOT_PHYSICAL until real measurements exist. The talk demonstrates fail-closed handling of stale revisions, incomplete sources, tool failures, and attempted authority escalation. It focuses on design choices, failure modes, reproducibility, and what open-source embedded teams can reuse when integrating AI agents without treating model confidence as engineering proof.",
+    "presenter_cv": "Christopher Ongko is a master's student and research assistant at Yuan Ze University. He develops auditable research and engineering systems that separate AI-generated proposals from deterministic evidence, revision state, and human authority.",
+    "takeaways": [
+      "A concrete architecture for separating agent proposals from engineering evidence and physical authority.",
+      "Failure modes that ordinary AI-generated-design demonstrations hide, including stale revisions, incomplete sources, and tool failures.",
+      "A reusable open workflow for packaging CAD, verification receipts, manufacturing artifacts, and physical-test handoffs without overstating maturity."
+    ],
+    "session_flow": [
+      "Why hardware mistakes create a distinct authority problem — 4 minutes.",
+      "Architecture and evidence layers — 6 minutes.",
+      "Frozen SPI case and open-source toolchain — 8 minutes.",
+      "Fail-closed examples and tamper/stale-revision behavior — 6 minutes.",
+      "Physical handoff and PACKAGED_NOT_PHYSICAL boundary — 4 minutes.",
+      "Reusable lessons and transition to questions — 2 minutes."
+    ],
+    "evidence": {
+      "frozen_commit": "f892facd67c5124e2362860ebc999625afedc5d5",
+      "release_tag": "gauntlet-spi-flash-adapter-v1-20260916",
+      "release_url": "https://github.com/Spectating101/hardware-splicer/releases/tag/gauntlet-spi-flash-adapter-v1-20260916",
+      "package_sha256": "6d4c76feaeebdab1223ed6c4be21d63835212baea731aea9d3933f2525be1edd",
+      "physical_state": "PACKAGED_NOT_PHYSICAL"
+    },
+    "nonclaims": [
+      "No board has been fabricated, assembled, powered, or physically tested.",
+      "Physical correctness, production readiness, and independent validation are unproven.",
+      "Green CI, deterministic CAD checks, package integrity, and a bounded model demonstration are not physical proof.",
+      "Hardware Splicer is not presented as a universally safe agent or a replacement for a qualified hardware engineer."
+    ]
+  }
+}

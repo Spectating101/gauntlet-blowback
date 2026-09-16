@@ -281,6 +281,13 @@ SUMMARY:[OUTCOME IF FIRED] Invisible Ledger — Shih Hsin Finance notification
 DESCRIPTION:Only active if submitted. Record accept/reject and any full-paper/presentation requirements.
 END:VEVENT
 BEGIN:VEVENT
+UID:hardware-splicer-embedded-world-review-20260924@blowback
+DTSTART;VALUE=DATE:20260924
+DTEND;VALUE=DATE:20260925
+SUMMARY:[HUMAN REVIEW] Hardware Splicer — Embedded World packet
+DESCRIPTION:Review only the unresolved human facts: account identity, public affiliation/occupation/address wording, physical attendance in Nuremberg, originality/concurrent-submission status, privacy/terms, and final-submit authority. Abstract and evidence package are prepared.
+END:VEVENT
+BEGIN:VEVENT
 UID:awesome-climate-20260925@blowback
 DTSTART;VALUE=DATE:20260925
 DTEND;VALUE=DATE:20260926
@@ -307,6 +314,13 @@ DTSTART;TZID=Asia/Taipei:20260928T235900
 DTEND;TZID=Asia/Taipei:20260929T000000
 SUMMARY:[VERIFY THEN FIRE] NTUB FinTech competition
 DESCRIPTION:Policy/CL-ECI route; verify team/adviser constraints. Registration cutoff 23:59 Asia/Taipei.
+END:VEVENT
+BEGIN:VEVENT
+UID:hardware-splicer-embedded-world-deadline-20260928@blowback
+DTSTART;VALUE=DATE:20260928
+DTEND;VALUE=DATE:20260929
+SUMMARY:[DEADLINE — GATED] Hardware Splicer — Embedded World 2027 abstract
+DESCRIPTION:Official firm date is Sep 28 with no verified cutoff time. Submit only after account-bound form mapping and explicit physical-attendance/originality/terms approval. Preserve PACKAGED_NOT_PHYSICAL.
 END:VEVENT
 BEGIN:VEVENT
 UID:freeway-ai-20260930@blowback
@@ -554,7 +568,6 @@ DTEND;VALUE=DATE:20261201
 SUMMARY:[VERIFY/FIRE] LegalTech / Computer Audit competition
 DESCRIPTION:Policy/Citation route only if the current tracks and prize economics justify it.
 END:VEVENT
-BEGIN:VEVENT
 UID:sinica-year-end-20261231@blowback
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101

@@ -4,6 +4,7 @@ Blowback opportunity manifests keep portal automation dumb and auditable. Each r
 
 ## Hardware-Splicer 2026 competition / conference routes
 
+- `embedded-world-2027-hardware-splicer.json` — 2027 technical talk route; copy is prepared, but account-bound form mapping and physical-attendance commitment remain.
 - `taia-ai-creative-design-2026.json`
 - `wanrun-innovation-2026.json`
 - `tas-2026-hardware-splicer.json`

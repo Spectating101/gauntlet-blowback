@@ -1,0 +1,80 @@
+{
+  "id": "embedded-world-2027-hardware-splicer",
+  "name": "embedded world Conference 2027 — Hardware Splicer",
+  "portal": "generic",
+  "portal_family": "conference_cfp",
+  "auth_scope": "componeers-embedded-world",
+  "source_url": "https://call-for-papers.componeers.net/frontend/index.php?sub=383",
+  "registration_url": "https://call-for-papers.componeers.net/frontend/index.php?sub=383",
+  "recon_stage": "registration",
+  "deadline": "2026-09-28",
+  "deadline_note": "The official public call states a firm 28 September 2026 abstract deadline. No cutoff time is stated, so the route must not invent an end-of-day timestamp.",
+  "mode": "inspect",
+  "execution_state": "PORTAL_RECON_REQUIRED",
+  "direct_control": true,
+  "profile": "../profiles/christ.json",
+  "project": "../projects/hardware-splicer.json",
+  "fire_packet": "../fire-packets/embedded-world-2027-hardware-splicer.json",
+  "packet_revision": "f892facd67c5124e2362860ebc999625afedc5d5",
+  "packet_source": "https://github.com/Spectating101/hardware-splicer/releases/tag/gauntlet-spi-flash-adapter-v1-20260916",
+  "final_copy_revision": "ff0b36ffe93e12097d18957714dbc6562d2e0038",
+  "final_copy_source": "https://github.com/Spectating101/hardware-splicer/blob/ff0b36ffe93e12097d18957714dbc6562d2e0038/docs/product/routes/EMBEDDED_WORLD_2027.md",
+  "fields": {
+    "talk_title": "Evidence-Gated AI Agents for Open-Source Hardware Engineering",
+    "topic": "10.09 Eclipse Foundation",
+    "speaker_name": "$profile.name",
+    "affiliation": "$profile.affiliation",
+    "language": "English",
+    "presentation_length_minutes": 30
+  },
+  "field_map": {},
+  "uploads": [],
+  "packet_requirements": [
+    {
+      "id": "final_talk_copy",
+      "description": "Title, 1,500-character abstract, 300-character presenter CV, takeaways, session structure, evidence references, and nonclaims are prepared.",
+      "status": "PACKET_SOURCE_READY",
+      "canonical_ref": "https://github.com/Spectating101/hardware-splicer/blob/ff0b36ffe93e12097d18957714dbc6562d2e0038/docs/product/routes/EMBEDDED_WORLD_2027.md"
+    },
+    {
+      "id": "account_identity",
+      "description": "The portal requires account credentials and personal/contact fields. Preferred email, address, occupation wording, and password creation remain human-controlled.",
+      "status": "HUMAN_REQUIRED"
+    },
+    {
+      "id": "authenticated_submission_map",
+      "description": "The actual abstract form is behind the account boundary. Map the authenticated form before switching the route to prepare mode.",
+      "status": "PORTAL_RECON_REQUIRED"
+    },
+    {
+      "id": "attendance_commitment",
+      "description": "The public call requires the presenter to guarantee physical presence in Nuremberg if accepted.",
+      "status": "HUMAN_REQUIRED"
+    }
+  ],
+  "compliance_checks": [
+    "Use the required 10.09 Eclipse Foundation topic unless the authenticated portal proves a different current classification.",
+    "Keep the talk technical, evidence-led, and non-promotional.",
+    "Preserve PACKAGED_NOT_PHYSICAL and do not imply fabrication, measurements, production readiness, or independent validation.",
+    "Do not attest originality, concurrent-submission compliance, physical attendance, privacy terms, or final submission without human review.",
+    "Do not infer a deadline time that the official call does not state."
+  ],
+  "route_evidence": {
+    "verified_at": "2026-09-17",
+    "official_public_call_verified": true,
+    "deadline_verified": true,
+    "public_requirements_verified": true,
+    "account_fields_observed": true,
+    "authenticated_submission_route_verified": false,
+    "form_fields_verified": false,
+    "final_submission_copy_ready": true,
+    "physical_attendance_confirmed": false
+  },
+  "human_required": [
+    "login",
+    "originality_attestation",
+    "authorship_attestation",
+    "terms_acceptance",
+    "final_submit"
+  ]
+}

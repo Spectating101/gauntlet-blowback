@@ -588,6 +588,26 @@
       "origin": "grant/sponsorship handoff"
     },
     {
+      "id": "embedded-world-2027-hardware-splicer",
+      "lane": "RESEARCH",
+      "organization": "embedded world Conference 2027",
+      "opportunity": "Eclipse Foundation technical session — Hardware Splicer",
+      "route_class": "APPLY",
+      "assets": "Hardware Splicer",
+      "contribution_view": "Evidence-gated open hardware engineering",
+      "status": "WAITING_HUMAN_ATTENDANCE",
+      "execution_state": "PORTAL_RECON_REQUIRED",
+      "execution_manifest": "examples/opportunities/embedded-world-2027-hardware-splicer.json",
+      "deadline": "2026-09-28",
+      "gate": "account-bound submission-form mapping + physical-presence commitment + originality/terms/final submit",
+      "shared_evidence_family": "hardware-splicer-family",
+      "mutual_exclusion_group": "",
+      "parent_route": "",
+      "source_state": "OFFICIAL_PUBLIC_CALL_AND_ACCOUNT_FIELDS_VERIFIED_2026-09-17",
+      "source": "https://call-for-papers.componeers.net/frontend/index.php?sub=383",
+      "origin": "Hardware Splicer execution campaign 2026-09-17"
+    },
+    {
       "id": "taia-2026-hardware-splicer",
       "lane": "COMPETITION",
       "organization": "TAIA",

@@ -20,6 +20,7 @@ test('restores cross-thread flagship routes', () => {
     'twnic-community-grant-2026-nocturnal',
     'msr-2027-technical-refinery',
     'taia-2026-hardware-splicer',
+    'embedded-world-2027-hardware-splicer',
     'phd-tudelft-decentralized-trustworthy-ai',
     'job-dutch-rse-family',
   ]) assert.ok(byId.has(id), `missing restored route ${id}`);
@@ -184,6 +185,16 @@ test('keeps strategic and browser execution states separate', () => {
   assert.equal(byId.get('gaf-2026-policy-lab').execution_state, 'PORTAL_RECON_REQUIRED');
   assert.equal(byId.get('innoserve-2026-policy-lab-ip').execution_state, 'PACKET_READY');
   assert.equal(byId.get('field-meet-taipei-2026').execution_state, 'NOT_APPLICABLE');
+});
+
+test('keeps Embedded World packaged but out of FIRE until its real human and authenticated-form gates clear', () => {
+  const route = byId.get('embedded-world-2027-hardware-splicer');
+  assert.ok(route);
+  assert.equal(route.status, 'WAITING_HUMAN_ATTENDANCE');
+  assert.equal(route.execution_state, 'PORTAL_RECON_REQUIRED');
+  assert.equal(route.execution_manifest, 'examples/opportunities/embedded-world-2027-hardware-splicer.json');
+  assert.equal(route.deadline, '2026-09-28');
+  assert.match(route.gate, /physical-presence commitment/i);
 });
 
 test('summary exposes portfolio-wide lane mix including new research labor', () => {
