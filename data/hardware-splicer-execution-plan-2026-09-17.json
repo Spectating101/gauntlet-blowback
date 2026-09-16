@@ -212,7 +212,7 @@
     {
       "id": "HS-ART-03",
       "workstream": "WS1_ARTIFACT",
-      "action": "Confirm creator identity, ORCID if used, and public license scopes.",
+      "action": "Verify the creator identity and ORCID projected from the canonical applicant profile, and approve public license scopes.",
       "owner": "HUMAN",
       "due": "2026-09-23",
       "state": "WAITING_REVIEW",
@@ -375,7 +375,7 @@
     }
   },
   "human_gates": [
-    "public_identity_and_orcid",
+    "public_identity_and_orcid_projection_check",
     "license_scope_approval",
     "public_archive_publication",
     "oshwa_legal_agreement",

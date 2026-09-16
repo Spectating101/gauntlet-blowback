@@ -83,7 +83,7 @@ Purpose: create the reusable source object for every later route.
 Deliverables:
 
 - release-to-archive manifest binding tag, commit, release assets, and SHA-256;
-- `CITATION.cff` draft with creator identity left for confirmation;
+- `CITATION.cff` draft using the canonical applicant-profile creator name and ORCID, left for projection review;
 - machine-readable claims/nonclaims ledger;
 - first-party/third-party content inventory;
 - deterministic archive bundle excluding restricted vendor bytes;
@@ -93,7 +93,7 @@ Deliverables:
 
 Human gates:
 
-- creator name/ORCID confirmation;
+- canonical creator name/ORCID projection review;
 - final public license choices;
 - final Zenodo publication;
 - any legal assertion about ownership or relicensing.
@@ -345,7 +345,7 @@ Only one substantially overlapping archival manuscript may be active at a time. 
 - build the archive manifest, citation metadata draft, and Zenodo deposit preview;
 - freeze the quantitative evaluation protocol;
 - prepare the OSHWA compliance gap list;
-- present only the smallest necessary human decisions: identity/ORCID, licensing, attendance willingness, and publication authorization.
+- present only the smallest necessary human decisions: identity/ORCID projection review, licensing, attendance willingness, and publication authorization.
 
 ### 25–28 September
 
@@ -393,7 +393,7 @@ Only one substantially overlapping archival manuscript may be active at a time. 
 
 These are the only decisions that should interrupt autonomous preparation:
 
-1. Confirm public creator identity and optional ORCID.
+1. Verify the public creator identity and ORCID projected from the canonical applicant profile.
 2. Approve hardware/software/documentation license scopes.
 3. Authorize Zenodo publication and OSHWA legal agreement.
 4. Confirm willingness to attend Embedded World if accepted before final submission.
