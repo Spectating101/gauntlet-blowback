@@ -10,7 +10,7 @@
   "deadline": "ROLLING",
   "deadline_note": "Partner outreach route; no grant deadline or funding award is implied.",
   "mode": "inspect",
-  "execution_state": "STAGED_HUMAN_SEND_GATE",
+  "execution_state": "PORTAL_RECON_REQUIRED",
   "direct_control": true,
   "profile": "../profiles/christ.json",
   "project": "../projects/nocturnal.json",
@@ -36,12 +36,12 @@
   "packet_requirements": [
     {
       "id": "live_contact_form_map",
-      "description": "Inspect the current TFC contact surface and map name/email/message fields without changing the outreach copy unless a real field limit requires compression.",
-      "status": "VERIFIED_STAGED_2026_09_17"
+      "description": "Preserve the recorded field map, but revalidate the actual current TFC session before using it. Historical mapping/staging does not prove that a live form remains prepared.",
+      "status": "HISTORICALLY_VERIFIED_CURRENT_SESSION_RECON_REQUIRED"
     },
     {
       "id": "final_submit",
-      "description": "Final Send remains human-protected. The completed form was staged successfully; stop before irreversible transmission.",
+      "description": "Final Send remains human-protected. The prior form was staged but not transmitted; revalidate the live session and stop before irreversible transmission.",
       "status": "HUMAN_GATE"
     },
     {
@@ -62,6 +62,9 @@
     "final_submission_copy_ready": true,
     "form_fields_verified": true,
     "form_staged": true,
+    "recorded_staging_state": "STAGED_HUMAN_SEND_GATE",
+    "current_session_verified": false,
+    "session_revalidation_required": true,
     "submit_control_verified": "送出",
     "validation_errors_visible": false,
     "cloudflare_widget_present": true,
