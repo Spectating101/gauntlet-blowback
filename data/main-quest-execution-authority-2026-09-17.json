@@ -1,0 +1,134 @@
+{
+  "schema": "gauntlet.main_quest_execution_authority.v1",
+  "as_of": "2026-09-17",
+  "timezone": "Asia/Taipei",
+  "purpose": "Define the work Gauntlet may advance now without inventing thesis authority, duplicating project agents, or crossing protected external gates.",
+  "terminal_priorities": [
+    {
+      "campaign_id": "main-quest-a-funded-phd-options",
+      "state": "ACTIVE_INTERNAL_PREPARATION",
+      "objective": "Create multiple credible funded doctoral options from verified programme, faculty, funding and document facts.",
+      "authorized_now": [
+        "verify live programme and funding requirements",
+        "map faculty and lab fit from public evidence",
+        "inventory formal documents and unresolved facts",
+        "build a programme-neutral dossier from settled evidence",
+        "prepare route-specific deltas without sending them"
+      ],
+      "protected": [
+        "faculty or referee outreach",
+        "recommendation request",
+        "account creation",
+        "identity or eligibility attestation",
+        "application upload",
+        "final submission"
+      ],
+      "completion_gate": "A route may become browser-preparable only after its formal records, applicant facts, funding terms and route-specific evidence are resolved. Final submission remains human-gated."
+    },
+    {
+      "campaign_id": "main-quest-b-employment-options",
+      "state": "ACTIVE_INTERNAL_PREPARATION",
+      "objective": "Create serious employment options across research/applied AI, research infrastructure, financial AI, agent/software and semiconductor/EDA families.",
+      "authorized_now": [
+        "verify live requisitions and formal gates",
+        "build reusable role-family evidence modules",
+        "map exact project evidence and nonclaims",
+        "prepare route-specific CV and answer deltas",
+        "research compensation and work-authorization uncertainty"
+      ],
+      "protected": [
+        "recruiter or employer communication",
+        "account creation",
+        "identity or legal attestation",
+        "application upload",
+        "final submission"
+      ],
+      "completion_gate": "A route may become browser-preparable only after the live requisition, applicant facts, degree/language/seniority gates and selected evidence module are verified. Final submission remains human-gated."
+    }
+  ],
+  "asset_authority": [
+    {
+      "asset_id": "invisible-ledger",
+      "state": "UNRESOLVED_USER_OWNED_RESEARCH_OBJECT",
+      "role_now": "dependency record only",
+      "authorized_now": [
+        "record unresolved thesis and evidence questions",
+        "preserve existing verified facts without extrapolation"
+      ],
+      "forbidden_now": [
+        "treating Invisible Ledger as the settled thesis",
+        "inventing or freezing a thesis title",
+        "designating it as the canonical writing sample",
+        "deriving SASE or journal copy from unresolved authority",
+        "using it as a prerequisite for the whole PhD or employment campaign"
+      ],
+      "release_gate": "The user explicitly establishes the thesis/research object and which claims or artifacts may support external routes."
+    },
+    {
+      "asset_id": "research-drive",
+      "state": "OWNED_BY_EXISTING_PROJECT_AGENT",
+      "role_now": "accept verified receipts when returned; do not duplicate implementation",
+      "forbidden_now": ["parallel implementation by the Gauntlet operator"]
+    },
+    {
+      "asset_id": "cite-agent",
+      "state": "OWNED_BY_EXISTING_PROJECT_AGENT",
+      "role_now": "accept verified receipts when returned; do not duplicate implementation",
+      "forbidden_now": ["parallel implementation by the Gauntlet operator"]
+    },
+    {
+      "asset_id": "policy-lab",
+      "state": "SPECIALIST_TRUTH_RECONCILIATION",
+      "role_now": "reconcile canonical main, candidate stack and claim boundary before campaign promotion",
+      "forbidden_now": [
+        "promoting an unmerged candidate to canonical",
+        "external outreach or submission",
+        "claiming DPG recognition, institutional use or external validation"
+      ]
+    },
+    {
+      "asset_id": "hardware-splicer",
+      "state": "FROZEN_REUSABLE_EVIDENCE",
+      "role_now": "reuse the pinned PACKAGED_NOT_PHYSICAL case without reopening general development",
+      "forbidden_now": [
+        "physical correctness claims",
+        "fabrication or purchase without separate authority",
+        "treating an external-route strategy as submission permission"
+      ]
+    }
+  ],
+  "execution_order": [
+    {
+      "position": 1,
+      "work": "canonical_gauntlet_reconciliation",
+      "output": "one tested branch combining current main with the Main Quest census, economics, campaign and preparation-leverage authorities"
+    },
+    {
+      "position": 2,
+      "work": "funded_phd_fact_and_document_matrix",
+      "output": "verified route facts, funding terms, document requirements, faculty-fit evidence and unresolved user facts without applications"
+    },
+    {
+      "position": 3,
+      "work": "employment_family_and_live_route_matrix",
+      "output": "reusable evidence families bound to verified live roles, formal gates, compensation uncertainty and exact deltas"
+    },
+    {
+      "position": 4,
+      "work": "policy_lab_truth_reconciliation",
+      "output": "specialist-reviewed canonical/candidate boundary and a proposed Gauntlet campaign patch"
+    },
+    {
+      "position": 5,
+      "work": "project_receipt_intake",
+      "output": "incorporate exact Research Drive and Cite-Agent evidence only when their current agents return verified receipts"
+    }
+  ],
+  "global_rules": [
+    "PhD and employment are terminal Main Quest outcomes; portfolio projects are evidence suppliers, not competing applicants.",
+    "An unresolved project does not block routes that can be supported by other verified evidence.",
+    "Unknown applicant facts remain explicit gaps rather than guessed defaults.",
+    "Preparation authority does not authorize communication, account creation, upload, attestation, payment or final submission.",
+    "External execution remains disabled until a route-specific handoff is reviewed under the Gauntlet browser contract."
+  ]
+}
