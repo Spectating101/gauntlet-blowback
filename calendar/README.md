@@ -1,5 +1,34 @@
 # Gauntlet calendar authority
 
+## Sep-15 Main Quest overlay
+
+Primary career/degree routes are now separated from the broader opportunity calendar:
+
+- `gauntlet-main-quest-2026-09-15.ics` — PhD + serious full-time/research-employment execution calendar;
+- `../data/main-quest-board-2026-09-15.json` — machine-readable PhD/job route board;
+- `../docs/MAIN_QUEST_BOARD_2026-09-15.md` — human-readable doctrine, route fit, dates, recommender allocation and operating rhythm.
+
+Main Quest semantics:
+
+- thesis completion remains P0;
+- Main Quest A = funded PhD option creation (NYCU, NTU, NTHU, NCCU);
+- Main Quest B = upper-tail full-time/research employment price discovery;
+- fellowships, competitions, grants, credits, conferences and pilots remain side quests unless a hard deadline or exceptional expected value justifies displacement;
+- NTHU 116 exact dates remain `WATCH/REVERIFY` until an official 116 doctoral brochure is source-locked.
+
+The canonical Sep-15 DT/IL paper-native conversion tranche remains `../docs/longtail/research-conversion-gauntlet-2026-09-15.md` plus `../data/research-conversion-radar-2026-09-15.json`; this Main Quest overlay does not duplicate or override that authority.
+
+## Sep-14 freeze candidate
+
+The draft Sep-14 conversion freeze lives in:
+
+- `gauntlet-freeze-active-2026-09-14.ics` — source-verified hard-deadline spine;
+- `gauntlet-freeze-rolling-watch-2026-09-14.ics` — rolling/resource/watch actions without fabricated deadlines;
+- `../data/gauntlet-freeze-2026-09-14.json` — machine-readable route and allocation snapshot;
+- `../docs/GAUNTLET_FREEZE_2026-09-14.md` — human-readable doctrine, route corrections and development gate.
+
+Once accepted, the Sep-14 freeze supersedes stale Sep-1 timing/ownership assertions for the Sep 15–Nov 30 conversion window where it is more specific. It does not supersede the newer Sep-15 research-conversion tranche. In particular, do not use the old Sep-6 MATS Winter Fellowship event as the current MATS authority: the verified live route is the separate MATS Residency window ending Oct 31, 2026 AoE.
+
 Cutoff: **2026-09-01 20:35 Asia/Taipei**.
 
 The calendar layer is now separated by execution semantics instead of by legacy project family.

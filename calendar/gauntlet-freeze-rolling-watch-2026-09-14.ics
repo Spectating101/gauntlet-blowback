@@ -1,0 +1,78 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Gauntlet Blowback//Sep 14 2026 Rolling Watch Freeze//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Gauntlet Blowback — Rolling/Watch Freeze 2026-09-14
+X-WR-TIMEZONE:Asia/Taipei
+X-GAUNTLET-CUTOFF:20260914T215100+0800
+X-GAUNTLET-POLICY:Rolling actions and reverify blocks only; absence of a hard date is deliberate.
+BEGIN:VEVENT
+UID:openai-researcher-fire-20260916@blowback
+DTSTART;VALUE=DATE:20260916
+DTEND;VALUE=DATE:20260917
+SUMMARY:[FIRE THIS WEEK] OpenAI Researcher Access
+DESCRIPTION:HS-led bounded-agent research protocol; Refinery/Cite support as native. Up to US$1,000 API credits valid 12 months; quarterly reviews include September. No fake daily deadline.
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic-mhs-fire-20260916@blowback
+DTSTART;VALUE=DATE:20260916
+DTEND;VALUE=DATE:20260917
+SUMMARY:[FIRE THIS WEEK] Anthropic MHS research preview interest
+DESCRIPTION:Hardware Splicer lead. Emphasize safety evaluation, explicit physical-authority limits, deterministic checks and MCP/tool boundaries. Research-preview waitlist; no public hard deadline claimed.
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic-science-fire-20260917@blowback
+DTSTART;VALUE=DATE:20260917
+DTEND;VALUE=DATE:20260918
+SUMMARY:[FIRE IF RESEARCH FIT] Anthropic AI for Science credits
+DESCRIPTION:HS-led research framing with RD/Refinery support only where native. Expanded program allows any researcher to apply for up to US$50,000 credits/project. No hard deadline claimed.
+END:VEVENT
+BEGIN:VEVENT
+UID:nchc-resource-reverify-20260918@blowback
+DTSTART;VALUE=DATE:20260918
+DTEND;VALUE=DATE:20260919
+SUMMARY:[RESOURCE / REVERIFY] NCHC Taiwan AI RAP and academic compute
+DESCRIPTION:Rehydrate exact current application mechanics, student/PI recommendation requirements and resource terms. Do not assign a fake deadline.
+END:VEVENT
+BEGIN:VEVENT
+UID:openai-codex-oss-watch-20260921@blowback
+DTSTART;VALUE=DATE:20260921
+DTEND;VALUE=DATE:20260922
+RRULE:FREQ=BIWEEKLY;BYDAY=MO;UNTIL=20261130
+SUMMARY:[HOLD/REVERIFY] OpenAI Codex OSS route
+DESCRIPTION:Only promote when a genuinely public/open-source vehicle and ecosystem-fit evidence clear. Private Refinery is not automatically eligible merely because the research idea is strong.
+END:VEVENT
+BEGIN:VEVENT
+UID:external-evidence-weekly-freeze-20260917@blowback
+DTSTART;VALUE=DATE:20260917
+DTEND;VALUE=DATE:20260918
+RRULE:FREQ=WEEKLY;BYDAY=TH;UNTIL=20261126
+SUMMARY:[EXTERNAL EVIDENCE] One pilot / reviewer / user action
+DESCRIPTION:Prioritize one Refinery cold reviewer, one Research Drive external user and one Nocturnal analyst/policy reader after hard-deadline work. HS external evidence only when route-specific.
+END:VEVENT
+BEGIN:VEVENT
+UID:jobs-labs-refresh-freeze-20261019@blowback
+DTSTART;VALUE=DATE:20261019
+DTEND;VALUE=DATE:20261020
+RRULE:FREQ=WEEKLY;BYDAY=MO;UNTIL=20261130
+SUMMARY:[QUEUE] MIT FutureTech / HKU / Sinica and upper-tail research roles
+DESCRIPTION:Begin after Oct 16 hard-deadline cluster unless a role is at risk of filling early. Use route-specific person bundles; do not send one generic portfolio packet everywhere.
+END:VEVENT
+BEGIN:VEVENT
+UID:gauntlet-reverify-weekly-freeze-20260921@blowback
+DTSTART;VALUE=DATE:20260921
+DTEND;VALUE=DATE:20260922
+RRULE:FREQ=WEEKLY;BYDAY=MO;UNTIL=20261130
+SUMMARY:[RADAR] Reverify live routes and kill stale entries
+DESCRIPTION:Check official sources, patch changed deadlines/eligibility, demote unverified remembered routes, and keep history without pretending stale dates remain live.
+END:VEVENT
+BEGIN:VEVENT
+UID:receipt-ledger-weekly-freeze-20260918@blowback
+DTSTART;VALUE=DATE:20260918
+DTEND;VALUE=DATE:20260919
+RRULE:FREQ=WEEKLY;BYDAY=FR;UNTIL=20261127
+SUMMARY:[LEDGER] Update FIRED / RECEIPT / OUTCOME evidence
+DESCRIPTION:Record actual submission receipts, screens, interviews, awards, credits, offers and external users. Prepared is not FIRED; FIRED without proof is not RECEIPT.
+END:VEVENT
+END:VCALENDAR

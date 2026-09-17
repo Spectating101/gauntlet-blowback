@@ -1,0 +1,143 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Gauntlet Blowback//Sep 14 2026 Freeze//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Gauntlet Blowback — Frozen Active Spine 2026-09-14
+X-WR-TIMEZONE:Asia/Taipei
+X-GAUNTLET-CUTOFF:20260914T215100+0800
+X-GAUNTLET-POLICY:Only source-verified hard dates; rolling routes stay outside this file; receipt required for outcome semantics.
+BEGIN:VEVENT
+UID:iais-info-20260915@blowback
+DTSTART;VALUE=DATE:20260915
+DTEND;VALUE=DATE:20260916
+SUMMARY:[P0 FIELD] NYCU IAIS information session
+DESCRIPTION:Resolve route/group mechanics, faculty supervision fit, scholarship mechanics, English requirements, Dec-2026 graduation eligibility and IAIS-specific documents. Do not change unrelated hard dates without new evidence.
+END:VEVENT
+BEGIN:VEVENT
+UID:tpp-fellowship-20260924@blowback
+DTSTART;VALUE=DATE:20260924
+DTEND;VALUE=DATE:20260925
+SUMMARY:[FIRE IF FIT] Tech Policy Press 2027 Fellowship deadline
+DESCRIPTION:Deadline 11:59pm EDT. Fiscal Choke Points + Nocturnal lead. Requires CV/resume, cover letter <=2 pages, public published links, two professional references. Mid-career/public-interest writing fit is a real gate.
+END:VEVENT
+BEGIN:VEVENT
+UID:nycu-iais-open-20261001@blowback
+DTSTART;TZID=Asia/Taipei:20261001T090000
+DTEND;TZID=Asia/Taipei:20261001T091500
+SUMMARY:[P0 OPEN] NYCU 116 PhD application portal opens
+DESCRIPTION:Create IAIS application immediately, trigger recommender invitations early, pay fee and begin uploads. Provisional recommenders: De-Rong Kong + Qazi Mazhar Ul Haq.
+END:VEVENT
+BEGIN:VEVENT
+UID:ssi-fellowship-20261005@blowback
+DTSTART;VALUE=DATE:20261005
+DTEND;VALUE=DATE:20261006
+SUMMARY:[FIRE] SSI Fellowship 2027 deadline
+DESCRIPTION:Refinery-led person bundle. Application form + six-minute screencast. Research Drive and Cite support; do not turn this into a generic portfolio tour.
+END:VEVENT
+BEGIN:VEVENT
+UID:innoserve-20261005@blowback
+DTSTART;TZID=Asia/Taipei:20261005T160000
+DTEND;TZID=Asia/Taipei:20261005T160500
+SUMMARY:[BAKEOFF/FIRE] InnoServe 2026 deadline
+DESCRIPTION:Cite/Research Drive provisional lead. Team/student/adviser/category gates apply. Official rules require system overview, declarations/consent, student proof, 3-minute video and team photo; category-specific extras may apply.
+END:VEVENT
+BEGIN:VEVENT
+UID:openai-teen-20261006@blowback
+DTSTART;VALUE=DATE:20261006
+DTEND;VALUE=DATE:20261007
+SUMMARY:[PARTNER GATE] OpenAI AI & Teen Development grant deadline
+DESCRIPTION:Deadline 11:59pm PDT. Fire only with genuine research fit in teen development/wellbeing/HCI/AI impacts or a credible domain partner. Do not force a solo product pitch.
+END:VEVENT
+BEGIN:VEVENT
+UID:nycu-iais-app-deadline-20261007@blowback
+DTSTART;TZID=Asia/Taipei:20261007T170000
+DTEND;TZID=Asia/Taipei:20261007T170500
+SUMMARY:[P0 HARD] NYCU 116 PhD application/upload deadline
+DESCRIPTION:All applicant registration data and uploaded files complete by 17:00 Asia/Taipei. Aim to finish earlier; no last-day dependency.
+END:VEVENT
+BEGIN:VEVENT
+UID:nycu-iais-rec-deadline-20261008@blowback
+DTSTART;TZID=Asia/Taipei:20261008T170000
+DTEND;TZID=Asia/Taipei:20261008T170500
+SUMMARY:[P0 HARD] NYCU 116 PhD recommendation deadline
+DESCRIPTION:Two recommender submissions due by 17:00 Asia/Taipei. Provisional pair Kong + Qazi; target completion by Oct 5-6 for buffer.
+END:VEVENT
+BEGIN:VEVENT
+UID:nycu-iais-candidate-number-20261015@blowback
+DTSTART;TZID=Asia/Taipei:20261015T150000
+DTEND;TZID=Asia/Taipei:20261015T151500
+SUMMARY:[P0 CHECK] NYCU registration result / candidate number
+DESCRIPTION:Check application result and candidate number. Preserve any institute-specific second-stage instructions separately.
+END:VEVENT
+BEGIN:VEVENT
+UID:napai-prelim-20261016@blowback
+DTSTART;TZID=Asia/Taipei:20261016T235900
+DTEND;TZID=Asia/Taipei:20261017T000000
+SUMMARY:[FIRE] NAPAI Agentic AI preliminary deadline
+DESCRIPTION:2-5 student team; real field problem and field validation required. Submit <=12-page proposal deck, <=4-minute video, field evidence, registration and declaration. RD/Cite provisional lead; HS supports where native.
+END:VEVENT
+BEGIN:VEVENT
+UID:mats-residency-20261031@blowback
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:[PREP/FIRE] MATS Residency Winter 2027 closes AoE
+DESCRIPTION:Current live route is MATS Residency, not the closed Winter Fellowship page. HS + Refinery lead. Official application window Aug 25-Oct 31, 2026 AoE.
+END:VEVENT
+BEGIN:VEVENT
+UID:ssi-shortlist-20261103@blowback
+DTSTART;VALUE=DATE:20261103
+DTEND;VALUE=DATE:20261104
+SUMMARY:[OUTCOME IF FIRED] SSI shortlist confirmed
+DESCRIPTION:Relevant only with submission receipt. If shortlisted, prepare for Nov 12 Online Selection Day.
+END:VEVENT
+BEGIN:VEVENT
+UID:nycu-result-batch1-20261105@blowback
+DTSTART;VALUE=DATE:20261105
+DTEND;VALUE=DATE:20261106
+SUMMARY:[OUTCOME] NYCU doctoral result batch 1
+DESCRIPTION:Check whether IAIS belongs to this release batch. Do not infer outcome before official posting.
+END:VEVENT
+BEGIN:VEVENT
+UID:napai-finalists-20261106@blowback
+DTSTART;VALUE=DATE:20261106
+DTEND;VALUE=DATE:20261107
+SUMMARY:[OUTCOME IF FIRED] NAPAI finalists announced
+DESCRIPTION:If selected, enter mentoring/prototype-refinement tranche and prepare Nov 13 materials.
+END:VEVENT
+BEGIN:VEVENT
+UID:ssi-selection-20261112@blowback
+DTSTART;VALUE=DATE:20261112
+DTEND;VALUE=DATE:20261113
+SUMMARY:[OUTCOME IF FIRED] SSI Online Selection Day
+DESCRIPTION:Only if shortlisted. Full-day group/selection activity per official fellowship schedule.
+END:VEVENT
+BEGIN:VEVENT
+UID:napai-final-materials-20261113@blowback
+DTSTART;TZID=Asia/Taipei:20261113T235900
+DTEND;TZID=Asia/Taipei:20261114T000000
+SUMMARY:[OUTCOME IF FIRED] NAPAI finalist materials due
+DESCRIPTION:Working prototype/test environment, code repo or encrypted source package, README/technical docs, agent evaluation data and one trace, updated deck/demo materials.
+END:VEVENT
+BEGIN:VEVENT
+UID:nycu-result-batch2-20261120@blowback
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261121
+SUMMARY:[OUTCOME] NYCU doctoral result batch 2
+DESCRIPTION:Check official IAIS outcome if not included in first release batch.
+END:VEVENT
+BEGIN:VEVENT
+UID:napai-final-20261121@blowback
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:[OUTCOME IF FIRED] NAPAI final and showcase
+DESCRIPTION:On-site working demo, presentation, Q&A and showcase for finalists.
+END:VEVENT
+BEGIN:VEVENT
+UID:mats-outcome-watch-20261130@blowback
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:[OUTCOME IF FIRED] MATS application outcome watch
+DESCRIPTION:Official Residency page says applicants hear about application outcome by end of November; shortlisted applicants proceed to interview or paid work test in first week of December.
+END:VEVENT
+END:VCALENDAR
