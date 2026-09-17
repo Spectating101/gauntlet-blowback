@@ -83,10 +83,36 @@ test('outward CV does not repeat excluded thesis, publication or credential clai
 });
 test('reusable employment prose and proposed research are present without submission claims', () => {
   const jobs = safeFile('docs/main-quest/2026-09-18/EMPLOYMENT_MODULES.md');
-  assert.match(jobs, /Point72 \/ Cubist — optional note/);
-  assert.match(jobs, /WorldQuant — optional cover letter/);
+  assert.match(jobs, /POINT72_NOTE\.md/);
+  assert.match(jobs, /WORLDQUANT_LETTER\.md/);
+  assert.match(safeFile('docs/main-quest/2026-09-18/POINT72_NOTE.md'), /Cubist/);
+  assert.match(safeFile('docs/main-quest/2026-09-18/WORLDQUANT_LETTER.md'), /Dear Hiring Team/);
   const research = safeFile('docs/main-quest/2026-09-18/RESEARCH_BRIEF.md');
-  assert.match(research, /held-out|Hold out/);
-  assert.match(research, /proposed, not completed experiments/);
-  assert.match(research, /Repeated model runs do not create independent task families/);
+  assert.match(research, /held[ -]out|Hold out/i);
+  assert.match(research, /Proposed doctoral research/);
+  assert.match(research, /not count as new independent research problems/);
+});
+
+test('writing revision keeps applicant documents separate from internal review', () => {
+  assert.equal(pack.editorial_revision, 2);
+  assert.equal(pack.source_check_performed_in_this_revision, false);
+  assert.equal(pack.audience_files.length, 6);
+  for (const rel of pack.audience_files) {
+    const text = safeFile(rel);
+    assert.doesNotMatch(text, /MAIN QUEST|BUILD_FACTORY|FIRE_NOW|REVIEW_DRAFT_ONLY|F\d{2}\b|[a-f0-9]{40}/);
+    assert.doesNotMatch(text, /not claimed|not established|orchestrated promotion path|evidence-aware capability discovery/i);
+  }
+  const review = safeFile(pack.internal_review_path);
+  assert.match(review, /lower-level kernel/i);
+  assert.match(review, /Private paperwork/);
+});
+test('research purpose stays topic-first and reuse remains a later extension', () => {
+  sourceRefs(pack.research_direction.source_ids);
+  assert.equal(pack.research_direction.state, 'PROPOSED_NOT_COMPLETED');
+  assert.equal(pack.research_direction.does_not_designate_masters_thesis, true);
+  const text = safeFile('docs/main-quest/2026-09-18/RESEARCH_BRIEF.md');
+  assert.match(text, /understanding the field is useful even when none/);
+  assert.match(text, /Categories should emerge/);
+  assert.match(text, /Software reuse would be a separate extension/);
+  assert.match(text, /Cite-Refinery/);
 });

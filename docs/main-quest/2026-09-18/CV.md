@@ -1,13 +1,49 @@
 # Christopher Ongko
 
-Research assistant | Finance | Research software
+Finance research and software development
 
 Yuan Ze University · Taoyuan, Taiwan  
-s1133958@mail.yzu.edu.tw · https://github.com/Spectating101
+s1133958@mail.yzu.edu.tw · github.com/Spectating101
 
 ## Profile
 
-Master's researcher in finance and research assistant building data workflows for cryptocurrency research. My work combines Python and SQL data preparation with research-software development: identifying source and revision mismatches, making analysis reproducible, and keeping tool execution connected to inspectable evidence. I am interested in quantitative research and applied AI roles where implementation quality and empirical testing both matter.
+Finance master's student and research assistant at Yuan Ze University. I build cryptocurrency datasets for academic research and develop software for working with research sources, testing components and reviewing electronics designs.
+
+## Research experience
+
+**Research Assistant — College of Management, Yuan Ze University**  
+April 2026–present
+
+- Collect and clean cryptocurrency data from CoinGecko's category, profile, analytics and price endpoints for research supervised by Prof. De-Rong Kong.
+- Reconcile fields and coverage across sources, prepare panels for analysis, and document the steps needed to rebuild the data.
+
+## Selected projects
+
+**Cite-Refinery — tracking software experiments across research projects**
+
+- Built a Python prototype that connects a project's research claims to the software it uses, its execution records and experiment results.
+- Implemented checks on the component-sharing workflow so that an executable component needs a successful run linked to a passed or supported experiment before it can be shared with later projects.
+
+**Nocturnal — following public reporting as it changes**
+
+- Built a research interface that connects public records and claims with earlier coverage, source material and subsequent corrections.
+- Integrated Now, Read and Research views, including chronology and historical comparison, with separate reader and operator access.
+
+**Hardware Splicer — electronics design review software**
+
+- Developed a workflow for reviewing design documents and revision-specific engineering artifacts; packaged a SPI flash-adapter case for pre-fabrication review.
+
+## Professional experience
+
+**Staff Procurement ODC — Samator Indo Gas, Indonesia**  
+October 2022–June 2024
+
+Supported distributed procurement operations and improved the structure of recurring tracking and reporting workflows.
+
+**Freelance Team Manager — News Monitor**  
+May 2019–February 2020
+
+Managed hiring, training, quality assurance and task coordination for a distributed news-monitoring team.
 
 ## Education
 
@@ -17,56 +53,6 @@ February 2025–present · Expected graduation: December 2026
 **President University — Bachelor of Management, Banking and Finance**  
 September 2017–October 2021
 
-## Research experience
+## Technical skills
 
-**Research Assistant — College of Management, Yuan Ze University**  
-April 2026–present
-
-- Build and clean multi-source cryptocurrency datasets from category, profile, analytics and price endpoints for faculty-supervised research.
-- Reconcile schemas and source coverage, prepare panels, and maintain reproducible ingestion and validation workflows.
-- Connect data preparation with empirical analysis, evidence review and research documentation rather than treating a successful download as a finished dataset.
-
-## Selected software work
-
-**Cite-Refinery — research-to-execution orchestration**
-
-- Implemented project-local capability and implementation records linked to research claims, runs, artifacts and experiments.
-- Added an orchestrated promotion path that requires a passed or supported experiment and a linked successful run for executable capabilities before sharing them for later reuse.
-- Kept failed or unavailable grounding explicit. The work sample is a research prototype; these checks do not establish that every underlying implementation is secure or empirically correct.
-
-**Hardware Splicer — auditable electronics workflow**
-
-- Developed software for organizing electronics-design evidence, revision-bound engineering artifacts and verification work.
-- Packaged a reusable SPI flash-adapter engineering case with explicit pre-physical limitations. Fabrication, power-on and physical performance are not claimed.
-
-**Nocturnal — longitudinal public-source research interface**
-
-- Built a source-linked workflow that keeps claims, corrections and changing records connected over time.
-- Integrated Now, Read and Research views around public reading, evidence inspection and historical comparison, with separate intake and operator authority.
-- The product is available as a work sample; independent analyst adoption and measured workflow improvement are not established.
-
-## Professional experience
-
-**Staff Procurement ODC — Samator Indo Gas, Indonesia**  
-October 2022–June 2024
-
-Supported distributed procurement operations and structured recurring tracking and reporting workflows.
-
-**Freelance Team Manager — News Monitor**  
-May 2019–February 2020
-
-Managed hiring, training, quality assurance and task coordination for a distributed news-monitoring team.
-
-## Working skills
-
-Python, SQL, research-data preparation, API ingestion, schema reconciliation, panel construction, source and revision tracking, Git/GitHub, and reproducible software workflows.
-
-## Work-sample locators
-
-Cite-Refinery: `Spectating101/cite-refinery`, revision `13e8026`  
-Hardware Splicer: `Spectating101/hardware-splicer`, packaged case `f892fac`  
-Nocturnal: `Spectating101/nocturnal-oversight`, product freeze `ceb0551`
-
----
-
-Review draft — 18 September 2026. Education and work chronology are applicant-reported; confirm formal records before external use. A thesis title, publication-status list, GPA, scholarship and language certificates have deliberately not been inferred. Claim/source references: F01–F10 in the preparation-pack JSON.
+Python, SQL, JavaScript/TypeScript; API integration, MCP tools, Git, Linux, containers, automated testing and research-data preparation.
