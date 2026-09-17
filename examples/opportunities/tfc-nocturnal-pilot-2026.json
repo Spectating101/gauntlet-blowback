@@ -1,0 +1,67 @@
+{
+  "id": "partner-tfc-nocturnal-pilot",
+  "name": "Taiwan FactCheck Center — Nocturnal bounded workflow pilot outreach",
+  "portal": "generic",
+  "portal_family": "contact_form",
+  "auth_scope": "tfc-taiwan-contact",
+  "source_url": "https://tfc-taiwan.org.tw/contact-us/",
+  "submission_url": "https://tfc-taiwan.org.tw/contact-us/",
+  "recon_stage": "contact_form",
+  "deadline": "ROLLING",
+  "deadline_note": "Partner outreach route; no grant deadline or funding award is implied.",
+  "mode": "inspect",
+  "execution_state": "PORTAL_RECON_REQUIRED",
+  "direct_control": true,
+  "profile": "../profiles/christ.json",
+  "project": "../projects/nocturnal.json",
+  "fire_packet": "../fire-packets/tfc-nocturnal-pilot-2026.json",
+  "packet_revision": "56edefd623f7a71a58dff878bb35b1253c89e02e",
+  "packet_source": "https://github.com/Spectating101/gauntlet-blowback/blob/main/docs/nocturnal-conversion/TFC_PILOT_OUTREACH.md",
+  "final_copy_revision": "8af0fb959f049c954abbb0f3d7c1b8d79366aad5",
+  "final_copy_source": "https://github.com/Spectating101/gauntlet-blowback/blob/main/examples/fire-packets/tfc-nocturnal-pilot-2026.json",
+  "fields": {
+    "name": "$profile.name",
+    "email": "$profile.email",
+    "affiliation": "$profile.affiliation",
+    "project_name": "$project.name",
+    "project_repo": "$project.repo_url"
+  },
+  "field_map": {},
+  "uploads": [],
+  "packet_requirements": [
+    {
+      "id": "live_contact_form_map",
+      "description": "Inspect the current TFC contact surface and map name/email/subject/message fields without changing the outreach copy unless a real field limit requires compression.",
+      "status": "PORTAL_RECON_REQUIRED"
+    },
+    {
+      "id": "final_send",
+      "description": "Final Send remains human-protected. Save/copy the completed message and stop before irreversible transmission.",
+      "status": "HUMAN_GATE"
+    },
+    {
+      "id": "pilot_case_selection",
+      "description": "If TFC responds positively, partner willingness and the first bounded non-sensitive case are separate human/partner gates.",
+      "status": "POST_OUTREACH_DEPENDENCY"
+    }
+  ],
+  "compliance_checks": [
+    "Do not state or imply TFC endorsement, partnership, funding or adoption before affirmative agreement.",
+    "Do not propose private-person surveillance, harassment or punitive profiling as the pilot use case.",
+    "Do not claim external workflow improvement until a real measured pilot result exists.",
+    "Preserve the negative-result-acceptable framing; this is an evaluation request, not a marketing validation request."
+  ],
+  "route_evidence": {
+    "verified_at": "2026-09-17",
+    "official_contact_surface_verified": true,
+    "final_submission_copy_ready": true,
+    "form_fields_verified": false,
+    "partner_willingness": false,
+    "pilot_case_selected": false
+  },
+  "human_required": [
+    "final_send",
+    "partner_commitment",
+    "pilot_case_selection"
+  ]
+}
