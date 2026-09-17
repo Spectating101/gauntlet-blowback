@@ -54,7 +54,7 @@ test('Anthropic FIRE handoff preserves narrow AI-control framing instead of gene
 });
 
 test('fire-next skips expired dated shots and selects a live rolling research-credit route', async () => {
-  const handoff = await nextFireHandoff(records);
+  const handoff = await nextFireHandoff(records, { includePaused: true });
   assert.ok(handoff);
   assert.ok(FIRE_IDS.includes(handoff.route_id));
 });

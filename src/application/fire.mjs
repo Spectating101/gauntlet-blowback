@@ -163,8 +163,8 @@ export async function fireHandoffForRoute(routeId, records = buildMasterRegistry
   return buildFireHandoff(found.record, found.checkpoint);
 }
 
-export async function nextFireHandoff(records = buildMasterRegistry()) {
-  const ranked = rankGauntlet(records)
+export async function nextFireHandoff(records = buildMasterRegistry(), { includePaused = false } = {}) {
+  const ranked = rankGauntlet(records, { includePaused })
     .filter(({ record }) => record.execution_manifest && FIRE_STATUS.test(String(record.status ?? '')));
   for (const item of ranked) {
     try {
