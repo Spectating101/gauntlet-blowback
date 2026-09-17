@@ -4,7 +4,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { fileURLToPath } from 'node:url';
 import { buildMasterRegistry } from '../scripts/build-gauntlet-master.mjs';
-import { buildBrowserMission, nextBrowserMission, rankGauntlet } from '../src/mission/operator.mjs';
+import { buildBrowserMission, deadlineIsExpired, nextBrowserMission, rankGauntlet } from '../src/mission/operator.mjs';
 import { persistCheckpoint, validateCheckpoint } from '../src/mission/checkpoint.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -54,8 +54,20 @@ test('rankGauntlet prefers immediate FIRE over WATCH and KILL', () => {
     record({ id: 'watch', status: 'WATCH', deadline: '2026-08-28' }),
     record({ id: 'fire', status: 'FIRE_NOW', deadline: '2026-09-01' }),
     record({ id: 'kill', status: 'KILL', deadline: '2026-08-27' }),
-  ]);
+  ], { asOf: '2026-08-28T00:00:00Z' });
   assert.deepEqual(ranked.map((item) => item.record.id), ['fire', 'watch']);
+});
+
+test('rankGauntlet suppresses expired dated routes but preserves rolling routes', () => {
+  assert.equal(deadlineIsExpired('2026-09-07', '2026-09-17T00:00:00Z'), true);
+  assert.equal(deadlineIsExpired('2026-09-17', '2026-09-17T12:00:00Z'), false);
+  assert.equal(deadlineIsExpired('ROLLING', '2026-09-17T00:00:00Z'), false);
+  const ranked = rankGauntlet([
+    record({ id: 'expired', deadline: '2026-09-07' }),
+    record({ id: 'rolling', deadline: 'ROLLING' }),
+    record({ id: 'future', deadline: '2026-09-18' }),
+  ], { asOf: '2026-09-17T00:00:00Z' });
+  assert.deepEqual(ranked.map((item) => item.record.id), ['future', 'rolling']);
 });
 
 test('WAITING_HUMAN route does not freeze next dispatch', () => {
@@ -70,7 +82,7 @@ test('WAITING_HUMAN route does not freeze next dispatch', () => {
   const ranked = rankGauntlet([
     record({ id: 'route-a', status: 'FIRE_NOW' }),
     record({ id: 'route-b', status: 'FIRE', deadline: '2026-09-01' }),
-  ]);
+  ], { asOf: '2026-08-31T00:00:00Z' });
   assert.deepEqual(ranked.map((item) => item.record.id), ['route-b']);
   fs.rmSync(STATE_DIR, { recursive: true, force: true });
 });

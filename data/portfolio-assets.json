@@ -77,14 +77,14 @@
       "external_evidence_stage": "none",
       "deployment_stage": "public_demo",
       "canonicalization_state": "release_branch_ahead",
-      "last_audited": "2026-09-01",
-      "effective_candidate": "Canonical Nocturnal 1.2 core plus Edition RC1 public-review branch; external adopter/Refinery adapter remains preview-only.",
+      "last_audited": "2026-09-17",
+      "effective_candidate": "Living Journalism V3 PR #30 at 5c709947842dc3f34afe810d3604c0b3ee9d5c74, stacked on Reference-Driven RC2 PR #29 at d7b2e7cae74c68b1694b5af3c6f779ec755395b2; neither is canonical main yet.",
       "packaging_role": "Primary information-integrity / Internet-freedom / correction-aware public-memory package.",
-      "strongest_known_gap": "One bounded externally witnessed analyst/fact-checker/steward pilot showing measurable workflow or correctness benefit. Do not reopen architecture before external use exposes an actual failure.",
-      "allowed_claims": ["pilot-ready Nocturnal 1.2 architecture", "correction/supersession-aware matter history", "public/intake/operator authority separation", "Edition RC1 product-complete review surface"],
+      "strongest_known_gap": "Finish the bounded closure transaction first: integrate RC2 and V3, supersede RC1, freeze one real end-to-end demonstration and certify the exact head. Then run one externally witnessed analyst/fact-checker/steward pilot showing measurable workflow delta.",
+      "allowed_claims": ["pilot-ready Nocturnal architecture", "correction/supersession-aware matter history", "public/intake/operator authority separation", "matter-first Now / Read / Research interface exists on the named V3 candidate", "V3 candidate supports story-to-change, chronology, sources, evidence, research and historical-compare presentation"],
       "forbidden_claims": ["existing partner/newsroom adoption", "surveillance or punitive-person dossiers", "global truth/reliability scoring", "external workflow improvement before pilot evidence"],
-      "next_evidence_action": "Run one serious bounded pilot first; use that evidence to unlock OTF IFF, WebSci/ICWSM and stronger public-interest funding. In parallel, audit OTF ICRP eligibility before Sep 7.",
-      "evidence_basis": "The focused 2026-09-01 Nocturnal conversion radar identifies G4 pilot evidence—not another feature sprint—as the highest-leverage unlock across OTF, TWNIC, NLnet, WebSci, ICWSM and future journalism/public-interest funding."
+      "next_evidence_action": "Close and certify the V3 stack without another redesign, then select exactly one serious bounded partner pilot; use that evidence to unlock OTF IFF, WebSci/ICWSM and stronger public-interest funding.",
+      "evidence_basis": "GitHub PR state verified 2026-09-17: #29 targets main, #30 is stacked on #29, and legacy RC1 #15 remains open on a separate experimental base. All hosted checks terminate with zero steps, so exact-head local certification and explicit runner-failure evidence are required."
     },
     {
       "id": "hardware-splicer",

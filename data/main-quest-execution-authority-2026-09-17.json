@@ -95,6 +95,23 @@
         "fabrication or purchase without separate authority",
         "treating an external-route strategy as submission permission"
       ]
+    },
+    {
+      "asset_id": "nocturnal-oversight",
+      "state": "CLOSURE_CONVERSION_READY",
+      "role_now": "finish one bounded canonical closure transaction while Gauntlet prepares, but does not send, route-specific pilot packaging",
+      "authorized_now": [
+        "verify and record the RC2/V3/RC1 topology",
+        "prepare a closure and certification handoff",
+        "prepare one evidence-bounded pilot packet after partner bakeoff",
+        "research later conference, grant and public-interest routes"
+      ],
+      "forbidden_now": [
+        "calling the unmerged V3 candidate canonical or finalized",
+        "starting another speculative redesign",
+        "claiming external adoption or workflow improvement",
+        "sending partner outreach before the canonical demo and exact-head certification exist"
+      ]
     }
   ],
   "execution_order": [
@@ -120,6 +137,11 @@
     },
     {
       "position": 5,
+      "work": "nocturnal_final_closure",
+      "output": "RC2/V3 stack integrated, RC1 superseded, one real demo frozen, exact-head certification recorded and one bounded pilot packet prepared"
+    },
+    {
+      "position": 6,
       "work": "project_receipt_intake",
       "output": "incorporate exact Research Drive and Cite-Agent evidence only when their current agents return verified receipts"
     }

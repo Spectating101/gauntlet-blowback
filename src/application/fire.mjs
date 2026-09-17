@@ -177,8 +177,8 @@ export async function nextFireHandoff(records = buildMasterRegistry()) {
   return null;
 }
 
-export async function fireHandoffQueue(records = buildMasterRegistry(), { limit = 10 } = {}) {
-  const ranked = rankGauntlet(records)
+export async function fireHandoffQueue(records = buildMasterRegistry(), { limit = 10, includePaused = false } = {}) {
+  const ranked = rankGauntlet(records, { includePaused })
     .filter(({ record }) => record.execution_manifest && FIRE_STATUS.test(String(record.status ?? '')));
   const handoffs = [];
   for (const item of ranked) {

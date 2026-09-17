@@ -78,13 +78,14 @@ test('known G4 assets stay explicitly short of external validation', () => {
   assert.match(byId.get('hardware-splicer').strongest_known_gap, /physical|design-partner|G4/i);
 });
 
-test('Nocturnal maturity points to one bounded external pilot, not another feature sprint', () => {
+test('Nocturnal maturity records closure before one bounded external pilot', () => {
   const nocturnal = byId.get('nocturnal-oversight');
   assert.equal(nocturnal.external_evidence_stage, 'none');
-  assert.equal(nocturnal.last_audited, '2026-09-01');
+  assert.equal(nocturnal.last_audited, '2026-09-17');
+  assert.match(nocturnal.strongest_known_gap, /closure transaction/i);
   assert.match(nocturnal.strongest_known_gap, /externally witnessed.*pilot/i);
-  assert.match(nocturnal.strongest_known_gap, /Do not reopen architecture/i);
-  assert.match(nocturnal.evidence_basis, /OTF.*TWNIC.*NLnet.*WebSci.*ICWSM/i);
+  assert.match(nocturnal.next_evidence_action, /without another redesign/i);
+  assert.match(nocturnal.evidence_basis, /#29.*#30.*#15/i);
 });
 
 test('support infrastructure is explicitly prevented from masquerading as primary ammunition', () => {

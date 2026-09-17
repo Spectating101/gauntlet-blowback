@@ -79,9 +79,9 @@ test('prepare-only application mission always preserves final submit as a human 
 
 test('application queue ignores non-application lanes and preserves ranking order', () => {
   const records = [
-    cleanResearchJob({ id: 'job-2', deadline: '2026-09-10' }),
-    { id: 'contest-1', lane: 'COMPETITION', route_class: 'APPLY', status: 'FIRE_NOW', execution_state: 'APPLICATION_READY', deadline: '2026-09-02', organization: 'Contest', opportunity: 'Contest', source: 'https://contest.example' },
-    cleanResearchJob({ id: 'job-1', deadline: '2026-09-05' })
+    cleanResearchJob({ id: 'job-2', deadline: '2027-09-10' }),
+    { id: 'contest-1', lane: 'COMPETITION', route_class: 'APPLY', status: 'FIRE_NOW', execution_state: 'APPLICATION_READY', deadline: '2027-09-02', organization: 'Contest', opportunity: 'Contest', source: 'https://contest.example' },
+    cleanResearchJob({ id: 'job-1', deadline: '2027-09-05' })
   ];
   const queue = applicationQueue(records, { limit: 10 });
   assert.equal(queue.count, 2);
