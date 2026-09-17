@@ -13,12 +13,12 @@ import {
 const records = buildMasterRegistry();
 const byId = new Map(records.map((record) => [record.id, record]));
 const FIRE_IDS = [
-  'aws-community-day-taiwan-2026-hardware-splicer',
   'openai-researcher-access-hardware-splicer',
   'anthropic-external-researcher-access-2026',
+  'partner-tfc-nocturnal-pilot',
 ];
 
-test('immediate FIRE routes expose explicit execution manifests in the Gauntlet master', () => {
+test('current immediate FIRE routes expose explicit execution manifests in the Gauntlet master', () => {
   for (const id of FIRE_IDS) {
     const record = byId.get(id);
     assert.ok(record, `missing FIRE route ${id}`);
@@ -27,18 +27,16 @@ test('immediate FIRE routes expose explicit execution manifests in the Gauntlet 
   }
 });
 
-test('AWS FIRE handoff is self-contained and remains human-submit gated', async () => {
-  const handoff = await fireHandoffForRoute('aws-community-day-taiwan-2026-hardware-splicer', records);
-  assert.equal(handoff.schema, 'blowback.fire_handoff.v1');
-  assert.equal(handoff.state, 'READY_FOR_BROWSER_AGENT');
-  assert.equal(handoff.target.registration_url, 'https://go.awscmd.tw/cfp');
-  assert.equal(handoff.submission_copy.title, 'When an AI Agent Can Touch Hardware: Designing the Checks Between the Model and the Machine');
-  assert.match(handoff.submission_copy.abstract, /When I started letting an AI agent work inside a hardware-engineering environment/i);
-  assert.ok(handoff.submission_copy.abstract.length > 500);
-  assert.equal(handoff.browser_agent_contract.final_submit_policy, 'HUMAN_PROTECTED');
-  assert.ok(handoff.browser_agent_contract.human_gate.includes('final_submit_send_apply_confirm'));
-  assert.equal(handoff.receipt_contract.template.route_id, handoff.route_id);
-  assert.equal(handoff.receipt_contract.template.mission_id, handoff.mission_id);
+test('expired AWS CFP packet is retained but cannot dispatch through FIRE', async () => {
+  const record = byId.get('aws-community-day-taiwan-2026-hardware-splicer');
+  assert.ok(record);
+  assert.equal(record.status, 'EXPIRED_RETAIN');
+  assert.equal(record.execution_state, 'RESEARCH_ONLY');
+  assert.match(record.execution_manifest, /aws-community-day-taiwan-2026-hardware-splicer\.json$/);
+  await assert.rejects(
+    fireHandoffForRoute('aws-community-day-taiwan-2026-hardware-splicer', records),
+    /not in an immediate FIRE state/i,
+  );
 });
 
 test('OpenAI FIRE handoff carries the concrete experiment and credit ask inline', async () => {
@@ -61,19 +59,52 @@ test('Anthropic FIRE handoff preserves narrow AI-control framing instead of gene
   assert.ok(handoff.submission_copy.nonclaims.some((claim) => /general alignment solution/i.test(claim)));
 });
 
-test('fire-next selects the deadline-bound AWS shot before rolling research-credit routes', async () => {
-  const handoff = await nextFireHandoff(records);
-  assert.ok(handoff);
-  assert.equal(handoff.route_id, 'aws-community-day-taiwan-2026-hardware-splicer');
+test('TFC Nocturnal pilot handoff is bilingual and stops before final Send', async () => {
+  const handoff = await fireHandoffForRoute('partner-tfc-nocturnal-pilot', records);
+  assert.equal(handoff.schema, 'blowback.fire_handoff.v1');
+  assert.equal(handoff.state, 'READY_FOR_BROWSER_AGENT');
+  assert.equal(handoff.target.submission_url, 'https://tfc-taiwan.org.tw/contact-us/');
+  assert.equal(handoff.applicant_fields.name, 'Christopher Ongko');
+  assert.equal(handoff.applicant_fields.affiliation, 'Yuan Ze University');
+  assert.equal(handoff.submission_copy.preferred_language, 'Traditional Chinese');
+  assert.match(handoff.submission_copy.message, /Nocturnal/);
+  assert.match(handoff.submission_copy.message, /無費用/);
+  assert.match(handoff.submission_copy.message_en, /negative result would be just as useful/i);
+  assert.ok(handoff.submission_copy.nonclaims.some((claim) => /endorsement/i.test(claim)));
+  assert.equal(handoff.live_portal_state.execution_state, 'PORTAL_RECON_REQUIRED');
+  assert.equal(handoff.live_portal_state.field_map_verified, false);
+  assert.equal(handoff.browser_agent_contract.final_submit_policy, 'HUMAN_PROTECTED');
+  assert.ok(handoff.browser_agent_contract.human_gate.includes('final_submit_send_apply_confirm'));
 });
 
-test('fire queue contains only the three executable immediate FIRE bundles with AWS first', async () => {
+test('NLnet Nocturnal planning manifest cannot dispatch before portfolio and authorship gates', async () => {
+  const record = byId.get('nlnet-restack-nocturnal');
+  assert.ok(record);
+  assert.equal(record.status, 'PORTFOLIO_BAKEOFF_HUMAN_REWRITE_REQUIRED');
+  assert.equal(record.execution_state, 'PACKET_READY');
+  assert.match(record.execution_manifest, /nlnet-restack-nocturnal-2026\.json$/);
+  await assert.rejects(
+    fireHandoffForRoute('nlnet-restack-nocturnal', records),
+    /not in an immediate FIRE state/i,
+  );
+});
+
+test('fire-next ignores expired packets and returns a genuinely executable current route', async () => {
+  const handoff = await nextFireHandoff(records);
+  assert.ok(handoff);
+  assert.ok(FIRE_IDS.includes(handoff.route_id), `unexpected next FIRE route ${handoff.route_id}`);
+  assert.notEqual(handoff.route_id, 'aws-community-day-taiwan-2026-hardware-splicer');
+});
+
+test('fire queue contains the three current executable FIRE bundles including Nocturnal', async () => {
   const queue = await fireHandoffQueue(records, { limit: 10 });
   assert.equal(queue.schema, 'blowback.fire_queue.v1');
   const ids = queue.handoffs.map((handoff) => handoff.route_id);
-  assert.equal(ids[0], 'aws-community-day-taiwan-2026-hardware-splicer');
   assert.deepEqual(new Set(ids), new Set(FIRE_IDS));
   assert.equal(ids.length, FIRE_IDS.length);
+  assert.ok(ids.includes('partner-tfc-nocturnal-pilot'));
+  assert.ok(!ids.includes('aws-community-day-taiwan-2026-hardware-splicer'));
+  assert.ok(!ids.includes('nlnet-restack-nocturnal'));
   assert.ok(queue.handoffs.every((handoff) => handoff.state === 'READY_FOR_BROWSER_AGENT'));
 });
 
