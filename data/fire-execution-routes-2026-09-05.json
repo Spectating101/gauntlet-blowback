@@ -1,6 +1,6 @@
 {
   "schema": "blowback.fire_execution_routes.v1",
-  "snapshot": "2026-09-05",
+  "snapshot": "2026-09-17",
   "overrides": [
     {
       "id": "aws-community-day-taiwan-2026-hardware-splicer",
@@ -16,6 +16,48 @@
       "id": "anthropic-external-researcher-access-2026",
       "execution_manifest": "examples/opportunities/anthropic-external-researcher-access-hardware-splicer.json",
       "reason": "Attach the audited Anthropic ERAP manifest and fire packet to the live FIRE route."
+    },
+    {
+      "id": "partner-tfc-nocturnal-pilot",
+      "status": "FIRE_NOW",
+      "execution_state": "PORTAL_RECON_REQUIRED",
+      "execution_manifest": "examples/opportunities/tfc-nocturnal-pilot-2026.json",
+      "deadline": "ROLLING",
+      "gate": "G0 final Send is human-protected; G4 partner willingness and one bounded non-sensitive public-source case. No funding or endorsement is implied.",
+      "source_state": "OFFICIAL_CONTACT_REVERIFIED_2026-09-17_PACKET_READY",
+      "source": "https://tfc-taiwan.org.tw/contact-us/",
+      "reason": "Nocturnal is product-complete; the highest-value next evidence is a bounded externally witnessed workflow test. Attach the bilingual outreach packet and route the contact form to the last safe pre-send state."
+    },
+    {
+      "id": "twnic-community-grant-2026-nocturnal",
+      "status": "HOST_PACKET_READY",
+      "execution_state": "RESEARCH_ONLY",
+      "deadline": "2026-09-30T23:59:00+08:00",
+      "gate": "G1 legal applicant required; each organization may submit one proposal; up to NT$1.5M. Host must approve its slot, responsible person, seals/signatures, financial statements, budget and any award shortfall before portal execution.",
+      "source_state": "OFFICIAL_2026_CALL_REVERIFIED_2026-09-17_HOST_PACKET_READY",
+      "source": "https://www.twnic.tw/blog/contents.php?blog_lang=en&id=161&lang=zh-tw",
+      "reason": "The technical/proposal packet is ready, but portal execution would require inventing or assuming a legal host. Keep the route blocked at the real institutional dependency."
+    },
+    {
+      "id": "nlnet-restack-nocturnal",
+      "status": "PORTFOLIO_BAKEOFF_HUMAN_REWRITE_REQUIRED",
+      "execution_state": "PACKET_READY",
+      "execution_manifest": "examples/opportunities/nlnet-restack-nocturnal-2026.json",
+      "deadline": "2026-11-03T12:00:00+01:00",
+      "gate": "G2 first-grant portfolio bakeoff remains mandatory. The AI-assisted Nocturnal workbook is not final copy: NLnet asks for answers in the applicant's own words. If Nocturnal wins, personally rewrite the form, approve fully libre/open funded outputs, preserve a clear European dimension, confirm the draft budget/time commitment, disclose AI assistance and provide the required interaction log.",
+      "source_state": "OFFICIAL_RESTACK_OPEN_AND_GENAI_POLICY_REVERIFIED_2026-09-17_WORKBOOK_READY",
+      "source": "https://nlnet.nl/propose/",
+      "reason": "Keep Nocturnal ready for the portfolio bakeoff without allowing fire:next to treat an AI-assisted workbook as final applicant prose."
+    },
+    {
+      "id": "otf-iff-nocturnal",
+      "status": "PILOT_THEN_FIRE",
+      "execution_state": "RESEARCH_ONLY",
+      "deadline": "ROLLING",
+      "gate": "G3/G4 concept note is drafted, but FIRE requires a concrete user/beneficiary facing repressive censorship or surveillance, a real workflow problem, and preferably pilot/demand evidence. Generic information-integrity positioning is insufficient.",
+      "source_state": "OFFICIAL_ROLLING_IFF_REVERIFIED_2026-09-17_CONCEPT_DRAFTED",
+      "source": "https://www.opentech.fund/funds/internet-freedom-fund/",
+      "reason": "Preserve the drafted OTF concept while blocking submission until a truthful restrictive-context beneficiary and workflow need exist."
     }
   ]
 }
