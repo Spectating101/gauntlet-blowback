@@ -10,7 +10,7 @@
   "deadline": "ROLLING",
   "deadline_note": "Partner outreach route; no grant deadline or funding award is implied.",
   "mode": "inspect",
-  "execution_state": "PORTAL_RECON_REQUIRED",
+  "execution_state": "STAGED_HUMAN_SEND_GATE",
   "direct_control": true,
   "profile": "../profiles/christ.json",
   "project": "../projects/nocturnal.json",
@@ -26,17 +26,22 @@
     "project_name": "$project.name",
     "project_repo": "$project.repo_url"
   },
-  "field_map": {},
+  "field_map": {
+    "name": "我們如何稱呼您？",
+    "email": "電子郵件地址：*",
+    "message": "留下您的訊息*",
+    "final_submit": "送出"
+  },
   "uploads": [],
   "packet_requirements": [
     {
       "id": "live_contact_form_map",
-      "description": "Inspect the current TFC contact surface and map name/email/subject/message fields without changing the outreach copy unless a real field limit requires compression.",
-      "status": "PORTAL_RECON_REQUIRED"
+      "description": "Inspect the current TFC contact surface and map name/email/message fields without changing the outreach copy unless a real field limit requires compression.",
+      "status": "VERIFIED_STAGED_2026_09_17"
     },
     {
-      "id": "final_send",
-      "description": "Final Send remains human-protected. Save/copy the completed message and stop before irreversible transmission.",
+      "id": "final_submit",
+      "description": "Final Send remains human-protected. The completed form was staged successfully; stop before irreversible transmission.",
       "status": "HUMAN_GATE"
     },
     {
@@ -55,13 +60,18 @@
     "verified_at": "2026-09-17",
     "official_contact_surface_verified": true,
     "final_submission_copy_ready": true,
-    "form_fields_verified": false,
+    "form_fields_verified": true,
+    "form_staged": true,
+    "submit_control_verified": "送出",
+    "validation_errors_visible": false,
+    "cloudflare_widget_present": true,
+    "message_transmitted": false,
     "partner_willingness": false,
-    "pilot_case_selected": false
+    "pilot_case_selected": false,
+    "receipt": "../../docs/nocturnal-conversion/receipts/TFC_CONTACT_FORM_STAGED_2026-09-17.md"
   },
   "human_required": [
     "final_submit",
-    "final_send",
     "partner_commitment",
     "pilot_case_selection"
   ]
