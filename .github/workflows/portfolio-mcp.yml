@@ -1,0 +1,52 @@
+name: Portfolio MCP native parity
+on:
+  pull_request:
+    paths: ['integrations/mcp/**', '.github/workflows/portfolio-mcp.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  native-parity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: Spectating101/cite-refinery
+          ref: c9559e4e217f9f266aa451008cda32c96eee544e
+          path: .mcp-runner
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --ignore-scripts
+      - run: python -m pip install -e .mcp-runner/integrations/portfolio-mcp
+      - run: portfolio-mcp probe --manifest integrations/mcp/manifest.json --root .
+      - name: Preserve native valid and invalid opportunity outcomes
+        run: |
+          python - <<'PY'
+          import asyncio, json, os, subprocess, sys, tempfile
+          from pathlib import Path
+          from portfolio_mcp.client import StdioConnection, invoke
+          connection = StdioConnection(sys.executable, ('-m','portfolio_mcp.cli','serve','--manifest','integrations/mcp/manifest.json','--root','.'), dict(os.environ))
+          async def exercise():
+              async with asyncio.timeout(90):
+                  for payload in [json.loads(Path('examples/opportunities/animalhack-2026.json').read_text()), {}]:
+                      with tempfile.TemporaryDirectory() as directory:
+                          path = Path(directory)/'input.json'; path.write_text(json.dumps(payload))
+                          native = subprocess.run(['node','src/cli.mjs','validate',str(path)], capture_output=True, timeout=30)
+                          expected = json.loads(native.stdout)
+                      response = await invoke(connection, 'gauntlet_validate_opportunity', {'opportunity':payload})
+                      assert not response['is_error'], response
+                      assert response['structured_content']['result'] == expected
+                      assert response['structured_content']['exit_code'] == native.returncode
+                  print('PASS: canonical validation results and failure status preserved')
+          asyncio.run(exercise())
+          PY
+      - run: portfolio-mcp call --manifest integrations/mcp/manifest.json --root . --tool gauntlet_next_mission
