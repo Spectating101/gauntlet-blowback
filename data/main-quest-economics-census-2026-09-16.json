@@ -1,0 +1,336 @@
+{
+  "schema": "gauntlet.main_quest_economics_census.v1",
+  "snapshot": "2026-09-16",
+  "timezone": "Asia/Taipei",
+  "authority": {
+    "lane": "MAIN_QUEST_ECONOMICS_CENSUS",
+    "depends_on": "data/main-quest-census-pass2-2026-09-15.json",
+    "rule": "Enumerate money for every route before using money to rank any route.",
+    "anti_filter_rule": "No route may disappear because its compensation or funding is unknown, low, awkward, conditional, or unpublished.",
+    "coverage_target": "149/149 census routes accounted for by an economics state."
+  },
+  "state_semantics": {
+    "VERIFIED_NUMERIC": "Current source exposes a numeric stipend/salary/floor/range.",
+    "PUBLISHED_NONCASH": "Current source exposes tuition waiver or other material non-cash value but no monthly salary/stipend amount.",
+    "NEGOTIABLE_UNDISCLOSED": "Current posting explicitly says compensation is negotiable / not numerically disclosed.",
+    "CONDITIONAL_PROGRAM": "Funding exists but eligibility, competition, nationality/status, advisor match, or award decision is conditional.",
+    "HISTORICAL_REVERIFY": "A prior/current-adjacent amount exists but the exact 116/current-cycle amount needs re-verification.",
+    "SEARCH_PENDING": "Route remains in the universe; economics has not yet been source-locked.",
+    "IDENTITY_GAP": "The original machine census counted the route but the exact row identity was lost with the transient attachment; preserve denominator without inventing the row."
+  },
+  "coverage": {
+    "master_routes": 149,
+    "phd_routes": 61,
+    "employment_routes": 88,
+    "phd_route_accounting_method": "Each exact PhD route inherits the current funding bundle of its institution/program family until route-specific funding is recovered.",
+    "employment_route_accounting_method": "Each named job route inherits the current compensation state of its exact posting/employer family; missing numeric disclosure is retained as a state, not treated as zero.",
+    "employment_identity_gap_rows": 2,
+    "coverage_rule": "UNKNOWN IS A RESULT, NOT AN OMISSION."
+  },
+  "cross_taiwan_programs": [
+    {
+      "program": "NSTC Doctoral Research Fellowship",
+      "amount_monthly_ntd": 40000,
+      "duration": "up to 3 years",
+      "state": "CONDITIONAL_PROGRAM",
+      "eligibility_note": "Full-time doctoral students; current university notices exclude some student/status categories and concurrent government scholarship receipt. Do not assume applicant eligibility without applicant-truth verification.",
+      "source_examples": [
+        "https://www.engineer.nchu.edu.tw/wb_announcement02.asp?ano=2478&cno=5&pageno=1&url=12",
+        "https://www.gidle.ntust.edu.tw/p/406-1006-150749,r159.php?Lang=en",
+        "https://ord.ncku.edu.tw/news-1607.html"
+      ]
+    },
+    {
+      "program": "MOE Doctoral Scholarship",
+      "amount_monthly_ntd": 40000,
+      "current_structure": "NT$30,000 MOE + NT$10,000 university/advisor/enterprise matching in current 115 notices",
+      "state": "CONDITIONAL_PROGRAM",
+      "eligibility_note": "Current notices commonly specify ROC nationality and non-employed status; route-level eligibility must be resolved, not inferred.",
+      "source_examples": [
+        "https://admission.ncu.edu.tw/zh-TW/article/2026-07-09%2015%3A13%3A28",
+        "https://pse.ntu.edu.tw/News_Content_n_183183_sms_113768_s_263436.html",
+        "https://announce.yzu.edu.tw/index.php/tw/aa/115-9"
+      ]
+    }
+  ],
+  "phd_institution_funding": [
+    {
+      "institution": "NYCU",
+      "covered_census_routes": 4,
+      "state": "VERIFIED_NUMERIC",
+      "programs": [
+        {"name":"IAIS Outstanding New PhD","monthly_ntd":30000,"certainty":"COMPETITIVE_UP_TO_AMOUNT","duration":"first 24 months"},
+        {"name":"IAIS Elite New PhD","monthly_ntd":40000,"certainty":"COMPETITIVE_UP_TO_AMOUNT","duration":"first 24 months","later":"up to NT$30,000 IAIS + at least NT$20,000 advisor matching in years 3-4"}
+      ],
+      "route_note": "IAIS-specific amounts apply to the IAIS route, not automatically to NYCU IM/Finance/CS.",
+      "source": "https://iais.nycu.edu.tw/en/scholarship.html"
+    },
+    {
+      "institution": "NTU",
+      "covered_census_routes": 5,
+      "state": "CONDITIONAL_PROGRAM",
+      "programs": [
+        {"name":"Current 115 doctoral scholarship channels","monthly_ntd":40000,"certainty":"COMPETITIVE","note":"NTU current notices show both NSTC and MOE doctoral scholarships at NT$40,000/month; department quotas and applicant eligibility vary."}
+      ],
+      "source": "https://pse.ntu.edu.tw/News_Content_n_183183_sms_113768_s_263436.html"
+    },
+    {
+      "institution": "NTHU",
+      "covered_census_routes": 4,
+      "state": "VERIFIED_NUMERIC",
+      "programs": [
+        {"name":"NTHU Outstanding Doctoral Scholarship","monthly_ntd":40000,"certainty":"COMPETITIVE","duration":"up to 4 academic years"},
+        {"name":"NSTC doctoral scholarship","monthly_ntd":40000,"certainty":"COMPETITIVE","duration":"up to 3 years"},
+        {"name":"MOE doctoral scholarship","monthly_ntd":40000,"certainty":"COMPETITIVE","note":"Some current NTHU unit notices also describe an enhanced NT$50,000 version depending on matching arrangement."},
+        {"name":"NTHU International Student Scholarship","monthly_ntd_range":[10000,40000],"certainty":"STATUS_CONDITIONAL","noncash":"tuition and credit-fee waiver","note":"Only for applicants who satisfy the university's international-student definition."}
+      ],
+      "sources": [
+        "https://ec.site.nthu.edu.tw/p/404-1584-251163.php?Lang=zh-tw",
+        "https://www.che.nthu.edu.tw/zh_tw/dcenews/scholarshipnews/115%E5%AD%B8%E5%B9%B4%E5%BA%A6%E5%8D%9A%E5%A3%AB%E7%94%9F-%E6%96%B0%E7%94%9F-%E5%90%84%E9%A0%85%E7%8D%8E%E5%AD%B8%E9%87%91%E7%94%B3%E8%AB%8B%C2%A0-7-27%E5%89%8D-91963098",
+        "https://apply.nthu.edu.tw/tw/article/153-nthu%E7%8D%8E%E5%AD%B8%E9%87%91"
+      ]
+    },
+    {
+      "institution": "NCCU",
+      "covered_census_routes": 6,
+      "state": "VERIFIED_NUMERIC",
+      "programs": [
+        {"name":"NSTC / MOE doctoral scholarship","monthly_ntd":40000,"certainty":"COMPETITIVE"},
+        {"name":"College of Commerce full-time doctoral scholarship","monthly_ntd":20000,"certainty":"PROGRAM_CONDITIONAL","note":"Current Business Administration page; verify applicability to each College of Commerce route."},
+        {"name":"Business Administration department full-time scholarship","monthly_ntd":5000,"certainty":"PROGRAM_SPECIFIC"},
+        {"name":"International cultivation scholarship","monthly_ntd":15000,"certainty":"STATUS_CONDITIONAL","noncash":"semester tuition/miscellaneous fees, medical insurance and equipment fee"}
+      ],
+      "sources": [
+        "https://ba.nccu.edu.tw/zh_tw/Scholarship/Scholarship1",
+        "https://oic.nccu.edu.tw/Post/15949"
+      ]
+    },
+    {
+      "institution": "NCU",
+      "covered_census_routes": 6,
+      "state": "VERIFIED_NUMERIC",
+      "programs": [
+        {"name":"115 MOE Doctoral Scholarship","monthly_ntd":40000,"certainty":"COMPETITIVE","note":"NT$30,000 MOE + at least NT$10,000 matching."},
+        {"name":"NCU additional award","monthly_ntd":20000,"certainty":"SELECTIVE_ADD_ON","note":"Current notice says estimated additional NT$20,000/month for college-nominated recipients; exact amount subject to committee decision."}
+      ],
+      "source": "https://admission.ncu.edu.tw/zh-TW/article/2026-07-09%2015%3A13%3A28"
+    },
+    {
+      "institution": "NTUST",
+      "covered_census_routes": 4,
+      "state": "VERIFIED_NUMERIC",
+      "programs": [
+        {"name":"NSTC Doctoral Research Fellowship","monthly_ntd":40000,"certainty":"COMPETITIVE","duration":"up to 3 years"},
+        {"name":"MOE Doctoral Scholarship","monthly_ntd":40000,"certainty":"COMPETITIVE"},
+        {"name":"University graduate scholarship","monthly_ntd":null,"certainty":"AMOUNT_DEPARTMENT_DEPENDENT"}
+      ],
+      "source": "https://www.gidle.ntust.edu.tw/p/406-1006-150749,r159.php?Lang=en"
+    },
+    {
+      "institution": "NCKU",
+      "covered_census_routes": 5,
+      "state": "VERIFIED_NUMERIC",
+      "programs": [
+        {"name":"NCKU Elite Doctoral Scholarship for international students","monthly_ntd":25000,"certainty":"MAXIMUM","noncash":"full tuition including basic credit fee waived","duration":"years 1-4"},
+        {"name":"NSTC Doctoral Research Fellowship","monthly_ntd":40000,"certainty":"COMPETITIVE","duration":"up to 3 years"}
+      ],
+      "sources": [
+        "https://oia.ncku.edu.tw/p/404-1032-229890.php?Lang=en",
+        "https://ord.ncku.edu.tw/news-1607.html"
+      ]
+    },
+    {
+      "institution": "NCHU",
+      "covered_census_routes": 5,
+      "state": "VERIFIED_NUMERIC",
+      "programs": [
+        {"name":"115 MOE Doctoral Scholarship","monthly_ntd":40000,"certainty":"COMPETITIVE","duration":"current academic year / multi-year categories depending award type"},
+        {"name":"NSTC Doctoral Research Fellowship","monthly_ntd":40000,"certainty":"COMPETITIVE","duration":"up to 3 years"},
+        {"name":"MOE add-on","monthly_ntd_range":[1000,20000],"certainty":"SELECTIVE_ADD_ON"}
+      ],
+      "sources": [
+        "https://www.engineer.nchu.edu.tw/wb_announcement02.asp?ano=2487&cno=0&url=12",
+        "https://www.engineer.nchu.edu.tw/wb_announcement02.asp?ano=2478&cno=5&pageno=1&url=12"
+      ]
+    },
+    {
+      "institution": "NSYSU",
+      "covered_census_routes": 5,
+      "state": "VERIFIED_NUMERIC",
+      "programs": [
+        {"name":"Outstanding International Student Doctoral Scholarship","monthly_ntd":15000,"certainty":"STATUS_CONDITIONAL","noncash":"tuition waiver","duration":"maximum 3 years"},
+        {"name":"Elite PhD Scholarship after enrollment","monthly_ntd":15000,"certainty":"COMPETITIVE_ADD_ON","note":"Current NSYSU page says eligible students may apply after first enrollment; do not assume stackability without confirmation."}
+      ],
+      "source": "https://oia.nsysu.edu.tw/p/412-1308-20732.php?Lang=en"
+    },
+    {
+      "institution": "CCU",
+      "covered_census_routes": 4,
+      "state": "SEARCH_PENDING",
+      "programs": [],
+      "note": "No current institution-specific monthly amount was source-locked in this pass. Cross-Taiwan NSTC/MOE programs remain conditional leads, not assumed awards."
+    },
+    {
+      "institution": "YunTech",
+      "covered_census_routes": 4,
+      "state": "VERIFIED_NUMERIC",
+      "programs": [
+        {"name":"International PhD fully funded stipend","monthly_ntd_range":[12000,15000],"certainty":"STATUS_CONDITIONAL","noncash":"full tuition waiver"},
+        {"name":"International PhD partially funded stipend","monthly_ntd_range":[6000,8000],"certainty":"STATUS_CONDITIONAL","noncash":"full tuition waiver"}
+      ],
+      "source": "https://aax.yuntech.edu.tw/images/content/%E5%9C%8B%E9%9A%9B%E5%AD%B8%E7%94%9F%E7%94%B3%E8%AB%8B%E5%85%A5%E5%AD%B8/114/2026%E5%B9%B4%E6%98%A5%E5%AD%A3%E7%8F%AD%E5%A4%96%E5%9C%8B%E5%AD%B8%E7%94%9F%E7%94%B3%E8%AB%8B%E5%85%A5%E5%AD%B8%E7%B0%A1%E7%AB%A0.pdf",
+      "cycle_note": "Spring-2026 guide; reverify exact 116/fall terms before decision."
+    },
+    {
+      "institution": "Taipei Tech",
+      "covered_census_routes": 3,
+      "state": "SEARCH_PENDING",
+      "programs": [],
+      "note": "Current route economics not yet source-locked; keep national scholarship channels as conditional leads only."
+    },
+    {
+      "institution": "Feng Chia",
+      "covered_census_routes": 2,
+      "state": "PUBLISHED_NONCASH",
+      "programs": [
+        {"name":"Current doctoral tuition/fees grant","monthly_ntd":null,"noncash":"full tuition and fees in first and second academic years for qualifying general doctoral students without full-time employment","certainty":"PROGRAM_CONDITIONAL"}
+      ],
+      "note": "Monthly living stipend still needs source-locking."
+    },
+    {
+      "institution": "NTNU",
+      "covered_census_routes": 1,
+      "state": "VERIFIED_NUMERIC",
+      "programs": [
+        {"name":"NSTC Doctoral Research Fellowship","monthly_ntd":40000,"certainty":"COMPETITIVE","duration":"up to 3 years"}
+      ],
+      "source": "https://www.csie.ntnu.edu.tw/index.php/2026/07/02/20260702/"
+    },
+    {
+      "institution": "NTPU",
+      "covered_census_routes": 2,
+      "state": "VERIFIED_NUMERIC",
+      "programs": [
+        {"name":"NSTC Doctoral Research Fellowship","monthly_ntd":40000,"certainty":"COMPETITIVE","duration":"2026-09-01 through 2029-08-31 subject to annual evaluation"}
+      ],
+      "source": "https://www.law.ntpu.edu.tw/data/22/1200"
+    },
+    {
+      "institution": "TIGP / Academia Sinica",
+      "covered_census_routes": 1,
+      "state": "VERIFIED_NUMERIC",
+      "programs": [
+        {"name":"TIGP stipend","monthly_ntd":40000,"certainty":"GUARANTEED_ON_ADMISSION_FIRST_YEAR","tax":"tax-free","later":"year 2 may be extended for good performance; later support advisor-dependent"}
+      ],
+      "source": "https://tigp.sinica.edu.tw/pages/3446"
+    },
+    {
+      "institution": "Yuan Ze University",
+      "covered_census_routes": 0,
+      "denominator_gap_entity": true,
+      "state": "VERIFIED_NUMERIC",
+      "programs": [
+        {"name":"115 MOE Doctoral Scholarship program","monthly_ntd":40000,"certainty":"CONDITIONAL_PROGRAM","note":"University announcement confirms the national 30k+10k structure; applicant and award eligibility still must be resolved."},
+        {"name":"LCY doctoral matching scholarship","monthly_ntd":50000,"certainty":"COMPETITIVE_MAXIMUM","obligation":"two-year post-graduation employment commitment with LCY group if awarded"}
+      ],
+      "sources": [
+        "https://announce.yzu.edu.tw/index.php/tw/aa/115-9",
+        "https://announce.yzu.edu.tw/index.php/tw/st/st-lgs20260706-1220-01"
+      ]
+    },
+    {
+      "institution": "Chung Yuan Christian University",
+      "covered_census_routes": 0,
+      "denominator_gap_entity": true,
+      "state": "VERIFIED_NUMERIC",
+      "programs": [
+        {"name":"Wang Kuan-Chuan international scholarship","amount_per_semester_ntd":25000,"certainty":"STATUS_AND_NEED_CONDITIONAL","duration":"up to 4 doctoral years","eligible_categories":"overseas Chinese / Hong Kong-Macau / Mainland / foreign students under current notice"}
+      ],
+      "source": "https://ba.cycu.edu.tw/115%E5%AD%B8%E5%B9%B4%E5%BA%A6%E3%80%8C%E7%8E%8B%E5%86%A0%E5%B7%9D%E5%9C%8B%E9%9A%9B%E7%8D%8E%E5%8A%A9%E5%AD%B8%E9%87%91%E3%80%8D%E5%8F%97%E7%90%86%E7%94%B3%E8%AB%8B%E6%99%82%E9%96%93%EF%BC%9A/"
+    },
+    {
+      "institution": "National Kaohsiung University of Science and Technology",
+      "covered_census_routes": 0,
+      "denominator_gap_entity": true,
+      "state": "HISTORICAL_REVERIFY",
+      "programs": [
+        {"name":"Doctoral scholarship family","monthly_ntd":40000,"certainty":"PRIOR_114_AMOUNT","note":"Current 115 application is open, but this pass only source-locked the detailed 114 amount table; verify exact 115 terms before use."},
+        {"name":"Internal outstanding doctoral scholarships","monthly_ntd_range":[12000,30000],"certainty":"PRIOR_114_AMOUNT"}
+      ],
+      "sources": [
+        "https://irdnew.nkust.edu.tw/p/403-1010-1465-1.php",
+        "https://officemail.nkust.edu.tw/UploadFile/56415/1-%E7%94%B3%E8%AB%8B%E8%B3%87%E6%A0%BC%E5%8F%8A%E6%87%89%E5%82%99%E6%96%87%E4%BB%B6%E5%BD%99%E7%B8%BD%E8%A1%A8.pdf"
+      ]
+    },
+    {
+      "institution": "National Dong Hwa University",
+      "covered_census_routes": 0,
+      "denominator_gap_entity": true,
+      "state": "VERIFIED_NUMERIC",
+      "programs": [
+        {"name":"MOE Doctoral Scholarship","monthly_ntd":40000,"certainty":"CONDITIONAL_PROGRAM"},
+        {"name":"Economics department doctoral scholarship","monthly_ntd":3000,"certainty":"DEPARTMENT_SPECIFIC","possible_add_on_monthly_ntd":4000,"note":"Economics-specific; not a generic university-wide doctoral amount."},
+        {"name":"Outstanding graduate entrant award","amount_per_award_ntd":60000,"certainty":"COMPETITIVE","max_applications":3}
+      ],
+      "source": "https://econ.ndhu.edu.tw/p/16-1061-260787.php?Lang=zh-tw"
+    },
+    {
+      "institution": "National Taiwan Ocean University",
+      "covered_census_routes": 0,
+      "denominator_gap_entity": true,
+      "state": "HISTORICAL_REVERIFY",
+      "programs": [
+        {"name":"Blue Ocean Outstanding Doctoral Scholarship","monthly_ntd":40000,"certainty":"PRIOR_114_AMOUNT","note":"Detailed amount source-lock is from the prior academic-year call; current 116 route must be rechecked before decision."}
+      ],
+      "source": "https://cse.ntou.edu.tw/p/404-1063-115834.php?Lang=zh-tw"
+    }
+  ],
+  "employment_compensation_families": [
+    {"employer":"Point72 / Cubist","covered_named_routes":4,"state":"VERIFIED_NUMERIC","published":"Quantitative Researcher / Quantitative Finance Researcher current Taiwan postings show NT$2,200,000+ annual; internship is negotiable/undisclosed.","source":"https://www.104.com.tw/company/1a2x6bkx1i?jobsource=job_same_b"},
+    {"employer":"WorldQuant","covered_named_routes":3,"state":"SEARCH_PENDING","published":null},
+    {"employer":"Bank SinoPac","covered_named_routes":7,"state":"SEARCH_PENDING","published":null},
+    {"employer":"Cathay","covered_named_routes":5,"state":"SEARCH_PENDING","published":null},
+    {"employer":"Chihlee University, Dept. of Finance","covered_named_routes":1,"state":"SEARCH_PENDING","published":null},
+    {"employer":"TSMC","covered_named_routes":10,"state":"SEARCH_PENDING","published":null},
+    {"employer":"MediaTek","covered_named_routes":5,"state":"SEARCH_PENDING","published":null},
+    {"employer":"NVIDIA","covered_named_routes":2,"state":"NEGOTIABLE_UNDISCLOSED","published":"Current 104 listing for PCB Design EDA and AI Engineer - NCG 2027 says 待遇面議.","source":"https://www.104.com.tw/company/1a2x6bm42t?page=4"},
+    {"employer":"AMD","covered_named_routes":2,"state":"SEARCH_PENDING","published":null},
+    {"employer":"Micron","covered_named_routes":7,"state":"SEARCH_PENDING","published":null,"note":"Seven routes reported by original census; exact compact report names only a subset."},
+    {"employer":"Synopsys","covered_named_routes":3,"state":"NEGOTIABLE_UNDISCLOSED","published":"Current 104 Synopsys Taiwan R&D/LLM-agent listings say 待遇面議.","source":"https://www.104.com.tw/company/wf2apbk"},
+    {"employer":"Cadence","covered_named_routes":4,"state":"SEARCH_PENDING","published":null},
+    {"employer":"Qualcomm","covered_named_routes":2,"state":"SEARCH_PENDING","published":null},
+    {"employer":"ASML","covered_named_routes":4,"state":"SEARCH_PENDING","published":null},
+    {"employer":"Arm","covered_named_routes":2,"state":"SEARCH_PENDING","published":null},
+    {"employer":"Compal","covered_named_routes":1,"state":"SEARCH_PENDING","published":null},
+    {"employer":"Trend Micro","covered_named_routes":2,"state":"NEGOTIABLE_UNDISCLOSED","published":"Current 104 TrendIQ Core AI Engineer listing says 待遇面議.","source":"https://www.104.com.tw/company/apio4y0?action=companyJobList&jobsource=blog_cjlist_li"},
+    {"employer":"ITRI","covered_named_routes":2,"state":"VERIFIED_NUMERIC","published":"Current ITRI AI Engineer posting: NT$55,000+/month.","source":"https://www.104.com.tw/jobs/search/?area=6001006001&keyword=AI&page=1"},
+    {"employer":"III / 資策會","covered_named_routes":2,"state":"SEARCH_PENDING","published":null},
+    {"employer":"Google Taiwan","covered_named_routes":5,"state":"SEARCH_PENDING","published":null},
+    {"employer":"Appier","covered_named_routes":1,"state":"SEARCH_PENDING","published":null},
+    {"employer":"Academia Sinica","covered_named_routes":1,"state":"SEARCH_PENDING","published":null},
+    {"employer":"關網資訊","covered_named_routes":1,"state":"SEARCH_PENDING","published":null},
+    {"employer":"適才科技","covered_named_routes":1,"state":"SEARCH_PENDING","published":null},
+    {"employer":"JKOPay","covered_named_routes":1,"state":"SEARCH_PENDING","published":null},
+    {"employer":"六六電商","covered_named_routes":1,"state":"SEARCH_PENDING","published":null},
+    {"employer":"偲倢科技","covered_named_routes":1,"state":"SEARCH_PENDING","published":null},
+    {"employer":"梅科科技","covered_named_routes":1,"state":"SEARCH_PENDING","published":null},
+    {"employer":"行動貝果 / MoBagel","covered_named_routes":1,"state":"NEGOTIABLE_UNDISCLOSED","published":"Current Senior AI Agent Engineer listing says 待遇面議. A different senior architecture role at the same employer publishes NT$1.2m–2.8m/year but must not be substituted for the target role.","source":"https://www.104.com.tw/company/olmlwc8?custsource=m104_original"},
+    {"employer":"維曙智能科技","covered_named_routes":1,"state":"SEARCH_PENDING","published":null},
+    {"employer":"大數據","covered_named_routes":1,"state":"SEARCH_PENDING","published":null},
+    {"employer":"資達科技","covered_named_routes":1,"state":"SEARCH_PENDING","published":null},
+    {"employer":"Telexpress / 網訊電通","covered_named_routes":1,"state":"SEARCH_PENDING","published":null},
+    {"employer":"UNRECOVERED_JOB_ROW_1","covered_named_routes":1,"state":"IDENTITY_GAP","published":null},
+    {"employer":"UNRECOVERED_JOB_ROW_2","covered_named_routes":1,"state":"IDENTITY_GAP","published":null}
+  ],
+  "execution_contract": {
+    "before_rank": [
+      "Every one of the 149 census routes must have an economics state.",
+      "Numeric amount, tuition waiver, duration, certainty, eligibility gate, and source date are separate fields.",
+      "Negotiable/unpublished salary remains a route; it is not treated as zero and not dropped.",
+      "Institution-wide or national scholarships must not be silently promoted to guaranteed route-specific funding.",
+      "Actual admission funding letters and job offers supersede planning estimates."
+    ],
+    "delta_research_priority": "Research debt is ordered by missing economics evidence, not by fit. SEARCH_PENDING rows stay in scope until checked or explicitly shown unpublished.",
+    "ranking_gate": "Money-weighted ranking may start only after this economics census is attached to the complete route universe."
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "schema": "gauntlet.main_quest_economics.v1",
+  "snapshot": "2026-09-16",
+  "timezone": "Asia/Taipei",
+  "authority": {
+    "lane": "MAIN_QUEST_ECONOMICS",
+    "role": "post_census_value_overlay",
+    "depends_on": "data/main-quest-census-pass2-2026-09-15.json",
+    "rule": "Funding and salary are first-class route variables. Do not rank a PhD or job on institutional/career value while leaving current cash economics implicit."
+  },
+  "decision_model": {
+    "dimensions": [
+      "conversion_probability",
+      "funding_or_salary_certainty",
+      "current_monthly_cash",
+      "tuition_and_mandatory_cost_burden",
+      "career_capital",
+      "research_freedom",
+      "credential_conversion_value",
+      "long_run_income_ceiling",
+      "option_value"
+    ],
+    "phd_value_expression": "admission_probability × funding_certainty × current_cash × research_value × credential_conversion_value × post_phd_option_value",
+    "job_value_expression": "offer_probability × compensation_certainty × current_cash × skill_growth × brand/network_value × long_run_income_ceiling",
+    "anti_error_rules": [
+      "Do not treat 'up to' scholarship amounts as guaranteed cash.",
+      "Do not compare a hypothetical elite-job salary with a funded PhD as if both outcomes were certain.",
+      "Do not treat admission without funding as equivalent to funded admission.",
+      "Do not let prestige override a verified large compensation or funding difference without an explicit strategic reason.",
+      "Reverify volatile job compensation and scholarship rules before a final accept/reject decision."
+    ]
+  },
+  "decision_bands": {
+    "phd_monthly_funding_ntd": [
+      {
+        "minimum": 40000,
+        "state": "STRONG_FUNDED_PHD",
+        "guidance": "Serious competitor to ordinary Taiwan full-time work when research/career value is high."
+      },
+      {
+        "minimum": 30000,
+        "maximum": 39999,
+        "state": "VIABLE_HIGH_VALUE_PHD",
+        "guidance": "Acceptable for a high-value program such as IAIS if research and credential upside are strong."
+      },
+      {
+        "minimum": 20000,
+        "maximum": 29999,
+        "state": "WEAKENED_PHD_ECONOMICS",
+        "guidance": "Needs unusually strong supervisor, network, publication or credential value to beat full-time work."
+      },
+      {
+        "maximum": 19999,
+        "state": "GENERALLY_REJECT_UNLESS_EXCEPTIONAL",
+        "guidance": "Normally dominated by viable full-time employment unless the route is strategically exceptional."
+      }
+    ],
+    "full_time_monthly_cash_ntd": [
+      {
+        "minimum": 55000,
+        "maximum": 70000,
+        "state": "GENUINE_PHD_ALTERNATIVE",
+        "guidance": "A real economic alternative to a funded PhD; compare research freedom and credential conversion directly."
+      },
+      {
+        "minimum": 80000,
+        "maximum": 120000,
+        "state": "JOB_INCREASINGLY_DOMINATES_CASH",
+        "guidance": "PhD requires a stronger non-cash strategic case."
+      },
+      {
+        "minimum": 150000,
+        "state": "REOPEN_DECISION_MATERIALLY",
+        "guidance": "Compensation is large enough that the PhD decision must be reopened even for excellent funded programs."
+      }
+    ],
+    "note": "These are Gauntlet decision heuristics, not market facts or automatic acceptance rules."
+  },
+  "verified_cash_anchors": [
+    {
+      "route_id": "phd-nycu-iais-outstanding",
+      "route_family": "NYCU IAIS PhD",
+      "type": "phd_scholarship",
+      "headline_monthly_ntd": 30000,
+      "certainty": "COMPETITIVE_UP_TO_AMOUNT",
+      "first_24_months": "Up to NT$30,000/month fully funded by IAIS.",
+      "months_25_48": "Up to NT$10,000/month from IAIS plus advisor contribution of at least NT$20,000/month.",
+      "annualized_first_24_months_ntd": 360000,
+      "employment_constraint": "Full-time remunerated employment or in-service student status is ineligible under the IAIS scholarship rules.",
+      "stacking_constraint": "Recipients who also receive the specified NSTC/MOE PhD scholarship must choose one rather than stack both.",
+      "budget_risk": "Recipient count and subsidy amount may be adjusted if IAIS funding is reduced.",
+      "source": "https://iais.nycu.edu.tw/en/scholarship.html",
+      "source_class": "OFFICIAL"
+    },
+    {
+      "route_id": "phd-nycu-iais-elite",
+      "route_family": "NYCU IAIS PhD",
+      "type": "phd_scholarship",
+      "headline_monthly_ntd": 40000,
+      "certainty": "COMPETITIVE_UP_TO_AMOUNT",
+      "first_24_months": "Up to NT$40,000/month fully funded by IAIS.",
+      "months_25_48": "Up to NT$30,000/month from IAIS plus advisor matching of at least NT$20,000/month.",
+      "annualized_first_24_months_ntd": 480000,
+      "later_stage_nominal_floor_if_full_iais_amount_awarded_ntd": 50000,
+      "later_stage_note": "NT$50,000/month is a nominal combination of the stated up-to IAIS amount plus minimum advisor match; it is not guaranteed because the IAIS component is explicitly 'up to'.",
+      "employment_constraint": "Full-time remunerated employment or in-service student status is ineligible under the IAIS scholarship rules.",
+      "stacking_constraint": "Recipients who also receive the specified NSTC/MOE PhD scholarship must choose one rather than stack both.",
+      "budget_risk": "Recipient count and subsidy amount may be adjusted if IAIS funding is reduced.",
+      "source": "https://iais.nycu.edu.tw/en/scholarship.html",
+      "source_class": "OFFICIAL"
+    },
+    {
+      "route_id": "phd-tigp-standard-stipend",
+      "route_family": "TIGP / Academia Sinica",
+      "type": "phd_stipend",
+      "headline_monthly_ntd": 40000,
+      "certainty": "GUARANTEED_ON_ADMISSION_FIRST_YEAR",
+      "first_year": "NT$40,000/month tax-free once admitted.",
+      "second_year": "May be extended for one more year for students who perform well.",
+      "later_years": "Further support depends on the individual thesis advisor after the stipend period.",
+      "annualized_first_year_ntd": 480000,
+      "source": "https://tigp.sinica.edu.tw/pages/3446",
+      "source_class": "OFFICIAL"
+    },
+    {
+      "route_id": "job-itri-ai-engineer-hsinchu-2026",
+      "route_family": "ITRI AI Engineer",
+      "type": "full_time_salary",
+      "headline_monthly_ntd": 55000,
+      "certainty": "POSTED_FLOOR",
+      "annualized_floor_ntd": 660000,
+      "captured_applicants": "1-5",
+      "captured_openings": "1-10",
+      "formal_gate": "Master's required; listed majors are Information Management, EE, Electronics and CS.",
+      "source": "https://www.1111.com.tw/job/132030406/",
+      "source_class": "CURRENT_JOB_BOARD"
+    },
+    {
+      "route_id": "job-point72-cubist-quant-finance-taipei-2026",
+      "route_family": "Point72 / Cubist Quant Research",
+      "type": "full_time_salary",
+      "headline_annual_ntd": 2200000,
+      "headline_monthly_equivalent_ntd": 183333,
+      "certainty": "POSTED_FLOOR",
+      "captured_applicants": "0-5",
+      "experience_requirement": "No prior work experience required in the captured posting.",
+      "decision_effect": "JACKPOT_LANE_REOPEN_PHD_DECISION",
+      "source": "https://www.104.com.tw/company/1a2x6bkx1i",
+      "source_class": "CURRENT_JOB_BOARD"
+    }
+  ],
+  "derived_comparators": {
+    "iais_elite_vs_itri_first_two_years": {
+      "iais_monthly_ntd": 40000,
+      "itri_monthly_floor_ntd": 55000,
+      "monthly_cash_gap_ntd": 15000,
+      "annual_cash_gap_ntd": 180000,
+      "interpretation": "The verified ITRI floor exceeds the IAIS elite headline by NT$15,000/month. That is meaningful but much smaller than the usual funded-PhD-versus-industry caricature, so research/credential value can plausibly offset the cash gap."
+    },
+    "iais_elite_vs_point72": {
+      "iais_annual_first_24_months_ntd": 480000,
+      "point72_annual_floor_ntd": 2200000,
+      "annual_cash_gap_ntd": 1720000,
+      "point72_to_iais_cash_multiple": 4.5833,
+      "interpretation": "A real Point72 offer would materially reopen the decision; do not compare this hypothetical outcome to IAIS as if the offer were certain."
+    }
+  },
+  "route_policy": {
+    "nycu_iais": {
+      "state": "S_RISK_ADJUSTED_IF_30K_TO_40K_FUNDED",
+      "reason": "Unusually strong conjunction of admission fit, AI research identity, NYCU network, credential conversion, and viable current cash flow.",
+      "hard_condition": "Funding must be explicitly awarded; admission alone does not inherit the 30k/40k amount."
+    },
+    "tigp": {
+      "state": "S_OR_A_HIGH_VALUE_FUNDED_PHD",
+      "reason": "NT$40,000 first-year tax-free stipend plus strong research environment; later-year funding continuity requires explicit advisor assessment."
+    },
+    "itri": {
+      "state": "A_FULL_TIME_COMPARATOR",
+      "reason": "Verified NT$55,000+ monthly floor and unusually direct agent/harness/LLM skill fit, offset by a real formal degree-field gate."
+    },
+    "point72": {
+      "state": "JACKPOT_UPSIDE_SHOT",
+      "reason": "NT$2.2m+ posted annual floor is economically transformative, but conversion probability is much lower than funded-PhD probability and must remain separate from headline salary."
+    },
+    "unknown_salary_or_funding_routes": {
+      "state": "ECONOMICS_UNRESOLVED",
+      "rule": "Do not assign a money-weighted priority until salary, stipend, tuition burden and funding certainty are verified or an actual offer is received."
+    }
+  }
+}

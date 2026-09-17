@@ -1,0 +1,205 @@
+{
+  "schema": "gauntlet.main_quest_campaigns.v1",
+  "snapshot": "2026-09-16",
+  "timezone": "Asia/Taipei",
+  "authority": {
+    "role": "campaign_architecture",
+    "depends_on": [
+      "data/main-quest-census-pass2-2026-09-15.json",
+      "data/main-quest-economics-census-2026-09-16.json"
+    ],
+    "rules": [
+      "Discover broadly. Organize by desired outcome. Execute through campaigns.",
+      "An opportunity is an instrument inside a plan, not the plan itself.",
+      "Priority controls sequence, not census inclusion.",
+      "Every route must state which terminal campaign it advances and which evidence family it consumes.",
+      "Support campaigns exist to manufacture stronger evidence for the terminal Main Quest campaigns."
+    ]
+  },
+  "terminal_campaigns": [
+    {
+      "campaign_id": "main-quest-a-funded-phd-options",
+      "title": "Funded PhD Option Creation",
+      "objective": "Create multiple genuinely funded doctoral options, then compare real admissions and funding packages rather than pre-committing to one institution.",
+      "input_universe": "61 Taiwan PhD routes from Pass 2 census",
+      "pipeline": [
+        "research_identity",
+        "program_census",
+        "faculty_and_lab_mapping",
+        "funding_mapping",
+        "master_dossier",
+        "route_specific_deltas",
+        "applications",
+        "interviews_and_faculty_contact",
+        "funded_offers",
+        "offer_comparison"
+      ],
+      "required_route_fields": [
+        "formal_eligibility",
+        "selection_mechanics",
+        "seats_if_available",
+        "faculty_fit",
+        "funding_amount",
+        "funding_certainty",
+        "funding_duration",
+        "tuition_and_fees",
+        "recommender_requirements",
+        "documents",
+        "deadline",
+        "lead_evidence_family",
+        "route_specific_delta",
+        "competition_state"
+      ],
+      "success_state": "At least two serious funded doctoral options or a source-verified explanation of why the census could not produce them."
+    },
+    {
+      "campaign_id": "main-quest-b-employment-options",
+      "title": "Employment Option Creation",
+      "objective": "Create serious offers across distinct labor-market families and learn what the market will pay for the combined finance, research and AI-systems profile.",
+      "input_universe": "88 Taiwan employment routes from Pass 2 census plus explicit employer delta-search debt",
+      "pipeline": [
+        "role_family_census",
+        "eligibility_and_credential_gates",
+        "evidence_family_mapping",
+        "reusable_job_packets",
+        "route_specific_deltas",
+        "applications",
+        "interviews",
+        "offers",
+        "compensation_and_career_comparison"
+      ],
+      "role_families": [
+        {
+          "family_id": "research-applied-ai",
+          "lead_evidence": ["Refinery", "Cite/YZUC", "Research Drive", "Hardware Splicer"],
+          "example_market": ["III", "ITRI", "Academia Sinica", "AI labs", "research engineering"]
+        },
+        {
+          "family_id": "financial-ai-fintech",
+          "lead_evidence": ["Finance MSc", "empirical research", "applied AI systems", "DT/IL"],
+          "example_market": ["SinoPac", "Cathay", "banks", "FinTech"]
+        },
+        {
+          "family_id": "quant",
+          "lead_evidence": ["Finance MSc", "Sharpe/Terminus", "empirical work", "Python/data engineering"],
+          "example_market": ["Point72/Cubist", "WorldQuant"]
+        },
+        {
+          "family_id": "ai-software-agent-systems",
+          "lead_evidence": ["Refinery", "Cite", "YZUC/Research Drive"],
+          "example_market": ["Trend Micro", "RAG/agent firms", "software companies"]
+        },
+        {
+          "family_id": "semiconductor-eda-physical-ai",
+          "lead_evidence": ["Hardware Splicer", "Refinery"],
+          "example_market": ["NVIDIA", "MediaTek", "TSMC", "Synopsys", "Cadence"]
+        }
+      ],
+      "required_route_fields": [
+        "live_requisition_state",
+        "degree_gate",
+        "language_gate",
+        "seniority_gate",
+        "salary_or_range",
+        "bonus_equity_if_material",
+        "work_authorization",
+        "location",
+        "lead_evidence_family",
+        "packet_family",
+        "marginal_application_cost",
+        "competition_state"
+      ],
+      "success_state": "Multiple interview or offer signals across at least two role families, or a source-verified explanation of the market gates encountered."
+    }
+  ],
+  "support_campaigns": [
+    {
+      "campaign_id": "support-academic-evidence-factory",
+      "title": "Academic Evidence Factory",
+      "objective": "Convert research assets into stronger Main Quest evidence rather than generating conference activity for its own sake.",
+      "priority_order": ["Fiscal Choke Points / DT", "Invisible Ledger", "CEIR / Energy Anchoring", "ESG Rebrand"],
+      "assets": [
+        {
+          "asset": "Fiscal Choke Points / DT",
+          "conversion_goal": "external validation → journal-quality publication",
+          "main_quest_value": ["PhD research credibility", "policy/public-administration fit", "financial-AI/FinTech credibility"]
+        },
+        {
+          "asset": "Invisible Ledger",
+          "conversion_goal": "thesis authority → defensible flagship paper",
+          "main_quest_value": ["PhD empirical credibility", "finance/quant credibility", "research-employment credibility"],
+          "current_hard_gate": "sample/perimeter authority before downstream venue activity"
+        },
+        {
+          "asset": "CEIR / Energy Anchoring",
+          "conversion_goal": "replication and empirical upgrade → publication candidate",
+          "main_quest_value": ["finance research depth", "quant/empirical evidence"]
+        },
+        {
+          "asset": "ESG Rebrand",
+          "conversion_goal": "credible identification and data completion → working paper",
+          "main_quest_value": ["finance research breadth", "causal/empirical methods evidence"]
+        }
+      ]
+    },
+    {
+      "campaign_id": "support-systems-evidence-factory",
+      "title": "Systems Evidence Factory",
+      "objective": "Turn working systems into inspectable, externally credible evidence that strengthens PhD and employment packets.",
+      "pipeline": [
+        "working_system",
+        "reproducible_evaluation",
+        "independent_or_real_user_evidence",
+        "canonical_case_study",
+        "research_or_software_credibility",
+        "main_quest_packet_reuse"
+      ],
+      "assets": [
+        {"asset":"Refinery","main_quest_job":"general AI systems / reliability / research-software identity"},
+        {"asset":"Hardware Splicer","main_quest_job":"physical/EDA/agentic-AI proof"},
+        {"asset":"Cite/YZUC/Research Drive","main_quest_job":"research tooling, data and research-engineering proof"},
+        {"asset":"Nocturnal","main_quest_job":"public-interest intelligence / evidence-systems proof"},
+        {"asset":"Policy Lab","main_quest_job":"mechanism/policy-systems proof"}
+      ]
+    },
+    {
+      "campaign_id": "support-economics-and-runway",
+      "title": "Economics and Runway",
+      "objective": "Resolve current cash economics for every route before using economics to rank outcomes.",
+      "required_fields": [
+        "cash_amount_or_range",
+        "certainty",
+        "duration",
+        "tuition_or_fee_support",
+        "bonus_or_equity_if_material",
+        "employment_or_stacking_restrictions",
+        "location_cost_burden",
+        "long_run_income_path"
+      ],
+      "coverage_target": "149/149 Main Quest routes represented economically"
+    }
+  ],
+  "shared_infrastructure": [
+    {
+      "object": "master_identity_packet",
+      "purpose": "One source-of-truth profile from which PhD and employment packet families are derived."
+    },
+    {
+      "object": "evidence_registry",
+      "purpose": "Maps every claim in CV/SOP/resume/project sheets to inspectable proof and current project revision."
+    },
+    {
+      "object": "recommender_packet",
+      "purpose": "Reusable recommender brief, research summary, deadlines and route-specific emphasis for doctoral applications."
+    },
+    {
+      "object": "route_delta_sheet",
+      "purpose": "Only the differences from the shared packet: faculty, research question, role-specific evidence, required forms and declarations."
+    },
+    {
+      "object": "decision_ledger",
+      "purpose": "Compare actual admissions/offers using funding/salary, certainty, research value, credential conversion, location and option value."
+    }
+  ],
+  "execution_principle": "Build shared assets first when one artifact unlocks many routes; then spend route-specific effort only on irreducible deltas."
+}
