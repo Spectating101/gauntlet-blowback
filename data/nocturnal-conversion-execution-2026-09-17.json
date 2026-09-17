@@ -1,0 +1,98 @@
+{
+  "schema": "blowback.nocturnal_conversion_execution.v1",
+  "as_of": "2026-09-17",
+  "asset": "nocturnal-oversight",
+  "canonical_product": {
+    "repo": "Spectating101/nocturnal-oversight",
+    "main_integration": "12ece15ec6042dec786ef50006db2f92251a7840",
+    "freeze_status": "ceb0551e0c148476c51b40b8ffef1713f33efd55",
+    "state": "PRODUCT_COMPLETE_CONVERSION_READY"
+  },
+  "doctrine": {
+    "no_general_build_work": true,
+    "final_submit_human_gated": true,
+    "one_serious_pilot_at_a_time": true,
+    "external_validation_is_not_product_completion": true,
+    "ai_assistance_must_be_disclosed_when_provider_requires_it": true
+  },
+  "execution_order": [
+    "partner-tfc-nocturnal-pilot",
+    "twnic-community-grant-2026-nocturnal",
+    "nlnet-restack-nocturnal",
+    "otf-iff-nocturnal"
+  ],
+  "routes": [
+    {
+      "id": "partner-tfc-nocturnal-pilot",
+      "lane": "PILOT",
+      "organization": "Taiwan FactCheck Center",
+      "status": "OUTREACH_PACKET_READY",
+      "execution_state": "WAITING_HUMAN_SEND",
+      "deadline": "ROLLING",
+      "starting_url": "https://tfc-taiwan.org.tw/contact-us/",
+      "goal": "Run one no-cost bounded public-source workflow comparison using a non-sensitive evolving-information case.",
+      "metrics": [
+        "time_to_reconstruct_current_state",
+        "time_to_find_supporting_sources",
+        "correction_and_supersession_visibility",
+        "duplicate_checking_avoided",
+        "analyst_error_notes"
+      ],
+      "human_gate": "Send outreach and approve partner/case selection.",
+      "packet": "docs/nocturnal-conversion/TFC_PILOT_OUTREACH.md"
+    },
+    {
+      "id": "twnic-community-grant-2026-nocturnal",
+      "lane": "GRANT",
+      "organization": "TWNIC",
+      "status": "HOST_PACKET_READY",
+      "execution_state": "WAITING_HOST_COMMITMENT",
+      "deadline": "2026-09-30T23:59:00+08:00",
+      "starting_url": "https://twgrants.tw/en/application.html",
+      "eligibility": "A legally registered company, association, nonprofit, research institution or academic institution must apply; each organization may submit one proposal.",
+      "ceiling": "NTD 1,500,000",
+      "project_category": "Internet Technology",
+      "human_gate": "Secure a legal applicant, responsible-person approval, organization seal/signatures, financial statements and budget authority; confirm the host has not reserved its one-proposal slot for another project.",
+      "packet": "docs/nocturnal-conversion/TWNIC_2026_HOST_PACKET.md"
+    },
+    {
+      "id": "nlnet-restack-nocturnal",
+      "lane": "GRANT",
+      "organization": "NLnet Foundation",
+      "status": "APPLICATION_DRAFT_READY",
+      "execution_state": "WAITING_OWNER_OPEN_RELEASE_AND_AI_LOG",
+      "deadline": "2026-11-03T12:00:00+01:00",
+      "starting_url": "https://nlnet.nl/propose/",
+      "requested_amount_draft_eur": 18500,
+      "project_duration_months": 8,
+      "human_gate": "Approve the FOSS/open-access release plan for funded outputs and supply the mandatory GenAI prompt provenance log before final submission.",
+      "eligibility_note": "Restack accepts individuals worldwide, but a non-European applicant must establish a clear European dimension.",
+      "packet": "docs/nocturnal-conversion/NLNET_RESTACK_APPLICATION.md"
+    },
+    {
+      "id": "otf-iff-nocturnal",
+      "lane": "GRANT",
+      "organization": "Open Technology Fund",
+      "status": "CONCEPT_NOTE_DRAFTED_PILOT_GATED",
+      "execution_state": "WAITING_CONCRETE_USER_PROBLEM",
+      "deadline": "ROLLING",
+      "starting_url": "https://www.opentech.fund/funds/internet-freedom-fund/",
+      "human_gate": "Identify a concrete beneficiary/user group facing repressive censorship or surveillance and preferably attach evidence from the first bounded pilot; do not submit generic journalism/information-integrity framing.",
+      "packet": "docs/nocturnal-conversion/OTF_IFF_CONCEPT_NOTE.md"
+    }
+  ],
+  "deprioritized": [
+    {
+      "id": "tech-policy-press-fellowship-2027-nocturnal",
+      "reason": "Live deadline is 2026-09-24, but the 2027 call is explicitly aimed at mid-career professionals and requires attributable published work; this is an applicant-profile route rather than the strongest Nocturnal product conversion route. Do not displace the pilot/TWNIC/NLnet queue without a separate applicant-fit decision."
+    },
+    {
+      "id": "websci-2027-nocturnal",
+      "reason": "Keep as a research-publication lane after external pilot evidence; full paper deadline is 2026-12-15."
+    },
+    {
+      "id": "icwsm-2027-demo-nocturnal",
+      "reason": "Keep as a demo/publication lane after external pilot evidence; demo deadline is 2027-01-15 AoE."
+    }
+  ]
+}
