@@ -13,7 +13,8 @@
     "final_submit_human_gated": true,
     "one_serious_pilot_at_a_time": true,
     "external_validation_is_not_product_completion": true,
-    "ai_assistance_must_be_disclosed_when_provider_requires_it": true
+    "ai_assistance_must_be_disclosed_when_provider_requires_it": true,
+    "nlnet_first_grant_portfolio_bakeoff_remains_required": true
   },
   "execution_order": [
     "partner-tfc-nocturnal-pilot",
@@ -26,8 +27,9 @@
       "id": "partner-tfc-nocturnal-pilot",
       "lane": "PILOT",
       "organization": "Taiwan FactCheck Center",
-      "status": "OUTREACH_PACKET_READY",
-      "execution_state": "WAITING_HUMAN_SEND",
+      "status": "FIRE_NOW",
+      "execution_state": "PORTAL_RECON_REQUIRED",
+      "blocking_state": "HUMAN_FINAL_SEND_AND_PARTNER_ACCEPTANCE",
       "deadline": "ROLLING",
       "starting_url": "https://tfc-taiwan.org.tw/contact-us/",
       "goal": "Run one no-cost bounded public-source workflow comparison using a non-sensitive evolving-information case.",
@@ -38,17 +40,19 @@
         "duplicate_checking_avoided",
         "analyst_error_notes"
       ],
-      "human_gate": "Send outreach and approve partner/case selection.",
-      "packet": "docs/nocturnal-conversion/TFC_PILOT_OUTREACH.md"
+      "human_gate": "Review identity/contact details and final message, perform final Send, then partner willingness and case selection.",
+      "packet": "docs/nocturnal-conversion/TFC_PILOT_OUTREACH.md",
+      "execution_manifest": "examples/opportunities/tfc-nocturnal-pilot-2026.json"
     },
     {
       "id": "twnic-community-grant-2026-nocturnal",
       "lane": "GRANT",
       "organization": "TWNIC",
       "status": "HOST_PACKET_READY",
-      "execution_state": "WAITING_HOST_COMMITMENT",
+      "execution_state": "RESEARCH_ONLY",
+      "blocking_state": "WAITING_LEGAL_HOST_COMMITMENT",
       "deadline": "2026-09-30T23:59:00+08:00",
-      "starting_url": "https://twgrants.tw/en/application.html",
+      "starting_url": "https://twgrants.tw/",
       "eligibility": "A legally registered company, association, nonprofit, research institution or academic institution must apply; each organization may submit one proposal.",
       "ceiling": "NTD 1,500,000",
       "project_category": "Internet Technology",
@@ -59,26 +63,72 @@
       "id": "nlnet-restack-nocturnal",
       "lane": "GRANT",
       "organization": "NLnet Foundation",
-      "status": "APPLICATION_DRAFT_READY",
-      "execution_state": "WAITING_OWNER_OPEN_RELEASE_AND_AI_LOG",
+      "status": "PORTFOLIO_BAKEOFF_READY",
+      "execution_state": "PACKET_READY",
+      "blocking_state": "WAITING_PORTFOLIO_SLOT_OPEN_RELEASE_DECISION_AND_AI_LOG",
       "deadline": "2026-11-03T12:00:00+01:00",
       "starting_url": "https://nlnet.nl/propose/",
       "requested_amount_draft_eur": 18500,
       "project_duration_months": 8,
-      "human_gate": "Approve the FOSS/open-access release plan for funded outputs and supply the mandatory GenAI prompt provenance log before final submission.",
+      "human_gate": "Run the first-grant portfolio bakeoff; if Nocturnal wins, approve the FOSS/open-access release plan, confirm amount/rate/time commitment, and supply the mandatory GenAI prompt provenance log before final submission.",
       "eligibility_note": "Restack accepts individuals worldwide, but a non-European applicant must establish a clear European dimension.",
-      "packet": "docs/nocturnal-conversion/NLNET_RESTACK_APPLICATION.md"
+      "packet": "docs/nocturnal-conversion/NLNET_RESTACK_APPLICATION.md",
+      "execution_manifest": "examples/opportunities/nlnet-restack-nocturnal-2026.json"
     },
     {
       "id": "otf-iff-nocturnal",
       "lane": "GRANT",
       "organization": "Open Technology Fund",
-      "status": "CONCEPT_NOTE_DRAFTED_PILOT_GATED",
-      "execution_state": "WAITING_CONCRETE_USER_PROBLEM",
+      "status": "PILOT_THEN_FIRE",
+      "execution_state": "RESEARCH_ONLY",
+      "blocking_state": "WAITING_CONCRETE_REPRESSIVE_CONTEXT_USER_PROBLEM",
       "deadline": "ROLLING",
       "starting_url": "https://www.opentech.fund/funds/internet-freedom-fund/",
       "human_gate": "Identify a concrete beneficiary/user group facing repressive censorship or surveillance and preferably attach evidence from the first bounded pilot; do not submit generic journalism/information-integrity framing.",
       "packet": "docs/nocturnal-conversion/OTF_IFF_CONCEPT_NOTE.md"
+    }
+  ],
+  "master_overrides": [
+    {
+      "id": "partner-tfc-nocturnal-pilot",
+      "status": "FIRE_NOW",
+      "execution_state": "PORTAL_RECON_REQUIRED",
+      "deadline": "ROLLING",
+      "gate": "G0 final Send is human-protected; G4 partner willingness and one bounded non-sensitive public-source case. No funding or endorsement is implied.",
+      "source_state": "OFFICIAL_CONTACT_REVERIFIED_2026-09-17_PACKET_READY",
+      "source": "https://tfc-taiwan.org.tw/contact-us/",
+      "execution_manifest": "examples/opportunities/tfc-nocturnal-pilot-2026.json",
+      "origin": "2026-09-17 Nocturnal conversion execution"
+    },
+    {
+      "id": "twnic-community-grant-2026-nocturnal",
+      "status": "HOST_PACKET_READY",
+      "execution_state": "RESEARCH_ONLY",
+      "deadline": "2026-09-30T23:59:00+08:00",
+      "gate": "G1 legal applicant required; each organization may submit one proposal; up to NT$1.5M. Host must approve its slot, responsible person, seals/signatures, financial statements, budget and any award shortfall before portal execution.",
+      "source_state": "OFFICIAL_2026_CALL_REVERIFIED_2026-09-17_HOST_PACKET_READY",
+      "source": "https://www.twnic.tw/blog/contents.php?blog_lang=en&id=161&lang=zh-tw",
+      "origin": "2026-09-17 Nocturnal conversion execution"
+    },
+    {
+      "id": "nlnet-restack-nocturnal",
+      "status": "PORTFOLIO_BAKEOFF_READY",
+      "execution_state": "PACKET_READY",
+      "deadline": "2026-11-03T12:00:00+01:00",
+      "gate": "G2 first-grant portfolio bakeoff remains mandatory. If Nocturnal wins: approve fully libre/open funded outputs, preserve a clear European dimension, confirm the €18.5k draft budget/time commitment, and provide NLnet-required GenAI disclosure/prompt provenance before final submit.",
+      "source_state": "OFFICIAL_RESTACK_OPEN_REVERIFIED_2026-09-17_APPLICATION_DRAFT_READY",
+      "source": "https://nlnet.nl/propose/",
+      "origin": "2026-09-17 Nocturnal conversion execution"
+    },
+    {
+      "id": "otf-iff-nocturnal",
+      "status": "PILOT_THEN_FIRE",
+      "execution_state": "RESEARCH_ONLY",
+      "deadline": "ROLLING",
+      "gate": "G3/G4 concept note is drafted, but FIRE requires a concrete user/beneficiary facing repressive censorship or surveillance, a real workflow problem, and preferably pilot/demand evidence. Generic information-integrity positioning is insufficient.",
+      "source_state": "OFFICIAL_ROLLING_IFF_REVERIFIED_2026-09-17_CONCEPT_DRAFTED",
+      "source": "https://www.opentech.fund/funds/internet-freedom-fund/",
+      "origin": "2026-09-17 Nocturnal conversion execution"
     }
   ],
   "deprioritized": [
