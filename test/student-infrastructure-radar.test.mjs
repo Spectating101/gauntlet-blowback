@@ -69,9 +69,10 @@ test('Sep-4 research/resource tranche enters the Gauntlet master with explicit e
   }
 
   const awsCfp = master.get('aws-community-day-taiwan-2026-hardware-splicer');
-  assert.equal(awsCfp.status, 'FIRE_NOW');
-  assert.equal(awsCfp.execution_state, 'PORTAL_RECON_REQUIRED');
+  assert.equal(awsCfp.status, 'EXPIRED_RETAIN');
+  assert.equal(awsCfp.execution_state, 'RESEARCH_ONLY');
   assert.equal(awsCfp.deadline, '2026-09-07');
+  assert.match(awsCfp.execution_manifest, /aws-community-day-taiwan-2026-hardware-splicer\.json$/);
 
   const openai = master.get('openai-researcher-access-hardware-splicer');
   assert.equal(openai.status, 'FIRE_NOW');
