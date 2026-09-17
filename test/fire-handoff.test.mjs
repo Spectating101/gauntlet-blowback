@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 
 import { buildMasterRegistry } from '../scripts/build-gauntlet-master.mjs';
 import {
@@ -59,7 +60,8 @@ test('Anthropic FIRE handoff preserves narrow AI-control framing instead of gene
   assert.ok(handoff.submission_copy.nonclaims.some((claim) => /general alignment solution/i.test(claim)));
 });
 
-test('TFC Nocturnal pilot handoff is bilingual and stops before final Send', async () => {
+test('TFC handoff preserves historical staging and requires live recon before human Send', async () => {
+  const manifest = JSON.parse(fs.readFileSync(new URL('../examples/opportunities/tfc-nocturnal-pilot-2026.json', import.meta.url), 'utf8'));
   const handoff = await fireHandoffForRoute('partner-tfc-nocturnal-pilot', records);
   assert.equal(handoff.schema, 'blowback.fire_handoff.v1');
   assert.equal(handoff.state, 'READY_FOR_BROWSER_AGENT');
@@ -71,10 +73,20 @@ test('TFC Nocturnal pilot handoff is bilingual and stops before final Send', asy
   assert.match(handoff.submission_copy.message, /無費用/);
   assert.match(handoff.submission_copy.message_en, /negative result would be just as useful/i);
   assert.ok(handoff.submission_copy.nonclaims.some((claim) => /endorsement/i.test(claim)));
+  // Use an existing valid runtime state; the archived staging label is evidence, not an enum extension.
   assert.equal(handoff.live_portal_state.execution_state, 'PORTAL_RECON_REQUIRED');
-  assert.equal(handoff.live_portal_state.field_map_verified, false);
+  assert.equal(handoff.live_portal_state.field_map_verified, true);
+  assert.equal(handoff.live_portal_state.field_map.final_submit, '送出');
+  assert.equal(manifest.route_evidence.recorded_staging_state, 'STAGED_HUMAN_SEND_GATE');
+  assert.equal(manifest.route_evidence.form_staged, true);
+  assert.equal(manifest.route_evidence.message_transmitted, false);
+  assert.equal(manifest.route_evidence.current_session_verified, false);
+  assert.equal(manifest.route_evidence.session_revalidation_required, true);
+  assert.equal(manifest.route_evidence.verified_at, '2026-09-17');
+  assert.match(manifest.route_evidence.receipt, /TFC_CONTACT_FORM_STAGED_2026-09-17\.md$/);
   assert.equal(handoff.browser_agent_contract.final_submit_policy, 'HUMAN_PROTECTED');
   assert.ok(handoff.browser_agent_contract.human_gate.includes('final_submit_send_apply_confirm'));
+  assert.match(handoff.browser_agent_contract.objective, /inspect the current form/i);
 });
 
 test('NLnet Nocturnal planning manifest cannot dispatch before portfolio and authorship gates', async () => {
