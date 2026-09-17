@@ -8,16 +8,17 @@ Status: **LIVE / conversion queue operational**
 - Product integration on main: `12ece15ec6042dec786ef50006db2f92251a7840`
 - Portfolio freeze status: `ceb0551e0c148476c51b40b8ffef1713f33efd55`
 - Product state: **PRODUCT_COMPLETE / CONVERSION_READY**
+- Canonical product surface: **Now → Read → Research**
 - Gauntlet pre-staging CI baseline: main `45bd473bd11f7be95b019b45a109c19275bb09d0`, core + browser green
 
 No general Nocturnal product construction should be opened from this brief. The job now is external conversion and evidence.
 
 ## Action order
 
-### 1. STAGED — Taiwan FactCheck Center bounded pilot outreach
+### 1. RESTAGE — Taiwan FactCheck Center bounded pilot outreach
 
 Route: `partner-tfc-nocturnal-pilot`  
-State: `STAGED_HUMAN_SEND_GATE`  
+State: `COPY_REVISED_RESTAGE_REQUIRED`  
 Official surface: `https://tfc-taiwan.org.tw/contact-us/`
 
 Prepared assets:
@@ -27,19 +28,31 @@ Prepared assets:
 - `examples/opportunities/tfc-nocturnal-pilot-2026.json`
 - `docs/nocturnal-conversion/receipts/TFC_CONTACT_FORM_STAGED_2026-09-17.md`
 
-Live execution completed on 2026-09-17:
+Live portal reconnaissance completed on 2026-09-17:
 
-1. opened the current TFC contact form;
-2. verified live fields `我們如何稱呼您？`, `電子郵件地址：*`, and `留下您的訊息*`;
-3. filled Christopher Ongko / YZU email / canonical Traditional Chinese outreach copy;
-4. observed no required-field or inline validation error;
-5. observed a non-blocking Cloudflare challenge widget;
-6. verified the final control text as `送出`;
-7. stopped without clicking `送出`, pressing Enter, or navigating away.
+1. verified live fields `我們如何稱呼您？`, `電子郵件地址：*`, and `留下您的訊息*`;
+2. verified final control text `送出`;
+3. observed no required-field or inline validation error on the first staged copy;
+4. observed a non-blocking Cloudflare challenge widget;
+5. did not click `送出`, press Enter, or transmit anything.
 
-The route has therefore cleared portal reconnaissance. The only immediate action left is applicant review + explicit human Send decision.
+After that staging pass, the outreach copy was deliberately revised because the original message under-explained the finished product. The new canonical copy now explicitly states:
 
-Pilot request remains deliberately small and falsifiable: one non-sensitive correction-rich public-source case, no cost, negative result acceptable, no endorsement requested.
+- **problem** — longitudinal public-information reconstruction: initial reports are easy to find while later responses, corrections, superseding records and outcomes fragment across pages/time;
+- **solution** — one source-linked matter history preserving previous/current documented state, chronology, corrections/disputes, later outcomes, historical `as_of` state and Before ↔ After comparison;
+- **interface** — `Now` for current readable state, `Read` for `What changed?`/chronology/evidence/historical views, and `Research` for read-only Timeline/Before-After/Subjects/Sources/Evidence inspection;
+- **pilot** — one bounded, non-sensitive, correction-rich public case, compared against the partner's normal workflow with negative results explicitly acceptable.
+
+Canonical external references in the revised copy:
+
+- `https://github.com/Spectating101/nocturnal-oversight`
+- `https://github.com/Spectating101/nocturnal-oversight/blob/main/EVALUATOR_GUIDE.md`
+
+### Hosted preview exclusion
+
+`https://edition-nocturnal-preview.vercel.app` was rechecked during conversion preparation. It is live, but its `/research` path returns 404 and the repository freeze explicitly marks the earlier Edition/RC1 frontend as superseded by Now / Read / Research. Therefore it must **not** be sent to TFC as though it were the current product interface.
+
+The first staging receipt remains valid evidence of portal/field reconnaissance, but it no longer represents the final copy. The next reversible action is to restage the revised Traditional Chinese message, inspect it, and stop again before `送出`. Only then does the route return to `STAGED_HUMAN_SEND_GATE`.
 
 ### 2. HOST NOW — TWNIC Community Grants 2026
 
@@ -95,16 +108,19 @@ The technical concept is ready, but generic information-integrity positioning is
 
 ### TFC outreach
 
-Current receipt: form staged, not transmitted.
+Current evidence:
 
-After human Send, collect:
+- portal/field reconnaissance complete;
+- first copy staged but superseded before transmission;
+- revised problem → solution → interface → pilot copy frozen in the FIRE packet;
+- no message transmitted.
 
-- contact channel;
-- timestamp;
-- exact final message revision;
-- screenshot or confirmation if available;
-- response / no-response state;
-- next follow-up date.
+Next:
+
+- restage revised copy;
+- inspect exact form state;
+- human Send decision;
+- after Send only: timestamp, endpoint, final revision, acknowledgement/reference ID if any, response state and follow-up date.
 
 ### TWNIC host outreach
 
@@ -135,6 +151,7 @@ After human Send, collect:
 
 - Do not reopen Nocturnal UI/product work merely because a richer feature could exist.
 - Do not claim external adoption, workflow improvement or endorsement before receipt evidence exists.
+- Do not use the superseded Edition/RC1 hosted preview as proof of the canonical interface.
 - Do not use a legal host's identity, seal, finances or proposal slot without authority.
 - Do not submit AI-assisted NLnet prose as if it were applicant-written.
 - Do not force OTF fit by inventing an at-risk beneficiary.
@@ -146,9 +163,9 @@ Nocturnal is no longer waiting for an application strategy or TFC portal reconna
 
 The conversion system now has:
 
-- one **fully staged external-evidence route** at the protected final Send control (TFC outreach);
+- one **revised external-evidence route** requiring a single clean restage before the protected final Send control (TFC outreach);
 - one **deadline-bound host route** with a complete host/proposal packet (TWNIC);
 - one **direct funding route** with a compliant human-authorship workbook and explicit portfolio/open-release gates (NLnet Restack);
 - one **rolling Internet-freedom funding route** with a complete concept framework but a truthful beneficiary/pilot gate (OTF IFF).
 
-The next irreversible action is human review + `送出` on the staged TFC contact form. Internal preparation is no longer the blocker for that route.
+The immediate TFC task is restage revised copy → inspect → human `送出` decision. No message has been transmitted.
