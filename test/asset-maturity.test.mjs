@@ -5,29 +5,20 @@ import fs from 'node:fs';
 const registry = JSON.parse(fs.readFileSync(new URL('../data/portfolio-assets.json', import.meta.url), 'utf8'));
 const assets = registry.assets ?? [];
 const byId = new Map(assets.map((asset) => [asset.id, asset]));
-
 const allowed = registry.allowed_values;
 
 test('portfolio asset registry covers the audited twelve-asset boundary', () => {
   assert.equal(assets.length, 12);
   assert.equal(byId.size, assets.length, 'asset ids must be unique');
   for (const id of [
-    'cite-agent',
-    'research-drive',
-    'policy-lab',
-    'nocturnal-oversight',
-    'hardware-splicer',
-    'public-good-control',
-    'refinery-commons',
-    'sharpe-terminus',
-    'research-papers',
-    'citation-engine',
-    'geomap-arbitrage',
-    'gauntlet-blowback',
+    'cite-agent', 'research-drive', 'policy-lab', 'nocturnal-oversight',
+    'hardware-splicer', 'public-good-control', 'refinery-commons', 'sharpe-terminus',
+    'research-papers', 'citation-engine', 'geomap-arbitrage', 'gauntlet-blowback',
   ]) assert.ok(byId.has(id), `missing audited asset ${id}`);
 });
 
 test('maturity dimensions use explicit bounded vocabularies and current packaging fields', () => {
+  // The original census date is not a claim that every asset was re-audited today.
   assert.equal(registry.as_of, '2026-09-01');
   for (const asset of assets) {
     assert.ok(allowed.implementation_stage.includes(asset.implementation_stage), `${asset.id}: invalid implementation_stage`);
@@ -48,22 +39,19 @@ test('internal validation cannot silently manufacture external validation', () =
   const internallyValidated = assets.filter((asset) => asset.implementation_stage === 'internally_validated');
   assert.ok(internallyValidated.length > 0);
   for (const asset of internallyValidated) assert.notEqual(asset.external_evidence_stage, undefined);
-
-  assert.equal(byId.get('public-good-control').external_evidence_stage, 'none');
-  assert.equal(byId.get('citation-engine').external_evidence_stage, 'none');
-  assert.equal(byId.get('policy-lab').external_evidence_stage, 'none');
-  assert.equal(byId.get('geomap-arbitrage').external_evidence_stage, 'none');
+  for (const id of ['public-good-control', 'citation-engine', 'policy-lab', 'geomap-arbitrage']) {
+    assert.equal(byId.get(id).external_evidence_stage, 'none');
+  }
 });
 
 test('deployment and external evidence remain orthogonal', () => {
   const researchDrive = byId.get('research-drive');
   assert.equal(researchDrive.deployment_stage, 'internal_live');
   assert.notEqual(researchDrive.external_evidence_stage, 'adopted');
-
   const policyLab = byId.get('policy-lab');
   assert.equal(policyLab.deployment_stage, 'public_demo');
   assert.equal(policyLab.external_evidence_stage, 'none');
-
+  assert.equal(policyLab.canonicalization_state, 'release_branch_ahead');
   const cite = byId.get('cite-agent');
   assert.equal(cite.deployment_stage, 'public_demo');
   assert.equal(cite.external_evidence_stage, 'none');
@@ -77,13 +65,19 @@ test('known G4 assets stay explicitly short of external validation', () => {
   assert.match(byId.get('hardware-splicer').strongest_known_gap, /physical|design-partner|G4/i);
 });
 
-test('Nocturnal maturity points to one bounded external pilot, not another feature sprint', () => {
+test('Nocturnal registry exactly reconciles the canonical closure supplement without synthetic external proof', () => {
+  const supplement = JSON.parse(fs.readFileSync(new URL('../data/portfolio-assets-supplement-2026-09-17.json', import.meta.url), 'utf8'));
   const nocturnal = byId.get('nocturnal-oversight');
+  assert.deepEqual(nocturnal, supplement.assets.find((asset) => asset.id === nocturnal.id));
+  assert.equal(nocturnal.canonicalization_state, 'canonical');
+  assert.equal(nocturnal.portfolio_product_status, 'complete');
+  assert.equal(nocturnal.conversion_state, 'conversion_ready');
   assert.equal(nocturnal.external_evidence_stage, 'none');
-  assert.equal(nocturnal.last_audited, '2026-09-01');
-  assert.match(nocturnal.strongest_known_gap, /externally witnessed.*pilot/i);
-  assert.match(nocturnal.strongest_known_gap, /Do not reopen architecture/i);
-  assert.match(nocturnal.evidence_basis, /OTF.*TWNIC.*NLnet.*WebSci.*ICWSM/i);
+  assert.equal(nocturnal.last_audited, '2026-09-17');
+  assert.match(nocturnal.effective_candidate, /ceb0551e0c148476c51b40b8ffef1713f33efd55/);
+  assert.match(nocturnal.strongest_known_gap, /human-labelled.*assessor recheck/i);
+  assert.match(nocturnal.next_evidence_action, /Keep BUILD_FACTORY frozen/i);
+  assert.match(nocturnal.evidence_basis, /#29.*#30.*merged.*#15.*closed/i);
 });
 
 test('support infrastructure is explicitly prevented from masquerading as primary ammunition', () => {
