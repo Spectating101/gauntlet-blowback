@@ -8,16 +8,16 @@ Status: **LIVE / conversion queue operational**
 - Product integration on main: `12ece15ec6042dec786ef50006db2f92251a7840`
 - Portfolio freeze status: `ceb0551e0c148476c51b40b8ffef1713f33efd55`
 - Product state: **PRODUCT_COMPLETE / CONVERSION_READY**
-- Gauntlet current CI baseline: main `45bd473bd11f7be95b019b45a109c19275bb09d0`, core + browser green
+- Gauntlet pre-staging CI baseline: main `45bd473bd11f7be95b019b45a109c19275bb09d0`, core + browser green
 
 No general Nocturnal product construction should be opened from this brief. The job now is external conversion and evidence.
 
 ## Action order
 
-### 1. FIRE NOW — Taiwan FactCheck Center bounded pilot outreach
+### 1. STAGED — Taiwan FactCheck Center bounded pilot outreach
 
 Route: `partner-tfc-nocturnal-pilot`  
-State: `FIRE_NOW / PORTAL_RECON_REQUIRED`  
+State: `STAGED_HUMAN_SEND_GATE`  
 Official surface: `https://tfc-taiwan.org.tw/contact-us/`
 
 Prepared assets:
@@ -25,17 +25,21 @@ Prepared assets:
 - `docs/nocturnal-conversion/TFC_PILOT_OUTREACH.md`
 - `examples/fire-packets/tfc-nocturnal-pilot-2026.json`
 - `examples/opportunities/tfc-nocturnal-pilot-2026.json`
+- `docs/nocturnal-conversion/receipts/TFC_CONTACT_FORM_STAGED_2026-09-17.md`
 
-Execution rule:
+Live execution completed on 2026-09-17:
 
-1. inspect the current contact form and map its live fields;
-2. load the approved Traditional Chinese outreach copy;
-3. stop at the final Send control;
-4. applicant reviews the actual filled form;
-5. final Send is a human-protected action;
-6. if a reply arrives, partner willingness and first-case selection remain separate gates.
+1. opened the current TFC contact form;
+2. verified live fields `我們如何稱呼您？`, `電子郵件地址：*`, and `留下您的訊息*`;
+3. filled Christopher Ongko / YZU email / canonical Traditional Chinese outreach copy;
+4. observed no required-field or inline validation error;
+5. observed a non-blocking Cloudflare challenge widget;
+6. verified the final control text as `送出`;
+7. stopped without clicking `送出`, pressing Enter, or navigating away.
 
-Pilot request is deliberately small and falsifiable: one non-sensitive correction-rich public-source case, no cost, negative result acceptable, no endorsement requested.
+The route has therefore cleared portal reconnaissance. The only immediate action left is applicant review + explicit human Send decision.
+
+Pilot request remains deliberately small and falsifiable: one non-sensitive correction-rich public-source case, no cost, negative result acceptable, no endorsement requested.
 
 ### 2. HOST NOW — TWNIC Community Grants 2026
 
@@ -91,6 +95,10 @@ The technical concept is ready, but generic information-integrity positioning is
 
 ### TFC outreach
 
+Current receipt: form staged, not transmitted.
+
+After human Send, collect:
+
 - contact channel;
 - timestamp;
 - exact final message revision;
@@ -134,13 +142,13 @@ The technical concept is ready, but generic information-integrity positioning is
 
 ## Current operational conclusion
 
-Nocturnal is no longer waiting for an application strategy.
+Nocturnal is no longer waiting for an application strategy or TFC portal reconnaissance.
 
 The conversion system now has:
 
-- one **immediately executable external-evidence route** (TFC outreach);
+- one **fully staged external-evidence route** at the protected final Send control (TFC outreach);
 - one **deadline-bound host route** with a complete host/proposal packet (TWNIC);
 - one **direct funding route** with a compliant human-authorship workbook and explicit portfolio/open-release gates (NLnet Restack);
 - one **rolling Internet-freedom funding route** with a complete concept framework but a truthful beneficiary/pilot gate (OTF IFF).
 
-The next irreversible action is human review + Send on the TFC contact form. Everything before that point is Gauntlet-preparable and now covered by green core/browser CI.
+The next irreversible action is human review + `送出` on the staged TFC contact form. Internal preparation is no longer the blocker for that route.
