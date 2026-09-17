@@ -5,6 +5,9 @@ import test from "node:test";
 const authority = JSON.parse(
   fs.readFileSync("data/main-quest-execution-authority-2026-09-17.json", "utf8"),
 );
+const preparation = JSON.parse(
+  fs.readFileSync("data/main-quest-preparation-leverage-2026-09-16.json", "utf8"),
+);
 
 test("PhD and employment remain the terminal executable-now priorities", () => {
   assert.deepEqual(
@@ -33,6 +36,7 @@ test("Invisible Ledger cannot be promoted into settled thesis evidence", () => {
       "using it as a prerequisite for the whole PhD or employment campaign",
     ),
   );
+  assert.doesNotMatch(JSON.stringify(preparation), /Invisible Ledger/);
 });
 
 test("existing Research Drive and Cite-Agent agents keep implementation ownership", () => {

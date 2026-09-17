@@ -69,7 +69,7 @@ compensation + career comparison
 Five working packet families:
 
 1. **Research / applied AI** — Refinery + Cite/YZUC + Research Drive + Hardware Splicer.
-2. **Financial AI / FinTech** — Finance MSc + empirical research + applied AI systems + DT/IL.
+2. **Financial AI / FinTech** — Finance MSc + settled empirical research + applied AI systems. Unresolved thesis material is not a default employment claim.
 3. **Quant** — Finance MSc + Sharpe/Terminus + empirical work + Python/data engineering.
 4. **AI/software/agent systems** — Refinery + Cite + YZUC/Research Drive.
 5. **Semiconductor / EDA / physical AI** — Hardware Splicer + Refinery.

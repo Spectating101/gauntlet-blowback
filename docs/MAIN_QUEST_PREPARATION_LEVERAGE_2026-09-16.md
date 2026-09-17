@@ -23,7 +23,7 @@ Derived from the spine:
 - academic CV;
 - one-page research identity statement;
 - research portfolio summary;
-- Invisible Ledger/thesis summary;
+- thesis/research-object placeholder, with no asset mapping until the user establishes its authority;
 - Fiscal Choke Points summary;
 - systems-research summary;
 - publication/output list;
@@ -55,7 +55,7 @@ Start with four reusable one-page objects:
 
 - Refinery;
 - Hardware Splicer;
-- Invisible Ledger / research programme;
+- Policy Lab;
 - Cite/YZUC/Research Drive.
 
 Each should state the problem, personal contribution, architecture/method, scale, evaluation, maturity, proven claims, nonclaims and evidence links.
@@ -68,7 +68,7 @@ The two unrecovered employment identities remain `IDENTITY_GAP`; they must not b
 
 ### 7. Interview / Oral Story Bank
 
-Build when applications start converting. Reuse the same evidence in 30-second, 90-second and 5-minute versions for research identity, IL, DT, Refinery, Hardware Splicer, large-data work, verification/failure examples and the finance→AI-systems transition.
+Build when applications start converting. Reuse the same evidence in 30-second, 90-second and 5-minute versions for research identity, settled empirical work, Refinery, Hardware Splicer, Policy Lab, large-data work, verification/failure examples and the finance→AI-systems transition. Add a thesis/research-object story only after the user establishes its authority.
 
 ## Do not do first
 

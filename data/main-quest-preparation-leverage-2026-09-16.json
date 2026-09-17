@@ -44,7 +44,7 @@
         "academic CV",
         "one-page research identity statement",
         "research portfolio summary",
-        "thesis / Invisible Ledger summary",
+        "thesis / research-object placeholder with no asset mapping until user authority exists",
         "Fiscal Choke Points summary",
         "systems research summary",
         "publication/output list",
@@ -93,7 +93,7 @@
         },
         {
           "family_id": "financial-ai-fintech",
-          "lead_evidence": ["Finance MSc", "empirical research", "AI systems", "Fiscal Choke Points", "Invisible Ledger"],
+          "lead_evidence": ["Finance MSc", "settled empirical research", "AI systems"],
           "market_examples": ["SinoPac", "Cathay", "banks", "FinTech"]
         },
         {
@@ -128,7 +128,7 @@
       "initial_cards": [
         "Refinery",
         "Hardware Splicer",
-        "Invisible Ledger / research programme",
+        "Policy Lab",
         "Cite/YZUC/Research Drive"
       ],
       "card_fields": [
@@ -176,7 +176,7 @@
       "depends_on": ["canonical-evidence-cards"],
       "stories": [
         "research identity",
-        "Invisible Ledger",
+        "thesis / research object only after user authority exists",
         "Fiscal Choke Points",
         "Refinery",
         "Hardware Splicer",
