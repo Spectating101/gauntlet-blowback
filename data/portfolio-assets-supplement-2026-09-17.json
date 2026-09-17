@@ -1,0 +1,44 @@
+{
+  "schema": "blowback.portfolio_asset_maturity.supplement.v1",
+  "as_of": "2026-09-17",
+  "authority": "Overrides only the matching asset row in data/portfolio-assets.json until registry reconciliation; all other asset records remain unchanged.",
+  "assets": [
+    {
+      "id": "nocturnal-oversight",
+      "name": "Nocturnal Oversight",
+      "repo": "Spectating101/nocturnal-oversight",
+      "implementation_stage": "internally_validated",
+      "external_evidence_stage": "none",
+      "deployment_stage": "public_demo",
+      "canonicalization_state": "canonical",
+      "portfolio_product_status": "complete",
+      "conversion_state": "conversion_ready",
+      "last_audited": "2026-09-17",
+      "effective_candidate": "Canonical main at freeze-status commit ceb0551e0c148476c51b40b8ffef1713f33efd55; Now / Read / Research product integration landed as 12ece15ec6042dec786ef50006db2f92251a7840.",
+      "packaging_role": "Primary information-integrity / correction-aware public-memory / trustworthy-evidence / journalism-research-interface package.",
+      "strongest_known_gap": "External human-labelled validation remains absent: one approved bounded non-fictional source → claim → review → correction/retraction → public-output exercise plus assessor recheck is still required for external workflow/correctness evidence.",
+      "allowed_claims": [
+        "portfolio-complete human-facing longitudinal public-memory product on canonical main",
+        "integrated Now / Read / Research surfaces over one public-safe backend",
+        "correction/supersession-aware matter history and explicit documented-state progression",
+        "public/intake/operator authority separation",
+        "historical as_of projections with future-evidence/media leakage guardrails",
+        "read-only temporal comparison, source/entity pivots and evidence inspection",
+        "hardened backend previously passed canonical software QA/CI before merge",
+        "deterministic official-source Artemis II specimen plus fictional safety/morphology fixtures"
+      ],
+      "forbidden_claims": [
+        "existing partner/newsroom/institutional adoption",
+        "demonstrated external workflow or correctness improvement",
+        "legal or journalistic certification",
+        "surveillance or punitive-person dossier product positioning",
+        "global truth/reliability scoring",
+        "co-appearance as proof of relationship",
+        "source recurrence as proof of independence or credibility",
+        "final V3 exact-head hosted UI green run when GitHub jobs did not execute"
+      ],
+      "next_evidence_action": "Move to Gauntlet conversion now: current route discovery, applications/demos/work-sample use, and one bounded competent external evaluator/pilot. Keep BUILD_FACTORY frozen unless a real evaluator, pilot, reproducible defect, or concrete route requires a missing capability.",
+      "evidence_basis": "RC2 PR #29 and V3 PR #30 are merged to Nocturnal main; RC1 PR #15 is closed as superseded; EVALUATOR_GUIDE.md and docs/public_good/NOCTURNAL_PRODUCT_FREEZE.md define the canonical product and freeze boundary; Nocturnal issue #21 explicitly preserves the remaining external human-labelled validation criterion."
+    }
+  ]
+}
