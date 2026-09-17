@@ -1,0 +1,44 @@
+{
+  "schema": "gauntlet.nocturnal_final_closure.v1",
+  "as_of": "2026-09-18",
+  "campaign_id": "nocturnal-final-closure",
+  "state": "SUPERSEDED_BY_CANONICAL_CLOSURE",
+  "objective": "Preserve closure history without reopening the completed Now / Read / Research product.",
+  "superseded_by": [
+    "docs/NOCTURNAL_PORTFOLIO_CLOSURE_2026-09-17.md",
+    "data/portfolio-assets-supplement-2026-09-17.json",
+    "data/nocturnal-conversion-execution-2026-09-17.json"
+  ],
+  "historical_preclosure_record": "https://github.com/Spectating101/gauntlet-blowback/blob/83e4bd02626f7f00fc451a955268b3341ac6525c/data/nocturnal-final-closure-2026-09-17.json",
+  "verified_topology": {
+    "canonical_branch": "main",
+    "product_integration": "12ece15ec6042dec786ef50006db2f92251a7840",
+    "portfolio_freeze": "ceb0551e0c148476c51b40b8ffef1713f33efd55",
+    "rc2": {"pull_request": 29, "state": "MERGED"},
+    "v3": {"pull_request": 30, "state": "MERGED"},
+    "legacy_rc1": {"pull_request": 15, "state": "CLOSED_SUPERSEDED"},
+    "hosted_ci": "No final V3 exact-head hosted UI pass is inferred from product closure; jobs that did not execute are not passing product tests."
+  },
+  "portfolio_product_status": "complete",
+  "conversion_state": "conversion_ready",
+  "external_evidence_stage": "none",
+  "build_factory": "FROZEN_UNLESS_EARNED_BY_DEFECT_EVALUATOR_PILOT_OR_ROUTE_REQUIREMENT",
+  "closure_sequence": [],
+  "conversion_after_closure": {
+    "one_serious_pilot_at_a_time": true,
+    "candidate_routes": ["partner-doublethink-nocturnal-pilot", "partner-tfc-nocturnal-pilot", "partner-ocf-nocturnal-pilot"],
+    "selected_preparation_route": "partner-tfc-nocturnal-pilot",
+    "external_send_gate": "Revalidate the actual live session and final message; final Send remains human-protected.",
+    "staging_is_submission": false,
+    "archived_staging_proves_live_session": false,
+    "later_routes": ["websci-2027-nocturnal", "icwsm-2027-demo-nocturnal", "otf-iff-nocturnal"]
+  },
+  "allowed_claims_source": "data/portfolio-assets-supplement-2026-09-17.json",
+  "forbidden_claims": [
+    "external analyst adoption or measured workflow improvement without external evidence",
+    "final V3 exact-head hosted UI green run when jobs did not execute",
+    "TFC message transmitted without a submission receipt",
+    "global truth scoring",
+    "surveillance or punitive-person dossiers"
+  ]
+}

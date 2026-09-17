@@ -1,0 +1,122 @@
+{
+  "schema": "gauntlet.policy_lab_conversion_campaign.v1",
+  "as_of": "2026-09-17",
+  "project_id": "policy-lab",
+  "stage": "CANONICAL_RELEASE_RECONCILIATION",
+  "external_execution_authorized": false,
+  "source_truth": {
+    "canonical_main": "55fd6f2cf2eed25b589e91b5e3161e6ced68f5de",
+    "canonical_source": "fdb8605a1a400b4c0054af0b78f01eaf6e3e1a51",
+    "effective_candidate": "2dd92d85d26f8afdf3df0b0f8df927b5cef9f37c",
+    "candidate_prs": [65, 66, 70],
+    "rehearsal_merge": "f34bb972c49e547a44a84ec93410d66dd88c48e1",
+    "canonical_live_smoke": "FAILING_AUTOMATION_BOOTSTRAP",
+    "candidate_rehearsal_matrix": "PASSED",
+    "candidate_is_canonical": false
+  },
+  "positioning": {
+    "primary": "reproducible evidence-to-decision / decision-provenance research software",
+    "reference_domain": "energy",
+    "generalization_state": "UNPROVEN",
+    "pipeline": "source evidence -> provenance/assurance -> explicit policy -> bounded decision -> reproducible receipt"
+  },
+  "internal_sequence": [
+    "candidate reconciliation",
+    "canonical promotion and exact-main verification",
+    "frozen canonical release and identity/provenance package",
+    "independent-reproducer pack",
+    "blind-comprehension pack",
+    "PROV and RO-Crate crosswalk",
+    "external G1/G3 execution only after separate authority",
+    "G2 source-holder evidence",
+    "G4 institutional workflow",
+    "publication/funding/career conversion",
+    "paid and repeat use",
+    "R4 economic evidence"
+  ],
+  "evidence_gates": {
+    "G1": {
+      "name": "independent reproduction",
+      "current": "OPEN",
+      "not_evidence": ["internal CI", "author-led demo", "download", "GitHub star"]
+    },
+    "G2": {
+      "name": "source-holder/operator evidence",
+      "current": "OPEN",
+      "not_evidence": ["public Ausgrid reproduction", "internal provenance record"]
+    },
+    "G3": {
+      "name": "blind comprehension",
+      "current": "OPEN",
+      "not_evidence": ["favourable reaction", "coached walkthrough", "internal review"]
+    },
+    "G4": {
+      "name": "real institutional workflow",
+      "current": "OPEN",
+      "not_evidence": ["presentation", "conference acceptance", "internal case"]
+    },
+    "R4": {
+      "name": "economic validation",
+      "current": "OPEN",
+      "not_evidence": ["grant", "prize", "traffic", "unpaid demo"]
+    }
+  },
+  "channel_classes": [
+    {
+      "class": "EVIDENCE_GENERATING",
+      "current_state": "RESEARCHED_LEAD",
+      "examples": ["independent reproducer", "blind evaluator", "source-holder", "historical institutional case"]
+    },
+    {
+      "class": "CREDIBILITY_AMPLIFYING",
+      "current_state": "PREPARE_AFTER_RELEASE",
+      "examples": ["canonical release", "Zenodo DOI", "Software Heritage", "DPG review"]
+    },
+    {
+      "class": "PUBLICATION",
+      "current_state": "PREPARE_AFTER_RELEASE_AND_PREFERABLY_G1",
+      "examples": ["JOSS", "SoftwareX", "research-software and reproducibility venues"]
+    },
+    {
+      "class": "FUNDING",
+      "current_state": "RESEARCHED_LEAD",
+      "examples": ["NSTC/Taiwan collaboration", "NLnet only if generic infrastructure fit survives"]
+    },
+    {
+      "class": "CAREER",
+      "current_state": "INTERNAL_PACKET_INPUT",
+      "examples": ["PhD evidence", "research software", "applied AI", "ITRI/III/research staff"]
+    },
+    {
+      "class": "ECONOMIC_VALIDATION",
+      "current_state": "DEFERRED_UNTIL_EXTERNAL_EVIDENCE",
+      "examples": ["bounded paid assessment", "paid pilot", "repeat engagement", "measured value"]
+    }
+  ],
+  "researched_leads": [
+    "Taipower/NSTC grid-resilience ecosystem",
+    "Taiwan university microgrid groups",
+    "Taipower Research Institute and AMI Route B",
+    "ITRI energy/grid research",
+    "Zenodo and Software Heritage",
+    "JOSS or SoftwareX",
+    "Digital Public Goods Registry",
+    "NLnet only after strict fit verification"
+  ],
+  "route_posture": {
+    "dpg": "HOLD_CANONICAL_RELEASE_AND_HUMAN_ATTESTATIONS",
+    "joss": "PREPARE_AFTER_RELEASE_AND_PREFERABLY_G1",
+    "source_holder_and_institutional": "HOLD_UNTIL_SEPARATE_AUTHORITY",
+    "issue_49_leads": "RESEARCHED_LEAD_NOT_READY_OR_FIRE"
+  },
+  "forbidden_claims": [
+    "candidate evidence is canonical evidence",
+    "public Ausgrid data closes G2",
+    "internal CI closes G1, G3 or G4",
+    "DPG recognition",
+    "institutional use or adoption",
+    "paid use or R4",
+    "empirically calibrated policy thresholds",
+    "legal issuance, redemption, meter or settlement authority"
+  ]
+}

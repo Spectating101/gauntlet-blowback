@@ -1,0 +1,202 @@
+{
+  "schema": "gauntlet.main_quest_preparation_leverage.v1",
+  "snapshot": "2026-09-16",
+  "timezone": "Asia/Taipei",
+  "depends_on": [
+    "data/main-quest-census-pass2-2026-09-15.json",
+    "data/main-quest-economics-census-2026-09-16.json",
+    "data/main-quest-campaigns-2026-09-16.json"
+  ],
+  "objective": "Choose preparation work by cross-route leverage: build one shared object when it unlocks many routes, then spend custom effort only on irreducible route deltas.",
+  "route_denominator": {
+    "phd": 61,
+    "employment": 88,
+    "total": 149
+  },
+  "preparation_order": [
+    {
+      "rank": 1,
+      "artifact_id": "main-quest-canonical-facts-evidence-spine",
+      "title": "Canonical Facts + Evidence Spine",
+      "coverage": "149/149 as shared source material",
+      "why_high_roi": "Every CV, resume, SOP, research statement, faculty email, recommender brief, project sheet, application bio and interview answer should derive from the same facts and evidence rather than being rewritten independently.",
+      "contains": [
+        "education and degree timeline",
+        "RA/TA/work history",
+        "research papers and maturity state",
+        "projects and current evidence-bounded claims",
+        "skills and tools",
+        "links/repos/deployments",
+        "awards/conferences/external validation",
+        "master accomplishment bullet bank",
+        "claim-to-evidence links",
+        "short/medium/long factual bios"
+      ],
+      "done_when": "All outward-facing packet families can be generated without inventing a fact or reopening basic portfolio history."
+    },
+    {
+      "rank": 2,
+      "artifact_id": "phd-core-dossier",
+      "title": "PhD Core Dossier",
+      "coverage": "Reusable source for 61/61 PhD routes; exact program requirements remain route deltas",
+      "depends_on": ["main-quest-canonical-facts-evidence-spine"],
+      "contains": [
+        "academic CV",
+        "one-page research identity statement",
+        "research portfolio summary",
+        "thesis / research-object placeholder with no asset mapping until user authority exists",
+        "Fiscal Choke Points summary",
+        "systems research summary",
+        "publication/output list",
+        "base SOP/research-statement modules"
+      ],
+      "route_specific_delta": [
+        "why this institute",
+        "faculty/lab match",
+        "specific proposed research question",
+        "program-specific forms and declarations",
+        "which evidence assets lead"
+      ]
+    },
+    {
+      "rank": 3,
+      "artifact_id": "recommender-and-official-document-pack",
+      "title": "Recommender + Official Document Pack",
+      "coverage": "Shared dependency across the PhD campaign; exact recommendation/document requirements still need per-route hydration",
+      "depends_on": ["phd-core-dossier"],
+      "contains": [
+        "academic CV",
+        "one-page research summary",
+        "target-program matrix",
+        "deadline matrix",
+        "suggested emphasis by program family",
+        "transcript",
+        "enrollment / expected-graduation proof",
+        "degree documents",
+        "writing samples",
+        "language proof/status where required",
+        "recommender request tracker"
+      ],
+      "why_high_roi": "It attacks the critical-path work that depends on other people and institutional documents, especially during the Sep-Oct doctoral deadline cluster."
+    },
+    {
+      "rank": 4,
+      "artifact_id": "employment-packet-families",
+      "title": "Five Employment Packet Families",
+      "coverage": "88/88 employment routes must map to one family or explicit identity gap",
+      "depends_on": ["main-quest-canonical-facts-evidence-spine"],
+      "families": [
+        {
+          "family_id": "research-applied-ai",
+          "lead_evidence": ["Refinery", "Cite/YZUC", "Research Drive", "Hardware Splicer"],
+          "market_examples": ["III", "ITRI", "Academia Sinica", "research engineering"]
+        },
+        {
+          "family_id": "financial-ai-fintech",
+          "lead_evidence": ["Finance MSc", "settled empirical research", "AI systems"],
+          "market_examples": ["SinoPac", "Cathay", "banks", "FinTech"]
+        },
+        {
+          "family_id": "quant",
+          "lead_evidence": ["Finance MSc", "Sharpe/Terminus", "empirical research", "Python/data engineering"],
+          "market_examples": ["Point72/Cubist", "WorldQuant"]
+        },
+        {
+          "family_id": "ai-software-agent-systems",
+          "lead_evidence": ["Refinery", "Cite", "YZUC/Research Drive"],
+          "market_examples": ["Trend Micro", "RAG/agent firms", "software companies"]
+        },
+        {
+          "family_id": "semiconductor-eda-physical-ai",
+          "lead_evidence": ["Hardware Splicer", "Refinery"],
+          "market_examples": ["NVIDIA", "MediaTek", "TSMC", "Synopsys", "Cadence"]
+        }
+      ],
+      "route_specific_delta": [
+        "2-4 role-specific bullets",
+        "role-facing summary",
+        "optional cover note only when useful",
+        "portal-specific fields"
+      ]
+    },
+    {
+      "rank": 5,
+      "artifact_id": "canonical-evidence-cards",
+      "title": "Canonical Evidence Cards",
+      "coverage": "Reusable across PhD, faculty, job and interview packets where the asset is relevant",
+      "depends_on": ["main-quest-canonical-facts-evidence-spine"],
+      "initial_cards": [
+        "Refinery",
+        "Hardware Splicer",
+        "Policy Lab",
+        "Cite/YZUC/Research Drive"
+      ],
+      "card_fields": [
+        "problem",
+        "what was personally built/researched",
+        "architecture or method",
+        "scale",
+        "tests/evaluation",
+        "current maturity",
+        "proven claims",
+        "explicit nonclaims",
+        "repo/demo/paper links"
+      ]
+    },
+    {
+      "rank": 6,
+      "artifact_id": "route-delta-matrix",
+      "title": "149-Route Delta Matrix",
+      "coverage": "61 PhD + 88 employment routes",
+      "depends_on": [
+        "phd-core-dossier",
+        "employment-packet-families",
+        "recommender-and-official-document-pack"
+      ],
+      "fields": [
+        "route_id",
+        "terminal_campaign",
+        "packet_family",
+        "lead_evidence",
+        "required_documents",
+        "irreducible_custom_work",
+        "deadline",
+        "economics_state",
+        "eligibility_gate",
+        "competition_state",
+        "marginal_application_cost"
+      ],
+      "integrity_rule": "The two unresolved employment identities stay IDENTITY_GAP until source-locked; never invent route rows to force 88 named entries."
+    },
+    {
+      "rank": 7,
+      "artifact_id": "interview-oral-story-bank",
+      "title": "Interview / Oral Exam Story Bank",
+      "coverage": "Reusable after applications begin converting to interviews/orals",
+      "depends_on": ["canonical-evidence-cards"],
+      "stories": [
+        "research identity",
+        "thesis / research object only after user authority exists",
+        "Fiscal Choke Points",
+        "Refinery",
+        "Hardware Splicer",
+        "large/messy-data research work",
+        "failure/verification example",
+        "why finance plus AI systems"
+      ],
+      "formats": ["30-second", "90-second", "5-minute"]
+    }
+  ],
+  "do_not_do_first": [
+    "write 61 independent PhD SOPs",
+    "create 88 independent resumes",
+    "build route-specific packets before the shared evidence spine exists",
+    "polish low-value secondary papers merely because a venue exists",
+    "prepare interview material before application packets are operational unless an interview is already scheduled"
+  ],
+  "first_execution_target": {
+    "artifact_id": "main-quest-canonical-facts-evidence-spine",
+    "reason": "Highest breadth of reuse across both terminal Main Quest campaigns and every downstream packet family.",
+    "user_input_policy": "Use existing repository/context evidence by default; ask the user only for factual corrections, unavailable official documents, or genuinely unresolved personal decisions."
+  }
+}

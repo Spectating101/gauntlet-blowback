@@ -61,6 +61,27 @@ function deadlineValue(value) {
   return Number.isNaN(parsed) ? Number.POSITIVE_INFINITY : parsed;
 }
 
+function deadlineCutoff(value) {
+  if (!value) return null;
+  const text = String(value).trim();
+  if (/^(ROLLING|MONTHLY|SEASONAL|POST-EVENT|VACANCY_DRIVEN|CALL_NOT_YET_VERIFIED|CYCLE_NOT_YET_VERIFIED)$/i.test(text)) {
+    return null;
+  }
+  const dateTime = Date.parse(text);
+  if (!Number.isNaN(dateTime) && /T\d{2}:\d{2}/.test(text)) return dateTime;
+  const match = text.match(/^\d{4}-\d{2}-\d{2}$/);
+  if (!match) return null;
+  const endOfDayUtc = Date.parse(`${match[0]}T23:59:59.999Z`);
+  return Number.isNaN(endOfDayUtc) ? null : endOfDayUtc;
+}
+
+export function deadlineIsExpired(value, asOf = new Date()) {
+  const cutoff = deadlineCutoff(value);
+  if (cutoff == null) return false;
+  const now = asOf instanceof Date ? asOf.getTime() : Date.parse(String(asOf));
+  return !Number.isNaN(now) && cutoff < now;
+}
+
 function loadCheckpoint(routeId) {
   const file = path.join(STATE_DIR, `${routeId}.json`);
   if (!fs.existsSync(file)) return null;
@@ -71,9 +92,10 @@ function loadCheckpoint(routeId) {
   }
 }
 
-function isSuppressed(record, checkpoint, { includePaused = false } = {}) {
+function isSuppressed(record, checkpoint, { includePaused = false, includeExpired = false, asOf = new Date() } = {}) {
   const status = normalizeStatus(record.status);
   if (status.includes('KILL') || status.includes('REJECT')) return true;
+  if (!includeExpired && deadlineIsExpired(record.deadline, asOf)) return true;
   if (!checkpoint) return false;
   if (TERMINAL_CHECKPOINTS.has(checkpoint.status)) return true;
   if (!includePaused && PAUSED_CHECKPOINTS.has(checkpoint.status)) return true;

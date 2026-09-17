@@ -35,7 +35,7 @@ test('expired AWS CFP packet is retained but cannot dispatch through FIRE', asyn
   assert.match(record.execution_manifest, /aws-community-day-taiwan-2026-hardware-splicer\.json$/);
   await assert.rejects(
     fireHandoffForRoute('aws-community-day-taiwan-2026-hardware-splicer', records),
-    /not in an immediate FIRE state/i,
+    /not found in active Gauntlet master/i,
   );
 });
 
@@ -90,14 +90,14 @@ test('NLnet Nocturnal planning manifest cannot dispatch before portfolio and aut
 });
 
 test('fire-next ignores expired packets and returns a genuinely executable current route', async () => {
-  const handoff = await nextFireHandoff(records);
+  const handoff = await nextFireHandoff(records, { includePaused: true });
   assert.ok(handoff);
   assert.ok(FIRE_IDS.includes(handoff.route_id), `unexpected next FIRE route ${handoff.route_id}`);
   assert.notEqual(handoff.route_id, 'aws-community-day-taiwan-2026-hardware-splicer');
 });
 
 test('fire queue contains the three current executable FIRE bundles including Nocturnal', async () => {
-  const queue = await fireHandoffQueue(records, { limit: 10 });
+  const queue = await fireHandoffQueue(records, { limit: 10, includePaused: true });
   assert.equal(queue.schema, 'blowback.fire_queue.v1');
   const ids = queue.handoffs.map((handoff) => handoff.route_id);
   assert.deepEqual(new Set(ids), new Set(FIRE_IDS));

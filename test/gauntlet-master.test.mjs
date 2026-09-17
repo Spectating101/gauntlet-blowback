@@ -210,8 +210,10 @@ test('applies gate-audit corrections to current source rows', () => {
 });
 
 test('keeps strategic and browser execution states separate', () => {
-  assert.equal(byId.get('gaf-2026-policy-lab').status, 'FIRE_NOW');
-  assert.equal(byId.get('gaf-2026-policy-lab').execution_state, 'PORTAL_RECON_REQUIRED');
+  assert.equal(byId.get('gaf-2026-policy-lab').status, 'CLOSED_2026');
+  assert.equal(byId.get('gaf-2026-policy-lab').execution_state, 'BLOCKED');
+  assert.equal(byId.get('dpg-policy-lab').status, 'HOLD_CANONICAL_RELEASE');
+  assert.equal(byId.get('dpg-policy-lab').execution_state, 'DEPENDENCY_RECON_REQUIRED');
   assert.equal(byId.get('innoserve-2026-policy-lab-ip').execution_state, 'PACKET_READY');
   assert.equal(byId.get('field-meet-taipei-2026').execution_state, 'NOT_APPLICABLE');
 });
