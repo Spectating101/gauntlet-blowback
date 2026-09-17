@@ -124,11 +124,47 @@
       "output": "incorporate exact Research Drive and Cite-Agent evidence only when their current agents return verified receipts"
     }
   ],
+  "data_readiness": {
+    "phd_routes": {
+      "reported_denominator": 61,
+      "individually_preserved_rows": 61,
+      "state": "EXACT_COMPACT_INDEX_AVAILABLE_REVERIFY_VOLATILE_FACTS",
+      "remaining_work": [
+        "verify live programme windows and department requirements",
+        "verify faculty/lab fit from current public evidence",
+        "hydrate exact document, recommendation, language and funding conditions",
+        "keep unresolved applicant facts explicit"
+      ]
+    },
+    "employment_routes": {
+      "reported_denominator": 88,
+      "individually_preserved_route_slots": 86,
+      "state": "TWO_IDENTITY_GAPS_AND_LIVE_REQUISITION_REVERIFY_REQUIRED",
+      "remaining_work": [
+        "recover or re-research the two missing route identities",
+        "verify that every requisition remains live",
+        "hydrate degree, language, seniority, location, work-authorisation and compensation state",
+        "never reconstruct a missing role from summary counts"
+      ]
+    },
+    "applicant_documents": {
+      "state": "INVENTORY_NOT_YET_FACT_AUDITED",
+      "items_to_verify": [
+        "formal degree and programme naming",
+        "transcripts and degree documents",
+        "enrolment and expected-graduation proof",
+        "language evidence where required",
+        "recommender availability and route-specific requirements",
+        "canonical contact/account family outside the public repository"
+      ]
+    }
+  },
   "global_rules": [
     "PhD and employment are terminal Main Quest outcomes; portfolio projects are evidence suppliers, not competing applicants.",
     "An unresolved project does not block routes that can be supported by other verified evidence.",
     "Unknown applicant facts remain explicit gaps rather than guessed defaults.",
     "Preparation authority does not authorize communication, account creation, upload, attestation, payment or final submission.",
-    "External execution remains disabled until a route-specific handoff is reviewed under the Gauntlet browser contract."
+    "External execution remains disabled until a route-specific handoff is reviewed under the Gauntlet browser contract.",
+    "A census denominator is not an executable queue until every selected row is identity-complete and live-verified."
   ]
 }

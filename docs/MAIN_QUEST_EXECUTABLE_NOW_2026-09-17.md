@@ -42,6 +42,14 @@ Policy Lab receives a specialist truth reconciliation before any campaign or rou
 - no project is promoted from candidate branch to canonical truth by description alone;
 - no external communication, account creation, upload, payment, attestation or submission is authorised by this plan.
 
+## Current data limits
+
+- all 61 PhD compact route rows are preserved, but current programme windows, faculty fit, documents, recommendations, language and funding conditions still require route-level verification;
+- the employment research reports 88 machine rows, but the persisted compact report names only 86 route slots. The two missing identities remain explicit gaps and may not be reconstructed from guesses;
+- every employment requisition is volatile and must be confirmed live before packet preparation or browser execution;
+- applicant documents and contact/account choices remain an inventory to verify, not facts Gauntlet may assume;
+- a census denominator is therefore upstream discovery authority, not an executable application queue.
+
 ## Execution order
 
 1. reconcile current Gauntlet `main` with the tested Main Quest census, economics, campaign and preparation-leverage layer;

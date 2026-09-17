@@ -57,3 +57,16 @@ test("internal preparation never authorizes external commitment", () => {
     assert.ok(campaign.protected.includes("final submission"));
   }
 });
+
+test("route denominators cannot masquerade as an executable hydrated queue", () => {
+  assert.equal(authority.data_readiness.phd_routes.reported_denominator, 61);
+  assert.equal(authority.data_readiness.phd_routes.individually_preserved_rows, 61);
+  assert.equal(authority.data_readiness.employment_routes.reported_denominator, 88);
+  assert.equal(authority.data_readiness.employment_routes.individually_preserved_route_slots, 86);
+  assert.match(authority.data_readiness.employment_routes.state, /TWO_IDENTITY_GAPS/);
+  assert.ok(
+    authority.data_readiness.employment_routes.remaining_work.includes(
+      "never reconstruct a missing role from summary counts",
+    ),
+  );
+});
