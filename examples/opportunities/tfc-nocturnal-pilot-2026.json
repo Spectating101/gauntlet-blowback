@@ -60,6 +60,7 @@
     "pilot_case_selected": false
   },
   "human_required": [
+    "final_submit",
     "final_send",
     "partner_commitment",
     "pilot_case_selection"
