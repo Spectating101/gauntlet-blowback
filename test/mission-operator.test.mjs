@@ -99,6 +99,24 @@ test('checkpoint accepts resumable non-secret browser state', () => {
   assert.deepEqual(checkpoint.completed_actions, ['metadata_completed', 'files_uploaded']);
 });
 
+test('checkpoint rejects cross-route mission identity', () => {
+  assert.throws(() => validateCheckpoint({
+    mission_id: 'mission:route-b',
+    route_id: 'route-a',
+    status: 'IN_PROGRESS',
+    stage: 'FORM',
+  }), /does not match route_id/i);
+});
+
+test('browser mission refuses a checkpoint from another route', () => {
+  assert.throws(() => buildBrowserMission(record({ id: 'route-b' }), {
+    mission_id: 'mission:route-a',
+    route_id: 'route-a',
+    status: 'IN_PROGRESS',
+    stage: 'FORM',
+  }), /checkpoint identity does not match route/i);
+});
+
 test('real master registry produces a Codex browser mission', () => {
   fs.rmSync(STATE_DIR, { recursive: true, force: true });
   const mission = nextBrowserMission(buildMasterRegistry());

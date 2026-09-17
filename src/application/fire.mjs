@@ -203,12 +203,20 @@ export function validateFireReceipt(raw) {
   if (raw.schema && raw.schema !== 'blowback.fire_receipt.v1') throw new Error(`unsupported fire receipt schema: ${raw.schema}`);
   if (!raw.route_id || typeof raw.route_id !== 'string') throw new Error('fire receipt route_id required');
   if (!raw.mission_id || typeof raw.mission_id !== 'string') throw new Error('fire receipt mission_id required');
+  if (raw.mission_id !== `mission:${raw.route_id}`) {
+    throw new Error(`fire receipt mission_id does not match route_id: ${raw.mission_id} != mission:${raw.route_id}`);
+  }
   if (!RECEIPT_STATUSES.has(raw.status)) throw new Error(`unsupported fire receipt status: ${raw.status}`);
   if (!raw.stage || typeof raw.stage !== 'string') throw new Error('fire receipt stage required');
   assertNoSecretKeys(raw);
 
-  if (raw.status === 'SUBMITTED' && !raw.submitted_at) throw new Error('submitted fire receipt requires submitted_at');
-  if (raw.status === 'SUBMITTED' && !raw.application_id && !(raw.receipt_refs?.length > 0)) {
+  if (raw.status === 'SUBMITTED' && (!raw.submitted_at || Number.isNaN(Date.parse(raw.submitted_at)))) {
+    throw new Error('submitted fire receipt requires a valid submitted_at timestamp');
+  }
+  const receiptRefs = asStringArray(raw.receipt_refs, 'receipt_refs');
+  const hasApplicationId = typeof raw.application_id === 'string' && raw.application_id.trim().length > 0;
+  const hasReceiptRef = receiptRefs.some((ref) => ref.trim().length > 0);
+  if (raw.status === 'SUBMITTED' && !hasApplicationId && !hasReceiptRef) {
     throw new Error('submitted fire receipt requires application_id or receipt_refs');
   }
 
@@ -223,8 +231,8 @@ export function validateFireReceipt(raw) {
     completed_actions: asStringArray(raw.completed_actions, 'completed_actions'),
     unresolved_items: asStringArray(raw.unresolved_items, 'unresolved_items'),
     human_required: asStringArray(raw.human_required, 'human_required'),
-    receipt_refs: asStringArray(raw.receipt_refs, 'receipt_refs'),
-    application_id: raw.application_id ?? null,
+    receipt_refs: receiptRefs,
+    application_id: hasApplicationId ? raw.application_id.trim() : null,
     submitted_at: raw.submitted_at ?? null,
     next_expected_event: raw.next_expected_event ?? null,
     resource_or_award_terms: raw.resource_or_award_terms ?? null,
@@ -246,6 +254,10 @@ export function fireReceiptToCheckpoint(receipt) {
     unresolved_items: normalized.unresolved_items,
     human_required: normalized.human_required,
     receipt_refs: normalized.receipt_refs,
+    application_id: normalized.application_id,
+    submitted_at: normalized.submitted_at,
+    next_expected_event: normalized.next_expected_event,
+    resource_or_award_terms: normalized.resource_or_award_terms,
     note: normalized.note,
     observed_at: normalized.observed_at,
   };
