@@ -13,13 +13,12 @@ import {
 const records = buildMasterRegistry();
 const byId = new Map(records.map((record) => [record.id, record]));
 const FIRE_IDS = [
-  'aws-community-day-taiwan-2026-hardware-splicer',
   'openai-researcher-access-hardware-splicer',
   'anthropic-external-researcher-access-2026',
 ];
 
-test('immediate FIRE routes expose explicit execution manifests in the Gauntlet master', () => {
-  for (const id of FIRE_IDS) {
+test('current immediate FIRE routes expose explicit execution manifests in the Gauntlet master', () => {
+  for (const id of [...FIRE_IDS, 'aws-community-day-taiwan-2026-hardware-splicer']) {
     const record = byId.get(id);
     assert.ok(record, `missing FIRE route ${id}`);
     assert.equal(record.status, 'FIRE_NOW');
@@ -27,18 +26,11 @@ test('immediate FIRE routes expose explicit execution manifests in the Gauntlet 
   }
 });
 
-test('AWS FIRE handoff is self-contained and remains human-submit gated', async () => {
-  const handoff = await fireHandoffForRoute('aws-community-day-taiwan-2026-hardware-splicer', records);
-  assert.equal(handoff.schema, 'blowback.fire_handoff.v1');
-  assert.equal(handoff.state, 'READY_FOR_BROWSER_AGENT');
-  assert.equal(handoff.target.registration_url, 'https://go.awscmd.tw/cfp');
-  assert.equal(handoff.submission_copy.title, 'When an AI Agent Can Touch Hardware: Designing the Checks Between the Model and the Machine');
-  assert.match(handoff.submission_copy.abstract, /When I started letting an AI agent work inside a hardware-engineering environment/i);
-  assert.ok(handoff.submission_copy.abstract.length > 500);
-  assert.equal(handoff.browser_agent_contract.final_submit_policy, 'HUMAN_PROTECTED');
-  assert.ok(handoff.browser_agent_contract.human_gate.includes('final_submit_send_apply_confirm'));
-  assert.equal(handoff.receipt_contract.template.route_id, handoff.route_id);
-  assert.equal(handoff.receipt_contract.template.mission_id, handoff.mission_id);
+test('expired AWS route cannot re-enter the live FIRE queue', async () => {
+  await assert.rejects(
+    fireHandoffForRoute('aws-community-day-taiwan-2026-hardware-splicer', records),
+    /not found in active Gauntlet master/i,
+  );
 });
 
 test('OpenAI FIRE handoff carries the concrete experiment and credit ask inline', async () => {
@@ -61,17 +53,16 @@ test('Anthropic FIRE handoff preserves narrow AI-control framing instead of gene
   assert.ok(handoff.submission_copy.nonclaims.some((claim) => /general alignment solution/i.test(claim)));
 });
 
-test('fire-next selects the deadline-bound AWS shot before rolling research-credit routes', async () => {
-  const handoff = await nextFireHandoff(records);
+test('fire-next skips expired dated shots and selects a live rolling research-credit route', async () => {
+  const handoff = await nextFireHandoff(records, { includePaused: true });
   assert.ok(handoff);
-  assert.equal(handoff.route_id, 'aws-community-day-taiwan-2026-hardware-splicer');
+  assert.ok(FIRE_IDS.includes(handoff.route_id));
 });
 
-test('fire queue contains only the three executable immediate FIRE bundles with AWS first', async () => {
-  const queue = await fireHandoffQueue(records, { limit: 10 });
+test('fire queue contains only the two live executable immediate FIRE bundles', async () => {
+  const queue = await fireHandoffQueue(records, { limit: 10, includePaused: true });
   assert.equal(queue.schema, 'blowback.fire_queue.v1');
   const ids = queue.handoffs.map((handoff) => handoff.route_id);
-  assert.equal(ids[0], 'aws-community-day-taiwan-2026-hardware-splicer');
   assert.deepEqual(new Set(ids), new Set(FIRE_IDS));
   assert.equal(ids.length, FIRE_IDS.length);
   assert.ok(queue.handoffs.every((handoff) => handoff.state === 'READY_FOR_BROWSER_AGENT'));

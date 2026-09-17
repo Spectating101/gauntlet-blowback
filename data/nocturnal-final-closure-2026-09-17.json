@@ -1,0 +1,43 @@
+{
+  "schema": "gauntlet.nocturnal_final_closure.v1",
+  "as_of": "2026-09-17",
+  "campaign_id": "nocturnal-final-closure",
+  "state": "CLOSURE_CONVERSION_READY",
+  "objective": "Turn the current matter-first Nocturnal candidate into one truthful canonical, demonstrable and conversion-ready system without reopening product design.",
+  "verified_topology": {
+    "canonical_branch": "main",
+    "rc2": {"pull_request": 29, "head": "d7b2e7cae74c68b1694b5af3c6f779ec755395b2", "base": "main", "state": "OPEN"},
+    "v3": {"pull_request": 30, "head": "5c709947842dc3f34afe810d3604c0b3ee9d5c74", "base": "frontend/reference-driven-rc2-20260911", "state": "OPEN_DRAFT"},
+    "legacy_rc1": {"pull_request": 15, "head": "3572c062e3dc22b083a6298144a5d63164191fb4", "base": "experiment/provenance-newsroom", "state": "OPEN_DRAFT_SUPERSEDE_AFTER_CANONICALIZATION"},
+    "hosted_ci": "FAILS_BEFORE_ANY_STEP_EXECUTES; do not treat this as product-test evidence"
+  },
+  "closure_sequence": [
+    "integrate RC2 into main with preserved ancestry",
+    "rebase or integrate V3 onto the resulting canonical head",
+    "run exact-head product, interface, visual, scale, container and release-scrub certification",
+    "freeze one real bounded demonstration covering story, change, chronology, sources, evidence, research and historical compare",
+    "perform desktop and mobile visual acceptance",
+    "publish the evaluator walkthrough and exact-head certification receipt",
+    "mark RC1 superseded while preserving history",
+    "freeze the Now / Read / Research interface unless a real pilot exposes a defect"
+  ],
+  "conversion_after_closure": {
+    "one_serious_pilot_at_a_time": true,
+    "candidate_routes": ["partner-doublethink-nocturnal-pilot", "partner-tfc-nocturnal-pilot", "partner-ocf-nocturnal-pilot"],
+    "selection_gate": "choose the partner whose real case best matches the frozen demo and whose pilot can measure workflow delta without requiring private-person surveillance",
+    "external_send_gate": "canonical demo plus exact-head certification plus human review of the final outreach",
+    "later_routes": ["websci-2027-nocturnal", "icwsm-2027-demo-nocturnal", "otf-iff-nocturnal"]
+  },
+  "allowed_claims": [
+    "internally validated matter-first public-memory system",
+    "current V3 candidate exposes Now, Read and Research surfaces",
+    "correction and supersession-aware chronology and evidence views"
+  ],
+  "forbidden_claims": [
+    "V3 is canonical before integration",
+    "hosted CI passed",
+    "external analyst adoption or measured workflow improvement",
+    "global truth scoring",
+    "surveillance or punitive-person dossiers"
+  ]
+}
