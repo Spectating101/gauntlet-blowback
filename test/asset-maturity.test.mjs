@@ -63,6 +63,7 @@ test('deployment and external evidence remain orthogonal', () => {
   const policyLab = byId.get('policy-lab');
   assert.equal(policyLab.deployment_stage, 'public_demo');
   assert.equal(policyLab.external_evidence_stage, 'none');
+  assert.equal(policyLab.canonicalization_state, 'release_branch_ahead');
 
   const cite = byId.get('cite-agent');
   assert.equal(cite.deployment_stage, 'public_demo');
