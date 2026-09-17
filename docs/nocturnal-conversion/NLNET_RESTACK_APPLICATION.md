@@ -1,175 +1,237 @@
-# NLnet Restack — Nocturnal application draft
+# NLnet Restack — Nocturnal application workbook
 
-Status: **application draft ready / open-release + GenAI disclosure human gates remain**  
+Status: **STRUCTURE / FACT PACK ONLY — DO NOT SUBMIT OR PASTE AS-IS**  
 Current deadline: **3 November 2026, 12:00 CET**  
 Official form: `https://nlnet.nl/propose/`  
-Fund: Restack / Open Internet Stack
+Fund: **Restack / Open Internet Stack**
 
-## Submission blockers before FIRE
+## Why this is not final submission copy
 
-1. **Open-release decision.** NLnet requires funded software/hardware/content and scientific outcomes to be released under recognised free/open licences. The owner must explicitly approve the public-release plan for the funded outputs before final submission.
-2. **European dimension.** Applicants outside Europe are eligible, but Restack treats a clear European dimension as a knock-out criterion. The proposal below makes the technical European dimension explicit; adding an actual European collaborator/user would strengthen it but is not fabricated here.
-3. **GenAI disclosure.** This proposal was prepared with ChatGPT/GPT-5.6 Sol assistance. NLnet requires disclosure plus a prompt-provenance log containing model, dates/times, prompts and unedited outputs. Do not submit without the required log/export.
-4. Final privacy/accuracy attestations and final submit remain human gates.
+NLnet's current proposal form asks applicants to answer in English **in their own words** and states that NLnet is not interested in AI-generated projects or proposals. The form does permit AI assistance, but it requires disclosure and asks for the prompts/interactions and AI output. NLnet's current GenAI policy likewise requires disclosure when GenAI is used in preparing an application.
+
+This workbook was prepared with OpenAI ChatGPT / GPT-5.6 Sol assistance. It therefore exists to organize facts, scope, budget, milestones and evidence so the applicant can write the actual form answers personally. **Do not copy this workbook into the form as if it were applicant-written final prose.**
+
+Before submission:
+
+1. run the cross-portfolio NLnet first-grant bakeoff;
+2. if Nocturnal wins the slot, approve the exact open-release plan for funded outputs;
+3. personally rewrite every substantive form answer in the applicant's own words;
+4. preserve and provide the required AI disclosure/log material for the assistance used here;
+5. re-check the latest NLnet GenAI policy immediately before submission, because NLnet has announced a forthcoming revision;
+6. review privacy/accuracy attestations and perform final Submit as a human gate.
 
 ---
 
-## Thematic call
+## Candidate project identity
 
-**Restack**
+### Theme
 
-## Proposal name
+Restack
 
-**Nocturnal Open Matter Bundles — portable, correction-aware public memory for the open internet**
+### Working project name
 
-Alternative short title: **Nocturnal Open Memory**
+**Nocturnal Open Matter Bundles**
 
-## Website / wiki
+Possible subtitle for the applicant to rewrite if useful: portable, correction-aware public memory for the open internet.
 
-Use the canonical public project/portfolio URL chosen by the owner. Do not link a private repository unless access is intentionally granted.
+### Existing project
 
-## Abstract / whole project and expected outcomes
+Nocturnal is a completed longitudinal public-memory product. Its current canonical surface is:
 
-I built Nocturnal to preserve how a documented matter changes over time instead of flattening search results into disconnected pages. It keeps source-linked events, identity state, corrections, disputes, later outcomes and the current documented state attached to one matter, and exposes that history through readable and research interfaces.
+- **Now** — continuous readable journalism;
+- **Read** — matter history with `What changed?`, chronology, evidence, corrections/disputes and historical `as_of` views;
+- **Research** — read-only Timeline, Before/After comparison, Subjects, Sources and Evidence inspection.
 
-The proposed Restack project would turn the completed Nocturnal product into a portable open-internet building block rather than a single hosted application. The work would define an open matter-bundle interchange format, implement deterministic import/export and verification, add local-first/offline deployment and reproducible packaging, and document interoperability with open provenance standards. A user should be able to export a correction-aware matter history from one Nocturnal instance, verify it independently, move it to another implementation, and keep the source/correction chronology intact without depending on a proprietary platform or hosted account.
+Canonical product integration: `12ece15ec6042dec786ef50006db2f92251a7840`  
+Portfolio freeze status: `ceb0551e0c148476c51b40b8ffef1713f33efd55`
 
-Expected outcomes are: (1) a published open specification and test corpus for portable matter histories; (2) a reference implementation for verified bundle import/export; (3) local-first/self-hosted packaging and reproducible deployment documentation; (4) interoperability tests and public examples; and (5) documentation for civil-society, research and public-interest users who need durable source provenance and correction history.
+The grant must fund a **new Restack tranche**, not retroactively fund completed UI/product work.
 
-My contribution so far includes the Nocturnal engine/runtime, append-only longitudinal ledger, public-safe matter history, correction/dispute handling, historical `as_of` projections, portable snapshot manifests/hashes, and the current Now / Read / Research user surface. The funded work is deliberately a new interoperability and deployability tranche, not payment for already-completed interface work.
+---
 
-## Requested amount
+## Proposed new funded work — factual outline for applicant rewrite
 
-**EUR 18,500**
+### Core problem
 
-Draft duration: **8 months**
+Web archives preserve versions of pages; search engines index documents; fact-checking systems assess bounded claims; provenance standards describe origin. A missing interoperable primitive is the **portable evolving state of one matter**: ordered source-linked events, corrections/supersession, current and historical projections, and deterministic verification when the object moves between systems.
 
-This is intentionally below the EUR 50k first-proposal ceiling and sized as a focused interoperability/deployability project.
+### Proposed outcome
 
-## Budget explanation
+Turn Nocturnal's completed internal matter-history model into a small open-internet interoperability/deployability layer:
 
-Draft budget; owner must confirm rate and commitment before submission.
+1. open Matter Bundle specification and conformance corpus;
+2. deterministic import/export and verification;
+3. correction/supersession-preserving merge semantics;
+4. local-first/offline inspection and self-hostable packaging;
+5. interoperability examples and public technical documentation.
 
-- **Core engineering — 420 hours × EUR 35 = EUR 14,700.** Open matter-bundle schema, deterministic import/export, verification, merge/correction semantics, local-first packaging, interoperability implementation and tests.
-- **Documentation and reproducibility — 70 hours × EUR 30 = EUR 2,100.** Specification, evaluator documentation, examples, installation/deployment and migration guides.
-- **Testing/infrastructure — EUR 900.** Reproducible test environments, storage/bandwidth for public fixtures and compatibility testing; no routine hosting overhead.
-- **Standards/community participation — EUR 800.** Directly relevant technical meetings, interoperability review or travel/registration if it materially improves standards alignment; unused allocation would remain unclaimed.
+### User outcome
 
-Total requested: **EUR 18,500**.
+A researcher, civil-society organization or public-interest technologist should be able to export a correction-aware matter history, verify it independently, move it to another implementation, and preserve the source/correction chronology without depending on a proprietary platform or the original developer's hosted account.
 
-No up-front payment is assumed. Milestones are designed to support NLnet's milestone-based reimbursement model.
+### Explicit non-goals
 
-## Other funding sources
+- not a crawler replacement;
+- not a universal truth or credibility score;
+- not a reputation/person-risk system;
+- not a proprietary newsroom database;
+- not a claim that source frequency equals independent corroboration.
 
-Nocturnal has been developed independently as a portfolio/research software project. No external Nocturnal grant, partner adoption or newsroom funding is claimed in this application.
+---
 
-If another grant is pending at submission time (for example TWNIC), disclose it explicitly and distinguish the scope. The Restack proposal is for open interoperability, portability and local-first deployment; it should not double-fund the same tasks.
+## Draft amount and duration — applicant must confirm
 
-## Main tasks / milestones
+**Draft request:** EUR 18,500  
+**Draft duration:** 8 months
 
-### M1 — Open Matter Bundle specification and conformance corpus — EUR 4,000
+This remains below NLnet's EUR 50k first-proposal ceiling. It is a planning number, not an applicant commitment until personally confirmed.
 
-- define a stable portable bundle for matter metadata, ordered events, sources, corrections/disputes and historical state;
-- map provenance fields to established open provenance concepts where technically appropriate;
-- publish JSON/JSON-LD schemas and a versioned conformance corpus;
-- document security/privacy boundaries and fields that must not become reputation scores.
+### Draft budget basis
 
-Acceptance: public specification, schemas, fixtures and deterministic conformance tests.
+- Core engineering: **420 h × EUR 35 = EUR 14,700**
+- Documentation/reproducibility: **70 h × EUR 30 = EUR 2,100**
+- Project-specific test infrastructure: **EUR 900**
+- Standards/community/interoperability participation: **EUR 800**
+- **Total: EUR 18,500**
 
-### M2 — Verified import/export and correction-preserving merge — EUR 5,000
+Applicant must verify rate, workload, tax/contract implications and realistic availability before using these numbers.
+
+---
+
+## Milestone workbook
+
+### M1 — Open Matter Bundle specification + conformance corpus — draft EUR 4,000
+
+Facts to express in applicant's own words:
+
+- versioned JSON / JSON-LD-compatible schemas where appropriate;
+- ordered events, sources, corrections/disputes and historical state;
+- map to established open provenance concepts when technically useful;
+- public conformance fixtures;
+- security/privacy and anti-reputation-score boundaries.
+
+Acceptance idea: public specification, schemas, fixtures and deterministic conformance tests.
+
+### M2 — Verified import/export + correction-preserving merge — draft EUR 5,000
 
 - reference exporter/importer;
-- content hashes and manifest verification;
+- content hashes / manifests;
 - deterministic rejection of malformed or chronology-breaking bundles;
 - preserve correction/supersession references across transport;
-- compatibility tests between clean-room fixtures and the canonical runtime.
+- compatibility tests against canonical runtime and clean fixtures.
 
-Acceptance: two independent stores can export/import the same fixture and reproduce the same public-safe chronology and manifest checks.
+Acceptance idea: two independent stores reproduce the same public-safe chronology and manifest checks.
 
-### M3 — Local-first packaging and deployability — EUR 4,500
+### M3 — Local-first/self-hostable packaging — draft EUR 4,500
 
-- self-hostable/local-first package for a small organization or researcher;
-- offline/read-only bundle inspection;
-- reproducible container/package documentation;
-- migration/export path so users are not locked to a single hosted instance.
+- documented small-organization / researcher deployment;
+- offline read-only bundle inspection;
+- reproducible package/container path;
+- migration/export path that avoids hosted-service lock-in.
 
-Acceptance: documented clean-machine install plus offline inspection of a signed/hashed matter bundle.
+Acceptance idea: clean-machine install and offline inspection of an integrity-verifiable matter bundle.
 
-### M4 — Interoperability, usability and public documentation — EUR 5,000
+### M4 — Interoperability/usability/public documentation — draft EUR 5,000
 
-- test the format against several public, low-risk longitudinal cases;
-- interoperability examples and API documentation;
-- usability pass for export/import, correction review and historical comparison;
-- publish technical report, limitations and future extension points.
+- several low-risk longitudinal public cases;
+- interoperability examples and API docs;
+- usability pass for export/import/correction review/historical comparison;
+- public compatibility/limitations report.
 
-Acceptance: public documentation, reproducible example set and final compatibility report.
+---
 
-## Comparison with existing / historical efforts
+## Technical challenges to cover in the applicant's own words
 
-Web archives preserve versions of pages; fact-checking systems publish individual assessments; provenance systems can describe where an artifact came from; knowledge graphs model entities and relations; news search indexes documents. These are complementary rather than interchangeable with Nocturnal.
+- merge semantics that preserve chronology instead of rewriting history;
+- correction/supersession integrity across imports;
+- deterministic verification across versions/implementations;
+- historical `as_of` semantics after transport/merge;
+- separation of public evidence from private review metadata;
+- avoiding domain/source counts becoming fake corroboration scores;
+- local-first packaging without a central identity/hosting dependency;
+- keeping the format implementable outside Nocturnal.
 
-The technical gap addressed here is a portable object for **the evolving documented state of one matter**: ordered source-linked events, corrections and supersession, current/historical projections, and verifiable transport between systems. The goal is not to create another crawler, universal truth score or proprietary newsroom database. The goal is to make correction-aware public memory movable and independently inspectable as an open technical primitive.
+---
 
-## Significant technical challenges
+## Ecosystem / European-dimension workbook
 
-- defining merge rules that preserve chronology and corrections without silently rewriting history;
-- deterministic verification across implementations and versions;
-- separating public evidence/provenance from private review metadata;
-- preserving historical `as_of` semantics when bundles are moved or combined;
-- avoiding source-domain counts being misrepresented as independent corroboration;
-- providing useful local-first packaging without creating a central identity or hosting dependency;
-- designing an interchange format that remains small enough to implement outside Nocturnal.
+No European collaborator or user is currently claimed.
 
-## Ecosystem / engagement
+Factual technical case the applicant may develop in their own words:
 
-The work is relevant to open-source public-interest technology, web archiving, provenance, fact-checking, research tooling and civil-society analysis. The project will publish specifications, fixtures and implementation guidance in the open, and will seek technical feedback from communities working on provenance, archival interoperability, open research infrastructure and internet-freedom tooling.
+- Restack aims to build an operational open internet stack without vendor lock-in;
+- Nocturnal's proposed tranche is about open standards, portability, self-hosting and interoperable correction-aware public memory;
+- European civil-society, research and public-interest organizations should be able to deploy/implement the format without a proprietary US platform account or the original developer's hosted service;
+- funded software/specifications/fixtures/documentation would be openly licensed if the owner approves the release plan.
 
-The European dimension is technical and deployment-oriented: Restack is intended to create an Open Internet Stack that European organizations can adopt without vendor lock-in. This project would make Nocturnal's correction-aware matter histories portable, self-hostable and standards-oriented so European civil-society, research and public-interest organizations can deploy or interoperate with the work without depending on a US platform account, proprietary API or the original developer's hosted service. The implementation will prioritize open standards, open licences, reproducible deployment and data portability. If a European technical collaborator or evaluator joins before submission, add them explicitly; do not imply one exists otherwise.
+A real European technical collaborator/evaluator would strengthen the application but must never be implied before one exists.
 
-## Open-source / licence statement
+---
 
-**Human approval required before submission.**
+## Open-source / FLOS commitment gate
 
-Draft commitment:
+NLnet's current rules require funded software/hardware/content to be released under recognised open licences and scientific outcomes as open access.
 
-> All software, schemas, documentation, conformance fixtures and scientific/technical outputs produced with Restack support will be published under recognised free/open licences. The owner will identify the exact repository/publication boundary before submission and will not claim an open release that has not been approved.
+The existing Nocturnal engineering documentation carries AGPL-3.0 licensing, but repository visibility and the exact release boundary must be intentionally confirmed before the proposal is fired.
 
-The current Nocturnal codebase carries AGPL-3.0 licensing in its engineering documentation, but repository visibility/public-release status must be checked and intentionally resolved before this application is fired.
+Human decision required:
 
-## GenAI disclosure
+- what becomes public;
+- exact licence(s) for software/specification/docs/fixtures;
+- whether existing private history is exposed or only funded outputs/new public repo are published;
+- how dependencies and AI-assisted contributions satisfy licence/provenance requirements.
 
-Answer **Yes** to NLnet's GenAI-use question if this draft or material derived from it is submitted.
+Do not answer the form's open-release commitments until this decision is made.
 
-Suggested summary:
+---
 
-> I used OpenAI ChatGPT (GPT-5.6 Sol) to help research the current call, structure the application against the published form, and draft/compress candidate wording. I remain responsible for the technical content and will edit/verify all statements. A prompt provenance log with the required prompts and unedited outputs is attached/provided as required by NLnet's current policy.
+## GenAI disclosure / provenance gate
 
-### Required prompt-log action
+Answer **Yes** if this workbook materially informs the submitted proposal.
 
-NLnet's current policy requires model, dates/times, prompts and **unedited outputs**. Before submission, export or otherwise preserve the relevant ChatGPT conversation verbatim. Do not replace the required log with a summary only.
+Facts to disclose truthfully:
 
-## Claims we may make
+- model: OpenAI ChatGPT / GPT-5.6 Sol;
+- use: current-call research, application structure, scope/budget/milestone brainstorming and draft candidate wording;
+- human remains responsible for correctness and final personally written answers.
 
-- Nocturnal is already a functioning, human-facing longitudinal public-memory product.
-- The existing backend preserves source-linked chronology, correction/supersession history and historical state.
-- The proposed work is new R&D focused on portability, interoperability and local-first deployment.
-- The project will publish funded outputs openly if the owner approves the open-release plan before submission.
+NLnet's current form requests the prompts/interactions and AI output in the form field or as an uploaded file. Preserve the relevant conversation/logs. Do not replace the required evidence with a short summary if the current form/policy asks for the underlying interactions.
 
-## Claims we must not make
+NLnet has announced that its GenAI policy is being revised; **reverify the latest policy on the day the final application is prepared.**
 
-- existing European partners/users unless one actually joins;
-- newsroom/institutional adoption;
-- external workflow improvement before a real pilot result;
-- universal truth, credibility or reputation scoring;
-- that the current private/public repository status already satisfies Restack without the open-release gate being resolved;
-- that AI assistance was absent.
+---
 
-## Final human gates
+## Other funding disclosure
 
-- confirm requested amount/rate and time commitment;
-- approve exact open-source/public-release boundary;
-- select public project URL;
-- review European-dimension answer;
-- attach complete GenAI prompt log;
-- review privacy statement and attestations;
-- final Submit.
+Current safe statement for applicant rewrite:
+
+- No external Nocturnal grant, newsroom adoption or partner funding is claimed.
+- If TWNIC or another application is pending at submission time, disclose it truthfully and distinguish scopes so the same tasks are not double-funded.
+
+---
+
+## Evidence available to the applicant
+
+- finished Now / Read / Research product on Nocturnal main;
+- hardened backend authority with prior canonical green CI before merge;
+- deterministic official-source Artemis II longitudinal specimen;
+- fictional safety/correction fixture;
+- synthetic morphology regression gallery;
+- evaluator guide and product-freeze contract;
+- external validation remains intentionally unclaimed.
+
+---
+
+## Final pre-FIRE checklist
+
+- [ ] Nocturnal wins the cross-portfolio NLnet bakeoff.
+- [ ] Applicant confirms EUR amount, rate and 8-month time commitment.
+- [ ] Applicant approves exact FLOS/public-release boundary.
+- [ ] Applicant selects a public project URL or creates an intentional public project page/repo.
+- [ ] Applicant personally rewrites all substantive form answers in own words.
+- [ ] European dimension is credible and not merely rhetorical; any collaborator/user named is real.
+- [ ] Current NLnet GenAI policy is reverified.
+- [ ] Prompt/interactions/output log is preserved and attached/pasted as required.
+- [ ] Other pending funding is disclosed and scopes do not double-fund.
+- [ ] Privacy/accuracy/terms reviewed by applicant.
+- [ ] Final Submit performed by applicant.
