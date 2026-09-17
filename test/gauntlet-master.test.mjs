@@ -67,7 +67,7 @@ test('integrates fellowships and residencies without flattening their economics'
   assert.equal(byId.get('fellowship-anthropic-fellows-2026').status, 'VERIFY');
 });
 
-test('focused Nocturnal audit turns external-pilot evidence into a first-class campaign', () => {
+test('Nocturnal first-pilot queue promotes TFC while keeping alternate partners as fallbacks', () => {
   for (const id of [
     'partner-doublethink-nocturnal-pilot',
     'partner-tfc-nocturnal-pilot',
@@ -76,33 +76,63 @@ test('focused Nocturnal audit turns external-pilot evidence into a first-class c
     const route = byId.get(id);
     assert.ok(route, `missing Nocturnal pilot route ${id}`);
     assert.equal(route.route_class, 'PILOT');
+    assert.equal(route.mutual_exclusion_group, 'nocturnal-first-serious-pilot');
+  }
+
+  const tfc = byId.get('partner-tfc-nocturnal-pilot');
+  assert.equal(tfc.status, 'FIRE_NOW');
+  assert.equal(tfc.execution_state, 'PORTAL_RECON_REQUIRED');
+  assert.equal(tfc.execution_manifest, 'examples/opportunities/tfc-nocturnal-pilot-2026.json');
+  assert.match(tfc.gate, /final Send is human-protected/i);
+  assert.match(tfc.source_state, /2026-09-17/);
+
+  for (const id of ['partner-doublethink-nocturnal-pilot', 'partner-ocf-nocturnal-pilot']) {
+    const route = byId.get(id);
     assert.equal(route.status, 'PARTNER_NOW');
     assert.equal(route.execution_state, 'OUTREACH_READY');
-    assert.equal(route.mutual_exclusion_group, 'nocturnal-first-serious-pilot');
-    assert.match(route.gate, /no funding is implied|not a grant|not a guaranteed funding/i);
   }
 });
 
-test('focused Nocturnal audit upgrades ICRP, TWNIC and NLnet gate semantics', () => {
+test('Nocturnal live execution overlay preserves real TWNIC and NLnet gates', () => {
+  const twnic = byId.get('twnic-community-grant-2026-nocturnal');
+  assert.equal(twnic.status, 'HOST_PACKET_READY');
+  assert.equal(twnic.execution_state, 'RESEARCH_ONLY');
+  assert.equal(twnic.deadline, '2026-09-30T23:59:00+08:00');
+  assert.equal(twnic.mutual_exclusion_group, 'twnic-one-proposal-per-host-2026');
+  assert.match(twnic.gate, /one proposal/i);
+  assert.match(twnic.gate, /NT\$1\.5M/i);
+  assert.match(twnic.gate, /legal applicant/i);
+
+  const nlnet = byId.get('nlnet-restack-nocturnal');
+  assert.equal(nlnet.status, 'PORTFOLIO_BAKEOFF_HUMAN_REWRITE_REQUIRED');
+  assert.equal(nlnet.execution_state, 'PACKET_READY');
+  assert.equal(nlnet.deadline, '2026-11-03T12:00:00+01:00');
+  assert.equal(nlnet.mutual_exclusion_group, 'nlnet-first-grant-portfolio-2026');
+  assert.equal(nlnet.execution_manifest, 'examples/opportunities/nlnet-restack-nocturnal-2026.json');
+  assert.match(nlnet.gate, /portfolio bakeoff/i);
+  assert.match(nlnet.gate, /own words/i);
+  assert.match(nlnet.gate, /AI assistance/i);
+  assert.match(nlnet.gate, /libre\/open/i);
+});
+
+test('Nocturnal OTF IFF stays pilot-gated despite a drafted concept note', () => {
+  const iff = byId.get('otf-iff-nocturnal');
+  assert.ok(iff);
+  assert.equal(iff.status, 'PILOT_THEN_FIRE');
+  assert.equal(iff.execution_state, 'RESEARCH_ONLY');
+  assert.equal(iff.deadline, 'ROLLING');
+  assert.match(iff.gate, /concrete user\/beneficiary/i);
+  assert.match(iff.gate, /repressive censorship or surveillance/i);
+  assert.match(iff.source_state, /2026-09-17/);
+});
+
+test('focused Nocturnal audit retains the expired ICRP history without confusing it with IFF', () => {
   const otf = byId.get('otf-nocturnal');
   assert.equal(otf.status, 'FIRE_IF_GATES_CLEAR');
   assert.equal(otf.deadline, '2026-09-07T23:59:00+00:00');
   assert.match(otf.gate, /full-time/i);
   assert.match(otf.gate, /host is not required at Stage 1/i);
   assert.match(otf.gate, /surveillance software\/hardware/i);
-
-  const twnic = byId.get('twnic-community-grant-2026-nocturnal');
-  assert.equal(twnic.status, 'HOST_PORTFOLIO_BAKEOFF_REQUIRED');
-  assert.equal(twnic.mutual_exclusion_group, 'twnic-one-proposal-per-host-2026');
-  assert.match(twnic.gate, /one proposal/i);
-  assert.match(twnic.gate, /NT\$1\.5M/i);
-
-  const nlnet = byId.get('nlnet-restack-nocturnal');
-  assert.equal(nlnet.status, 'MANDATORY_PORTFOLIO_BAKEOFF');
-  assert.equal(nlnet.mutual_exclusion_group, 'nlnet-first-grant-portfolio-2026');
-  assert.match(nlnet.gate, /€5k-50k/);
-  assert.match(nlnet.gate, /libre\/open/i);
-  assert.match(nlnet.gate, /focus/i);
 });
 
 test('focused Nocturnal audit adds pilot-gated publication routes', () => {
