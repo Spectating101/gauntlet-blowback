@@ -4,8 +4,11 @@
   "overrides": [
     {
       "id": "aws-community-day-taiwan-2026-hardware-splicer",
+      "status": "EXPIRED_RETAIN",
+      "execution_state": "RESEARCH_ONLY",
       "execution_manifest": "examples/opportunities/aws-community-day-taiwan-2026-hardware-splicer.json",
-      "reason": "Attach the paste-ready AWS CFP manifest to the live FIRE route for deterministic browser-agent handoff."
+      "gate": "Current cycle deadline was September 7, 2026 and is past. Retain the audited packet as historical evidence; do not dispatch it through FIRE.",
+      "reason": "Expire the closed AWS CFP route so it cannot outrank live current opportunities in fire:next. Keep the execution bundle as historical/reusable packet evidence."
     },
     {
       "id": "openai-researcher-access-hardware-splicer",
