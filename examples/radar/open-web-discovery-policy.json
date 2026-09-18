@@ -26,7 +26,21 @@
     "fellowship",
     "residency",
     "join us",
-    "open positions"
+    "open positions",
+    "call for proposals",
+    "request for proposals",
+    "research grant",
+    "open source fund",
+    "API credits",
+    "compute credits",
+    "research access program",
+    "research preview",
+    "call for papers",
+    "workshop proposals",
+    "innovation challenge",
+    "challenge prize",
+    "hackathon",
+    "accelerator applications"
   ],
   "opportunity_terms_zh_tw": [
     "研究助理",
@@ -39,7 +53,13 @@
     "博士前研究",
     "徵研究助理",
     "實驗室徵才",
-    "實驗室招募"
+    "實驗室招募",
+    "研究計畫徵件",
+    "補助申請",
+    "論文徵稿",
+    "競賽徵件",
+    "創新競賽",
+    "研究資源申請"
   ],
   "geographies": [
     {"id": "north-taiwan", "query": "Taiwan Taipei Taoyuan Hsinchu", "priority": 5},
@@ -75,7 +95,15 @@
     "cam.ac.uk",
     "ethz.ch",
     "epfl.ch",
-    "ac.jp"
+    "ac.jp",
+    "openai.com",
+    "anthropic.com",
+    "nlnet.nl",
+    "research.google",
+    "apnic.foundation",
+    "ethereum.foundation",
+    "ieee.org",
+    "acm.org"
   ],
   "preferred_suffixes": [
     ".edu.tw",

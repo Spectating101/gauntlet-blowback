@@ -1,0 +1,27 @@
+{
+  "schema": "blowback.fire_packet.v1",
+  "route_id": "taai-2026-domestic-hardware-splicer",
+  "source_revision": "328b80b4ca720a04e4bbdfabc481f4dfb68c548b",
+  "source_url": "https://github.com/Spectating101/hardware-splicer/blob/328b80b4ca720a04e4bbdfabc481f4dfb68c548b/docs/external_assessment/submissions/TAAI_2026_EXTENDED_ABSTRACT.md",
+  "copy": {
+    "title": "Separating Model Reasoning from Physical Authority in Agentic Hardware Engineering",
+    "track": "Domestic Track",
+    "submission_format": "Extended Abstract",
+    "abstract": "Tool-using AI agents can move plausible model output toward fabrication or power-on before component identity, evidence provenance, revision state, or physical behavior is established. We present Hardware-Splicer, a model-independent environment that separates semantic agent reasoning from deterministic engineering constraints, provenance-bearing evidence, exact project state, and scoped human physical authority. General-purpose agents operate a canonical backend through the Model Context Protocol, while evidence and authority gates remain outside the model. A frozen ten-case adversarial SPI-flash corpus covers source-order perturbations, partial evidence, identity conflict, tool failure, plausible wrong analogy, and stale revision. Current evidence establishes the deterministic software and MCP infrastructure: real stdio and Streamable HTTP clients complete canonical stateful operations across a 193-operation backend while MCP remains unable to grant physical authority. Live external-model, fresh physical, and independent-operator results remain separate claims until those experiments run. The architecture therefore permits agent usefulness and permission to act to be evaluated as distinct outcomes.",
+    "keywords": [
+      "agentic AI",
+      "physical AI",
+      "hardware engineering",
+      "Model Context Protocol",
+      "evidence provenance",
+      "human authorization"
+    ],
+    "artifact": "output/taai-2026/Hardware_Splicer_TAAI_2026_Extended_Abstract.pdf",
+    "nonclaims": [
+      "Do not claim a live external model has passed the frozen corpus.",
+      "Do not claim fresh physical correctness evidence exists.",
+      "Do not claim independent-operator validation or production readiness.",
+      "Do not convert software/MCP verification into physical-action authority."
+    ]
+  }
+}

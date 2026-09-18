@@ -1,0 +1,10 @@
+{
+  "id": "invisible-ledger",
+  "name": "The Invisible Ledger",
+  "repo_url": "https://github.com/Spectating101/solarpunk-coin",
+  "pitch_50": "An empirical framework for measuring the gap between transaction activity coordinated by digital platforms and the revenue those platforms recognize.",
+  "description": "The current Indonesia study defines a transaction-revenue wedge and Ecosystem Ratio, then applies them to comparable issuer disclosures and official Indonesian e-commerce statistics. The submission package keeps company disclosures, official statistics, payment data, and reporting rules as separate evidence layers.",
+  "limitations": "The wedge is an accounting difference between transaction value and platform revenue. It is not hidden income, taxable income, unpaid tax, value added, or a causal estimate of tax loss. The current evidence is Indonesia-focused and does not establish an ASEAN-wide result.",
+  "canonical_repo_snapshot": "9c0467c0",
+  "submission_state": "ABSTRACT_READY"
+}

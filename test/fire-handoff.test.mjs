@@ -12,8 +12,10 @@ import {
 
 const records = buildMasterRegistry();
 const byId = new Map(records.map((record) => [record.id, record]));
+const historicalRecords = buildMasterRegistry({ includeArchived: true });
+const historicalById = new Map(historicalRecords.map((record) => [record.id, record]));
 const FIRE_IDS = [
-  'aws-community-day-taiwan-2026-hardware-splicer',
+  'shih-hsin-finance-2026-il',
   'openai-researcher-access-hardware-splicer',
   'anthropic-external-researcher-access-2026',
 ];
@@ -28,7 +30,7 @@ test('immediate FIRE routes expose explicit execution manifests in the Gauntlet 
 });
 
 test('AWS FIRE handoff is self-contained and remains human-submit gated', async () => {
-  const handoff = await fireHandoffForRoute('aws-community-day-taiwan-2026-hardware-splicer', records);
+  const handoff = await fireHandoffForRoute('aws-community-day-taiwan-2026-hardware-splicer', historicalRecords);
   assert.equal(handoff.schema, 'blowback.fire_handoff.v1');
   assert.equal(handoff.state, 'READY_FOR_BROWSER_AGENT');
   assert.equal(handoff.target.registration_url, 'https://go.awscmd.tw/cfp');
@@ -50,6 +52,8 @@ test('OpenAI FIRE handoff carries the concrete experiment and credit ask inline'
   assert.match(handoff.submission_copy.planned_use_of_openai_products, /agents being evaluated/i);
   assert.match(handoff.submission_copy.project_summary, /I built Hardware-Splicer/i);
   assert.match(handoff.packet.final_copy_source, /FIRE_NOW_SUBMISSION_COPY_2026-09-05/);
+  assert.ok(handoff.receipt_contract.template.human_required.includes('login'));
+  assert.ok(handoff.receipt_contract.template.human_required.includes('final_submit'));
 });
 
 test('Anthropic FIRE handoff preserves narrow AI-control framing instead of generic product development', async () => {
@@ -59,31 +63,58 @@ test('Anthropic FIRE handoff preserves narrow AI-control framing instead of gene
   assert.match(handoff.submission_copy.research_summary, /200 Claude Sonnet 5 runs/i);
   assert.match(handoff.submission_copy.strongest_one_sentence_contribution, /simple checks outside the model/i);
   assert.ok(handoff.submission_copy.nonclaims.some((claim) => /general alignment solution/i.test(claim)));
+  assert.ok(handoff.receipt_contract.template.human_required.includes('switch_to_preferred_academic_google_account'));
+  assert.ok(handoff.receipt_contract.template.human_required.includes('anthropic_console_organization_id'));
+  assert.ok(handoff.receipt_contract.template.human_required.includes('terms_acceptance'));
+  assert.ok(handoff.receipt_contract.template.human_required.includes('final_submit'));
+});
+
+test('TAAI packet remains preserved but fee-gated out of immediate FIRE', async () => {
+  assert.equal(historicalById.get('taai-2026-domestic-hardware-splicer').status, 'HOLD_FEE_AND_LIVE_CALL_STATE');
+  await assert.rejects(
+    () => fireHandoffForRoute('taai-2026-domestic-hardware-splicer', historicalRecords),
+    /not in an immediate FIRE state/,
+  );
 });
 
 test('fire-next selects the deadline-bound AWS shot before rolling research-credit routes', async () => {
-  const handoff = await nextFireHandoff(records, { asOf: '2026-09-06T00:00:00+08:00' });
+  const handoff = await nextFireHandoff(historicalRecords, { asOf: '2026-09-07T00:00:00+08:00' });
   assert.ok(handoff);
   assert.equal(handoff.route_id, 'aws-community-day-taiwan-2026-hardware-splicer');
 });
 
-test('fire queue contains only the three executable immediate FIRE bundles with AWS first', async () => {
-  const queue = await fireHandoffQueue(records, { limit: 10, asOf: '2026-09-06T00:00:00+08:00' });
+test('fire-next respects the explicit Shih Hsin pause once TAAI is fee-gated', async () => {
+  const handoff = await nextFireHandoff(records, { asOf: '2026-09-16T12:00:00+08:00', includePaused: true });
+  assert.ok(handoff);
+  assert.equal(handoff.route_id, 'anthropic-external-researcher-access-2026');
+});
+
+test('fire queue contains only executable immediate FIRE bundles with AWS first', async () => {
+  const queue = await fireHandoffQueue(historicalRecords, { limit: 10, asOf: '2026-09-07T00:00:00+08:00', includePaused: true });
   assert.equal(queue.schema, 'blowback.fire_queue.v1');
   const ids = queue.handoffs.map((handoff) => handoff.route_id);
   assert.equal(ids[0], 'aws-community-day-taiwan-2026-hardware-splicer');
-  assert.deepEqual(new Set(ids), new Set(FIRE_IDS));
-  assert.equal(ids.length, FIRE_IDS.length);
+  assert.deepEqual(ids, ['aws-community-day-taiwan-2026-hardware-splicer']);
+  assert.ok(queue.skipped.some((item) => item.route_id === 'shih-hsin-finance-2026-il' && item.reasons.includes('user_paused_named_route')));
   assert.ok(queue.handoffs.every((handoff) => handoff.state === 'READY_FOR_BROWSER_AGENT'));
 });
 
 test('expired hard-date FIRE routes do not stay in the live execution queue', async () => {
-  const queue = await fireHandoffQueue(records, { limit: 10, asOf: '2026-09-09T00:00:00+08:00' });
+  const queue = await fireHandoffQueue(records, { limit: 10, asOf: '2026-09-16T12:00:00+08:00', includePaused: true });
   assert.ok(!queue.handoffs.some((handoff) => handoff.route_id === 'aws-community-day-taiwan-2026-hardware-splicer'));
   assert.deepEqual(queue.handoffs.map((handoff) => handoff.route_id), [
     'anthropic-external-researcher-access-2026',
     'openai-researcher-access-hardware-splicer',
   ]);
+  assert.ok(queue.skipped.some((item) => item.route_id === 'shih-hsin-finance-2026-il'));
+});
+
+test('automatic FIRE refuses stale official-source observations', async () => {
+  const queue = await fireHandoffQueue(records, { limit: 10, asOf: '2026-10-02T00:00:00+08:00', includePaused: true });
+  assert.equal(queue.count, 0);
+  for (const id of ['anthropic-external-researcher-access-2026', 'openai-researcher-access-hardware-splicer']) {
+    assert.ok(queue.skipped.some((item) => item.route_id === id && /official_source_verification_stale/.test(item.detail ?? '')));
+  }
 });
 
 test('submitted fire receipts require durable receipt evidence and become checkpoints', () => {

@@ -28,10 +28,10 @@ END:VEVENT
 BEGIN:VEVENT
 UID:policy-lab-fc27-submit-20260917@gauntlet-blowback
 DTSTAMP:20260826T100000Z
-DTSTART;VALUE=DATE:20260917
-DTEND;VALUE=DATE:20260918
+DTSTART;VALUE=DATE:20260924
+DTEND;VALUE=DATE:20260925
 SUMMARY:[PRIMARY FIRE] Policy Lab — Financial Cryptography 2027 short paper
-DESCRIPTION:Primary exclusive manuscript lane. Target the 8-page contribution on non-promotion semantics across evidence, authorization, supported quantity and settlement. Preserve the no-overlapping-peer-reviewed-submission rule.
+DESCRIPTION:Primary exclusive manuscript lane. Official CFP extended the paper deadline to 24 Sep 2026 23:59 AoE. Target the 8-page contribution on non-promotion semantics across evidence, authorization, supported quantity and settlement. Preserve the no-overlapping-peer-reviewed-submission rule.
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
 END:VEVENT

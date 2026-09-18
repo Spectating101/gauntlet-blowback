@@ -5,12 +5,14 @@
   "portal_family": "research_preview",
   "auth_scope": "anthropic-mhs-preview",
   "source_url": "https://www.anthropic.com/news/model-hardware-standard-research-preview",
+  "registration_url": "https://docs.google.com/forms/d/e/1FAIpQLSdCmJL5qhlMvVZO4Zjxx-QOtmxoFwjpAoo9ij19dULgZJH4PQ/viewform",
   "recon_stage": "registration",
   "mode": "inspect",
   "execution_state": "RESEARCH_ONLY",
   "direct_control": false,
   "profile": "../profiles/christ.json",
   "project": "../projects/hardware-splicer.json",
+  "canonical_release_revision": "f892facd67c5124e2362860ebc999625afedc5d5",
   "packet_revision": "f822fc5a4b2355ae945955969dcad7428a71c835",
   "packet_source": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/ANTHROPIC_MHS_RESEARCH_PREVIEW.md",
   "fields": {
@@ -36,8 +38,8 @@
     },
     {
       "id": "applicant_class",
-      "description": "Inspect the live interest form and verify whether an individual university researcher is accepted; if not, identify a YZU faculty/lab route.",
-      "status": "BLOCKING_DEPENDENCY"
+      "description": "The live form accepts academic/research institutions and independent researchers; no adviser field is present.",
+      "status": "VERIFIED"
     }
   ],
   "compliance_checks": [
@@ -47,10 +49,12 @@
     "Keep pending live-model and physical evidence pending."
   ],
   "route_evidence": {
-    "verified_at": "2026-09-04",
+    "verified_at": "2026-09-16",
     "program_scope_verified": true,
-    "individual_applicant_class_verified": false,
-    "form_fields_verified": false
+    "individual_applicant_class_verified": true,
+    "form_fields_verified": true,
+    "physical_device_access_verified": false,
+    "currently_active_google_account_is_not_preferred_academic_account": true
   },
-  "human_required": ["login", "eligibility_attestation", "advisor_confirmation", "terms_acceptance", "final_submit"]
+  "human_required": ["switch_to_preferred_academic_google_account", "device_access_fact", "truthful_start_window", "eligibility_attestation", "final_submit"]
 }

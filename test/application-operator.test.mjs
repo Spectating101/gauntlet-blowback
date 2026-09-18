@@ -7,6 +7,7 @@ import {
   applicationStage,
   buildApplicationMission,
   isApplicationRoute,
+  isSubmissionRoute,
   mayAutoSubmit,
   packetProfileFor
 } from '../src/application/operator.mjs';
@@ -35,6 +36,8 @@ test('research labor and career-scale fellowship routes are first-class applicat
   assert.equal(isApplicationRoute({ lane: 'RESEARCH_LAB', route_class: 'LAB_STAFF' }), true);
   assert.equal(isApplicationRoute({ lane: 'PREDOC', route_class: 'PREDOC' }), true);
   assert.equal(isApplicationRoute({ lane: 'COMPETITION', route_class: 'APPLY' }), false);
+  assert.equal(isSubmissionRoute({ lane: 'COMPETITION', route_class: 'APPLY' }), true);
+  assert.equal(isSubmissionRoute({ lane: 'RESEARCH', route_class: 'APPLY', execution_manifest: 'examples/opportunities/paper.json' }), true);
 });
 
 test('packet profile varies by application market instead of flattening every route into a resume', () => {
@@ -83,9 +86,64 @@ test('application queue ignores non-application lanes and preserves ranking orde
     { id: 'contest-1', lane: 'COMPETITION', route_class: 'APPLY', status: 'FIRE_NOW', execution_state: 'APPLICATION_READY', deadline: '2026-09-02', organization: 'Contest', opportunity: 'Contest', source: 'https://contest.example' },
     cleanResearchJob({ id: 'job-1', deadline: '2026-09-05' })
   ];
-  const queue = applicationQueue(records, { limit: 10 });
+  const queue = applicationQueue(records, { limit: 10, asOf: '2026-09-01T00:00:00Z' });
   assert.equal(queue.count, 2);
   assert.deepEqual(queue.missions.map((mission) => mission.route_id), ['job-1', 'job-2']);
+});
+
+test('application queue excludes past hard deadlines without hiding rolling routes', () => {
+  const records = [
+    cleanResearchJob({ id: 'expired', deadline: '2026-09-09' }),
+    cleanResearchJob({ id: 'today', deadline: '2026-09-10' }),
+    cleanResearchJob({ id: 'rolling', deadline: 'ROLLING' }),
+  ];
+  const queue = applicationQueue(records, { limit: 10, asOf: '2026-09-10T12:00:00Z' });
+  assert.deepEqual(queue.missions.map((mission) => mission.route_id), ['today', 'rolling']);
+});
+
+test('automatic application queue excludes routes that require new external people or credentials', () => {
+  const records = [
+    cleanResearchJob({ id: 'solo-ready', gate: 'Portal mapped; final submit remains protected.' }),
+    cleanResearchJob({ id: 'needs-reference', gate: 'Two professional references required.' }),
+    cleanResearchJob({ id: 'needs-team', gate: 'A teammate and adviser confirmation are required.' }),
+    cleanResearchJob({ id: 'needs-certification', gate: 'Independent external certification required before applying.' }),
+  ];
+  const queue = applicationQueue(records, { limit: 10, asOf: '2026-09-01T00:00:00Z' });
+  assert.deepEqual(queue.missions.map((mission) => mission.route_id), ['solo-ready']);
+
+  const named = buildApplicationMission(records[1]);
+  assert.equal(named.application.readiness.readiness, 'EXTERNAL_DEPENDENCY_EXCLUDED');
+  assert.equal(named.application.readiness.ready_for_browser, false);
+});
+
+test('external-dependency classifier does not reject a route for incidental vocabulary', () => {
+  const records = [
+    cleanResearchJob({ id: 'event-networking', gate: 'Attend only if it creates useful partner or sponsor conversion.' }),
+    cleanResearchJob({ id: 'program-host', gate: 'Verify exact host-unit fit; the program provides accommodation and travel.' }),
+    cleanResearchJob({ id: 'visa-unknown', gate: 'Verify work authorization or sponsorship terms before accepting.' }),
+  ];
+  const queue = applicationQueue(records, { limit: 10, asOf: '2026-09-01T00:00:00Z' });
+  assert.deepEqual(queue.missions.map((mission) => mission.route_id), ['event-networking', 'program-host', 'visa-unknown']);
+});
+
+test('automatic application queue respects the current PhD document hold', () => {
+  const records = [
+    cleanResearchJob({ id: 'job-open' }),
+    cleanResearchJob({ id: 'phd-held', lane: 'PHD', route_class: 'PHD' }),
+  ];
+  const queue = applicationQueue(records, { limit: 10, asOf: '2026-09-01T00:00:00Z' });
+  assert.deepEqual(queue.missions.map((mission) => mission.route_id), ['job-open']);
+  const named = buildApplicationMission(records[1]);
+  assert.equal(named.application.readiness.readiness, 'PHD_DOCUMENT_HOLD');
+});
+
+test('automatic application queue respects an explicitly paused named route', () => {
+  const records = [
+    cleanResearchJob({ id: 'job-open' }),
+    cleanResearchJob({ id: 'job-hku-ai-engineer-mcp-ra2-2026' }),
+  ];
+  const queue = applicationQueue(records, { limit: 10, asOf: '2026-09-01T00:00:00Z' });
+  assert.deepEqual(queue.missions.map((mission) => mission.route_id), ['job-open']);
 });
 
 test('canonical Gauntlet master compiles a real bounded application queue', () => {

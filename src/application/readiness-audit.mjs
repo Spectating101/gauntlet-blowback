@@ -2,14 +2,24 @@ import { chromium } from 'playwright';
 import { setTimeout as wait } from 'node:timers/promises';
 import { buildMasterRegistry } from '../../scripts/build-gauntlet-master.mjs';
 import { collectReconSnapshot } from '../commands/recon.mjs';
-import { isApplicationRoute } from './operator.mjs';
+import { isSubmissionRoute } from './operator.mjs';
+import { routeInCampaignScope } from '../allocation/campaign-scope.mjs';
+import { isAutomaticQueueExcluded } from '../allocation/submission-readiness.mjs';
 
 const FIRE_STATUS = /^(PORTAL_READY|FIRE_NOW|PRIMARY_FIRE|FIRE)$/i;
 const TERMINAL_STATUS = /(KILL|REJECT|EXPIRED|HISTORICAL)/i;
 const KNOWN_APPLICATION_HOSTS = /(^|\.)(greenhouse\.io|lever\.co|myworkdayjobs\.com|smartrecruiters\.com|jobvite\.com|ashbyhq\.com|successfactors\.eu|taleo\.net)$/i;
 const APPLICATION_TARGET = /(\/apply(?:[/?#]|$)|\/application(?:[/?#]|$)|\/register(?:[/?#]|$)|\/submission(?:[/?#]|$)|\/careers?\/[^/]+\/jobs?\/|docs\.google\.com\/forms|forms\.gle|typeform\.com)/i;
 const APPLICATION_LINK_TEXT = /\b(apply now|apply here|apply for|start (?:an )?application|application form|online application|submit (?:an )?application)\b|線上申請|立即申請|我要申請/i;
-const NON_APPLICATION_LINK_TEXT = /\b(skip to|application process|how to apply|application: process|privacy|accessibility)\b/i;
+const NON_APPLICATION_LINK_TEXT = /\b(skip to|application process|how to apply|application: process|privacy|accessibility|visit|visitor|tour|newsletter|subscribe)\b|參訪|導覽|訂閱/i;
+const SPECIFIC_CJK_ROUTE_TEXT = /報名|报名|徵件|征件|參賽|参赛|投稿/i;
+
+function isGenericCjkServiceApplication(link) {
+  const text = String(link?.text ?? '');
+  return /申請|申请/i.test(text)
+    && !SPECIFIC_CJK_ROUTE_TEXT.test(text)
+    && !APPLICATION_TARGET.test(String(link?.href ?? ''));
+}
 
 function dateKey(value = new Date()) {
   if (typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value)) return value;
@@ -51,10 +61,11 @@ function safeCandidate(source, candidate) {
   }
 }
 
-function candidateFor(source, snapshot) {
+export function candidateFor(source, snapshot) {
   const candidates = snapshot.candidate_links
     .filter((link) => safeCandidate(source, link.href))
-    .filter((link) => !NON_APPLICATION_LINK_TEXT.test(link.text));
+    .filter((link) => !NON_APPLICATION_LINK_TEXT.test(link.text))
+    .filter((link) => !isGenericCjkServiceApplication(link));
   return candidates.find((link) => link.kind !== 'auth' && (APPLICATION_LINK_TEXT.test(link.text) || APPLICATION_TARGET.test(link.href)))
     ?? candidates.find((link) => link.kind === 'auth')
     ?? null;
@@ -83,7 +94,7 @@ function hasApplicationFormEvidence(snapshot = {}) {
  * Select only time-bounded work plus directly executable rolling FIRE routes.
  * This prevents the public audit from indiscriminately crawling the portfolio.
  */
-export function selectReadinessRoutes({ records = buildMasterRegistry(), today = new Date(), days = 35, limit = 30, scope = 'near_term' } = {}) {
+export function selectReadinessRoutes({ records = buildMasterRegistry(), today = new Date(), days = 35, limit = 30, scope = 'near_term', campaignScope = false } = {}) {
   if (!['near_term', 'all'].includes(scope)) throw new Error(`unsupported readiness-audit scope: ${scope}`);
   const from = dateKey(today);
   const through = plusDays(from, Math.max(0, Number(days) || 0));
@@ -92,7 +103,9 @@ export function selectReadinessRoutes({ records = buildMasterRegistry(), today =
     ? (Number.isFinite(numericLimit) && numericLimit > 0 ? Math.floor(numericLimit) : 500)
     : (Number.isFinite(numericLimit) && numericLimit > 0 ? Math.floor(numericLimit) : 30);
   const routes = records
-    .filter((record) => isApplicationRoute(record) && !TERMINAL_STATUS.test(String(record.status ?? '')))
+    .filter((record) => !campaignScope || routeInCampaignScope(record))
+    .filter((record) => isSubmissionRoute(record) && !TERMINAL_STATUS.test(String(record.status ?? '')))
+    .filter((record) => !isAutomaticQueueExcluded(record))
     .filter((record) => {
       const deadline = hardDeadline(record);
       const currentCycle = !(deadline && deadline < from);
@@ -221,8 +234,8 @@ async function waitForHost(url, lastSeen, rateLimitMs) {
  * Public, headless, observation-only readiness scan. It never loads auth
  * state, fills a field, follows a postback, persists storage, or saves a file.
  */
-export async function auditApplicationReadiness({ records = buildMasterRegistry(), today = new Date(), days = 35, limit = 30, scope = 'near_term', rateLimitMs = 1_000 } = {}) {
-  const selection = selectReadinessRoutes({ records, today, days, limit, scope });
+export async function auditApplicationReadiness({ records = buildMasterRegistry(), today = new Date(), days = 35, limit = 30, scope = 'near_term', rateLimitMs = 1_000, campaignScope = false } = {}) {
+  const selection = selectReadinessRoutes({ records, today, days, limit, scope, campaignScope });
   const browser = await chromium.launch({ headless: true });
   try {
     const routes = [];

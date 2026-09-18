@@ -1,5 +1,6 @@
 import { buildBrowserMission, rankGauntlet } from '../mission/operator.mjs';
 import { allocationAllowsAutonomousFinalSubmit, resolvePortfolioAllocation } from '../allocation/portfolio.mjs';
+import { assessSubmissionReadiness, isAutomaticQueueExcluded } from '../allocation/submission-readiness.mjs';
 
 const APPLICATION_LANES = new Set([
   'JOB', 'RESEARCH_JOB', 'RESEARCH_LAB', 'PREDOC', 'RESEARCH_FELLOWSHIP', 'POLICY_FELLOWSHIP',
@@ -14,6 +15,17 @@ const APPLICATION_ROUTE_CLASSES = new Set([
   'RESEARCH_PREVIEW', 'PI_SPONSORED_ACCESS', 'OFFSET'
 ]);
 
+// Outward-facing project, paper and grant submissions share the same browser
+// onboarding surface as person-level applications, but they must not be
+// misclassified as jobs. Keep the narrower isApplicationRoute predicate for
+// person-level packet generation and use isSubmissionRoute when selecting
+// work for calendar/readiness execution.
+const SUBMISSION_ROUTE_CLASSES = new Set([
+  'APPLY', 'CONFERENCE_SPEAKING', 'EVALUATION_FUNDING', 'GRANT',
+  'INSTITUTIONAL_GRANT', 'OPEN_SOURCE_GRANT', 'RESEARCH_AWARD',
+  'RESEARCH_GRANT', 'RESEARCH_PUBLICATION'
+]);
+
 const FIREISH = /(FIRE|READY|PRICE_DISCOVERY|PRIMARY)/i;
 const KNOWN_GATE_STATUS = /(AFTER_GATE|IF_ELIGIBLE|VERIFY|RECON|DEPENDENCY|HOLD|WATCH|KILL|REJECT)/i;
 const BLOCKING_GATE_TEXT = /(advisor|adviser|team|partner|host|principal investigator|\bpi\b|institutional consent|payment|fee|citizen|citizenship|work authorization|visa|sponsor|eligib|attest|originality|authorship|ip\b|outside[- ]work|moonlight|company|legal entity)/i;
@@ -25,6 +37,12 @@ function normalized(value = '') {
 
 export function isApplicationRoute(record) {
   return APPLICATION_LANES.has(normalized(record?.lane)) || APPLICATION_ROUTE_CLASSES.has(normalized(record?.route_class));
+}
+
+export function isSubmissionRoute(record) {
+  return isApplicationRoute(record)
+    || Boolean(String(record?.execution_manifest ?? '').trim())
+    || SUBMISSION_ROUTE_CLASSES.has(normalized(record?.route_class));
 }
 
 export function applicationKind(record) {
@@ -102,6 +120,7 @@ export function buildApplicationMission(record, checkpoint = null, options = {})
   if (!isApplicationRoute(record)) throw new Error(`route is not application-like: ${record?.id ?? '(missing)'}`);
   const base = buildBrowserMission(record, checkpoint);
   const allocation = resolvePortfolioAllocation(record);
+  const readiness = assessSubmissionReadiness(record);
   const autoSubmit = mayAutoSubmit(record, options);
   const baseStage = applicationStage(record);
   const stage = allocation.allocation_clear ? baseStage : 'ALLOCATION_RECON';
@@ -124,6 +143,7 @@ export function buildApplicationMission(record, checkpoint = null, options = {})
       evidence_family: record.shared_evidence_family ?? null,
       asset_projection: record.contribution_view ?? null,
       portfolio_allocation: allocation,
+      readiness,
       lead_claim_projection: allocation.package?.core_claim ?? null,
       explicit_nonclaims: allocation.package?.do_not_claim ?? [],
       application_policy: {
@@ -142,6 +162,7 @@ export function buildApplicationMission(record, checkpoint = null, options = {})
         stop_on_work_authorization_or_visa_uncertainty: true,
         stop_on_ip_or_outside_work_terms: true,
         stop_on_pi_or_institutional_dependency: true,
+        exclude_new_external_prerequisites: true,
         honor_noncommercial_and_research_only_credit_terms: true
       },
       follow_up: {
@@ -193,11 +214,16 @@ export function buildApplicationMission(record, checkpoint = null, options = {})
 }
 
 export function rankApplicationRoutes(records, options = {}) {
-  return rankGauntlet(records, options).filter(({ record }) => isApplicationRoute(record));
+  return rankGauntlet(records, options).filter(({ record }) =>
+    isApplicationRoute(record)
+    && !isAutomaticQueueExcluded(record)
+  );
 }
 
 export function applicationMissionForRoute(routeId, records, options = {}) {
-  const ranked = rankGauntlet(records, { ...options, includePaused: true });
+  // An explicit named lookup remains available for audit/history even when the
+  // automatic queues are campaign-scoped.
+  const ranked = rankGauntlet(records, { ...options, campaignScope: false, includePaused: true, includeExpired: true });
   const found = ranked.find(({ record }) => record.id === routeId);
   if (!found) throw new Error(`active application route not found in Gauntlet master: ${routeId}`);
   return buildApplicationMission(found.record, found.checkpoint, options);

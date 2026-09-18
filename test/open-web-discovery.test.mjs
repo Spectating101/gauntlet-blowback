@@ -61,6 +61,11 @@ test('source quality and opportunity type are conservative and explainable', () 
   assert.equal(inferOpportunityType('Technical Associate / Predoctoral Research Assistant'), 'predoc');
   assert.equal(inferOpportunityType('AI Research Engineer'), 'research_engineer');
   assert.equal(inferOpportunityType('科技政策 Fellowship'), 'research_fellowship');
+  assert.equal(inferOpportunityType('Open source API credits for researchers'), 'research_credit');
+  assert.equal(inferOpportunityType('Call for Papers CAV 2027'), 'research_publication');
+  assert.equal(inferOpportunityType('Innovation Challenge Prize'), 'competition');
+  assert.equal(inferOpportunityType('Request for Proposals on AI evaluations'), 'call_for_proposals');
+  assert.equal(inferOpportunityType('Model Hardware Standard research preview waitlist'), 'research_preview');
 });
 
 test('Bing RSS adapter returns DISCOVERY_ONLY candidates without promoting snippets to verified state', async () => {

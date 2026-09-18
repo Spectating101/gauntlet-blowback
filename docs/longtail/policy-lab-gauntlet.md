@@ -17,7 +17,7 @@ This file is the execution bridge between the canonical Policy Lab repository (`
 |---:|---|---|---|---|---|
 | 1 | Global AI Finance Research Conference 2026 — WIP poster / extended abstract | `FIRE_NOW / PORTAL_READY` | 2026-08-31 | Create/login ConfTool account, paste frozen RC5 fields, upload reviewer PDF if requested, inspect unexpected terms, submit, preserve submission ID/receipt and exact submitted artifact | account details, privacy consent, authorship/copyright declarations, payment/attendance commitment |
 | 2 | NLnet Restack | `HOLD / CALL_GATED` | 2026-09-03 checkpoint | Re-read call-specific scope and European-dimension criteria when published/open; hard FIRE/KILL immediately after verification | any binding legal/financial declaration |
-| 3 | Financial Cryptography 2027 — short paper | `PRIMARY_FIRE` | 2026-09-17 | Continue the 8-page non-promotion-semantics manuscript lane; preserve overlap stop condition | final submission |
+| 3 | Financial Cryptography 2027 — short paper | `PRIMARY_FIRE` | 2026-09-24 23:59 AoE | Continue the 8-page non-promotion-semantics manuscript lane; preserve overlap stop condition | final submission |
 | 4 | Global AI Finance 2026 — notification | `OUTCOME_WAIT` | 2026-09-30 | Record accept/reject/other verdict and any reviewer/program evidence; propagate result into DPG/JOSS/external-impact ledger | none unless acceptance creates registration/payment commitment |
 | 5 | Software Sustainability Institute Fellowship 2027 | `FIRE` | 2026-10-05 | Adapt the already-developed research-software/practice narrative; keep it broader than a Policy Lab product pitch | final application |
 

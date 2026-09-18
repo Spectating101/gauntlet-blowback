@@ -1,0 +1,11 @@
+{
+  "schema": "blowback.portfolio_campaign_review_queue.v1",
+  "snapshot": "2026-09-16",
+  "purpose": "Human-readable dispositions for every route that the deterministic campaign coverage audit cannot safely assign.",
+  "authority": "Assessment only. A disposition may archive, exclude, or request source/campaign review; it never authorizes browser execution.",
+  "decisions": [
+    {"route_id":"nlnet-restack-policy-lab-2026","disposition":"CONSOLIDATE_SOURCE_FAMILY_BAKEOFF","recommended_primary_campaign_id":"system-refinery-commons","reason":"One Restack call should not exist as independent Policy Lab and Nocturnal plans; perform one portfolio fit decision, with Refinery the current provisional lead."},
+    {"route_id":"nlnet-restack-nocturnal","disposition":"CONSOLIDATE_SOURCE_FAMILY_BAKEOFF","recommended_primary_campaign_id":"system-refinery-commons","reason":"Consolidate with the Restack family and decide one portfolio-native proposal rather than retaining project-name duplicates."},
+    {"route_id":"field-taitronics-aiot-2026","disposition":"SOURCE_REVERIFY","recommended_primary_campaign_id":"system-hardware-splicer","reason":"The October 20-22 field route remains future-dated, but lacks an official source and requires live event verification before execution."}
+  ]
+}

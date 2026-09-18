@@ -194,6 +194,51 @@
       "closed_markers": ["program is closed"],
       "eligibility_text": ["Graduate students may request up to US$5,000, but AWS currently says applications from the greater China region cannot be processed. Obtain written clarification for Taiwan before application work."],
       "funding": {"currency": "USD", "student_ceiling": 5000}
+    },
+    {
+      "id": "openai-codex-open-source-fund",
+      "source": "openai",
+      "source_id": "codex-open-source-fund",
+      "type": "research_credit",
+      "title": "OpenAI Codex Open Source Fund",
+      "organization": "OpenAI",
+      "url": "https://openai.com/form/codex-open-source-fund/",
+      "summary": "Rolling API-credit grants for maintainers applying Codex and OpenAI models to a named open-source project.",
+      "tags": ["open source", "Codex", "API credits", "maintainer", "developer tools"],
+      "open_markers": ["Codex open source fund", "$25,000", "ongoing basis"],
+      "closed_markers": ["applications are closed"],
+      "eligibility_text": ["Applicant must represent a real open-source project and provide its repository and a concrete use-of-credits plan; legal acknowledgment and final submission remain human gates."],
+      "funding": {"currency": "USD", "credit_ceiling": 25000}
+    },
+    {
+      "id": "openai-chatgpt-academic-researchers",
+      "source": "openai",
+      "source_id": "chatgpt-academic-researchers",
+      "type": "research_access",
+      "title": "ChatGPT for Academic Researchers",
+      "organization": "OpenAI",
+      "url": "https://openai.com/index/chatgpt-for-academic-researchers/",
+      "summary": "No-cost ChatGPT, Codex and frontier-model access for selected researchers at qualifying research-active institutions; new applicants currently join a waitlist.",
+      "tags": ["academic research", "ChatGPT", "Codex", "frontier models", "waitlist"],
+      "open_markers": ["Join the waitlist", "100,000 researchers", "at no cost"],
+      "closed_markers": ["applications are closed"],
+      "eligibility_text": ["Requires active research, a qualifying selected degree-granting institution and affiliation verification. Confirm the live institutional verifier accepts Yuan Ze University."],
+      "funding": {"currency": null, "free_access": true, "target_researchers": 100000}
+    },
+    {
+      "id": "anthropic-external-researcher-access",
+      "source": "anthropic",
+      "source_id": "external-researcher-access",
+      "type": "research_credit",
+      "title": "Anthropic External Researcher Access Program",
+      "organization": "Anthropic",
+      "url": "https://support.claude.com/en/articles/9125743-what-is-the-external-researcher-access-program",
+      "summary": "Monthly-reviewed Claude API-credit access for independent AI safety and alignment research.",
+      "tags": ["AI safety", "alignment", "Claude", "API credits", "evaluation"],
+      "open_markers": ["External Researcher Access Program", "$1,000", "first Monday"],
+      "closed_markers": ["applications are closed"],
+      "eligibility_text": ["Research must remain genuinely related to AI safety or alignment. The program provides API access, not a Claude web subscription or policy exception."],
+      "funding": {"currency": "USD", "credit_ceiling": 1000}
     }
   ]
 }

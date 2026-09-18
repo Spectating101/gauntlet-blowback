@@ -1,30 +1,50 @@
 {
   "id": "taai-2026-domestic-hardware-splicer",
-  "name": "TAAI 2026 — Domestic Track — Hardware-Splicer",
+  "name": "TAAI 2026 — Domestic Extended Abstract — Hardware-Splicer",
   "portal": "generic",
-  "entry_url": "https://taai2026.github.io/",
+  "portal_family": "conference_cfp",
+  "source_url": "https://taai2026.github.io/zh/cfp.html",
+  "submission_url": "https://openreview.net/group?id=TAAI.org/2026/Conference",
+  "auth_scope": "openreview.net",
   "deadline": "2026-09-14T23:59:00-12:00",
+  "deadline_note": "Official deadline is September 14, 2026 at 23:59 Anywhere on Earth.",
   "mode": "inspect",
+  "execution_state": "PACKET_READY",
   "direct_control": true,
   "profile": "../profiles/christ.json",
   "project": "../projects/hardware-splicer.json",
-  "packet_source": "https://github.com/Spectating101/hardware-splicer/blob/agent/submission-package-2026q3/docs/external_assessment/submissions/TAAI_2026_EXTENDED_ABSTRACT.md",
+  "fire_packet": "../fire-packets/taai-2026-domestic-hardware-splicer.json",
+  "packet_revision": "328b80b4ca720a04e4bbdfabc481f4dfb68c548b",
+  "packet_source": "https://github.com/Spectating101/hardware-splicer/blob/328b80b4ca720a04e4bbdfabc481f4dfb68c548b/docs/external_assessment/submissions/TAAI_2026_EXTENDED_ABSTRACT.md",
+  "final_copy_revision": "328b80b4ca720a04e4bbdfabc481f4dfb68c548b",
+  "final_copy_source": "https://github.com/Spectating101/hardware-splicer/blob/328b80b4ca720a04e4bbdfabc481f4dfb68c548b/docs/external_assessment/submissions/TAAI_2026_EXTENDED_ABSTRACT.md",
   "fields": {
     "paper_title": "Separating Model Reasoning from Physical Authority in Agentic Hardware Engineering",
     "author_name": "$profile.name",
+    "author_email": "$profile.email",
     "affiliation": "$profile.affiliation",
-    "project_summary": "$project.description",
-    "repo_url": "$project.repo_url",
-    "limitations": "$project.limitations"
+    "submission_track": "Domestic Track",
+    "submission_format": "Extended Abstract",
+    "abstract": "Tool-using AI agents can move plausible model output toward fabrication or power-on before component identity, evidence provenance, revision state, or physical behavior is established. We present Hardware-Splicer, a model-independent environment that separates semantic agent reasoning from deterministic engineering constraints, provenance-bearing evidence, exact project state, and scoped human physical authority. General-purpose agents operate a canonical backend through the Model Context Protocol, while evidence and authority gates remain outside the model. A frozen ten-case adversarial SPI-flash corpus covers source-order perturbations, partial evidence, identity conflict, tool failure, plausible wrong analogy, and stale revision. Current evidence establishes the deterministic software and MCP infrastructure: real stdio and Streamable HTTP clients complete canonical stateful operations across a 193-operation backend while MCP remains unable to grant physical authority. Live external-model, fresh physical, and independent-operator results remain separate claims until those experiments run. The architecture therefore permits agent usefulness and permission to act to be evaluated as distinct outcomes.",
+    "keywords": "agentic AI; physical AI; hardware engineering; MCP; evidence provenance; human authorization"
   },
-  "field_map": {
-    "paper_title": {"label": "Title"},
-    "author_name": {"label": "Author"},
-    "affiliation": {"label": "Affiliation"},
-    "project_summary": {"label": "Abstract"},
-    "repo_url": {"label": "Repository"},
-    "limitations": {"label": "Limitations"}
+  "field_map": {},
+  "uploads": [
+    {
+      "name": "paper_pdf",
+      "path": "../../output/taai-2026/Hardware_Splicer_TAAI_2026_Extended_Abstract.pdf"
+    }
+  ],
+  "upload_map": {},
+  "route_evidence": {
+    "official_cfp_verified": true,
+    "domestic_extended_abstract_limit_verified": "2 pages A4/Letter template output accepted as official template geometry",
+    "single_blind_author_metadata_required": true,
+    "openreview_account_required": true,
+    "submission_pdf_ready": true,
+    "final_submission_copy_ready": true,
+    "live_openreview_fields_verified": false,
+    "final_submit_authorized": false
   },
-  "uploads": [],
-  "human_required": ["login", "authorship_attestation", "originality_attestation", "terms_acceptance", "payment", "final_submit"]
+  "human_required": ["login", "authorship_attestation", "originality_attestation", "terms_acceptance", "final_submit"]
 }

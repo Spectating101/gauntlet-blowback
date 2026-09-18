@@ -1,0 +1,143 @@
+{
+  "schema": "blowback.main_quest_internal_execution_plan.v1",
+  "as_of": "2026-09-17",
+  "operating_mode": "INTERNAL_BUILD_ONLY",
+  "external_execution_authorized": false,
+  "terminal_objective": "Turn the strongest portfolio assets into reusable, evidence-bounded person-level option packages while improving each asset toward its intended manifested capability.",
+  "main_quests": [
+    {
+      "id": "funded_phd_options",
+      "state": "PAUSED_USER_OWNED_APPLICATION_DECISION",
+      "internal_work_authorized": [
+        "formal-document inventory",
+        "research identity synthesis",
+        "academic evidence index",
+        "programme-neutral dossier preparation",
+        "missing-document and economics ledger"
+      ],
+      "external_work_forbidden": [
+        "faculty outreach",
+        "referee requests",
+        "account creation",
+        "application upload",
+        "submission"
+      ],
+      "completion_gate": "User reopens PhD execution and designates the formal academic record set."
+    },
+    {
+      "id": "employment_options",
+      "state": "ACTIVE_INTERNAL_PACKET_BUILD",
+      "internal_work_authorized": [
+        "canonical CV fact audit",
+        "portfolio evidence index",
+        "five role-family evidence modules",
+        "three case-study cards",
+        "claim and nonclaim reconciliation",
+        "economics comparison template"
+      ],
+      "external_work_forbidden": [
+        "live vacancy applications",
+        "recruiter outreach",
+        "account creation",
+        "upload",
+        "submission"
+      ],
+      "completion_gate": "Each role family has a fact-audited lead narrative, exact evidence references, limitations, and a reusable selection rule."
+    },
+    {
+      "id": "funded_research_appointments",
+      "state": "ACTIVE_INTERNAL_PACKET_BUILD",
+      "internal_work_authorized": [
+        "research identity packet",
+        "appointment economics taxonomy",
+        "project-to-research-question mapping",
+        "methods and reproducibility evidence",
+        "AI-assistance and authorship boundary"
+      ],
+      "external_work_forbidden": [
+        "host or referee requests",
+        "fellowship submission",
+        "account creation",
+        "upload",
+        "submission"
+      ],
+      "completion_gate": "One reusable appointment packet distinguishes salary or stipend from restricted research support and binds every proposed study to executable evidence."
+    }
+  ],
+  "active_asset_advancement": [
+    {
+      "asset_id": "research-drive",
+      "priority": 10,
+      "state": "IN_PROGRESS_INTERNAL",
+      "objective": "Certify one exact research-infrastructure journey.",
+      "acceptance": "Fresh non-demo ingest, preserved bytes and provenance, synthesis, restart persistence, forced worker failure, safe retry, and no duplicate or falsely completed artifact.",
+      "progress": "On clean ops/rc3-auto-preview head 62284a5, 28 runtime-contract tests and 32 Python interop tests pass. The RC2 release verifier correctly refuses this later product/runtime branch; an RC3 exact-candidate authority and the fresh ingest-to-synthesis receipt are still missing."
+    },
+    {
+      "asset_id": "hardware-splicer",
+      "priority": 20,
+      "state": "READY_INTERNAL_BUILD",
+      "objective": "Complete the paired-evaluation apparatus without running a paid or scored external tranche.",
+      "acceptance": "Matched non-destructive reference runner, treatment-parity audit, synthetic transport tests, frozen output schema, dry-run safety proof, and no physical authority upgrade."
+    },
+    {
+      "asset_id": "policy-lab",
+      "priority": 30,
+      "state": "READY_INTERNAL_BUILD",
+      "objective": "Reproduce one genuinely new case through the current decision workflow.",
+      "acceptance": "Evidence intake, assurance decision, policy comparison, quantity or consequence output, portable export, independent replay, and explicit rejection of a tampered or insufficient variant."
+    },
+    {
+      "asset_id": "refinery-commons",
+      "priority": 40,
+      "state": "READY_INTERNAL_BUILD",
+      "objective": "Complete one real provider execution mapping inside the canonical product boundary.",
+      "acceptance": "Authorized capability resolution, provider execution, evaluation, reuse receipt, provider failure, stale-mapping refusal, and clean-install reproduction."
+    },
+    {
+      "asset_id": "public-good-control",
+      "priority": 50,
+      "state": "READY_INTERNAL_BUILD",
+      "objective": "Make one complete operator-loop case executable and reviewable.",
+      "acceptance": "Intake, revision, bottleneck, proposal, explicit human decision fixture, follow-up, correction or nonresponse handling, and replayable evidence lineage. Internal fixtures remain internal evidence."
+    },
+    {
+      "asset_id": "research-papers",
+      "priority": 60,
+      "state": "READY_INTERNAL_BUILD",
+      "objective": "Maintain an ordered publication pipeline without allowing venue activity to outrun research authority.",
+      "acceptance": "Fiscal Choke Points empirical repair first; Invisible Ledger remains user-owned; CEIR and ESG remain gated until their next empirical milestones."
+    }
+  ],
+  "support_only_assets": [
+    "citation-engine",
+    "gauntlet-blowback"
+  ],
+  "deferred_assets": [
+    "cite-agent",
+    "nocturnal-oversight",
+    "sharpe-terminus",
+    "geomap-arbitrage"
+  ],
+  "shared_deliverables": [
+    "output/main-quest/PORTFOLIO_EVIDENCE_INDEX_2026-09-17.md",
+    "output/main-quest/EMPLOYMENT_PACKET_FAMILIES_2026-09-17.md",
+    "output/main-quest/FUNDED_RESEARCH_APPOINTMENT_PACKET_2026-09-17.md",
+    "output/main-quest/PHD_DOSSIER_READINESS_2026-09-17.md",
+    "output/main-quest/PROJECT_ADVANCEMENT_BRIEFS_2026-09-17.md",
+    "output/main-quest/CASE_STUDY_CITE_AGENT_2026-09-17.md",
+    "output/main-quest/CASE_STUDY_RESEARCH_DRIVE_2026-09-17.md",
+    "output/main-quest/CASE_STUDY_HARDWARE_SPLICER_2026-09-17.md",
+    "output/main-quest/CASE_STUDY_POLICY_LAB_2026-09-17.md",
+    "output/main-quest/TODAY_USER_REVIEW_SHEET_2026-09-17.md",
+    "output/main-quest/MAIN_QUEST_PACKET_INDEX_2026-09-17.md"
+  ],
+  "shared_deliverables_state": "DRAFT_BUILT_REVIEW_REQUIRED",
+  "evidence_rules": [
+    "Internal verification never becomes external validation.",
+    "A candidate branch is not described as canonical main.",
+    "A person-level packet selects evidence; projects do not compete as separate applicants.",
+    "Each case study states the exact demonstrated workflow and the strongest nonclaim.",
+    "No external action is implied by internal packet readiness."
+  ]
+}

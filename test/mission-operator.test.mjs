@@ -54,25 +54,81 @@ test('rankGauntlet prefers immediate FIRE over WATCH and KILL', () => {
     record({ id: 'watch', status: 'WATCH', deadline: '2026-08-28' }),
     record({ id: 'fire', status: 'FIRE_NOW', deadline: '2026-09-01' }),
     record({ id: 'kill', status: 'KILL', deadline: '2026-08-27' }),
-  ]);
+  ], { asOf: '2026-08-20T00:00:00Z' });
   assert.deepEqual(ranked.map((item) => item.record.id), ['fire', 'watch']);
 });
 
-test('WAITING_HUMAN route does not freeze next dispatch', () => {
-  fs.rmSync(STATE_DIR, { recursive: true, force: true });
+test('rankGauntlet dispatches a near-deadline packaged route before a rolling research-only lead', () => {
+  const ranked = rankGauntlet([
+    record({
+      id: 'rolling-research-only',
+      lane: 'JOB',
+      status: 'FIRE_NOW',
+      execution_state: 'RESEARCH_ONLY',
+      deadline: 'ROLLING',
+    }),
+    record({
+      id: 'taai-packet',
+      lane: 'COMPETITION',
+      status: 'FIRE_NOW',
+      execution_state: 'PACKET_READY',
+      deadline: '2026-09-14T23:59:00-12:00',
+    }),
+  ], { asOf: '2026-09-12T00:00:00Z' });
+  assert.deepEqual(ranked.map((item) => item.record.id), ['taai-packet', 'rolling-research-only']);
+});
+
+test('WAITING_HUMAN route does not freeze next dispatch', (t) => {
+  const pausedRouteId = '__test_waiting_human__';
+  const checkpointFile = path.join(STATE_DIR, `${pausedRouteId}.json`);
+  fs.rmSync(checkpointFile, { force: true });
+  t.after(() => fs.rmSync(checkpointFile, { force: true }));
   persistCheckpoint({
-    mission_id: 'mission:route-a',
-    route_id: 'route-a',
+    mission_id: `mission:${pausedRouteId}`,
+    route_id: pausedRouteId,
     status: 'WAITING_HUMAN',
     stage: 'FINAL_REVIEW',
     human_required: ['final submit'],
   });
   const ranked = rankGauntlet([
-    record({ id: 'route-a', status: 'FIRE_NOW' }),
+    record({ id: pausedRouteId, status: 'FIRE_NOW' }),
     record({ id: 'route-b', status: 'FIRE', deadline: '2026-09-01' }),
-  ]);
+  ], { asOf: '2026-08-20T00:00:00Z' });
   assert.deepEqual(ranked.map((item) => item.record.id), ['route-b']);
-  fs.rmSync(STATE_DIR, { recursive: true, force: true });
+});
+
+test('rankGauntlet excludes expired hard deadlines but keeps today and rolling routes', () => {
+  const ranked = rankGauntlet([
+    record({ id: 'expired', deadline: '2026-09-09' }),
+    record({ id: 'today', deadline: '2026-09-10' }),
+    record({ id: 'rolling', deadline: 'ROLLING' }),
+  ], { asOf: '2026-09-10T12:00:00Z' });
+  assert.deepEqual(ranked.map((item) => item.record.id), ['today', 'rolling']);
+});
+
+test('rankGauntlet can include expired routes for explicit historical access', () => {
+  const ranked = rankGauntlet([
+    record({ id: 'expired', deadline: '2026-09-09' }),
+  ], { asOf: '2026-09-10T12:00:00Z', includeExpired: true });
+  assert.deepEqual(ranked.map((item) => item.record.id), ['expired']);
+});
+
+test('generic automatic dispatch respects the same named-route pause as FIRE', () => {
+  const paused = record({
+    id: 'shih-hsin-finance-2026-il',
+    status: 'FIRE_NOW',
+    execution_state: 'PACKET_READY',
+    deadline: '2026-09-17',
+  });
+  const safe = record({ id: 'route-b', status: 'FIRE', deadline: '2026-09-20' });
+  const ranked = rankGauntlet([paused, safe], { asOf: '2026-09-17T00:00:00Z' });
+  assert.deepEqual(ranked.map((item) => item.record.id), ['route-b']);
+
+  const manual = rankGauntlet([paused], {
+    asOf: '2026-09-17T00:00:00Z',
+    includeAutomaticQueueExcluded: true,
+  });
+  assert.deepEqual(manual.map((item) => item.record.id), ['shih-hsin-finance-2026-il']);
 });
 
 test('checkpoint rejects secret-bearing payloads', () => {
@@ -100,8 +156,8 @@ test('checkpoint accepts resumable non-secret browser state', () => {
 });
 
 test('real master registry produces a Codex browser mission', () => {
-  fs.rmSync(STATE_DIR, { recursive: true, force: true });
-  const mission = nextBrowserMission(buildMasterRegistry());
+  const [record] = buildMasterRegistry();
+  const mission = buildBrowserMission(record);
   assert.ok(mission?.route_id);
   assert.equal(mission.browser.adaptive_navigation_required, true);
   assert.equal(mission.browser.hardcoded_portal_recipe_required, false);

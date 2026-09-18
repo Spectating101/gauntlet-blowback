@@ -212,10 +212,10 @@ DESCRIPTION:Deep-research discovery with Sep-15 timing; verify geography/current
 END:VEVENT
 BEGIN:VEVENT
 UID:fc27-cl-eci-20260917@blowback
-DTSTART;VALUE=DATE:20260917
-DTEND;VALUE=DATE:20260918
+DTSTART;VALUE=DATE:20260924
+DTEND;VALUE=DATE:20260925
 SUMMARY:[PRIMARY FIRE] Financial Cryptography 2027 — CL-ECI
-DESCRIPTION:Policy Lab protected primary manuscript lane. Preserve no-overlapping-peer-reviewed-submission rule.
+DESCRIPTION:Policy Lab protected primary manuscript lane. Official CFP extended the paper deadline to 24 Sep 2026 23:59 AoE. Preserve no-overlapping-peer-reviewed-submission rule.
 END:VEVENT
 BEGIN:VEVENT
 UID:il-shihhsin-20260917@blowback

@@ -4,7 +4,8 @@
   "portal": "generic",
   "portal_family": "research_access",
   "auth_scope": "openai-researcher-access",
-  "source_url": "https://openai.com/form/researcher-access-program/",
+  "source_url": "https://grants.openai.com/prog/openai_researcher_access_program/",
+  "registration_url": "https://grants.openai.com/prog/272885/apply/?next=/prog/openai_researcher_access_program/",
   "recon_stage": "registration",
   "mode": "inspect",
   "execution_state": "PORTAL_RECON_REQUIRED",
@@ -12,6 +13,7 @@
   "profile": "../profiles/christ.json",
   "project": "../projects/hardware-splicer.json",
   "fire_packet": "../fire-packets/openai-researcher-access-hardware-splicer.json",
+  "canonical_release_revision": "f892facd67c5124e2362860ebc999625afedc5d5",
   "packet_revision": "f822fc5a4b2355ae945955969dcad7428a71c835",
   "packet_source": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/OPENAI_RESEARCHER_ACCESS.md",
   "final_copy_revision": "328b80b4ca720a04e4bbdfabc481f4dfb68c548b",
@@ -64,12 +66,13 @@
     "Request only a workload-derived amount of credits rather than defaulting to the program maximum."
   ],
   "route_evidence": {
-    "verified_at": "2026-09-07",
+    "verified_at": "2026-09-16",
     "eligibility_mechanics_verified": true,
     "source_and_program_mechanics_verified": true,
     "model_and_pricing_snapshot_verified": true,
     "final_submission_copy_ready": true,
-    "registration_endpoint_verified": false,
+    "registration_endpoint_verified": true,
+    "login_gate_observed": true,
     "form_fields_verified": false
   },
   "human_required": ["login", "eligibility_attestation", "terms_acceptance", "final_submit"]

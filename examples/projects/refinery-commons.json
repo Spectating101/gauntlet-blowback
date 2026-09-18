@@ -1,0 +1,10 @@
+{
+  "id": "refinery-commons",
+  "name": "Refinery / Commons",
+  "repo_url": "https://github.com/Spectating101/cite-refinery",
+  "pitch_50": "Research-software infrastructure that keeps capabilities, implementations, claims, runs, experiments, and promotion decisions distinct so evidence remains attached to the exact subject it supports.",
+  "description": "The proposed SSI Fellowship activity turns two bounded reuse experiments into an open teaching case, evidence checklist, and two online clinics. One experiment produced equal 42-of-42 results for reuse and rebuild. A Public Suffix List task produced 78-of-78 for licensed reuse and 39-of-78 for a generic rebuild.",
+  "limitations": "The paired experiments do not establish that reuse is generally superior. No broad external adoption, product-market fit, UK partnership, or independent community impact is claimed. The clinics and Fellowship outcomes remain proposed work.",
+  "canonical_repo_snapshot": "13e80263",
+  "submission_state": "FELLOWSHIP_COPY_READY_VIDEO_PENDING"
+}

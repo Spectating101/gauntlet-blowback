@@ -1,0 +1,120 @@
+{
+  "id": "embedded-world-2027-hardware-splicer",
+  "name": "Embedded World Conference 2027 — Hardware Splicer",
+  "portal": "generic",
+  "portal_family": "componeers_conference_cfp",
+  "source_url": "https://www.embedded-world.de/en/conference/call-for-papers",
+  "registration_url": "https://call-for-papers.componeers.net/frontend/index.php?sub=383",
+  "submission_url": "https://call-for-papers.componeers.net/frontend/index.php?page_id=9181",
+  "auth_scope": "embedded-world-componeers-cfp",
+  "recon_stage": "submission",
+  "deadline": "2026-09-28",
+  "deadline_note": "Official route packet records a firm 28 September 2026 deadline; exact cutoff time remains unverified, so the internal target is 24 September.",
+  "mode": "inspect",
+  "execution_state": "PORTAL_RECON_REQUIRED",
+  "direct_control": true,
+  "profile": "../profiles/christ.json",
+  "project": "../projects/hardware-splicer.json",
+  "packet_revision": "3fb033830505d2df37b8fdd6d5310fe9e6874f2c",
+  "packet_source": "/home/phyrexian/Downloads/llm_automation/project_portfolio/Hardware-Splicer/docs/product/routes/EMBEDDED_WORLD_2027.md",
+  "final_copy_revision": "3fb033830505d2df37b8fdd6d5310fe9e6874f2c",
+  "final_copy_source": "/home/phyrexian/Downloads/llm_automation/project_portfolio/Hardware-Splicer/docs/product/routes/EMBEDDED_WORLD_2027.md",
+  "fields": {
+    "talk_title": "Evidence-Gated AI Agents for Open-Source Hardware Engineering",
+    "topic": "10.09 Eclipse Foundation",
+    "speaker_name": "$profile.name",
+    "affiliation": "$profile.affiliation",
+    "abstract": "AI agents can accelerate hardware engineering, but a plausible answer can reach fabrication or power-on before component identity, evidence provenance, revision state, or physical behavior is established. This talk presents Hardware Splicer, an open-source engineering workbench that lets a general-purpose agent propose and assemble work while deterministic checks, revision-bound evidence, and explicit human authorization remain independently authoritative. A frozen SPI-flash-adapter case shows the boundary in practice: source evidence, a derived virtual lab, manufacturer-model checks, KiCad ERC/DRC, and fabrication outputs can be inspected and replayed, yet the system continues to report PACKAGED_NOT_PHYSICAL until real measurements exist. The talk demonstrates fail-closed handling of stale revisions, incomplete sources, tool failures, and attempted authority escalation. It focuses on design choices, failure modes, reproducibility, and what open-source embedded teams can reuse when integrating AI agents without treating model confidence as engineering proof.",
+    "presenter_cv": "Christopher Ongko is a master's student and research assistant at Yuan Ze University. He develops auditable research and engineering systems that separate AI-generated proposals from deterministic evidence, revision state, and human authority.",
+    "repo_url": "$project.repo_url"
+  },
+  "field_map": {},
+  "uploads": [],
+  "upload_map": {},
+  "required_private_fields": [
+    "preferred_email",
+    "account_username",
+    "password",
+    "form_of_address",
+    "postal_address"
+  ],
+  "registration_requirements": [
+    "account username",
+    "password and confirmation",
+    "email and confirmation",
+    "form of address",
+    "given and family name",
+    "institution, department and occupation",
+    "street, postal code, location and country"
+  ],
+  "workflow_requirements": [
+    "create or resume the applicant account",
+    "map the authenticated proposal form",
+    "confirm sole-presenter identity",
+    "confirm physical attendance in Nuremberg if accepted",
+    "review originality and concurrent-presentation obligations",
+    "accept current privacy and terms wording",
+    "human final submit"
+  ],
+  "packet_requirements": [
+    {
+      "id": "frozen_release",
+      "status": "CANONICAL_RELEASE_READY",
+      "canonical_ref": "https://github.com/Spectating101/hardware-splicer/releases/tag/gauntlet-spi-flash-adapter-v1-20260916"
+    },
+    {
+      "id": "conversion_package",
+      "status": "WAITING_CANONICAL_PROMOTION",
+      "canonical_ref": "package/hs-external-conversion-20260917@3fb0338"
+    },
+    {
+      "id": "route_copy",
+      "status": "PACKET_READY",
+      "canonical_ref": "/home/phyrexian/Downloads/llm_automation/project_portfolio/Hardware-Splicer/docs/product/routes/EMBEDDED_WORLD_2027.md"
+    },
+    {
+      "id": "authenticated_form_map",
+      "status": "BLOCKED_BY_LOGIN",
+      "canonical_ref": "submission-records/embedded-world-2027-hardware-splicer-recon-submission/2026-09-16T18-33-54.294Z"
+    },
+    {
+      "id": "attendance_and_originality_decision",
+      "status": "WAITING_HUMAN",
+      "canonical_ref": null
+    }
+  ],
+  "route_evidence": {
+    "public_requirements_reverified": "2026-09-17",
+    "official_deadline": "2026-09-28",
+    "internal_target": "2026-09-24",
+    "submission_language": "English",
+    "required_topic": "10.09 Eclipse Foundation",
+    "slot_minutes": 30,
+    "abstract_limit_characters": 1500,
+    "abstract_characters": 1074,
+    "presenter_cv_limit_characters": 300,
+    "presenter_cv_characters": 243,
+    "single_speaker_required": true,
+    "physical_presence_required": true,
+    "account_required": true,
+    "account_created": false,
+    "registration_page_mapped": true,
+    "login_form_observed": true,
+    "captcha_observed": false,
+    "public_submission_route_observed": "https://call-for-papers.componeers.net/frontend/index.php?page_id=9181",
+    "recon_receipt": "submission-records/embedded-world-2027-hardware-splicer-recon-submission/2026-09-16T18-33-54.294Z",
+    "account_creation_link_observed": true,
+    "authenticated_form_mapped": false,
+    "attendance_authorized": false,
+    "originality_attestation_authorized": false,
+    "terms_authorized": false,
+    "final_submit_authorized": false,
+    "physical_state": "PACKAGED_NOT_PHYSICAL"
+  },
+  "human_required": [
+    "login",
+    "eligibility_attestation",
+    "terms_acceptance",
+    "final_submit"
+  ]
+}

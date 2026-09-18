@@ -4,7 +4,7 @@
   "portal": "generic",
   "portal_family": "research_access",
   "auth_scope": "anthropic-research-access",
-  "source_url": "https://support.claude.com/en/articles/9125743-what-is-the-external-researcher-access-program",
+  "source_url": "https://support.anthropic.com/en/articles/9125743-what-is-the-external-researcher-access-program",
   "registration_url": "https://forms.gle/pZYC8f6qYqSKvRWn9",
   "recon_stage": "registration",
   "mode": "inspect",
@@ -13,18 +13,38 @@
   "profile": "../profiles/christ.json",
   "project": "../projects/hardware-splicer.json",
   "fire_packet": "../fire-packets/anthropic-external-researcher-access-hardware-splicer.json",
+  "canonical_release_revision": "f892facd67c5124e2362860ebc999625afedc5d5",
   "packet_revision": "f822fc5a4b2355ae945955969dcad7428a71c835",
   "packet_source": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/ANTHROPIC_EXTERNAL_RESEARCHER_ACCESS.md",
   "final_copy_revision": "328b80b4ca720a04e4bbdfabc481f4dfb68c548b",
   "final_copy_source": "https://github.com/Spectating101/hardware-splicer/blob/328b80b4ca720a04e4bbdfabc481f4dfb68c548b/docs/external_assessment/research_access/FIRE_NOW_SUBMISSION_COPY_2026-09-05.md",
   "fields": {
     "project_title": "Testing Evidence and Authorization Checks for Tool-Using Agents",
+    "applicant_email": "$profile.email",
     "applicant_name": "$profile.name",
     "affiliation": "$profile.affiliation",
     "repo_url": "$project.repo_url",
-    "limitations": "$project.limitations"
+    "limitations": "$project.limitations",
+    "referred_by_anthropic_employee": "No",
+    "request_more_than_usd_1000": "No",
+    "low_quality_of_service_acceptable": "I'm fine with receiving a low quality of service",
+    "located_in_united_states": "No"
   },
   "field_map": {},
+  "observed_form_fields": [
+    "Your email address",
+    "Name of primary contact",
+    "Name of organization (if applicable)",
+    "Anthropic employee referral",
+    "Anthropic Console organization ID",
+    "Applicant or team description under 200 words",
+    "Research and credit request under 300 words",
+    "Request over USD 1,000",
+    "Low-quality-of-service tolerance",
+    "Google Scholar or GitHub profile",
+    "United States location",
+    "Terms agreement"
+  ],
   "uploads": [],
   "packet_requirements": [
     {
@@ -38,6 +58,11 @@
       "description": "Frozen matched-condition design with dry-run reference boundary, 300-run default, explicit adjudication rubric, trace requirements and clustering-aware analysis.",
       "status": "PACKET_SOURCE_READY",
       "canonical_ref": "https://github.com/Spectating101/hardware-splicer/blob/f822fc5a4b2355ae945955969dcad7428a71c835/docs/external_assessment/research_access/CORE_RESEARCH_PROTOCOL.md"
+    },
+    {
+      "id": "anthropic_console_organization_id",
+      "description": "Provide the live Anthropic Console organization ID that will receive any awarded credits.",
+      "status": "HUMAN_ACCOUNT_VALUE_REQUIRED"
     },
     {
       "id": "api_budget",
@@ -64,13 +89,15 @@
     "If Claude Fable 5.1 is added later, review its then-current Covered Model data-retention requirements before sending evaluation data."
   ],
   "route_evidence": {
-    "verified_at": "2026-09-07",
+    "verified_at": "2026-09-16",
     "program_scope_verified": true,
     "review_cadence_verified": true,
     "official_google_form_link_verified": true,
     "model_and_pricing_snapshot_verified": true,
     "final_submission_copy_ready": true,
-    "form_fields_verified": false
+    "public_form_fields_observed": true,
+    "form_fields_verified": false,
+    "currently_active_google_account_is_not_preferred_academic_account": true
   },
-  "human_required": ["login", "eligibility_attestation", "terms_acceptance", "final_submit"]
+  "human_required": ["switch_to_preferred_academic_google_account", "anthropic_console_organization_id", "eligibility_attestation", "terms_acceptance", "final_submit"]
 }

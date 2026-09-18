@@ -1,0 +1,127 @@
+{
+  "schema": "blowback.applicant_document_readiness.v1",
+  "as_of": "2026-09-12",
+  "privacy": {
+    "documents_embedded": false,
+    "note": "This authority records only readiness state. It does not copy applicant documents or secrets into the repository."
+  },
+  "audit_scope": {
+    "searched": [
+      "gauntlet-blowback",
+      "the adjacent project_portfolio workspace, by document-like filenames",
+      "the located Yuan Ze University enrolment certificate dated 19 January 2026"
+    ],
+    "not_searched": [
+      "email attachments",
+      "cloud drives",
+      "external application portals",
+      "unmounted devices"
+    ],
+    "missing_definition": "NOT_FOUND_IN_SCOPED_SEARCH means unverified for execution, not proof that the applicant does not possess the document elsewhere."
+  },
+  "policy": {
+    "phd_automatic_queue": "HOLD_UNTIL_USER_REOPENS_AND_ROUTE_DOCUMENT_SET_IS_VERIFIED",
+    "reason": "The applicant is not currently pursuing PhD applications and the required personal-document sets are not verified.",
+    "automatic_queue_excluded_routes": [
+      "job-hku-ai-engineer-mcp-ra2-2026",
+      "job-hku-ai-agents-aec-ra-2026",
+      "predoc-mit-futuretech-ai-econ-2026",
+      "shih-hsin-finance-2026-il"
+    ],
+    "automatic_queue_excluded_assets": [
+      "nocturnal-oversight"
+    ],
+    "automatic_queue_exclusion_note": "Named routes remain available for explicit audit/history but do not consume the automatic execution queue while the applicant has paused them. MIT FutureTech is excluded because the applicant explicitly declined Cambridge relocation and does not hold current U.S. work authorization.",
+    "named_route_audit_allowed": true,
+    "automatic_drafting_allowed": true,
+    "drafting_boundary": "Evidence-bounded CVs, letters, essays, proposals and research lists may be generated without treating them as submission authority. Formal records, eligibility facts, personal commitments and protected portal actions remain gated."
+  },
+  "independent_review": {
+    "reviewed_at": "2026-09-12",
+    "channel": "Logged-in ChatGPT browser session with live official-source checks",
+    "scope": "Eight generated documents, official route requirements, document limits, factual consistency, evidence boundaries, and non-generatable gates",
+    "release_decision": "DO_NOT_RELEASE_UNCHANGED",
+    "route_summary": {
+      "fellowship-era-ai-winter-2027": "Applicant-only writing required because the live form prohibits LLM or AI assistance and requires a no-AI attestation; two referees and an additional 800-character answer are also required.",
+      "job-hku-ai-engineer-mcp-ra2-2026": "Eligibility and exact-stack fit remain materially uncertain; use the CV as the primary application record and do not upload an unsolicited deficiency matrix.",
+      "phd-vu-social-data": "Document count and length are ready, but the advertised completed research-master requirement is not established.",
+      "phd-vu-atlantis": "Cover letter and CV exist, but transcripts, a designated writing sample, two referees, degree timing, and documented ML/fairness/XAI evidence remain unresolved.",
+      "phd-nhh-finance": "Strongest substantive route; written core is within limits, while formal academic records and test or waiver evidence remain unresolved."
+    },
+    "global_corrections": [
+      "Use the exact Master of Science in Finance and Accounting title verified from the located enrolment certificate.",
+      "Describe SSRN items as working papers unless journal-review receipts are located.",
+      "Keep the public SSRN $192 billion title distinct from the corrected approximately $170 billion working-manuscript estimate.",
+      "Disclose that the current energy-paper claim audit narrows the broader interpretation still visible in the public preprint."
+    ]
+  },
+  "inventory": [
+    {
+      "document": "current_cv",
+      "status": "GENERATED_REVIEW_REQUIRED",
+      "evidence": "A refreshed two-page editable CV was generated from the 2026-04-20 CV, the canonical applicant profile, the located enrolment certificate, and current bounded portfolio evidence. Publication-status and SSRN provenance wording were corrected after independent review.",
+      "artifact": "output/application-documents-2026-09-12/Christopher_Ongko_CV_2026-09.docx",
+      "execution_rule": "Applicant must verify identity/contact details and designate this or another canonical CV before upload."
+    },
+    {
+      "document": "bachelor_degree_certificate_and_current_master_records",
+      "status": "PARTIAL_STALE_RECORD_FOUND",
+      "evidence": "A Yuan Ze University enrolment certificate dated 19 January 2026 verifies enrolment in the Master of Science in Finance and Accounting, but its printed validity expired on 18 February 2026. A fresh enrolment certificate, current transcript, and bachelor degree record remain unverified for execution."
+    },
+    {
+      "document": "academic_transcripts_and_grading_scale",
+      "status": "NOT_FOUND_IN_SCOPED_SEARCH"
+    },
+    {
+      "document": "gmat_or_gre_score_or_exemption_evidence",
+      "status": "NOT_FOUND_IN_SCOPED_SEARCH"
+    },
+    {
+      "document": "english_proficiency_score_or_exemption_evidence",
+      "status": "NOT_FOUND_IN_SCOPED_SEARCH"
+    },
+    {
+      "document": "referee_names_and_contact_details",
+      "status": "NOT_FOUND_IN_SCOPED_SEARCH"
+    },
+    {
+      "document": "designated_academic_writing_sample",
+      "status": "CANDIDATES_EXIST_NOT_DESIGNATED_OR_AUDITED",
+      "evidence": "Research manuscripts exist in adjacent portfolio worktrees, but no applicant-authorized writing sample is designated here."
+    },
+    {
+      "document": "route_specific_statement_or_cover_letter",
+      "status": "GENERATED_REVIEW_REQUIRED",
+      "evidence": "Evidence-bounded editable cover-letter packets were generated for HKU Ref. 537095, VU Social Data Science, and the VU ATLANTIS computational track. The HKU packet was simplified to a one-page cover note after independent review.",
+      "artifacts": [
+        "output/application-documents-2026-09-12/HKU_AI_Engineer_RAII_Application_Packet.docx",
+        "output/application-documents-2026-09-12/VU_Social_Data_Science_Application_Letter.docx",
+        "output/application-documents-2026-09-12/VU_ATLANTIS_Computational_Track_Cover_Letter.docx"
+      ]
+    },
+    {
+      "document": "era_ai_route_compliance_checklist",
+      "status": "INTERNAL_ONLY_NOT_SUBMISSION_COPY",
+      "evidence": "The live ERA:AI form requires a no-LLM/no-AI-use attestation, two referees, and a Technical AI Governance conditional answer. The former response bank was replaced with a compliance checklist and must not be used as application prose.",
+      "artifact": "output/application-documents-2026-09-12/ERA_AI_Winter_2027_Response_Bank.docx",
+      "execution_rule": "Do not draft, rewrite, compress, paste, or submit ERA application answers through the Gauntlet. The applicant must independently author them and truthfully resolve the attestation."
+    },
+    {
+      "document": "nhh_tentative_research_proposal_2000_4000_words",
+      "status": "GENERATED_REVIEW_REQUIRED",
+      "evidence": "A 2,000–4,000-word tentative empirical-finance proposal was generated with explicit falsification and claim boundaries, then revised to remove a presumptive publishability claim.",
+      "artifact": "output/application-documents-2026-09-12/NHH_Finance_Tentative_Research_Proposal.docx"
+    },
+    {
+      "document": "nhh_statement_of_purpose_250_300_words",
+      "status": "GENERATED_REVIEW_REQUIRED",
+      "evidence": "A 252-word statement of purpose was generated.",
+      "artifact": "output/application-documents-2026-09-12/NHH_Finance_Statement_of_Purpose.docx"
+    },
+    {
+      "document": "nhh_publications_and_research_activities_list",
+      "status": "GENERATED_REVIEW_REQUIRED",
+      "artifact": "output/application-documents-2026-09-12/NHH_Publications_and_Research_Activities.docx"
+    }
+  ]
+}

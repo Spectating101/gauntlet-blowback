@@ -203,6 +203,68 @@
       "closed_markers": [],
       "eligibility_text": ["Project must satisfy Open Source Collective verification criteria; current host fee is stated on the source page."],
       "funding": {"currency": null, "amount": null}
+    },
+    {
+      "id": "openai-teen-development-2026",
+      "source": "openai",
+      "source_id": "teen-development-research-grants-2026",
+      "type": "grant",
+      "title": "OpenAI research grants on AI and teen development",
+      "organization": "OpenAI",
+      "url": "https://openai.com/index/teen-development-research-grants/",
+      "summary": "Global research call on generative AI and adolescent development, with strong scientific, ethics and safeguarding requirements.",
+      "deadline": "2026-10-06",
+      "tags": ["AI impacts", "adolescents", "wellbeing", "HCI", "safeguarding", "research"],
+      "open_markers": ["October 6, 2026", "$1 million", "teen development"],
+      "closed_markers": ["submissions are closed"],
+      "eligibility_text": ["Applicant must be 18 or older and have relevant organizational affiliation and/or significant subject expertise. Research involving minors requires credible ethics and safeguarding capacity."],
+      "funding": {"currency": "USD", "project_ceiling": 1000000, "program_total": 5000000}
+    },
+    {
+      "id": "anthropic-wellbeing-evaluations-2026",
+      "source": "anthropic",
+      "source_id": "wellbeing-research-grants-2026",
+      "type": "grant",
+      "title": "Anthropic wellbeing evaluation research grants",
+      "organization": "Anthropic",
+      "url": "https://www.anthropic.com/news/wellbeing-research-grants",
+      "summary": "Independent funding, model access and technical support for open-source evaluations of AI's effects on user wellbeing.",
+      "deadline": "2026-09-21",
+      "tags": ["AI wellbeing", "evaluation", "open source", "clinical experts", "benchmarks"],
+      "open_markers": ["September 21", "$5 million", "wellbeing"],
+      "closed_markers": ["applications are closed"],
+      "eligibility_text": ["Strong proposals involve clinical and subject-matter experts in design and validation and validate graders against real experts."],
+      "funding": {"currency": "USD", "program_total": 5000000}
+    },
+    {
+      "id": "anthropic-third-party-evaluations",
+      "source": "anthropic",
+      "source_id": "third-party-model-evaluations",
+      "type": "grant",
+      "title": "Anthropic third-party model evaluation initiative",
+      "organization": "Anthropic",
+      "url": "https://www.anthropic.com/news/a-new-initiative-for-developing-third-party-model-evaluations",
+      "summary": "Rolling, flexible funding for safety-relevant evaluations and evaluation infrastructure; application-form liveness must be reverified.",
+      "tags": ["AI evaluation", "model autonomy", "AI safety", "evaluation infrastructure", "research funding"],
+      "open_markers": ["rolling basis", "funding options", "submit a proposal"],
+      "closed_markers": ["applications are closed"],
+      "eligibility_text": ["Reverify the linked application form before promotion. Proposal must define a real evaluation, metrics, data, model access and deliverables; existing software alone is not external evaluation evidence."],
+      "funding": {"currency": "USD", "amount": null}
+    },
+    {
+      "id": "anthropic-economic-futures-fund-2026",
+      "source": "anthropic",
+      "source_id": "economic-futures-research-fund-2026",
+      "type": "grant",
+      "title": "Anthropic Economic Futures Research Fund",
+      "organization": "Anthropic",
+      "url": "https://www.anthropic.com/news/economic-futures-research-fund-agenda",
+      "summary": "Large institutional fund for scaled field experiments and interventions addressing AI's economic impacts.",
+      "tags": ["AI economics", "policy", "field experiments", "institutional grant"],
+      "open_markers": ["$200 million", "$5-30 million", "apply"],
+      "closed_markers": ["applications are closed"],
+      "eligibility_text": ["No direct grants below US$1 million; individuals may only serve as PIs on proposals submitted by eligible institutions or organizations."],
+      "funding": {"currency": "USD", "program_total": 200000000, "direct_minimum": 1000000, "typical_floor": 5000000, "typical_ceiling": 30000000}
     }
   ]
 }

@@ -468,10 +468,10 @@
       "id": "ssi-fellowship-2027-policy-lab",
       "assets": "Policy Lab|Citation Engine|Cite|Research Drive|Refinery|Commons",
       "contribution_view": "Research-software sustainability, provenance and evidence infrastructure",
-      "status": "FIRE",
-      "execution_state": "APPLICATION_READY",
-      "gate": "G2 international contribution case + six-minute screencast + final application. £4,000 is a restricted activity budget, not salary; count only actual displaced research/community spend.",
-      "reason": "Deep research showed Citation Engine/Research Drive/Refinery/Commons are stronger direct SSI evidence than Policy Lab alone."
+      "status": "HOLD_SCREENCAST_RECORDING",
+      "execution_state": "PORTAL_MAPPED",
+      "gate": "Application copy and revised narration are ready. Correct the deck budget because CW27 travel is provided separately; then the applicant must record and host the six-minute-maximum screencast before this route can enter FIRE. Personal demographic answers, declarations, and final Submit remain human gates. The £4,000 is a restricted activity budget, not salary.",
+      "reason": "Refinery/Commons remains the strongest direct SSI evidence line. Official criteria, terms, the preview form, and the live Microsoft Form were reverified on 2026-09-17. The remaining dependencies are the corrected deck, recording URL, and applicant-only answers."
     },
     {
       "id": "taia-2026-hardware-splicer",

@@ -1,0 +1,47 @@
+{
+  "schema": "blowback.portfolio_campaign_scope.v1",
+  "effective_date": "2026-09-13",
+  "purpose": "Concentrate submission execution on the user-selected portfolio families without deleting broader radar or registry evidence.",
+  "active_lead_assets": [
+    "research-drive",
+    "policy-lab",
+    "nocturnal-oversight",
+    "hardware-splicer",
+    "public-good-control",
+    "refinery-commons",
+    "research-papers"
+  ],
+  "support_only_assets": [
+    "citation-engine",
+    "gauntlet-blowback"
+  ],
+  "deferred_lead_assets": [
+    "cite-agent",
+    "sharpe-terminus",
+    "geomap-arbitrage"
+  ],
+  "include_shared_entitlements": true,
+  "policy": {
+    "retain_full_registry": true,
+    "filter_execution_queues": true,
+    "support_assets_may_not_consume_standalone_slots": true,
+    "deferred_assets_may_not_lead_automatic_queue_items": true,
+    "exclude_routes_requiring_new_external_prerequisites": true,
+    "external_prerequisite_examples": [
+      "professional or academic references/referees",
+      "recommendation or endorsement letters",
+      "new third-party validation or certification",
+      "teammates, advisers, principal investigators, hosts or partners",
+      "institutional approval, sponsorship or introduced connections"
+    ],
+    "external_review_after_submission_is_allowed": true,
+    "self_owned_accounts_existing_documents_and_final_human_submit_are_not_external_prerequisites": true,
+    "explicit_named_route_lookup_remains_available_for_audit_and_history": true
+  },
+  "aliases": {
+    "CL-ECI": "policy-lab",
+    "Invisible Ledger": "research-papers",
+    "research manuscripts": "research-papers",
+    "Commons": "refinery-commons"
+  }
+}

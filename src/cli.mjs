@@ -6,7 +6,7 @@ import { resolveBundle } from './core/resolve.mjs';
 import { buildPlan } from './core/plan.mjs';
 
 function usage() {
-  console.log(`Blowback v0\n\nCommands:\n  next\n  mission <route-id>\n  fire-next\n  fire <route-id>\n  fire-queue [--limit=N]\n  fire-receipt <receipt.json>\n  apply-next [--submit-if-safe]\n  apply <route-id> [--submit-if-safe]\n  apply-queue [--limit=N] [--submit-if-safe]\n  calendar-queue [--date=YYYY-MM-DD] [--days=N] [--limit=N]\n  readiness-audit [--scope=near_term|all] [--date=YYYY-MM-DD] [--days=N] [--limit=N]\n  account-checkpoint <account.json>\n  checkpoint <checkpoint.json>\n  validate <opportunity>\n  plan <opportunity>\n  recon <opportunity> [--stage=source|registration|submission] [--persist-auth]\n  run <opportunity> [--persist-auth]\n\n\`next\` emits the highest-priority unpaused Codex+Chrome mission and automatically specializes application-like routes.\n\`fire-next\` emits the highest-priority fully packaged immediate FIRE handoff for a browser/repo agent.\n\`fire\` emits one deterministic route handoff containing resolved applicant fields, local paste-ready submission copy, live route URLs, protected gates and the receipt contract.\n\`fire-receipt\` validates and persists a returned browser-agent receipt, then updates the route checkpoint.\n\`apply-next\` emits the highest-priority job/lab/predoc/fellowship/residency application mission.\n\`apply-queue\` emits a bounded portfolio-wide application queue.\n\`calendar-queue\` turns the active calendar into a non-secret account/onboarding and application-preparation queue; Gmail is optional and never authorizes account creation or submission.\n\`readiness-audit\` visits public sources headlessly and reports only observed account/login/public-form gates.\nRecon is observation-only and never promotes a route to prepare. The direct Playwright \`run\` command never performs final submission.`);
+  console.log(`Blowback v0\n\nCommands:\n  internal-status\n  internal-next\n  internal-queue [--limit=N]\n  next\n  mission <route-id>\n  fire-next\n  fire <route-id>\n  fire-queue [--limit=N]\n  fire-receipt <receipt.json>\n  apply-next [--submit-if-safe]\n  apply <route-id> [--submit-if-safe]\n  apply-queue [--limit=N] [--submit-if-safe]\n  calendar-queue [--date=YYYY-MM-DD] [--days=N] [--limit=N]\n  readiness-audit [--scope=near_term|all] [--date=YYYY-MM-DD] [--days=N] [--limit=N]\n  account-checkpoint <account.json>\n  checkpoint <checkpoint.json>\n  validate <opportunity>\n  plan <opportunity>\n  recon <opportunity> [--stage=source|registration|submission] [--persist-auth]\n  run <opportunity> [--persist-auth]\n\n\`internal-status\`, \`internal-next\` and \`internal-queue\` expose bounded portfolio-development work and explicitly disable all external execution.\n\`next\` emits the highest-priority unpaused Codex+Chrome mission and automatically specializes application-like routes.\n\`fire-next\` emits the highest-priority fully packaged immediate FIRE handoff for a browser/repo agent.\n\`fire\` emits one deterministic route handoff containing resolved applicant fields, local paste-ready submission copy, live route URLs, protected gates and the receipt contract.\n\`fire-receipt\` validates and persists a returned browser-agent receipt, then updates the route checkpoint.\n\`apply-next\` emits the highest-priority job/lab/predoc/fellowship/residency application mission.\n\`apply-queue\` emits a bounded portfolio-wide application queue.\n\`calendar-queue\` turns the active calendar into a non-secret account/onboarding and application-preparation queue; Gmail is optional and never authorizes account creation or submission.\n\`readiness-audit\` visits public sources headlessly and reports only observed account/login/public-form gates.\nRecon is observation-only and never promotes a route to prepare. The direct Playwright \`run\` command never performs final submission.`);
 }
 
 const [command, filePath, ...rest] = process.argv.slice(2);
@@ -17,6 +17,7 @@ function runtimeApplicationOptions(args = []) {
   const parsedLimit = limitArg ? Number(limitArg.slice('--limit='.length)) : 10;
   return {
     submitIfSafe: args.includes('--submit-if-safe'),
+    campaignScope: true,
     limit: Number.isFinite(parsedLimit) && parsedLimit > 0 ? Math.floor(parsedLimit) : 10
   };
 }
@@ -24,12 +25,33 @@ function runtimeApplicationOptions(args = []) {
 function runtimeFireOptions(args = []) {
   const limitArg = args.find((arg) => arg.startsWith('--limit='));
   const parsedLimit = limitArg ? Number(limitArg.slice('--limit='.length)) : 10;
-  return { limit: Number.isFinite(parsedLimit) && parsedLimit > 0 ? Math.floor(parsedLimit) : 10 };
+  return { limit: Number.isFinite(parsedLimit) && parsedLimit > 0 ? Math.floor(parsedLimit) : 10, campaignScope: true };
+}
+
+if (command === 'internal-status') {
+  const { internalQuestStatus } = await import('./main-quest/internal.mjs');
+  console.log(JSON.stringify(internalQuestStatus(), null, 2));
+  process.exit(0);
+}
+
+if (command === 'internal-next') {
+  const { nextInternalBuild } = await import('./main-quest/internal.mjs');
+  console.log(JSON.stringify(nextInternalBuild(), null, 2));
+  process.exit(0);
+}
+
+if (command === 'internal-queue') {
+  const args = [filePath, ...rest].filter(Boolean);
+  const limitArg = args.filter((arg) => arg.startsWith('--limit=')).at(-1);
+  const limit = limitArg ? Number(limitArg.slice('--limit='.length)) : 20;
+  const { internalBuildQueue } = await import('./main-quest/internal.mjs');
+  console.log(JSON.stringify(internalBuildQueue({ limit }), null, 2));
+  process.exit(0);
 }
 
 if (command === 'next') {
   const { nextBrowserMission } = await import('./mission/operator.mjs');
-  const mission = nextBrowserMission();
+  const mission = nextBrowserMission(undefined, { campaignScope: true });
   if (!mission) {
     console.log(JSON.stringify({ schema: 'blowback.codex_browser_mission.v1', mission: null, reason: 'no actionable unpaused routes' }, null, 2));
     process.exit(0);
@@ -51,7 +73,7 @@ if (command === 'mission') {
 
 if (command === 'fire-next') {
   const { nextFireHandoff } = await import('./application/fire.mjs');
-  const handoff = await nextFireHandoff();
+  const handoff = await nextFireHandoff(undefined, { campaignScope: true });
   console.log(JSON.stringify(handoff ?? { schema: 'blowback.fire_handoff.v1', handoff: null, reason: 'no executable immediate FIRE routes' }, null, 2));
   process.exit(0);
 }
@@ -89,6 +111,7 @@ if (command === 'calendar-queue') {
     today: take('--date', new Date()),
     days: Number(take('--days', 21)),
     limit: Number(take('--limit', 30)),
+    campaignScope: true,
   }), null, 2));
   process.exit(0);
 }
@@ -113,6 +136,7 @@ if (command === 'readiness-audit') {
     days: Number(take('--days', 35)),
     limit: Number(take('--limit', 30)),
     scope: take('--scope', 'near_term'),
+    campaignScope: true,
   }), null, 2));
   process.exit(0);
 }

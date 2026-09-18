@@ -1,0 +1,134 @@
+{
+  "schema": "blowback.asset_conversion_campaign.v1",
+  "generated_at": "2026-09-16T00:00:00+08:00",
+  "asset_id": "hardware-splicer",
+  "objective": "Convert the frozen Hardware-Splicer engineering candidate into truthful research-resource, research-preview, publication and competition options without claiming physical validation.",
+  "authority": {
+    "branch": "main",
+    "commit": "f892facd67c5124e2362860ebc999625afedc5d5",
+    "tag": "gauntlet-spi-flash-adapter-v1-20260916",
+    "release_url": "https://github.com/Spectating101/hardware-splicer/releases/tag/gauntlet-spi-flash-adapter-v1-20260916",
+    "artifact": "spi-flash-adapter-v1-remote-fct-main-f892fac.zip",
+    "sha256": "6d4c76feaeebdab1223ed6c4be21d63835212baea731aea9d3933f2525be1edd"
+  },
+  "claim_boundary": {
+    "supported": [
+      "Canonical software and manufacturing package are frozen and reproducible.",
+      "Schematic, PCB outputs, BOM, placement, drawings and acceptance/FCT procedure are packaged.",
+      "Repository CI and deterministic package integrity are internally verified."
+    ],
+    "unsupported": [
+      "Physical fabrication has occurred.",
+      "The adapter is physically correct or production-ready.",
+      "An external evaluator, manufacturer or independent operator has validated the candidate."
+    ]
+  },
+  "route_matrix": [
+    {
+      "route_id": "openai-researcher-access-hardware-splicer",
+      "campaign": "RESOURCE_ACQUISITION",
+      "posture": "PREPARE_TO_HUMAN_AUTH_GATE",
+      "readiness": "PACKET_READY_PORTAL_LOGIN_REQUIRED",
+      "fit": "HIGH",
+      "official_source": "https://grants.openai.com/prog/openai_researcher_access_program/",
+      "benefit": "Up to USD 1,000 in OpenAI API credits for a bounded tool-using-agent control evaluation.",
+      "remaining": [
+        "Log in or register on SurveyMonkey Apply with the intended academic identity.",
+        "Map the authenticated application fields and current character limits.",
+        "Reprice the experiment from a small pilot immediately before submission.",
+        "Human eligibility attestation, terms acceptance and final submit."
+      ]
+    },
+    {
+      "route_id": "anthropic-external-researcher-access-2026",
+      "campaign": "RESOURCE_ACQUISITION",
+      "posture": "PREPARE_TO_ACCOUNT_GATE",
+      "readiness": "LIVE_FORM_MAPPED_ACCOUNT_DATA_REQUIRED",
+      "fit": "HIGH",
+      "official_source": "https://support.anthropic.com/en/articles/9125743-what-is-the-external-researcher-access-program",
+      "benefit": "USD 1,000 in Claude API credits for high-priority safety and alignment research.",
+      "remaining": [
+        "Use the preferred academic Google account rather than the currently active personal account.",
+        "Create or identify the Anthropic Console organization and provide its organization ID.",
+        "Compress the prepared applicant description to under 200 words and research request to under 300 words.",
+        "Human terms acceptance and final submit."
+      ]
+    },
+    {
+      "route_id": "anthropic-mhs-preview-2026",
+      "campaign": "RESEARCH_PREVIEW",
+      "posture": "HOLD_PHYSICAL_DEVICE_GATE",
+      "readiness": "LIVE_FORM_MAPPED_DEVICE_WORKFLOW_UNRESOLVED",
+      "fit": "VERY_HIGH_CONCEPTUAL",
+      "official_source": "https://www.modelhardwarestandard.com/",
+      "benefit": "Research-preview access to a standard for AI agents operating physical equipment.",
+      "remaining": [
+        "Name a real programmable device, interface, location and access plan.",
+        "State a truthful start window.",
+        "Describe a concrete MHS device workflow and success condition.",
+        "Use the preferred academic Google account and obtain human final-submit approval."
+      ],
+      "note": "Academic/research institutions and independent researchers are selectable applicant classes; an adviser is not required by the live form. The blocker is credible physical-device access, not applicant class."
+    },
+    {
+      "route_id": "date-2027-lbr-hardware-splicer",
+      "campaign": "PUBLICATION",
+      "posture": "PREPARE_PAPER_HOLD_COST_GATE",
+      "readiness": "FROZEN_SYSTEM_READY_RESEARCH_ARGUMENT_NEEDED",
+      "fit": "HIGH",
+      "deadline": "2026-11-29T23:59:59-12:00",
+      "official_source": "https://www.date-conference.com/call-for-papers",
+      "remaining": [
+        "Write a blind two-page LBR extended abstract with at most one references-only page.",
+        "Frame internal evidence as viability evidence without implying physical validation.",
+        "Before submission, decide whether a full author registration and in-person presentation in Dresden are financially executable if accepted."
+      ]
+    },
+    {
+      "route_id": "innoserve-2026-hs-industrial-ai",
+      "campaign": "COMPETITION",
+      "posture": "KILL_EXTERNAL_DEPENDENCY",
+      "readiness": "BLOCKED_BY_ADVISER_REQUIREMENT",
+      "fit": "HIGH",
+      "deadline": "2026-10-05T16:00:00+08:00",
+      "official_source": "https://innoserve.tca.org.tw/Rules/Detail?category=College",
+      "blocking_dependency": "Official rules require one or two school advisers for each student team."
+    },
+    {
+      "route_id": "smartliving-creative-2026",
+      "campaign": "COMPETITION",
+      "posture": "HOLD_FIT_AND_PACKAGE",
+      "readiness": "SOLO_ELIGIBLE_BUT_NOT_HS_NATIVE",
+      "fit": "LOW_TO_MEDIUM",
+      "deadline": "2026-09-18",
+      "official_source": "https://www.zhongli-hro.tycg.gov.tw/News_Content.aspx?n=12503&s=1798692&sms=15252",
+      "remaining": [
+        "A genuine smart-building application concept rather than a renamed SPI adapter.",
+        "Human-signed competition agreement.",
+        "A1 physical poster, 1,500-word design book and editable design-source files.",
+        "Human decision that the two-day packaging effort is worth the weak asset-route fit."
+      ]
+    }
+  ],
+  "non_application_evidence_routes": [
+    {
+      "id": "independent-ee-review",
+      "posture": "OPTIONAL_HOLD",
+      "packet": "out/provider-handoff/INDEPENDENT_EE_REVIEW_PACKET-f892fac.zip",
+      "reason": "Would create external evidence, but requires an external reviewer and is not necessary to establish the frozen software/package boundary."
+    },
+    {
+      "id": "pcbway-quotation-or-fabrication",
+      "posture": "OPTIONAL_HOLD",
+      "packet": "out/provider-handoff/PCBWAY_QUOTATION_PACKET-f892fac.zip",
+      "reason": "Would advance fabrication/physical validation, but requires an external provider and potentially payment or purchase authorization."
+    }
+  ],
+  "next_actions": [
+    "Reconcile the three live research-resource/research-preview manifests to the frozen release and observed portal fields.",
+    "Prepare OpenAI and Anthropic field-limited copy without logging in, agreeing to terms or submitting.",
+    "Keep MHS on hold until a truthful programmable-device access plan exists.",
+    "Prepare the DATE LBR research argument separately from the fabrication candidate; preserve PACKAGED_NOT_PHYSICAL throughout.",
+    "Do not spend packaging effort on adviser/team/fee-gated competitions unless their blocking dependency changes."
+  ]
+}

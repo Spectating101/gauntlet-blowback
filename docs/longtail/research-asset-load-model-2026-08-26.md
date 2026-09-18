@@ -20,7 +20,7 @@ Purpose: convert the stronger current IL / CL / ECI / CL-ECI assets without turn
 | Aug 26–31 | GRASFI-Asia readiness check + submit | ECI | G2 manuscript | 1–3 h if paper already exists; otherwise >8 h | **FIRE only under low-marginal-work case; otherwise KILL this cycle** |
 | Aug 26–Sep 3 | Tax Academy mechanics | IL | G1 verification | <1 h | **VERIFY first; no full proposal yet** |
 | Sep 3 | NLnet live-call gate | CL-ECI | G1/G5 verification | <1 h | **HARD FIRE/KILL after live guide** |
-| Sep 1–17 | Financial Cryptography short paper | CL-ECI | G2 deep manuscript | primary deep-work block | **PROTECT THIS LANE** |
+| Sep 1–24 | Financial Cryptography short paper | CL-ECI | G2 deep manuscript | primary deep-work block | **PROTECT THIS LANE**; official CFP deadline extended to 24 Sep 2026, 23:59 AoE |
 | Sep 8–17 | Shih Hsin abstract | IL | G2 packaging | ~0.5–1 h | **CHEAP FIRE if no conflict** |
 | Sep 8–18 | Chunghwa eligibility/team check | CL-ECI/ECI | G1/G5 | <0.5 h before gate; 3–6 h only after pass | **NO PREP BEFORE TEAM GATE** |
 | Sep 18–28 | NTUB FinTech rule check / proposal | CL-ECI | G1 then G2 | <0.5 h verify; 2–5 h if eligible | **CONDITIONAL FIRE** |

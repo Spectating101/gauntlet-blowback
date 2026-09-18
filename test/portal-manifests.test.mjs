@@ -10,6 +10,7 @@ const liveReconManifests = [
   'examples/opportunities/taia-ai-creative-design-2026.json',
   'examples/opportunities/global-ai-finance-2026-policy-lab.json',
   'examples/opportunities/innoserve-2026-hardware-splicer.json',
+  'examples/opportunities/embedded-world-2027-hardware-splicer.json',
   'examples/opportunities/aws-community-day-taiwan-2026-hardware-splicer.json',
   'examples/opportunities/openai-researcher-access-hardware-splicer.json',
   'examples/opportunities/anthropic-external-researcher-access-hardware-splicer.json'
@@ -100,4 +101,85 @@ test('Anthropic ERAP manifest uses the application linked by the official help p
   assert.equal(opportunity.route_evidence.official_google_form_link_verified, true);
   assert.equal(opportunity.route_evidence.final_submission_copy_ready, true);
   assert.equal(opportunity.route_evidence.form_fields_verified, false);
+});
+
+test('TAAI packet is ready while live OpenReview mapping and final submit remain gated', async () => {
+  const opportunity = await loadOpportunity('examples/opportunities/taai-2026-domestic-hardware-splicer.json');
+  const validation = validateOpportunity(opportunity);
+  assert.equal(validation.ok, true, validation.errors.join('\n'));
+  assert.equal(opportunity.id, 'taai-2026-domestic-hardware-splicer');
+  assert.equal(opportunity.execution_state, 'PACKET_READY');
+  assert.equal(opportunity.mode, 'inspect');
+  assert.equal(opportunity.submission_url, 'https://openreview.net/group?id=TAAI.org/2026/Conference');
+  assert.equal(opportunity.uploads[0].name, 'paper_pdf');
+  assert.match(opportunity.uploads[0].path, /Hardware_Splicer_TAAI_2026_Extended_Abstract\.pdf$/);
+  assert.equal(opportunity.route_evidence.submission_pdf_ready, true);
+  assert.equal(opportunity.route_evidence.final_submission_copy_ready, true);
+  assert.equal(opportunity.fire_packet, '../fire-packets/taai-2026-domestic-hardware-splicer.json');
+  assert.equal(opportunity.route_evidence.live_openreview_fields_verified, false);
+  assert.ok(opportunity.human_required.includes('final_submit'));
+});
+
+test('SSI fellowship package carries the corrected deck while recording remains human-gated', async () => {
+  const opportunity = await loadOpportunity('examples/opportunities/ssi-fellowship-2027-refinery-commons.json');
+  const validation = validateOpportunity(opportunity);
+  assert.equal(validation.ok, true, validation.errors.join('\n'));
+  assert.equal(opportunity.submission_url, 'https://forms.cloud.microsoft/e/pJdGh0rRSx');
+  assert.equal(opportunity.route_evidence.official_application_reverified, '2026-09-17');
+  assert.equal(opportunity.route_evidence.live_form_reverified, '2026-09-17');
+  assert.equal(opportunity.route_evidence.screencast_max_seconds, 360);
+  assert.equal(opportunity.route_evidence.editable_screencast_deck_ready, true);
+  assert.equal(opportunity.route_evidence.screencast_deck_blocker, null);
+  assert.equal(
+    opportunity.packet_requirements.find((item) => item.id === 'screencast_deck').status,
+    'PACKET_READY',
+  );
+  assert.match(
+    opportunity.packet_requirements.find((item) => item.id === 'screencast_deck').canonical_ref,
+    /Screencast_Final\.pptx$/,
+  );
+  assert.ok(opportunity.human_required.includes('record_and_host_screencast'));
+  assert.ok(opportunity.human_required.includes('final_submit'));
+});
+
+test('Embedded World packet fits public limits and remains blocked at account and commitment gates', async () => {
+  const opportunity = await loadOpportunity('examples/opportunities/embedded-world-2027-hardware-splicer.json');
+  const validation = validateOpportunity(opportunity);
+  assert.equal(validation.ok, true, validation.errors.join('\n'));
+  assert.equal(opportunity.deadline, '2026-09-28');
+  assert.equal(opportunity.recon_stage, 'submission');
+  assert.equal(opportunity.route_evidence.login_form_observed, true);
+  assert.equal(opportunity.route_evidence.captcha_observed, false);
+  assert.equal(opportunity.route_evidence.account_created, false);
+  assert.equal(opportunity.route_evidence.authenticated_form_mapped, false);
+  assert.equal(opportunity.fields.abstract.length, 1074);
+  assert.ok(opportunity.fields.abstract.length <= opportunity.route_evidence.abstract_limit_characters);
+  assert.equal(opportunity.fields.presenter_cv.length, 243);
+  assert.ok(opportunity.fields.presenter_cv.length <= opportunity.route_evidence.presenter_cv_limit_characters);
+  assert.equal(
+    opportunity.packet_requirements.find((item) => item.id === 'conversion_package').status,
+    'WAITING_CANONICAL_PROMOTION',
+  );
+  assert.ok(opportunity.human_required.includes('eligibility_attestation'));
+  assert.ok(opportunity.human_required.includes('terms_acceptance'));
+  assert.ok(opportunity.human_required.includes('final_submit'));
+});
+
+test('DPG route maps only evidence-backed first-page fields and preserves attestation gates', async () => {
+  const opportunity = await loadOpportunity('examples/opportunities/dpg-policy-lab.json');
+  const validation = validateOpportunity(opportunity);
+  assert.equal(validation.ok, true, validation.errors.join('\n'));
+  assert.equal(opportunity.execution_state, 'PORTAL_RECON_REQUIRED');
+  assert.equal(opportunity.recon_stage, 'submission');
+  assert.equal(opportunity.fields.solution_category, 'Open Software');
+  assert.equal(opportunity.field_map.solution_category.action, 'select');
+  assert.equal(opportunity.route_evidence.first_questionnaire_page_mapped, true);
+  assert.equal(opportunity.route_evidence.remaining_questionnaire_sections_mapped, false);
+  assert.equal(opportunity.route_evidence.public_email_unresolved, true);
+  assert.equal(opportunity.route_evidence.canonical_ci_green, false);
+  assert.equal(opportunity.route_evidence.legal_attestations_confirmed, false);
+  assert.equal(opportunity.route_evidence.final_submit_authorized, false);
+  assert.ok(!Object.hasOwn(opportunity.fields, 'public_email'));
+  assert.ok(opportunity.human_required.includes('terms_acceptance'));
+  assert.ok(opportunity.human_required.includes('final_submit'));
 });

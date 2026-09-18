@@ -48,6 +48,11 @@ export function classifySourceQuality(urlValue, policy = {}) {
 
 export function inferOpportunityType(value) {
   const text = String(value ?? '').normalize('NFKC').toLowerCase();
+  if (/api credits?|compute credits?|cloud credits?|research access/.test(text)) return 'research_credit';
+  if (/call for papers?|\bcfp\b|paper submissions?|workshop proposals?/.test(text)) return 'research_publication';
+  if (/challenge prize|innovation challenge|hackathon|competition/.test(text)) return 'competition';
+  if (/request for proposals?|\brfp\b|call for proposals?/.test(text)) return 'call_for_proposals';
+  if (/research preview|early access|waitlist/.test(text)) return 'research_preview';
   if (/predoc|predoctoral|博士前/.test(text)) return 'predoc';
   if (/research residency|research resident|residency/.test(text)) return 'research_residency';
   if (/policy fellowship|policy fellow/.test(text)) return 'policy_fellowship';
@@ -56,7 +61,7 @@ export function inferOpportunityType(value) {
   if (/research officer|research professional|technical associate|project researcher|project staff|研究專員|計畫助理/.test(text)) return 'research_staff';
   if (/research assistant|student ra|research associate|研究助理|專任研究助理|兼任研究助理/.test(text)) return 'research_assistant';
   if (/join us|open positions|recruiting students|招募|徵才/.test(text)) return 'faculty_pull';
-  if (/grant|funding|award/.test(text)) return 'grant';
+  if (/grant|funding|fund\b|award/.test(text)) return 'grant';
   return 'fellowship';
 }
 

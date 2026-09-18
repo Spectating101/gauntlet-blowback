@@ -1,0 +1,4113 @@
+{
+  "schema": "blowback.calendar_project_allocation.v1",
+  "as_of": "2026-09-12",
+  "grain": "One source VEVENT definition per row; recurrence rules are not expanded.",
+  "scoring": {
+    "purpose": "Choose the strongest selected portfolio lead for each calendar event.",
+    "weights": {
+      "capability_fit": 0.52,
+      "asset_maturity": 0.28,
+      "route_readiness": 0.2
+    },
+    "warning": "Scores rank the portfolio internally. They are not acceptance probabilities and do not supersede eligibility, source verification, evidence or human gates."
+  },
+  "source_files": [
+    "calendar/gauntlet-consolidated-active-2026-2027.ics",
+    "calendar/gauntlet-consolidated-rolling-watch-2026-2027.ics",
+    "docs/gauntlet-master.json",
+    "data/portfolio-assets.json",
+    "data/portfolio-route-allocation-2026-09-01.json",
+    "data/portfolio-campaign-scope-2026-09-12.json",
+    "data/applicant-document-readiness-2026-09-12.json"
+  ],
+  "count": 96,
+  "allocations": [
+    {
+      "calendar_uid": "postgrad-job-kickoff-20260901@blowback",
+      "event_key": "postgrad-job-kickoff",
+      "date": "2026-09-01",
+      "recurrence": null,
+      "summary": "[NOW] Upper-tail employment campaign active",
+      "event_kind": "PORTFOLIO_OPERATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "BATCH_BY_ROUTE",
+      "recommended_lead_asset": null,
+      "relative_win_band": "UNASSESSED",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": null,
+      "score_components": null,
+      "alternatives": [
+        {
+          "asset_id": "hardware-splicer",
+          "score": 57,
+          "capability_fit": 65,
+          "maturity": 57,
+          "route_readiness": 35
+        },
+        {
+          "asset_id": "research-drive",
+          "score": 54,
+          "capability_fit": 55,
+          "maturity": 67,
+          "route_readiness": 35
+        }
+      ],
+      "confidence": "NOT_APPLICABLE",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "taiwan-phd-refresh-20260901@blowback",
+      "event_key": "taiwan-phd-refresh",
+      "date": "2026-09-01",
+      "recurrence": "FREQ=MONTHLY;BYMONTHDAY=1,15;UNTIL=20261215",
+      "summary": "[NOW/WATCH] Taiwan 116 PhD call refresh",
+      "event_kind": "PORTFOLIO_OPERATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "BATCH_BY_ROUTE",
+      "recommended_lead_asset": null,
+      "relative_win_band": "UNASSESSED",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": null,
+      "score_components": null,
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 52,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 35
+        }
+      ],
+      "confidence": "NOT_APPLICABLE",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "yzu-semiconductor-final-20260902@blowback",
+      "event_key": "yzu-semiconductor-final",
+      "date": "2026-09-02",
+      "recurrence": null,
+      "summary": "[ACTIVE HOME FIELD] YZU Semiconductor AI Agent final presentation",
+      "event_kind": "FIELD_OR_NETWORK",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "hardware-splicer",
+      "relative_win_band": "LOW_OR_UNPROVEN_FIT",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 54,
+      "score_components": {
+        "capability_fit": 60,
+        "maturity": 57,
+        "route_readiness": 35
+      },
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 52,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 35
+        }
+      ],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "nstc-research-entrepreneurship-20260903@blowback",
+      "event_key": "nstc-research-entrepreneurship",
+      "date": "2026-09-03",
+      "recurrence": null,
+      "summary": "[VERIFY] NSTC Research Entrepreneurship / 科研創業計畫",
+      "event_kind": "REVERIFY_OR_HOLD",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "RESEARCH_OR_BIND_ROUTE_FIRST",
+      "recommended_lead_asset": null,
+      "relative_win_band": "UNASSESSED",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": null,
+      "score_components": null,
+      "alternatives": [],
+      "confidence": "LOW",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "nycu-diligence-20260903@blowback",
+      "event_key": "nycu-diligence",
+      "date": "2026-09-03",
+      "recurrence": "FREQ=WEEKLY;COUNT=4",
+      "summary": "[DUE DILIGENCE] NYCU IAIS commercial/IP terms",
+      "event_kind": "REVERIFY_OR_HOLD",
+      "route_id": "phd-nycu-iais",
+      "route_status": "HIGH_PRIORITY_WATCH",
+      "campaign_included": false,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "hardware-splicer",
+      "relative_win_band": "BLOCKED_OR_LOW",
+      "submission_readiness_label": "PHD_DOCUMENT_HOLD",
+      "ready_for_browser": false,
+      "readiness_work": "Packaging: route-specific PhD packet | Engineering/evidence: UNKNOWN_UNTIL_DOCUMENT_AND_FIT_AUDIT | Documents: route-specific applicant document set is not verified | Gates: user has paused PhD applications; final submit",
+      "readiness_next_action": "Keep out of the automatic application queue until the user reopens PhD applications and the official document set is verified.",
+      "submission_readiness": {
+        "readiness": "PHD_DOCUMENT_HOLD",
+        "ready_for_browser": false,
+        "packaging_required": [
+          "route-specific PhD packet"
+        ],
+        "engineering_required": "UNKNOWN_UNTIL_DOCUMENT_AND_FIT_AUDIT",
+        "documents_missing_or_unverified": [
+          "route-specific applicant document set is not verified"
+        ],
+        "dependency_or_human_gates": [
+          "user has paused PhD applications",
+          "final submit"
+        ],
+        "next_action": "Keep out of the automatic application queue until the user reopens PhD applications and the official document set is verified."
+      },
+      "score": 55,
+      "score_components": {
+        "capability_fit": 67,
+        "maturity": 57,
+        "route_readiness": 20
+      },
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 55,
+          "capability_fit": 62,
+          "maturity": 67,
+          "route_readiness": 20
+        }
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "ai-fire-weekly-20260903@blowback",
+      "event_key": "ai-fire-weekly",
+      "date": "2026-09-03",
+      "recurrence": "FREQ=WEEKLY;BYDAY=TH;UNTIL=20261231",
+      "summary": "[FIRE BATCH] Agent / AI / research-engineering applications",
+      "event_kind": "PORTFOLIO_OPERATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "BATCH_BY_ROUTE",
+      "recommended_lead_asset": null,
+      "relative_win_band": "UNASSESSED",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": null,
+      "score_components": null,
+      "alternatives": [],
+      "confidence": "NOT_APPLICABLE",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "futuremode-20260904@blowback",
+      "event_key": "futuremode",
+      "date": "2026-09-04",
+      "recurrence": null,
+      "summary": "[WATCH/REVERIFY] FUTUREMODE field route",
+      "event_kind": "FIELD_OR_NETWORK",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "RESEARCH_OR_BIND_ROUTE_FIRST",
+      "recommended_lead_asset": null,
+      "relative_win_band": "UNASSESSED",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": null,
+      "score_components": null,
+      "alternatives": [],
+      "confidence": "LOW",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "ethonline-20260904@blowback",
+      "event_key": "ethonline",
+      "date": "2026-09-04",
+      "recurrence": null,
+      "summary": "[HOLD NO FORCE FIT] ETHOnline 2026",
+      "event_kind": "REVERIFY_OR_HOLD",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "policy-lab",
+      "relative_win_band": "BLOCKED_OR_LOW",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 54,
+      "score_components": {
+        "capability_fit": 55,
+        "maturity": 65,
+        "route_readiness": 35
+      },
+      "alternatives": [],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "outcome-ledger-weekly-20260904@blowback",
+      "event_key": "outcome-ledger-weekly",
+      "date": "2026-09-04",
+      "recurrence": "FREQ=WEEKLY;BYDAY=FR;UNTIL=20261225",
+      "summary": "[LEDGER] Update receipts, screens, interviews, offers and awards",
+      "event_kind": "PORTFOLIO_OPERATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "BATCH_BY_ROUTE",
+      "recommended_lead_asset": null,
+      "relative_win_band": "UNASSESSED",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": null,
+      "score_components": null,
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 52,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 35
+        }
+      ],
+      "confidence": "NOT_APPLICABLE",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "mats-winter-20260906@blowback",
+      "event_key": "mats-winter",
+      "date": "2026-09-06",
+      "recurrence": null,
+      "summary": "[FIRE IF FIT] MATS Winter 2027 deadline",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "hardware-splicer",
+      "relative_win_band": "LOW_OR_UNPROVEN_FIT",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 52,
+      "score_components": {
+        "capability_fit": 55,
+        "maturity": 57,
+        "route_readiness": 35
+      },
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 52,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 35
+        },
+        {
+          "asset_id": "policy-lab",
+          "score": 51,
+          "capability_fit": 50,
+          "maturity": 65,
+          "route_readiness": 35
+        }
+      ],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "fas-ai-policy-20260907@blowback",
+      "event_key": "fas-ai-policy",
+      "date": "2026-09-07",
+      "recurrence": null,
+      "summary": "[FIRE IF THESIS CLEARS] FAS AI Safety Policy Fellowship",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "policy-lab",
+      "relative_win_band": "LOW_OR_UNPROVEN_FIT",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 54,
+      "score_components": {
+        "capability_fit": 55,
+        "maturity": 65,
+        "route_readiness": 35
+      },
+      "alternatives": [],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "otf-icrp-20260907@blowback",
+      "event_key": "otf-icrp",
+      "date": "2026-09-07",
+      "recurrence": null,
+      "summary": "[FIRE AFTER GATES] OTF Information Controls Research Program",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "nocturnal-oversight",
+      "relative_win_band": "LOW_OR_UNPROVEN_FIT",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 52,
+      "score_components": {
+        "capability_fit": 55,
+        "maturity": 58,
+        "route_readiness": 35
+      },
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 52,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 35
+        },
+        {
+          "asset_id": "policy-lab",
+          "score": 51,
+          "capability_fit": 50,
+          "maturity": 65,
+          "route_readiness": 35
+        }
+      ],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "yzu-subsidy-open-20260907@blowback",
+      "event_key": "yzu-subsidy-open",
+      "date": "2026-09-07",
+      "recurrence": null,
+      "summary": "[CLAIM WINDOW OPENS] YZU off-campus competition subsidy",
+      "event_kind": "PORTFOLIO_OPERATION",
+      "route_id": "yzu-competition-reimbursement",
+      "route_status": "VERIFY",
+      "campaign_included": false,
+      "decision": "BATCH_BY_ROUTE",
+      "recommended_lead_asset": null,
+      "relative_win_band": "UNASSESSED",
+      "submission_readiness_label": "RESEARCH_OR_RECON_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_RECON | Gates: still-enrolled + classification + receipts",
+      "readiness_next_action": "Reverify the source, eligibility and required artifacts.",
+      "submission_readiness": {
+        "readiness": "RESEARCH_OR_RECON_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_RECON",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "still-enrolled + classification + receipts"
+        ],
+        "next_action": "Reverify the source, eligibility and required artifacts."
+      },
+      "score": null,
+      "score_components": null,
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 52,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 35
+        }
+      ],
+      "confidence": "NOT_APPLICABLE",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "job-refresh-weekly-20260907@blowback",
+      "event_key": "job-refresh-weekly",
+      "date": "2026-09-07",
+      "recurrence": "FREQ=WEEKLY;BYDAY=MO;UNTIL=20261228",
+      "summary": "[RADAR] Refresh upper-tail job/lab/predoc market",
+      "event_kind": "PORTFOLIO_OPERATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "BATCH_BY_ROUTE",
+      "recommended_lead_asset": null,
+      "relative_win_band": "UNASSESSED",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": null,
+      "score_components": null,
+      "alternatives": [],
+      "confidence": "NOT_APPLICABLE",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "tudelft-business-software-20260908@blowback",
+      "event_key": "tudelft-business-software",
+      "date": "2026-09-08",
+      "recurrence": null,
+      "summary": "[FIRE] TU Delft PhD — Business Impact from Construction Software",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "research-drive",
+      "relative_win_band": "LOW_OR_UNPROVEN_FIT",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 52,
+      "score_components": {
+        "capability_fit": 50,
+        "maturity": 67,
+        "route_readiness": 35
+      },
+      "alternatives": [],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "quant-fire-weekly-20260908@blowback",
+      "event_key": "quant-fire-weekly",
+      "date": "2026-09-08",
+      "recurrence": "FREQ=WEEKLY;BYDAY=TU;UNTIL=20261229",
+      "summary": "[FIRE BATCH] Quant / finance research applications",
+      "event_kind": "PORTFOLIO_OPERATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "BATCH_BY_ROUTE",
+      "recommended_lead_asset": null,
+      "relative_win_band": "UNASSESSED",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": null,
+      "score_components": null,
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 52,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 35
+        }
+      ],
+      "confidence": "NOT_APPLICABLE",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "external-evidence-weekly-20260909@blowback",
+      "event_key": "external-evidence-weekly",
+      "date": "2026-09-09",
+      "recurrence": "FREQ=WEEKLY;BYDAY=WE;UNTIL=20261230",
+      "summary": "[G4 BLOCK] External pilot / reviewer / professor outreach",
+      "event_kind": "PORTFOLIO_OPERATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "BATCH_BY_ROUTE",
+      "recommended_lead_asset": null,
+      "relative_win_band": "UNASSESSED",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": null,
+      "score_components": null,
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 52,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 35
+        },
+        {
+          "asset_id": "policy-lab",
+          "score": 51,
+          "capability_fit": 50,
+          "maturity": 65,
+          "route_readiness": 35
+        },
+        {
+          "asset_id": "hardware-splicer",
+          "score": 49,
+          "capability_fit": 50,
+          "maturity": 57,
+          "route_readiness": 35
+        }
+      ],
+      "confidence": "NOT_APPLICABLE",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "tea-ibfd-reverify-20260910@blowback",
+      "event_key": "tea-ibfd-reverify",
+      "date": "2026-09-10",
+      "recurrence": null,
+      "summary": "[REVERIFY] TEA / IBFD finance-tax research routes",
+      "event_kind": "REVERIFY_OR_HOLD",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "research-papers",
+      "relative_win_band": "BLOCKED_OR_LOW",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 49,
+      "score_components": {
+        "capability_fit": 60,
+        "maturity": 38,
+        "route_readiness": 35
+      },
+      "alternatives": [],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "kubesummit-20260910@blowback",
+      "event_key": "kubesummit",
+      "date": "2026-09-10",
+      "recurrence": null,
+      "summary": "[HOLD] KubeSummit 2026",
+      "event_kind": "REVERIFY_OR_HOLD",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "RESEARCH_OR_BIND_ROUTE_FIRST",
+      "recommended_lead_asset": null,
+      "relative_win_band": "UNASSESSED",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": null,
+      "score_components": null,
+      "alternatives": [],
+      "confidence": "LOW",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "era-ai-20260913@blowback",
+      "event_key": "era-ai",
+      "date": "2026-09-13",
+      "recurrence": null,
+      "summary": "[FIRE IF FIT] ERA:AI Winter 2027 deadline",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "research-drive",
+      "relative_win_band": "LOW_OR_UNPROVEN_FIT",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 52,
+      "score_components": {
+        "capability_fit": 50,
+        "maturity": 67,
+        "route_readiness": 35
+      },
+      "alternatives": [
+        {
+          "asset_id": "hardware-splicer",
+          "score": 49,
+          "capability_fit": 50,
+          "maturity": 57,
+          "route_readiness": 35
+        }
+      ],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "vu-social-data-20260914@blowback",
+      "event_key": "vu-social-data",
+      "date": "2026-09-14",
+      "recurrence": null,
+      "summary": "[FIRE] VU Amsterdam PhD — Social Data Science",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "nocturnal-oversight",
+      "relative_win_band": "LOW_OR_UNPROVEN_FIT",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 52,
+      "score_components": {
+        "capability_fit": 55,
+        "maturity": 58,
+        "route_readiness": 35
+      },
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 52,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 35
+        }
+      ],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "taai-hs-paper-20260914@blowback",
+      "event_key": "taai-hs-paper",
+      "date": "2026-09-14",
+      "recurrence": null,
+      "summary": "[FIRE] TAAI 2026 — Hardware Splicer paper",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "hardware-splicer",
+      "relative_win_band": "LOW_OR_UNPROVEN_FIT",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 52,
+      "score_components": {
+        "capability_fit": 55,
+        "maturity": 57,
+        "route_readiness": 35
+      },
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 52,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 35
+        }
+      ],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "taia-hs-creative-20260914@blowback",
+      "event_key": "taia-hs-creative",
+      "date": "2026-09-14",
+      "recurrence": null,
+      "summary": "[FIRE] TAIA AI Creative Design — Hardware Splicer graduate track",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "hardware-splicer",
+      "relative_win_band": "LOW_OR_UNPROVEN_FIT",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 52,
+      "score_components": {
+        "capability_fit": 55,
+        "maturity": 57,
+        "route_readiness": 35
+      },
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 52,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 35
+        }
+      ],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "fij-20260914@blowback",
+      "event_key": "fij",
+      "date": "2026-09-14",
+      "recurrence": null,
+      "summary": "[PARTNER OR SKIP] Fund for Investigative Journalism",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "nocturnal-oversight",
+      "relative_win_band": "LOW_OR_UNPROVEN_FIT",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 52,
+      "score_components": {
+        "capability_fit": 55,
+        "maturity": 58,
+        "route_readiness": 35
+      },
+      "alternatives": [],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "vu-atlantis-20260915@blowback",
+      "event_key": "vu-atlantis",
+      "date": "2026-09-15",
+      "recurrence": null,
+      "summary": "[STRETCH FIRE] VU ATLANTIS — Competition Law & AI PhD",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "RESEARCH_OR_BIND_ROUTE_FIRST",
+      "recommended_lead_asset": null,
+      "relative_win_band": "UNASSESSED",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": null,
+      "score_components": null,
+      "alternatives": [],
+      "confidence": "LOW",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "nhh-early-20260915@blowback",
+      "event_key": "nhh-early",
+      "date": "2026-09-15",
+      "recurrence": null,
+      "summary": "[FIRE] NHH 2027 PhD early round",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "research-papers",
+      "relative_win_band": "LOW_OR_UNPROVEN_FIT",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 36,
+      "score_components": {
+        "capability_fit": 35,
+        "maturity": 38,
+        "route_readiness": 35
+      },
+      "alternatives": [],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "hku-ai-engineer-20260915@blowback",
+      "event_key": "hku-ai-engineer",
+      "date": "2026-09-15",
+      "recurrence": null,
+      "summary": "[FIRE] HKU AI Engineer / RA II — MCP + agents",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "research-drive",
+      "relative_win_band": "LOW_OR_UNPROVEN_FIT",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 54,
+      "score_components": {
+        "capability_fit": 55,
+        "maturity": 67,
+        "route_readiness": 35
+      },
+      "alternatives": [],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "e2-reverify-20260915@blowback",
+      "event_key": "e2-reverify",
+      "date": "2026-09-15",
+      "recurrence": null,
+      "summary": "[REVERIFY] E2 / 1 Hotels fellowship route",
+      "event_kind": "REVERIFY_OR_HOLD",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "RESEARCH_OR_BIND_ROUTE_FIRST",
+      "recommended_lead_asset": null,
+      "relative_win_band": "UNASSESSED",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": null,
+      "score_components": null,
+      "alternatives": [],
+      "confidence": "LOW",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "fc27-cl-eci-20260917@blowback",
+      "event_key": "fc27-cl-eci",
+      "date": "2026-09-24",
+      "recurrence": null,
+      "summary": "[PRIMARY FIRE] Financial Cryptography 2027 — CL-ECI",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": "fc27-cl-eci",
+      "route_status": "HOLD_RESEARCH_QA_AND_FEE",
+      "campaign_included": true,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "policy-lab",
+      "relative_win_band": "BLOCKED_OR_LOW",
+      "submission_readiness_label": "RESEARCH_EVIDENCE_REPAIR_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Packaging: venue-format short paper; originality/overlap check; submission metadata | Engineering/evidence: RESEARCH_EVIDENCE_REPAIR | Gates: authorship/originality declaration; final submit",
+      "readiness_next_action": "Repair or remove the unreproduced indicator result, disclose the stationarity limitation, freeze the audited manuscript, then package for FC27.",
+      "submission_readiness": {
+        "readiness": "RESEARCH_EVIDENCE_REPAIR_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [
+          "venue-format short paper",
+          "originality/overlap check",
+          "submission metadata"
+        ],
+        "engineering_required": "RESEARCH_EVIDENCE_REPAIR",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "authorship/originality declaration",
+          "final submit"
+        ],
+        "next_action": "Repair or remove the unreproduced indicator result, disclose the stationarity limitation, freeze the audited manuscript, then package for FC27."
+      },
+      "score": 70,
+      "score_components": {
+        "capability_fit": 100,
+        "maturity": 65,
+        "route_readiness": 0
+      },
+      "alternatives": [
+        {
+          "asset_id": "research-papers",
+          "score": 42,
+          "capability_fit": 60,
+          "maturity": 38,
+          "route_readiness": 0
+        }
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "il-shihhsin-20260917@blowback",
+      "event_key": "il-shihhsin",
+      "date": "2026-09-17",
+      "recurrence": null,
+      "summary": "[LOW-COST FIRE] Invisible Ledger — Shih Hsin Finance abstract",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": "shih-hsin-finance-2026-il",
+      "route_status": "FIRE_NOW",
+      "campaign_included": true,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "research-papers",
+      "relative_win_band": "STRONG_RELATIVE_FIT",
+      "submission_readiness_label": "READY_FOR_BROWSER_DRAFT",
+      "ready_for_browser": true,
+      "readiness_work": "Gates: signed-in Google account/email; authorship/originality declaration; privacy/terms consent; final submit; post-submission phone confirmation",
+      "readiness_next_action": "Use the existing FIRE packet and corrected DOCX/PDF in the signed-in browser; map the live Google Form, complete every safe field and upload, then stop at protected commitments and final submit.",
+      "submission_readiness": {
+        "readiness": "READY_FOR_BROWSER_DRAFT",
+        "ready_for_browser": true,
+        "packaging_required": [],
+        "engineering_required": "NONE",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "signed-in Google account/email",
+          "authorship/originality declaration",
+          "privacy/terms consent",
+          "final submit",
+          "post-submission phone confirmation"
+        ],
+        "next_action": "Use the existing FIRE packet and corrected DOCX/PDF in the signed-in browser; map the live Google Form, complete every safe field and upload, then stop at protected commitments and final submit."
+      },
+      "score": 83,
+      "score_components": {
+        "capability_fit": 100,
+        "maturity": 38,
+        "route_readiness": 100
+      },
+      "alternatives": [
+        {
+          "asset_id": "policy-lab",
+          "score": 72,
+          "capability_fit": 65,
+          "maturity": 65,
+          "route_readiness": 100
+        },
+        {
+          "asset_id": "hardware-splicer",
+          "score": 62,
+          "capability_fit": 50,
+          "maturity": 57,
+          "route_readiness": 100
+        }
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "taiwan-innotech-20260917@blowback",
+      "event_key": "taiwan-innotech",
+      "date": "2026-09-17",
+      "recurrence": null,
+      "summary": "[CHECK FIRE] Taiwan Innotech Expo 2026",
+      "event_kind": "FIELD_OR_NETWORK",
+      "route_id": "field-taiwan-innotech-2026",
+      "route_status": "CHECK_FIRE",
+      "campaign_included": false,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "hardware-splicer",
+      "relative_win_band": "LOW_OR_UNPROVEN_FIT",
+      "submission_readiness_label": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Packaging: route-specific submission packet | Engineering/evidence: NOT_INDICATED_BY_CURRENT_RECORD | Gates: attendance value / schedule",
+      "readiness_next_action": "Verify the live route and finish the submission packet before browser execution.",
+      "submission_readiness": {
+        "readiness": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [
+          "route-specific submission packet"
+        ],
+        "engineering_required": "NOT_INDICATED_BY_CURRENT_RECORD",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "attendance value / schedule"
+        ],
+        "next_action": "Verify the live route and finish the submission packet before browser execution."
+      },
+      "score": 48,
+      "score_components": {
+        "capability_fit": 35,
+        "maturity": 57,
+        "route_readiness": 70
+      },
+      "alternatives": [],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "smartliving-20260918@blowback",
+      "event_key": "smartliving",
+      "date": "2026-09-18",
+      "recurrence": null,
+      "summary": "[VERIFY/FIRE] Smart Living competition",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": "smartliving-creative-2026",
+      "route_status": "FIRE_IF_FIT",
+      "campaign_included": true,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "hardware-splicer",
+      "relative_win_band": "MEDIUM_RELATIVE_FIT",
+      "submission_readiness_label": "CATEGORY_RECON_THEN_PACKAGING",
+      "ready_for_browser": false,
+      "readiness_work": "Packaging: category-native competition packet if an existing project fits | Engineering/evidence: CONDITIONAL_NONE_DO_NOT_BUILD_A_NEW_PROJECT_FOR_FIT | Gates: category eligibility; terms; final submit",
+      "readiness_next_action": "Map the rules to an existing Hardware Splicer capability; package only if the fit is native, otherwise skip.",
+      "submission_readiness": {
+        "readiness": "CATEGORY_RECON_THEN_PACKAGING",
+        "ready_for_browser": false,
+        "packaging_required": [
+          "category-native competition packet if an existing project fits"
+        ],
+        "engineering_required": "CONDITIONAL_NONE_DO_NOT_BUILD_A_NEW_PROJECT_FOR_FIT",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "category eligibility",
+          "terms",
+          "final submit"
+        ],
+        "next_action": "Map the rules to an existing Hardware Splicer capability; package only if the fit is native, otherwise skip."
+      },
+      "score": 63,
+      "score_components": {
+        "capability_fit": 67,
+        "maturity": 57,
+        "route_readiness": 60
+      },
+      "alternatives": [
+        {
+          "asset_id": "public-good-control",
+          "score": 80,
+          "capability_fit": 100,
+          "maturity": 58,
+          "route_readiness": 60
+        },
+        {
+          "asset_id": "research-drive",
+          "score": 57,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 60
+        }
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "cht-cl-eci-20260918@blowback",
+      "event_key": "cht-cl-eci",
+      "date": "2026-09-18",
+      "recurrence": null,
+      "summary": "[TEAM-GATED FIRE] Chunghwa Telecom competition deadline",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "policy-lab",
+      "relative_win_band": "LOW_OR_UNPROVEN_FIT",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 54,
+      "score_components": {
+        "capability_fit": 55,
+        "maturity": 65,
+        "route_readiness": 35
+      },
+      "alternatives": [],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "ntnu-maritime-20260920@blowback",
+      "event_key": "ntnu-maritime",
+      "date": "2026-09-20",
+      "recurrence": null,
+      "summary": "[REHYDRATE LIVE] NTNU Interactive AI Agents for Maritime Training PhD",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": "phd-ntnu-maritime-interactive-agents",
+      "route_status": "REHYDRATE_LIVE",
+      "campaign_included": true,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "research-drive",
+      "relative_win_band": "STRONG_RELATIVE_FIT",
+      "submission_readiness_label": "PHD_DOCUMENT_HOLD",
+      "ready_for_browser": false,
+      "readiness_work": "Packaging: route-specific PhD packet | Engineering/evidence: UNKNOWN_UNTIL_DOCUMENT_AND_FIT_AUDIT | Documents: route-specific applicant document set is not verified | Gates: user has paused PhD applications; final submit",
+      "readiness_next_action": "Keep out of the automatic application queue until the user reopens PhD applications and the official document set is verified.",
+      "submission_readiness": {
+        "readiness": "PHD_DOCUMENT_HOLD",
+        "ready_for_browser": false,
+        "packaging_required": [
+          "route-specific PhD packet"
+        ],
+        "engineering_required": "UNKNOWN_UNTIL_DOCUMENT_AND_FIT_AUDIT",
+        "documents_missing_or_unverified": [
+          "route-specific applicant document set is not verified"
+        ],
+        "dependency_or_human_gates": [
+          "user has paused PhD applications",
+          "final submit"
+        ],
+        "next_action": "Keep out of the automatic application queue until the user reopens PhD applications and the official document set is verified."
+      },
+      "score": 78,
+      "score_components": {
+        "capability_fit": 100,
+        "maturity": 67,
+        "route_readiness": 35
+      },
+      "alternatives": [
+        {
+          "asset_id": "policy-lab",
+          "score": 60,
+          "capability_fit": 67,
+          "maturity": 65,
+          "route_readiness": 35
+        },
+        {
+          "asset_id": "hardware-splicer",
+          "score": 52,
+          "capability_fit": 55,
+          "maturity": 57,
+          "route_readiness": 35
+        }
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "lasr-reverify-20260920@blowback",
+      "event_key": "lasr-reverify",
+      "date": "2026-09-20",
+      "recurrence": null,
+      "summary": "[REVERIFY] LASR Labs Winter 2027",
+      "event_kind": "REVERIFY_OR_HOLD",
+      "route_id": "fellowship-lasr-winter-2027",
+      "route_status": "VERIFY",
+      "campaign_included": false,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "hardware-splicer",
+      "relative_win_band": "BLOCKED_OR_LOW",
+      "submission_readiness_label": "RESEARCH_OR_RECON_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_RECON | Gates: Published program economics show £15,000 stipend for ~13 weeks plus support, but exact current deadline and application mechanics must be reverified before FIRE.",
+      "readiness_next_action": "Reverify the source, eligibility and required artifacts.",
+      "submission_readiness": {
+        "readiness": "RESEARCH_OR_RECON_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_RECON",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "Published program economics show £15,000 stipend for ~13 weeks plus support, but exact current deadline and application mechanics must be reverified before FIRE."
+        ],
+        "next_action": "Reverify the source, eligibility and required artifacts."
+      },
+      "score": 58,
+      "score_components": {
+        "capability_fit": 67,
+        "maturity": 57,
+        "route_readiness": 35
+      },
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 58,
+          "capability_fit": 62,
+          "maturity": 67,
+          "route_readiness": 35
+        }
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "tpp-20260924@blowback",
+      "event_key": "tpp",
+      "date": "2026-09-24",
+      "recurrence": null,
+      "summary": "[SELECTIVE FIRE] Tech Policy Press 2027 Fellowship",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "nocturnal-oversight",
+      "relative_win_band": "LOW_OR_UNPROVEN_FIT",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 49,
+      "score_components": {
+        "capability_fit": 50,
+        "maturity": 58,
+        "route_readiness": 35
+      },
+      "alternatives": [],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "tudelft-dtai-20260924@blowback",
+      "event_key": "tudelft-dtai",
+      "date": "2026-09-24",
+      "recurrence": null,
+      "summary": "[REHYDRATE LIVE] TU Delft — Decentralized & Trustworthy AI Pipelines PhD",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": "phd-tudelft-decentralized-trustworthy-ai",
+      "route_status": "REHYDRATE_LIVE",
+      "campaign_included": true,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "public-good-control",
+      "relative_win_band": "MEDIUM_RELATIVE_FIT",
+      "submission_readiness_label": "PHD_DOCUMENT_HOLD",
+      "ready_for_browser": false,
+      "readiness_work": "Packaging: route-specific PhD packet | Engineering/evidence: UNKNOWN_UNTIL_DOCUMENT_AND_FIT_AUDIT | Documents: route-specific applicant document set is not verified | Gates: user has paused PhD applications; final submit",
+      "readiness_next_action": "Keep out of the automatic application queue until the user reopens PhD applications and the official document set is verified.",
+      "submission_readiness": {
+        "readiness": "PHD_DOCUMENT_HOLD",
+        "ready_for_browser": false,
+        "packaging_required": [
+          "route-specific PhD packet"
+        ],
+        "engineering_required": "UNKNOWN_UNTIL_DOCUMENT_AND_FIT_AUDIT",
+        "documents_missing_or_unverified": [
+          "route-specific applicant document set is not verified"
+        ],
+        "dependency_or_human_gates": [
+          "user has paused PhD applications",
+          "final submit"
+        ],
+        "next_action": "Keep out of the automatic application queue until the user reopens PhD applications and the official document set is verified."
+      },
+      "score": 75,
+      "score_components": {
+        "capability_fit": 100,
+        "maturity": 58,
+        "route_readiness": 35
+      },
+      "alternatives": [
+        {
+          "asset_id": "policy-lab",
+          "score": 63,
+          "capability_fit": 72,
+          "maturity": 65,
+          "route_readiness": 35
+        },
+        {
+          "asset_id": "research-drive",
+          "score": 52,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 35
+        }
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "il-shihhsin-outcome-20260924@blowback",
+      "event_key": "il-shihhsin-outcome",
+      "date": "2026-09-24",
+      "recurrence": null,
+      "summary": "[OUTCOME IF FIRED] Invisible Ledger — Shih Hsin Finance notification",
+      "event_kind": "INHERITED_STAGE",
+      "route_id": "shih-hsin-finance-2026-il",
+      "route_status": "FIRE_NOW",
+      "campaign_included": true,
+      "decision": "INHERIT_PARENT_ENTRY",
+      "recommended_lead_asset": "research-papers",
+      "relative_win_band": "NOT_A_NEW_ENTRY",
+      "submission_readiness_label": "READY_FOR_BROWSER_DRAFT",
+      "ready_for_browser": true,
+      "readiness_work": "Gates: signed-in Google account/email; authorship/originality declaration; privacy/terms consent; final submit; post-submission phone confirmation",
+      "readiness_next_action": "Use the existing FIRE packet and corrected DOCX/PDF in the signed-in browser; map the live Google Form, complete every safe field and upload, then stop at protected commitments and final submit.",
+      "submission_readiness": {
+        "readiness": "READY_FOR_BROWSER_DRAFT",
+        "ready_for_browser": true,
+        "packaging_required": [],
+        "engineering_required": "NONE",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "signed-in Google account/email",
+          "authorship/originality declaration",
+          "privacy/terms consent",
+          "final submit",
+          "post-submission phone confirmation"
+        ],
+        "next_action": "Use the existing FIRE packet and corrected DOCX/PDF in the signed-in browser; map the live Google Form, complete every safe field and upload, then stop at protected commitments and final submit."
+      },
+      "score": 83,
+      "score_components": {
+        "capability_fit": 100,
+        "maturity": 38,
+        "route_readiness": 100
+      },
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 65,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 100
+        },
+        {
+          "asset_id": "hardware-splicer",
+          "score": 62,
+          "capability_fit": 50,
+          "maturity": 57,
+          "route_readiness": 100
+        }
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "awesome-climate-20260925@blowback",
+      "event_key": "awesome-climate",
+      "date": "2026-09-25",
+      "recurrence": null,
+      "summary": "[FIRE IF FIT] Awesome Conservation & Climate microgrant",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": "awesome-climate-2026-09",
+      "route_status": "FIRE_IF_FIT",
+      "campaign_included": true,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "public-good-control",
+      "relative_win_band": "STRONG_RELATIVE_FIT",
+      "submission_readiness_label": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Packaging: route-specific submission packet | Engineering/evidence: NOT_INDICATED_BY_CURRENT_RECORD | Gates: concrete climate/conservation action",
+      "readiness_next_action": "Verify the live route and finish the submission packet before browser execution.",
+      "submission_readiness": {
+        "readiness": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [
+          "route-specific submission packet"
+        ],
+        "engineering_required": "NOT_INDICATED_BY_CURRENT_RECORD",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "concrete climate/conservation action"
+        ],
+        "next_action": "Verify the live route and finish the submission packet before browser execution."
+      },
+      "score": 80,
+      "score_components": {
+        "capability_fit": 100,
+        "maturity": 58,
+        "route_readiness": 60
+      },
+      "alternatives": [
+        {
+          "asset_id": "policy-lab",
+          "score": 65,
+          "capability_fit": 67,
+          "maturity": 65,
+          "route_readiness": 60
+        }
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "saner-research-20260925@blowback",
+      "event_key": "saner-research",
+      "date": "2026-09-25",
+      "recurrence": null,
+      "summary": "[HOLD CONDITIONAL] SANER 2027 Research Track",
+      "event_kind": "REVERIFY_OR_HOLD",
+      "route_id": "saner-2027-research-refinery",
+      "route_status": "HOLD_CONDITIONAL",
+      "campaign_included": true,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "refinery-commons",
+      "relative_win_band": "BLOCKED_OR_LOW",
+      "submission_readiness_label": "RESEARCH_OR_RECON_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_RECON | Gates: Mandatory abstract due 2026-09-21 AoE; route decision and evidence positioning versus MSR; accepted paper requires full author registration and in-person presentation",
+      "readiness_next_action": "Reverify the source, eligibility and required artifacts.",
+      "submission_readiness": {
+        "readiness": "RESEARCH_OR_RECON_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_RECON",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "Mandatory abstract due 2026-09-21 AoE; route decision and evidence positioning versus MSR; accepted paper requires full author registration and in-person presentation"
+        ],
+        "next_action": "Reverify the source, eligibility and required artifacts."
+      },
+      "score": 68,
+      "score_components": {
+        "capability_fit": 100,
+        "maturity": 58,
+        "route_readiness": 0
+      },
+      "alternatives": [
+        {
+          "asset_id": "research-papers",
+          "score": 39,
+          "capability_fit": 55,
+          "maturity": 38,
+          "route_readiness": 0
+        }
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "astra-watch-20260926@blowback",
+      "event_key": "astra-watch",
+      "date": "2026-09-26",
+      "recurrence": null,
+      "summary": "[WATCH/REVERIFY] Constellation / Astra next cohort",
+      "event_kind": "REVERIFY_OR_HOLD",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "research-drive",
+      "relative_win_band": "BLOCKED_OR_LOW",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 52,
+      "score_components": {
+        "capability_fit": 50,
+        "maturity": 67,
+        "route_readiness": 35
+      },
+      "alternatives": [],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "ntub-fintech-20260928@blowback",
+      "event_key": "ntub-fintech",
+      "date": "2026-09-28",
+      "recurrence": null,
+      "summary": "[VERIFY THEN FIRE] NTUB FinTech competition",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "policy-lab",
+      "relative_win_band": "LOW_OR_UNPROVEN_FIT",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 56,
+      "score_components": {
+        "capability_fit": 60,
+        "maturity": 65,
+        "route_readiness": 35
+      },
+      "alternatives": [],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "freeway-ai-20260930@blowback",
+      "event_key": "freeway-ai",
+      "date": "2026-09-30",
+      "recurrence": null,
+      "summary": "[FIRE] Freeway AI challenge",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": "freeway-pricing-2026",
+      "route_status": "FIRE",
+      "campaign_included": true,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "policy-lab",
+      "relative_win_band": "STRONG_RELATIVE_FIT",
+      "submission_readiness_label": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Packaging: route-specific submission packet | Engineering/evidence: NOT_INDICATED_BY_CURRENT_RECORD | Gates: social/student eligibility",
+      "readiness_next_action": "Verify the live route and finish the submission packet before browser execution.",
+      "submission_readiness": {
+        "readiness": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [
+          "route-specific submission packet"
+        ],
+        "engineering_required": "NOT_INDICATED_BY_CURRENT_RECORD",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "social/student eligibility"
+        ],
+        "next_action": "Verify the live route and finish the submission packet before browser execution."
+      },
+      "score": 82,
+      "score_components": {
+        "capability_fit": 100,
+        "maturity": 65,
+        "route_readiness": 60
+      },
+      "alternatives": [
+        {
+          "asset_id": "hardware-splicer",
+          "score": 54,
+          "capability_fit": 50,
+          "maturity": 57,
+          "route_readiness": 60
+        }
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "twnic-20260930@blowback",
+      "event_key": "twnic",
+      "date": "2026-09-30",
+      "recurrence": null,
+      "summary": "[HOST + PORTFOLIO BAKEOFF] TWNIC Community Grants",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "nocturnal-oversight",
+      "relative_win_band": "LOW_OR_UNPROVEN_FIT",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 49,
+      "score_components": {
+        "capability_fit": 50,
+        "maturity": 58,
+        "route_readiness": 35
+      },
+      "alternatives": [],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "ftsid-20260930@blowback",
+      "event_key": "ftsid",
+      "date": "2026-09-30",
+      "recurrence": null,
+      "summary": "[FALLBACK ONLY] FTSID 2026 — CL-ECI",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": "ftsid-2026-cl-eci",
+      "route_status": "FALLBACK_ONLY",
+      "campaign_included": true,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "policy-lab",
+      "relative_win_band": "MEDIUM_RELATIVE_FIT",
+      "submission_readiness_label": "RESEARCH_OR_RECON_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_RECON | Gates: only if FC27 primary manuscript lane is stopped or non-overlapping",
+      "readiness_next_action": "Reverify the source, eligibility and required artifacts.",
+      "submission_readiness": {
+        "readiness": "RESEARCH_OR_RECON_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_RECON",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "only if FC27 primary manuscript lane is stopped or non-overlapping"
+        ],
+        "next_action": "Reverify the source, eligibility and required artifacts."
+      },
+      "score": 75,
+      "score_components": {
+        "capability_fit": 100,
+        "maturity": 65,
+        "route_readiness": 25
+      },
+      "alternatives": [
+        {
+          "asset_id": "research-papers",
+          "score": 47,
+          "capability_fit": 60,
+          "maturity": 38,
+          "route_readiness": 25
+        }
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "gaf-outcome-20260930@blowback",
+      "event_key": "gaf-outcome",
+      "date": "2026-09-30",
+      "recurrence": null,
+      "summary": "[OUTCOME IF FIRED] Global AI Finance 2026 notification",
+      "event_kind": "INHERITED_STAGE",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "INHERIT_PARENT_ENTRY",
+      "recommended_lead_asset": "policy-lab",
+      "relative_win_band": "NOT_A_NEW_ENTRY",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 46,
+      "score_components": {
+        "capability_fit": 40,
+        "maturity": 65,
+        "route_readiness": 35
+      },
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 52,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 35
+        }
+      ],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "postgrad-review-20260930@blowback",
+      "event_key": "postgrad-review",
+      "date": "2026-09-30",
+      "recurrence": "FREQ=MONTHLY;BYMONTHDAY=30;COUNT=3",
+      "summary": "[REVIEW] Post-grad market pricing checkpoint",
+      "event_kind": "PORTFOLIO_OPERATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "BATCH_BY_ROUTE",
+      "recommended_lead_asset": null,
+      "relative_win_band": "UNASSESSED",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": null,
+      "score_components": null,
+      "alternatives": [],
+      "confidence": "NOT_APPLICABLE",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "eu-info-integrity-20261001@blowback",
+      "event_key": "eu-info-integrity",
+      "date": "2026-10-01",
+      "recurrence": null,
+      "summary": "[PARTNER/CONSORTIUM VERIFY] EU information-integrity framework",
+      "event_kind": "REVERIFY_OR_HOLD",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "nocturnal-oversight",
+      "relative_win_band": "BLOCKED_OR_LOW",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 49,
+      "score_components": {
+        "capability_fit": 50,
+        "maturity": 58,
+        "route_readiness": 35
+      },
+      "alternatives": [],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "innoserve-20261005@blowback",
+      "event_key": "innoserve",
+      "date": "2026-10-05",
+      "recurrence": null,
+      "summary": "[FIRE AFTER PORTFOLIO BAKEOFF] InnoServe registration",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "hardware-splicer",
+      "relative_win_band": "LOW_OR_UNPROVEN_FIT",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 52,
+      "score_components": {
+        "capability_fit": 55,
+        "maturity": 57,
+        "route_readiness": 35
+      },
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 52,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 35
+        }
+      ],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "ssi-20261005@blowback",
+      "event_key": "ssi",
+      "date": "2026-10-05",
+      "recurrence": null,
+      "summary": "[FIRE] Software Sustainability Institute Fellowship 2027",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": "ssi-fellowship-2027-policy-lab",
+      "route_status": "HOLD_SCREENCAST_RECORDING",
+      "campaign_included": true,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "refinery-commons",
+      "relative_win_band": "BLOCKED_OR_LOW",
+      "submission_readiness_label": "PACKET_BLOCKED_ON_SCREENCAST",
+      "ready_for_browser": false,
+      "readiness_work": "Packaging: replace the old deck budget because CW27 registration, travel, and accommodation are provided separately; record and host the required six-minute-maximum screencast from the corrected deck and revised narration | Documents: corrected screencast deck; hosted screencast URL | Gates: applicant voice/recording; personal demographics; career-stage and JACS confirmation; privacy/terms consent; final submit",
+      "readiness_next_action": "Correct the budget slide, record and host the revised screencast, then bind its URL and applicant-only answers before browser execution.",
+      "submission_readiness": {
+        "readiness": "PACKET_BLOCKED_ON_SCREENCAST",
+        "ready_for_browser": false,
+        "packaging_required": [
+          "replace the old deck budget because CW27 registration, travel, and accommodation are provided separately",
+          "record and host the required six-minute-maximum screencast from the corrected deck and revised narration"
+        ],
+        "engineering_required": "NONE",
+        "documents_missing_or_unverified": [
+          "corrected screencast deck",
+          "hosted screencast URL"
+        ],
+        "dependency_or_human_gates": [
+          "applicant voice/recording",
+          "personal demographics",
+          "career-stage and JACS confirmation",
+          "privacy/terms consent",
+          "final submit"
+        ],
+        "next_action": "Correct the budget slide, record and host the revised screencast, then bind its URL and applicant-only answers before browser execution."
+      },
+      "score": 71,
+      "score_components": {
+        "capability_fit": 100,
+        "maturity": 58,
+        "route_readiness": 15
+      },
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 65,
+          "capability_fit": 84,
+          "maturity": 67,
+          "route_readiness": 15
+        },
+        {
+          "asset_id": "policy-lab",
+          "score": 56,
+          "capability_fit": 67,
+          "maturity": 65,
+          "route_readiness": 15
+        }
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "sinica-der-nian-20261006@blowback",
+      "event_key": "sinica-der-nian",
+      "date": "2026-10-06",
+      "recurrence": null,
+      "summary": "[FIRE AFTER GATE] Academia Sinica Der-Nian Yang RA",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": "lab-sinica-der-nian-yang-ra-2026",
+      "route_status": "FIRE_AFTER_GATE",
+      "campaign_included": false,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "research-drive",
+      "relative_win_band": "MEDIUM_RELATIVE_FIT",
+      "submission_readiness_label": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Packaging: route-specific submission packet | Engineering/evidence: NOT_INDICATED_BY_CURRENT_RECORD | Gates: G1 CS/EE background preference and exact appointment economics; verify degree flexibility, work authorization, IP and outside-work terms.",
+      "readiness_next_action": "Verify the live route and finish the submission packet before browser execution.",
+      "submission_readiness": {
+        "readiness": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [
+          "route-specific submission packet"
+        ],
+        "engineering_required": "NOT_INDICATED_BY_CURRENT_RECORD",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "G1 CS/EE background preference and exact appointment economics; verify degree flexibility, work authorization, IP and outside-work terms."
+        ],
+        "next_action": "Verify the live route and finish the submission packet before browser execution."
+      },
+      "score": 70,
+      "score_components": {
+        "capability_fit": 67,
+        "maturity": 67,
+        "route_readiness": 80
+      },
+      "alternatives": [
+        {
+          "asset_id": "nocturnal-oversight",
+          "score": 64,
+          "capability_fit": 62,
+          "maturity": 58,
+          "route_readiness": 80
+        },
+        {
+          "asset_id": "hardware-splicer",
+          "score": 58,
+          "capability_fit": 50,
+          "maturity": 57,
+          "route_readiness": 80
+        }
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "iii-register-20261011@blowback",
+      "event_key": "iii-register",
+      "date": "2026-10-11",
+      "recurrence": null,
+      "summary": "[VERIFY/FIRE] III 智策AI registration",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "hardware-splicer",
+      "relative_win_band": "LOW_OR_UNPROVEN_FIT",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 41,
+      "score_components": {
+        "capability_fit": 35,
+        "maturity": 57,
+        "route_readiness": 35
+      },
+      "alternatives": [],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "ntub-finalist-20261012@blowback",
+      "event_key": "ntub-finalist",
+      "date": "2026-10-12",
+      "recurrence": null,
+      "summary": "[OUTCOME IF FIRED] NTUB FinTech finalist announcement",
+      "event_kind": "INHERITED_STAGE",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "INHERIT_PARENT_ENTRY",
+      "recommended_lead_asset": "policy-lab",
+      "relative_win_band": "NOT_A_NEW_ENTRY",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 46,
+      "score_components": {
+        "capability_fit": 40,
+        "maturity": 65,
+        "route_readiness": 35
+      },
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 52,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 35
+        }
+      ],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "energy-taiwan-20261014@blowback",
+      "event_key": "energy-taiwan",
+      "date": "2026-10-14",
+      "recurrence": null,
+      "summary": "[CHECK FIRE] Energy Taiwan / Net-Zero Taiwan",
+      "event_kind": "FIELD_OR_NETWORK",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "hardware-splicer",
+      "relative_win_band": "LOW_OR_UNPROVEN_FIT",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 44,
+      "score_components": {
+        "capability_fit": 40,
+        "maturity": 57,
+        "route_readiness": 35
+      },
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 52,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 35
+        }
+      ],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "oist-internship-20261015@blowback",
+      "event_key": "oist-internship",
+      "date": "2026-10-15",
+      "recurrence": null,
+      "summary": "[FIRE AFTER GATE] OIST Research Internship",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": "internship-oist-research-2027",
+      "route_status": "FIRE_AFTER_GATE",
+      "campaign_included": false,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "research-drive",
+      "relative_win_band": "MEDIUM_RELATIVE_FIT",
+      "submission_readiness_label": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Packaging: route-specific submission packet | Engineering/evidence: NOT_INDICATED_BY_CURRENT_RECORD | Gates: G6 4-6 month relocation/opportunity cost; verify exact host-unit fit and stipend amount. Official program covers living support, accommodation and travel.",
+      "readiness_next_action": "Verify the live route and finish the submission packet before browser execution.",
+      "submission_readiness": {
+        "readiness": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [
+          "route-specific submission packet"
+        ],
+        "engineering_required": "NOT_INDICATED_BY_CURRENT_RECORD",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "G6 4-6 month relocation/opportunity cost; verify exact host-unit fit and stipend amount. Official program covers living support, accommodation and travel."
+        ],
+        "next_action": "Verify the live route and finish the submission packet before browser execution."
+      },
+      "score": 67,
+      "score_components": {
+        "capability_fit": 62,
+        "maturity": 67,
+        "route_readiness": 80
+      },
+      "alternatives": [
+        {
+          "asset_id": "research-papers",
+          "score": 73,
+          "capability_fit": 89,
+          "maturity": 38,
+          "route_readiness": 80
+        },
+        {
+          "asset_id": "hardware-splicer",
+          "score": 67,
+          "capability_fit": 67,
+          "maturity": 57,
+          "route_readiness": 80
+        },
+        {
+          "asset_id": "policy-lab",
+          "score": 60,
+          "capability_fit": 50,
+          "maturity": 65,
+          "route_readiness": 80
+        }
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "usn-ai-audit-20261016@blowback",
+      "event_key": "usn-ai-audit",
+      "date": "2026-10-16",
+      "recurrence": null,
+      "summary": "[HIGH PRIORITY FIRE] USN PhD — AI transformation of auditing",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": "phd-usn-audit-ai",
+      "route_status": "FIRE_SOON",
+      "campaign_included": false,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "policy-lab",
+      "relative_win_band": "MEDIUM_RELATIVE_FIT",
+      "submission_readiness_label": "PHD_DOCUMENT_HOLD",
+      "ready_for_browser": false,
+      "readiness_work": "Packaging: route-specific PhD packet | Engineering/evidence: UNKNOWN_UNTIL_DOCUMENT_AND_FIT_AUDIT | Documents: route-specific applicant document set is not verified | Gates: user has paused PhD applications; final submit",
+      "readiness_next_action": "Keep out of the automatic application queue until the user reopens PhD applications and the official document set is verified.",
+      "submission_readiness": {
+        "readiness": "PHD_DOCUMENT_HOLD",
+        "ready_for_browser": false,
+        "packaging_required": [
+          "route-specific PhD packet"
+        ],
+        "engineering_required": "UNKNOWN_UNTIL_DOCUMENT_AND_FIT_AUDIT",
+        "documents_missing_or_unverified": [
+          "route-specific applicant document set is not verified"
+        ],
+        "dependency_or_human_gates": [
+          "user has paused PhD applications",
+          "final submit"
+        ],
+        "next_action": "Keep out of the automatic application queue until the user reopens PhD applications and the official document set is verified."
+      },
+      "score": 73,
+      "score_components": {
+        "capability_fit": 82,
+        "maturity": 65,
+        "route_readiness": 60
+      },
+      "alternatives": [],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "cht-finalist-20261016@blowback",
+      "event_key": "cht-finalist",
+      "date": "2026-10-16",
+      "recurrence": null,
+      "summary": "[OUTCOME IF FIRED] Chunghwa Telecom finalist notification",
+      "event_kind": "INHERITED_STAGE",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "INHERIT_PARENT_ENTRY",
+      "recommended_lead_asset": "policy-lab",
+      "relative_win_band": "NOT_A_NEW_ENTRY",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 43,
+      "score_components": {
+        "capability_fit": 35,
+        "maturity": 65,
+        "route_readiness": 35
+      },
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 52,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 35
+        }
+      ],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "iii-proposal-20261018@blowback",
+      "event_key": "iii-proposal",
+      "date": "2026-10-18",
+      "recurrence": null,
+      "summary": "[FIRE] III 智策AI proposal deadline",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "hardware-splicer",
+      "relative_win_band": "LOW_OR_UNPROVEN_FIT",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 41,
+      "score_components": {
+        "capability_fit": 35,
+        "maturity": 57,
+        "route_readiness": 35
+      },
+      "alternatives": [],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "taitronics-20261020@blowback",
+      "event_key": "taitronics",
+      "date": "2026-10-20",
+      "recurrence": null,
+      "summary": "[FIRE/FIELD] TAITRONICS + AIoT Taiwan + Taiwan Industry Week",
+      "event_kind": "FIELD_OR_NETWORK",
+      "route_id": "field-taitronics-aiot-2026",
+      "route_status": "FIRE",
+      "campaign_included": true,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "hardware-splicer",
+      "relative_win_band": "MEDIUM_RELATIVE_FIT",
+      "submission_readiness_label": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Packaging: route-specific submission packet | Engineering/evidence: NOT_INDICATED_BY_CURRENT_RECORD | Gates: attendance value / schedule",
+      "readiness_next_action": "Verify the live route and finish the submission packet before browser execution.",
+      "submission_readiness": {
+        "readiness": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [
+          "route-specific submission packet"
+        ],
+        "engineering_required": "NOT_INDICATED_BY_CURRENT_RECORD",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "attendance value / schedule"
+        ],
+        "next_action": "Verify the live route and finish the submission packet before browser execution."
+      },
+      "score": 67,
+      "score_components": {
+        "capability_fit": 72,
+        "maturity": 57,
+        "route_readiness": 70
+      },
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 59,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 70
+        }
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "industry-academia-20261022@blowback",
+      "event_key": "industry-academia",
+      "date": "2026-10-22",
+      "recurrence": null,
+      "summary": "[FIRE] National Industry–Academia Innovation",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": "ncue-mech-2026",
+      "route_status": "FIRE_AFTER_GATE",
+      "campaign_included": true,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "hardware-splicer",
+      "relative_win_band": "STRONG_RELATIVE_FIT",
+      "submission_readiness_label": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Packaging: route-specific submission packet | Engineering/evidence: NOT_INDICATED_BY_CURRENT_RECORD | Gates: student eligibility",
+      "readiness_next_action": "Verify the live route and finish the submission packet before browser execution.",
+      "submission_readiness": {
+        "readiness": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [
+          "route-specific submission packet"
+        ],
+        "engineering_required": "NOT_INDICATED_BY_CURRENT_RECORD",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "student eligibility"
+        ],
+        "next_action": "Verify the live route and finish the submission packet before browser execution."
+      },
+      "score": 80,
+      "score_components": {
+        "capability_fit": 100,
+        "maturity": 57,
+        "route_readiness": 60
+      },
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 57,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 60
+        }
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "msr-technical-20261023@blowback",
+      "event_key": "msr-technical",
+      "date": "2026-10-23",
+      "recurrence": null,
+      "summary": "[DEFAULT PRIMARY] MSR 2027 Technical Papers — Refinery",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": "msr-2027-technical-refinery",
+      "route_status": "DEFAULT_PRIMARY_FIRE",
+      "campaign_included": true,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "refinery-commons",
+      "relative_win_band": "STRONG_RELATIVE_FIT",
+      "submission_readiness_label": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Packaging: route-specific submission packet | Engineering/evidence: NOT_INDICATED_BY_CURRENT_RECORD | Gates: Mandatory abstract due 2026-10-20 AoE; preserve frozen empirical object + manuscript readiness; accepted paper requires author registration and presentation",
+      "readiness_next_action": "Verify the live route and finish the submission packet before browser execution.",
+      "submission_readiness": {
+        "readiness": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [
+          "route-specific submission packet"
+        ],
+        "engineering_required": "NOT_INDICATED_BY_CURRENT_RECORD",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "Mandatory abstract due 2026-10-20 AoE; preserve frozen empirical object + manuscript readiness; accepted paper requires author registration and presentation"
+        ],
+        "next_action": "Verify the live route and finish the submission packet before browser execution."
+      },
+      "score": 84,
+      "score_components": {
+        "capability_fit": 100,
+        "maturity": 58,
+        "route_readiness": 80
+      },
+      "alternatives": [],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "saner-tool-20261023@blowback",
+      "event_key": "saner-tool",
+      "date": "2026-10-23",
+      "recurrence": null,
+      "summary": "[ARTIFACT ROUTE] SANER 2027 Tool Demo",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": "saner-2027-tool-demo-refinery",
+      "route_status": "ARTIFACT_ROUTE",
+      "campaign_included": true,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "refinery-commons",
+      "relative_win_band": "MEDIUM_RELATIVE_FIT",
+      "submission_readiness_label": "RESEARCH_OR_RECON_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_RECON | Gates: Optional abstract due 2026-10-19 AoE; five-page tool paper, live artifact URL, tool-demo framing and overlap review; accepted paper requires full author registration and in-person presentation",
+      "readiness_next_action": "Reverify the source, eligibility and required artifacts.",
+      "submission_readiness": {
+        "readiness": "RESEARCH_OR_RECON_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_RECON",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "Optional abstract due 2026-10-19 AoE; five-page tool paper, live artifact URL, tool-demo framing and overlap review; accepted paper requires full author registration and in-person presentation"
+        ],
+        "next_action": "Reverify the source, eligibility and required artifacts."
+      },
+      "score": 73,
+      "score_components": {
+        "capability_fit": 100,
+        "maturity": 58,
+        "route_readiness": 25
+      },
+      "alternatives": [
+        {
+          "asset_id": "research-papers",
+          "score": 44,
+          "capability_fit": 55,
+          "maturity": 38,
+          "route_readiness": 25
+        }
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "saner-agentic-20261023@blowback",
+      "event_key": "saner-agentic",
+      "date": "2026-10-23",
+      "recurrence": null,
+      "summary": "[HOLD/KILL] SANER Agentic AI4SE",
+      "event_kind": "REVERIFY_OR_HOLD",
+      "route_id": "saner-2027-agentic-ai4se-refinery",
+      "route_status": "HOLD_OR_KILL",
+      "campaign_included": true,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "refinery-commons",
+      "relative_win_band": "BLOCKED_OR_LOW",
+      "submission_readiness_label": "NOT_ACTIONABLE",
+      "ready_for_browser": false,
+      "readiness_work": "No pre-draft work identified; protected final actions still follow route policy.",
+      "readiness_next_action": "Do not execute this route.",
+      "submission_readiness": {
+        "readiness": "NOT_ACTIONABLE",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "NONE",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Do not execute this route."
+      },
+      "score": 68,
+      "score_components": {
+        "capability_fit": 100,
+        "maturity": 58,
+        "route_readiness": 0
+      },
+      "alternatives": [],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "fintech-taipei-20261023@blowback",
+      "event_key": "fintech-taipei",
+      "date": "2026-10-23",
+      "recurrence": null,
+      "summary": "[WATCH/FIRE] FinTech Taipei 2026",
+      "event_kind": "REVERIFY_OR_HOLD",
+      "route_id": "field-fintech-taipei-2026",
+      "route_status": "WATCH_FIRE",
+      "campaign_included": true,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "policy-lab",
+      "relative_win_band": "BLOCKED_OR_LOW",
+      "submission_readiness_label": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Packaging: route-specific submission packet | Engineering/evidence: NOT_INDICATED_BY_CURRENT_RECORD | Gates: current participation/showcase mechanics",
+      "readiness_next_action": "Verify the live route and finish the submission packet before browser execution.",
+      "submission_readiness": {
+        "readiness": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [
+          "route-specific submission packet"
+        ],
+        "engineering_required": "NOT_INDICATED_BY_CURRENT_RECORD",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "current participation/showcase mechanics"
+        ],
+        "next_action": "Verify the live route and finish the submission packet before browser execution."
+      },
+      "score": 84,
+      "score_components": {
+        "capability_fit": 100,
+        "maturity": 65,
+        "route_readiness": 70
+      },
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 59,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 70
+        },
+        {
+          "asset_id": "research-papers",
+          "score": 51,
+          "capability_fit": 50,
+          "maturity": 38,
+          "route_readiness": 70
+        }
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "ntub-final-20261030@blowback",
+      "event_key": "ntub-final",
+      "date": "2026-10-30",
+      "recurrence": null,
+      "summary": "[FINAL IF QUALIFIED] NTUB FinTech finals",
+      "event_kind": "INHERITED_STAGE",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "INHERIT_PARENT_ENTRY",
+      "recommended_lead_asset": "policy-lab",
+      "relative_win_band": "NOT_A_NEW_ENTRY",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 46,
+      "score_components": {
+        "capability_fit": 40,
+        "maturity": 65,
+        "route_readiness": 35
+      },
+      "alternatives": [],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "mats-residency-20261031@blowback",
+      "event_key": "mats-residency",
+      "date": "2026-10-31",
+      "recurrence": null,
+      "summary": "[FIRE IF FIT] MATS Residency 2027",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "hardware-splicer",
+      "relative_win_band": "LOW_OR_UNPROVEN_FIT",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 49,
+      "score_components": {
+        "capability_fit": 50,
+        "maturity": 57,
+        "route_readiness": 35
+      },
+      "alternatives": [],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "shihhsin-full-20261031@blowback",
+      "event_key": "shihhsin-full",
+      "date": "2026-10-31",
+      "recurrence": null,
+      "summary": "[IF ACCEPTED] Invisible Ledger — Shih Hsin full paper",
+      "event_kind": "INHERITED_STAGE",
+      "route_id": "shih-hsin-finance-2026-il",
+      "route_status": "FIRE_NOW",
+      "campaign_included": true,
+      "decision": "INHERIT_PARENT_ENTRY",
+      "recommended_lead_asset": "research-papers",
+      "relative_win_band": "NOT_A_NEW_ENTRY",
+      "submission_readiness_label": "READY_FOR_BROWSER_DRAFT",
+      "ready_for_browser": true,
+      "readiness_work": "Gates: signed-in Google account/email; authorship/originality declaration; privacy/terms consent; final submit; post-submission phone confirmation",
+      "readiness_next_action": "Use the existing FIRE packet and corrected DOCX/PDF in the signed-in browser; map the live Google Form, complete every safe field and upload, then stop at protected commitments and final submit.",
+      "submission_readiness": {
+        "readiness": "READY_FOR_BROWSER_DRAFT",
+        "ready_for_browser": true,
+        "packaging_required": [],
+        "engineering_required": "NONE",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "signed-in Google account/email",
+          "authorship/originality declaration",
+          "privacy/terms consent",
+          "final submit",
+          "post-submission phone confirmation"
+        ],
+        "next_action": "Use the existing FIRE packet and corrected DOCX/PDF in the signed-in browser; map the live Google Form, complete every safe field and upload, then stop at protected commitments and final submit."
+      },
+      "score": 83,
+      "score_components": {
+        "capability_fit": 100,
+        "maturity": 38,
+        "route_readiness": 100
+      },
+      "alternatives": [
+        {
+          "asset_id": "hardware-splicer",
+          "score": 62,
+          "capability_fit": 50,
+          "maturity": 57,
+          "route_readiness": 100
+        }
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "cht-final-20261031@blowback",
+      "event_key": "cht-final",
+      "date": "2026-10-31",
+      "recurrence": null,
+      "summary": "[FINAL IF QUALIFIED] Chunghwa Telecom finals",
+      "event_kind": "INHERITED_STAGE",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "INHERIT_PARENT_ENTRY",
+      "recommended_lead_asset": "policy-lab",
+      "relative_win_band": "NOT_A_NEW_ENTRY",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 43,
+      "score_components": {
+        "capability_fit": 35,
+        "maturity": 65,
+        "route_readiness": 35
+      },
+      "alternatives": [],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "nlnet-20261103@blowback",
+      "event_key": "nlnet",
+      "date": "2026-11-03",
+      "recurrence": null,
+      "summary": "[PORTFOLIO BAKEOFF] NLnet Restack / CodeSupply deadline",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": "nlnet-codesupply-refinery",
+      "route_status": "WATCH_HIGH_CONDITIONAL",
+      "campaign_included": true,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "refinery-commons",
+      "relative_win_band": "MEDIUM_RELATIVE_FIT",
+      "submission_readiness_label": "RESEARCH_OR_RECON_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_RECON | Gates: open slice must be provenance/rights/origin/reproducibility; no private marketplace layer",
+      "readiness_next_action": "Reverify the source, eligibility and required artifacts.",
+      "submission_readiness": {
+        "readiness": "RESEARCH_OR_RECON_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_RECON",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "open slice must be provenance/rights/origin/reproducibility; no private marketplace layer"
+        ],
+        "next_action": "Reverify the source, eligibility and required artifacts."
+      },
+      "score": 72,
+      "score_components": {
+        "capability_fit": 100,
+        "maturity": 58,
+        "route_readiness": 20
+      },
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 49,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 20
+        },
+        {
+          "asset_id": "nocturnal-oversight",
+          "score": 46,
+          "capability_fit": 50,
+          "maturity": 58,
+          "route_readiness": 20
+        }
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "innoserve-final-20261107@blowback",
+      "event_key": "innoserve-final",
+      "date": "2026-11-07",
+      "recurrence": null,
+      "summary": "[FINAL IF QUALIFIED] InnoServe final",
+      "event_kind": "PORTFOLIO_OPERATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "BATCH_BY_ROUTE",
+      "recommended_lead_asset": null,
+      "relative_win_band": "UNASSESSED",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": null,
+      "score_components": null,
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 52,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 35
+        }
+      ],
+      "confidence": "NOT_APPLICABLE",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "shihhsin-conference-20261107@blowback",
+      "event_key": "shihhsin-conference",
+      "date": "2026-11-07",
+      "recurrence": null,
+      "summary": "[PRESENT IF ACCEPTED] Invisible Ledger — Shih Hsin conference",
+      "event_kind": "INHERITED_STAGE",
+      "route_id": "shih-hsin-finance-2026-il",
+      "route_status": "FIRE_NOW",
+      "campaign_included": true,
+      "decision": "INHERIT_PARENT_ENTRY",
+      "recommended_lead_asset": "research-papers",
+      "relative_win_band": "NOT_A_NEW_ENTRY",
+      "submission_readiness_label": "READY_FOR_BROWSER_DRAFT",
+      "ready_for_browser": true,
+      "readiness_work": "Gates: signed-in Google account/email; authorship/originality declaration; privacy/terms consent; final submit; post-submission phone confirmation",
+      "readiness_next_action": "Use the existing FIRE packet and corrected DOCX/PDF in the signed-in browser; map the live Google Form, complete every safe field and upload, then stop at protected commitments and final submit.",
+      "submission_readiness": {
+        "readiness": "READY_FOR_BROWSER_DRAFT",
+        "ready_for_browser": true,
+        "packaging_required": [],
+        "engineering_required": "NONE",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "signed-in Google account/email",
+          "authorship/originality declaration",
+          "privacy/terms consent",
+          "final submit",
+          "post-submission phone confirmation"
+        ],
+        "next_action": "Use the existing FIRE packet and corrected DOCX/PDF in the signed-in browser; map the live Google Form, complete every safe field and upload, then stop at protected commitments and final submit."
+      },
+      "score": 83,
+      "score_components": {
+        "capability_fit": 100,
+        "maturity": 38,
+        "route_readiness": 100
+      },
+      "alternatives": [
+        {
+          "asset_id": "hardware-splicer",
+          "score": 62,
+          "capability_fit": 50,
+          "maturity": 57,
+          "route_readiness": 100
+        }
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "msr-data-tool-20261110@blowback",
+      "event_key": "msr-data-tool",
+      "date": "2026-11-10",
+      "recurrence": null,
+      "summary": "[SECONDARY IF DISTINCT] MSR 2027 Data & Tool Showcase",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": "msr-2027-data-tool-refinery",
+      "route_status": "FIRE_AFTER_PRIMARY_DECISION",
+      "campaign_included": true,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "refinery-commons",
+      "relative_win_band": "STRONG_RELATIVE_FIT",
+      "submission_readiness_label": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Packaging: route-specific submission packet | Engineering/evidence: NOT_INDICATED_BY_CURRENT_RECORD | Gates: Abstract due 2026-11-05 AoE; artifact must be available at submission with instructions and persistent DOI for publication; resolve overlap with technical paper; accepted paper requires author registration and presentation",
+      "readiness_next_action": "Verify the live route and finish the submission packet before browser execution.",
+      "submission_readiness": {
+        "readiness": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [
+          "route-specific submission packet"
+        ],
+        "engineering_required": "NOT_INDICATED_BY_CURRENT_RECORD",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "Abstract due 2026-11-05 AoE; artifact must be available at submission with instructions and persistent DOI for publication; resolve overlap with technical paper; accepted paper requires author registration and presentation"
+        ],
+        "next_action": "Verify the live route and finish the submission packet before browser execution."
+      },
+      "score": 80,
+      "score_components": {
+        "capability_fit": 100,
+        "maturity": 58,
+        "route_readiness": 60
+      },
+      "alternatives": [],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "interledger-20261111@blowback",
+      "event_key": "interledger",
+      "date": "2026-11-11",
+      "recurrence": null,
+      "summary": "[ROLLING CLOSE] Interledger Local Impact mini-grant",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": "interledger-local-2026",
+      "route_status": "FIRE_IF_FIT",
+      "campaign_included": true,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "policy-lab",
+      "relative_win_band": "MEDIUM_RELATIVE_FIT",
+      "submission_readiness_label": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Packaging: route-specific submission packet | Engineering/evidence: NOT_INDICATED_BY_CURRENT_RECORD | Gates: open-payments/financial-access fit",
+      "readiness_next_action": "Verify the live route and finish the submission packet before browser execution.",
+      "submission_readiness": {
+        "readiness": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [
+          "route-specific submission packet"
+        ],
+        "engineering_required": "NOT_INDICATED_BY_CURRENT_RECORD",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "open-payments/financial-access fit"
+        ],
+        "next_action": "Verify the live route and finish the submission packet before browser execution."
+      },
+      "score": 65,
+      "score_components": {
+        "capability_fit": 67,
+        "maturity": 65,
+        "route_readiness": 60
+      },
+      "alternatives": [
+        {
+          "asset_id": "public-good-control",
+          "score": 80,
+          "capability_fit": 100,
+          "maturity": 58,
+          "route_readiness": 60
+        }
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "meet-taipei-20261119@blowback",
+      "event_key": "meet-taipei",
+      "date": "2026-11-19",
+      "recurrence": null,
+      "summary": "[NETWORK] Meet Taipei 2026",
+      "event_kind": "PORTFOLIO_OPERATION",
+      "route_id": "field-meet-taipei-2026",
+      "route_status": "NETWORK",
+      "campaign_included": false,
+      "decision": "BATCH_BY_ROUTE",
+      "recommended_lead_asset": null,
+      "relative_win_band": "UNASSESSED",
+      "submission_readiness_label": "RESEARCH_OR_RECON_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_RECON | Gates: free-ticket/network value",
+      "readiness_next_action": "Reverify the source, eligibility and required artifacts.",
+      "submission_readiness": {
+        "readiness": "RESEARCH_OR_RECON_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_RECON",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "free-ticket/network value"
+        ],
+        "next_action": "Reverify the source, eligibility and required artifacts."
+      },
+      "score": null,
+      "score_components": null,
+      "alternatives": [],
+      "confidence": "NOT_APPLICABLE",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "yzu-subsidy-close-20261120@blowback",
+      "event_key": "yzu-subsidy-close",
+      "date": "2026-11-20",
+      "recurrence": null,
+      "summary": "[CLAIM WINDOW CLOSES] YZU off-campus competition subsidy",
+      "event_kind": "PORTFOLIO_OPERATION",
+      "route_id": "yzu-competition-reimbursement",
+      "route_status": "VERIFY",
+      "campaign_included": false,
+      "decision": "BATCH_BY_ROUTE",
+      "recommended_lead_asset": null,
+      "relative_win_band": "UNASSESSED",
+      "submission_readiness_label": "RESEARCH_OR_RECON_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_RECON | Gates: still-enrolled + classification + receipts",
+      "readiness_next_action": "Reverify the source, eligibility and required artifacts.",
+      "submission_readiness": {
+        "readiness": "RESEARCH_OR_RECON_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_RECON",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "still-enrolled + classification + receipts"
+        ],
+        "next_action": "Reverify the source, eligibility and required artifacts."
+      },
+      "score": null,
+      "score_components": null,
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 52,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 35
+        }
+      ],
+      "confidence": "NOT_APPLICABLE",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "awesome-climate-nov-20261127@blowback",
+      "event_key": "awesome-climate-nov",
+      "date": "2026-11-27",
+      "recurrence": null,
+      "summary": "[FIRE IF FIT] Awesome Conservation & Climate microgrant",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": "awesome-climate-2026-09",
+      "route_status": "FIRE_IF_FIT",
+      "campaign_included": true,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "public-good-control",
+      "relative_win_band": "STRONG_RELATIVE_FIT",
+      "submission_readiness_label": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Packaging: route-specific submission packet | Engineering/evidence: NOT_INDICATED_BY_CURRENT_RECORD | Gates: concrete climate/conservation action",
+      "readiness_next_action": "Verify the live route and finish the submission packet before browser execution.",
+      "submission_readiness": {
+        "readiness": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [
+          "route-specific submission packet"
+        ],
+        "engineering_required": "NOT_INDICATED_BY_CURRENT_RECORD",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "concrete climate/conservation action"
+        ],
+        "next_action": "Verify the live route and finish the submission packet before browser execution."
+      },
+      "score": 80,
+      "score_components": {
+        "capability_fit": 100,
+        "maturity": 58,
+        "route_readiness": 60
+      },
+      "alternatives": [
+        {
+          "asset_id": "policy-lab",
+          "score": 65,
+          "capability_fit": 67,
+          "maturity": 65,
+          "route_readiness": 60
+        }
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "legaltech-20261130@blowback",
+      "event_key": "legaltech",
+      "date": "2026-11-30",
+      "recurrence": null,
+      "summary": "[VERIFY/FIRE] LegalTech / Computer Audit competition",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "policy-lab",
+      "relative_win_band": "LOW_OR_UNPROVEN_FIT",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 49,
+      "score_components": {
+        "capability_fit": 45,
+        "maturity": 65,
+        "route_readiness": 35
+      },
+      "alternatives": [],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "sinica-year-end-20261231@blowback",
+      "event_key": "sinica-year-end",
+      "date": "2026-12-31",
+      "recurrence": null,
+      "summary": "[DEADLINE CLUSTER] Sinica research staff year-end roles",
+      "event_kind": "PORTFOLIO_OPERATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "BATCH_BY_ROUTE",
+      "recommended_lead_asset": null,
+      "relative_win_band": "UNASSESSED",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": null,
+      "score_components": null,
+      "alternatives": [],
+      "confidence": "NOT_APPLICABLE",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "nhh-main-20270115@blowback",
+      "event_key": "nhh-main",
+      "date": "2027-01-15",
+      "recurrence": null,
+      "summary": "[WATCH/FIRE] NHH 2027 main PhD round",
+      "event_kind": "REVERIFY_OR_HOLD",
+      "route_id": "phd-nhh-main-2027",
+      "route_status": "WATCH",
+      "campaign_included": false,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "research-papers",
+      "relative_win_band": "BLOCKED_OR_LOW",
+      "submission_readiness_label": "PHD_DOCUMENT_HOLD",
+      "ready_for_browser": false,
+      "readiness_work": "Packaging: route-specific PhD packet | Engineering/evidence: UNKNOWN_UNTIL_DOCUMENT_AND_FIT_AUDIT | Documents: route-specific applicant document set is not verified | Gates: user has paused PhD applications; final submit",
+      "readiness_next_action": "Keep out of the automatic application queue until the user reopens PhD applications and the official document set is verified.",
+      "submission_readiness": {
+        "readiness": "PHD_DOCUMENT_HOLD",
+        "ready_for_browser": false,
+        "packaging_required": [
+          "route-specific PhD packet"
+        ],
+        "engineering_required": "UNKNOWN_UNTIL_DOCUMENT_AND_FIT_AUDIT",
+        "documents_missing_or_unverified": [
+          "route-specific applicant document set is not verified"
+        ],
+        "dependency_or_human_gates": [
+          "user has paused PhD applications",
+          "final submit"
+        ],
+        "next_action": "Keep out of the automatic application queue until the user reopens PhD applications and the official document set is verified."
+      },
+      "score": 33,
+      "score_components": {
+        "capability_fit": 35,
+        "maturity": 38,
+        "route_readiness": 20
+      },
+      "alternatives": [],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "hku-aec-20270131@blowback",
+      "event_key": "hku-aec",
+      "date": "2027-01-31",
+      "recurrence": null,
+      "summary": "[FIRE] HKU AI Agents for Architecture & Construction",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": "job-hku-ai-agents-aec-ra-2026",
+      "route_status": "FIRE_AFTER_GATE",
+      "campaign_included": true,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "research-drive",
+      "relative_win_band": "STRONG_RELATIVE_FIT",
+      "submission_readiness_label": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Packaging: route-specific submission packet | Engineering/evidence: NOT_INDICATED_BY_CURRENT_RECORD | Gates: G1 reverify current closing date because HKU listings may change; verify appointment level, salary, work authorization/sponsorship, IP and outside-work terms. Broad degree eligibility makes this lower-friction than many AI lab roles.",
+      "readiness_next_action": "Verify the live route and finish the submission packet before browser execution.",
+      "submission_readiness": {
+        "readiness": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [
+          "route-specific submission packet"
+        ],
+        "engineering_required": "NOT_INDICATED_BY_CURRENT_RECORD",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "G1 reverify current closing date because HKU listings may change; verify appointment level, salary, work authorization/sponsorship, IP and outside-work terms. Broad degree eligibility makes this lower-friction than many AI lab roles."
+        ],
+        "next_action": "Verify the live route and finish the submission packet before browser execution."
+      },
+      "score": 87,
+      "score_components": {
+        "capability_fit": 100,
+        "maturity": 67,
+        "route_readiness": 80
+      },
+      "alternatives": [
+        {
+          "asset_id": "hardware-splicer",
+          "score": 72,
+          "capability_fit": 77,
+          "maturity": 57,
+          "route_readiness": 80
+        },
+        {
+          "asset_id": "policy-lab",
+          "score": 60,
+          "capability_fit": 50,
+          "maturity": 65,
+          "route_readiness": 80
+        }
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "global-tax-20270201@blowback",
+      "event_key": "global-tax",
+      "date": "2027-02-01",
+      "recurrence": null,
+      "summary": "[FIRE LATER] Global Tax Symposium 2027",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": "global-tax-symposium-2027-il",
+      "route_status": "FIRE_LATER",
+      "campaign_included": false,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "research-papers",
+      "relative_win_band": "LOW_OR_UNPROVEN_FIT",
+      "submission_readiness_label": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Packaging: route-specific submission packet | Engineering/evidence: NOT_INDICATED_BY_CURRENT_RECORD | Gates: full draft-paper quality + international/comparative framing",
+      "readiness_next_action": "Verify the live route and finish the submission packet before browser execution.",
+      "submission_readiness": {
+        "readiness": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [
+          "route-specific submission packet"
+        ],
+        "engineering_required": "NOT_INDICATED_BY_CURRENT_RECORD",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "full draft-paper quality + international/comparative framing"
+        ],
+        "next_action": "Verify the live route and finish the submission packet before browser execution."
+      },
+      "score": 56,
+      "score_components": {
+        "capability_fit": 65,
+        "maturity": 38,
+        "route_readiness": 60
+      },
+      "alternatives": [],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "sinica-ku-20270531@blowback",
+      "event_key": "sinica-ku",
+      "date": "2027-05-31",
+      "recurrence": null,
+      "summary": "[FIRE AFTER GATE] Sinica Ku NLP/RAG/news-literacy RA",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": "lab-sinica-ku-nlp-ra-2026",
+      "route_status": "FIRE_AFTER_GATE",
+      "campaign_included": false,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "nocturnal-oversight",
+      "relative_win_band": "STRONG_RELATIVE_FIT",
+      "submission_readiness_label": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Packaging: route-specific submission packet | Engineering/evidence: NOT_INDICATED_BY_CURRENT_RECORD | Gates: G1 verify degree/background flexibility, exact PT compensation, Taiwan work-permit compatibility, start timing, and pre-existing-IP/outside-work terms before acceptance. FT master's salary listed from NT$44,968/month; PT available but amount unspecified.",
+      "readiness_next_action": "Verify the live route and finish the submission packet before browser execution.",
+      "submission_readiness": {
+        "readiness": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [
+          "route-specific submission packet"
+        ],
+        "engineering_required": "NOT_INDICATED_BY_CURRENT_RECORD",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "G1 verify degree/background flexibility, exact PT compensation, Taiwan work-permit compatibility, start timing, and pre-existing-IP/outside-work terms before acceptance. FT master's salary listed from NT$44,968/month; PT available but amount unspecified."
+        ],
+        "next_action": "Verify the live route and finish the submission packet before browser execution."
+      },
+      "score": 79,
+      "score_components": {
+        "capability_fit": 89,
+        "maturity": 58,
+        "route_readiness": 80
+      },
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 67,
+          "capability_fit": 62,
+          "maturity": 67,
+          "route_readiness": 80
+        }
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "student-infrastructure-claim-20260902@blowback",
+      "event_key": "student-infrastructure-claim",
+      "date": "2026-09-02",
+      "recurrence": null,
+      "summary": "[BORING GOLD] Student infrastructure claim block",
+      "event_kind": "PORTFOLIO_OPERATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "BATCH_BY_ROUTE",
+      "recommended_lead_asset": null,
+      "relative_win_band": "UNASSESSED",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": null,
+      "score_components": null,
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 52,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 35
+        }
+      ],
+      "confidence": "NOT_APPLICABLE",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "openai-researcher-20260902@blowback",
+      "event_key": "openai-researcher",
+      "date": "2026-09-02",
+      "recurrence": null,
+      "summary": "[FIRE NOW] OpenAI Researcher Access — Cite",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": "openai-researcher-access-hardware-splicer",
+      "route_status": "FIRE_NOW",
+      "campaign_included": false,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "hardware-splicer",
+      "relative_win_band": "MEDIUM_RELATIVE_FIT",
+      "submission_readiness_label": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Packaging: route-specific submission packet | Engineering/evidence: NOT_INDICATED_BY_CURRENT_RECORD | Gates: G1 active YZU research affiliation and supported API country. Program offers up to US$1,000 API credits; reviews occur in March, June, September and December with no exact September cutoff published. Packet now specifies a 300-run default (GPT-5.6 Sol primary + Terra sensitivity) and a US$300 working request if an amount is requested; re-price against the live catalog/pilot and map the current application fields before final submit.",
+      "readiness_next_action": "Verify the live route and finish the submission packet before browser execution.",
+      "submission_readiness": {
+        "readiness": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [
+          "route-specific submission packet"
+        ],
+        "engineering_required": "NOT_INDICATED_BY_CURRENT_RECORD",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "G1 active YZU research affiliation and supported API country. Program offers up to US$1,000 API credits; reviews occur in March, June, September and December with no exact September cutoff published. Packet now specifies a 300-run default (GPT-5.6 Sol primary + Terra sensitivity) and a US$300 working request if an amount is requested; re-price against the live catalog/pilot and map the current application fields before final submit."
+        ],
+        "next_action": "Verify the live route and finish the submission packet before browser execution."
+      },
+      "score": 67,
+      "score_components": {
+        "capability_fit": 67,
+        "maturity": 57,
+        "route_readiness": 80
+      },
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 61,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 80
+        }
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "anthropic-research-access-20260903@blowback",
+      "event_key": "anthropic-research-access",
+      "date": "2026-09-03",
+      "recurrence": null,
+      "summary": "[FIRE AFTER PACKET] Anthropic MHS + AI for Science",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": "anthropic-external-researcher-access-2026",
+      "route_status": "FIRE_NOW",
+      "campaign_included": false,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "hardware-splicer",
+      "relative_win_band": "MEDIUM_RELATIVE_FIT",
+      "submission_readiness_label": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Packaging: route-specific submission packet | Engineering/evidence: NOT_INDICATED_BY_CURRENT_RECORD | Gates: G1 research scope must remain genuine AI safety/control work, not generic product development. Public program page states successful applicants ordinarily receive US$1,000 API credits and submissions are evaluated on the first Monday of each month. Packet now specifies a 300-run default (Claude Sonnet 5 primary + Opus 5 confirmatory); re-check current model/pricing and live application fields before final submit.",
+      "readiness_next_action": "Verify the live route and finish the submission packet before browser execution.",
+      "submission_readiness": {
+        "readiness": "PACKAGING_OR_ROUTE_RECON_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [
+          "route-specific submission packet"
+        ],
+        "engineering_required": "NOT_INDICATED_BY_CURRENT_RECORD",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "G1 research scope must remain genuine AI safety/control work, not generic product development. Public program page states successful applicants ordinarily receive US$1,000 API credits and submissions are evaluated on the first Monday of each month. Packet now specifies a 300-run default (Claude Sonnet 5 primary + Opus 5 confirmatory); re-check current model/pricing and live application fields before final submit."
+        ],
+        "next_action": "Verify the live route and finish the submission packet before browser execution."
+      },
+      "score": 72,
+      "score_components": {
+        "capability_fit": 77,
+        "maturity": 57,
+        "route_readiness": 80
+      },
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 61,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 80
+        }
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "rolling-money-review-20260905@blowback",
+      "event_key": "rolling-money-review",
+      "date": "2026-09-05",
+      "recurrence": "FREQ=MONTHLY;BYMONTHDAY=5;UNTIL=20261205",
+      "summary": "[ROLLING MONEY] Review grants, bounties and cost-displacement routes",
+      "event_kind": "PORTFOLIO_OPERATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "BATCH_BY_ROUTE",
+      "recommended_lead_asset": null,
+      "relative_win_band": "UNASSESSED",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": null,
+      "score_components": null,
+      "alternatives": [],
+      "confidence": "NOT_APPLICABLE",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "rolling-research-labor-20260907@blowback",
+      "event_key": "rolling-research-labor",
+      "date": "2026-09-07",
+      "recurrence": "FREQ=WEEKLY;BYDAY=MO;UNTIL=20261228",
+      "summary": "[ROLLING LABS] Faculty pull, lab, predoc and research-staff batch",
+      "event_kind": "PORTFOLIO_OPERATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "BATCH_BY_ROUTE",
+      "recommended_lead_asset": null,
+      "relative_win_band": "UNASSESSED",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": null,
+      "score_components": null,
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 52,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 35
+        }
+      ],
+      "confidence": "NOT_APPLICABLE",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "nocturnal-pilot-outreach-20260909@blowback",
+      "event_key": "nocturnal-pilot-outreach",
+      "date": "2026-09-09",
+      "recurrence": "FREQ=WEEKLY;BYDAY=WE;COUNT=6",
+      "summary": "[PILOT] Nocturnal external-witness outreach",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "nocturnal-oversight",
+      "relative_win_band": "LOW_OR_UNPROVEN_FIT",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 49,
+      "score_components": {
+        "capability_fit": 50,
+        "maturity": 58,
+        "route_readiness": 35
+      },
+      "alternatives": [],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "research-cloud-pi-20260911@blowback",
+      "event_key": "research-cloud-pi",
+      "date": "2026-09-11",
+      "recurrence": "FREQ=BIWEEKLY;COUNT=4",
+      "summary": "[PI DEPENDENCY] Research-cloud credit packet",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "research-drive",
+      "relative_win_band": "LOW_OR_UNPROVEN_FIT",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 54,
+      "score_components": {
+        "capability_fit": 55,
+        "maturity": 67,
+        "route_readiness": 35
+      },
+      "alternatives": [],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "rolling-public-good-pilot-20260912@blowback",
+      "event_key": "rolling-public-good-pilot",
+      "date": "2026-09-12",
+      "recurrence": "FREQ=MONTHLY;BYMONTHDAY=12;UNTIL=20261212",
+      "summary": "[PILOT GATE] Public-Good operator/use-case review",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "public-good-control",
+      "relative_win_band": "LOW_OR_UNPROVEN_FIT",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": 52,
+      "score_components": {
+        "capability_fit": 55,
+        "maturity": 58,
+        "route_readiness": 35
+      },
+      "alternatives": [],
+      "confidence": "MEDIUM",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "rolling-procurement-20260912@blowback",
+      "event_key": "rolling-procurement",
+      "date": "2026-09-12",
+      "recurrence": "FREQ=MONTHLY;BYMONTHDAY=12;UNTIL=20261212",
+      "summary": "[LOW PRIORITY] GeoMap procurement-demand review",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "SKIP_DEFERRED_GEOMAP",
+      "recommended_lead_asset": null,
+      "relative_win_band": "UNASSESSED",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": null,
+      "score_components": null,
+      "alternatives": [],
+      "confidence": "LOW",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "next-cycle-fellowships-20260915@blowback",
+      "event_key": "next-cycle-fellowships",
+      "date": "2026-09-15",
+      "recurrence": "FREQ=MONTHLY;BYMONTHDAY=15;UNTIL=20261215",
+      "summary": "[WATCH] Next-cycle fellowship / residency radar",
+      "event_kind": "PORTFOLIO_OPERATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "BATCH_BY_ROUTE",
+      "recommended_lead_asset": null,
+      "relative_win_band": "UNASSESSED",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": null,
+      "score_components": null,
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 52,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 35
+        }
+      ],
+      "confidence": "NOT_APPLICABLE",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "partner-watch-20260916@blowback",
+      "event_key": "partner-watch",
+      "date": "2026-09-16",
+      "recurrence": "FREQ=MONTHLY;BYMONTHDAY=16;UNTIL=20261216",
+      "summary": "[WATCH] Civic-tech / information-integrity partner ecosystem",
+      "event_kind": "PORTFOLIO_OPERATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "BATCH_BY_ROUTE",
+      "recommended_lead_asset": null,
+      "relative_win_band": "UNASSESSED",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": null,
+      "score_components": null,
+      "alternatives": [],
+      "confidence": "NOT_APPLICABLE",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "rolling-publications-20260919@blowback",
+      "event_key": "rolling-publications",
+      "date": "2026-09-19",
+      "recurrence": "FREQ=MONTHLY;BYMONTHDAY=19;UNTIL=20261219",
+      "summary": "[WATCH] Future-cycle research venue refresh",
+      "event_kind": "PORTFOLIO_OPERATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "BATCH_BY_ROUTE",
+      "recommended_lead_asset": null,
+      "relative_win_band": "UNASSESSED",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": null,
+      "score_components": null,
+      "alternatives": [
+        {
+          "asset_id": "research-drive",
+          "score": 52,
+          "capability_fit": 50,
+          "maturity": 67,
+          "route_readiness": 35
+        }
+      ],
+      "confidence": "NOT_APPLICABLE",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "dpg-policy-lab-20260921@blowback",
+      "event_key": "dpg-policy-lab",
+      "date": "2026-09-21",
+      "recurrence": "FREQ=MONTHLY;BYMONTHDAY=21;COUNT=3",
+      "summary": "[ROLLING FIRE] DPG Registry — Policy Lab",
+      "event_kind": "ENTRY_OR_APPLICATION",
+      "route_id": "dpg-policy-lab",
+      "route_status": "HOLD_CANONICAL_CI_REPAIR_AND_REMAINING_RECON",
+      "campaign_included": true,
+      "decision": "USE_SELECTED_LEAD",
+      "recommended_lead_asset": "policy-lab",
+      "relative_win_band": "BLOCKED_OR_LOW",
+      "submission_readiness_label": "RESEARCH_OR_RECON_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_RECON | Gates: Promote tested live-smoke repair; map remaining questionnaire sections; choose public email; G1/G2 email verification and consequential legal/privacy/ownership attestations; human final submit",
+      "readiness_next_action": "Reverify the source, eligibility and required artifacts.",
+      "submission_readiness": {
+        "readiness": "RESEARCH_OR_RECON_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_RECON",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [
+          "Promote tested live-smoke repair; map remaining questionnaire sections; choose public email; G1/G2 email verification and consequential legal/privacy/ownership attestations; human final submit"
+        ],
+        "next_action": "Reverify the source, eligibility and required artifacts."
+      },
+      "score": 70,
+      "score_components": {
+        "capability_fit": 100,
+        "maturity": 65,
+        "route_readiness": 0
+      },
+      "alternatives": [
+        {
+          "asset_id": "public-good-control",
+          "score": 45,
+          "capability_fit": 55,
+          "maturity": 58,
+          "route_readiness": 0
+        }
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    },
+    {
+      "calendar_uid": "outbound-pilot-review-20260923@blowback",
+      "event_key": "outbound-pilot-review",
+      "date": "2026-09-23",
+      "recurrence": "FREQ=MONTHLY;BYMONTHDAY=23;UNTIL=20261223",
+      "summary": "[OUTBOUND] Manufactured pilot and service conversion review",
+      "event_kind": "PORTFOLIO_OPERATION",
+      "route_id": null,
+      "route_status": null,
+      "campaign_included": null,
+      "decision": "BATCH_BY_ROUTE",
+      "recommended_lead_asset": null,
+      "relative_win_band": "UNASSESSED",
+      "submission_readiness_label": "ROUTE_BINDING_REQUIRED",
+      "ready_for_browser": false,
+      "readiness_work": "Engineering/evidence: UNKNOWN_UNTIL_ROUTE_BOUND",
+      "readiness_next_action": "Bind and verify an official route before preparing a submission.",
+      "submission_readiness": {
+        "readiness": "ROUTE_BINDING_REQUIRED",
+        "ready_for_browser": false,
+        "packaging_required": [],
+        "engineering_required": "UNKNOWN_UNTIL_ROUTE_BOUND",
+        "documents_missing_or_unverified": [],
+        "dependency_or_human_gates": [],
+        "next_action": "Bind and verify an official route before preparing a submission."
+      },
+      "score": null,
+      "score_components": null,
+      "alternatives": [
+        {
+          "asset_id": "policy-lab",
+          "score": 56,
+          "capability_fit": 60,
+          "maturity": 65,
+          "route_readiness": 35
+        },
+        {
+          "asset_id": "research-drive",
+          "score": 54,
+          "capability_fit": 55,
+          "maturity": 67,
+          "route_readiness": 35
+        },
+        {
+          "asset_id": "public-good-control",
+          "score": 52,
+          "capability_fit": 55,
+          "maturity": 58,
+          "route_readiness": 35
+        }
+      ],
+      "confidence": "NOT_APPLICABLE",
+      "caveat": "Relative win band is a portfolio-selection heuristic, not an empirical acceptance probability. Live eligibility, current source, competition strength and external evidence still control submission readiness."
+    }
+  ]
+}

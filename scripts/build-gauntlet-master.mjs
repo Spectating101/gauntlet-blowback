@@ -15,7 +15,10 @@ const DEFAULTS = {
   nocturnalRadar: path.join(ROOT, 'data/nocturnal-conversion-radar-2026-09-01.json'),
   infrastructureRadar: path.join(ROOT, 'data/student-research-infrastructure-radar-2026-09-01.json'),
   researchResourceRadar: path.join(ROOT, 'data/research-resource-radar-2026-09-04.json'),
+  expandedOpportunityRadar: path.join(ROOT, 'data/expanded-opportunity-radar-2026-09-12.json'),
   fireExecutionRoutes: path.join(ROOT, 'data/fire-execution-routes-2026-09-05.json'),
+  archivedRoutes: path.join(ROOT, 'data/archived-routes-2026-09-17.json'),
+  policyArchivedRoutes: path.join(ROOT, 'data/policy-archived-routes-2026-09-17.json'),
   outputCsv: path.join(ROOT, 'docs/gauntlet-master.csv'),
   outputJson: path.join(ROOT, 'docs/gauntlet-master.json'),
 };
@@ -194,7 +197,11 @@ export function buildMasterRegistry({
   nocturnalRadarPath = DEFAULTS.nocturnalRadar,
   infrastructureRadarPath = DEFAULTS.infrastructureRadar,
   researchResourceRadarPath = DEFAULTS.researchResourceRadar,
+  expandedOpportunityRadarPath = DEFAULTS.expandedOpportunityRadar,
   fireExecutionRoutesPath = DEFAULTS.fireExecutionRoutes,
+  archivedRoutesPath = DEFAULTS.archivedRoutes,
+  policyArchivedRoutesPath = DEFAULTS.policyArchivedRoutes,
+  includeArchived = false,
 } = {}) {
   const longtail = parseCsv(fs.readFileSync(longtailPath, 'utf8')).map(normalizeLongtail);
   const postgrad = parseCsv(fs.readFileSync(postgradPath, 'utf8')).map(normalizePostgrad);
@@ -205,7 +212,10 @@ export function buildMasterRegistry({
   const nocturnalRadar = JSON.parse(fs.readFileSync(nocturnalRadarPath, 'utf8'));
   const infrastructureRadar = JSON.parse(fs.readFileSync(infrastructureRadarPath, 'utf8'));
   const researchResourceRadar = JSON.parse(fs.readFileSync(researchResourceRadarPath, 'utf8'));
+  const expandedOpportunityRadar = JSON.parse(fs.readFileSync(expandedOpportunityRadarPath, 'utf8'));
   const fireExecutionRoutes = JSON.parse(fs.readFileSync(fireExecutionRoutesPath, 'utf8'));
+  const archivedRoutes = JSON.parse(fs.readFileSync(archivedRoutesPath, 'utf8'));
+  const policyArchivedRoutes = JSON.parse(fs.readFileSync(policyArchivedRoutesPath, 'utf8'));
 
   const records = new Map();
   for (const record of [...longtail, ...postgrad]) {
@@ -242,11 +252,26 @@ export function buildMasterRegistry({
   addSupplementRoutes(records, researchResourceRadar.routes, 'research-resource-radar');
   applyOverrides(records, researchResourceRadar.overrides, 'research-resource-radar');
 
+  // The Sep-12 expanded radar adds provider programs, CFPs, recurring monitors
+  // and explicit false-positive rejections. It loads after earlier research/resource
+  // audits so current official program mechanics supersede stale provider rows.
+  addSupplementRoutes(records, expandedOpportunityRadar.routes, 'expanded-opportunity-radar');
+  applyOverrides(records, expandedOpportunityRadar.overrides, 'expanded-opportunity-radar');
+
   // FIRE execution mapping is intentionally separate from opportunity truth. It only
   // attaches a vetted local manifest to routes whose application copy is already ready.
   applyOverrides(records, fireExecutionRoutes.overrides, 'fire-execution-routes');
 
-  const output = [...records.values()];
+  const staleArchivedIds = new Set((archivedRoutes.routes ?? []).map((route) => route.id));
+  const policyArchivedIds = new Set((policyArchivedRoutes.routes ?? []).map((route) => route.id));
+  const overlap = [...staleArchivedIds].filter((id) => policyArchivedIds.has(id));
+  if (overlap.length) throw new Error(`route appears in both stale and policy archives: ${overlap.join(', ')}`);
+  const archivedIds = new Set([...staleArchivedIds, ...policyArchivedIds]);
+  for (const id of archivedIds) {
+    if (!records.has(id)) throw new Error(`archived route not found in source registry: ${id}`);
+  }
+
+  const output = [...records.values()].filter((record) => includeArchived || !archivedIds.has(record.id));
   const ids = new Set(output.map((record) => record.id));
   if (ids.size !== output.length) throw new Error('master registry contains duplicate ids');
   return output;
@@ -271,9 +296,33 @@ export function writeMasterRegistry(options = {}) {
   const records = buildMasterRegistry(options);
   const outputCsv = options.outputCsv ?? DEFAULTS.outputCsv;
   const outputJson = options.outputJson ?? DEFAULTS.outputJson;
+  const archivedRoutesPath = options.archivedRoutesPath ?? DEFAULTS.archivedRoutes;
+  const policyArchivedRoutesPath = options.policyArchivedRoutesPath ?? DEFAULTS.policyArchivedRoutes;
+  const archivedRoutes = JSON.parse(fs.readFileSync(archivedRoutesPath, 'utf8'));
+  const policyArchivedRoutes = JSON.parse(fs.readFileSync(policyArchivedRoutesPath, 'utf8'));
+  const archiveFilters = [
+    {
+      kind: 'STALE_OR_TERMINAL',
+      schema: archivedRoutes.schema,
+      as_of: archivedRoutes.as_of,
+      excluded_routes: (archivedRoutes.routes ?? []).length,
+      source: path.relative(ROOT, archivedRoutesPath),
+    },
+    {
+      kind: 'CURRENT_POLICY_EXTERNAL_PREREQUISITE',
+      schema: policyArchivedRoutes.schema,
+      as_of: policyArchivedRoutes.as_of,
+      excluded_routes: (policyArchivedRoutes.routes ?? []).length,
+      source: path.relative(ROOT, policyArchivedRoutesPath),
+    },
+  ];
   const payload = {
     schema: 'blowback.gauntlet_master.v1',
-    source_snapshot: '2026-09-05',
+    source_snapshot: '2026-09-17',
+    archive_filter: {
+      excluded_routes: archiveFilters.reduce((sum, filter) => sum + filter.excluded_routes, 0),
+      filters: archiveFilters,
+    },
     summary: summarizeMasterRegistry(records),
     records,
   };

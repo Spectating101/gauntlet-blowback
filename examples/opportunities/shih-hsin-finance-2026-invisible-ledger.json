@@ -1,0 +1,68 @@
+{
+  "id": "shih-hsin-finance-2026-il",
+  "name": "Shih Hsin Finance International Conference 2026 - Invisible Ledger",
+  "portal": "generic",
+  "portal_family": "google_forms",
+  "source_url": "https://fin.wp.shu.edu.tw/?page_id=262",
+  "submission_url": "https://docs.google.com/forms/d/e/1FAIpQLScIEA1siY_QhPy9rZFVKQoqDQ90gGGaqHOkLZbwkd_TJ9v1Qg/viewform?usp=send_form",
+  "auth_scope": "google-forms-shih-hsin-finance-2026",
+  "deadline": "2026-09-17",
+  "deadline_note": "Official abstract deadline is 17 September 2026. The conference is 7 November 2026.",
+  "mode": "inspect",
+  "execution_state": "PACKET_READY",
+  "direct_control": true,
+  "profile": "../profiles/christ.json",
+  "project": "../projects/invisible-ledger.json",
+  "fire_packet": "../fire-packets/shih-hsin-finance-2026-invisible-ledger.json",
+  "packet_revision": "2026-09-14-shih-hsin-editorial-v1",
+  "packet_source": "output/shih-hsin-finance-2026/Invisible_Ledger_Shih_Hsin_2026_Abstract.docx",
+  "final_copy_revision": "2026-09-14-shih-hsin-editorial-v1",
+  "final_copy_source": "output/shih-hsin-finance-2026/Invisible_Ledger_Shih_Hsin_2026_Abstract.docx",
+  "fields": {
+    "applicant_name": "$profile.name",
+    "paper_title": "隱形帳簿：衡量印尼數位平台收入之外的交易活動",
+    "paper_title_english": "The Invisible Ledger: Measuring Platform-Mediated Transaction Activity Beyond Platform Revenue in Indonesia",
+    "submission_topic": "其他金融財務相關領域",
+    "contact_email": "$profile.email",
+    "contact_phone": "+886-972-926-724",
+    "school_unit": "元智大學管理學院 / College of Management, Yuan Ze University",
+    "job_title": "碩士研究生／研究助理",
+    "presenter_role": "發表人／主要報告人",
+    "first_author_name": "王新福 (Christopher Ongko)",
+    "first_author_unit": "元智大學管理學院",
+    "first_author_title": "碩士研究生／研究助理",
+    "second_author": "無",
+    "third_author": "無"
+  },
+  "field_map": {},
+  "uploads": [
+    {
+      "name": "abstract_word",
+      "path": "../../output/shih-hsin-finance-2026/Invisible_Ledger_Shih_Hsin_2026_Abstract.docx"
+    },
+    {
+      "name": "abstract_pdf",
+      "path": "../../output/shih-hsin-finance-2026/Invisible_Ledger_Shih_Hsin_2026_Abstract.pdf"
+    }
+  ],
+  "upload_map": {},
+  "route_evidence": {
+    "official_call_reverified": "2026-09-14",
+    "submission_topic_supported_by_official_call": "其他金融財務相關領域",
+    "live_google_form_mapped": "2026-09-14",
+    "word_upload_limit": "1 MB",
+    "pdf_upload_limit": "1 MB",
+    "word_packet_ready": true,
+    "pdf_packet_ready": true,
+    "final_submission_copy_ready": true,
+    "post_submission_phone_confirmation_required": true,
+    "final_submit_authorized": false
+  },
+  "human_required": [
+    "login",
+    "authorship_attestation",
+    "originality_attestation",
+    "terms_acceptance",
+    "final_submit"
+  ]
+}

@@ -8,23 +8,14 @@ import { resolveBundle } from '../core/resolve.mjs';
 import { resolveRouteUrls } from '../core/routes.mjs';
 import { buildBrowserMission, rankGauntlet } from '../mission/operator.mjs';
 import { assertNoSecretKeys, persistCheckpoint } from '../mission/checkpoint.mjs';
+import { automaticQueueExclusionReasons } from '../allocation/submission-readiness.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '../..');
 const RECEIPT_DIR = path.join(ROOT, '.blowback', 'receipts');
 const FIRE_STATUS = /^(PORTAL_READY|FIRE_NOW|PRIMARY_FIRE|FIRE)$/i;
 const RECEIPT_STATUSES = new Set(['IN_PROGRESS', 'WAITING_HUMAN', 'SAFE_COMPLETE', 'SUBMITTED', 'BLOCKED', 'ABANDONED', 'EXPIRED']);
-
-function currentDateKey(asOf = new Date()) {
-  const date = asOf instanceof Date ? asOf : new Date(asOf);
-  if (Number.isNaN(date.getTime())) throw new Error(`invalid FIRE queue date: ${asOf}`);
-  return date.toISOString().slice(0, 10);
-}
-
-function currentCycleExpired(record, asOf) {
-  const deadline = String(record?.deadline ?? '').match(/\d{4}-\d{2}-\d{2}/)?.[0];
-  return Boolean(deadline && deadline < currentDateKey(asOf));
-}
+const MAX_AUTOMATIC_SOURCE_AGE_DAYS = 14;
 
 function withinRoot(file) {
   const resolved = path.resolve(file);
@@ -55,7 +46,47 @@ function requireFireRecord(record) {
   return record;
 }
 
-async function loadExecutionBundle(record) {
+function verificationDate(opportunity) {
+  const evidence = opportunity?.route_evidence ?? {};
+  for (const key of [
+    'verified_at',
+    'official_call_reverified',
+    'official_application_reverified',
+    'live_google_form_mapped',
+    'live_form_reverified',
+  ]) {
+    const value = evidence[key];
+    if (typeof value === 'string' && /^\d{4}-\d{2}-\d{2}/.test(value)) return value.slice(0, 10);
+  }
+  return null;
+}
+
+function automaticBundlePreflight(opportunity, asOf = new Date()) {
+  const asOfDate = asOf instanceof Date ? asOf : new Date(asOf);
+  if (Number.isNaN(asOfDate.getTime())) throw new Error(`invalid FIRE preflight date: ${asOf}`);
+  const verifiedAt = verificationDate(opportunity);
+  const reasons = [];
+  if (!opportunity.packet_revision) reasons.push('canonical_packet_revision_missing');
+  if (!opportunity.final_copy_revision) reasons.push('final_copy_revision_missing');
+  if (!verifiedAt) reasons.push('official_source_verification_missing');
+  let sourceAgeDays = null;
+  if (verifiedAt) {
+    sourceAgeDays = Math.floor((asOfDate.getTime() - Date.parse(`${verifiedAt}T00:00:00Z`)) / 86_400_000);
+    if (sourceAgeDays < -1) reasons.push('official_source_verification_is_future_dated');
+    if (sourceAgeDays > MAX_AUTOMATIC_SOURCE_AGE_DAYS) reasons.push('official_source_verification_stale');
+  }
+  return {
+    ready: reasons.length === 0,
+    reasons,
+    official_source_verified_at: verifiedAt,
+    official_source_age_days: sourceAgeDays,
+    maximum_source_age_days: MAX_AUTOMATIC_SOURCE_AGE_DAYS,
+    canonical_packet_revision: opportunity.packet_revision ?? null,
+    final_copy_revision: opportunity.final_copy_revision ?? null,
+  };
+}
+
+async function loadExecutionBundle(record, { automatic = false, asOf = new Date() } = {}) {
   requireFireRecord(record);
   const manifestPath = withinRoot(path.join(ROOT, record.execution_manifest));
   const opportunity = await loadOpportunity(manifestPath);
@@ -76,10 +107,21 @@ async function loadExecutionBundle(record) {
   if (firePacket.route_id !== record.id) throw new Error(`fire packet route mismatch: master=${record.id} packet=${firePacket.route_id}`);
   if (!firePacket.copy || typeof firePacket.copy !== 'object') throw new Error(`fire packet copy missing: ${record.id}`);
 
-  return { manifestPath, opportunity, bundle, firePacketPath, firePacket };
+  const preflight = automaticBundlePreflight(opportunity, asOf);
+  if (!preflight.canonical_packet_revision) throw new Error(`canonical packet revision missing: ${record.id}`);
+  if (!preflight.final_copy_revision) throw new Error(`final copy revision missing: ${record.id}`);
+  if (automatic && !preflight.ready) {
+    throw new Error(`automatic FIRE preflight failed for ${record.id}: ${preflight.reasons.join(', ')}`);
+  }
+
+  return { manifestPath, opportunity, bundle, firePacketPath, firePacket, preflight };
 }
 
-function receiptTemplate(mission, routes) {
+function receiptTemplate(mission, routes, opportunity) {
+  const humanRequired = [...new Set([
+    ...asStringArray(opportunity?.human_required, 'human_required'),
+    'final_submit',
+  ])];
   return {
     schema: 'blowback.fire_receipt.v1',
     mission_id: mission.mission_id,
@@ -90,7 +132,7 @@ function receiptTemplate(mission, routes) {
     visited_urls: [],
     completed_actions: [],
     unresolved_items: [],
-    human_required: ['final_submit'],
+    human_required: humanRequired,
     receipt_refs: [],
     application_id: null,
     submitted_at: null,
@@ -99,8 +141,8 @@ function receiptTemplate(mission, routes) {
   };
 }
 
-export async function buildFireHandoff(record, checkpoint = null) {
-  const { opportunity, bundle, firePacket, manifestPath, firePacketPath } = await loadExecutionBundle(record);
+export async function buildFireHandoff(record, checkpoint = null, options = {}) {
+  const { opportunity, bundle, firePacket, manifestPath, firePacketPath, preflight } = await loadExecutionBundle(record, options);
   const mission = buildBrowserMission(record, checkpoint);
   const routes = resolveRouteUrls(opportunity);
   const startingUrl = routes.execution_url ?? routes.recon_url ?? record.source ?? null;
@@ -138,6 +180,7 @@ export async function buildFireHandoff(record, checkpoint = null) {
       final_copy_source: opportunity.final_copy_source ?? firePacket.source_url ?? null,
       final_copy_revision: opportunity.final_copy_revision ?? firePacket.source_revision ?? null,
     },
+    execution_preflight: preflight,
     live_portal_state: {
       execution_state: opportunity.execution_state ?? null,
       recon_stage: opportunity.recon_stage ?? null,
@@ -161,25 +204,35 @@ export async function buildFireHandoff(record, checkpoint = null) {
       allowed_statuses: [...RECEIPT_STATUSES],
       checkpoint_on_return: true,
       persist_receipt: true,
-      template: receiptTemplate(mission, routes),
+      template: receiptTemplate(mission, routes, opportunity),
     },
     resume: mission.resume,
   };
 }
 
 export async function fireHandoffForRoute(routeId, records = buildMasterRegistry()) {
-  const ranked = rankGauntlet(records, { includePaused: true });
+  const ranked = rankGauntlet(records, {
+    includePaused: true,
+    includeExpired: true,
+    includeAutomaticQueueExcluded: true,
+  });
   const found = ranked.find(({ record }) => record.id === routeId);
   if (!found) throw new Error(`route not found in active Gauntlet master: ${routeId}`);
   return buildFireHandoff(found.record, found.checkpoint);
 }
 
-export async function nextFireHandoff(records = buildMasterRegistry(), { asOf = new Date() } = {}) {
-  const ranked = rankGauntlet(records)
-    .filter(({ record }) => record.execution_manifest && FIRE_STATUS.test(String(record.status ?? '')) && !currentCycleExpired(record, asOf));
+export async function nextFireHandoff(records = buildMasterRegistry(), { asOf = new Date(), includePaused = false, campaignScope = false } = {}) {
+  const ranked = rankGauntlet(records, {
+    asOf,
+    includePaused,
+    campaignScope,
+    includeAutomaticQueueExcluded: true,
+  })
+    .filter(({ record }) => record.execution_manifest && FIRE_STATUS.test(String(record.status ?? '')))
+    .filter(({ record }) => automaticQueueExclusionReasons(record).length === 0);
   for (const item of ranked) {
     try {
-      return await buildFireHandoff(item.record, item.checkpoint);
+      return await buildFireHandoff(item.record, item.checkpoint, { automatic: true, asOf });
     } catch {
       // A FIRE route without a complete execution bundle is not executable yet.
       // Continue to the next deterministic FIRE route rather than failing the whole queue.
@@ -188,15 +241,27 @@ export async function nextFireHandoff(records = buildMasterRegistry(), { asOf = 
   return null;
 }
 
-export async function fireHandoffQueue(records = buildMasterRegistry(), { limit = 10, asOf = new Date() } = {}) {
-  const ranked = rankGauntlet(records)
-    .filter(({ record }) => record.execution_manifest && FIRE_STATUS.test(String(record.status ?? '')) && !currentCycleExpired(record, asOf));
+export async function fireHandoffQueue(records = buildMasterRegistry(), { limit = 10, asOf = new Date(), includePaused = false, campaignScope = false } = {}) {
+  const ranked = rankGauntlet(records, {
+    asOf,
+    includePaused,
+    campaignScope,
+    includeAutomaticQueueExcluded: true,
+  })
+    .filter(({ record }) => record.execution_manifest && FIRE_STATUS.test(String(record.status ?? '')));
   const handoffs = [];
+  const skipped = [];
   for (const item of ranked) {
     if (handoffs.length >= Math.max(1, Number(limit) || 10)) break;
+    const exclusionReasons = automaticQueueExclusionReasons(item.record);
+    if (exclusionReasons.length) {
+      skipped.push({ route_id: item.record.id, reasons: exclusionReasons });
+      continue;
+    }
     try {
-      handoffs.push(await buildFireHandoff(item.record, item.checkpoint));
-    } catch {
+      handoffs.push(await buildFireHandoff(item.record, item.checkpoint, { automatic: true, asOf }));
+    } catch (error) {
+      skipped.push({ route_id: item.record.id, reasons: ['bundle_preflight_failed'], detail: error.message });
       // Keep the queue executable-only. Non-ready FIRE records remain visible in Gauntlet,
       // but they do not become browser-agent handoffs until their bundle is complete.
     }
@@ -206,6 +271,7 @@ export async function fireHandoffQueue(records = buildMasterRegistry(), { limit 
     generated_at: new Date().toISOString(),
     count: handoffs.length,
     handoffs,
+    skipped,
   };
 }
 

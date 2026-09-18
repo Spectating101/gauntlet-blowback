@@ -10,18 +10,19 @@ import { buildApplicationMission } from '../src/application/operator.mjs';
 
 const records = buildMasterRegistry();
 const byId = new Map(records.map((record) => [record.id, record]));
+const historicalById = new Map(buildMasterRegistry({ includeArchived: true }).map((record) => [record.id, record]));
 
-function allocation(id) {
-  const record = byId.get(id);
+function allocation(id, { historical = false } = {}) {
+  const record = (historical ? historicalById : byId).get(id);
   assert.ok(record, `missing canonical route ${id}`);
   return resolvePortfolioAllocation(record);
 }
 
 test('flagship project-native routes have explicit lead ownership', () => {
-  assert.equal(allocation('taia-2026-hardware-splicer').lead_asset, 'hardware-splicer');
+  assert.equal(allocation('embedded-world-2027-hardware-splicer').lead_asset, 'hardware-splicer');
   assert.equal(allocation('anthropic-mhs-preview-2026').lead_asset, 'hardware-splicer');
-  assert.equal(allocation('openai-researcher').lead_asset, 'cite-agent');
-  assert.equal(allocation('otf-nocturnal').lead_asset, 'nocturnal-oversight');
+  assert.equal(allocation('cav-2027-hardware-splicer').lead_asset, 'hardware-splicer');
+  assert.equal(allocation('dpg-nocturnal').lead_asset, 'public-good-control');
   assert.equal(allocation('msr-2027-technical-refinery').lead_asset, 'refinery-commons');
   assert.equal(allocation('fc27-cl-eci').lead_asset, 'policy-lab');
   assert.equal(allocation('shih-hsin-finance-2026-il').lead_asset, 'research-papers');
@@ -29,20 +30,20 @@ test('flagship project-native routes have explicit lead ownership', () => {
 });
 
 test('research labor is packaged as person-level evidence bundles rather than project-vs-project applications', () => {
-  const hku = allocation('job-hku-ai-engineer-mcp-ra2-2026');
+  const hku = allocation('job-hku-ai-agents-aec-ra-2026');
   assert.equal(hku.mode, 'PERSON_BUNDLE');
   assert.equal(hku.lead_asset, 'research-drive');
-  assert.deepEqual(hku.lead_projects.slice(0, 2), ['research-drive', 'cite-agent']);
+  assert.deepEqual(hku.lead_projects, ['research-drive']);
+  assert.equal(hku.lead_projects.includes('cite-agent'), false);
   assert.ok(hku.support_assets.includes('gauntlet-blowback'));
 
-  const ku = allocation('lab-sinica-ku-nlp-ra-2026');
-  assert.equal(ku.mode, 'PERSON_BUNDLE');
-  assert.equal(ku.lead_asset, 'cite-agent');
-  assert.ok(ku.lead_projects.includes('nocturnal-oversight'));
+  const aiiu = allocation('lab-sinica-aiiu-embodied-ai-ra-2026');
+  assert.equal(aiiu.mode, 'PERSON_BUNDLE');
+  assert.equal(aiiu.lead_asset, 'hardware-splicer');
 });
 
 test('scarce portfolio slots cannot be consumed by an old multi-asset row', () => {
-  const twnic = allocation('twnic-community-grant-2026-nocturnal');
+  const twnic = allocation('twnic-community-grant-2026-nocturnal', { historical: true });
   assert.equal(twnic.mode, 'PORTFOLIO_BAKEOFF');
   assert.equal(twnic.scarce_slot_group, 'twnic-one-proposal-per-host-2026');
   assert.equal(twnic.allocation_clear, false);
@@ -79,7 +80,7 @@ test('Citation Engine and Gauntlet remain support-only and cannot own a standalo
 });
 
 test('GeoMap stays bounded to procurement/pilot allocation instead of becoming a generic campaign asset', () => {
-  const geomap = allocation('outbound-geomap-procurement-intelligence');
+  const geomap = allocation('outbound-geomap-procurement-intelligence', { historical: true });
   assert.equal(geomap.lead_asset, 'geomap-arbitrage');
   assert.equal(geomap.package_family, 'geomap-procurement');
   assert.match(geomap.package.do_not_claim.join(' '), /generic lead-generation/i);
@@ -91,7 +92,7 @@ test('application autopilot exposes allocation and refuses autonomous final subm
     assert.equal(allocationAllowsAutonomousFinalSubmit(twnic), false);
   }
 
-  const hku = byId.get('job-hku-ai-engineer-mcp-ra2-2026');
+  const hku = byId.get('job-hku-ai-agents-aec-ra-2026');
   const mission = buildApplicationMission(hku);
   assert.equal(mission.application.portfolio_allocation.lead_asset, 'research-drive');
   assert.equal(mission.application.portfolio_allocation.mode, 'PERSON_BUNDLE');

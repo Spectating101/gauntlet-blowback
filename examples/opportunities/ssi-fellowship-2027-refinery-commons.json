@@ -1,0 +1,89 @@
+{
+  "id": "ssi-fellowship-2027-policy-lab",
+  "name": "Software Sustainability Institute Fellowship Programme 2027 - Refinery / Commons",
+  "portal": "generic",
+  "portal_family": "microsoft_forms",
+  "source_url": "https://www.software.ac.uk/programmes/fellowship-programme/apply-fellowship-programme",
+  "submission_url": "https://forms.cloud.microsoft/e/pJdGh0rRSx",
+  "auth_scope": "software-ac-uk-ssi-fellowship-2027",
+  "deadline": "2026-10-05T23:59:00+01:00",
+  "deadline_note": "Official deadline is 5 October 2026 at 23:59 GMT+1.",
+  "mode": "inspect",
+  "execution_state": "PORTAL_MAPPED",
+  "direct_control": true,
+  "profile": "../profiles/christ.json",
+  "project": "../projects/refinery-commons.json",
+  "packet_revision": "2026-09-17-ssi-criteria-audit-v2",
+  "packet_source": "output/ssi-fellowship-2027/Christopher_Ongko_SSI_Fellowship_2027_Application_Packet_Final.docx",
+  "final_copy_revision": "2026-09-17-ssi-criteria-audit-v2",
+  "final_copy_source": "output/ssi-fellowship-2027/SSI_Fellowship_2027_Recording_Script.md",
+  "fields": {
+    "first_name": "Christopher",
+    "last_name": "Ongko",
+    "email": "$profile.email",
+    "country": "Taiwan",
+    "home_institution": "Yuan Ze University",
+    "department": "College of Management",
+    "job_title": "Research Assistant and Master's Researcher",
+    "career_stage": "Phase 1 - Junior",
+    "area_of_work": "Empirical finance, research software, and evidence-based AI systems",
+    "research_classification": "I3 Software engineering",
+    "orcid": "0009-0007-9339-9098",
+    "plan_title": "Evidence Clinics for Reusable Research Software"
+  },
+  "field_map": {},
+  "uploads": [],
+  "upload_map": {},
+  "packet_requirements": [
+    {
+      "id": "application_copy",
+      "status": "PACKET_READY",
+      "canonical_ref": "output/ssi-fellowship-2027/Christopher_Ongko_SSI_Fellowship_2027_Application_Packet_Final.docx"
+    },
+    {
+      "id": "screencast_deck",
+      "status": "PACKET_READY",
+      "canonical_ref": "output/ssi-fellowship-2027/Christopher_Ongko_SSI_Fellowship_2027_Screencast_Final.pptx"
+    },
+    {
+      "id": "screencast_script",
+      "status": "PACKET_READY",
+      "canonical_ref": "output/ssi-fellowship-2027/SSI_Fellowship_2027_Recording_Script.md"
+    },
+    {
+      "id": "screencast_recording_url",
+      "status": "WAITING_HUMAN",
+      "canonical_ref": null
+    }
+  ],
+  "route_evidence": {
+    "official_application_reverified": "2026-09-17",
+    "live_form_reverified": "2026-09-17",
+    "live_form_pages": 10,
+    "live_form_first_gate": "privacy_policy_consent",
+    "international_places_available": true,
+    "existing_uk_partner_required": false,
+    "application_copy_ready": true,
+    "editable_screencast_deck_ready": true,
+    "screencast_deck_blocker": null,
+    "timed_narration_ready": true,
+    "screencast_max_seconds": 360,
+    "production_leeway_seconds": 15,
+    "shortlisting_weight_ambassadorship_percent": 30,
+    "shortlisting_weight_fellowship_plan_percent": 70,
+    "screencast_recording_ready": false,
+    "screencast_download_url_ready": false,
+    "personal_demographic_choices_confirmed": false,
+    "final_submission_copy_ready": false,
+    "final_submit_authorized": false
+  },
+  "human_required": [
+    "privacy_policy_consent",
+    "personal_demographics",
+    "career_stage_and_jacs_confirmation",
+    "record_and_host_screencast",
+    "eligibility_attestation",
+    "terms_acceptance",
+    "final_submit"
+  ]
+}

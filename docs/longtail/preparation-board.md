@@ -51,7 +51,7 @@ Owner-action gate:
 Next Policy Lab gates after GAF submission:
 
 - [ ] 2026-09-03 — re-check NLnet Restack call-specific criteria; hard FIRE/KILL after verification.
-- [ ] 2026-09-17 — Financial Cryptography 2027 short-paper deadline; primary exclusive manuscript lane.
+- [ ] 2026-09-24 23:59 AoE — Financial Cryptography 2027 short-paper deadline (official CFP extension); primary exclusive manuscript lane.
 - [ ] Rolling — re-check live DPGA questionnaire and submit DPG application for external review after human inspection of attestations.
 - [ ] 2026-09-30 — capture Global AI Finance verdict and feed it into the external-impact ledger.
 - [ ] JOSS — keep prepared but gated on genuine external research/community impact, not more code.

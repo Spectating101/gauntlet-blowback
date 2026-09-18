@@ -3,7 +3,13 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildMasterRegistry } from '../../scripts/build-gauntlet-master.mjs';
 import { assertNoSecretKeys } from '../mission/checkpoint.mjs';
-import { isApplicationRoute } from './operator.mjs';
+import { isSubmissionRoute } from './operator.mjs';
+import { portfolioCampaignScope, routeInCampaignScope } from '../allocation/campaign-scope.mjs';
+import { allocateCalendarEvent } from '../allocation/calendar-project.mjs';
+import {
+  assessSubmissionReadiness,
+  isAutomaticQueueExcluded,
+} from '../allocation/submission-readiness.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const DEFAULT_CALENDARS = [
@@ -273,6 +279,7 @@ export function buildCalendarOnboardingQueue({
   today = new Date(),
   days = 21,
   limit = 30,
+  campaignScope = false,
 } = {}) {
   const dateKey = toDateKey(today);
   const through = plusDays(dateKey, Math.max(0, Number(days) || 0));
@@ -282,20 +289,33 @@ export function buildCalendarOnboardingQueue({
   const cues = expandCalendarEvents(calendar, { from: dateKey, through })
     .map((event) => {
       const binding = bindCalendarCue(event, records, byId);
-      return { ...event, ...binding, authoritative: false };
+      const project = allocateCalendarEvent(event, records);
+      return { ...event, ...binding, project_allocation: project, authoritative: false };
     })
     .sort((a, b) => a.start.localeCompare(b.start) || a.uid.localeCompare(b.uid));
   const cuesByRoute = new Map();
   for (const cue of cues) {
     if (!cue.route_id) continue;
     const list = cuesByRoute.get(cue.route_id) ?? [];
-    list.push({ uid: cue.uid, start: cue.start, summary: cue.summary, description: cue.description ?? null, rrule: cue.rrule ?? null });
+    list.push({
+      uid: cue.uid,
+      start: cue.start,
+      summary: cue.summary,
+      description: cue.description ?? null,
+      rrule: cue.rrule ?? null,
+      recommended_lead_asset: cue.project_allocation.recommended_lead_asset,
+      relative_win_band: cue.project_allocation.relative_win_band,
+      allocation_decision: cue.project_allocation.decision,
+    });
     cuesByRoute.set(cue.route_id, list);
   }
   const routes = records
-    .filter((record) => isApplicationRoute(record) && !isTerminalStatus(record))
+    .filter((record) => !campaignScope || routeInCampaignScope(record))
+    .filter((record) => isSubmissionRoute(record) && !isTerminalStatus(record))
+    .filter((record) => !isAutomaticQueueExcluded(record))
     .map((record) => {
       const account_scope = accountScopeFor(record);
+      const submission_readiness = assessSubmissionReadiness(record);
       const account = !hasAccountCheckpoint(account_scope, { accountDir }) && accountIsNotNormallyRequired(record)
         ? { schema: 'blowback.account_checkpoint.v1', scope: account_scope, state: 'NOT_REQUIRED', route_ids: [], portal_url: null, note: null, observed_at: null }
         : loadAccountCheckpoint(account_scope, { accountDir });
@@ -306,6 +326,7 @@ export function buildCalendarOnboardingQueue({
         deadline: record.deadline,
         status: record.status,
         execution_state: record.execution_state,
+        execution_manifest: record.execution_manifest || null,
         source_url: record.source || null,
         calendar_cues: cuesByRoute.get(record.id) ?? [],
         account: {
@@ -315,6 +336,7 @@ export function buildCalendarOnboardingQueue({
           checkpoint_observed_at: account.observed_at,
         },
         stage: routeStage(record, account, dateKey),
+        submission_readiness,
         automation: [
           'open official route in existing browser session',
           'inspect live instructions and form structure',
@@ -331,8 +353,15 @@ export function buildCalendarOnboardingQueue({
     })
     .filter((route) => route.stage !== 'EXPIRED_REVERIFY')
     .sort((a, b) => {
+      const browserReady = (route) => route.submission_readiness.ready_for_browser ? 0 : 1;
+      const preparationStage = (route) => route.stage === 'PREPARE' ? 0 : 1;
+      const hardDeadline = (route) => deadlineDate(route) ?? '9999-12-31';
       const urgency = (route) => route.calendar_cues.length ? route.calendar_cues[0].start : '9999-12-31';
-      return urgency(a).localeCompare(urgency(b)) || String(a.deadline ?? '').localeCompare(String(b.deadline ?? '')) || a.route_id.localeCompare(b.route_id);
+      return browserReady(a) - browserReady(b)
+        || preparationStage(a) - preparationStage(b)
+        || hardDeadline(a).localeCompare(hardDeadline(b))
+        || urgency(a).localeCompare(urgency(b))
+        || a.route_id.localeCompare(b.route_id);
     })
     .slice(0, Math.max(1, Number(limit) || 30));
 
@@ -340,8 +369,13 @@ export function buildCalendarOnboardingQueue({
     schema: 'blowback.calendar_application_onboarding_queue.v1',
     generated_at: new Date().toISOString(),
     calendar: { sources: sources.map((source) => path.relative(ROOT, source)), from: dateKey, through, authoritative_for_route_facts: false },
+    campaign_scope: campaignScope ? {
+      authority: 'data/portfolio-campaign-scope-2026-09-12.json',
+      active_lead_assets: portfolioCampaignScope().active_lead_assets,
+    } : null,
     count: routes.length,
     routes,
+    calendar_project_allocations: cues.map((cue) => cue.project_allocation),
     unbound_calendar_cues: cues.filter((cue) => !cue.route_id),
     email_policy: {
       gmail_optional: true,

@@ -56,7 +56,7 @@ Policy Lab now has a frozen submission package, so its immediate work is executi
 |---:|---|---|---|---|
 | 1 | Global AI Finance 2026 WIP poster | `FIRE_NOW / PORTAL_READY` | 2026-08-31 | owner-only ConfTool account/consent fields → paste RC5 values → upload PDF if requested → inspect unexpected terms → submit → preserve ID/receipt |
 | 2 | NLnet Restack | `HOLD / CALL_GATED` | 2026-09-03 checkpoint | re-check call-specific scope + European-dimension criteria; make hard FIRE/KILL decision |
-| 3 | Financial Cryptography 2027 short paper | `PRIMARY_FIRE` | 2026-09-17 | continue exclusive 8-page manuscript lane; preserve overlap stop condition |
+| 3 | Financial Cryptography 2027 short paper | `PRIMARY_FIRE` | 2026-09-24 23:59 AoE | continue exclusive 8-page manuscript lane; preserve overlap stop condition |
 | 4 | Global AI Finance 2026 notification | `OUTCOME_WAIT` | 2026-09-30 | preserve verdict and propagate external-impact signal into DPG/JOSS/portfolio ledger |
 | 5 | Software Sustainability Institute Fellowship 2027 | `FIRE` | 2026-10-05 | adapt open research-software practice narrative; final application remains human-gated |
 

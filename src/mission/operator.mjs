@@ -3,6 +3,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildMasterRegistry } from '../../scripts/build-gauntlet-master.mjs';
 import { resolvePortfolioAllocation } from '../allocation/portfolio.mjs';
+import { routeInCampaignScope } from '../allocation/campaign-scope.mjs';
+import { isAutomaticQueueExcluded } from '../allocation/submission-readiness.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '../..');
@@ -33,6 +35,16 @@ const STATUS_PRIORITY = new Map([
 
 const PAUSED_CHECKPOINTS = new Set(['WAITING_HUMAN', 'SAFE_COMPLETE', 'BLOCKED']);
 const TERMINAL_CHECKPOINTS = new Set(['SUBMITTED', 'ABANDONED', 'EXPIRED']);
+const IMMEDIATE_FIRE_STATUS = /^(PORTAL_READY|FIRE_NOW|PRIMARY_FIRE|FIRE)$/;
+const ACTIONABLE_EXECUTION_PRIORITY = new Map([
+  ['HUMAN_SUBMIT_READY', 0],
+  ['PREPARE_VERIFIED', 1],
+  ['PORTAL_MAPPED', 2],
+  ['APPLICATION_READY', 3],
+  ['OUTREACH_READY', 3],
+  ['PACKET_READY', 4],
+  ['PAPER_ADAPTATION_READY', 5],
+]);
 
 function normalizeStatus(value = '') {
   return String(value).trim().toUpperCase();
@@ -61,6 +73,39 @@ function deadlineValue(value) {
   return Number.isNaN(parsed) ? Number.POSITIVE_INFINITY : parsed;
 }
 
+function executionPriority(record) {
+  return ACTIONABLE_EXECUTION_PRIORITY.get(normalizeStatus(record.execution_state)) ?? 90;
+}
+
+function dispatchTier(record, asOf) {
+  const status = normalizeStatus(record.status);
+  const immediate = IMMEDIATE_FIRE_STATUS.test(status);
+  const actionable = executionPriority(record) < 90 || Boolean(record.execution_manifest);
+  const deadline = deadlineValue(record.deadline);
+  const now = asOf instanceof Date ? asOf.getTime() : new Date(asOf).getTime();
+  const daysRemaining = Number.isFinite(deadline) ? (deadline - now) / 86_400_000 : Number.POSITIVE_INFINITY;
+
+  // An executable, near-term shot is the control plane's first responsibility.
+  // Rolling research-only leads must not hide a package whose hard deadline is close.
+  if (immediate && actionable && daysRemaining <= 14) return 0;
+  if (immediate && actionable) return 1;
+  if (immediate) return 2;
+  if (status.includes('FIRE')) return 3;
+  if (status.includes('VERIFY') || status.includes('PREPARE')) return 4;
+  return 5;
+}
+
+function currentDateKey(asOf = new Date()) {
+  const date = asOf instanceof Date ? asOf : new Date(asOf);
+  if (Number.isNaN(date.getTime())) throw new Error(`invalid Gauntlet queue date: ${asOf}`);
+  return date.toISOString().slice(0, 10);
+}
+
+export function currentCycleExpired(record, asOf = new Date()) {
+  const deadline = String(record?.deadline ?? '').match(/\d{4}-\d{2}-\d{2}/)?.[0];
+  return Boolean(deadline && deadline < currentDateKey(asOf));
+}
+
 function loadCheckpoint(routeId) {
   const file = path.join(STATE_DIR, `${routeId}.json`);
   if (!fs.existsSync(file)) return null;
@@ -81,12 +126,23 @@ function isSuppressed(record, checkpoint, { includePaused = false } = {}) {
 }
 
 export function rankGauntlet(records = buildMasterRegistry(), options = {}) {
+  const {
+    asOf = new Date(),
+    includeExpired = false,
+    campaignScope = false,
+    includeAutomaticQueueExcluded = false,
+  } = options;
   const ranked = records
+    .filter((record) => !campaignScope || routeInCampaignScope(record))
+    .filter((record) => includeAutomaticQueueExcluded || !isAutomaticQueueExcluded(record))
     .map((record) => ({ record, checkpoint: loadCheckpoint(record.id) }))
     .filter(({ record, checkpoint }) => !isSuppressed(record, checkpoint, options))
+    .filter(({ record }) => includeExpired || !currentCycleExpired(record, asOf))
     .sort((a, b) =>
+      dispatchTier(a.record, asOf) - dispatchTier(b.record, asOf) ||
       statusPriority(a.record) - statusPriority(b.record) ||
       deadlineValue(a.record.deadline) - deadlineValue(b.record.deadline) ||
+      executionPriority(a.record) - executionPriority(b.record) ||
       a.record.id.localeCompare(b.record.id)
     );
   return ranked;
@@ -207,8 +263,8 @@ export function browserMissionForRoute(routeId, records = buildMasterRegistry())
   return buildBrowserMission(record, checkpoint);
 }
 
-export function nextBrowserMission(records = buildMasterRegistry()) {
-  const ranked = rankGauntlet(records);
+export function nextBrowserMission(records = buildMasterRegistry(), options = {}) {
+  const ranked = rankGauntlet(records, options);
   if (!ranked.length) return null;
   const { record, checkpoint } = ranked[0];
   return buildBrowserMission(record, checkpoint);

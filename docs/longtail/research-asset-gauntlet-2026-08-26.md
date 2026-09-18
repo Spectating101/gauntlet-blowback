@@ -19,7 +19,7 @@ Do not create duplicate-publication spam. A poster, fellowship, grant, standards
 |---|---|---|---|---|---|---|
 | -1 | Global AI Finance Research Conference 2026 — WIP poster | CL-ECI / Policy Lab | **EXISTING FIRE NOW** | 2026-08-31 | academic program entry + feedback + later JOSS-impact signal | existing RC5 owner-submit gate |
 | -1 | GRASFI-Asia 2027 | ECI | **FIRE NOW, MANUSCRIPT GATE** | 2026-08-31 | high-signal sustainable-finance presentation at SMU/SGFC/GRASFI | standalone ECI paper must be original/unpublished and submission-ready without contortion |
-| -1 | Financial Cryptography 2027 — short paper | CL-ECI / Policy Lab | **EXISTING PRIMARY FIRE** | 2026-09-17 | peer-reviewed proceedings lane | preserve primary-manuscript exclusivity / overlap rule |
+| -1 | Financial Cryptography 2027 — short paper | CL-ECI / Policy Lab | **EXISTING PRIMARY FIRE** | 2026-09-24 23:59 AoE | peer-reviewed proceedings lane | preserve primary-manuscript exclusivity / overlap rule |
 | 0 | Chunghwa Telecom 2026 Smart Innovation Application Competition | CL-ECI or ECI | **FIRE IF TEAM GATE PASSES** | 2026-09-18 12:00 Asia/Taipei | campus prizes up to NT$200k plus finals/demo signal | team must include at least one Taiwan national; no fake teammate recruitment |
 | 0 | NTUB 2026 FinTech Financial Services Intercollegiate Creative Competition | CL-ECI | **VERIFY THEN FIRE** | 2026-09-28 23:59 Asia/Taipei | Taiwan student FinTech product/service validation | inspect official rules for team/author/adviser constraints before packet work |
 | 0 | SSI Fellowship 2027 | CL-ECI / Policy Lab | **EXISTING FIRE** | 2026-10-05 | £4,000 activities budget + international RSE network | international-slot fit; application form + six-minute screencast |
@@ -79,7 +79,7 @@ If the only way to create a second paper submission is to rename the same contri
 - GRASFI-Asia 2027: https://www.singaporegreenfinance.com/sgfc-events/grasfi-asia-conference-2027-second-edition/ — official host page; 31 Aug 2026 deadline. CFP mirror: https://7easychair-www.easychair.org/cfp/GRASFIAsia2027
 - Tax Academy of Singapore research grant: https://www.taxacademy.sg/research-awards/call-for-papers/ — up to SGD 7,500; Digital Economy and Tax is an explicit topic; no public deadline captured.
 - Global AI Finance 2026: https://www.efmaefm.org/announcements/events.php — 31 Aug 2026 submission deadline; 30 Sep notification.
-- Financial Cryptography 2027: https://www.ifca.ai/fc27/cfp.html — 17 Sep 2026 firm paper deadline, AoE.
+- Financial Cryptography 2027: https://www.ifca.ai/fc27/cfp.html — official CFP reverified 13 Sep 2026; paper deadline extended to 24 Sep 2026, 23:59 AoE.
 - Chunghwa Telecom 2026 Smart Innovation: https://cht5g.com.tw/ — official rules PDF records 18 Sep 2026 12:00 registration deadline and campus prizes.
 - SSI Fellowship 2027: https://www.software.ac.uk/news/ssi-fellowship-programme-2027-applications-open — closes 5 Oct 2026; up to three international Fellows; £4,000 activities budget.
 - Digital Public Goods: https://www.digitalpublicgoods.net/ — rolling standards-review route; recognition only after approval.

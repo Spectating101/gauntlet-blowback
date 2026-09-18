@@ -1,0 +1,122 @@
+{
+  "id": "dpg-policy-lab",
+  "name": "Digital Public Goods Registry review - Policy Lab",
+  "portal": "generic",
+  "portal_family": "dpga_application",
+  "source_url": "https://www.digitalpublicgoods.net/standard",
+  "registration_url": "https://app.digitalpublicgoods.net/signup",
+  "submission_url": "https://app.digitalpublicgoods.net/new/application",
+  "auth_scope": "digitalpublicgoods-policy-lab",
+  "recon_stage": "submission",
+  "deadline": "ROLLING",
+  "mode": "inspect",
+  "execution_state": "PORTAL_RECON_REQUIRED",
+  "direct_control": true,
+  "profile": "../profiles/christ.json",
+  "project": "../projects/policy-lab.json",
+  "packet_revision": "2026-09-17-dpg-conformance-dossier-v1",
+  "packet_source": "output/policy-lab-dpg/Policy_Lab_DPG_Conformance_Dossier_2026-09-17.md",
+  "final_copy_revision": "2026-09-17-dpg-conformance-dossier-v1",
+  "final_copy_source": "https://github.com/Spectating101/solarpunk-coin/blob/55fd6f2cf2eed25b589e91b5e3161e6ced68f5de/docs/submission/opportunities-2026/dpg-registry/DPG_APPLICATION_DRAFT.md",
+  "fields": {
+    "solution_name": "Policy Lab",
+    "solution_category": "Open Software",
+    "short_description": "Open research software that makes evidence-backed financial decisions inspectable by separating evidence assurance, policy admission, quantity limits, settlement consequences, and reproducible decision lineage.",
+    "website": "https://spectating101.github.io/solarpunk-coin/demo/",
+    "source": "https://github.com/Spectating101/solarpunk-coin",
+    "owner": "Christopher Ongko",
+    "owner_country": "Taiwan",
+    "primary_sdg": "SDG 16",
+    "primary_sdg_target": "16.6",
+    "license": "MIT"
+  },
+  "field_map": {
+    "solution_name": {
+      "selector": "input[name=\"1\"]"
+    },
+    "solution_category": {
+      "selector": "select[name=\"3[]\"]",
+      "action": "select"
+    },
+    "short_description": {
+      "selector": "textarea[name=\"4\"]"
+    },
+    "website": {
+      "selector": "input[name=\"5\"]"
+    },
+    "source": {
+      "selector": "input[name=\"6\"]"
+    }
+  },
+  "uploads": [],
+  "upload_map": {},
+  "required_private_fields": [
+    "primary_email",
+    "alternate_email",
+    "password"
+  ],
+  "registration_requirements": [
+    "email",
+    "name",
+    "new password",
+    "alternate email address",
+    "terms of use and privacy policies"
+  ],
+  "workflow_requirements": [
+    "enter the digital solution name",
+    "human authorization-to-apply declaration",
+    "create or resume the application",
+    "verify applicant email before submission",
+    "complete the current nine-indicator questionnaire",
+    "human review of legal, privacy, ownership and licensing attestations",
+    "human final submit"
+  ],
+  "packet_requirements": [
+    {
+      "id": "nine_indicator_dossier",
+      "status": "PACKET_READY",
+      "canonical_ref": "output/policy-lab-dpg/Policy_Lab_DPG_Conformance_Dossier_2026-09-17.md"
+    },
+    {
+      "id": "canonical_live_smoke_repair",
+      "status": "WAITING_CANONICAL_PROMOTION_AND_CI",
+      "canonical_ref": "fix/policy-live-smoke-bootstrap-20260917@03e331c"
+    },
+    {
+      "id": "live_questionnaire_map",
+      "status": "FIRST_PAGE_MAPPED_REMAINING_SECTIONS_REQUIRE_RECON",
+      "canonical_ref": "submission-records/dpg-policy-lab-recon-submission/2026-09-16T18-25-45.810Z"
+    }
+  ],
+  "route_evidence": {
+    "standard_reverified": "2026-09-17",
+    "questionnaire_source_reverified": "2026-09-17",
+    "review_policy_reverified": "2026-09-17",
+    "canonical_evidence_revision": "55fd6f2cf2eed25b589e91b5e3161e6ced68f5de",
+    "all_nine_indicators_audited": true,
+    "public_site_exercised_headlessly": true,
+    "public_site_live_smoke_result": "PASS_LOCAL_2026-09-17",
+    "canonical_ci_green": false,
+    "signup_page_mapped": true,
+    "signup_controls_observed": 4,
+    "captcha_observed": false,
+    "account_creation_optional_to_start_application": true,
+    "email_verification_required_to_submit": true,
+    "authorization_attestation_on_application_entry": true,
+    "application_account_verified": false,
+    "first_questionnaire_page_mapped": true,
+    "first_questionnaire_page_controls_observed": 16,
+    "solution_category_option_verified": "Open Software",
+    "public_email_unresolved": true,
+    "remaining_questionnaire_sections_mapped": false,
+    "recon_receipt": "submission-records/dpg-policy-lab-recon-submission/2026-09-16T18-25-45.810Z",
+    "legal_attestations_confirmed": false,
+    "final_submit_authorized": false
+  },
+  "human_required": [
+    "login",
+    "eligibility_attestation",
+    "terms_acceptance",
+    "final_submit"
+  ]
+}

@@ -7,6 +7,7 @@ import { resolveRouteUrls } from '../core/routes.mjs';
 
 const ROUTE_WORDS = /(apply|application|register|registration|sign\s*in|log\s*in|create\s*account|submit|submission|報名|报名|申請|申请|投稿|徵件|征件|參賽|参赛)/i;
 const RECON_STAGES = new Set(['source', 'registration', 'submission']);
+const TRANSIENT_NAVIGATION_ERROR = /(execution context was destroyed|cannot find context with specified id|most likely because of a navigation)/i;
 
 function classifyCandidate(text) {
   if (/(sign\s*in|log\s*in|create\s*account)/i.test(text)) return 'auth';
@@ -51,7 +52,14 @@ export async function collectReconSnapshot(page) {
       disabled: Boolean(element.disabled),
       accept: element.getAttribute('accept') || null,
       multiple: Boolean(element.multiple),
-      autocomplete: element.getAttribute('autocomplete') || null
+      autocomplete: element.getAttribute('autocomplete') || null,
+      options: element.tagName === 'SELECT'
+        ? [...element.options].map((option) => ({
+            value: option.value,
+            text: text(option),
+            disabled: Boolean(option.disabled)
+          }))
+        : null
     }));
 
     const buttons = [...document.querySelectorAll('button, input[type="submit"], input[type="button"]')].map((button) => ({
@@ -110,6 +118,27 @@ export async function collectReconSnapshot(page) {
   };
 }
 
+export async function collectReconSnapshotWithNavigationRetry(page, { attempts = 3 } = {}) {
+  if (!Number.isInteger(attempts) || attempts < 1) {
+    throw new Error('recon snapshot attempts must be a positive integer');
+  }
+
+  let lastError;
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    try {
+      return await collectReconSnapshot(page);
+    } catch (error) {
+      lastError = error;
+      if (!TRANSIENT_NAVIGATION_ERROR.test(String(error?.message ?? error)) || attempt === attempts) {
+        throw error;
+      }
+      await page.waitForLoadState('domcontentloaded', { timeout: 15_000 }).catch(() => {});
+      if (typeof page.waitForTimeout === 'function') await page.waitForTimeout(250);
+    }
+  }
+  throw lastError;
+}
+
 export async function reconOpportunity(filePath, { persistAuth = false, stage = null } = {}) {
   const opportunity = await loadOpportunity(filePath);
   assertOpportunity(opportunity);
@@ -127,7 +156,12 @@ export async function reconOpportunity(filePath, { persistAuth = false, stage = 
 
   try {
     await session.page.goto(reconUrl, { waitUntil: 'domcontentloaded' });
-    const snapshot = await collectReconSnapshot(session.page);
+    await session.page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => {});
+    await session.page.waitForFunction(
+      () => Boolean(document.body?.innerText?.trim()),
+      { timeout: 10_000 }
+    ).catch(() => {});
+    const snapshot = await collectReconSnapshotWithNavigationRetry(session.page);
     await session.page.screenshot({ path: path.join(recordDir, 'recon.png'), fullPage: true });
     if (persistAuth) await session.persistAuth();
 
