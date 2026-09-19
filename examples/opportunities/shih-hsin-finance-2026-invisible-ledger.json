@@ -24,7 +24,7 @@
     "paper_title_english": "The Invisible Ledger: Measuring Platform-Mediated Transaction Activity Beyond Platform Revenue in Indonesia",
     "submission_topic": "其他金融財務相關領域",
     "contact_email": "$profile.email",
-    "contact_phone": "+886-972-926-724",
+    "contact_phone": "$profile.phone",
     "school_unit": "元智大學管理學院 / College of Management, Yuan Ze University",
     "job_title": "碩士研究生／研究助理",
     "presenter_role": "發表人／主要報告人",

@@ -12,3 +12,18 @@ test-results/
 *.local.yml
 *.local.json
 .DS_Store
+
+# Generated application packets and renders carry applicant contact details.
+# This repository is public: they must never be committed.
+output/
+tmp/
+reports/
+route-sweep-results.json
+
+# Local tool state
+.venv-docs/
+scripts/__pycache__/
+.playwright-mcp/
+.cursor/
+.council/
+.council.yaml

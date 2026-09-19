@@ -19,6 +19,26 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "output" / "application-documents-2026-09-12"
 OUT.mkdir(parents=True, exist_ok=True)
 
+# Personal contact details live in the git-ignored applicant authority, never in this public repo.
+AUTHORITY_FILE = ROOT / "applicant-authority.local.yaml"
+
+
+def _private_phone() -> str:
+    try:
+        import yaml  # optional; only needed when the private authority is present
+
+        data = yaml.safe_load(AUTHORITY_FILE.read_text(encoding="utf-8")) or {}
+        return str((data.get("identity") or {}).get("phone") or "").strip()
+    except Exception:  # missing file, missing PyYAML, or an unparseable authority: omit the phone
+        return ""
+
+
+PHONE = _private_phone()
+CONTACT_LINE = "  ·  ".join(
+    part for part in ("Taoyuan, Taiwan", "s1133958@mail.yzu.edu.tw", PHONE,
+                      "ORCID 0009-0007-9339-9098", "SSRN 10047476", "github.com/Spectating101") if part
+)
+
 NAVY = RGBColor(25, 43, 67)
 TEAL = RGBColor(25, 105, 112)
 GRAY = RGBColor(85, 92, 101)
@@ -276,7 +296,7 @@ def build_cv(variant: str = "general") -> Path:
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     p.paragraph_format.space_after = Pt(7)
-    r = p.add_run("Taoyuan, Taiwan  ·  s1133958@mail.yzu.edu.tw  ·  +886-972-926-724  ·  ORCID 0009-0007-9339-9098  ·  SSRN 10047476  ·  github.com/Spectating101")
+    r = p.add_run(CONTACT_LINE)
     r.font.size = Pt(8.7)
     r.font.color.rgb = GRAY
 
@@ -405,7 +425,7 @@ def build_hku() -> Path:
     add_meta(doc, [
         ("Applicant", "Christopher Ongko"),
         ("Current role", "Master’s researcher and Research Assistant, Yuan Ze University"),
-        ("Contact", "s1133958@mail.yzu.edu.tw · +886-972-926-724"),
+        ("Contact", " · ".join(part for part in ("s1133958@mail.yzu.edu.tw", PHONE) if part)),
     ])
     add_body(doc, "Dear Selection Committee,")
     for para in [
