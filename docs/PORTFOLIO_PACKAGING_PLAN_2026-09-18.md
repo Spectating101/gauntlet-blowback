@@ -3,16 +3,16 @@
 Verified state of each asset, what "finished enough to enter routes" means for it, and who does the work.
 Supersedes the maturity figures in `data/portfolio-assets.json` (as-of 2026-09-01), which are stale.
 
-## Verified state
+## Verified state (re-checked 2026-09-20)
 
-| Asset | Public | Last commit | Tests | CI | Verified state |
-|---|---|---|---|---|---|
-| Hardware Splicer | yes | 2026-09-17 | 658 files | 44 workflows | Frozen candidate, published package checksum, written claim boundary. **Done.** |
-| SolarPunk / Policy Lab | yes + live site | 2026-09-13 | 57 files | 13 | `public-lab-v1.0`, maintenance mode, forkable. **Done.** |
-| Refinery | **no (404)** | 2026-09-18 | **471 pass / 0 fail** | ci.yml added | Suite green, CI added, secret-scanned clean. Awaiting a claim boundary and the user's publish decision. |
-| Cite-Agent | **no (404)** | 2026-08-25 | 223 files | 3 | Tagged v1.5.9; deferred by the user pending a readiness audit. |
-| Research Drive | yes | **2026-07-11** | 7 files | 2 | `research-drive-rc2`; two months cold, thinnest coverage. |
-| Nocturnal Oversight | **no (404)** | 2026-08-06 | 56 files | none | Product spine plus handoff. Early. User lane. |
+| Asset | Public | Head | Tests (re-run) | Verified state |
+|---|---|---|---|---|
+| Hardware Splicer | yes | `76e92ee` on `package/hs-paired-advisory-runner-20260919` | — | Frozen candidate and claim boundary; matched advisory runner added. `PAIRED_EVALUATION_READY` still false. |
+| SolarPunk / Policy Lab | yes + live site | `655c51e` on main | — | `public-lab-v1.0`; CPT-001 Cape Town case with fail-closed negative controls added 2026-09-19. |
+| Refinery | **no** | `c617a4f` on main | **476 passed**, 8 skipped | Claim boundary written; one local RFC 3986 capability completes end to end. Secret scan clean. Private; Actions blocked on account billing. |
+| Cite-Agent | **no** | `792f4d35` on package branch | — | Local served journey only; main and Vercel not on that SHA. Still deferred by the user. |
+| Research Drive | yes | `f4b84c3` on main | — | Restart-safe ingest landed 2026-09-19; no longer cold. RC2 tag unchanged. |
+| Nocturnal Oversight | **no** | `191c5fa` on main | **411 passed** | Evaluator path fixed; marked product-complete by the agent. User lane. |
 
 ## Definition of finished
 
@@ -64,3 +64,14 @@ publish a repository on the user's behalf.
 - systems reordered: SolarPunk first (public, live, connects to the papers), Hardware Splicer second
   (strongest evidence), research assistant tools third, provenance tools fourth;
 - the visibility line now names only the public repositories and states the rest are private on request.
+
+## Housekeeping 2026-09-20
+
+- gauntlet-blowback is **public**: a personal phone number had been committed in the CV builder and the
+  Shih Hsin manifest. Both now resolve it privately (`6566c57`); `output/`, `tmp/` and `reports/` are ignored.
+  The number remains in earlier public history; rewriting that history is a user decision.
+- Solarpunk-bitcoin (public) holds 148 uncommitted research files, including licensed Refinitiv data and thesis
+  drafts. They must not be committed there. Backed up privately to
+  `gdrive:Portfolio_Backups/Solarpunk-bitcoin-uncommitted-2026-09-20` and verified file-by-file.
+- yzu-cluster: 18 fully merged local branches pruned; primary checkout moved to `origin/main`.
+  `/tmp/yzu-cluster-package` still has 2 uncommitted files and was left in place.
