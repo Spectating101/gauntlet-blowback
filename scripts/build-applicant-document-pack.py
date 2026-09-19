@@ -350,11 +350,12 @@ def build_cv(variant: str = "general") -> Path:
 
     doc.add_page_break()
     doc.add_heading("Selected Systems", level=1)
-    add_body(doc, "Grouped by what they do. SolarPunk, Hardware Splicer and Research Drive are public at github.com/Spectating101; the remaining repositories are private and can be shared on request.")
+    add_body(doc, "Grouped by what they do. Policy Lab, Hardware Splicer and Research Drive are public at github.com/Spectating101; the remaining repositories are private and can be shared on request.")
     systems = [
-        ("Energy settlement laboratory — SolarPunk, Policy Lab",
-         "Public test network on Sepolia: metered surplus kWh, a capped token mint, settlement. Released v1.0 with a live site "
-         "and forkable setup. Paired with a case workbench that versions sources and calculations for policy research."),
+        ("Evidence and policy workbench — Policy Lab",
+         "Tests whether real-world evidence can justify a financial claim, case by case: grades the evidence, applies a "
+         "versioned policy, sets a quantity ceiling and stress-tests settlement. Live in the browser; a CI check runs 336 "
+         "half-hour intervals of public Ausgrid data through it. Grew out of the earlier SolarPunk energy-settlement research."),
         ("Design review checks for hardware — Hardware Splicer",
          "KiCad ERC/DRC, BOM and fabrication checks, staged bench gates, web/API/MCP/CLI. A packaged design rebuilds from source "
          "to the same checksum. Software and review only; no board has been fabricated or measured."),
