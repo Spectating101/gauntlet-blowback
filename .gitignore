@@ -27,3 +27,4 @@ scripts/__pycache__/
 .cursor/
 .council/
 .council.yaml
+__pycache__/
