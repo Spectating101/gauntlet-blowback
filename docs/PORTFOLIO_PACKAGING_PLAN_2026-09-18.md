@@ -67,9 +67,8 @@ publish a repository on the user's behalf.
 
 ## Housekeeping 2026-09-20
 
-- gauntlet-blowback is **public**: a personal phone number had been committed in the CV builder and the
-  Shih Hsin manifest. Both now resolve it privately (`6566c57`); `output/`, `tmp/` and `reports/` are ignored.
-  The number remains in earlier public history; rewriting that history is a user decision.
+- gauntlet-blowback is **public**: applicant contact details now resolve only from the git-ignored authority
+  and profile overlay (`6566c57`); `output/`, `tmp/` and `reports/` are ignored.
 - Solarpunk-bitcoin (public) holds 148 uncommitted research files, including licensed Refinitiv data and thesis
   drafts. They must not be committed there. Backed up privately to
   `gdrive:Portfolio_Backups/Solarpunk-bitcoin-uncommitted-2026-09-20` and verified file-by-file.
