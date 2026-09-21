@@ -569,3 +569,54 @@ def test_csv_and_handoff_are_the_public_job_contract(tmp_path):
     assert "0972926724" not in dumped and "christstrife" not in dumped
     stdout = json.loads(p.stdout)
     assert len(stdout) == 3, "--next still limits stdout; CSV stays full"
+
+
+def _load_job_watch():
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("job_watch", SCRIPT)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+def test_agencies_and_junk_pay_are_not_the_next_shot():
+    """Heuristic --next used to promote Cake Recruitment and TWD 0~0. Those are inventory, not shots."""
+    jw = _load_job_watch()
+    rows = [
+        {"company": "Cake Recruitment Consulting",
+         "title": "Hybrid AI/ML Engineer Intern",
+         "url": "https://www.cake.me/companies/cake-recruitment-consulting/jobs/hybrid",
+         "pay": "Annual Salary TWD 1000000~1300000", "source": "cake", "ats": "cake"},
+        {"company": "KPMG安侯建業聯合會計師事務所",
+         "title": "資料科學家 Data Scientist",
+         "url": "https://www.cake.me/companies/KPMG/jobs/ds",
+         "pay": "Monthly Salary TWD 0~0", "source": "cake", "ats": "cake"},
+        {"company": "Appier",
+         "title": "Data Analyst Intern",
+         "url": "https://job-boards.greenhouse.io/appier/jobs/7495834",
+         "pay": "not stated", "source": "greenhouse", "ats": "greenhouse"},
+    ]
+    shots = jw.next_shots(rows, 2, curated={"shots": []})
+    companies = [s["company"] for s in shots]
+    assert "Cake Recruitment Consulting" not in companies
+    assert companies[0] == "Appier"
+
+
+def test_curated_urls_win_over_heuristic_rank():
+    """A human shortlist is the firing queue when those URLs are still live."""
+    jw = _load_job_watch()
+    rows = [
+        {"company": "櫛構科技",
+         "title": "LLM/RAG Engineering Intern",
+         "url": "https://www.104.com.tw/job/c1",
+         "pay": "月薪 32,000 元", "source": "104", "ats": "sqlite"},
+        {"company": "AIFT",
+         "title": "Machine Learning Engineer, Vulcan",
+         "url": "https://www.yourator.co/companies/aift/jobs/46568",
+         "pay": "NT$ 1,300,000 - 1,800,000 (年薪)", "source": "yourator", "ats": "yourator"},
+    ]
+    shots = jw.next_shots(rows, 1, curated={
+        "shots": [{"url_contains": "aift/jobs/46568", "why": "stated pay, Taipei MLE"}],
+    })
+    assert shots[0]["company"] == "AIFT"
+    assert shots[0]["why"] == "stated pay, Taipei MLE"

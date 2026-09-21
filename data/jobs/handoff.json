@@ -40,8 +40,13 @@
       "Most rows are generic 工程師 at Compal/Foxconn; they are inventory, not shots.",
       "Intern/BAP/實習 is the only slice reachable before 2027-01.",
       "104.db is a local intern/corridor crawl, not a full-time 104 catalog.",
-      "Named Gauntlet JOB routes with empty execution_manifest are a watchlist, not packaged FIRE."
+      "Named Gauntlet JOB routes with empty execution_manifest are a watchlist, not packaged FIRE.",
+      "Shots prefer data/jobs/curated-shots.json when those URLs are still live; agencies and TWD 0~0 are not next-shots."
     ]
+  },
+  "curation": {
+    "mode": "human_shortlist",
+    "source": "data/jobs/curated-shots.json"
   },
   "queue": {
     "pointer_rule": "one [!] Job pipeline block in the unattended queue, never one Apply block per role",
@@ -66,25 +71,25 @@
   "shots": [
     {
       "shot_id": "job-shot-01",
-      "company": "【企業專案招募】104未來無限整合招募中心",
-      "title": "AI & Statistical Quality Engineer Intern （AI × 統計方法實習研究員）＿櫛構科技股份有限公司（桃園青年職場對接計畫）",
-      "family": "research",
+      "company": "Appier",
+      "title": "Data Analyst Intern",
+      "family": "analyst",
       "timing": "now_intern",
-      "score": 115,
+      "score": 70,
       "cv_variant": "ai",
-      "pay": "時薪196元",
-      "benchmark": "market: interns typically NT$200-250/hour or a fixed monthly stipend",
-      "location": "台北市內湖區經歷不拘碩士時薪196元 單的產品能力",
-      "source": "104",
-      "portal": "104",
-      "why": "Reachable now as a student: research intern/accelerator, not a 2027-01 full-time gate.",
+      "pay": "not stated",
+      "benchmark": "market: ~NT$60,000-90,000/month for analyst roles in Taipei",
+      "location": "Taipei, Taiwan",
+      "source": "greenhouse",
+      "portal": "greenhouse",
+      "why": "Intern now in Taipei at a named watchlist employer. Data-analyst intern is the honest current-window shot; Greenhouse, no 104 cookies.",
       "target": {
-        "starting_url": "https://www.104.com.tw/job/91cxg"
+        "starting_url": "https://job-boards.greenhouse.io/appier/jobs/7495834"
       },
       "human_gate": [
-        "104_cookie_export",
-        "captcha",
-        "final_submit"
+        "final_submit",
+        "eligibility_attestation",
+        "terms_acceptance"
       ],
       "forbidden": [
         "invent_eligibility",
@@ -100,14 +105,14 @@
       "title": "Binance Accelerator Program - AI Research Scientist (LLM Reasoning & Post-Training)",
       "family": "ml_research",
       "timing": "now_intern",
-      "score": 100,
+      "score": 115,
       "cv_variant": "ai",
       "pay": "not stated",
       "benchmark": "market: ~NT$122,000/month entry ML engineer (NT$1.47M/yr)",
       "location": "Asia, Taiwan, Taipei, Hong Kong",
       "source": "lever:binance",
       "portal": "lever",
-      "why": "Reachable now as a student: ml_research intern/accelerator, not a 2027-01 full-time gate.",
+      "why": "Accelerator now. LLM reasoning/post-training is the closest listed intern to the AI CV. One Binance only. Live form has nationality/hours/hCaptcha gates — do not invent them.",
       "target": {
         "starting_url": "https://jobs.lever.co/binance/e7f93f9f-9e39-4a3f-87e3-4dea1efb79b1"
       },
@@ -126,6 +131,123 @@
     },
     {
       "shot_id": "job-shot-03",
+      "company": "KPMG安侯建業聯合會計師事務所",
+      "title": "【顧問部】虛擬資產法規實務研究實習生 (Virtual Asset Regulatory Research Intern)-317317",
+      "family": "research",
+      "timing": "now_intern",
+      "score": 70,
+      "cv_variant": "ai",
+      "pay": "Hourly Wage TWD 196~0",
+      "benchmark": "market: interns typically NT$200-250/hour or a fixed monthly stipend",
+      "location": "信義區, 台北市, 台灣",
+      "source": "cake",
+      "portal": "cake",
+      "why": "Intern now. Virtual-asset regulatory research is the closest listed intern to the finance/crypto thesis work. Hourly ~196 is intern-market, not a skip.",
+      "target": {
+        "starting_url": "https://www.cake.me/companies/KPMG/jobs/3be6655a-177c-4f05-a667-9ccec723c880-consultant-department-virtual-0816a6099b3f221a04e152706eba55"
+      },
+      "human_gate": [
+        "login_session",
+        "final_submit"
+      ],
+      "forbidden": [
+        "invent_eligibility",
+        "invent_work_auth",
+        "bypass_captcha",
+        "final_submit",
+        "paste_gauntlet_jargon_into_the_application"
+      ]
+    },
+    {
+      "shot_id": "job-shot-04",
+      "company": "聚典資訊 Ret[AI]ling Data",
+      "title": "AI系統工程師-學生實習 AI System Engineer(Intern)",
+      "family": "software",
+      "timing": "now_intern",
+      "score": 70,
+      "cv_variant": "ai",
+      "pay": "Hourly Wage TWD 200~250",
+      "benchmark": "market: interns typically NT$200-250/hour or a fixed monthly stipend",
+      "location": "台北市, 台灣",
+      "source": "cake",
+      "portal": "cake",
+      "why": "Intern now. Actual AI system-engineer intern in Taipei, not a BD/sales intern. Stated 時薪 200-250.",
+      "target": {
+        "starting_url": "https://www.cake.me/companies/ret-ai-ling-data/jobs/22b97f"
+      },
+      "human_gate": [
+        "login_session",
+        "final_submit"
+      ],
+      "forbidden": [
+        "invent_eligibility",
+        "invent_work_auth",
+        "bypass_captcha",
+        "final_submit",
+        "paste_gauntlet_jargon_into_the_application"
+      ]
+    },
+    {
+      "shot_id": "job-shot-05",
+      "company": "Gogolook",
+      "title": "Machine Learning Engineer",
+      "family": "ml_research",
+      "timing": "ft",
+      "score": 85,
+      "cv_variant": "ai",
+      "pay": "not stated",
+      "benchmark": "market: ~NT$122,000/month entry ML engineer (NT$1.47M/yr)",
+      "location": "Taipei",
+      "source": "lever",
+      "portal": "lever",
+      "why": "Taipei MLE at a named watchlist employer. Full-time, so 2027-01 unless they intern-convert.",
+      "target": {
+        "starting_url": "https://jobs.lever.co/Gogolook/53ccbfd0-9139-4ce6-be17-adb2497c518c"
+      },
+      "human_gate": [
+        "final_submit",
+        "eligibility_attestation",
+        "terms_acceptance"
+      ],
+      "forbidden": [
+        "invent_eligibility",
+        "invent_work_auth",
+        "bypass_captcha",
+        "final_submit",
+        "paste_gauntlet_jargon_into_the_application"
+      ]
+    },
+    {
+      "shot_id": "job-shot-06",
+      "company": "優式資本 UC Capital",
+      "title": "量化資料分析師",
+      "family": "quant",
+      "timing": "ft",
+      "score": 20,
+      "cv_variant": "ai",
+      "pay": "面議（經常性薪資達4萬元）",
+      "benchmark": "market: no benchmark for this role family",
+      "location": "臺北市",
+      "source": "yourator",
+      "portal": "yourator",
+      "why": "Taipei quant/data at a capital firm. Finance master's is the honest fit. 面議; 2027-01 FT.",
+      "target": {
+        "starting_url": "https://www.yourator.co/companies/UCCapital/jobs/46849"
+      },
+      "human_gate": [
+        "login_session",
+        "final_submit"
+      ],
+      "forbidden": [
+        "invent_eligibility",
+        "invent_work_auth",
+        "bypass_captcha",
+        "final_submit",
+        "paste_gauntlet_jargon_into_the_application"
+      ]
+    },
+    {
+      "shot_id": "job-shot-07",
       "company": "AIFT",
       "title": "Machine Learning Engineer, Vulcan",
       "family": "ml_research",
@@ -137,7 +259,7 @@
       "location": "臺北市",
       "source": "yourator",
       "portal": "yourator",
-      "why": "Profile-close ml_research full-time: legally open from 2027-01 under the graduate work window.",
+      "why": "Taipei MLE with a real stated band (NT$1.3–1.8M/yr), not TWD 0~0. Full-time from 2027-01.",
       "target": {
         "starting_url": "https://www.yourator.co/companies/aift/jobs/46568"
       },
@@ -154,137 +276,21 @@
       ]
     },
     {
-      "shot_id": "job-shot-04",
-      "company": "Cake Recruitment Consulting",
-      "title": "(穩定軟體業)Hybrid AI/ML Engineer機器學習工程師– Data Intelligence Platform",
-      "family": "ml_research",
+      "shot_id": "job-shot-08",
+      "company": "創樂科技有限公司",
+      "title": "AI量化建模工程師",
+      "family": "quant",
       "timing": "ft",
-      "score": 85,
+      "score": 20,
       "cv_variant": "ai",
-      "pay": "Annual Salary TWD 1000000~1300000",
-      "benchmark": "market: ~NT$122,000/month entry ML engineer (NT$1.47M/yr)",
+      "pay": "Annual Salary TWD 1200000~1900000",
+      "benchmark": "market: no benchmark for this role family",
       "location": "內湖區, 台北市, 台灣",
       "source": "cake",
       "portal": "cake",
-      "why": "Profile-close ml_research full-time: legally open from 2027-01 under the graduate work window.",
+      "why": "Taipei AI quant modelling, stated NT$1.2–1.9M/yr. Finance + ML without an agency wrapper. Full-time from 2027-01.",
       "target": {
-        "starting_url": "https://www.cake.me/companies/cake-recruitment-consulting/jobs/stable-software-industry-hybrid-ai-ml-engineer-data-intelligence-platform"
-      },
-      "human_gate": [
-        "login_session",
-        "final_submit"
-      ],
-      "forbidden": [
-        "invent_eligibility",
-        "invent_work_auth",
-        "bypass_captcha",
-        "final_submit",
-        "paste_gauntlet_jargon_into_the_application"
-      ]
-    },
-    {
-      "shot_id": "job-shot-05",
-      "company": "KPMG安侯建業聯合會計師事務所",
-      "title": "【顧問部】金融科技與機器學習應用 (資料科學家/數據科學家)-317317",
-      "family": "ml_research",
-      "timing": "ft",
-      "score": 85,
-      "cv_variant": "ai",
-      "pay": "Monthly Salary TWD 0~0",
-      "benchmark": "market: no benchmark for this role family",
-      "location": "信義區, 台北市, 台灣",
-      "source": "cake",
-      "portal": "cake",
-      "why": "Profile-close ml_research full-time: legally open from 2027-01 under the graduate work window.",
-      "target": {
-        "starting_url": "https://www.cake.me/companies/KPMG/jobs/7f6c2703-2066-4575-8c08-66d348944a41-consulting-department-financia-e90a166b66daa76729040efaf49039"
-      },
-      "human_gate": [
-        "login_session",
-        "final_submit"
-      ],
-      "forbidden": [
-        "invent_eligibility",
-        "invent_work_auth",
-        "bypass_captcha",
-        "final_submit",
-        "paste_gauntlet_jargon_into_the_application"
-      ]
-    },
-    {
-      "shot_id": "job-shot-06",
-      "company": "MediaTek 聯發科技",
-      "title": "Machine Learning - Architect/Researcher/Engineer",
-      "family": "ml_research",
-      "timing": "ft",
-      "score": 85,
-      "cv_variant": "ai",
-      "pay": "Monthly Salary TWD 0~0",
-      "benchmark": "market: ~NT$122,000/month entry ML engineer (NT$1.47M/yr)",
-      "location": "新竹市, 台灣",
-      "source": "cake",
-      "portal": "cake",
-      "why": "Profile-close ml_research full-time: legally open from 2027-01 under the graduate work window.",
-      "target": {
-        "starting_url": "https://www.cake.me/companies/mediatek/jobs/25dc0b6b-4c02-4896-8d24-33d09bda1dcb-machine-learning-architect-res-d24d7d6737ffe7eee013ac9ea1ec71"
-      },
-      "human_gate": [
-        "login_session",
-        "final_submit"
-      ],
-      "forbidden": [
-        "invent_eligibility",
-        "invent_work_auth",
-        "bypass_captcha",
-        "final_submit",
-        "paste_gauntlet_jargon_into_the_application"
-      ]
-    },
-    {
-      "shot_id": "job-shot-07",
-      "company": "Mlytics 摩速科技有限公司",
-      "title": "AI Data Engineer AI 資料工程師",
-      "family": "data_eng",
-      "timing": "ft",
-      "score": 85,
-      "cv_variant": "ai",
-      "pay": "Monthly Salary TWD 0.0~0.0",
-      "benchmark": "market: ~NT$80,000-120,000/month for software engineers in Taipei",
-      "location": "大安區, 台北市, 台灣",
-      "source": "cake",
-      "portal": "cake",
-      "why": "Profile-close data_eng full-time: legally open from 2027-01 under the graduate work window.",
-      "target": {
-        "starting_url": "https://www.cake.me/companies/mlytics-2d9fc4/jobs/ai-data-engineer-9ac"
-      },
-      "human_gate": [
-        "login_session",
-        "final_submit"
-      ],
-      "forbidden": [
-        "invent_eligibility",
-        "invent_work_auth",
-        "bypass_captcha",
-        "final_submit",
-        "paste_gauntlet_jargon_into_the_application"
-      ]
-    },
-    {
-      "shot_id": "job-shot-08",
-      "company": "OpenNet 開網有限公司",
-      "title": "Data Scientist",
-      "family": "data_science",
-      "timing": "ft",
-      "score": 85,
-      "cv_variant": "ai",
-      "pay": "Annual Salary TWD 910000~1800000",
-      "benchmark": "market: ~NT$100,000/month median Taipei (NT$79,000 at the 25th percentile)",
-      "location": "台北市, 台灣",
-      "source": "cake",
-      "portal": "cake",
-      "why": "Profile-close data_science full-time: legally open from 2027-01 under the graduate work window.",
-      "target": {
-        "starting_url": "https://www.cake.me/companies/opennet-limited/jobs/data-scientist-44b"
+        "starting_url": "https://www.cake.me/companies/chuangle/jobs/ai-quantitative-modeling-engineer"
       },
       "human_gate": [
         "login_session",

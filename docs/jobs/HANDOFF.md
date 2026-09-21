@@ -7,6 +7,7 @@ This is `fire:next` for jobs. Treat `data/jobs/handoff.json` as the execution co
 | Path | What it is |
 |---|---|
 | `data/jobs/handoff.json` | Packaged shots + browser contract + receipt schema |
+| `data/jobs/curated-shots.json` | Human shortlist (URL needles + why). `--next` prefers these when still live |
 | `data/jobs/next-shots.csv` | The 8 shots as a table |
 | `data/jobs/live-pipeline.csv` | Full 1,177-row inventory (company, title, location, url, pay, family, timing, score) |
 | `scripts/job-watch.py` | Regenerator |
@@ -66,16 +67,25 @@ python3 scripts/job-watch.py --with-pay --next 8 \
 
 ## Shots to fire (one employer each)
 
-From `handoff.json`. Open `target.starting_url`. Use `cv_variant`. Stop at `human_gate`.
+Human shortlist in `data/jobs/curated-shots.json`, not raw `--next` rank. The first published eight were intern+pay+board heuristics: they promoted an agency intern, Cake Recruitment, and three `TWD 0~0` rows. Those are dropped.
 
-1. **job-shot-01** — 104 intern, 櫛構 via 104整合招募, 時薪196, [104 posting](https://www.104.com.tw/job/91cxg). Needs cookie export before apply. Agency-wrapped title; confirm the real employer on the page.
-2. **job-shot-02** — Binance Accelerator Program, AI Research Scientist (LLM). [Lever](https://jobs.lever.co/binance/e7f93f9f-9e39-4a3f-87e3-4dea1efb79b1). Already a Gauntlet watchlist id (`job-binance-bap-*`). Pay not stated. Nationality / hours / hCaptcha gates on the live form — do not invent them.
-3. **job-shot-03** — AIFT, Machine Learning Engineer Vulcan, 年薪 NT$1.3–1.8M, 臺北. [Yourator](https://www.yourator.co/companies/aift/jobs/46568). Full-time → 2027-01 unless they take an intern.
-4. **job-shot-04** — Cake Recruitment Consulting, Hybrid AI/ML, 年薪 TWD 1.0–1.3M, 內湖. Agency listing; identify the client before treating it as a direct employer.
-5. **job-shot-05** — KPMG, 金融科技與機器學習 / 資料科學家, 信義. Cake `TWD 0~0` is junk pay — ask in process.
-6. **job-shot-06** — MediaTek, Machine Learning Architect/Researcher/Engineer, 新竹. Same junk pay field. Overlaps Gauntlet `job-mediatek-cv`.
-7. **job-shot-07** — Mlytics, AI Data Engineer, 大安.
-8. **job-shot-08** — OpenNet, Data Scientist, 台北, 年薪 TWD 0.91–1.8M.
+Open `target.starting_url`. Use `cv_variant`. Stop at `human_gate`.
+
+**Now (student / intern window)**
+
+1. **job-shot-01** — Appier, Data Analyst Intern, Taipei. [Greenhouse](https://job-boards.greenhouse.io/appier/jobs/7495834). Named watchlist employer. Honest current-window shot.
+2. **job-shot-02** — Binance Accelerator Program, AI Research Scientist (LLM). [Lever](https://jobs.lever.co/binance/e7f93f9f-9e39-4a3f-87e3-4dea1efb79b1). One Binance only. Nationality / hours / hCaptcha on the live form — do not invent them.
+3. **job-shot-03** — KPMG, 虛擬資產法規實務研究實習生, 信義. [Cake](https://www.cake.me/companies/KPMG/jobs/3be6655a-177c-4f05-a667-9ccec723c880-consultant-department-virtual-0816a6099b3f221a04e152706eba55). Closest intern to the finance/crypto thesis work. Hourly ~196 is intern-market.
+4. **job-shot-04** — 聚典資訊 Ret[AI]ling, AI系統工程師-學生實習, Taipei, 時薪 200–250. [Cake](https://www.cake.me/companies/ret-ai-ling-data/jobs/22b97f). Actual AI intern, not BD/sales.
+
+**From 2027-01 (full-time; package now)**
+
+5. **job-shot-05** — Gogolook, Machine Learning Engineer, Taipei. [Lever](https://jobs.lever.co/Gogolook/53ccbfd0-9139-4ce6-be17-adb2497c518c). Named watchlist employer.
+6. **job-shot-06** — 優式資本, 量化資料分析師, Taipei. [Yourator](https://www.yourator.co/companies/UCCapital/jobs/46849). Finance master's is the honest fit. 面議.
+7. **job-shot-07** — AIFT, Machine Learning Engineer Vulcan, 年薪 NT$1.3–1.8M, Taipei. [Yourator](https://www.yourator.co/companies/aift/jobs/46568). Real stated band, not junk pay.
+8. **job-shot-08** — 創樂, AI量化建模工程師, 年薪 TWD 1.2–1.9M, Taipei. [Cake](https://www.cake.me/companies/chuangle/jobs/ai-quantitative-modeling-engineer). Finance + ML, direct employer.
+
+Not in the eight, still worth watching: Appier Research Scientist (Generative & Agentic AI) — stretch, and Appier is already used on the intern; WorldQuant QR — named watchlist, different interview game; Cyberon LLM/Agentic — closest agent-platform FT.
 
 After a human Submit, return `blowback.job_receipt.v1` with `shot_id`, `submitted_at`, and an application id or receipt URL. `SUBMITTED` without that evidence is invalid, same as FIRE.
 

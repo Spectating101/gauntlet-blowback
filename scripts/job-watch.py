@@ -19,6 +19,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_CONFIG = REPO_ROOT / "scripts" / "job-boards.json"
+DEFAULT_CURATED = REPO_ROOT / "data" / "jobs" / "curated-shots.json"
 DEFAULT_LOCATIONS = "taiwan,taipei,taoyuan,hsinchu,臺北,台北,新北,桃園,新竹,臺中,台中,remote,遠端,居家"
 DEFAULT_KEYWORDS = (
     "data,machine learning,ml,ai,research,quant,scientist,engineer,analyst,llm,"
@@ -482,6 +483,11 @@ def is_applied(row: dict, keys: set[str]) -> bool:
 
 INTERN_RE = re.compile(r"intern|實習|工讀|兼職|accelerator program", re.I)
 SENIOR_RE = re.compile(r"senior|staff|principal|lead|manager|資深|經理|總監|director", re.I)
+AGENCY_RE = re.compile(r"recruitment|招募中心|獵才|headhunt|未來無限|人力仲介|人力資源顧問", re.I)
+JUNK_PAY_RE = re.compile(r"TWD\s*0(?:\.0)?\s*~\s*0", re.I)
+WATCHLIST_NEEDLES = (
+    "binance", "appier", "gogolook", "worldquant", "jane street", "mediatek", "hong wen",
+)
 FAMILY_RULES = (
     ("quant", ("quant", "quantitative", "量化")),
     ("ml_research", ("machine learning", "ml engineer", "research scientist", "llm", "機器學習", "ai engineer", "ai工程")),
@@ -521,6 +527,20 @@ def cv_variant(row: dict) -> str:
     return "en"
 
 
+def is_agency(row: dict) -> bool:
+    blob = f"{row.get('company') or ''} {row.get('title') or ''}"
+    return bool(AGENCY_RE.search(blob))
+
+
+def is_junk_pay(row: dict) -> bool:
+    return bool(JUNK_PAY_RE.search(row.get("pay") or ""))
+
+
+def on_watchlist(row: dict) -> bool:
+    company = (row.get("company") or "").lower()
+    return any(needle in company for needle in WATCHLIST_NEEDLES)
+
+
 def shot_score(row: dict) -> int:
     title = row.get("title") or ""
     close = title_matches(title, split_csv(PROFILE_CLOSE))
@@ -537,11 +557,17 @@ def shot_score(row: dict) -> int:
     else:
         score += 5
     pay = row.get("pay") or ""
-    if pay and pay != "not stated":
+    if pay and pay != "not stated" and not is_junk_pay(row):
         score += 10
     source = row.get("source") or row.get("ats") or ""
     if source in ("104", "yourator", "cake") or row.get("ats") in ("yourator", "cake"):
         score += 5
+    if on_watchlist(row):
+        score += 15
+    if is_agency(row):
+        score -= 80
+    if is_junk_pay(row):
+        score -= 15
     return score
 
 
@@ -554,13 +580,52 @@ def annotate_shot(row: dict) -> dict:
     return shot
 
 
-def next_shots(rows: list[dict], n: int, per_employer: int = 1) -> list[dict]:
-    ranked = sorted(rows, key=lambda row: (-shot_score(row), row.get("company") or "", row.get("title") or ""))
+def load_curated(path: Path | None = None) -> dict:
+    curated = path or Path(os.environ.get("JOB_WATCH_CURATED") or DEFAULT_CURATED)
+    if not curated.exists():
+        return {"shots": []}
+    try:
+        payload = json.loads(curated.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {"shots": []}
+    if not isinstance(payload, dict):
+        return {"shots": []}
+    payload.setdefault("shots", [])
+    return payload
+
+
+def _match_curated(row: dict, spec: dict) -> bool:
+    needle = spec.get("url_contains") or spec.get("url") or ""
+    return bool(needle) and needle in (row.get("url") or "")
+
+
+def next_shots(rows: list[dict], n: int, per_employer: int = 1, curated: dict | None = None) -> list[dict]:
+    curated = load_curated() if curated is None else curated
     picked: list[dict] = []
     used: dict[str, int] = {}
+    for spec in curated.get("shots") or []:
+        for row in rows:
+            company = row.get("company") or ""
+            if used.get(company, 0) >= per_employer:
+                continue
+            if not _match_curated(row, spec):
+                continue
+            shot = annotate_shot(row)
+            if spec.get("why"):
+                shot["why"] = spec["why"]
+            if spec.get("cv_variant"):
+                shot["cv_variant"] = spec["cv_variant"]
+            picked.append(shot)
+            used[company] = used.get(company, 0) + 1
+            break
+        if len(picked) >= n:
+            return picked
+    ranked = sorted(rows, key=lambda row: (-shot_score(row), row.get("company") or "", row.get("title") or ""))
     for row in ranked:
         company = row.get("company") or ""
         if used.get(company, 0) >= per_employer:
+            continue
+        if is_agency(row):
             continue
         used[company] = used.get(company, 0) + 1
         picked.append(annotate_shot(row))
@@ -633,7 +698,7 @@ def pack_shot(row: dict, index: int) -> dict:
         "location": row.get("location"),
         "source": row.get("source") or row.get("ats"),
         "portal": portal_for(row),
-        "why": shot_why(row),
+        "why": row.get("why") or shot_why(row),
         "target": {"starting_url": row.get("url")},
         "human_gate": shot_human_gate(row),
         "forbidden": [
@@ -683,7 +748,12 @@ def write_handoff(path: Path, rows: list[dict], shots: list[dict], csv_rel: str 
                 "Intern/BAP/實習 is the only slice reachable before 2027-01.",
                 "104.db is a local intern/corridor crawl, not a full-time 104 catalog.",
                 "Named Gauntlet JOB routes with empty execution_manifest are a watchlist, not packaged FIRE.",
+                "Shots prefer data/jobs/curated-shots.json when those URLs are still live; agencies and TWD 0~0 are not next-shots.",
             ],
+        },
+        "curation": {
+            "mode": "human_shortlist" if (load_curated().get("shots")) else "heuristic",
+            "source": "data/jobs/curated-shots.json",
         },
         "queue": {
             "pointer_rule": "one [!] Job pipeline block in the unattended queue, never one Apply block per role",

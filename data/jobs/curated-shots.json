@@ -1,0 +1,54 @@
+{
+  "as_of": "2026-09-22",
+  "profile": "Finance master's completing 2027-01. Intern/accelerator is reachable now; full-time from the graduate work window. Prefer Taipei LLM / data / quant at a named employer. Skip agencies, unidentified clients, and Cake TWD 0~0 pay.",
+  "shots": [
+    {
+      "url_contains": "job-boards.greenhouse.io/appier/jobs/7495834",
+      "cv_variant": "ai",
+      "why": "Intern now in Taipei at a named watchlist employer. Data-analyst intern is the honest current-window shot; Greenhouse, no 104 cookies."
+    },
+    {
+      "url_contains": "jobs.lever.co/binance/e7f93f9f-9e39-4a3f-87e3-4dea1efb79b1",
+      "why": "Accelerator now. LLM reasoning/post-training is the closest listed intern to the AI CV. One Binance only. Live form has nationality/hours/hCaptcha gates — do not invent them."
+    },
+    {
+      "url_contains": "cake.me/companies/KPMG/jobs/3be6655a-177c-4f05-a667-9ccec723c880",
+      "why": "Intern now. Virtual-asset regulatory research is the closest listed intern to the finance/crypto thesis work. Hourly ~196 is intern-market, not a skip."
+    },
+    {
+      "url_contains": "cake.me/companies/ret-ai-ling-data/jobs/22b97f",
+      "cv_variant": "ai",
+      "why": "Intern now. Actual AI system-engineer intern in Taipei, not a BD/sales intern. Stated 時薪 200-250."
+    },
+    {
+      "url_contains": "jobs.lever.co/Gogolook/53ccbfd0-9139-4ce6-be17-adb2497c518c",
+      "why": "Taipei MLE at a named watchlist employer. Full-time, so 2027-01 unless they intern-convert."
+    },
+    {
+      "url_contains": "yourator.co/companies/UCCapital/jobs/46849",
+      "why": "Taipei quant/data at a capital firm. Finance master's is the honest fit. 面議; 2027-01 FT."
+    },
+    {
+      "url_contains": "yourator.co/companies/aift/jobs/46568",
+      "why": "Taipei MLE with a real stated band (NT$1.3–1.8M/yr), not TWD 0~0. Full-time from 2027-01."
+    },
+    {
+      "url_contains": "cake.me/companies/chuangle/jobs/ai-quantitative-modeling-engineer",
+      "why": "Taipei AI quant modelling, stated NT$1.2–1.9M/yr. Finance + ML without an agency wrapper. Full-time from 2027-01."
+    }
+  ],
+  "dropped_from_heuristic_next": [
+    "104整合招募 / 櫛構 intern — agency-wrapped title, expired 104 cookies",
+    "Cake Recruitment Hybrid AI/ML — agency, unidentified client",
+    "KPMG 資料科學家 TWD 0~0 — junk pay field; FT, not the intern we actually want",
+    "MediaTek Machine Learning Architect — architect-shaped title, Hsinchu, junk pay",
+    "Mlytics AI Data Engineer — junk pay, generic DE",
+    "OpenNet Data Scientist — unknown employer, 0.91–1.8M range is not a named fit"
+  ],
+  "watch_not_in_the_eight": [
+    "Appier Research Scientist (Generative & Agentic AI) — stretch; Appier already used on the intern",
+    "WorldQuant Quantitative Researcher — keep on the named watchlist; the interview is a different game",
+    "Cyberon LLM/Agentic AI — closest agent-platform FT; 面議",
+    "國泰 Data Scientist — finance group, but several listings show NT$44k floor which is stipend-shaped"
+  ]
+}
