@@ -620,3 +620,99 @@ def test_curated_urls_win_over_heuristic_rank():
     })
     assert shots[0]["company"] == "AIFT"
     assert shots[0]["why"] == "stated pay, Taipei MLE"
+
+
+def test_curate_row_keeps_profile_roles_and_drops_agencies():
+    jw = _load_job_watch()
+    intern = jw.curate_row({
+        "company": "Appier", "title": "Data Analyst Intern",
+        "url": "https://job-boards.greenhouse.io/appier/jobs/7495834",
+        "pay": "not stated", "source": "greenhouse",
+    })
+    assert intern["verdict"] == "keep" and intern["timing"] == "now_intern" and intern["tier"] == "A"
+    assert intern["fit_margin"] > intern["fit_neg"]
+    novel = jw.curate_row({
+        "company": "Unknown Lab",
+        "title": "LLM post-training researcher",
+        "url": "https://example.test/llm-post-training",
+        "pay": "not stated", "source": "greenhouse",
+    })
+    assert novel["verdict"] == "keep"
+    assert novel["fit_pos"] > novel["fit_neg"]
+    civil = jw.curate_row({
+        "company": "世久營造探勘工程股份有限公司",
+        "title": "【實習生計畫】助理工程師（土木、營建、建築、大地工程等系所）",
+        "url": "https://www.104.com.tw/job/civil", "pay": "時薪196元", "source": "104",
+    })
+    assert civil["verdict"] == "skip"
+    assert civil["fit_margin"] < jw.KEEP_MARGIN
+    agency = jw.curate_row({
+        "company": "Cake Recruitment Consulting",
+        "title": "Hybrid AI/ML Engineer Intern",
+        "url": "https://www.cake.me/companies/cake-recruitment-consulting/jobs/hybrid",
+        "pay": "Annual Salary TWD 1000000~1300000", "source": "cake",
+    })
+    assert agency["verdict"] == "skip"
+    oem = jw.curate_row({
+        "company": "仁寶電腦工業股份有限公司", "title": "軟體工程師",
+        "url": "https://1111.com.tw/j/f1", "pay": "月薪 50,000 元", "source": "1111",
+    })
+    assert oem["verdict"] == "skip"
+    ft = jw.curate_row({
+        "company": "AIFT", "title": "Machine Learning Engineer, Vulcan",
+        "url": "https://www.yourator.co/companies/aift/jobs/46568",
+        "pay": "NT$ 1,300,000 - 1,800,000 (年薪)", "source": "yourator",
+    })
+    assert ft["verdict"] == "keep" and ft["timing"] == "ft"
+    senior = jw.curate_row({
+        "company": "Appier", "title": "Senior Machine Learning Scientist",
+        "url": "https://job-boards.greenhouse.io/appier/jobs/1",
+        "pay": "not stated", "source": "greenhouse",
+    })
+    assert senior["verdict"] == "maybe"
+    bd = jw.curate_row({
+        "company": "GliaCloud", "title": "Business Management Intern (AI & BD Focus)",
+        "url": "https://www.yourator.co/companies/GliaCloud/jobs/1",
+        "pay": "NT$ 200", "source": "yourator",
+    })
+    assert bd["verdict"] == "skip"
+
+
+def test_from_json_writes_a_curated_sqlite_dataset(tmp_path):
+    dump = tmp_path / "live.json"
+    dump.write_text(json.dumps([
+        {"company": "Appier", "title": "Data Analyst Intern",
+         "url": "https://job-boards.greenhouse.io/appier/jobs/7495834",
+         "location": "Taipei", "source": "greenhouse", "ats": "greenhouse", "id": "7495834",
+         "pay": "not stated"},
+        {"company": "仁寶電腦工業股份有限公司", "title": "軟體工程師",
+         "url": "https://1111.com.tw/j/f1", "location": "台北市", "source": "1111",
+         "ats": "sqlite", "id": "f1", "pay": "月薪 50,000 元"},
+        {"company": "AIFT", "title": "Machine Learning Engineer, Vulcan",
+         "url": "https://www.yourator.co/companies/aift/jobs/46568",
+         "location": "臺北市", "source": "yourator", "ats": "yourator", "id": "46568",
+         "pay": "NT$ 1,300,000 - 1,800,000 (年薪)"},
+    ]), encoding="utf-8")
+    csv_path = tmp_path / "curated.csv"
+    json_path = tmp_path / "curated.json"
+    db_path = tmp_path / "curated.sqlite"
+    p = subprocess.run(
+        [sys.executable, str(SCRIPT), "--from-json", str(dump),
+         "--curated", str(csv_path), "--curated-json", str(json_path),
+         "--curated-db", str(db_path)],
+        capture_output=True, text=True, timeout=30, env={"PATH": "/usr/bin:/bin"},
+    )
+    assert p.returncode == 0, p.stderr
+    assert "keep=2" in p.stdout
+    text = csv_path.read_text(encoding="utf-8")
+    assert "Data Analyst Intern" in text and "軟體工程師" not in text
+    blob = json.loads(json_path.read_text(encoding="utf-8"))
+    assert blob["schema"] == "blowback.job_curated.v1"
+    assert blob["counts"]["keep"] == 2
+    import sqlite3
+    conn = sqlite3.connect(db_path)
+    n = conn.execute("select count(*) from jobs where verdict='keep'").fetchone()[0]
+    companies = {row[0] for row in conn.execute("select company from jobs")}
+    conn.close()
+    assert n == 2
+    assert "仁寶電腦工業股份有限公司" not in companies

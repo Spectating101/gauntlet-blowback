@@ -1,48 +1,89 @@
 # Gauntlet JOB handoff — 2026-09-22
 
-This is `fire:next` for jobs. Treat `data/jobs/handoff.json` as the execution contract (`blowback.job_handoff.v1`). The CSV is the inventory. Do not paste 1,177 roles into the unattended queue or into `gauntlet-master.json`.
+The product of the scrape is the curated dataset, not an 8-row firing list.
+
+Treat `data/jobs/curated.sqlite` / `curated.csv` / `curated.json` as the working set. `handoff.json` is only `fire:next` packaging. Do not paste 1,177 generic 工程師 rows into the unattended queue or into `gauntlet-master.json`.
 
 ## Files
 
 | Path | What it is |
 |---|---|
-| `data/jobs/handoff.json` | Packaged shots + browser contract + receipt schema |
-| `data/jobs/curated-shots.json` | Human shortlist (URL needles + why). `--next` prefers these when still live |
-| `data/jobs/next-shots.csv` | The 8 shots as a table |
-| `data/jobs/live-pipeline.csv` | Full 1,177-row inventory (company, title, location, url, pay, family, timing, score) |
+| `data/jobs/curated.sqlite` | Keep set (133), prototype fit scores |
+| `data/jobs/curated.csv` / `curated.json` | Same keep rows |
+| `data/jobs/live-jobs.json` | Live 1,177-row dump used to regenerate curated |
+| `data/jobs/live-pipeline.csv` | Same live board, annotated |
+| `data/jobs/snapshot.sqlite` | `live` (1,177) + `curated` (133) in one queryable DB |
+| `data/jobs/boards/yourator.csv` | Live Yourator (542) |
+| `data/jobs/boards/cake.csv` | Live Cake (376) |
+| `data/jobs/boards/lever.csv` | Live Lever (108) |
+| `data/jobs/boards/greenhouse.csv` | Live Greenhouse (71) |
+| `data/jobs/boards/104.csv` | Live 104 intern/corridor (43) |
+| `data/jobs/boards/remoteok.csv` | Live RemoteOK (21) |
+| `data/jobs/boards/web3career.csv` | Live web3.career (16) |
+| `data/jobs/boards/tw_jobs-listings.sqlite` | Historical TW scrape listings only (33,536; Yourator/Cake/1111/ATS). No descriptions. |
+| `data/jobs/boards/104-listings.sqlite` | Historical 104 intern/corridor listings only (43,393). No descriptions. Recruiter phones/emails redacted. |
+| `data/jobs/handoff.json` | Optional `fire:next` pointer |
 | `scripts/job-watch.py` | Regenerator |
-| `scripts/job-boards.json` | Live ATS / Yourator / Cake; sqlite DBs via env, not home-directory paths |
+| `scripts/pack-job-datasets.py` | Rebuilds the public packs from a live JSON + Molina DBs via env |
+
+Raw Molina `104.db` / `tw_jobs.db` stay off GitHub (~140MB each; they hold full job descriptions). Set `JOB_WATCH_TW_JOBS_DB` / `JOB_WATCH_104_DB` locally, then `npm run jobs:pack`.
 
 Applicant contact, cookies, and CV PDFs stay in the private authority file. This public repo must not receive them.
 
+## Curated dataset (as of 2026-09-22)
+
+From 1,177 reachable live rows: **133 keep**, 52 employers. Verdict is **prototype-centroid fit** (character n-grams + CJK shingles vs keep/skip role documents), plus employer-class adjustments (agency, OEM, watchlist). It is not `title contains AI or 工程`. Agencies, generic OEM software, senior-titled, BD/sales intern, and civil/frontend intern noise are skip (they remain in `live-pipeline.csv`).
+
+Columns `fit_pos`, `fit_neg`, `fit_margin` are in the sqlite/CSV so a row can be audited.
+
+| Slice | Rows | When takeable |
+|---|---:|---|
+| Intern / BAP now (AI, data, quant, research) | 29 | **now** |
+| Full-time from 2027-01 | 104 | graduate work window |
+| Tier A | 78 | intern, watchlist with real fit, quant, or high margin |
+| Tier B | 55 | other keep |
+
+Largest employers in keep: Binance 45 (BAP AI/DS/quant, not the QA/iOS/ledger tracks), 國泰金控, WorldQuant, Appier.
+
+A title that never appeared in a keyword list still keeps if it sits on the keep centroid (`LLM post-training researcher` is the test for that).
+
+```bash
+sqlite3 data/jobs/curated.sqlite \
+  "select timing, family, count(*) from jobs group by 1,2 order by 1,3 desc"
+sqlite3 -header -csv data/jobs/curated.sqlite \
+  "select company, title, pay, url from jobs where timing='now_intern'"
+```
+
+Regenerate from the existing dump (no 104 HTTP):
+
+```bash
+npm run jobs:curate
+# or
+python3 scripts/job-watch.py --from-json output/phd-taiwan-2027/live-jobs-2026-09-21.json \
+  --keep-only \
+  --curated data/jobs/curated.csv \
+  --curated-json data/jobs/curated.json \
+  --curated-db data/jobs/curated.sqlite
+```
+
+`verdict=keep` is this table. `maybe` (senior profile, AI-shaped software, intern PM/gig) is not written unless you drop `--keep-only`.
+
 ## How it maps onto Gauntlet
 
-Gauntlet already ranks, packages one shot, maps copy onto a live form, and stops at Submit. The JOB lane was not using that machine:
-
-- 52 JOB routes in the master, 11 marked `FIRE_NOW`, **every `execution_manifest` empty** — so `npm run fire:next` correctly returns nothing for jobs.
-- Those 52 are a **named-employer watchlist** (Binance, WorldQuant, Hong Wen, Jane Street…). 19 of 29 employers have no live posting in the current scrape.
-- Live postings live in Molina `tw_jobs.db` + `104.db` plus Greenhouse/Lever/Yourator/Cake APIs.
-
-So:
-
-- Master JOB records stay a watchlist.
+- Master JOB records stay a named-employer watchlist (Binance, WorldQuant, …). Empty `execution_manifest` is expected.
 - `live-pipeline.csv` is the live board.
-- `handoff.json` shots are the firing queue (one employer each).
-- A returned `blowback.job_receipt.v1` is how a shot leaves the queue.
+- `curated.*` is what to work from.
+- `handoff.json` is one packaged shot at a time for a browser agent. A returned `blowback.job_receipt.v1` is how a shot leaves that tiny queue.
 
-## Inventory (as of 2026-09-22)
+## Inventory vs curated
 
-1,177 reachable roles, 356 employers, 887 with a stated pay string. Reachable means Taiwan-based or remote without a foreign-region lock. Freshness window: 14 days.
-
-| Slice | Roles | When it is actually takeable |
+| Slice | Roles | Note |
 |---|---:|---|
-| Generic software / 工程師 (Compal, Foxconn, etc.) | 843 | inventory, not a shot |
-| Profile-close (ML / DS / quant / data eng / LLM) | 144 | mixed |
-| Intern / BAP / 實習 / 兼職 | 91 | **now** (student + ARC) |
-| Full-time, not senior | most of 821 | from **2027-01** (graduate work window) |
-| Senior / staff / 資深 | 265 | skip unless the posting is explicitly junior |
-
-Stated monthly NT$ among profile-close rows that parse as numbers: ML ~142k median, data eng ~110k, data science ~96k, quant ~200k (tiny n). Best PhD stipend found in the parallel sweep is ~NT$40k. That is a fact about cash, not a reason to skip the 30 September referee emails.
+| Live reachable scrape | 1,177 | Taiwan or remote without a foreign-region lock; 14-day window |
+| Generic software / OEM 工程師 | majority | inventory, skip |
+| This curated keep set | 133 | prototype fit, no agency |
+| Intern in keep | 29 | student + ARC **now** |
+| Senior / staff / 資深 | 265 in live | skip unless explicitly junior; some profile seniors are `maybe` |
 
 ## Sources, honestly
 
@@ -50,44 +91,8 @@ Stated monthly NT$ among profile-close rows that parse as numbers: ML ~142k medi
 |---|---|---|
 | Yourator / Cake / 1111 / ATS in `tw_jobs.db` | majority | Yourator cron on this Optiplex wrote the DB at 19:30 on 2026-09-21 |
 | Cake live overlay | extra unique URLs | public search API; some rows are `TWD 0~0` — treat as not stated |
-| `104.db` | 43 after keyword filter | **intern/corridor crawl**, not full-time 104. 43k historical rows exist; most are 門市/工讀 |
-| 104 HTTP | **not used** | 403s; do not hammer. Cookies are expired; needed only to apply, not to list |
-
-Set the DBs when regenerating:
-
-```bash
-export JOB_WATCH_TW_JOBS_DB=/path/to/Molina-Optiplex/src/data/tw_jobs.db
-export JOB_WATCH_104_DB=/path/to/Molina-Optiplex/src/data/104.db
-python3 scripts/job-watch.py --with-pay --next 8 \
-  --csv data/jobs/live-pipeline.csv \
-  --handoff data/jobs/handoff.json
-```
-
-`--next` limits stdout. CSV and handoff inventory stay the full list.
-
-## Shots to fire (one employer each)
-
-Human shortlist in `data/jobs/curated-shots.json`, not raw `--next` rank. The first published eight were intern+pay+board heuristics: they promoted an agency intern, Cake Recruitment, and three `TWD 0~0` rows. Those are dropped.
-
-Open `target.starting_url`. Use `cv_variant`. Stop at `human_gate`.
-
-**Now (student / intern window)**
-
-1. **job-shot-01** — Appier, Data Analyst Intern, Taipei. [Greenhouse](https://job-boards.greenhouse.io/appier/jobs/7495834). Named watchlist employer. Honest current-window shot.
-2. **job-shot-02** — Binance Accelerator Program, AI Research Scientist (LLM). [Lever](https://jobs.lever.co/binance/e7f93f9f-9e39-4a3f-87e3-4dea1efb79b1). One Binance only. Nationality / hours / hCaptcha on the live form — do not invent them.
-3. **job-shot-03** — KPMG, 虛擬資產法規實務研究實習生, 信義. [Cake](https://www.cake.me/companies/KPMG/jobs/3be6655a-177c-4f05-a667-9ccec723c880-consultant-department-virtual-0816a6099b3f221a04e152706eba55). Closest intern to the finance/crypto thesis work. Hourly ~196 is intern-market.
-4. **job-shot-04** — 聚典資訊 Ret[AI]ling, AI系統工程師-學生實習, Taipei, 時薪 200–250. [Cake](https://www.cake.me/companies/ret-ai-ling-data/jobs/22b97f). Actual AI intern, not BD/sales.
-
-**From 2027-01 (full-time; package now)**
-
-5. **job-shot-05** — Gogolook, Machine Learning Engineer, Taipei. [Lever](https://jobs.lever.co/Gogolook/53ccbfd0-9139-4ce6-be17-adb2497c518c). Named watchlist employer.
-6. **job-shot-06** — 優式資本, 量化資料分析師, Taipei. [Yourator](https://www.yourator.co/companies/UCCapital/jobs/46849). Finance master's is the honest fit. 面議.
-7. **job-shot-07** — AIFT, Machine Learning Engineer Vulcan, 年薪 NT$1.3–1.8M, Taipei. [Yourator](https://www.yourator.co/companies/aift/jobs/46568). Real stated band, not junk pay.
-8. **job-shot-08** — 創樂, AI量化建模工程師, 年薪 TWD 1.2–1.9M, Taipei. [Cake](https://www.cake.me/companies/chuangle/jobs/ai-quantitative-modeling-engineer). Finance + ML, direct employer.
-
-Not in the eight, still worth watching: Appier Research Scientist (Generative & Agentic AI) — stretch, and Appier is already used on the intern; WorldQuant QR — named watchlist, different interview game; Cyberon LLM/Agentic — closest agent-platform FT.
-
-After a human Submit, return `blowback.job_receipt.v1` with `shot_id`, `submitted_at`, and an application id or receipt URL. `SUBMITTED` without that evidence is invalid, same as FIRE.
+| `104.db` | intern/corridor crawl | not a full-time 104 catalog |
+| 104 HTTP | **not used** | 403s; do not hammer |
 
 ## Browser contract (short)
 
@@ -99,4 +104,4 @@ FORBIDDEN: invent work authorisation, bypass anti-bot, click final Submit, put p
 
 ## What this does not do
 
-It does not send the NYCU / NTHU referee emails (30 September; NYCU office dark 25–28 Sep). It does not apply on 104 while cookies are expired. It does not turn 43 intern rows into a full-time 104 catalog — that is a crawl-config change on the existing 07:00 job, not a new HTTP client.
+It does not send the NYCU / NTHU referee emails (30 September; NYCU office dark 25–28 Sep). It does not apply on 104 while cookies are expired. It does not turn intern 104 rows into a full-time 104 catalog.

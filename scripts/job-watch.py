@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import math
 import os
 import re
 import sqlite3
@@ -13,6 +14,7 @@ import sys
 import urllib.error
 import urllib.parse
 import urllib.request
+from collections import Counter
 from datetime import date, timedelta
 from pathlib import Path
 
@@ -488,6 +490,49 @@ JUNK_PAY_RE = re.compile(r"TWD\s*0(?:\.0)?\s*~\s*0", re.I)
 WATCHLIST_NEEDLES = (
     "binance", "appier", "gogolook", "worldquant", "jane street", "mediatek", "hong wen",
 )
+OEM_RE = re.compile(
+    r"仁寶|鴻海|鴻佰|廣達|緯創|和碩|英業達|富士康|compal|foxconn|pegatron|"
+    r"wistron|inventec|quanta|ingrasys",
+    re.I,
+)
+BD_INTERN_RE = re.compile(
+    r"事業開発|business development|business management|業務落地|產品企劃|"
+    r"行銷|sales intern|sales engineer|bd intern|bd focus|fashion|門市|店員|銷售|"
+    r"영업|사업개발|매니저 인턴",
+    re.I,
+)
+PM_INTERN_RE = re.compile(r"product manager|專案經理|產品經理|pm intern", re.I)
+CONTENT_INTERN_RE = re.compile(r"影音內容|內容設計|content design", re.I)
+GIG_RE = re.compile(r"兼職|假日|part[- ]time", re.I)
+WORD_RE = re.compile(r"[a-z0-9]+", re.I)
+CJK_RUN_RE = re.compile(r"[\u4e00-\u9fff]+")
+FIT_STOP = {
+    "the", "and", "for", "with", "intern", "internship", "engineer", "engineering",
+    "program", "programme", "taiwan", "taipei", "asia", "hong", "kong",
+    "股份", "有限", "公司", "集團", "工程", "工程師", "實習", "計畫", "專區",
+}
+# Prototype documents for a Rocchio centroid, not OR-gates. A title keeps
+# if it sits closer to the keep centroid than the skip centroid.
+KEEP_DOCS = (
+    "machine learning engineer; research scientist; llm reasoning; post-training; generative ai; agentic ai; large language model",
+    "data scientist; data analyst intern; data engineer; applied data scientist; research data scientist",
+    "quantitative researcher; quant trading; quantitative analyst; 量化交易 量化資料 量化建模 量化系統",
+    "virtual asset regulatory research intern; 虛擬資產 法規 研究實習 crypto finance on-chain",
+    "credit risk data analyst; financial data analyst; web3 data scientist llm applied",
+    "機器學習工程師 資料科學家 資料工程師 人工智慧 大型語言模型 研究員 演算法工程師",
+)
+SKIP_DOCS = (
+    "recruitment consulting headhunt 招募中心 獵才 人力仲介 unidentified client agency listing",
+    "civil construction intern 土木 營建 建築 大地工程 職業安全衛生 門市 店員 fashion retail 銷售",
+    "business development intern sales intern 業務 行銷 產品企劃 content design 影音內容 事業開発",
+    "frontend intern vue.js android ios firmware 韌體 電腦安裝 計時工讀 store clerk 產品設計",
+    "compal foxconn pegatron inventec 仁寶 鴻海 廣達 軟體工程師 generic oem factory software",
+    "product manager intern 專案經理 假日兼職 part-time gig livechat customer service campaign analyst",
+    "network engineer devops 網管 維運 qa test intern analog field applications packaging design",
+    "full stack intern software engineer intern techops intern devsecops intern ios intern android intern backend intern",
+)
+KEEP_MARGIN = 0.08
+MAYBE_MARGIN = 0.03
 FAMILY_RULES = (
     ("quant", ("quant", "quantitative", "量化")),
     ("ml_research", ("machine learning", "ml engineer", "research scientist", "llm", "機器學習", "ai engineer", "ai工程")),
@@ -539,6 +584,278 @@ def is_junk_pay(row: dict) -> bool:
 def on_watchlist(row: dict) -> bool:
     company = (row.get("company") or "").lower()
     return any(needle in company for needle in WATCHLIST_NEEDLES)
+
+
+def is_oem(row: dict) -> bool:
+    return bool(OEM_RE.search(row.get("company") or ""))
+
+
+def intern_kind(title: str) -> str:
+    text = title or ""
+    if BD_INTERN_RE.search(text):
+        return "bd"
+    if PM_INTERN_RE.search(text):
+        return "pm"
+    if CONTENT_INTERN_RE.search(text):
+        return "content"
+    if GIG_RE.search(text):
+        return "gig"
+    return "other"
+
+
+def _fit_tokens(text: str) -> Counter:
+    s = (text or "").lower()
+    bag: Counter = Counter()
+    for word in WORD_RE.findall(s):
+        if len(word) < 2 or word in FIT_STOP:
+            continue
+        bag[("w", word)] += 1
+        if len(word) >= 4:
+            for i in range(len(word) - 3):
+                bag[("c4", word[i:i + 4])] += 1
+    for run in CJK_RUN_RE.findall(s):
+        for n in (2, 3):
+            if len(run) >= n:
+                for i in range(len(run) - n + 1):
+                    gram = run[i:i + n]
+                    if gram in FIT_STOP:
+                        continue
+                    bag[("cjk", gram)] += 1
+        if len(run) == 1:
+            bag[("cjk", run)] += 1
+    return bag
+
+
+def _unit(bag: Counter) -> dict[tuple, float]:
+    norm = math.sqrt(sum(v * v for v in bag.values())) or 1.0
+    return {key: value / norm for key, value in bag.items()}
+
+
+def _centroid(docs: tuple[str, ...]) -> dict[tuple, float]:
+    acc: Counter = Counter()
+    for doc in docs:
+        acc.update(_unit(_fit_tokens(doc)))
+    return _unit(acc)
+
+
+KEEP_CENTROID = _centroid(KEEP_DOCS)
+SKIP_CENTROID = _centroid(SKIP_DOCS)
+
+
+def _cosine(bag: Counter, centroid: dict[tuple, float]) -> float:
+    if not bag or not centroid:
+        return 0.0
+    unit = _unit(bag)
+    return sum(unit[key] * centroid[key] for key in unit.keys() & centroid.keys())
+
+
+def fit_profile(row: dict) -> dict:
+    """Score a posting against keep/skip prototypes. Not a keyword OR-list."""
+    title = row.get("title") or ""
+    company = row.get("company") or ""
+    bag = _fit_tokens(f"{company} {title}")
+    pos = _cosine(bag, KEEP_CENTROID)
+    neg = _cosine(bag, SKIP_CENTROID)
+    margin = pos - neg
+    tags: list[str] = []
+    intern = role_timing(title) == "now_intern"
+    kind = intern_kind(title) if intern else ""
+    if is_agency(row):
+        margin -= 0.55
+        tags.append("agency")
+    if is_oem(row) and not intern:
+        margin -= 0.18
+        tags.append("oem")
+    if role_timing(title) == "later_senior":
+        margin -= 0.14
+        tags.append("senior")
+    if on_watchlist(row) and pos >= 0.12:
+        margin += 0.05
+        tags.append("watchlist")
+    if intern and kind in ("bd", "gig", "content", "pm"):
+        margin -= 0.22
+        tags.append(f"intern_{kind}")
+    elif intern and pos >= 0.10 and (pos - neg) > 0.04:
+        margin += 0.04
+        tags.append("intern_window")
+    elif intern and pos >= 0.06 and neg <= 0.02:
+        margin += 0.04
+        tags.append("intern_window")
+    return {
+        "fit_pos": round(pos, 4),
+        "fit_neg": round(neg, 4),
+        "fit_margin": round(margin, 4),
+        "fit_tags": tags,
+    }
+
+
+def curate_row(row: dict) -> dict:
+    """Label a live row from prototype fit. keep/maybe is the dataset; skip stays in live-pipeline.csv."""
+    shot = annotate_shot(row)
+    fit = fit_profile(shot)
+    timing = shot["timing"]
+    kind = intern_kind(shot.get("title") or "") if timing == "now_intern" else ""
+    margin = fit["fit_margin"]
+    tags = list(fit["fit_tags"])
+    reasons = [
+        f"pos={fit['fit_pos']:.3f}",
+        f"neg={fit['fit_neg']:.3f}",
+        f"margin={margin:.3f}",
+        *tags,
+    ]
+
+    if "agency" in tags:
+        verdict = "skip"
+        reasons.append("agency_employer")
+    elif timing == "later_senior":
+        verdict = "maybe" if margin >= KEEP_MARGIN else "skip"
+        reasons.append("senior_profile" if verdict == "maybe" else "senior")
+    elif margin >= KEEP_MARGIN:
+        verdict = "keep"
+    elif margin >= MAYBE_MARGIN:
+        verdict = "maybe"
+    else:
+        verdict = "skip"
+
+    if is_junk_pay(shot):
+        reasons.append("junk_pay")
+
+    if verdict == "keep" and (
+        timing == "now_intern" or "watchlist" in tags or margin >= 0.20 or shot["family"] == "quant"
+    ):
+        tier = "A"
+    elif verdict == "keep":
+        tier = "B"
+    else:
+        tier = "C"
+
+    shot.update(fit)
+    shot["verdict"] = verdict
+    shot["tier"] = tier
+    shot["intern_kind"] = kind
+    shot["watchlist"] = on_watchlist(shot)
+    shot["agency"] = is_agency(shot)
+    shot["oem"] = is_oem(shot)
+    shot["pay_junk"] = is_junk_pay(shot)
+    shot["reasons"] = ",".join(reasons)
+    return shot
+
+
+def curated_rows(rows: list[dict], include_maybe: bool = True) -> list[dict]:
+    labeled = [curate_row(row) for row in rows]
+    wanted = {"keep", "maybe"} if include_maybe else {"keep"}
+    picked = [row for row in labeled if row["verdict"] in wanted]
+    picked.sort(key=lambda row: (
+        0 if row["verdict"] == "keep" else 1,
+        0 if row["tier"] == "A" else 1 if row["tier"] == "B" else 2,
+        0 if row["timing"] == "now_intern" else 1 if row["timing"] == "ft" else 2,
+        -(row.get("fit_margin") or 0),
+        -(row.get("score") or 0),
+        row.get("company") or "",
+        row.get("title") or "",
+    ))
+    return picked
+
+
+CURATED_FIELDS = (
+    "verdict", "tier", "company", "title", "location", "url", "source", "ats", "id",
+    "pay", "pay_junk", "benchmark", "family", "timing", "intern_kind",
+    "watchlist", "agency", "oem", "score", "fit_pos", "fit_neg", "fit_margin",
+    "cv_variant", "reasons",
+)
+
+
+def write_curated_csv(path: Path, rows: list[dict]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=CURATED_FIELDS, extrasaction="ignore")
+        writer.writeheader()
+        for row in rows:
+            out = {field: row.get(field, "") for field in CURATED_FIELDS}
+            out["watchlist"] = "1" if row.get("watchlist") else "0"
+            out["agency"] = "1" if row.get("agency") else "0"
+            out["oem"] = "1" if row.get("oem") else "0"
+            out["pay_junk"] = "1" if row.get("pay_junk") else "0"
+            writer.writerow(out)
+
+
+def write_curated_json(path: Path, inventory_n: int, rows: list[dict]) -> None:
+    keep_n = sum(1 for row in rows if row["verdict"] == "keep")
+    maybe_n = sum(1 for row in rows if row["verdict"] == "maybe")
+    payload = {
+        "schema": "blowback.job_curated.v1",
+        "generated_at": f"{date.today().isoformat()}T00:00:00+08:00",
+        "profile": (
+            "Finance master's completing 2027-01. Intern/accelerator now; "
+            "full-time from the graduate work window. Taipei LLM / data / quant / ML. "
+            "Keep/skip is prototype-centroid fit, not a title keyword OR-list. "
+            "Agencies and generic OEM software are skip, not this table."
+        ),
+        "inventory_roles": inventory_n,
+        "counts": {
+            "keep": keep_n,
+            "maybe": maybe_n,
+            "rows": len(rows),
+            "employers_keep": len({row["company"] for row in rows if row["verdict"] == "keep"}),
+            "now_intern_keep": sum(1 for row in rows if row["verdict"] == "keep" and row["timing"] == "now_intern"),
+        },
+        "rows": [
+            {field: row.get(field) for field in CURATED_FIELDS}
+            for row in rows
+        ],
+    }
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def write_curated_db(path: Path, inventory_n: int, rows: list[dict]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    if path.exists():
+        path.unlink()
+    conn = sqlite3.connect(path)
+    conn.execute(
+        """create table jobs (
+            verdict text, tier text, company text, title text, location text, url text,
+            source text, ats text, id text, pay text, pay_junk integer, benchmark text,
+            family text, timing text, intern_kind text, watchlist integer, agency integer,
+            oem integer, score integer, fit_pos real, fit_neg real, fit_margin real,
+            cv_variant text, reasons text
+        )"""
+    )
+    conn.execute(
+        """create table meta (
+            generated_at text, inventory_roles integer, keep_n integer, maybe_n integer
+        )"""
+    )
+    conn.execute(
+        "insert into meta values (?,?,?,?)",
+        (
+            f"{date.today().isoformat()}T00:00:00+08:00",
+            inventory_n,
+            sum(1 for row in rows if row["verdict"] == "keep"),
+            sum(1 for row in rows if row["verdict"] == "maybe"),
+        ),
+    )
+    conn.executemany(
+        """insert into jobs values (
+            ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?
+        )""",
+        [
+            (
+                row.get("verdict"), row.get("tier"), row.get("company"), row.get("title"),
+                row.get("location"), row.get("url"), row.get("source"), row.get("ats"),
+                row.get("id"), row.get("pay"), 1 if row.get("pay_junk") else 0,
+                row.get("benchmark"), row.get("family"), row.get("timing"),
+                row.get("intern_kind"), 1 if row.get("watchlist") else 0,
+                1 if row.get("agency") else 0, 1 if row.get("oem") else 0,
+                row.get("score"), row.get("fit_pos"), row.get("fit_neg"),
+                row.get("fit_margin"), row.get("cv_variant"), row.get("reasons"),
+            )
+            for row in rows
+        ],
+    )
+    conn.commit()
+    conn.close()
 
 
 def shot_score(row: dict) -> int:
@@ -847,6 +1164,16 @@ def parse_args(argv: list[str] | None) -> argparse.Namespace:
                         help="write the full inventory as CSV (not just --next)")
     parser.add_argument("--handoff", type=Path, metavar="FILE",
                         help="write blowback.job_handoff.v1 JSON for the browser agent")
+    parser.add_argument("--from-json", type=Path, dest="from_json", metavar="FILE",
+                        help="curate an existing live-jobs JSON dump instead of refetching boards")
+    parser.add_argument("--curated", type=Path, metavar="FILE",
+                        help="write the keep+maybe curated dataset as CSV")
+    parser.add_argument("--curated-json", type=Path, dest="curated_json", metavar="FILE",
+                        help="write blowback.job_curated.v1 JSON")
+    parser.add_argument("--curated-db", type=Path, dest="curated_db", metavar="FILE",
+                        help="write the curated dataset as sqlite")
+    parser.add_argument("--keep-only", action="store_true", dest="keep_only",
+                        help="curated outputs include verdict=keep only, not maybe")
     parser.add_argument(
         "--since",
         default=(date.today() - timedelta(days=DEFAULT_SINCE_DAYS)).isoformat(),
@@ -901,57 +1228,71 @@ def benchmark_for(title: str) -> str:
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
-    if not args.config.is_file():
-        print(f"config not found: {args.config}", file=sys.stderr)
-        return 2
-
-    boards = json.loads(args.config.read_text(encoding="utf-8"))
-    locations = split_csv(args.locations)
-    keywords = split_csv(args.keywords)
-
-    rows: list[dict] = []
-    for entry in boards:
-        for posting in load_board(entry, since=args.since):
-            if not location_matches(posting["location"], locations):
-                continue
-            if not title_matches(posting["title"], keywords):
-                continue
-            rows.append(posting)
-
-    seen: set[str] = set()
-    unique: list[dict] = []
-    for row in rows:
-        key = row.get("url") or f"{row['company']}|{row['title']}"
-        if key in seen:
-            continue
-        seen.add(key)
-        unique.append(row)
-    rows = unique
-
-    applied = load_applied(args.exclude_applied) if args.exclude_applied else set()
-    if applied:
-        rows = [row for row in rows if not is_applied(row, applied)]
-
-    rows.sort(key=lambda row: (row["company"], row["title"]))
-
-    if args.with_pay:
+    if args.from_json is not None:
+        if not args.from_json.is_file():
+            print(f"live dump not found: {args.from_json}", file=sys.stderr)
+            return 2
+        rows = json.loads(args.from_json.read_text(encoding="utf-8"))
+        if not isinstance(rows, list):
+            print("--from-json must be a list of job objects", file=sys.stderr)
+            return 2
         for row in rows:
-            if row.get("ats") in ("yourator", "sqlite", "cake"):
-                row["pay"] = pay_from_yourator(row.get("_salary"))
-            else:
-                text = row.get("_text") or ""
-                if not text and row.get("_detail"):
-                    try:
-                        text = str(fetch_json(row["_detail"]).get("content") or "")
-                    except Exception:  # noqa: BLE001 — a missing detail page is not fatal
-                        text = ""
-                row["pay"] = pay_from_text(text)
-            row["benchmark"] = benchmark_for(row["title"])
+            if not row.get("benchmark"):
+                row["benchmark"] = benchmark_for(row.get("title") or "")
+            if not row.get("pay"):
+                row["pay"] = "not stated"
+    else:
+        if not args.config.is_file():
+            print(f"config not found: {args.config}", file=sys.stderr)
+            return 2
 
-    for row in rows:
-        row.pop("_text", None)
-        row.pop("_detail", None)
-        row.pop("_salary", None)
+        boards = json.loads(args.config.read_text(encoding="utf-8"))
+        locations = split_csv(args.locations)
+        keywords = split_csv(args.keywords)
+
+        rows = []
+        for entry in boards:
+            for posting in load_board(entry, since=args.since):
+                if not location_matches(posting["location"], locations):
+                    continue
+                if not title_matches(posting["title"], keywords):
+                    continue
+                rows.append(posting)
+
+        seen: set[str] = set()
+        unique: list[dict] = []
+        for row in rows:
+            key = row.get("url") or f"{row['company']}|{row['title']}"
+            if key in seen:
+                continue
+            seen.add(key)
+            unique.append(row)
+        rows = unique
+
+        applied = load_applied(args.exclude_applied) if args.exclude_applied else set()
+        if applied:
+            rows = [row for row in rows if not is_applied(row, applied)]
+
+        rows.sort(key=lambda row: (row["company"], row["title"]))
+
+        if args.with_pay:
+            for row in rows:
+                if row.get("ats") in ("yourator", "sqlite", "cake"):
+                    row["pay"] = pay_from_yourator(row.get("_salary"))
+                else:
+                    text = row.get("_text") or ""
+                    if not text and row.get("_detail"):
+                        try:
+                            text = str(fetch_json(row["_detail"]).get("content") or "")
+                        except Exception:  # noqa: BLE001 — a missing detail page is not fatal
+                            text = ""
+                    row["pay"] = pay_from_text(text)
+                row["benchmark"] = benchmark_for(row["title"])
+
+        for row in rows:
+            row.pop("_text", None)
+            row.pop("_detail", None)
+            row.pop("_salary", None)
 
     if args.pipeline is not None:
         write_pipeline(args.pipeline, rows)
@@ -961,6 +1302,17 @@ def main(argv: list[str] | None = None) -> int:
     csv_rows = [annotate_shot(row) for row in rows]
     if args.csv is not None:
         write_csv(args.csv, csv_rows)
+
+    picked = None
+    if args.curated is not None or args.curated_json is not None or args.curated_db is not None:
+        picked = curated_rows(rows, include_maybe=not args.keep_only)
+        if args.curated is not None:
+            write_curated_csv(args.curated, picked)
+        if args.curated_json is not None:
+            write_curated_json(args.curated_json, len(rows), picked)
+        if args.curated_db is not None:
+            write_curated_db(args.curated_db, len(rows), picked)
+
     shot_n = args.next_n if args.next_n is not None else 8
     if args.handoff is not None:
         if shot_n < 1:
@@ -979,6 +1331,13 @@ def main(argv: list[str] | None = None) -> int:
             print("--next must be >= 1", file=sys.stderr)
             return 2
         rows = next_shots(rows, args.next_n)
+
+    if picked is not None and args.next_n is None and not args.as_json:
+        keep_n = sum(1 for row in picked if row["verdict"] == "keep")
+        maybe_n = sum(1 for row in picked if row["verdict"] == "maybe")
+        targets = [str(p) for p in (args.curated, args.curated_json, args.curated_db) if p is not None]
+        print(f"curated keep={keep_n} maybe={maybe_n} of {len(csv_rows)} -> {', '.join(targets)}")
+        return 0
 
     if args.as_json:
         print(json.dumps(rows, ensure_ascii=False))
