@@ -1,0 +1,244 @@
+[
+  {
+    "ats": "sqlite",
+    "path_env": "JOB_WATCH_TW_JOBS_DB",
+    "label": "TW board scrape"
+  },
+  {
+    "ats": "sqlite",
+    "path_env": "JOB_WATCH_104_DB",
+    "table": "104_data",
+    "source": "104",
+    "label": "104"
+  },
+  {
+    "ats": "lever",
+    "company": "binance",
+    "label": "Binance"
+  },
+  {
+    "ats": "greenhouse",
+    "company": "binance",
+    "label": "Binance (GH)"
+  },
+  {
+    "ats": "lever",
+    "company": "Gogolook",
+    "label": "Gogolook"
+  },
+  {
+    "ats": "greenhouse",
+    "company": "appier",
+    "label": "Appier"
+  },
+  {
+    "ats": "greenhouse",
+    "company": "worldquant",
+    "label": "WorldQuant"
+  },
+  {
+    "ats": "greenhouse",
+    "company": "kronosresearch",
+    "label": "Kronos Research"
+  },
+  {
+    "ats": "greenhouse",
+    "company": "dcard",
+    "label": "Dcard"
+  },
+  {
+    "ats": "greenhouse",
+    "company": "okx",
+    "label": "OKX"
+  },
+  {
+    "ats": "greenhouse",
+    "company": "bybit",
+    "label": "Bybit"
+  },
+  {
+    "ats": "lever",
+    "company": "gate",
+    "label": "Gate"
+  },
+  {
+    "ats": "greenhouse",
+    "company": "coinbase",
+    "label": "Coinbase"
+  },
+  {
+    "ats": "greenhouse",
+    "company": "ripple",
+    "label": "Ripple"
+  },
+  {
+    "ats": "greenhouse",
+    "company": "consensys",
+    "label": "Consensys"
+  },
+  {
+    "ats": "greenhouse",
+    "company": "canonical",
+    "label": "Canonical"
+  },
+  {
+    "ats": "greenhouse",
+    "company": "gitlab",
+    "label": "GitLab"
+  },
+  {
+    "ats": "greenhouse",
+    "company": "elastic",
+    "label": "Elastic"
+  },
+  {
+    "ats": "greenhouse",
+    "company": "mozilla",
+    "label": "Mozilla"
+  },
+  {
+    "ats": "greenhouse",
+    "company": "cloudflare",
+    "label": "Cloudflare"
+  },
+  {
+    "ats": "greenhouse",
+    "company": "datadog",
+    "label": "Datadog"
+  },
+  {
+    "ats": "greenhouse",
+    "company": "databricks",
+    "label": "Databricks"
+  },
+  {
+    "ats": "greenhouse",
+    "company": "mongodb",
+    "label": "MongoDB"
+  },
+  {
+    "ats": "greenhouse",
+    "company": "stripe",
+    "label": "Stripe"
+  },
+  {
+    "ats": "greenhouse",
+    "company": "airbnb",
+    "label": "Airbnb"
+  },
+  {
+    "ats": "cake",
+    "query": "machine learning",
+    "label": "Cake: machine learning"
+  },
+  {
+    "ats": "cake",
+    "query": "data scientist",
+    "label": "Cake: data scientist"
+  },
+  {
+    "ats": "cake",
+    "query": "資料科學",
+    "label": "Cake: 資料科學"
+  },
+  {
+    "ats": "cake",
+    "query": "機器學習",
+    "label": "Cake: 機器學習"
+  },
+  {
+    "ats": "cake",
+    "query": "量化",
+    "label": "Cake: 量化"
+  },
+  {
+    "ats": "yourator",
+    "query": "machine learning",
+    "label": "Yourator: machine learning"
+  },
+  {
+    "ats": "yourator",
+    "query": "data scientist",
+    "label": "Yourator: data scientist"
+  },
+  {
+    "ats": "yourator",
+    "query": "data analyst",
+    "label": "Yourator: data analyst"
+  },
+  {
+    "ats": "yourator",
+    "query": "AI",
+    "label": "Yourator: AI"
+  },
+  {
+    "ats": "yourator",
+    "query": "LLM",
+    "label": "Yourator: LLM"
+  },
+  {
+    "ats": "yourator",
+    "query": "quantitative",
+    "label": "Yourator: quantitative"
+  },
+  {
+    "ats": "yourator",
+    "query": "research",
+    "label": "Yourator: research"
+  },
+  {
+    "ats": "yourator",
+    "query": "python",
+    "label": "Yourator: python"
+  },
+  {
+    "ats": "yourator",
+    "query": "backend",
+    "label": "Yourator: backend"
+  },
+  {
+    "ats": "yourator",
+    "query": "資料科學",
+    "label": "Yourator: 資料科學"
+  },
+  {
+    "ats": "yourator",
+    "query": "機器學習",
+    "label": "Yourator: 機器學習"
+  },
+  {
+    "ats": "yourator",
+    "query": "資料分析",
+    "label": "Yourator: 資料分析"
+  },
+  {
+    "ats": "yourator",
+    "query": "人工智慧",
+    "label": "Yourator: 人工智慧"
+  },
+  {
+    "ats": "yourator",
+    "query": "資料工程",
+    "label": "Yourator: 資料工程"
+  },
+  {
+    "ats": "yourator",
+    "query": "演算法",
+    "label": "Yourator: 演算法"
+  },
+  {
+    "ats": "yourator",
+    "query": "量化",
+    "label": "Yourator: 量化"
+  },
+  {
+    "ats": "yourator",
+    "query": "研究員",
+    "label": "Yourator: 研究員"
+  },
+  {
+    "ats": "yourator",
+    "query": "後端工程師",
+    "label": "Yourator: 後端工程師"
+  }
+]

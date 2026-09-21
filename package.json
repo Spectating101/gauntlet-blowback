@@ -19,6 +19,7 @@
     "gauntlet:master": "node scripts/build-gauntlet-master.mjs",
     "mission:next": "node src/cli.mjs next",
     "fire:next": "node src/cli.mjs fire-next",
+    "jobs:next": "python3 scripts/job-watch.py --json --next 8 --with-pay --csv data/jobs/live-pipeline.csv --handoff data/jobs/handoff.json",
     "fire:queue": "node src/cli.mjs fire-queue --limit=10",
     "application:next": "node src/cli.mjs apply-next",
     "application:queue": "node src/cli.mjs apply-queue --limit=20",

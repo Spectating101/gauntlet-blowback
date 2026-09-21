@@ -1,0 +1,356 @@
+{
+  "schema": "blowback.job_handoff.v1",
+  "generated_at": "2026-09-22T00:00:00+08:00",
+  "handoff_id": "jobs:2026-09-22",
+  "state": "READY_FOR_BROWSER_AGENT",
+  "priority": {
+    "status": "FIRE_NOW",
+    "deadline": "ROLLING",
+    "lane": "JOB",
+    "note": "This is fire:next for jobs. Do not insert these shots into gauntlet-master.json."
+  },
+  "inventory": {
+    "roles": 1177,
+    "employers": 356,
+    "pay_stated": 887,
+    "profile_close": 144,
+    "csv": "data/jobs/live-pipeline.csv",
+    "freshness_days": 14
+  },
+  "analysis": {
+    "family_counts": {
+      "other": 79,
+      "software": 843,
+      "ml_research": 88,
+      "research": 14,
+      "data_eng": 27,
+      "data_science": 41,
+      "analyst": 67,
+      "quant": 18
+    },
+    "timing_counts": {
+      "later_senior": 265,
+      "ft": 821,
+      "now_intern": 91
+    },
+    "now_intern": 91,
+    "ft_from_2027_01": 821,
+    "later_senior": 265,
+    "notes": [
+      "Most rows are generic 工程師 at Compal/Foxconn; they are inventory, not shots.",
+      "Intern/BAP/實習 is the only slice reachable before 2027-01.",
+      "104.db is a local intern/corridor crawl, not a full-time 104 catalog.",
+      "Named Gauntlet JOB routes with empty execution_manifest are a watchlist, not packaged FIRE."
+    ]
+  },
+  "queue": {
+    "pointer_rule": "one [!] Job pipeline block in the unattended queue, never one Apply block per role",
+    "shots_rule": "one employer per --next shot"
+  },
+  "sources": {
+    "tw_jobs_path_env": "JOB_WATCH_TW_JOBS_DB",
+    "job_104_path_env": "JOB_WATCH_104_DB",
+    "live_ats": [
+      "lever",
+      "greenhouse",
+      "yourator",
+      "cake"
+    ],
+    "do_not": "HTTP-scrape 104.com.tw; read src/data/104.db instead"
+  },
+  "cv_variants": {
+    "ai": "AI/data CV — resolve from the private applicant authority file, not this public repo",
+    "zh": "Chinese CV — same authority file",
+    "en": "English general CV — same authority file"
+  },
+  "shots": [
+    {
+      "shot_id": "job-shot-01",
+      "company": "【企業專案招募】104未來無限整合招募中心",
+      "title": "AI & Statistical Quality Engineer Intern （AI × 統計方法實習研究員）＿櫛構科技股份有限公司（桃園青年職場對接計畫）",
+      "family": "research",
+      "timing": "now_intern",
+      "score": 115,
+      "cv_variant": "ai",
+      "pay": "時薪196元",
+      "benchmark": "market: interns typically NT$200-250/hour or a fixed monthly stipend",
+      "location": "台北市內湖區經歷不拘碩士時薪196元 單的產品能力",
+      "source": "104",
+      "portal": "104",
+      "why": "Reachable now as a student: research intern/accelerator, not a 2027-01 full-time gate.",
+      "target": {
+        "starting_url": "https://www.104.com.tw/job/91cxg"
+      },
+      "human_gate": [
+        "104_cookie_export",
+        "captcha",
+        "final_submit"
+      ],
+      "forbidden": [
+        "invent_eligibility",
+        "invent_work_auth",
+        "bypass_captcha",
+        "final_submit",
+        "paste_gauntlet_jargon_into_the_application"
+      ]
+    },
+    {
+      "shot_id": "job-shot-02",
+      "company": "Binance",
+      "title": "Binance Accelerator Program - AI Research Scientist (LLM Reasoning & Post-Training)",
+      "family": "ml_research",
+      "timing": "now_intern",
+      "score": 100,
+      "cv_variant": "ai",
+      "pay": "not stated",
+      "benchmark": "market: ~NT$122,000/month entry ML engineer (NT$1.47M/yr)",
+      "location": "Asia, Taiwan, Taipei, Hong Kong",
+      "source": "lever:binance",
+      "portal": "lever",
+      "why": "Reachable now as a student: ml_research intern/accelerator, not a 2027-01 full-time gate.",
+      "target": {
+        "starting_url": "https://jobs.lever.co/binance/e7f93f9f-9e39-4a3f-87e3-4dea1efb79b1"
+      },
+      "human_gate": [
+        "final_submit",
+        "eligibility_attestation",
+        "terms_acceptance"
+      ],
+      "forbidden": [
+        "invent_eligibility",
+        "invent_work_auth",
+        "bypass_captcha",
+        "final_submit",
+        "paste_gauntlet_jargon_into_the_application"
+      ]
+    },
+    {
+      "shot_id": "job-shot-03",
+      "company": "AIFT",
+      "title": "Machine Learning Engineer, Vulcan",
+      "family": "ml_research",
+      "timing": "ft",
+      "score": 85,
+      "cv_variant": "ai",
+      "pay": "NT$ 1,300,000 - 1,800,000 (年薪)",
+      "benchmark": "market: ~NT$122,000/month entry ML engineer (NT$1.47M/yr)",
+      "location": "臺北市",
+      "source": "yourator",
+      "portal": "yourator",
+      "why": "Profile-close ml_research full-time: legally open from 2027-01 under the graduate work window.",
+      "target": {
+        "starting_url": "https://www.yourator.co/companies/aift/jobs/46568"
+      },
+      "human_gate": [
+        "login_session",
+        "final_submit"
+      ],
+      "forbidden": [
+        "invent_eligibility",
+        "invent_work_auth",
+        "bypass_captcha",
+        "final_submit",
+        "paste_gauntlet_jargon_into_the_application"
+      ]
+    },
+    {
+      "shot_id": "job-shot-04",
+      "company": "Cake Recruitment Consulting",
+      "title": "(穩定軟體業)Hybrid AI/ML Engineer機器學習工程師– Data Intelligence Platform",
+      "family": "ml_research",
+      "timing": "ft",
+      "score": 85,
+      "cv_variant": "ai",
+      "pay": "Annual Salary TWD 1000000~1300000",
+      "benchmark": "market: ~NT$122,000/month entry ML engineer (NT$1.47M/yr)",
+      "location": "內湖區, 台北市, 台灣",
+      "source": "cake",
+      "portal": "cake",
+      "why": "Profile-close ml_research full-time: legally open from 2027-01 under the graduate work window.",
+      "target": {
+        "starting_url": "https://www.cake.me/companies/cake-recruitment-consulting/jobs/stable-software-industry-hybrid-ai-ml-engineer-data-intelligence-platform"
+      },
+      "human_gate": [
+        "login_session",
+        "final_submit"
+      ],
+      "forbidden": [
+        "invent_eligibility",
+        "invent_work_auth",
+        "bypass_captcha",
+        "final_submit",
+        "paste_gauntlet_jargon_into_the_application"
+      ]
+    },
+    {
+      "shot_id": "job-shot-05",
+      "company": "KPMG安侯建業聯合會計師事務所",
+      "title": "【顧問部】金融科技與機器學習應用 (資料科學家/數據科學家)-317317",
+      "family": "ml_research",
+      "timing": "ft",
+      "score": 85,
+      "cv_variant": "ai",
+      "pay": "Monthly Salary TWD 0~0",
+      "benchmark": "market: no benchmark for this role family",
+      "location": "信義區, 台北市, 台灣",
+      "source": "cake",
+      "portal": "cake",
+      "why": "Profile-close ml_research full-time: legally open from 2027-01 under the graduate work window.",
+      "target": {
+        "starting_url": "https://www.cake.me/companies/KPMG/jobs/7f6c2703-2066-4575-8c08-66d348944a41-consulting-department-financia-e90a166b66daa76729040efaf49039"
+      },
+      "human_gate": [
+        "login_session",
+        "final_submit"
+      ],
+      "forbidden": [
+        "invent_eligibility",
+        "invent_work_auth",
+        "bypass_captcha",
+        "final_submit",
+        "paste_gauntlet_jargon_into_the_application"
+      ]
+    },
+    {
+      "shot_id": "job-shot-06",
+      "company": "MediaTek 聯發科技",
+      "title": "Machine Learning - Architect/Researcher/Engineer",
+      "family": "ml_research",
+      "timing": "ft",
+      "score": 85,
+      "cv_variant": "ai",
+      "pay": "Monthly Salary TWD 0~0",
+      "benchmark": "market: ~NT$122,000/month entry ML engineer (NT$1.47M/yr)",
+      "location": "新竹市, 台灣",
+      "source": "cake",
+      "portal": "cake",
+      "why": "Profile-close ml_research full-time: legally open from 2027-01 under the graduate work window.",
+      "target": {
+        "starting_url": "https://www.cake.me/companies/mediatek/jobs/25dc0b6b-4c02-4896-8d24-33d09bda1dcb-machine-learning-architect-res-d24d7d6737ffe7eee013ac9ea1ec71"
+      },
+      "human_gate": [
+        "login_session",
+        "final_submit"
+      ],
+      "forbidden": [
+        "invent_eligibility",
+        "invent_work_auth",
+        "bypass_captcha",
+        "final_submit",
+        "paste_gauntlet_jargon_into_the_application"
+      ]
+    },
+    {
+      "shot_id": "job-shot-07",
+      "company": "Mlytics 摩速科技有限公司",
+      "title": "AI Data Engineer AI 資料工程師",
+      "family": "data_eng",
+      "timing": "ft",
+      "score": 85,
+      "cv_variant": "ai",
+      "pay": "Monthly Salary TWD 0.0~0.0",
+      "benchmark": "market: ~NT$80,000-120,000/month for software engineers in Taipei",
+      "location": "大安區, 台北市, 台灣",
+      "source": "cake",
+      "portal": "cake",
+      "why": "Profile-close data_eng full-time: legally open from 2027-01 under the graduate work window.",
+      "target": {
+        "starting_url": "https://www.cake.me/companies/mlytics-2d9fc4/jobs/ai-data-engineer-9ac"
+      },
+      "human_gate": [
+        "login_session",
+        "final_submit"
+      ],
+      "forbidden": [
+        "invent_eligibility",
+        "invent_work_auth",
+        "bypass_captcha",
+        "final_submit",
+        "paste_gauntlet_jargon_into_the_application"
+      ]
+    },
+    {
+      "shot_id": "job-shot-08",
+      "company": "OpenNet 開網有限公司",
+      "title": "Data Scientist",
+      "family": "data_science",
+      "timing": "ft",
+      "score": 85,
+      "cv_variant": "ai",
+      "pay": "Annual Salary TWD 910000~1800000",
+      "benchmark": "market: ~NT$100,000/month median Taipei (NT$79,000 at the 25th percentile)",
+      "location": "台北市, 台灣",
+      "source": "cake",
+      "portal": "cake",
+      "why": "Profile-close data_science full-time: legally open from 2027-01 under the graduate work window.",
+      "target": {
+        "starting_url": "https://www.cake.me/companies/opennet-limited/jobs/data-scientist-44b"
+      },
+      "human_gate": [
+        "login_session",
+        "final_submit"
+      ],
+      "forbidden": [
+        "invent_eligibility",
+        "invent_work_auth",
+        "bypass_captcha",
+        "final_submit",
+        "paste_gauntlet_jargon_into_the_application"
+      ]
+    }
+  ],
+  "browser_agent_contract": {
+    "objective": "Open the shot URL, map the CV variant to the live form, complete reversible fields, save a draft, stop at protected gates.",
+    "auto": [
+      "open starting_url",
+      "fill factual fields from the private applicant authority file",
+      "upload the designated CV variant",
+      "save draft"
+    ],
+    "human_gate": [
+      "captcha",
+      "password_or_2fa",
+      "104_cookie_export",
+      "eligibility_attestation",
+      "terms_acceptance",
+      "final_submit"
+    ],
+    "forbidden": [
+      "invent_eligibility",
+      "invent_work_auth",
+      "bypass_captcha",
+      "final_submit",
+      "commit_applicant_contact_into_this_public_repository",
+      "enqueue_one_queue_block_per_role"
+    ],
+    "final_submit_policy": "HUMAN_PROTECTED",
+    "do_not_redesign_copy": true
+  },
+  "receipt_contract": {
+    "schema": "blowback.job_receipt.v1",
+    "allowed_statuses": [
+      "IN_PROGRESS",
+      "WAITING_HUMAN",
+      "SAFE_COMPLETE",
+      "SUBMITTED",
+      "BLOCKED",
+      "ABANDONED",
+      "EXPIRED"
+    ],
+    "checkpoint_on_return": true,
+    "template": {
+      "schema": "blowback.job_receipt.v1",
+      "shot_id": null,
+      "status": null,
+      "submitted_at": null,
+      "application_id": null,
+      "confirmation_url": null,
+      "receipt_ref": null,
+      "human_required": []
+    }
+  },
+  "regenerate": [
+    "export JOB_WATCH_TW_JOBS_DB=/path/to/tw_jobs.db JOB_WATCH_104_DB=/path/to/104.db",
+    "python3 scripts/job-watch.py --with-pay --next 8 --csv data/jobs/live-pipeline.csv --handoff data/jobs/handoff.json"
+  ]
+}
