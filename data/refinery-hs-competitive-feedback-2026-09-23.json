@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "subject_project": "hardware-splicer",
+  "policy": "competition_is_input_to_improvement_not_automatic_scope_reduction",
+  "decisions": [
+    {
+      "schema_version": 1,
+      "subject_project": "hardware-splicer",
+      "competitor": "Flux",
+      "summary": "Flux exposes live PCB context and design work through MCP while continuing to improve placement, routing, and the native editor.",
+      "change_class": "integration",
+      "evidence_refs": ["https://www.flux.ai/p/blog/summer-2026-updates-flux-mcp-server-and-chat-mode", "https://docs.flux.ai/reference/flux-mcp-server"],
+      "hs_native_lane": true,
+      "core_semantics_change_authorized": false,
+      "decision": "INTEGRATE_NOT_REBUILD",
+      "engineering_authorized": true,
+      "reason": "The capability belongs in HS through an adapter or interoperability boundary rather than a duplicate subsystem.",
+      "allowed_scope": ["adapter", "import_export", "deep_link", "protocol_bridge", "artifact_view"]
+    },
+    {
+      "schema_version": 1,
+      "subject_project": "hardware-splicer",
+      "competitor": "AllSpice DRCY",
+      "summary": "DRCY places AI review findings directly in the hardware review workflow with source and design context available for inspection.",
+      "change_class": "workflow",
+      "evidence_refs": ["https://allspice.io/drcy", "https://allspice.io/post/under-the-hood-how-drcy-reviews-your-schematics"],
+      "hs_native_lane": true,
+      "core_semantics_change_authorized": false,
+      "decision": "IMPROVE_HS_WORKFLOW",
+      "engineering_authorized": true,
+      "reason": "Existing HS evidence/authority semantics can support the workflow improvement without a second truth model.",
+      "allowed_scope": ["workflow", "frontend", "orchestration_over_existing_semantics"]
+    },
+    {
+      "schema_version": 1,
+      "subject_project": "hardware-splicer",
+      "competitor": "Circuitly",
+      "summary": "Circuitly uses file-native agents, visual schematic/PCB diffs, and pull-request review around real KiCad and Altium files.",
+      "change_class": "workflow",
+      "evidence_refs": ["https://circuitly.ai/"],
+      "hs_native_lane": true,
+      "core_semantics_change_authorized": false,
+      "decision": "IMPROVE_HS_WORKFLOW",
+      "engineering_authorized": true,
+      "reason": "Existing HS evidence/authority semantics can support the workflow improvement without a second truth model.",
+      "allowed_scope": ["workflow", "frontend", "orchestration_over_existing_semantics"]
+    },
+    {
+      "schema_version": 1,
+      "subject_project": "hardware-splicer",
+      "competitor": "Schematik",
+      "summary": "Schematik compresses first-use hardware creation into describe, review, and build steps with low visible complexity.",
+      "change_class": "presentation",
+      "evidence_refs": ["https://www.schematik.io/"],
+      "hs_native_lane": true,
+      "core_semantics_change_authorized": false,
+      "decision": "IMPROVE_HS_SHELL",
+      "engineering_authorized": true,
+      "reason": "A supported presentation gap in HS's native lane may be repaired without reopening truth semantics.",
+      "allowed_scope": ["frontend", "information_architecture", "visualization", "copy", "progressive_disclosure"]
+    },
+    {
+      "schema_version": 1,
+      "subject_project": "hardware-splicer",
+      "competitor": "Cadence AuraStack",
+      "summary": "Cadence is expanding agentic PCB and packaging execution across planning, implementation, and multiphysics in its existing EDA stack.",
+      "change_class": "integration",
+      "evidence_refs": ["https://newsroom.cadence.com/press-releases/press-release-details/2026/Cadence-Introduces-AuraStack-AI-Super-Agent-the-Worlds-First-Agentic-AI-Platform-for-PCB-and-Advanced-Packaging/default.aspx"],
+      "hs_native_lane": true,
+      "core_semantics_change_authorized": false,
+      "decision": "INTEGRATE_NOT_REBUILD",
+      "engineering_authorized": true,
+      "reason": "The capability belongs in HS through an adapter or interoperability boundary rather than a duplicate subsystem.",
+      "allowed_scope": ["adapter", "import_export", "deep_link", "protocol_bridge", "artifact_view"]
+    },
+    {
+      "schema_version": 1,
+      "subject_project": "hardware-splicer",
+      "competitor": "Groundrun",
+      "summary": "Groundrun puts real connected products and physical measurements inside the agent development loop and returns flow-validation results to the agent.",
+      "change_class": "workflow",
+      "evidence_refs": ["https://groundrun.io/", "https://groundrun.io/blog/hardware-in-the-loop-brings-speed-flow-validation-brings-confidence/"],
+      "hs_native_lane": true,
+      "core_semantics_change_authorized": false,
+      "decision": "IMPROVE_HS_WORKFLOW",
+      "engineering_authorized": true,
+      "reason": "Existing HS evidence/authority semantics can support the workflow improvement without a second truth model.",
+      "allowed_scope": ["workflow", "frontend", "orchestration_over_existing_semantics"]
+    },
+    {
+      "schema_version": 1,
+      "subject_project": "hardware-splicer",
+      "competitor": "Anthropic MHS",
+      "summary": "MHS standardizes programmable-device discovery and control for model-agnostic agents, including MCP access and planned physical-safety evaluation work.",
+      "change_class": "integration",
+      "evidence_refs": ["https://www.anthropic.com/news/model-hardware-standard-research-preview"],
+      "hs_native_lane": true,
+      "core_semantics_change_authorized": false,
+      "decision": "INTEGRATE_NOT_REBUILD",
+      "engineering_authorized": true,
+      "reason": "The capability belongs in HS through an adapter or interoperability boundary rather than a duplicate subsystem.",
+      "allowed_scope": ["adapter", "import_export", "deep_link", "protocol_bridge", "artifact_view"]
+    }
+  ],
+  "summary": {
+    "observations": 7,
+    "engineering_authorized": 7,
+    "core_semantics_changes_authorized": 0,
+    "decision_counts": {"IMPROVE_HS_SHELL": 1, "IMPROVE_HS_WORKFLOW": 3, "INTEGRATE_NOT_REBUILD": 3}
+  }
+}
