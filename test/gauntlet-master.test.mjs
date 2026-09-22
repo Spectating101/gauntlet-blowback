@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { buildMasterRegistry, summarizeMasterRegistry } from '../scripts/build-gauntlet-master.mjs';
+import { buildMasterRegistry, summarizeMasterRegistry, writeMasterRegistry } from '../scripts/build-gauntlet-master.mjs';
 
 const records = buildMasterRegistry();
 const byId = new Map(records.map((record) => [record.id, record]));
@@ -259,4 +259,57 @@ test('active master excludes archived routes while historical mode preserves the
   assert.equal(staleArchive.routes.length, 48);
   assert.equal(policyArchive.routes.length, 69);
   assert.equal(historicalRecords.length - records.length, staleArchive.routes.length + policyArchive.routes.length);
+});
+
+test('verified corrections win over earlier radar optimism', () => {
+  const records = buildMasterRegistry();
+  const byId = new Map(records.map((record) => [record.id, record]));
+
+  // A deadline that passed unfired is recorded as an outcome. Status is not rewritten: the queue
+  // already filters expired hard dates, and retiring a route is the user's judgement.
+  for (const id of ['shih-hsin-finance-2026-il', 'smartliving-creative-2026']) {
+    const record = byId.get(id);
+    assert.ok(record, `${id} still present`);
+    assert.equal(record.outcome, 'MISSED_2026', id);
+    assert.match(record.origin, /route-corrections/, `${id} records where the correction came from`);
+    assert.equal(record.verified_on, '2026-09-21');
+  }
+
+  // Routes carried no URLs at all; verified ones are now recorded.
+  const heroku = byId.get('heroku-github-students-2026');
+  assert.match(heroku.source_url, /^https:\/\/www\.heroku\.com\//);
+  assert.match(heroku.eligibility_note, /Student Developer Pack/);
+  const openai = byId.get('openai-researcher-access-hardware-splicer');
+  assert.match(openai.apply_url, /^https:\/\/grants\.openai\.com\//);
+});
+
+test('the written registry carries the corrections, not just the in-memory one', async (t) => {
+  // buildMasterRegistry is what the runtime reads, but writeMasterRegistry is what produces
+  // docs/gauntlet-master.json, and it has its own path plumbing. Cover both.
+  const fs = await import('node:fs');
+  const os = await import('node:os');
+  const path = await import('node:path');
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'master-'));
+  t.after(() => fs.rmSync(dir, { recursive: true, force: true }));
+  const payload = writeMasterRegistry({
+    outputCsv: path.join(dir, 'master.csv'),
+    outputJson: path.join(dir, 'master.json'),
+  });
+  const written = JSON.parse(fs.readFileSync(path.join(dir, 'master.json'), 'utf8'));
+  const byId = new Map(written.records.map((record) => [record.id, record]));
+  assert.equal(byId.get('shih-hsin-finance-2026-il').outcome, 'MISSED_2026');
+  assert.match(byId.get('azure-for-students-2026').source_url, /^https:\/\/azure\.microsoft\.com\//);
+  assert.equal(payload.records.length, written.records.length);
+});
+
+test('routes found during verification are added and keep their verified detail', () => {
+  const byId = new Map(buildMasterRegistry().map((record) => [record.id, record]));
+  const tigp = byId.get('tigp-sinica-phd-2027');
+  assert.ok(tigp, 'TIGP route exists');
+  assert.equal(tigp.deadline, '2027-02-01');
+  assert.match(tigp.funding_note, /NT\$40,000\/month/);
+  assert.match(tigp.eligibility_verdict, /^ELIGIBLE/);
+  const moe = byId.get('moe-taiwan-scholarship-2027');
+  assert.match(moe.eligibility_note, /graduating that year/);
+  assert.match(byId.get('phd-nycu-iais').funding_note, /FULL TUITION WAIVER/);
 });

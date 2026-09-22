@@ -17,6 +17,8 @@ const DEFAULTS = {
   researchResourceRadar: path.join(ROOT, 'data/research-resource-radar-2026-09-04.json'),
   expandedOpportunityRadar: path.join(ROOT, 'data/expanded-opportunity-radar-2026-09-12.json'),
   fireExecutionRoutes: path.join(ROOT, 'data/fire-execution-routes-2026-09-05.json'),
+  routeAdditions: path.join(ROOT, 'data/route-additions-2026-09-21.json'),
+  routeCorrections: path.join(ROOT, 'data/route-corrections-2026-09-21.json'),
   archivedRoutes: path.join(ROOT, 'data/archived-routes-2026-09-17.json'),
   policyArchivedRoutes: path.join(ROOT, 'data/policy-archived-routes-2026-09-17.json'),
   outputCsv: path.join(ROOT, 'docs/gauntlet-master.csv'),
@@ -147,11 +149,13 @@ function normalizeSupplement(row) {
   return Object.fromEntries(MASTER_COLUMNS.map((column) => [column, row[column] ?? '']));
 }
 
-function applyOverride(record, override) {
+function applyOverride(record, override, sourceLabel) {
   const { id: _id, reason, ...patch } = override;
   const updated = { ...record, ...patch };
   if (reason) {
-    const marker = `master override: ${reason}`;
+    // Name the source as well as the reason: when two sources disagree about a route, the
+    // origin trail should say which one won.
+    const marker = sourceLabel ? `master override [${sourceLabel}]: ${reason}` : `master override: ${reason}`;
     updated.origin = updated.origin ? `${updated.origin} | ${marker}` : marker;
   }
   return updated;
@@ -183,7 +187,7 @@ function addThreadRecoveredRoutes(records, rows) {
 function applyOverrides(records, overrides, sourceLabel) {
   for (const override of overrides ?? []) {
     if (!records.has(override.id)) throw new Error(`${sourceLabel} override target not found: ${override.id}`);
-    records.set(override.id, applyOverride(records.get(override.id), override));
+    records.set(override.id, applyOverride(records.get(override.id), override, sourceLabel));
   }
 }
 
@@ -199,6 +203,8 @@ export function buildMasterRegistry({
   researchResourceRadarPath = DEFAULTS.researchResourceRadar,
   expandedOpportunityRadarPath = DEFAULTS.expandedOpportunityRadar,
   fireExecutionRoutesPath = DEFAULTS.fireExecutionRoutes,
+  routeAdditionsPath = DEFAULTS.routeAdditions,
+  routeCorrectionsPath = DEFAULTS.routeCorrections,
   archivedRoutesPath = DEFAULTS.archivedRoutes,
   policyArchivedRoutesPath = DEFAULTS.policyArchivedRoutes,
   includeArchived = false,
@@ -214,6 +220,8 @@ export function buildMasterRegistry({
   const researchResourceRadar = JSON.parse(fs.readFileSync(researchResourceRadarPath, 'utf8'));
   const expandedOpportunityRadar = JSON.parse(fs.readFileSync(expandedOpportunityRadarPath, 'utf8'));
   const fireExecutionRoutes = JSON.parse(fs.readFileSync(fireExecutionRoutesPath, 'utf8'));
+  const routeAdditions = JSON.parse(fs.readFileSync(routeAdditionsPath, 'utf8'));
+  const routeCorrections = JSON.parse(fs.readFileSync(routeCorrectionsPath, 'utf8'));
   const archivedRoutes = JSON.parse(fs.readFileSync(archivedRoutesPath, 'utf8'));
   const policyArchivedRoutes = JSON.parse(fs.readFileSync(policyArchivedRoutesPath, 'utf8'));
 
@@ -261,6 +269,14 @@ export function buildMasterRegistry({
   // FIRE execution mapping is intentionally separate from opportunity truth. It only
   // attaches a vetted local manifest to routes whose application copy is already ready.
   applyOverrides(records, fireExecutionRoutes.overrides, 'fire-execution-routes');
+
+  // Routes found during verification that no radar had. Added before corrections so the same
+  // corrections mechanism can carry their verified detail.
+  addSupplementRoutes(records, routeAdditions.routes, 'route-additions');
+
+  // Corrections land last: a deadline that has passed, or a page read today, outranks every
+  // earlier radar. Each entry records how it was verified.
+  applyOverrides(records, routeCorrections.overrides, 'route-corrections');
 
   const staleArchivedIds = new Set((archivedRoutes.routes ?? []).map((route) => route.id));
   const policyArchivedIds = new Set((policyArchivedRoutes.routes ?? []).map((route) => route.id));

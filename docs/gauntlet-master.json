@@ -21,17 +21,17 @@
     ]
   },
   "summary": {
-    "total": 171,
+    "total": 173,
     "lanes": {
       "JOB": 52,
       "RESEARCH": 24,
-      "PhD": 15,
+      "PhD": 16,
       "APPLY": 12,
       "STUDENT_INFRASTRUCTURE": 8,
       "OFFSET": 7,
+      "GRANT": 6,
       "SELL": 6,
       "FIELD": 5,
-      "GRANT": 5,
       "RESEARCH_LAB": 5,
       "PHD": 4,
       "PREDOC": 4,
@@ -54,7 +54,7 @@
     "route_classes": {
       "JOB": 51,
       "APPLY": 43,
-      "PhD": 15,
+      "PhD": 16,
       "OFFSET": 7,
       "LAB_STAFF": 6,
       "SELL": 6,
@@ -76,24 +76,24 @@
       "POLICY_FELLOWSHIP": 1,
       "RESEARCH_ACCESS": 1,
       "RESEARCH_ENGINEERING_PROGRAM": 1,
-      "RESEARCH_PREVIEW": 1
+      "RESEARCH_PREVIEW": 1,
+      "SCHOLARSHIP": 1
     },
     "statuses": {
-      "WATCH": 36,
+      "WATCH": 34,
+      "FIRE_AFTER_GATE": 20,
       "FIRE_NOW": 20,
       "VERIFY": 17,
-      "FIRE_AFTER_GATE": 14,
       "STRETCH_FIRE": 8,
       "PRICE_DISCOVERY": 6,
       "ROLLING": 6,
       "HOLD": 5,
       "REVERIFY": 5,
       "REHYDRATE_LIVE": 4,
-      "FIRE": 3,
       "FIRE_IF_FIT": 3,
       "CHECK_FIRE": 2,
       "DEVELOP_PAPER": 2,
-      "HIGH_PRIORITY_WATCH": 2,
+      "FIRE": 2,
       "WATCH_REVERIFY": 2,
       "ARTIFACT_ROUTE": 1,
       "BACKSTOP": 1,
@@ -123,6 +123,7 @@
       "PACKAGE_AFTER_FORM_REVERIFY": 1,
       "PERMANENT_SOURCE_FAMILY": 1,
       "PILOT_GATED_PREP": 1,
+      "POSTING_GONE": 1,
       "PREP_AFTER_PILOT": 1,
       "PREPARE_CANONICAL_PACKAGE_AND_HUMAN_ATTENDANCE_DECISION": 1,
       "SELECTIVE": 1,
@@ -133,11 +134,11 @@
       "WATCH_HIGH_CONDITIONAL": 1
     },
     "execution_states": {
-      "RESEARCH_ONLY": 131,
+      "RESEARCH_ONLY": 126,
+      "APPLICATION_RECON_REQUIRED": 11,
       "APPLICATION_READY": 9,
       "PORTAL_RECON_REQUIRED": 7,
-      "APPLICATION_RECON_REQUIRED": 5,
-      "ELIGIBILITY_RECON_REQUIRED": 5,
+      "ELIGIBILITY_RECON_REQUIRED": 6,
       "NOT_APPLICABLE": 5,
       "OUTREACH_READY": 5,
       "PACKET_DEVELOPMENT_REQUIRED": 2,
@@ -164,7 +165,11 @@
       "parent_route": "",
       "source_state": "CURRENT_LONGTAIL_BOARD",
       "source": "https://srsch.mohw.gov.tw/FileDownload/Activities/20260803171556152813428.pdf",
-      "origin": "docs/longtail/longtail-campaigns.csv"
+      "origin": "docs/longtail/longtail-campaigns.csv | master override [route-corrections]: record the missed outcome; archiving is the user’s call",
+      "verified_on": "2026-09-21",
+      "verification": "deadline 2026-09-18 passed while the route was still FIRE_IF_FIT",
+      "outcome": "MISSED_2026",
+      "outcome_note": "Deadline 2026-09-18 passed while the route was still FIRE_IF_FIT."
     },
     {
       "id": "awesome-climate-2026-09",
@@ -224,7 +229,7 @@
       "parent_route": "",
       "source_state": "CURRENT_LONGTAIL_BOARD",
       "source": "https://www.freeway.gov.tw/Publish.aspx?cnid=193&p=43590",
-      "origin": "docs/longtail/longtail-campaigns.csv | master override: Gate audit correction: not unconditional FIRE."
+      "origin": "docs/longtail/longtail-campaigns.csv | master override [supplement]: Gate audit correction: not unconditional FIRE."
     },
     {
       "id": "ncue-ai-2026",
@@ -464,7 +469,7 @@
       "parent_route": "",
       "source_state": "CURRENT_LONGTAIL_BOARD",
       "source": "https://projectdiscovery.io/blog/announcing-the-projectdiscovery-oss-bounty-program",
-      "origin": "docs/longtail/longtail-campaigns.csv | master override: Do not infer product fit from Nocturnal/Citation Engine architecture alone."
+      "origin": "docs/longtail/longtail-campaigns.csv | master override [supplement]: Do not infer product fit from Nocturnal/Citation Engine architecture alone."
     },
     {
       "id": "emergent-citation",
@@ -524,7 +529,11 @@
       "parent_route": "",
       "source_state": "OFFICIAL_OPENAI_CODEX_OSS_FUND_VERIFIED_2026-09-12",
       "source": "https://openai.com/form/codex-open-source-fund/",
-      "origin": "docs/longtail/longtail-campaigns.csv | master override: Replace stale Codex-for-OSS economics and URL with the current rolling fund while preserving maintainer and claim gates."
+      "origin": "docs/longtail/longtail-campaigns.csv | master override [expanded-opportunity-radar]: Replace stale Codex-for-OSS economics and URL with the current rolling fund while preserving maintainer and claim gates. | master override [route-corrections]: record the actual application form; the route had no URL",
+      "source_url": "https://openai.com/form/codex-open-source-fund/",
+      "eligibility_note": "USD 1M rolling fund, grants up to USD 25,000 in API credits, reviewed on an ongoing basis. Aimed at core maintainers of widely used public open-source projects using Codex CLI and OpenAI models; projects outside the criteria may apply with an explanation. Now also offers six months of ChatGPT Pro to eligible maintainers.",
+      "verified_on": "2026-09-21",
+      "verification": "live source read 2026-09-21"
     },
     {
       "id": "lambda-research",
@@ -654,7 +663,7 @@
       "route_class": "CAREER",
       "assets": "Whole Portfolio",
       "contribution_view": "",
-      "status": "FIRE",
+      "status": "POSTING_GONE",
       "execution_state": "RESEARCH_ONLY",
       "execution_manifest": "",
       "deadline": "rolling until filled",
@@ -664,7 +673,12 @@
       "parent_route": "",
       "source_state": "CURRENT_LONGTAIL_BOARD",
       "source": "https://jobs.lever.co/Gogolook/18b12699-5d93-443a-b1a0-6725cb496def",
-      "origin": "docs/longtail/longtail-campaigns.csv"
+      "origin": "docs/longtail/longtail-campaigns.csv | master override [route-corrections]: the specific vacancy is gone, the company is still hiring",
+      "link_status": "404 on 2026-09-21",
+      "source_url": "https://jobs.lever.co/Gogolook",
+      "deadline_note": "The saved posting returns 404. The live board today lists one relevant role: Machine Learning Engineer, Taipei, hybrid. Re-point this route at that posting or retire it.",
+      "verified_on": "2026-09-21",
+      "verification": "live source read 2026-09-21"
     },
     {
       "id": "career-binance-agent",
@@ -944,7 +958,11 @@
       "parent_route": "",
       "source_state": "UNDISCLOSED",
       "source": "https://jobs.lever.co/binance/303def79-701c-4b29-aceb-e07877a22d1d",
-      "origin": "docs/postgrad/postgrad-market.csv"
+      "origin": "docs/postgrad/postgrad-market.csv | master override [route-corrections]: one programme check covers the whole BAP family",
+      "eligibility_note": "Binance Accelerator Program is a fixed-term 3-6 month programme for current bachelor's/master's students and recent graduates, with Taipei postings and work-from-home depending on team. Rolling: each posting opens and closes on its own, so the route is only live while its Lever link resolves.",
+      "eligibility_verdict": "ELIGIBLE — current master's student in Taiwan; BAP targets students and recent graduates, and the roles are Taipei-based",
+      "verified_on": "2026-09-21",
+      "verification": "live source read 2026-09-21"
     },
     {
       "id": "job-binance-bap-agent",
@@ -964,7 +982,11 @@
       "parent_route": "",
       "source_state": "UNDISCLOSED",
       "source": "https://jobs.lever.co/binance/439d6f0a-bf27-45b5-8cd2-0783d105bb7b",
-      "origin": "docs/postgrad/postgrad-market.csv"
+      "origin": "docs/postgrad/postgrad-market.csv | master override [route-corrections]: one programme check covers the whole BAP family",
+      "eligibility_note": "Binance Accelerator Program is a fixed-term 3-6 month programme for current bachelor's/master's students and recent graduates, with Taipei postings and work-from-home depending on team. Rolling: each posting opens and closes on its own, so the route is only live while its Lever link resolves.",
+      "eligibility_verdict": "ELIGIBLE — current master's student in Taiwan; BAP targets students and recent graduates, and the roles are Taipei-based",
+      "verified_on": "2026-09-21",
+      "verification": "live source read 2026-09-21"
     },
     {
       "id": "job-binance-bap-applied-ds",
@@ -984,7 +1006,11 @@
       "parent_route": "",
       "source_state": "UNDISCLOSED",
       "source": "https://jobs.lever.co/binance/?location=Asia",
-      "origin": "docs/postgrad/postgrad-market.csv"
+      "origin": "docs/postgrad/postgrad-market.csv | master override [route-corrections]: one programme check covers the whole BAP family",
+      "eligibility_note": "Binance Accelerator Program is a fixed-term 3-6 month programme for current bachelor's/master's students and recent graduates, with Taipei postings and work-from-home depending on team. Rolling: each posting opens and closes on its own, so the route is only live while its Lever link resolves.",
+      "eligibility_verdict": "ELIGIBLE — current master's student in Taiwan; BAP targets students and recent graduates, and the roles are Taipei-based",
+      "verified_on": "2026-09-21",
+      "verification": "live source read 2026-09-21"
     },
     {
       "id": "job-binance-bap-cv",
@@ -1004,7 +1030,11 @@
       "parent_route": "",
       "source_state": "UNDISCLOSED",
       "source": "https://jobs.lever.co/binance?department=Engineering",
-      "origin": "docs/postgrad/postgrad-market.csv"
+      "origin": "docs/postgrad/postgrad-market.csv | master override [route-corrections]: one programme check covers the whole BAP family",
+      "eligibility_note": "Binance Accelerator Program is a fixed-term 3-6 month programme for current bachelor's/master's students and recent graduates, with Taipei postings and work-from-home depending on team. Rolling: each posting opens and closes on its own, so the route is only live while its Lever link resolves.",
+      "eligibility_verdict": "ELIGIBLE — current master's student in Taiwan; BAP targets students and recent graduates, and the roles are Taipei-based",
+      "verified_on": "2026-09-21",
+      "verification": "live source read 2026-09-21"
     },
     {
       "id": "job-binance-bap-onchain",
@@ -1024,7 +1054,11 @@
       "parent_route": "",
       "source_state": "UNDISCLOSED",
       "source": "https://jobs.lever.co/binance/96e8326e-074f-4d1f-89c4-8ed1a6f96014",
-      "origin": "docs/postgrad/postgrad-market.csv"
+      "origin": "docs/postgrad/postgrad-market.csv | master override [route-corrections]: one programme check covers the whole BAP family",
+      "eligibility_note": "Binance Accelerator Program is a fixed-term 3-6 month programme for current bachelor's/master's students and recent graduates, with Taipei postings and work-from-home depending on team. Rolling: each posting opens and closes on its own, so the route is only live while its Lever link resolves.",
+      "eligibility_verdict": "ELIGIBLE — current master's student in Taiwan; BAP targets students and recent graduates, and the roles are Taipei-based",
+      "verified_on": "2026-09-21",
+      "verification": "live source read 2026-09-21"
     },
     {
       "id": "job-binance-bap-agent-infra",
@@ -1044,7 +1078,11 @@
       "parent_route": "",
       "source_state": "UNDISCLOSED",
       "source": "https://jobs.lever.co/binance/dc0c742c-847c-4b86-88df-ddac253399a8",
-      "origin": "docs/postgrad/postgrad-market.csv"
+      "origin": "docs/postgrad/postgrad-market.csv | master override [route-corrections]: one programme check covers the whole BAP family",
+      "eligibility_note": "Binance Accelerator Program is a fixed-term 3-6 month programme for current bachelor's/master's students and recent graduates, with Taipei postings and work-from-home depending on team. Rolling: each posting opens and closes on its own, so the route is only live while its Lever link resolves.",
+      "eligibility_verdict": "ELIGIBLE — current master's student in Taiwan; BAP targets students and recent graduates, and the roles are Taipei-based",
+      "verified_on": "2026-09-21",
+      "verification": "live source read 2026-09-21"
     },
     {
       "id": "job-binance-bap-ai-research",
@@ -1204,7 +1242,7 @@
       "parent_route": "",
       "source_state": "UNDISCLOSED_ROLE_COMP",
       "source": "https://careers.qualcomm.com/careers",
-      "origin": "docs/postgrad/postgrad-market.csv | master override: Use only a current requisition that clears hard credential filters."
+      "origin": "docs/postgrad/postgrad-market.csv | master override [supplement]: Use only a current requisition that clears hard credential filters."
     },
     {
       "id": "job-qualcomm-cv",
@@ -1224,7 +1262,7 @@
       "parent_route": "",
       "source_state": "UNDISCLOSED_ROLE_COMP",
       "source": "https://careers.qualcomm.com/careers",
-      "origin": "docs/postgrad/postgrad-market.csv | master override: Use only a current requisition that clears hard credential filters."
+      "origin": "docs/postgrad/postgrad-market.csv | master override [supplement]: Use only a current requisition that clears hard credential filters."
     },
     {
       "id": "job-amd-ai-product",
@@ -1284,7 +1322,11 @@
       "parent_route": "",
       "source_state": "UNDISCLOSED",
       "source": "https://jobs.lever.co/Gogolook",
-      "origin": "docs/postgrad/postgrad-market.csv"
+      "origin": "docs/postgrad/postgrad-market.csv | master override [route-corrections]: keep the route honest about what is actually open",
+      "link_status": "board reachable 2026-09-21",
+      "deadline_note": "No data-research vacancy on the Gogolook board today; the only AI/ML opening is Machine Learning Engineer (Taipei, hybrid).",
+      "verified_on": "2026-09-21",
+      "verification": "live source read 2026-09-21"
     },
     {
       "id": "job-gogolook-ml",
@@ -1324,7 +1366,7 @@
       "parent_route": "",
       "source_state": "UNDISCLOSED",
       "source": "https://jobs.lever.co/Gogolook",
-      "origin": "docs/postgrad/postgrad-market.csv | master override: Finance education alone is not production credit-risk experience."
+      "origin": "docs/postgrad/postgrad-market.csv | master override [supplement]: Finance education alone is not production credit-risk experience."
     },
     {
       "id": "job-datamunger-ai-app",
@@ -1484,7 +1526,11 @@
       "parent_route": "",
       "source_state": "UNDISCLOSED",
       "source": "https://careers.mediatek.com",
-      "origin": "docs/postgrad/postgrad-market.csv"
+      "origin": "docs/postgrad/postgrad-market.csv | master override [route-corrections]: link moved",
+      "link_status": "307 redirect on 2026-09-21",
+      "deadline_note": "Careers URL redirects; the landing page moved rather than closed.",
+      "verified_on": "2026-09-21",
+      "verification": "live source read 2026-09-21"
     },
     {
       "id": "job-synopsys-eda",
@@ -1564,7 +1610,11 @@
       "parent_route": "",
       "source_state": "UNDISCLOSED",
       "source": "https://www.appier.com/en/careers",
-      "origin": "docs/postgrad/postgrad-market.csv"
+      "origin": "docs/postgrad/postgrad-market.csv | master override [route-corrections]: dead link",
+      "link_status": "404 on 2026-09-21",
+      "deadline_note": "Careers URL returns 404; the posting needs re-finding before this route means anything.",
+      "verified_on": "2026-09-21",
+      "verification": "live source read 2026-09-21"
     },
     {
       "id": "job-ikala-ai",
@@ -1704,7 +1754,11 @@
       "parent_route": "",
       "source_state": "UNDISCLOSED_ROLE_COMP",
       "source": "https://www.imc.com/ap/careers/jobs/",
-      "origin": "docs/postgrad/postgrad-market.csv"
+      "origin": "docs/postgrad/postgrad-market.csv | master override [route-corrections]: dead link",
+      "link_status": "404 on 2026-09-21",
+      "deadline_note": "Careers URL returns 404; posting needs re-finding.",
+      "verified_on": "2026-09-21",
+      "verification": "live source read 2026-09-21"
     },
     {
       "id": "phd-usn-audit-ai",
@@ -1754,17 +1808,25 @@
       "route_class": "PhD",
       "assets": "Cite|YZU|Citation Engine|Hardware Splicer",
       "contribution_view": "",
-      "status": "HIGH_PRIORITY_WATCH",
-      "execution_state": "RESEARCH_ONLY",
+      "status": "FIRE_AFTER_GATE",
+      "execution_state": "APPLICATION_RECON_REQUIRED",
       "execution_manifest": "",
-      "deadline": "CALL_NOT_YET_VERIFIED",
+      "deadline": "2026-09-30",
       "gate": "116 admission dates + founder compensation + pre-existing IP",
       "shared_evidence_family": "",
       "mutual_exclusion_group": "",
       "parent_route": "",
       "source_state": "VERIFIED_SCHOLARSHIP_RULES",
       "source": "https://iais.nycu.edu.tw/en/scholarship.html",
-      "origin": "docs/postgrad/postgrad-market.csv"
+      "origin": "docs/postgrad/postgrad-market.csv | master override [route-corrections]: record the funding and the cohort size, which decide how hard to push",
+      "source_url": "https://iais.nycu.edu.tw/en/scholarship.html",
+      "apply_url": "https://oia-sys.nycu.edu.tw/admission/student/index/index/applyParam/4d53h",
+      "deadline_note": "NYCU international degree-seeking applications for Spring 2027 (graduate programmes only) close 11:59 AM on 2026-09-30, Taiwan time — note the morning cut-off, not midnight. Opened 2026-08-10. Results 2026-11-13, acceptance confirmed by 2026-11-22, classes begin 2027-02-15. Late or incomplete applications are not considered. The office is closed 2026-09-25..28 for Mid-Autumn Festival and answers email from 2026-09-29, so questions must go out before the 25th.",
+      "eligibility_note": "The AI institute admits a small cohort: 6 PhD places this round (semiconductor institute 7). Selection is preliminary review then oral examination, with at most 3 exempted from the second round. Institute contact iaii@nycu.edu.tw.",
+      "eligibility_verdict": "ELIGIBLE — Indonesian national, in Taiwan, master's completing 2027-01, and classes begin 2027-02-15, so the timing lines up exactly",
+      "verified_on": "2026-09-21",
+      "verification": "live source read 2026-09-21",
+      "funding_note": "Two stacked layers. Institute: Outstanding NT$30,000/month or Elite NT$40,000/month for the first 24 months, then NT$10,000/NT$30,000 plus at least NT$20,000 advisor matching, up to 48 months, with an extra NT$20,000/month in year one for direct entry. University: the NYCU Elite PhD Scholarship adds NT$33,000/month (NT$25,000 OIA + NT$8,000 advisor) with a FULL TUITION WAIVER for two years, awarded on college recommendation rather than application — and only to students not holding a Taiwan government scholarship, so it cannot be combined with the MOE Taiwan Scholarship."
     },
     {
       "id": "phd-nycu-imf",
@@ -1775,16 +1837,21 @@
       "assets": "Finance|Sharpe|Research Papers",
       "contribution_view": "",
       "status": "WATCH",
-      "execution_state": "RESEARCH_ONLY",
+      "execution_state": "APPLICATION_RECON_REQUIRED",
       "execution_manifest": "",
-      "deadline": "CYCLE_NOT_YET_VERIFIED",
+      "deadline": "2026-09-30",
       "gate": "admission/funding specifics",
       "shared_evidence_family": "",
       "mutual_exclusion_group": "",
       "parent_route": "",
       "source_state": "UNKNOWN",
       "source": "",
-      "origin": "docs/postgrad/postgrad-market.csv"
+      "origin": "docs/postgrad/postgrad-market.csv | master override [route-corrections]: same cycle as the IAIS route; it was also undated and invisible",
+      "apply_url": "https://oia-sys.nycu.edu.tw/admission/student/index/index/applyParam/4d53h",
+      "deadline_note": "Same NYCU admission cycle: Spring 2027 international applications close 11:59 AM on 2026-09-30 Taiwan time.",
+      "eligibility_verdict": "ELIGIBLE — NYCU is in Taiwan, so no work-authorisation gate applies",
+      "verified_on": "2026-09-21",
+      "verification": "live source read 2026-09-21"
     },
     {
       "id": "phd-ntu-im",
@@ -1794,17 +1861,23 @@
       "route_class": "PhD",
       "assets": "Cite|YZU|Citation Engine|Research Papers",
       "contribution_view": "",
-      "status": "WATCH",
-      "execution_state": "RESEARCH_ONLY",
+      "status": "FIRE_AFTER_GATE",
+      "execution_state": "APPLICATION_RECON_REQUIRED",
       "execution_manifest": "",
-      "deadline": "CYCLE_NOT_YET_VERIFIED",
+      "deadline": "2026-11-05",
       "gate": "116 call + funding",
       "shared_evidence_family": "",
       "mutual_exclusion_group": "",
       "parent_route": "",
       "source_state": "VERIFIED_PROGRAM",
       "source": "https://management.ntu.edu.tw/IM/admission/phd",
-      "origin": "docs/postgrad/postgrad-market.csv"
+      "origin": "docs/postgrad/postgrad-market.csv | master override [route-corrections]: confirm the applicant's read that NTU funds less",
+      "source_url": "https://admissions.ntu.edu.tw/apply/degree-students/international-students/",
+      "deadline_note": "NTU February 2027 entry (graduate only) ran 2026-08-03 to 2026-09-17 16:00 and is closed. The live target is September 2027 entry, Round 1: 2026-09-29 11:00 to 2026-11-05 16:00, results 2027-01-14. Round 2 runs 2026-12-01 to 2027-01-19, results 2027-04-08.",
+      "eligibility_verdict": "ELIGIBLE — Taiwanese institution, no work-authorisation gate",
+      "verified_on": "2026-09-21",
+      "verification": "live source read 2026-09-21",
+      "funding_note": "NTU offers a tuition waiver up to NT$100,000, excluding administrative, advisor, insurance and accommodation fees, plus a monthly stipend from the advisor or department: minimum NT$10,000 in Management and the humanities, NT$15,000 in Science/Engineering/EECS. Materially below NYCU, NTHU and TIGP."
     },
     {
       "id": "phd-nccu-mis",
@@ -1814,17 +1887,22 @@
       "route_class": "PhD",
       "assets": "Cite|YZU|Citation Engine|Data",
       "contribution_view": "",
-      "status": "HIGH_PRIORITY_WATCH",
-      "execution_state": "RESEARCH_ONLY",
+      "status": "FIRE_AFTER_GATE",
+      "execution_state": "APPLICATION_RECON_REQUIRED",
       "execution_manifest": "",
-      "deadline": "CYCLE_NOT_YET_VERIFIED",
+      "deadline": "2026-10-15",
       "gate": "116 call + funding",
       "shared_evidence_family": "",
       "mutual_exclusion_group": "",
       "parent_route": "",
       "source_state": "UNKNOWN",
       "source": "https://mis2.nccu.edu.tw",
-      "origin": "docs/postgrad/postgrad-market.csv"
+      "origin": "docs/postgrad/postgrad-market.csv | master override [route-corrections]: window opens tomorrow and was recorded as an unverified cycle",
+      "source_url": "https://admission.nccu.edu.tw/",
+      "deadline_note": "NCCU international applications run 2026-09-22 to 2026-10-15 17:00 Taiwan time, covering both Spring 2027 (postgraduate only) and Fall 2027 Round 1. Results 2026-11-27. A second Fall round runs 2027-01-19 to 2027-03-04 for programmes not in Round 1.",
+      "eligibility_verdict": "ELIGIBLE — Taiwanese institution, no work-authorisation gate",
+      "verified_on": "2026-09-21",
+      "verification": "live source read 2026-09-21"
     },
     {
       "id": "phd-ncu-finance",
@@ -1854,17 +1932,23 @@
       "route_class": "PhD",
       "assets": "Policy Lab|AI Systems|Technology Management",
       "contribution_view": "",
-      "status": "WATCH",
-      "execution_state": "RESEARCH_ONLY",
+      "status": "FIRE_AFTER_GATE",
+      "execution_state": "APPLICATION_RECON_REQUIRED",
       "execution_manifest": "",
-      "deadline": "CYCLE_NOT_YET_VERIFIED",
+      "deadline": "2026-09-30",
       "gate": "116 call/funding",
       "shared_evidence_family": "",
       "mutual_exclusion_group": "",
       "parent_route": "",
       "source_state": "UNKNOWN",
       "source": "",
-      "origin": "docs/postgrad/postgrad-market.csv"
+      "origin": "docs/postgrad/postgrad-market.csv | master override [route-corrections]: the money matters as much as the deadline",
+      "source_url": "https://apply.nthu.edu.tw/en/article/210-admission",
+      "deadline_note": "NTHU Spring 2027 international degree admission closes 15:00 on 2026-09-30 (opened 2026-08-03). Results 2026-12-01, enrolment confirmed by 2026-12-20, classes begin early 2027-02. Late or incomplete applications are not considered.",
+      "eligibility_verdict": "ELIGIBLE — Taiwanese institution, no work-authorisation gate; funding comparable to NYCU and the tuition waiver is explicit",
+      "verified_on": "2026-09-21",
+      "verification": "live source read 2026-09-21",
+      "funding_note": "NTHU International Student Scholarship Type A: NT$20,000-40,000/month (NT$10,000 from the Office of Global Affairs plus NT$10,000-30,000 from advisor or department) WITH a tuition and fee waiver. Technology Management is on the Type A list. Requires GPA 3.4 or above. The scholarship round for spring entrants applies separately, 31 Dec to 8 Jan."
     },
     {
       "id": "phd-ntust-im",
@@ -1884,7 +1968,12 @@
       "parent_route": "",
       "source_state": "UNKNOWN",
       "source": "",
-      "origin": "docs/postgrad/postgrad-market.csv"
+      "origin": "docs/postgrad/postgrad-market.csv | master override [route-corrections]: record the closed cycle so it stops looking open",
+      "outcome": "MISSED_2026_SPRING",
+      "deadline_note": "NTUST Spring 2027 graduate applications ran 2026-07-01 to 2026-09-11 12:00 noon and closed ten days before this check. First-stage results 2026-10-30. The next opening is the Fall 2027 cycle, dates not yet published.",
+      "source_url": "https://admissions.ntust.edu.tw/",
+      "verified_on": "2026-09-21",
+      "verification": "live source read 2026-09-21"
     },
     {
       "id": "phd-yzu-management",
@@ -1904,7 +1993,12 @@
       "parent_route": "",
       "source_state": "VERIFY_CURRENT",
       "source": "https://www.cm.yzu.edu.tw/en/",
-      "origin": "docs/postgrad/postgrad-market.csv"
+      "origin": "docs/postgrad/postgrad-market.csv | master override [route-corrections]: the applicant's own university: worth a direct question rather than a guess",
+      "source_url": "https://gao.yzu.edu.tw/index.php/en/admission/international-degree-student",
+      "apply_url": "https://yzu-apply.yzu.edu.tw/",
+      "deadline_note": "YZU runs Fall 2026 and Spring 2027 intakes and requires a master's degree for PhD entry, but the Spring 2027 deadline is not published on the pages read today. The Global Affairs Office is the stated contact. Needs a direct check.",
+      "verified_on": "2026-09-21",
+      "verification": "live source read 2026-09-21 (deadline not published)"
     },
     {
       "id": "phd-uio-tik",
@@ -2084,7 +2178,7 @@
       "parent_route": "",
       "source_state": "OFFICIAL_APPLICATION_AND_LIVE_FORM_REVERIFIED_2026-09-17",
       "source": "https://www.software.ac.uk/programmes/fellowship-programme/apply-fellowship-programme",
-      "origin": "route-specific packaging and official application preview | master override: Refinery/Commons remains the strongest direct SSI evidence line. Official criteria, terms, the preview form, and the live Microsoft Form were reverified on 2026-09-17. The remaining dependencies are the corrected deck, recording URL, and applicant-only answers."
+      "origin": "route-specific packaging and official application preview | master override [deep-radar]: Refinery/Commons remains the strongest direct SSI evidence line. Official criteria, terms, the preview form, and the live Microsoft Form were reverified on 2026-09-17. The remaining dependencies are the corrected deck, recording URL, and applicant-only answers."
     },
     {
       "id": "dpg-policy-lab",
@@ -2104,7 +2198,11 @@
       "parent_route": "",
       "source_state": "STANDARD_REVERIFIED_2026-09-17_DOSSIER_AND_FIRST_PAGE_MAP_READY_CI_REPAIR_AND_REMAINING_RECON_PENDING",
       "source": "https://www.digitalpublicgoods.net/",
-      "origin": "policy-lab-gauntlet"
+      "origin": "policy-lab-gauntlet | master override [route-corrections]: record the portal and the real review mechanics",
+      "source_url": "https://app.digitalpublicgoods.net/",
+      "eligibility_note": "Rolling nominations through the DPGA portal, submitted by an authorised representative of the solution. A 5-minute eligibility test exists. Two review stages against the DPG Standard, typically 4-8 weeks. Recognition lasts one year and must be renewed.",
+      "verified_on": "2026-09-21",
+      "verification": "live source read 2026-09-21"
     },
     {
       "id": "ftsid-2026-cl-eci",
@@ -2144,7 +2242,11 @@
       "parent_route": "",
       "source_state": "OFFICIAL_CALL_AND_LIVE_FORM_REVERIFIED_2026-09-14",
       "source": "https://fin.wp.shu.edu.tw/?page_id=262",
-      "origin": "cross-thread reconciliation; moved from Policy Lab fallback to IL"
+      "origin": "cross-thread reconciliation; moved from Policy Lab fallback to IL | master override [route-corrections]: record the missed outcome without pretending the route was never fireable",
+      "verified_on": "2026-09-21",
+      "verification": "deadline 2026-09-17 passed with the packet ready and nothing submitted",
+      "outcome": "MISSED_2026",
+      "outcome_note": "Deadline 2026-09-17 passed with the packet ready and nothing submitted. Status left alone: the queue already filters expired hard dates, and retiring a route belongs in the archive files, which is the user’s call."
     },
     {
       "id": "tax-academy-sg-il",
@@ -2264,7 +2366,7 @@
       "parent_route": "",
       "source_state": "OFFICIAL_NLNET_CALL_AND_AI_POLICY_VERIFIED_2026-09-12",
       "source": "https://nlnet.nl/propose/",
-      "origin": "grant/sponsorship master handoff | master override: Focused Nocturnal audit verifies Sep 3 reopening, Nov 3 deadline, €5k-50k first request, open-output requirements and first-grant focus constraint. | master override: Carry the live Nov-3 deadline and explicit AI-disclosure boundary into the canonical route."
+      "origin": "grant/sponsorship master handoff | master override [nocturnal-conversion-radar]: Focused Nocturnal audit verifies Sep 3 reopening, Nov 3 deadline, €5k-50k first request, open-output requirements and first-grant focus constraint. | master override [expanded-opportunity-radar]: Carry the live Nov-3 deadline and explicit AI-disclosure boundary into the canonical route."
     },
     {
       "id": "msr-2027-technical-refinery",
@@ -2764,7 +2866,11 @@
       "parent_route": "",
       "source_state": "PUBLIC_REQUIREMENTS_REVERIFIED_2026-09-17_PACKET_READY_AUTHENTICATED_FORM_UNMAPPED",
       "source": "https://call-for-papers.componeers.net/frontend/index.php?sub=383",
-      "origin": "hardware-splicer-execution-campaign"
+      "origin": "hardware-splicer-execution-campaign | master override [route-corrections]: confirm the 7-day deadline and record where the call actually lives",
+      "source_url": "https://www.embedded-world.eu/special-cfps",
+      "deadline_note": "Abstracts for the Special Calls for Papers close 2026-09-28, stated as firm. Conference runs 2027-03-16..18 in Nuremberg; the Eclipse Foundation track is a Special CfP, submitted under topic 10.x.",
+      "verified_on": "2026-09-21",
+      "verification": "live source read 2026-09-21"
     },
     {
       "id": "field-meet-taipei-2026",
@@ -2964,7 +3070,12 @@
       "parent_route": "",
       "source_state": "OFFICIAL_PROGRAM_CURRENT_2026-08-31_WORK_AUTH_GATE",
       "source": "https://www.anthropic.com/careers/jobs/5023394008",
-      "origin": "2026-08-31 fellowship/residency deep research"
+      "origin": "2026-08-31 fellowship/residency deep research | master override [route-corrections]: close the eligibility gate rather than keep packaging for it",
+      "source_url": "https://alignment.anthropic.com/2025/anthropic-fellows-program-2026/",
+      "eligibility_note": "Requires full-time work authorisation the applicant already holds in the US, UK or Canada, valid for the whole fellowship without employer support. F-1 OPT and STEM OPT do not qualify; nor do statuses needing employer involvement. Stipend USD 3,850/week. Cohorts 1 and 2 are closed; cohort 3 starts 2027-08 with applications reopening 2026-09.",
+      "eligibility_verdict": "INELIGIBLE — applicant is an Indonesian national resident in Taiwan with no US/UK/CA work authorisation on file",
+      "verified_on": "2026-09-21",
+      "verification": "live source read 2026-09-21; checked against applicant-authority.local.yaml"
     },
     {
       "id": "internship-oist-research-2027",
@@ -2984,7 +3095,13 @@
       "parent_route": "",
       "source_state": "OFFICIAL_PROGRAM_VERIFIED_2026-08-31",
       "source": "https://www.oist.jp/admissions/research-internship/apply-research-internship",
-      "origin": "2026-08-31 research-labor deep research"
+      "origin": "2026-08-31 research-labor deep research | master override [route-corrections]: strongest near-deadline route: eligible, funded, and no visa blocker",
+      "source_url": "https://www.oist.jp/admissions/research-internship/program-description",
+      "deadline_note": "Spring 2027 intake closes 2026-10-15 23:59 JST; internship runs 2027-04-01..09-30, 3 to 6 months.",
+      "eligibility_note": "Open to any nationality. Enrolled in the final two years of a bachelor's, any year of a master's, or a recent bachelor's/master's graduate. Current PhD students and PhD holders are excluded. Allowance JPY 2,400 per working day plus one round-trip air ticket, furnished accommodation and visa assistance.",
+      "eligibility_verdict": "ELIGIBLE — applicant is a full-time master's student graduating 2027-01, so a recent graduate during the internship window; no work authorisation needed",
+      "verified_on": "2026-09-21",
+      "verification": "live source read 2026-09-21"
     },
     {
       "id": "lab-aist-eart-ra-2026",
@@ -3144,7 +3261,13 @@
       "parent_route": "",
       "source_state": "PROGRAM_CURRENT_DEADLINE_REVERIFY_2026-08-31",
       "source": "https://www.lasrlabs.org/",
-      "origin": "2026-08-31 fellowship/residency deep research"
+      "origin": "2026-08-31 fellowship/residency deep research | master override [route-corrections]: missed by one day, and it was one of the few routes where the visa gate does not apply; watch for the next cohort",
+      "source_url": "https://www.lasrlabs.org/",
+      "outcome": "MISSED_2026",
+      "deadline_note": "Winter 2027 cohort closed 2026-09-20 23:59 GMT — one day before this check. Programme runs 2027-01-11..04-09, 13 weeks in London, GBP 15,000 stipend plus food, office and flights.",
+      "eligibility_note": "Reported to accept international applicants with visa support under the Government Authorised Exchange scheme for those without UK right to work — so the applicant's lack of UK work authorisation is not a blocker here. Verify with LASR before the next cohort.",
+      "verified_on": "2026-09-21",
+      "verification": "live source read 2026-09-21"
     },
     {
       "id": "watch-apnic-research-fellowship-2027",
@@ -3264,7 +3387,11 @@
       "parent_route": "",
       "source_state": "OFFICIAL_MICROSOFT_VERIFIED_2026-09-01",
       "source": "https://learn.microsoft.com/en-us/azure/education-hub/about-azure-for-students",
-      "origin": "2026-09-01 student infrastructure deep-research import"
+      "origin": "2026-09-01 student infrastructure deep-research import | master override [route-corrections]: record the official URL and the real eligibility line",
+      "source_url": "https://azure.microsoft.com/en-us/free/students/",
+      "eligibility_note": "Full-time university students, verified by school email. USD 100 credit for 12 months, renewed annually while enrolled. No credit card required. One account per person.",
+      "verified_on": "2026-09-21",
+      "verification": "live page read 2026-09-21: offer active"
     },
     {
       "id": "heroku-github-students-2026",
@@ -3284,7 +3411,11 @@
       "parent_route": "",
       "source_state": "OFFICIAL_HEROKU_VERIFIED_2026-09-01",
       "source": "https://www.heroku.com/github-students/",
-      "origin": "2026-09-01 student infrastructure deep-research import"
+      "origin": "2026-09-01 student infrastructure deep-research import | master override [route-corrections]: record the official URL and the real eligibility line",
+      "source_url": "https://www.heroku.com/github-students/",
+      "eligibility_note": "GitHub Student Developer Pack membership and age 18+. USD 13/month of credits for 24 months. Anyone who already used the programme that began October 2022 cannot reapply.",
+      "verified_on": "2026-09-21",
+      "verification": "live page read 2026-09-21: offer active"
     },
     {
       "id": "appwrite-education-2026",
@@ -3304,7 +3435,12 @@
       "parent_route": "",
       "source_state": "OFFICIAL_APPWRITE_VERIFIED_2026-09-01",
       "source": "https://appwrite.io/education",
-      "origin": "2026-09-01 student infrastructure deep-research import"
+      "origin": "2026-09-01 student infrastructure deep-research import | master override [route-corrections]: confirm the gate is already satisfied",
+      "source_url": "https://appwrite.io/education",
+      "eligibility_note": "Free Education plan for the duration of studies, gated on GitHub Student Developer Pack verification, non-commercial use only.",
+      "eligibility_verdict": "ELIGIBLE — the applicant's GitHub Student Developer Pack is active per the authority file",
+      "verified_on": "2026-09-21",
+      "verification": "live source read 2026-09-21"
     },
     {
       "id": "mongodb-student-pack-2026",
@@ -3384,7 +3520,7 @@
       "parent_route": "",
       "source_state": "OFFICIAL_ANTHROPIC_MHS_REVERIFIED_2026-09-04",
       "source": "https://www.anthropic.com/news/model-hardware-standard-research-preview",
-      "origin": "2026-09-01 student/research infrastructure deep-research import | master override: Tighten applicant-authority and real-device gates after live eligibility/packaging audit."
+      "origin": "2026-09-01 student/research infrastructure deep-research import | master override [research-resource-radar]: Tighten applicant-authority and real-device gates after live eligibility/packaging audit."
     },
     {
       "id": "openai-researcher-access-hardware-splicer",
@@ -3404,7 +3540,11 @@
       "parent_route": "",
       "source_state": "OFFICIAL_OPENAI_RESEARCHER_ACCESS_REVERIFIED_2026-09-04",
       "source": "https://openai.com/form/researcher-access-program/",
-      "origin": "2026-09-04 research/resource conversion audit | master override: Attach the audited OpenAI Researcher Access manifest and fire packet to the live FIRE route."
+      "origin": "2026-09-04 research/resource conversion audit | master override [fire-execution-routes]: Attach the audited OpenAI Researcher Access manifest and fire packet to the live FIRE route. | master override [route-corrections]: the route data carried no URL at all",
+      "source_url": "https://grants.openai.com/prog/openai_researcher_access_program/",
+      "apply_url": "https://grants.openai.com/prog/272885/apply/?next=/prog/openai_researcher_access_program/",
+      "verified_on": "2026-09-21",
+      "verification": "URLs taken from the route's own FIRE handoff, which builds READY_FOR_BROWSER_AGENT"
     },
     {
       "id": "anthropic-external-researcher-access-2026",
@@ -3424,7 +3564,10 @@
       "parent_route": "",
       "source_state": "OFFICIAL_ANTHROPIC_EXTERNAL_RESEARCHER_ACCESS_VERIFIED_2026-09-04",
       "source": "https://support.claude.com/en/articles/9125743-what-is-the-external-researcher-access-program",
-      "origin": "2026-09-04 research/resource conversion audit | master override: Attach the audited Anthropic ERAP manifest and fire packet to the live FIRE route."
+      "origin": "2026-09-04 research/resource conversion audit | master override [fire-execution-routes]: Attach the audited Anthropic ERAP manifest and fire packet to the live FIRE route. | master override [route-corrections]: the route data carried no URL at all",
+      "source_url": "https://forms.gle/pZYC8f6qYqSKvRWn9",
+      "verified_on": "2026-09-21",
+      "verification": "URL taken from the route's own FIRE handoff, which builds READY_FOR_BROWSER_AGENT"
     },
     {
       "id": "microsoft-student-ambassadors-2026",
@@ -3444,7 +3587,12 @@
       "parent_route": "",
       "source_state": "OFFICIAL_MICROSOFT_STUDENT_AMBASSADORS_VERIFIED_2026-09-04",
       "source": "https://learn.microsoft.com/en-us/training/student-hub/become-a-student-ambassador",
-      "origin": "2026-09-04 research/resource conversion audit"
+      "origin": "2026-09-04 research/resource conversion audit | master override [route-corrections]: the real gate is the Azure account, not the ambassador form",
+      "source_url": "https://mvp.microsoft.com/studentambassadors",
+      "eligibility_note": "No competitive application: registration is self-serve via Get Started. Requires 18+, full-time enrolment at an accredited institution, and an Azure for Students account. Previous removed ambassadors and Microsoft employees/contractors are excluded.",
+      "eligibility_verdict": "DEPENDS ON AZURE — the programme requires an Azure for Students account, and the authority file says Azure was likely rejected before and needs verifying. Do Azure first.",
+      "verified_on": "2026-09-21",
+      "verification": "live source read 2026-09-21"
     },
     {
       "id": "claude-campus-status-2026-09-04",
@@ -3484,7 +3632,12 @@
       "parent_route": "",
       "source_state": "OFFICIAL_OPENAI_WAITLIST_VERIFIED_2026-09-12",
       "source": "https://openai.com/index/chatgpt-for-academic-researchers/",
-      "origin": "2026-09-12 expanded provider-program radar"
+      "origin": "2026-09-12 expanded provider-program radar | master override [route-corrections]: stop carrying a route whose stated eligibility the applicant cannot meet",
+      "source_url": "https://help.openai.com/en/articles/20001406-chatgpt-for-academic-researchers",
+      "eligibility_note": "Requires a research faculty or postdoctoral position at a degree-granting, research-active institution, plus authorship of an arXiv/bioRxiv/ChemRxiv paper posted in the last three years. New applicants join a waitlist; the first wave drew 13,000+ applications for a 10,000-seat lottery, with applications reopening later in autumn 2026.",
+      "eligibility_verdict": "INELIGIBLE — applicant is a master's student, not faculty or a postdoc",
+      "verified_on": "2026-09-21",
+      "verification": "live source read 2026-09-21"
     },
     {
       "id": "anthropic-third-party-model-evaluations-rolling",
@@ -3504,7 +3657,11 @@
       "parent_route": "",
       "source_state": "OFFICIAL_PROGRAM_PAGE_LIVE_FORM_REVERIFY_REQUIRED_2026-09-12",
       "source": "https://www.anthropic.com/news/a-new-initiative-for-developing-third-party-model-evaluations",
-      "origin": "2026-09-12 expanded provider-program radar"
+      "origin": "2026-09-12 expanded provider-program radar | master override [route-corrections]: flag that the landscape moved; needs a human or a portal check before any packaging",
+      "source_url": "https://www.anthropic.com/news/a-new-initiative-for-developing-third-party-model-evaluations",
+      "deadline_note": "The 2024 initiative page is still live, but on 2026-09-18 Anthropic and Accenture announced a third-party evaluation partnership with at least USD 1B each over five years and embedded evaluators. Whether the open individual intake still operates is unclear from public pages.",
+      "verified_on": "2026-09-21",
+      "verification": "live source read 2026-09-21"
     },
     {
       "id": "cav-2027-hardware-splicer",
@@ -3565,6 +3722,58 @@
       "source_state": "OFFICIAL_ESP_PROCESS_VERIFIED_ALIGNMENT_MISSING_2026-09-12",
       "source": "https://esp.ethereum.foundation/applicants",
       "origin": "2026-09-12 expanded open-source funding radar"
+    },
+    {
+      "id": "tigp-sinica-phd-2027",
+      "lane": "PhD",
+      "organization": "Academia Sinica TIGP",
+      "opportunity": "Taiwan International Graduate Program — PhD, English-taught, 12+ interdisciplinary programmes including Social Networks and Human-Centered Computing",
+      "route_class": "PhD",
+      "assets": "Cite|Hardware Splicer|Policy Lab|Research Drive",
+      "contribution_view": "Fully funded PhD at Taiwan's national research academy; the strongest stipend found in this sweep",
+      "status": "FIRE_AFTER_GATE",
+      "execution_state": "APPLICATION_RECON_REQUIRED",
+      "execution_manifest": "",
+      "deadline": "2027-02-01",
+      "gate": "Applications run 1 Nov to 1 Feb for the following Fall; results late June/early July. Confirm programme fit and English test requirements.",
+      "shared_evidence_family": "",
+      "mutual_exclusion_group": "",
+      "parent_route": "",
+      "source_state": "VERIFIED_2026-09-21",
+      "source": "https://tigp.sinica.edu.tw/",
+      "origin": "found 2026-09-21 while verifying Taiwan PhD funding; absent from every earlier radar | master override [route-corrections]: route created from this verification",
+      "source_url": "https://tigp.sinica.edu.tw/",
+      "apply_url": "https://tigp.apps.sinica.edu.tw/",
+      "funding_note": "NT$40,000/month tax-free in year one (NT$34,000 + NT$6,000), extended a further year on good performance. Over 100 funded places across the programmes.",
+      "eligibility_verdict": "ELIGIBLE — English-taught, open to international applicants, no work-authorisation gate; the highest stipend found in this sweep",
+      "verified_on": "2026-09-21",
+      "verification": "live source read 2026-09-21"
+    },
+    {
+      "id": "moe-taiwan-scholarship-2027",
+      "lane": "GRANT",
+      "organization": "Ministry of Education, Taiwan",
+      "opportunity": "Taiwan Scholarship (MOE) — PhD funding, applied for separately from admission",
+      "route_class": "SCHOLARSHIP",
+      "assets": "n/a",
+      "contribution_view": "Stackable government funding that does not require an admission offer first",
+      "status": "FIRE_AFTER_GATE",
+      "execution_state": "ELIGIBILITY_RECON_REQUIRED",
+      "execution_manifest": "",
+      "deadline": "2027-03-31",
+      "gate": "Apply through the TECO in the country of nationality (Indonesia); local offices often close earlier, some in the first week of March. Cannot be combined with university awards that exclude government scholarship holders.",
+      "shared_evidence_family": "",
+      "mutual_exclusion_group": "",
+      "parent_route": "",
+      "source_state": "VERIFIED_2026-09-21",
+      "source": "https://taiwanscholarship.moe.gov.tw/",
+      "origin": "found 2026-09-21 while verifying Taiwan PhD funding; absent from every earlier radar | master override [route-corrections]: route created from this verification",
+      "source_url": "https://taiwanscholarship.moe.gov.tw/",
+      "funding_note": "Tuition and fees up to NT$40,000 per semester plus NT$20,000/month for graduate students, up to four years for a doctorate (five-year lifetime cap).",
+      "eligibility_note": "Someone already holding student status at a Taiwanese university is ineligible, EXCEPT a student graduating that year who is moving to a higher degree — which is exactly the applicant's position for 2027. Also barred: a second degree at the same level, and exchange/dual-degree admissions.",
+      "eligibility_verdict": "ELIGIBLE via the graduating-student exception — master's completes 2027-01 and the application is for a PhD",
+      "verified_on": "2026-09-21",
+      "verification": "live source read 2026-09-21"
     }
   ]
 }

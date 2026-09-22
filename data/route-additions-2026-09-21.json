@@ -1,0 +1,39 @@
+{
+  "schema": "blowback.route_additions.v1",
+  "as_of": "2026-09-21",
+  "purpose": "Routes found while verifying the Taiwan PhD funding landscape that the registry never held. Both are fully funded and neither carries a work-authorisation gate.",
+  "routes": [
+    {
+      "id": "tigp-sinica-phd-2027",
+      "lane": "PhD",
+      "organization": "Academia Sinica TIGP",
+      "opportunity": "Taiwan International Graduate Program — PhD, English-taught, 12+ interdisciplinary programmes including Social Networks and Human-Centered Computing",
+      "route_class": "PhD",
+      "assets": "Cite|Hardware Splicer|Policy Lab|Research Drive",
+      "contribution_view": "Fully funded PhD at Taiwan's national research academy; the strongest stipend found in this sweep",
+      "status": "FIRE_AFTER_GATE",
+      "execution_state": "APPLICATION_RECON_REQUIRED",
+      "deadline": "2027-02-01",
+      "gate": "Applications run 1 Nov to 1 Feb for the following Fall; results late June/early July. Confirm programme fit and English test requirements.",
+      "source_state": "VERIFIED_2026-09-21",
+      "source": "https://tigp.sinica.edu.tw/",
+      "origin": "found 2026-09-21 while verifying Taiwan PhD funding; absent from every earlier radar"
+    },
+    {
+      "id": "moe-taiwan-scholarship-2027",
+      "lane": "GRANT",
+      "organization": "Ministry of Education, Taiwan",
+      "opportunity": "Taiwan Scholarship (MOE) — PhD funding, applied for separately from admission",
+      "route_class": "SCHOLARSHIP",
+      "assets": "n/a",
+      "contribution_view": "Stackable government funding that does not require an admission offer first",
+      "status": "FIRE_AFTER_GATE",
+      "execution_state": "ELIGIBILITY_RECON_REQUIRED",
+      "deadline": "2027-03-31",
+      "gate": "Apply through the TECO in the country of nationality (Indonesia); local offices often close earlier, some in the first week of March. Cannot be combined with university awards that exclude government scholarship holders.",
+      "source_state": "VERIFIED_2026-09-21",
+      "source": "https://taiwanscholarship.moe.gov.tw/",
+      "origin": "found 2026-09-21 while verifying Taiwan PhD funding; absent from every earlier radar"
+    }
+  ]
+}
