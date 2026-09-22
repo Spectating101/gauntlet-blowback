@@ -7,7 +7,9 @@ import { fileURLToPath } from 'node:url';
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '..');
 const consumerPath = path.join(root, 'data', 'hs-competitive-feedback-consumer-v1.json');
+const packetPath = path.join(root, 'data', 'refinery-hs-competitive-feedback-2026-09-23.json');
 const consumer = JSON.parse(fs.readFileSync(consumerPath, 'utf8'));
+const packet = JSON.parse(fs.readFileSync(packetPath, 'utf8'));
 
 const EXPECTED_DECISIONS = new Set([
   'IMPROVE_HS_SHELL',
@@ -69,4 +71,34 @@ test('frontend stays closed unless a concrete reopening condition appears', () =
   assert.equal(consumer.frontend_closure.pull_request, 'Spectating101/hardware-splicer#104');
   assert.equal(consumer.frontend_closure.state, 'CLOSURE_CANDIDATE');
   assert.ok(consumer.frontend_closure.reopen_when.length >= 3);
+});
+
+test('concrete Refinery packet is accepted end-to-end without authority escalation', () => {
+  assert.equal(packet.schema_version, 1);
+  assert.equal(packet.subject_project, consumer.producer_contract.required_subject_project);
+  assert.equal(packet.policy, consumer.producer_contract.expected_policy);
+  assert.equal(packet.summary.core_semantics_changes_authorized, 0);
+
+  for (const decision of packet.decisions) {
+    const rule = consumer.accepted_decisions[decision.decision];
+    assert.ok(rule, `unknown Refinery decision: ${decision.decision}`);
+    assert.equal(decision.core_semantics_change_authorized, false);
+    if (decision.engineering_authorized) {
+      assert.equal(rule.may_open_engineering, true, `${decision.decision} cannot open engineering`);
+    }
+    const allowed = new Set(rule.allowed_surfaces || []);
+    for (const scope of decision.allowed_scope) {
+      assert.ok(allowed.has(scope), `${decision.decision} requested consumer-disallowed scope ${scope}`);
+    }
+  }
+});
+
+test('frozen competitive packet preserves the intended September decision mix', () => {
+  assert.equal(packet.summary.observations, 7);
+  assert.equal(packet.summary.engineering_authorized, 7);
+  assert.deepEqual(packet.summary.decision_counts, {
+    IMPROVE_HS_SHELL: 1,
+    IMPROVE_HS_WORKFLOW: 3,
+    INTEGRATE_NOT_REBUILD: 3,
+  });
 });
