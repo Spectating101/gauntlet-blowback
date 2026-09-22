@@ -1,38 +1,20 @@
 {
-  "schema": "blowback.hs_route_rebalance.v1",
+  "schema": "blowback.hs_route_rebalance.v2",
   "snapshot": "2026-09-23",
   "project": "hardware-splicer",
-  "principles": {
-    "preserve_flagship_status": true,
-    "do_not_reduce_project_scope_from_temporary_pessimism": true,
-    "competition_is_an_input_to_improvement_not_a_reason_to_dismantle": true,
-    "native_competitive_gaps_may_trigger_targeted_engineering": true,
-    "route_reallocation_does_not_delete_or_deprecate_project_capability": true,
-    "historical_manifests_remain_as_evidence": true,
-    "physical_and_external_evidence_have_priority_over_generic_feature_growth": true
+  "canonical_project_state": {
+    "repository": "Spectating101/hardware-splicer",
+    "path": "docs/HARDWARE_SPLICER_OPERATING_STATE.json",
+    "introduced_by": "Spectating101/hardware-splicer#106",
+    "ownership_rule": "Gauntlet allocates opportunities; Hardware-Splicer owns product identity, capability scope, investment posture, and authority boundaries."
   },
-  "improvement_gate": {
-    "allow_when_any": [
-      "a competitor exposes a concrete gap inside Hardware-Splicer's native physical-agent or hardware-evidence lane",
-      "a live external route becomes materially more winnable from a bounded change",
-      "a real evaluator, user, provider or physical artifact exposes a concrete defect",
-      "a change improves artifact-first usability without altering frozen evidence semantics"
-    ],
-    "reject_when_all": [
-      "the change only imitates a generic competitor feature",
-      "the capability is better consumed through an adapter or source tool",
-      "no live route, user, evaluator or evidence gap benefits",
-      "the change expands generic AI-agent surface area without strengthening Hardware-Splicer's native differentiation"
-    ]
+  "allocation_invariants": {
+    "route_reallocation_reduces_hs_capability": false,
+    "moved_routes_are_reclaimable_when_fit_changes": true,
+    "historical_manifests_remain_evidence": true,
+    "physical_proof_campaign": "Spectating101/hardware-splicer#105",
+    "physical_proof_priority": "P0"
   },
-  "native_hs_lane": [
-    "physical-agent safety and consequential authority",
-    "hardware engineering evidence and revision-bound validation",
-    "EDA-adjacent verification and release assurance",
-    "physical bring-up and measurement provenance",
-    "MHS and programmable-device evaluation",
-    "embodied/robotics/electronics research-engineering evidence"
-  ],
   "routes": {
     "hardware-splicer-spi-flash-adapter-v1-remote-fct": {
       "decision": "HS_PRIMARY",
@@ -72,7 +54,7 @@
       "current_lead": "cite-agent",
       "hs_role": "SUPPORT_OR_ALTERNATE_EXPERIMENT",
       "reclaimable": true,
-      "reason": "Portfolio allocation gives Cite the cleaner controlled reliability question today. HS remains a valid alternate only if a hardware/consequential-action-specific call or evidence advantage emerges."
+      "reason": "Cite currently presents the cleaner controlled reliability experiment; this does not deprecate any HS capability."
     },
     "aws-cloud-credit-research-2026": {
       "decision": "REALLOCATE_CURRENT_LEAD",
@@ -88,7 +70,7 @@
       "alternate_leads": ["research-drive", "refinery-commons"],
       "hs_role": "RECLAIM_ONLY_WITH_REAL_LOCAL_MODEL_WORKLOAD",
       "reclaimable": true,
-      "reason": "H200 compute should serve a genuine open/local-model workload. HS should reclaim only if its own evaluation program actually needs that workload."
+      "reason": "H200 compute should serve a genuine open/local-model workload; HS should reclaim only if its own evaluation program actually needs it."
     },
     "taia-2026-hardware-splicer": {
       "decision": "ARCHIVE_PAST_ROUTE",
@@ -112,14 +94,6 @@
     }
   },
   "person_level_rule": {
-    "description": "For jobs, RAs, fellowships, residencies and PhDs, HS remains a flagship work sample whenever physical AI, robotics, electronics, EDA, embodied systems or consequential agent control is material. Reallocation of a project-level route does not weaken HS in the person's evidence bundle."
-  },
-  "operating_state": {
-    "core": "FROZEN_UNLESS_CONCRETE_DEFECT",
-    "frontend": "COMPETITIVE_CLOSURE_ALLOWED",
-    "physical_proof": "ACTIVE",
-    "generic_feature_growth": "OFF_BY_DEFAULT",
-    "competitor_response": "TARGETED_IMPROVEMENT_ALLOWED",
-    "gauntlet_conversion": "ACTIVE"
+    "description": "For jobs, RAs, fellowships, residencies and PhDs, HS remains a flagship work sample whenever physical AI, robotics, electronics, EDA, embodied systems or consequential agent control is material. Project-route reallocation does not weaken HS in the person's evidence bundle."
   }
 }
