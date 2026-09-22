@@ -164,3 +164,31 @@ def test_live_contract_matches_the_mocked_shapes():
     for key, live in out.items():
         mocked = RESPONSE["answers"][{"reachable": "reachable", "level": "kind", "pay": "fit"}[key]]
         assert set(live) <= set(mocked), f"live {key} has keys the mock lacks: {set(live) - set(mocked)}"
+
+
+def test_the_vendor_key_name_also_works(server, monkeypatch):
+    """Other checkouts here read TYPESAFE_API_KEY -- TypeSafe hosts, Jev is the
+    model -- so one exported key must serve every repo."""
+    monkeypatch.delenv("JEV_API_KEY", raising=False)
+    for n in range(1, 6):
+        monkeypatch.delenv(f"JEV_API_KEY_{n}", raising=False)
+    monkeypatch.setenv("TYPESAFE_API_KEY", "vendor-key")
+    jev = fresh()
+    assert jev.available() is True
+    jev.ask(state={"x": 1}, questions={"q": jev.boolean("is it?")})
+    assert Handler.calls[0]["auth"].endswith("vendor-key")
+
+
+def test_the_numbered_keys_outrank_the_vendor_alias(server, monkeypatch):
+    """TYPESAFE_API_KEY is normally an alias of key 1; preferring it would
+    silently collapse a five-key rotation to one."""
+    monkeypatch.delenv("JEV_API_KEY", raising=False)
+    for n in range(1, 6):
+        monkeypatch.setenv(f"JEV_API_KEY_{n}", f"key-{n}")
+    monkeypatch.setenv("TYPESAFE_API_KEY", "key-1")
+    jev = fresh()
+    q = {"r": jev.boolean("is it?")}
+    for _ in range(5):
+        jev.ask(state={"x": 1}, questions=q)
+    used = {c["auth"].split()[-1] for c in Handler.calls}
+    assert len(used) == 5, f"rotation must survive the alias, got {used}"

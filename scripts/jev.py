@@ -36,6 +36,12 @@ _rotate = 0
 
 
 def _configured_keys() -> list[str]:
+    """Every key configured for this service, in rotation order.
+
+    TYPESAFE_API_KEY is the vendor's own name for the same secret -- TypeSafe is
+    the host, Jev the model -- and other checkouts here read only that one. Both
+    names are accepted so a single exported key serves every repo.
+    """
     primary = os.environ.get("JEV_API_KEY") or ""
     if primary:
         return [primary]
@@ -44,7 +50,13 @@ def _configured_keys() -> list[str]:
         value = os.environ.get(f"JEV_API_KEY_{n}") or ""
         if value:
             keys.append(value)
-    return keys
+    if keys:
+        # The numbered set outranks the vendor name: rotating five keys spreads
+        # the rate limit, and TYPESAFE_API_KEY is normally an alias of one of
+        # them, so preferring it would silently collapse the rotation.
+        return keys
+    fallback = os.environ.get("TYPESAFE_API_KEY") or ""
+    return [fallback] if fallback else []
 
 
 def available() -> bool:
