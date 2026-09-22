@@ -2,58 +2,100 @@
   "schema_version": 1,
   "subject_project": "hardware-splicer",
   "purpose": "Map Refinery competitive-feedback decisions into bounded Gauntlet actions without treating route allocation as project shrinkage.",
+  "producer_contract": {
+    "repository": "Spectating101/refinery",
+    "contract": "competitive_feedback_v1",
+    "expected_policy": "competition_is_input_to_improvement_not_automatic_scope_reduction",
+    "required_subject_project": "hardware-splicer"
+  },
   "accepted_decisions": {
     "IMPROVE_HS_SHELL": {
       "gauntlet_action": "OPEN_BOUNDED_HS_ENGINEERING",
+      "may_open_engineering": true,
+      "priority_ceiling": "P1",
       "requires_live_route": false,
       "allowed_scope_source": "refinery_packet.allowed_scope",
+      "allowed_surfaces": ["frontend", "information_architecture", "visualization", "copy", "progressive_disclosure"],
       "core_change": false,
       "note": "Presentation-layer improvements may proceed when the observation is source-bound and HS-native."
     },
     "IMPROVE_HS_WORKFLOW": {
       "gauntlet_action": "OPEN_BOUNDED_HS_ENGINEERING",
+      "may_open_engineering": true,
+      "priority_ceiling": "P1",
       "requires_live_route": false,
       "allowed_scope_source": "refinery_packet.allowed_scope",
+      "allowed_surfaces": ["workflow", "frontend", "orchestration_over_existing_semantics"],
       "core_change": false,
       "note": "Use existing evidence/authority semantics; do not invent a parallel truth model."
     },
     "INTEGRATE_NOT_REBUILD": {
       "gauntlet_action": "OPEN_INTEGRATION_CANDIDATE",
+      "may_open_engineering": true,
+      "priority_ceiling": "P1",
       "requires_live_route": false,
       "allowed_scope_source": "refinery_packet.allowed_scope",
+      "allowed_surfaces": ["adapter", "import_export", "deep_link", "protocol_bridge", "artifact_view"],
       "core_change": false,
       "note": "Prefer adapters, protocols, import/export, deep links or artifact views over cloning source-tool capability."
     },
     "RESEARCH_GATE": {
       "gauntlet_action": "COLLECT_HS_EVIDENCE",
+      "may_open_engineering": false,
+      "priority_ceiling": "P2",
       "requires_live_route": false,
+      "allowed_surfaces": ["gap_reproduction", "evidence_collection", "design_note"],
       "core_change": false,
       "note": "No implementation authorization. Reproduce a concrete HS gap or gather evaluator/physical evidence first."
     },
     "INVESTIGATE_CORE_CHANGE": {
       "gauntlet_action": "OPEN_CORE_INVESTIGATION_ONLY",
+      "may_open_engineering": false,
+      "priority_ceiling": "P1",
       "requires_live_route": false,
+      "allowed_surfaces": ["minimal_reproduction", "root_cause", "successor_design", "invalidation_plan"],
       "core_change": false,
+      "requires_explicit_human_review_before_core_mutation": true,
       "note": "Investigation is allowed; core mutation remains unauthorized until root cause, successor design and invalidation plan are reviewed."
     },
     "HOLD_FOR_EVIDENCE": {
       "gauntlet_action": "WATCH",
+      "may_open_engineering": false,
+      "priority_ceiling": "P2",
       "requires_live_route": false,
+      "allowed_surfaces": ["observation", "comparison", "evidence_collection"],
       "core_change": false,
       "note": "Competitor concept alone does not reopen HS."
     },
     "OBSERVE": {
       "gauntlet_action": "WATCH",
+      "may_open_engineering": false,
+      "priority_ceiling": "P3",
       "requires_live_route": false,
+      "allowed_surfaces": [],
       "core_change": false,
       "note": "No source-bound evidence is sufficient for engineering."
     },
     "OBSERVE_OR_ROUTE_ELSEWHERE": {
       "gauntlet_action": "PORTFOLIO_BAKEOFF",
+      "may_open_engineering": false,
+      "priority_ceiling": "P3",
       "requires_live_route": false,
+      "allowed_surfaces": ["portfolio_allocation_review"],
       "core_change": false,
       "note": "Compare portfolio assets for the opportunity; do not delete or degrade the corresponding HS capability."
     }
+  },
+  "global_guards": {
+    "automatic_core_semantics_changes": false,
+    "automatic_fabrication_authority": false,
+    "automatic_power_on_authority": false,
+    "automatic_release_authority": false,
+    "competitor_announcement_alone_can_preempt_physical_proof": false,
+    "route_reallocation_can_remove_hs_capability": false,
+    "unknown_decision_fails_closed": true,
+    "producer_policy_mismatch_fails_closed": true,
+    "subject_project_mismatch_fails_closed": true
   },
   "project_guardrails": [
     "Hardware-Splicer remains a first-class flagship technical asset.",
@@ -64,12 +106,13 @@
     "No competitive-feedback decision automatically authorizes a core semantics mutation."
   ],
   "priority_override": {
-    "active_campaign": "hardware-splicer#105",
+    "active_campaign": "Spectating101/hardware-splicer#105",
     "name": "Physical proof campaign: fabricate, bring up, and bind SPI evidence",
-    "rule": "Generic competitor-driven work must not displace the physical-proof campaign unless the new finding blocks that campaign or exposes a higher-severity HS-native defect."
+    "priority": "P0",
+    "rule": "Generic competitor-driven work must not displace the physical-proof campaign unless the new finding blocks that campaign or exposes a concrete safety or exact-subject HS defect."
   },
   "frontend_closure": {
-    "pull_request": "hardware-splicer#104",
+    "pull_request": "Spectating101/hardware-splicer#104",
     "state": "CLOSURE_CANDIDATE",
     "reopen_when": [
       "rendered usability review exposes a concrete deficiency",
