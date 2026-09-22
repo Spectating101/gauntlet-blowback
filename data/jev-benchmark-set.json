@@ -1,0 +1,407 @@
+{
+  "created": "2026-09-22",
+  "purpose": "Ground truth for measuring Jev against the keyword heuristics. Labels are Claude's judgement of whether this applicant (Indonesian national in Taiwan, MSc Finance and Accounting completing 2027-01, strong engineering portfolio, no CS degree, no work authorisation outside Taiwan) should spend an application on the role: 5 = clearly yes, 1 = clearly not.",
+  "items": [
+    {
+      "id": "Cake Recruitment Consulting::知名人壽｜AI開發資料科學家｜高底薪 x 新創氛圍-Ting",
+      "title": "知名人壽｜AI開發資料科學家｜高底薪 x 新創氛圍-Ting",
+      "company": "Cake Recruitment Consulting",
+      "location": "信義區, 台北市, 台灣",
+      "url": "https://www.cake.me/companies/cake-recruitment-consulting/jobs/renowned-life-insurance-company-ai-development-data-scientist-high-base-salary-x-startup-atmosph",
+      "claude_label": 5,
+      "basis": "strong",
+      "label_reason": "life insurer AI data scientist: finance domain + AI, his exact overlap"
+    },
+    {
+      "id": "Binance::Binance Accelerator Program - Research Data Scientist",
+      "title": "Binance Accelerator Program - Research Data Scientist",
+      "company": "Binance",
+      "location": "Asia, Taiwan, Taipei, Hong Kong",
+      "url": "https://jobs.lever.co/binance/ca44ee4e-392b-4745-9ad9-8e287f5a6d37",
+      "claude_label": 5,
+      "basis": "strong",
+      "label_reason": "Binance Accelerator is a graduate programme; research data science"
+    },
+    {
+      "id": "Manuscript::【GoingCloud】Senior Data Scientist",
+      "title": "【GoingCloud】Senior Data Scientist",
+      "company": "Manuscript",
+      "location": "台北市, 台灣",
+      "url": "https://www.cake.me/companies/manuscript/jobs/senior-data-scientist-751",
+      "claude_label": 3,
+      "basis": "strong",
+      "label_reason": "'Senior' data scientist with no industry years behind him"
+    },
+    {
+      "id": "國泰世紀產物保險股份有限公司::【國泰集團】 AI資料科學家 Data&AI Scientist – (數數發中心, DDT)",
+      "title": "【國泰集團】 AI資料科學家 Data&AI Scientist – (數數發中心, DDT)",
+      "company": "國泰世紀產物保險股份有限公司",
+      "location": "大安區, 台北市, 台灣",
+      "url": "https://www.cake.me/companies/cathayins/jobs/8fafa0",
+      "claude_label": 5,
+      "basis": "strong",
+      "label_reason": "Cathay insurance Data&AI scientist: finance domain + AI"
+    },
+    {
+      "id": "Appier::Research Scientist (Generative & Agentic AI)",
+      "title": "Research Scientist (Generative & Agentic AI)",
+      "company": "Appier",
+      "location": "Taipei, Taiwan",
+      "url": "https://job-boards.greenhouse.io/appier/jobs/8076142",
+      "claude_label": 4,
+      "basis": "strong",
+      "label_reason": "agentic AI is his portfolio; Research Scientist usually wants a PhD"
+    },
+    {
+      "id": "Binance::Binance Accelerator Program - AI Research Scientist (LLM Reasoning & Po",
+      "title": "Binance Accelerator Program - AI Research Scientist (LLM Reasoning & Post-Training)",
+      "company": "Binance",
+      "location": "Asia, Taiwan, Taipei, Hong Kong",
+      "url": "https://jobs.lever.co/binance/e7f93f9f-9e39-4a3f-87e3-4dea1efb79b1",
+      "claude_label": 5,
+      "basis": "strong",
+      "label_reason": "graduate programme + LLM reasoning, direct portfolio match"
+    },
+    {
+      "id": "賽微科技 Cyberon::AI 平台開發工程師（LLM／Agentic AI）",
+      "title": "AI 平台開發工程師（LLM／Agentic AI）",
+      "company": "賽微科技 Cyberon",
+      "location": "新北市",
+      "url": "https://www.yourator.co/companies/cyberon/jobs/47637",
+      "claude_label": 4,
+      "basis": "strong",
+      "label_reason": "LLM/agentic platform engineer, portfolio match"
+    },
+    {
+      "id": "WorldQuant::Quantitative Researcher",
+      "title": "Quantitative Researcher",
+      "company": "WorldQuant",
+      "location": "台北市, 台灣",
+      "url": "https://www.cake.me/companies/WorldQuant/jobs/quantitative-researcher-ecf516",
+      "claude_label": 4,
+      "basis": "strong",
+      "label_reason": "quant research: finance MSc plus coding, very competitive"
+    },
+    {
+      "id": "Binance::Binance Accelerator Program - Data Scientist (KYB/KYC Ops), AI",
+      "title": "Binance Accelerator Program - Data Scientist (KYB/KYC Ops), AI",
+      "company": "Binance",
+      "location": "Asia, Hong Kong, Taiwan, Taipei, South East Asia, Vietnam, Ho Chi Minh, Australia, Brisbane, Australia, Melbourne, Australia, Sydney, Thailand, Bangkok",
+      "url": "https://jobs.lever.co/binance/1245204b-d029-4961-9819-bb6fc37d9b16",
+      "claude_label": 5,
+      "basis": "strong",
+      "label_reason": "graduate programme, KYC/compliance data science, finance-adjacent"
+    },
+    {
+      "id": "Google::Staff Research Scientist, Android Pixel Audio",
+      "title": "Staff Research Scientist, Android Pixel Audio",
+      "company": "Google",
+      "location": "新北市, 台灣, Australia",
+      "url": "https://www.cake.me/companies/Google/jobs/119733254180741830-staff-research-scientist-android-pixel-audio-f38b2f22c17103d4a1c84cef15a142",
+      "claude_label": 1,
+      "basis": "strong",
+      "label_reason": "Staff level, Android audio DSP: no overlap at all"
+    },
+    {
+      "id": "仁寶電腦工業股份有限公司::PB0554 AI機器學習設計經理(內湖)",
+      "title": "PB0554 AI機器學習設計經理(內湖)",
+      "company": "仁寶電腦工業股份有限公司",
+      "location": "臺北市",
+      "url": "https://www.yourator.co/companies/compal/jobs/47134",
+      "claude_label": 2,
+      "basis": "strong",
+      "label_reason": "經理 is a manager grade, needs years he does not have"
+    },
+    {
+      "id": "Appier::Senior Machine Learning Scientist, Advertising Incrementality",
+      "title": "Senior Machine Learning Scientist, Advertising Incrementality",
+      "company": "Appier",
+      "location": "Taipei, Taiwan",
+      "url": "https://job-boards.greenhouse.io/appier/jobs/7364432",
+      "claude_label": 3,
+      "basis": "strong",
+      "label_reason": "incrementality is econometrics (good), but Senior grade"
+    },
+    {
+      "id": "仁寶電腦工業股份有限公司::PA0438 車用電子演算法部署與效能優化工程師(內湖)",
+      "title": "PA0438 車用電子演算法部署與效能優化工程師(內湖)",
+      "company": "仁寶電腦工業股份有限公司",
+      "location": "臺北市",
+      "url": "https://www.yourator.co/companies/compal/jobs/46984",
+      "claude_label": 2,
+      "basis": "plausible",
+      "label_reason": "automotive embedded algorithm deployment, not his area"
+    },
+    {
+      "id": "Cake Recruitment Consulting::零售龍頭數位轉型-Data Engineer(顧客數據平台CDP)-TL",
+      "title": "零售龍頭數位轉型-Data Engineer(顧客數據平台CDP)-TL",
+      "company": "Cake Recruitment Consulting",
+      "location": "內湖區, 台北市, 台灣, 信義區, 台北市, 台灣",
+      "url": "https://www.cake.me/companies/cake-recruitment-consulting/jobs/36d6a7",
+      "claude_label": 2,
+      "basis": "plausible",
+      "label_reason": "team lead, and data engineering rather than science"
+    },
+    {
+      "id": "Appier::Digital Advertising Data Analyst",
+      "title": "Digital Advertising Data Analyst",
+      "company": "Appier",
+      "location": "Taipei, Taiwan",
+      "url": "https://job-boards.greenhouse.io/appier/jobs/8118867",
+      "claude_label": 4,
+      "basis": "plausible",
+      "label_reason": "analyst grade, advertising analytics, reachable"
+    },
+    {
+      "id": "Binance::Pioneer Talent Program - AI Engineer, Dev Tools",
+      "title": "Pioneer Talent Program - AI Engineer, Dev Tools",
+      "company": "Binance",
+      "location": "Asia, Hong Kong, Taiwan, Taipei",
+      "url": "https://jobs.lever.co/binance/99631399-d024-47b5-ade5-8bd1e947f782",
+      "claude_label": 4,
+      "basis": "plausible",
+      "label_reason": "Pioneer Talent Program is aimed at new graduates"
+    },
+    {
+      "id": "URBAN RESEARCH_台灣城市搜索股份有限公司::URBAN RESEARCH華泰名品城店(新開幕) 兼職銷售人員",
+      "title": "URBAN RESEARCH華泰名品城店(新開幕) 兼職銷售人員",
+      "company": "URBAN RESEARCH_台灣城市搜索股份有限公司",
+      "location": "桃園市中壢區經歷不拘高中時薪196~220元 1.喜歡Fashio",
+      "url": "https://www.104.com.tw/job/8zle9",
+      "claude_label": 1,
+      "basis": "plausible",
+      "label_reason": "part-time retail sales at an outlet mall, NT$196-220/hr"
+    },
+    {
+      "id": "SWAG::AI Engineer / AI工程師",
+      "title": "AI Engineer / AI工程師",
+      "company": "SWAG",
+      "location": "台北市, 台灣",
+      "url": "https://www.cake.me/companies/swag/jobs/ai-engineer-1",
+      "claude_label": 3,
+      "basis": "plausible",
+      "label_reason": "legitimate AI engineer role, unremarkable fit"
+    },
+    {
+      "id": "Binance::Binance Accelerator Program - Data Analyst",
+      "title": "Binance Accelerator Program - Data Analyst",
+      "company": "Binance",
+      "location": "Asia, Hong Kong, Taiwan, Taipei",
+      "url": "https://jobs.lever.co/binance/f610850c-df60-4c64-9951-23ca130f58eb",
+      "claude_label": 4,
+      "basis": "plausible",
+      "label_reason": "graduate programme, data analyst"
+    },
+    {
+      "id": "FPT_艾福提資訊有限公司::Junior AI Engineer (Mandarin and English)",
+      "title": "Junior AI Engineer (Mandarin and English)",
+      "company": "FPT_艾福提資訊有限公司",
+      "location": "台北市, 台灣",
+      "url": "https://www.cake.me/companies/5a2/jobs/junior-ai-engineer-mandarin-and-english",
+      "claude_label": 5,
+      "basis": "plausible",
+      "label_reason": "explicitly Junior AI Engineer: the level actually matches"
+    },
+    {
+      "id": "十論科技股份有限公司::AI 工程師 ｜ AI Engineer",
+      "title": "AI 工程師 ｜ AI Engineer",
+      "company": "十論科技股份有限公司",
+      "location": "臺北市",
+      "url": "https://www.yourator.co/companies/Tricuss/jobs/47782",
+      "claude_label": 4,
+      "basis": "plausible",
+      "label_reason": "AI engineer, level unstated, plausible"
+    },
+    {
+      "id": "TSMC::AI Engineer (Artificial Intelligence for Business Intelligence, AI4BI)",
+      "title": "AI Engineer (Artificial Intelligence for Business Intelligence, AI4BI)",
+      "company": "TSMC",
+      "location": "新竹市, 台灣",
+      "url": "https://www.cake.me/companies/tsmc/jobs/ai-engineer-artificial-intelligence-for-business-intelligence-ai4bi",
+      "claude_label": 5,
+      "basis": "plausible",
+      "label_reason": "TSMC AI for Business Intelligence: AI plus business, both his sides"
+    },
+    {
+      "id": "Appier::Senior Software Engineer, Backend Development (REC)",
+      "title": "Senior Software Engineer, Backend Development (REC)",
+      "company": "Appier",
+      "location": "Taipei, Taiwan",
+      "url": "https://job-boards.greenhouse.io/appier/jobs/7731002",
+      "claude_label": 2,
+      "basis": "too-senior",
+      "label_reason": "senior backend SWE, not his profile"
+    },
+    {
+      "id": "宇宙製造股份有限公司::【彈性遠端】行銷企劃經理｜AI 社交學習情緒教育校園第一品牌",
+      "title": "【彈性遠端】行銷企劃經理｜AI 社交學習情緒教育校園第一品牌",
+      "company": "宇宙製造股份有限公司",
+      "location": "新北市",
+      "url": "https://www.yourator.co/companies/aisolly/jobs/48206",
+      "claude_label": 1,
+      "basis": "too-senior",
+      "label_reason": "marketing planning manager, off-profile"
+    },
+    {
+      "id": "Cake Recruitment Consulting::【知名量化交易】挑戰千萬級高併發與微秒級低延遲系統 | 資深軟體工程師 Sr. Software En",
+      "title": "【知名量化交易】挑戰千萬級高併發與微秒級低延遲系統 | 資深軟體工程師 Sr. Software Engineer - TL",
+      "company": "Cake Recruitment Consulting",
+      "location": "信義區, 台北市, 台灣",
+      "url": "https://www.cake.me/companies/cake-recruitment-consulting/jobs/renowned-quantitative-trading-expert-challenging-a-system-with-tens-of-millions-of-concurrency-and",
+      "claude_label": 1,
+      "basis": "too-senior",
+      "label_reason": "senior low-latency trading systems TL, far beyond him"
+    },
+    {
+      "id": "GitLab::Staff Software Engineer",
+      "title": "Staff Software Engineer",
+      "company": "GitLab",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8755304002",
+      "claude_label": 1,
+      "basis": "too-senior",
+      "label_reason": "Staff engineer at GitLab, ~10 years expected"
+    },
+    {
+      "id": "牧羊人集團暨汪喵星球::【台北｜擴大徵才】資深後端工程師 Senior Backend Engineer",
+      "title": "【台北｜擴大徵才】資深後端工程師 Senior Backend Engineer",
+      "company": "牧羊人集團暨汪喵星球",
+      "location": "信義區, 台北市, 台灣",
+      "url": "https://www.cake.me/companies/shepherdtech/jobs/041e6e85-3edc-4dd0-b40b-95e72ebd2fea-taipei-expanding-recruitmentse-e1497a0a578cc58a00091b9b7328e7",
+      "claude_label": 2,
+      "basis": "too-senior",
+      "label_reason": "senior backend engineer"
+    },
+    {
+      "id": "漸強實驗室 Crescendo Lab Ltd.::【TW】Senior/ Backend Engineer",
+      "title": "【TW】Senior/ Backend Engineer",
+      "company": "漸強實驗室 Crescendo Lab Ltd.",
+      "location": "臺北市",
+      "url": "https://www.yourator.co/companies/CrescendoLab/jobs/41093",
+      "claude_label": 3,
+      "basis": "too-senior",
+      "label_reason": "posting spans Senior/regular backend; he can code"
+    },
+    {
+      "id": "慧景科技thingnario::[RD] 資深IoT軟韌體工程師 IoT Firmware Engineer （hybrid）",
+      "title": "[RD] 資深IoT軟韌體工程師 IoT Firmware Engineer （hybrid）",
+      "company": "慧景科技thingnario",
+      "location": "臺北市",
+      "url": "https://www.yourator.co/companies/thingnario/jobs/40186",
+      "claude_label": 1,
+      "basis": "too-senior",
+      "label_reason": "IoT firmware, off-profile"
+    },
+    {
+      "id": "微智匯運算股份有限公司::Senior Software Engineer / 資深軟體工程師",
+      "title": "Senior Software Engineer / 資深軟體工程師",
+      "company": "微智匯運算股份有限公司",
+      "location": "台北市, 台灣",
+      "url": "https://www.cake.me/companies/594/jobs/senior-software-engineer-13c",
+      "claude_label": 2,
+      "basis": "too-senior",
+      "label_reason": "senior software engineer"
+    },
+    {
+      "id": "群翊工業股份有限公司::軟體工程師",
+      "title": "軟體工程師",
+      "company": "群翊工業股份有限公司",
+      "location": "楊梅區, 桃園市, 台灣",
+      "url": "https://www.cake.me/companies/gpline-index_tw-php/jobs/9c0e5ae9-0a20-4e82-8376-1e83119a2405-software-engineer-d858d7937d8af7f6d4f172efa9b75e",
+      "claude_label": 2,
+      "basis": "off-profile",
+      "label_reason": "generic SWE at an industrial firm, possible but weak"
+    },
+    {
+      "id": "動力安全資訊股份有限公司 Dynasafe::[Data] 資料庫管理DBA工程師",
+      "title": "[Data] 資料庫管理DBA工程師",
+      "company": "動力安全資訊股份有限公司 Dynasafe",
+      "location": "臺北市",
+      "url": "https://www.yourator.co/companies/dynasafe/jobs/24464",
+      "claude_label": 1,
+      "basis": "off-profile",
+      "label_reason": "DBA, off-profile"
+    },
+    {
+      "id": "Binance::Binance Accelerator Programm - Software Engineer (Convert)",
+      "title": "Binance Accelerator Programm - Software Engineer (Convert)",
+      "company": "Binance",
+      "location": "Asia, Taiwan, Taipei, Hong Kong",
+      "url": "https://jobs.lever.co/binance/a6651f27-4e58-4841-91ae-5c79e2296d36",
+      "claude_label": 3,
+      "basis": "off-profile",
+      "label_reason": "graduate programme, but a pure SWE track"
+    },
+    {
+      "id": "Synpulse Taiwan Ltd. | 星普思管理諮詢有限公司::Business Analyst / Testing Management Analys",
+      "title": "Business Analyst / Testing Management Analyst, Management Consultant",
+      "company": "Synpulse Taiwan Ltd. | 星普思管理諮詢有限公司",
+      "location": "台北市, 台灣",
+      "url": "https://www.cake.me/companies/synpulse-taiwan/jobs/business-analyst-testing-management-analyst-management-consultant",
+      "claude_label": 4,
+      "basis": "off-profile",
+      "label_reason": "business analyst at a financial-services consultancy: his MSc is the qualification"
+    },
+    {
+      "id": "Binance::Binance Accelerator Program - TechOps Engineer (MENA Timezone)",
+      "title": "Binance Accelerator Program - TechOps Engineer (MENA Timezone)",
+      "company": "Binance",
+      "location": "Asia, Taiwan, Taipei, UAE, Dubai",
+      "url": "https://jobs.lever.co/binance/b1b01056-0de9-4b4a-9962-bee31fb8e7d3",
+      "claude_label": 2,
+      "basis": "off-profile",
+      "label_reason": "TechOps on MENA hours"
+    },
+    {
+      "id": "沙拉互動有限公司 DigiSalad Limited::前端工程師 (Frontend Developer)",
+      "title": "前端工程師 (Frontend Developer)",
+      "company": "沙拉互動有限公司 DigiSalad Limited",
+      "location": "台北市, 台灣",
+      "url": "https://www.cake.me/companies/digisalad-limited/jobs/website-front-end-engineer-frontend-developer",
+      "claude_label": 1,
+      "basis": "off-profile",
+      "label_reason": "frontend, off-profile"
+    },
+    {
+      "id": "GliaCloud::(FT) AI×事業開発ポジション（グローバル環境）(新卒/AI事業開発)",
+      "title": "(FT) AI×事業開発ポジション（グローバル環境）(新卒/AI事業開発)",
+      "company": "GliaCloud",
+      "location": "臺北市",
+      "url": "https://www.yourator.co/companies/GliaCloud/jobs/47335",
+      "claude_label": 3,
+      "basis": "off-profile",
+      "label_reason": "new-grad AI business development; posting is in Japanese, which may gate it"
+    },
+    {
+      "id": "Texas Instruments 德州儀器工業股份有限公司::[2026暑期實習計畫－優先獲得畢業預聘機會] 類比應用工程師實習- Analog Field ",
+      "title": "[2026暑期實習計畫－優先獲得畢業預聘機會] 類比應用工程師實習- Analog Field Applications Engineer(FAE) - Summer Internship Program",
+      "company": "Texas Instruments 德州儀器工業股份有限公司",
+      "location": "松山區, 台北市, 台灣",
+      "url": "https://www.cake.me/companies/Texas-Instruments/jobs/2026-summer-internship-program-priority-for-post-graduation-positions-analog-field-applications",
+      "claude_label": 1,
+      "basis": "intern",
+      "label_reason": "summer 2026 internship already past, and analog electronics"
+    },
+    {
+      "id": "佳創生技股份有限公司::實習計畫-研發工程實習生(R&D Engineering Intern)",
+      "title": "實習計畫-研發工程實習生(R&D Engineering Intern)",
+      "company": "佳創生技股份有限公司",
+      "location": "桃園市龍潭區經歷不拘專科時薪200元以上 我們正在尋找對醫療器材產業有興趣",
+      "url": "https://www.104.com.tw/job/6y9wb",
+      "claude_label": 1,
+      "basis": "intern",
+      "label_reason": "biotech R&D intern paid hourly"
+    },
+    {
+      "id": "GliaCloud::Business Management Intern (AI & BD Focus)",
+      "title": "Business Management Intern (AI & BD Focus)",
+      "company": "GliaCloud",
+      "location": "臺北市",
+      "url": "https://www.yourator.co/companies/GliaCloud/jobs/46692",
+      "claude_label": 3,
+      "basis": "intern",
+      "label_reason": "intern, but AI plus business development fits both his sides"
+    }
+  ],
+  "labelled": "2026-09-22 by reading each posting; independent of the `basis` bucket"
+}
