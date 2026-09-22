@@ -33,6 +33,20 @@ test('competitive consumer is bound to Hardware-Splicer and Refinery policy', ()
   );
 });
 
+test('Gauntlet defers project identity and investment posture to canonical HS operating state', () => {
+  const contract = consumer.project_state_contract;
+  assert.equal(contract.repository, 'Spectating101/hardware-splicer');
+  assert.equal(contract.path, 'docs/HARDWARE_SPLICER_OPERATING_STATE.json');
+  assert.equal(contract.introduced_by, 'Spectating101/hardware-splicer#106');
+  assert.equal(contract.required_portfolio_role, 'flagship_selectively_active');
+  assert.equal(contract.required_p0_campaign, 'Spectating101/hardware-splicer#105');
+  assert.equal(
+    contract.required_competition_policy,
+    'competition_is_input_to_improvement_not_automatic_scope_reduction',
+  );
+  assert.equal(consumer.global_guards.project_state_contract_mismatch_fails_closed, true);
+});
+
 test('all Refinery decisions are explicitly mapped and unknown decisions fail closed', () => {
   assert.deepEqual(new Set(Object.keys(consumer.accepted_decisions)), EXPECTED_DECISIONS);
   assert.equal(consumer.global_guards.unknown_decision_fails_closed, true);
