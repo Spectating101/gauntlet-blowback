@@ -13,6 +13,7 @@
     "radar:opportunities": "node src/radar/run-opportunities.mjs examples/radar/research-labor-source-registry.json examples/radar/funding-scope-v1.json",
     "radar:discover": "node src/radar/run-discovery.mjs examples/radar/open-web-discovery-policy.json examples/radar/funding-scope-v1.json",
     "conversion:demo": "node src/conversion/run-campaign.mjs examples/conversion/public-good-shadow-pilot.json",
+    "competitive:hs": "node scripts/evaluate-hs-competitive-feedback.mjs",
     "gauntlet:master": "node scripts/build-gauntlet-master.mjs",
     "mission:next": "node src/cli.mjs next",
     "fire:next": "node src/cli.mjs fire-next",
