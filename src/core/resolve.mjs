@@ -5,14 +5,39 @@ function getByPath(obj, dotted) {
   return dotted.split('.').reduce((value, key) => value?.[key], obj);
 }
 
-async function loadProfile(opportunity) {
+const AUTHORITY_FILE = path.resolve(
+  path.dirname(new URL(import.meta.url).pathname),
+  '../../applicant-authority.local.yaml'
+);
+
+// Contact details are deliberately absent from the public profile, because this repository is
+// public. They live in the git-ignored applicant authority file, which is the operator's source of
+// truth, so `$profile.phone` and friends resolve from its `identity` section.
+async function authorityIdentity() {
+  const file = process.env.BLOWBACK_AUTHORITY_FILE ?? AUTHORITY_FILE;
+  try {
+    const authority = await loadStructured(file);
+    const identity = authority?.identity;
+    return identity && typeof identity === 'object' && !Array.isArray(identity) ? identity : {};
+  } catch (error) {
+    // An absent file is normal: the public profile stands on its own. Anything else (malformed
+    // YAML, a missing parser, bad permissions) would silently drop contact fields, so say so.
+    if (error?.code !== 'ENOENT') {
+      console.warn(`applicant authority file ignored (${file}): ${error.message}`);
+    }
+    return {};
+  }
+}
+
+export async function loadProfile(opportunity) {
   const publicProfilePath = path.resolve(opportunity.__dir, opportunity.profile);
   const publicProfile = await loadStructured(publicProfilePath);
+  const identity = await authorityIdentity();
   const privateOverride = process.env.BLOWBACK_PROFILE_FILE;
-  if (!privateOverride) return publicProfile;
+  if (!privateOverride) return { ...publicProfile, ...identity };
 
   const privateProfile = await loadStructured(path.resolve(privateOverride));
-  return { ...publicProfile, ...privateProfile };
+  return { ...publicProfile, ...identity, ...privateProfile };
 }
 
 export async function resolveBundle(opportunity) {
