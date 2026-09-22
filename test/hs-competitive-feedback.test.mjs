@@ -1,0 +1,134 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import test from 'node:test';
+import { fileURLToPath } from 'node:url';
+import { evaluateCompetitivePacket } from '../scripts/evaluate-hs-competitive-feedback.mjs';
+
+const here = path.dirname(fileURLToPath(import.meta.url));
+const root = path.resolve(here, '..');
+const consumerPath = path.join(root, 'data', 'hs-competitive-feedback-consumer-v1.json');
+const packetPath = path.join(root, 'data', 'refinery-hs-competitive-feedback-2026-09-23.json');
+const consumer = JSON.parse(fs.readFileSync(consumerPath, 'utf8'));
+const packet = JSON.parse(fs.readFileSync(packetPath, 'utf8'));
+
+const EXPECTED_DECISIONS = new Set([
+  'IMPROVE_HS_SHELL',
+  'IMPROVE_HS_WORKFLOW',
+  'INTEGRATE_NOT_REBUILD',
+  'RESEARCH_GATE',
+  'INVESTIGATE_CORE_CHANGE',
+  'HOLD_FOR_EVIDENCE',
+  'OBSERVE',
+  'OBSERVE_OR_ROUTE_ELSEWHERE',
+]);
+
+test('competitive consumer is bound to Hardware-Splicer and Refinery policy', () => {
+  assert.equal(consumer.schema_version, 1);
+  assert.equal(consumer.subject_project, 'hardware-splicer');
+  assert.equal(consumer.producer_contract.repository, 'Spectating101/refinery');
+  assert.equal(
+    consumer.producer_contract.expected_policy,
+    'competition_is_input_to_improvement_not_automatic_scope_reduction',
+  );
+});
+
+test('Gauntlet defers project identity and investment posture to canonical HS operating state', () => {
+  const contract = consumer.project_state_contract;
+  assert.equal(contract.repository, 'Spectating101/hardware-splicer');
+  assert.equal(contract.path, 'docs/HARDWARE_SPLICER_OPERATING_STATE.json');
+  assert.equal(contract.introduced_by, 'Spectating101/hardware-splicer#106');
+  assert.equal(contract.required_portfolio_role, 'flagship_selectively_active');
+  assert.equal(contract.required_p0_campaign, 'Spectating101/hardware-splicer#105');
+  assert.equal(
+    contract.required_competition_policy,
+    'competition_is_input_to_improvement_not_automatic_scope_reduction',
+  );
+  assert.equal(consumer.global_guards.project_state_contract_mismatch_fails_closed, true);
+});
+
+test('all Refinery decisions are explicitly mapped and unknown decisions fail closed', () => {
+  assert.deepEqual(new Set(Object.keys(consumer.accepted_decisions)), EXPECTED_DECISIONS);
+  assert.equal(consumer.global_guards.unknown_decision_fails_closed, true);
+  assert.equal(consumer.global_guards.producer_policy_mismatch_fails_closed, true);
+  assert.equal(consumer.global_guards.subject_project_mismatch_fails_closed, true);
+});
+
+test('no competitive decision can mutate core semantics or physical authority', () => {
+  for (const [decision, row] of Object.entries(consumer.accepted_decisions)) {
+    assert.equal(row.core_change, false, `${decision} unexpectedly permits a core change`);
+  }
+  assert.equal(consumer.global_guards.automatic_core_semantics_changes, false);
+  assert.equal(consumer.global_guards.automatic_fabrication_authority, false);
+  assert.equal(consumer.global_guards.automatic_power_on_authority, false);
+  assert.equal(consumer.global_guards.automatic_release_authority, false);
+});
+
+test('only bounded shell workflow and integration decisions may open engineering', () => {
+  const authorized = Object.entries(consumer.accepted_decisions)
+    .filter(([, row]) => row.may_open_engineering)
+    .map(([decision]) => decision)
+    .sort();
+  assert.deepEqual(authorized, [
+    'IMPROVE_HS_SHELL',
+    'IMPROVE_HS_WORKFLOW',
+    'INTEGRATE_NOT_REBUILD',
+  ]);
+});
+
+test('SPI physical proof remains P0 and cannot be preempted by generic competition', () => {
+  assert.equal(consumer.priority_override.active_campaign, 'Spectating101/hardware-splicer#105');
+  assert.equal(consumer.priority_override.priority, 'P0');
+  assert.equal(consumer.global_guards.competitor_announcement_alone_can_preempt_physical_proof, false);
+});
+
+test('frontend stays closed unless a concrete reopening condition appears', () => {
+  assert.equal(consumer.frontend_closure.pull_request, 'Spectating101/hardware-splicer#104');
+  assert.equal(consumer.frontend_closure.state, 'CLOSURE_CANDIDATE');
+  assert.ok(consumer.frontend_closure.reopen_when.length >= 3);
+});
+
+test('concrete Refinery packet executes end-to-end without authority escalation', () => {
+  const result = evaluateCompetitivePacket(packet, consumer);
+  assert.equal(result.subject_project, 'hardware-splicer');
+  assert.equal(result.summary.observations, 7);
+  assert.equal(result.summary.engineering_actions, 7);
+  assert.equal(result.summary.core_changes_authorized, 0);
+  assert.equal(result.summary.fabrication_authorized, false);
+  assert.equal(result.summary.power_on_authorized, false);
+  assert.equal(result.summary.release_authorized, false);
+  assert.equal(result.active_priority.priority, 'P0');
+  assert.equal(result.frontend_closure.state, 'CLOSURE_CANDIDATE');
+});
+
+test('frozen competitive packet preserves the intended September decision mix', () => {
+  assert.equal(packet.summary.observations, 7);
+  assert.equal(packet.summary.engineering_authorized, 7);
+  assert.deepEqual(packet.summary.decision_counts, {
+    IMPROVE_HS_SHELL: 1,
+    IMPROVE_HS_WORKFLOW: 3,
+    INTEGRATE_NOT_REBUILD: 3,
+  });
+});
+
+test('runtime consumer rejects producer policy drift', () => {
+  const drifted = structuredClone(packet);
+  drifted.policy = 'different-policy';
+  assert.throws(() => evaluateCompetitivePacket(drifted, consumer), /policy mismatch/);
+});
+
+test('runtime consumer rejects unknown decisions and core-authority escalation', () => {
+  const unknown = structuredClone(packet);
+  unknown.decisions[0].decision = 'CLONE_COMPETITOR';
+  assert.throws(() => evaluateCompetitivePacket(unknown, consumer), /unknown competitive decision/);
+
+  const escalated = structuredClone(packet);
+  escalated.decisions[0].core_semantics_change_authorized = true;
+  assert.throws(() => evaluateCompetitivePacket(escalated, consumer), /core semantics authorization rejected/);
+});
+
+test('runtime consumer rejects scope escalation', () => {
+  const escalated = structuredClone(packet);
+  escalated.decisions[0].allowed_scope = [...escalated.decisions[0].allowed_scope, 'replace_evidence_core'];
+  assert.throws(() => evaluateCompetitivePacket(escalated, consumer), /not consumer-authorized/);
+});

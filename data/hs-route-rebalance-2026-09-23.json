@@ -1,0 +1,99 @@
+{
+  "schema": "blowback.hs_route_rebalance.v2",
+  "snapshot": "2026-09-23",
+  "project": "hardware-splicer",
+  "canonical_project_state": {
+    "repository": "Spectating101/hardware-splicer",
+    "path": "docs/HARDWARE_SPLICER_OPERATING_STATE.json",
+    "introduced_by": "Spectating101/hardware-splicer#106",
+    "ownership_rule": "Gauntlet allocates opportunities; Hardware-Splicer owns product identity, capability scope, investment posture, and authority boundaries."
+  },
+  "allocation_invariants": {
+    "route_reallocation_reduces_hs_capability": false,
+    "moved_routes_are_reclaimable_when_fit_changes": true,
+    "historical_manifests_remain_evidence": true,
+    "physical_proof_campaign": "Spectating101/hardware-splicer#105",
+    "physical_proof_priority": "P0"
+  },
+  "routes": {
+    "hardware-splicer-spi-flash-adapter-v1-remote-fct": {
+      "decision": "HS_PRIMARY",
+      "priority": "HIGHEST",
+      "reason": "Fresh physical evidence reprices nearly every remaining HS route and closes the project's strongest known evidence gap."
+    },
+    "anthropic-mhs-preview-2026": {
+      "decision": "HS_PRIMARY",
+      "priority": "HIGH",
+      "reason": "Direct fit to programmable physical-device evaluation, authority boundaries and safety evidence."
+    },
+    "anthropic-external-researcher-access-2026": {
+      "decision": "HS_PRIMARY",
+      "priority": "HIGH",
+      "reason": "Existing packet is natively about evidence and authorization checks for tool-using consequential agents."
+    },
+    "date-2027-lbr-hardware-splicer": {
+      "decision": "HS_AFTER_EVIDENCE",
+      "priority": "HIGH",
+      "wake_condition": "fresh revision-bound physical proof or comparably substantive external result",
+      "reason": "The research contribution remains HS-native; stronger external proof materially improves the submission."
+    },
+    "innoserve-2026-hardware-splicer": {
+      "decision": "HS_CONDITIONAL",
+      "priority": "MEDIUM",
+      "gate": "adviser/team/category requirements must clear with low marginal work",
+      "reason": "Industrial AI remains a reasonable HS conversion route, but must not trigger another broad product sprint."
+    },
+    "anthropic-ai-for-science-general-2026": {
+      "decision": "HS_AFTER_EVIDENCE",
+      "priority": "MEDIUM",
+      "wake_condition": "fresh physical evidence plus current eligibility/data-rights clearance",
+      "reason": "Keep the physical-agent study, but do not spend engineering budget before its evidence gates clear."
+    },
+    "openai-researcher-access-hardware-splicer": {
+      "decision": "REALLOCATE_CURRENT_LEAD",
+      "current_lead": "cite-agent",
+      "hs_role": "SUPPORT_OR_ALTERNATE_EXPERIMENT",
+      "reclaimable": true,
+      "reason": "Cite currently presents the cleaner controlled reliability experiment; this does not deprecate any HS capability."
+    },
+    "aws-cloud-credit-research-2026": {
+      "decision": "REALLOCATE_CURRENT_LEAD",
+      "current_lead": "research-drive",
+      "alternate_leads": ["yzu-data-assistance"],
+      "hs_role": "RECLAIM_ONLY_WITH_NATIVE_WORKLOAD",
+      "reclaimable": true,
+      "reason": "Generic reproducible research-cloud infrastructure is more native to Research Drive/YZUC; do not manufacture an HS cloud workload."
+    },
+    "nchc-university-ai-compute-yzu-2026": {
+      "decision": "REALLOCATE_CURRENT_LEAD",
+      "current_lead": "yzu-data-assistance",
+      "alternate_leads": ["research-drive", "refinery-commons"],
+      "hs_role": "RECLAIM_ONLY_WITH_REAL_LOCAL_MODEL_WORKLOAD",
+      "reclaimable": true,
+      "reason": "H200 compute should serve a genuine open/local-model workload; HS should reclaim only if its own evaluation program actually needs it."
+    },
+    "taia-2026-hardware-splicer": {
+      "decision": "ARCHIVE_PAST_ROUTE",
+      "reason": "Past hard-date route; preserve outcome/receipt state, do not treat as live capacity."
+    },
+    "tas-2026-hardware-splicer": {
+      "decision": "ARCHIVE_PAST_ROUTE",
+      "reason": "Past hard-date route; preserve as historical conversion evidence."
+    },
+    "taai-2026-domestic-hardware-splicer": {
+      "decision": "ARCHIVE_PAST_ROUTE",
+      "reason": "Past hard-date route; preserve as historical conversion evidence."
+    },
+    "aws-community-day-taiwan-2026-hardware-splicer": {
+      "decision": "ARCHIVE_PAST_ROUTE",
+      "reason": "Past CFP deadline; preserve packet for future speaking reuse."
+    },
+    "wanrun-2026-hardware-splicer": {
+      "decision": "KEEP_KILLED",
+      "reason": "Retain the negative adviser/eligibility evidence; do not manufacture the dependency."
+    }
+  },
+  "person_level_rule": {
+    "description": "For jobs, RAs, fellowships, residencies and PhDs, HS remains a flagship work sample whenever physical AI, robotics, electronics, EDA, embodied systems or consequential agent control is material. Project-route reallocation does not weaken HS in the person's evidence bundle."
+  }
+}
