@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "subject_project": "hardware-splicer",
+  "purpose": "Map Refinery competitive-feedback decisions into bounded Gauntlet actions without treating route allocation as project shrinkage.",
+  "accepted_decisions": {
+    "IMPROVE_HS_SHELL": {
+      "gauntlet_action": "OPEN_BOUNDED_HS_ENGINEERING",
+      "requires_live_route": false,
+      "allowed_scope_source": "refinery_packet.allowed_scope",
+      "core_change": false,
+      "note": "Presentation-layer improvements may proceed when the observation is source-bound and HS-native."
+    },
+    "IMPROVE_HS_WORKFLOW": {
+      "gauntlet_action": "OPEN_BOUNDED_HS_ENGINEERING",
+      "requires_live_route": false,
+      "allowed_scope_source": "refinery_packet.allowed_scope",
+      "core_change": false,
+      "note": "Use existing evidence/authority semantics; do not invent a parallel truth model."
+    },
+    "INTEGRATE_NOT_REBUILD": {
+      "gauntlet_action": "OPEN_INTEGRATION_CANDIDATE",
+      "requires_live_route": false,
+      "allowed_scope_source": "refinery_packet.allowed_scope",
+      "core_change": false,
+      "note": "Prefer adapters, protocols, import/export, deep links or artifact views over cloning source-tool capability."
+    },
+    "RESEARCH_GATE": {
+      "gauntlet_action": "COLLECT_HS_EVIDENCE",
+      "requires_live_route": false,
+      "core_change": false,
+      "note": "No implementation authorization. Reproduce a concrete HS gap or gather evaluator/physical evidence first."
+    },
+    "INVESTIGATE_CORE_CHANGE": {
+      "gauntlet_action": "OPEN_CORE_INVESTIGATION_ONLY",
+      "requires_live_route": false,
+      "core_change": false,
+      "note": "Investigation is allowed; core mutation remains unauthorized until root cause, successor design and invalidation plan are reviewed."
+    },
+    "HOLD_FOR_EVIDENCE": {
+      "gauntlet_action": "WATCH",
+      "requires_live_route": false,
+      "core_change": false,
+      "note": "Competitor concept alone does not reopen HS."
+    },
+    "OBSERVE": {
+      "gauntlet_action": "WATCH",
+      "requires_live_route": false,
+      "core_change": false,
+      "note": "No source-bound evidence is sufficient for engineering."
+    },
+    "OBSERVE_OR_ROUTE_ELSEWHERE": {
+      "gauntlet_action": "PORTFOLIO_BAKEOFF",
+      "requires_live_route": false,
+      "core_change": false,
+      "note": "Compare portfolio assets for the opportunity; do not delete or degrade the corresponding HS capability."
+    }
+  },
+  "project_guardrails": [
+    "Hardware-Splicer remains a first-class flagship technical asset.",
+    "A route moving to another portfolio asset is not evidence that HS should lose a capability.",
+    "A competitor capability is not evidence that HS should clone that capability.",
+    "A competitor can justify targeted HS improvement when the gap is source-bound, HS-native and within the classifier's allowed scope.",
+    "Only exact-subject HS defects, physical failures or evaluator findings may begin a truth-model investigation.",
+    "No competitive-feedback decision automatically authorizes a core semantics mutation."
+  ],
+  "priority_override": {
+    "active_campaign": "hardware-splicer#105",
+    "name": "Physical proof campaign: fabricate, bring up, and bind SPI evidence",
+    "rule": "Generic competitor-driven work must not displace the physical-proof campaign unless the new finding blocks that campaign or exposes a higher-severity HS-native defect."
+  },
+  "frontend_closure": {
+    "pull_request": "hardware-splicer#104",
+    "state": "CLOSURE_CANDIDATE",
+    "reopen_when": [
+      "rendered usability review exposes a concrete deficiency",
+      "a user or evaluator cannot complete an HS-native workflow",
+      "a source-bound competitor delta exposes a specific HS-native gap"
+    ]
+  }
+}
