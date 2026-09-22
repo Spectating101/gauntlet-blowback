@@ -1,101 +1,87 @@
-# Hardware-Splicer Competitive Rebalance — 2026-09-23
+# Hardware-Splicer route allocation overlay — 2026-09-23
 
-This document is a **portfolio-routing correction**, not a project downgrade.
+This file is deliberately **not** the canonical Hardware-Splicer product state.
 
-Hardware-Splicer remains a flagship technical asset. The purpose of this rebalance is to stop Gauntlet from spending HS on routes that another portfolio asset can pursue more natively or with lower marginal work, while preserving and improving HS where hardware, physical-agent evidence, embodied systems, EDA/release assurance, or consequential authority are the actual reason the route exists.
+Canonical project identity, investment posture, active/frozen surfaces, competitor-development rule, and authority boundaries live in:
 
-Machine-readable overlay: `data/hs-route-rebalance-2026-09-23.json`.
+`Spectating101/hardware-splicer/docs/HARDWARE_SPLICER_OPERATING_STATE.{md,json}`
 
-## Non-amputation rule
+introduced by `Spectating101/hardware-splicer#106`.
 
-Do not interpret route reallocation as a command to dismantle, minimize, or cosmetically freeze Hardware-Splicer forever.
+Gauntlet owns one narrower question:
 
-Competition is an **input to product improvement**.
+> Given the current portfolio and a specific external opportunity, should Hardware-Splicer lead this route, support it, wait for more evidence, or let another asset lead?
 
-A competitor finding should trigger targeted HS engineering when it exposes a concrete gap in HS's native lane, materially strengthens a live route, fixes a real evaluator/user/provider problem, or improves the product shell without reopening frozen truth semantics.
+Machine-readable route overlay: `data/hs-route-rebalance-2026-09-23.json`.
 
-Examples of allowed improvement:
+## Allocation invariants
 
-- a competitor demonstrates materially better artifact-first review UX → improve HS review UX;
-- a physical evaluator exposes missing evidence state → fix the evidence path;
-- MHS introduces a useful interoperable device surface → integrate rather than duplicate transport;
-- an EDA/review competitor makes a workflow table-stakes → reach parity where needed, then preserve HS differentiation in evidence validity, revision consequences and authority;
-- physical testing exposes an actual architecture defect → reopen the smallest necessary core surface.
+- Hardware-Splicer remains a flagship / selectively active project under its own canonical state.
+- Moving one opportunity to another portfolio asset does **not** remove or deprecate an HS capability.
+- Moved routes remain reclaimable if future HS evidence/workload makes it the better lead.
+- Historical manifests remain evidence; do not delete them to make the current allocation look cleaner.
+- SPI physical proof (`hardware-splicer#105`) remains P0.
+- Generic competitor announcements do not preempt that physical-proof campaign.
 
-Examples of rejected expansion:
+## Current route allocation
 
-- build a full ECAD editor because Flux has one;
-- add generic agent features solely because another AI product announced them;
-- invent a GPU workload to fit a compute grant;
-- duplicate source-tool functionality that can be consumed through an adapter;
-- expand the product without a route, user, evaluator, evidence or competitive reason.
+### HS primary
 
-## Current HS identity
+- **SPI external physical/FCT proof** — highest priority.
+- **Anthropic MHS Research Preview** — direct programmable-device / physical-agent / authority fit.
+- **Anthropic External Researcher Access** — existing consequential-agent evidence/authorization experiment remains native to HS.
 
-Hardware-Splicer should be strongest where the external question is approximately:
+### HS after new evidence
 
-> What has actually been established about this exact hardware artifact/revision, what remains unproven, what evidence is still valid, and what physical action is authorized next?
+- **DATE 2027 LBR** — wake after fresh revision-bound physical proof or comparable substantive external evidence.
+- **Anthropic AI for Science** — wake after physical evidence plus current eligibility/data-rights clearance.
 
-Native lane:
+### HS conditional
 
-- physical-agent safety and consequential authority;
-- hardware engineering evidence and revision-bound validation;
-- EDA-adjacent verification and release assurance;
-- physical bring-up and measurement provenance;
-- MHS / programmable-device evaluation;
-- embodied, robotics, electronics and hardware-research engineering evidence.
+- **InnoServe Industrial AI** — continue only if adviser/team/category gates clear with low marginal work; do not trigger another broad product sprint.
 
-HS may still grow substantially inside this lane.
+### Another asset currently leads
 
-## Route decisions
+- **OpenAI Researcher Access** → Cite-Agent currently has the cleaner reliability experiment. HS remains a support/alternate experiment.
+- **AWS Cloud Credit for Research** → Research Drive / YZUC currently have the more native workload.
+- **NCHC university AI compute** → YZUC / Research Drive / Refinery currently have the more native local/open-model workload.
 
-### Keep HS primary
+These are allocation choices, not judgments that Hardware-Splicer should become smaller.
 
-- **SPI flash adapter external physical/FCT proof** — highest priority. Fresh physical evidence closes the most important project gap and strengthens nearly every remaining HS conversion route.
-- **Anthropic MHS Research Preview** — direct HS-native route.
-- **Anthropic External Researcher Access** — existing safety/control experiment remains HS-native.
-- **DATE 2027 LBR** — preserve HS as lead; fire after substantive physical/external proof.
-- **InnoServe Industrial AI** — HS remains a candidate when adviser/team/category gates clear cheaply and no broad product sprint is required.
-- **Anthropic AI for Science** — preserve HS lead but keep dormant until physical/evidence and eligibility gates clear.
+### Archive
 
-### Reallocate current lead without weakening HS
+Past TAIA, TAS, TAAI and AWS Community Day routes remain historical conversion evidence. WanRun remains explicit negative evidence.
 
-- **OpenAI Researcher Access** → Cite-Agent currently leads because its controlled research-reliability question is cleaner. HS remains an alternate experiment if the call becomes specifically consequential-action/hardware oriented.
-- **AWS Cloud Credit for Research** → Research Drive / YZUC currently lead. HS may reclaim only if a genuine HS-native cloud workload appears.
-- **NCHC university AI compute** → YZUC / Research Drive / Refinery currently lead. HS may reclaim only with a real local/open-model evaluation workload.
+## Relationship to Refinery
 
-These are portfolio allocation decisions, not judgments that HS lacks the capability.
+Refinery PR `Spectating101/refinery#24` supplies source-bound competitor observations and a bounded response class.
 
-### Archive rather than delete
+Gauntlet consumes those observations through `data/hs-competitive-feedback-consumer-v1.json` and may:
 
-Past TAIA, TAS, TAAI and AWS Community Day routes remain historical conversion evidence. WanRun remains explicit negative evidence. Do not silently delete old packets or reinterpret them as current routes.
+- open bounded shell/workflow engineering;
+- open an integration candidate;
+- request more evidence;
+- open a core investigation without authorizing a core mutation;
+- run a portfolio bake-off;
+- do nothing.
 
-## Competitive development rule
+Gauntlet cannot use a Refinery packet to grant fabrication, power-on, functional-test, release, or core-semantics authority.
 
-For every meaningful HS engineering proposal, Gauntlet/Refinery should ask:
+## Person-level use
 
-1. **Competitive gap** — what do relevant competitors already make easier or stronger?
-2. **Native fit** — is that gap inside HS's physical-agent/evidence/release-assurance lane?
-3. **Leverage** — does fixing it materially improve users, external proof, research contribution, conversion odds, or interoperability?
-4. **Build vs integrate** — must HS own this capability, or should it consume a source tool/standard/adapter?
-5. **Evidence preservation** — can the improvement land without weakening exact revision/evidence/authority semantics?
+For jobs, RAs, fellowships, residencies, PhDs, research conversations, and technical evaluation, HS remains a flagship work sample whenever physical AI, robotics, electronics, EDA, embodied systems, or consequential-agent control is material.
 
-If the answers support action, improve HS. Do not use the existence of competition as a stop signal.
+A project-level opportunity being led by Cite, Research Drive, YZUC, Refinery, Nocturnal, or Policy Lab does not weaken HS in the person's evidence bundle.
 
-## Current engineering posture
+## Practical rule
 
-| Surface | State | Meaning |
-|---|---|---|
-| Evidence / authority core | **Frozen unless concrete defect** | Preserve proven semantics; reopen only from evidence. |
-| Competitive frontend closure | **Active** | Finish artifact-first Review / Compare / Verify / Bring-up and then judge against competitors. |
-| Physical SPI proof | **Active / highest leverage** | Move packaged artifact into real external/physical evidence. |
-| Route-specific integrations | **Allowed** | MHS, provider, source-tool or evaluator integrations where they advance a real route. |
-| Generic feature expansion | **Off by default** | Requires explicit competitive/user/evidence justification. |
-| Competitor-driven improvement | **Allowed and expected** | Build when the gap is real and HS-native. |
-| Gauntlet conversion | **Active** | Force external verdicts instead of manufacturing endless internal maturity. |
+When Gauntlet sees an opportunity, ask:
 
-## Portfolio interpretation
+1. Is hardware / physical-agent / release-assurance evidence intrinsic to the route?
+2. Does HS have the strongest existing evidence with reasonable marginal work?
+3. Would winning materially reprice HS or the portfolio?
+4. Is another existing asset more native without requiring manufactured justification?
 
-The intended result is not a smaller HS. It is a **more selectively invested HS**.
+Then allocate the route.
 
-The portfolio should use the best asset for each route, while HS continues to improve in the domain where its architecture is most differentiated. A route moving to Cite, Research Drive, YZUC, Refinery, Nocturnal or Policy Lab is evidence that the portfolio has multiple strong assets—not evidence that HS should be dismantled.
+Do **not** use route allocation to redefine what Hardware-Splicer is. That now has one canonical owner: Hardware-Splicer itself.
