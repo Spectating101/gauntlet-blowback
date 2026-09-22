@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
+import { evaluateCompetitivePacket } from '../scripts/evaluate-hs-competitive-feedback.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '..');
@@ -73,24 +74,17 @@ test('frontend stays closed unless a concrete reopening condition appears', () =
   assert.ok(consumer.frontend_closure.reopen_when.length >= 3);
 });
 
-test('concrete Refinery packet is accepted end-to-end without authority escalation', () => {
-  assert.equal(packet.schema_version, 1);
-  assert.equal(packet.subject_project, consumer.producer_contract.required_subject_project);
-  assert.equal(packet.policy, consumer.producer_contract.expected_policy);
-  assert.equal(packet.summary.core_semantics_changes_authorized, 0);
-
-  for (const decision of packet.decisions) {
-    const rule = consumer.accepted_decisions[decision.decision];
-    assert.ok(rule, `unknown Refinery decision: ${decision.decision}`);
-    assert.equal(decision.core_semantics_change_authorized, false);
-    if (decision.engineering_authorized) {
-      assert.equal(rule.may_open_engineering, true, `${decision.decision} cannot open engineering`);
-    }
-    const allowed = new Set(rule.allowed_surfaces || []);
-    for (const scope of decision.allowed_scope) {
-      assert.ok(allowed.has(scope), `${decision.decision} requested consumer-disallowed scope ${scope}`);
-    }
-  }
+test('concrete Refinery packet executes end-to-end without authority escalation', () => {
+  const result = evaluateCompetitivePacket(packet, consumer);
+  assert.equal(result.subject_project, 'hardware-splicer');
+  assert.equal(result.summary.observations, 7);
+  assert.equal(result.summary.engineering_actions, 7);
+  assert.equal(result.summary.core_changes_authorized, 0);
+  assert.equal(result.summary.fabrication_authorized, false);
+  assert.equal(result.summary.power_on_authorized, false);
+  assert.equal(result.summary.release_authorized, false);
+  assert.equal(result.active_priority.priority, 'P0');
+  assert.equal(result.frontend_closure.state, 'CLOSURE_CANDIDATE');
 });
 
 test('frozen competitive packet preserves the intended September decision mix', () => {
@@ -101,4 +95,26 @@ test('frozen competitive packet preserves the intended September decision mix', 
     IMPROVE_HS_WORKFLOW: 3,
     INTEGRATE_NOT_REBUILD: 3,
   });
+});
+
+test('runtime consumer rejects producer policy drift', () => {
+  const drifted = structuredClone(packet);
+  drifted.policy = 'different-policy';
+  assert.throws(() => evaluateCompetitivePacket(drifted, consumer), /policy mismatch/);
+});
+
+test('runtime consumer rejects unknown decisions and core-authority escalation', () => {
+  const unknown = structuredClone(packet);
+  unknown.decisions[0].decision = 'CLONE_COMPETITOR';
+  assert.throws(() => evaluateCompetitivePacket(unknown, consumer), /unknown competitive decision/);
+
+  const escalated = structuredClone(packet);
+  escalated.decisions[0].core_semantics_change_authorized = true;
+  assert.throws(() => evaluateCompetitivePacket(escalated, consumer), /core semantics authorization rejected/);
+});
+
+test('runtime consumer rejects scope escalation', () => {
+  const escalated = structuredClone(packet);
+  escalated.decisions[0].allowed_scope = [...escalated.decisions[0].allowed_scope, 'replace_evidence_core'];
+  assert.throws(() => evaluateCompetitivePacket(escalated, consumer), /not consumer-authorized/);
 });
