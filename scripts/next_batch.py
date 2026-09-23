@@ -48,8 +48,11 @@ def load_sent(ledger_path) -> set[str]:
             entry = json.loads(line)
         except json.JSONDecodeError:
             continue
-        if isinstance(entry, dict) and entry.get("url"):
-            sent.add(entry["url"])
+        # A url that is not a non-empty string is a damaged line like any other;
+        # a list here used to crash the whole read.
+        url = entry.get("url") if isinstance(entry, dict) else None
+        if isinstance(url, str) and url:
+            sent.add(url)
     return sent
 
 
@@ -78,10 +81,14 @@ def next_batch(rows, sent, n=10, include_unreachable=False, per_company=None) ->
     queue's top is crowded by one employer (Binance's accelerator lists a dozen
     near-identical roles), and a day spent on one recruiter's inbox wastes
     applications. Capped roles are not skipped for good: they come back in a
-    later batch. None means no cap.
+    later batch. None, or a value of 0 or less, means no cap -- the same as the
+    command line. A role with no employer named is never capped: an empty name
+    says nothing about which company it is, so unrelated roles must not share it.
     """
     if n <= 0:
         return []
+    if per_company is not None and per_company <= 0:
+        per_company = None
     batch = []
     per = {}
     for row in rows:
@@ -90,8 +97,8 @@ def next_batch(rows, sent, n=10, include_unreachable=False, per_company=None) ->
             continue
         if not include_unreachable and not _reachable(row):
             continue
-        if per_company is not None:
-            key = _company(row)
+        key = _company(row)
+        if per_company is not None and key:
             if per.get(key, 0) >= per_company:
                 continue
             per[key] = per.get(key, 0) + 1

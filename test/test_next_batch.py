@@ -58,3 +58,23 @@ def test_capped_roles_come_back_in_a_later_batch():
 def test_no_cap_by_default_in_the_function():
     rows = [dict(r(i, f"b{i}"), company="Binance") for i in range(1, 4)]
     assert len(nb.next_batch(rows, set(), n=10)) == 3
+
+
+# Found by copilot_review_commit reviewing these commits after they had
+# passed every test written for them.
+
+def test_a_non_string_url_in_the_ledger_is_skipped_not_raised(tmp_path):
+    led = tmp_path / "led.jsonl"
+    led.write_text('{"url": ["x"]}\n{"url": {"a": 1}}\n{"url": 7}\n{"url": "ok"}\n')
+    assert nb.load_sent(led) == {"ok"}
+
+
+def test_roles_with_no_employer_named_do_not_share_a_cap():
+    rows = [dict(r(i, f"u{i}"), company="") for i in range(1, 5)]
+    assert len(nb.next_batch(rows, set(), n=10, per_company=2)) == 4
+
+
+def test_a_cap_of_zero_means_no_cap_as_on_the_command_line():
+    rows = [dict(r(i, f"b{i}"), company="Binance") for i in range(1, 4)]
+    assert len(nb.next_batch(rows, set(), n=10, per_company=0)) == 3
+    assert len(nb.next_batch(rows, set(), n=10, per_company=-1)) == 3
