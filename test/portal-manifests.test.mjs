@@ -11,7 +11,10 @@ const liveReconManifests = [
   'examples/opportunities/global-ai-finance-2026-policy-lab.json',
   'examples/opportunities/innoserve-2026-hardware-splicer.json',
   'examples/opportunities/aws-community-day-taiwan-2026-hardware-splicer.json',
-  'examples/opportunities/openai-researcher-access-hardware-splicer.json',
+  'examples/opportunities/openai-researcher-access-hardware-splicer.json'
+];
+
+const manualSubmitManifests = [
   'examples/opportunities/anthropic-external-researcher-access-hardware-splicer.json'
 ];
 
@@ -41,6 +44,19 @@ for (const manifestPath of liveReconManifests) {
     assert.equal(opportunity.mode, 'inspect');
     assert.equal(opportunity.execution_state, 'PORTAL_RECON_REQUIRED');
     assert.deepEqual(opportunity.field_map, {});
+  });
+}
+
+for (const manifestPath of manualSubmitManifests) {
+  test(`manual-submit manifest validates: ${manifestPath}`, async () => {
+    const opportunity = await loadOpportunity(manifestPath);
+    const validation = validateOpportunity(opportunity);
+    assert.equal(validation.ok, true, validation.errors.join('\n'));
+    assert.equal(opportunity.mode, 'inspect');
+    assert.equal(opportunity.execution_state, 'HUMAN_SUBMIT_READY');
+    assert.equal(opportunity.manual_only, true);
+    assert.deepEqual(opportunity.field_map, {});
+    assert.ok(opportunity.human_required.includes('final_submit'));
   });
 }
 
@@ -100,4 +116,11 @@ test('Anthropic ERAP manifest uses the application linked by the official help p
   assert.equal(opportunity.route_evidence.official_google_form_link_verified, true);
   assert.equal(opportunity.route_evidence.final_submission_copy_ready, true);
   assert.equal(opportunity.route_evidence.form_fields_verified, false);
+  assert.equal(opportunity.route_evidence.manual_submission_ready, true);
+  assert.equal(opportunity.route_evidence.default_credit_award_usd, 1000);
+  assert.equal(opportunity.route_evidence.review_cadence, 'first Monday of each month');
+  assert.equal(opportunity.route_evidence.next_nominal_review_date, '2026-10-05');
+  assert.match(opportunity.manual_submission_runbook, /ANTHROPIC_ERAP_MANUAL_SUBMISSION_2026-09-23\.md$/);
+  assert.equal(opportunity.packet_requirements.find((r) => r.id === 'live_form_map').status, 'HUMAN_AT_ENTRY');
+  assert.equal(opportunity.packet_requirements.find((r) => r.id === 'model_freshness_gate').status, 'HUMAN_DECISION_REQUIRED');
 });
