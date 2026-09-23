@@ -162,7 +162,7 @@ test('InnoServe HS route fails closed on the 2026-08-27 model-origin declaration
   const opportunity = await loadOpportunity('examples/opportunities/innoserve-2026-hardware-splicer.json');
   const validation = validateOpportunity(opportunity);
   assert.equal(validation.ok, true, validation.errors.join('\n'));
-  assert.equal(opportunity.execution_state, 'COMPLIANCE_CLARIFICATION_REQUIRED');
+  assert.equal(opportunity.execution_state, 'RESEARCH_ONLY');
   assert.equal(opportunity.direct_control, false);
   assert.equal(opportunity.route_evidence.masters_student_eligible, true);
   assert.equal(opportunity.route_evidence.advisor_requirement_verified, true);
