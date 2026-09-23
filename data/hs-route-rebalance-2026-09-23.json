@@ -71,7 +71,20 @@
       "compliance_state": "BLOCKING_CLARIFICATION",
       "deadline": "2026-10-05 16:00 Asia/Taipei",
       "known_conflict": "HS repository contains historical optional Qwen/DeepSeek integrations/evaluation artifacts.",
-      "next_external_action": "Ask organizer whether a separately evidenced clean competition build is eligible; do not sign the declaration without an unambiguous answer."
+      "next_external_action": "Send the prepared clarification to both official organizer emails; keep the route blocked until an unambiguous organizer reply and the separate 1-2 school-adviser gate clear.",
+      "contact_state": "CONTACT_READY_NOT_SENT",
+      "clarification_runbook": "docs/execution/INNOSERVE_2026_HS_MODEL_ORIGIN_CLARIFICATION_2026-09-23.md",
+      "organizer_contacts": {
+        "names": [
+          "李小姐",
+          "蔡先生"
+        ],
+        "emails": [
+          "maris@mail.tca.org.tw",
+          "yuanhan@mail.tca.org.tw"
+        ],
+        "phone": "02-2577-4249 ext. 925 / 879"
+      }
     },
     "anthropic-ai-for-science-general-2026": {
       "decision": "HS_AFTER_EVIDENCE",
@@ -137,14 +150,15 @@
   "synced_at": "2026-09-23",
   "synced_against": {
     "hardware_splicer_main": "077c26d6e95973a87b02cef30ec0d6c02b3b907b",
-    "gauntlet_main": "ed229d8fcb589a74c5b32720d9bcc03c09bc4b6a",
+    "gauntlet_main": "79470b0794722534c73e3cd3df654c19310c6829",
     "hardware_splicer_frontend_pr": "Spectating101/hardware-splicer#104 (merged)",
     "hardware_splicer_physical_contract_pr": "Spectating101/hardware-splicer#106 (merged)",
     "hardware_splicer_provider_evaluator_pr": "Spectating101/hardware-splicer#108 (merged)",
     "gauntlet_mhs_pr": "Spectating101/gauntlet-blowback#63 (merged)",
     "gauntlet_date_pr": "Spectating101/gauntlet-blowback#64 (merged)",
     "gauntlet_ai_for_science_pr": "Spectating101/gauntlet-blowback#66 (merged)",
-    "gauntlet_innoserve_pr": "Spectating101/gauntlet-blowback#67 (merged)"
+    "gauntlet_innoserve_pr": "Spectating101/gauntlet-blowback#67 (merged)",
+    "gauntlet_innoserve_contact_pr": "Spectating101/gauntlet-blowback#69 (merged)"
   },
   "current_program_summary": {
     "internal_engineering": "No new speculative HS feature lane is authorized.",
@@ -153,7 +167,7 @@
       "erap": "HUMAN_SUBMIT_READY",
       "mhs": "RESEARCH_ONLY_WAITING_ON_PHYSICAL_SUBJECT",
       "date_2027": "PACKET_READY_WAITING_ON_EMPIRICAL_RESULT",
-      "innoserve": "RESEARCH_ONLY_BLOCKED_ON_COMPLIANCE_CLARIFICATION_AND_ADVISER",
+      "innoserve": "CONTACT_READY_NOT_SENT_WAITING_ON_ORGANIZER_REPLY_AND_ADVISER",
       "ai_for_science": "RESEARCH_ONLY_WAITING_ON_EVIDENCE_CONSENT_ACCOUNT_AND_BUDGET"
     }
   }
