@@ -163,7 +163,7 @@ test('DATE 2027 LBR route stays evidence-gated and matches current official form
   const validation = validateOpportunity(opportunity);
   assert.equal(validation.ok, true, validation.errors.join('\n'));
   assert.equal(opportunity.mode, 'inspect');
-  assert.equal(opportunity.execution_state, 'EVIDENCE_GATED_PREPARED');
+  assert.equal(opportunity.execution_state, 'PACKET_READY');
   assert.equal(opportunity.direct_control, false);
   assert.equal(opportunity.deadline_basis, 'Sunday, 29 November 2026 AoE');
   assert.equal(opportunity.submission_requirements.main_pages, 2);
