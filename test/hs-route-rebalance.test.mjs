@@ -59,8 +59,14 @@ test('HS-native Gauntlet routes carry their current execution gates', async () =
   assert.equal(innoserve.decision, 'HS_CONDITIONAL');
   assert.equal(innoserve.execution_state, 'RESEARCH_ONLY');
   assert.equal(innoserve.compliance_state, 'BLOCKING_CLARIFICATION');
+  assert.equal(innoserve.contact_state, 'CONTACT_READY_NOT_SENT');
+  assert.deepEqual(innoserve.organizer_contacts.emails, [
+    'maris@mail.tca.org.tw',
+    'yuanhan@mail.tca.org.tw',
+  ]);
+  assert.match(innoserve.clarification_runbook, /INNOSERVE_2026_HS_MODEL_ORIGIN_CLARIFICATION_2026-09-23\.md$/);
   assert.match(innoserve.known_conflict, /Qwen\/DeepSeek/i);
-  assert.match(innoserve.next_external_action, /do not sign/i);
+  assert.match(innoserve.next_external_action, /both official organizer emails/i);
 
   const science = overlay.routes['anthropic-ai-for-science-general-2026'];
   assert.equal(science.decision, 'HS_AFTER_EVIDENCE');
@@ -86,6 +92,6 @@ test('program summary keeps external proof ahead of speculative feature growth',
   assert.equal(overlay.current_program_summary.external_conversion.erap, 'HUMAN_SUBMIT_READY');
   assert.match(overlay.current_program_summary.external_conversion.mhs, /WAITING_ON_PHYSICAL_SUBJECT/);
   assert.match(overlay.current_program_summary.external_conversion.date_2027, /WAITING_ON_EMPIRICAL_RESULT/);
-  assert.match(overlay.current_program_summary.external_conversion.innoserve, /COMPLIANCE_CLARIFICATION/);
+  assert.match(overlay.current_program_summary.external_conversion.innoserve, /CONTACT_READY_NOT_SENT/);
   assert.match(overlay.current_program_summary.external_conversion.ai_for_science, /EVIDENCE_CONSENT_ACCOUNT_AND_BUDGET/);
 });
