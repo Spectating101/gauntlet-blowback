@@ -44,7 +44,7 @@ This section is synchronized to the individual execution manifests as of the 202
 
 ### HS conditional / blocked external route
 
-- **InnoServe Industrial AI** — **RESEARCH_ONLY / COMPLIANCE CLARIFICATION REQUIRED**. Gauntlet #67 records the 2026-08-27 model-origin declaration conflict with historical optional Qwen/DeepSeek work in the broader HS repo. Ask the organizer whether an auditable clean competition build is eligible; do not sign without a clear answer. The separate 1–2 school-adviser requirement must also clear.
+- **InnoServe Industrial AI** — **RESEARCH_ONLY / CONTACT_READY_NOT_SENT**. Gauntlet #67 records the 2026-08-27 model-origin declaration conflict with historical optional Qwen/DeepSeek work in the broader HS repo; Gauntlet #69 binds that gate to the official organizer contacts and a paste-ready clarification that discloses the historical experiments. Send that clarification to both published organizer emails, but keep the route blocked until an unambiguous organizer reply and the separate 1–2 school-adviser requirement both clear.
 
 ### HS after new evidence + consent
 
