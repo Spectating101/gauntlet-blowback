@@ -6,9 +6,9 @@
   "auth_scope": "anthropic-research-access",
   "source_url": "https://support.claude.com/en/articles/9125743-what-is-the-external-researcher-access-program",
   "registration_url": "https://forms.gle/pZYC8f6qYqSKvRWn9",
-  "recon_stage": "registration",
+  "recon_stage": "manual_submission",
   "mode": "inspect",
-  "execution_state": "PORTAL_RECON_REQUIRED",
+  "execution_state": "HUMAN_SUBMIT_READY",
   "direct_control": true,
   "profile": "../profiles/christ.json",
   "project": "../projects/hardware-splicer.json",
@@ -46,13 +46,18 @@
     },
     {
       "id": "project_window",
-      "description": "Set exact project start/end dates in the live application while preserving the bounded evaluation scope.",
-      "status": "LIVE_FORM_VALUE_REQUIRED"
+      "description": "Set exact project start/end dates only if requested by the live form; human-supplied value.",
+      "status": "HUMAN_AT_ENTRY"
     },
     {
       "id": "live_form_map",
-      "description": "Official program page currently links a Google Form. Inspect it and capture exact team/research-topic fields and limits before prepare mode.",
-      "status": "PORTAL_RECON_REQUIRED"
+      "description": "Exact Google Form labels/limits remain unverified. Human maps live prompts to the semantic manual runbook at entry time; Gauntlet must not invent field labels.",
+      "status": "HUMAN_AT_ENTRY"
+    },
+    {
+      "id": "model_freshness_gate",
+      "description": "Opus 5.5 launched 2026-09-22 after the frozen packet. Preserve Sonnet 5 + Opus 5 for comparability or explicitly version the protocol before scored execution; never silently mix cohorts.",
+      "status": "HUMAN_DECISION_REQUIRED"
     }
   ],
   "compliance_checks": [
@@ -64,13 +69,26 @@
     "If Claude Fable 5.1 is added later, review its then-current Covered Model data-retention requirements before sending evaluation data."
   ],
   "route_evidence": {
-    "verified_at": "2026-09-07",
+    "verified_at": "2026-09-23",
     "program_scope_verified": true,
     "review_cadence_verified": true,
     "official_google_form_link_verified": true,
     "model_and_pricing_snapshot_verified": true,
     "final_submission_copy_ready": true,
-    "form_fields_verified": false
+    "form_fields_verified": false,
+    "current_program_terms_verified": true,
+    "default_credit_award_usd": 1000,
+    "review_cadence": "first Monday of each month",
+    "next_nominal_review_date": "2026-10-05",
+    "manual_submission_ready": true,
+    "latest_model_change_noted": "Claude Opus 5.5 released 2026-09-22"
   },
-  "human_required": ["login", "eligibility_attestation", "terms_acceptance", "final_submit"]
+  "human_required": [
+    "login",
+    "eligibility_attestation",
+    "terms_acceptance",
+    "final_submit"
+  ],
+  "manual_only": true,
+  "manual_submission_runbook": "../../docs/execution/ANTHROPIC_ERAP_MANUAL_SUBMISSION_2026-09-23.md"
 }
