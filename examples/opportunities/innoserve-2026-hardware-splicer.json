@@ -8,8 +8,8 @@
   "recon_stage": "source",
   "deadline": "2026-10-05T16:00:00+08:00",
   "mode": "inspect",
-  "execution_state": "PORTAL_RECON_REQUIRED",
-  "direct_control": true,
+  "execution_state": "COMPLIANCE_CLARIFICATION_REQUIRED",
+  "direct_control": false,
   "profile": "../profiles/christ.json",
   "project": "../projects/hardware-splicer.json",
   "fields": {},
@@ -26,7 +26,7 @@
     {
       "id": "signed_declaration_privacy_portrait",
       "description": "Signed competition declaration plus personal-data notice and portrait consent form.",
-      "status": "HUMAN_REQUIRED"
+      "status": "BLOCKED_ON_MODEL_ORIGIN_CLARIFICATION"
     },
     {
       "id": "student_status_evidence",
@@ -47,18 +47,61 @@
       "id": "category_specific_files",
       "description": "Additional files only when required by the selected category or special award.",
       "status": "VERIFY_FOR_CATEGORY"
+    },
+    {
+      "id": "school_advisers",
+      "description": "Industrial AI Innovation requires 1-2 school advisers. Confirm actual adviser participation before registration.",
+      "status": "HUMAN_BLOCKING_DEPENDENCY"
+    },
+    {
+      "id": "model_origin_compliance",
+      "description": "Resolve the updated 2026-08-27 declaration against HS historical Qwen/DeepSeek usage before signing or preparing a competition-specific clean build.",
+      "status": "BLOCKING_CLARIFICATION"
     }
   ],
   "compliance_checks": [
+    "do not sign the 2026-08-27 model-origin declaration until its scope is clarified for HS historical optional Qwen/DeepSeek experiments",
+    "if permitted, bind the submitted competition build to a clean runtime/artifact inventory and do not use prohibited models in preparation, inference, demo, or submitted execution evidence",
     "reviewed materials and video must not reveal school logo, school name, or adviser name",
     "YouTube account name used for the submission must not reveal school identity",
-    "team/adviser requirements must be verified for the selected category before preparation"
+    "ADIAI requires 1-2 school advisers",
+    "system overview must be Word, BiauKai 14pt, <=5 pages, <=4MB; video <=3 minutes; team photo 16:9 >1280x720 and <=2MB"
   ],
   "route_evidence": {
-    "verified_at": "2026-08-26",
+    "verified_at": "2026-09-23",
     "source_and_packet_rules_verified": true,
     "registration_endpoint_verified": false,
-    "form_fields_verified": false
+    "form_fields_verified": false,
+    "advisor_requirement_verified": true,
+    "advisor_count_required": "1-2",
+    "masters_student_eligible": true,
+    "deadline_verified": true,
+    "deadline_local": "2026-10-05 16:00 Asia/Taipei",
+    "august_27_declaration_update_verified": true,
+    "hs_repo_contains_historical_qwen_deepseek_usage": true,
+    "declaration_scope_for_historical_optional_model_usage_verified": false
   },
-  "human_required": ["login", "eligibility_attestation", "advisor_confirmation", "originality_attestation", "terms_acceptance", "final_submit"]
+  "human_required": [
+    "login",
+    "eligibility_attestation",
+    "advisor_confirmation",
+    "originality_attestation",
+    "terms_acceptance",
+    "final_submit"
+  ],
+  "compliance_gate": {
+    "state": "BLOCKING_CLARIFICATION",
+    "official_update": "2026-08-27 declaration clause adds a no-China-origin / no-China-backed open-source-model condition, including API/MCP-mediated training, inference or related use.",
+    "hs_conflict_surface": [
+      "historical Qwen model integrations and trial artifacts exist in the Hardware-Splicer repository",
+      "historical DeepSeek model integrations and live-evaluation artifacts exist in the Hardware-Splicer repository"
+    ],
+    "question_for_organizer": "If a submitted competition build of Hardware-Splicer does not use Qwen, DeepSeek, or other China-origin/China-backed models at all, but the larger repository contains historical optional experiments with those models that are not part of the competition build, can the team truthfully sign the updated declaration?",
+    "decision_rule": {
+      "organizer_confirms_clean_competition_build_is_eligible": "Proceed only with a separately evidenced competition build whose runtime, demo, documentation, traces and submitted artifacts exclude the prohibited model use.",
+      "organizer_says_historical_use_disqualifies_derived_project": "Do not submit Hardware-Splicer to InnoServe; reallocate the route.",
+      "no_clear_answer_before_internal_cutoff": "Do not sign the declaration; hold or reallocate the route."
+    }
+  },
+  "clarification_runbook": "docs/execution/INNOSERVE_2026_HS_MODEL_ORIGIN_CLARIFICATION_2026-09-23.md"
 }
