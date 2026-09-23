@@ -4,6 +4,19 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import next_batch as nb
 
+
+def test_review_holds_skip_roles_until_reopened(tmp_path):
+    review = tmp_path / "review.jsonl"
+    review.write_bytes(b'{"url":"a","status":"HOLD"}\n'
+                       b'{"url":"b","status":"BLOCKED"}\n'
+                       b'{"url":"a","status":"READY"}\n'
+                       b'{"url":[],"status":"HOLD"}\n'
+                       b'broken\n')
+    assert nb.load_review_holds(review) == {"b"}
+    rows = [{"url": "a", "company": "A", "rank": "1", "reachable": "1"},
+            {"url": "b", "company": "B", "rank": "2", "reachable": "1"}]
+    assert [row["url"] for row in nb.next_batch(rows, set(), held=nb.load_review_holds(review))] == ["a"]
+
 FIELDS = ["rank","fit","reachable","annual_twd","pay_stated","pay_basis","plausible","company","title","location","url"]
 
 def queue(tmp_path, rows):

@@ -234,6 +234,24 @@ def test_cli_marks_sent_and_reports_duplicate(tmp_path):
     assert second.stdout.strip() == "already recorded"
 
 
+def test_cli_review_hold_and_ready_change_next_batch(tmp_path):
+    script = ROOT / "scripts" / "next_batch.py"
+    queue = tmp_path / "queue.csv"
+    review = tmp_path / "review.jsonl"
+    write_queue(queue, [row(1, "https://one.example", company="One"),
+                        row(2, "https://two.example", company="Two")])
+
+    def call(*args):
+        return subprocess.run([sys.executable, str(script), "--queue", str(queue),
+                               "--review", str(review), "--ledger", str(tmp_path / "sent.jsonl"),
+                               *args], cwd=ROOT, capture_output=True, text=True, check=True).stdout
+
+    call("--mark-review", "HOLD", "--url", "https://one.example", "--reason", "live timing mismatch")
+    assert "https://two.example" in call("--n", "1")
+    call("--mark-review", "READY", "--url", "https://one.example", "--reason", "timing verified")
+    assert "https://one.example" in call("--n", "1")
+
+
 def test_cli_prints_rendered_next_batch(tmp_path):
     script = ROOT / "scripts" / "next_batch.py"
     queue = tmp_path / "queue.csv"
