@@ -10,15 +10,15 @@
   "deadline": "ROLLING",
   "deadline_note": "Partner outreach route; no grant deadline or funding award is implied.",
   "mode": "inspect",
-  "execution_state": "PORTAL_RECON_REQUIRED",
+  "execution_state": "COPY_REVISED_RESTAGE_REQUIRED",
   "direct_control": true,
   "profile": "../profiles/christ.json",
   "project": "../projects/nocturnal.json",
   "fire_packet": "../fire-packets/tfc-nocturnal-pilot-2026.json",
-  "packet_revision": "56edefd623f7a71a58dff878bb35b1253c89e02e",
-  "packet_source": "https://github.com/Spectating101/gauntlet-blowback/blob/main/docs/nocturnal-conversion/TFC_PILOT_OUTREACH.md",
-  "final_copy_revision": "8af0fb959f049c954abbb0f3d7c1b8d79366aad5",
-  "final_copy_source": "https://github.com/Spectating101/gauntlet-blowback/blob/main/examples/fire-packets/tfc-nocturnal-pilot-2026.json",
+  "packet_revision": "d09e4a26269955855e2a2cca76b5a68e02fd532f",
+  "packet_source": "https://github.com/Spectating101/gauntlet-blowback/blob/nocturnal/tfc-staged-2026-09-17/docs/nocturnal-conversion/TFC_PILOT_OUTREACH.md",
+  "final_copy_revision": "07912dd09c29b866a4bb09e993748f4fd3b01cde",
+  "final_copy_source": "https://github.com/Spectating101/gauntlet-blowback/blob/nocturnal/tfc-staged-2026-09-17/examples/fire-packets/tfc-nocturnal-pilot-2026.json",
   "fields": {
     "name": "$profile.name",
     "email": "$profile.email",
@@ -26,17 +26,27 @@
     "project_name": "$project.name",
     "project_repo": "$project.repo_url"
   },
-  "field_map": {},
+  "field_map": {
+    "name": "我們如何稱呼您？",
+    "email": "電子郵件地址：*",
+    "message": "留下您的訊息*",
+    "final_submit": "送出"
+  },
   "uploads": [],
   "packet_requirements": [
     {
       "id": "live_contact_form_map",
-      "description": "Inspect the current TFC contact surface and map name/email/subject/message fields without changing the outreach copy unless a real field limit requires compression.",
-      "status": "PORTAL_RECON_REQUIRED"
+      "description": "Current TFC contact surface is already mapped: name, email, message, final submit.",
+      "status": "VERIFIED_2026_09_17"
     },
     {
-      "id": "final_send",
-      "description": "Final Send remains human-protected. Save/copy the completed message and stop before irreversible transmission.",
+      "id": "revised_copy_restage",
+      "description": "Restage the revised Traditional Chinese copy that now states the longitudinal-reconstruction problem, Nocturnal solution, Now/Read/Research interface and canonical repo/evaluator references. Do not reuse the superseded Edition/RC1 hosted preview.",
+      "status": "REQUIRED"
+    },
+    {
+      "id": "final_submit",
+      "description": "After the revised copy is restaged and inspected, final Send remains human-protected.",
       "status": "HUMAN_GATE"
     },
     {
@@ -49,19 +59,25 @@
     "Do not state or imply TFC endorsement, partnership, funding or adoption before affirmative agreement.",
     "Do not propose private-person surveillance, harassment or punitive profiling as the pilot use case.",
     "Do not claim external workflow improvement until a real measured pilot result exists.",
-    "Preserve the negative-result-acceptable framing; this is an evaluation request, not a marketing validation request."
+    "Preserve the negative-result-acceptable framing; this is an evaluation request, not a marketing validation request.",
+    "Do not link the superseded Edition/RC1 Vercel preview as though it were the canonical Now / Read / Research interface."
   ],
   "route_evidence": {
     "verified_at": "2026-09-17",
     "official_contact_surface_verified": true,
-    "final_submission_copy_ready": true,
-    "form_fields_verified": false,
+    "form_fields_verified": true,
+    "submit_control_verified": "送出",
+    "cloudflare_widget_present": true,
+    "prior_copy_staged": true,
+    "prior_stage_receipt": "../../docs/nocturnal-conversion/receipts/TFC_CONTACT_FORM_STAGED_2026-09-17.md",
+    "copy_revised_after_prior_stage": true,
+    "revised_copy_staged": false,
+    "message_transmitted": false,
     "partner_willingness": false,
     "pilot_case_selected": false
   },
   "human_required": [
     "final_submit",
-    "final_send",
     "partner_commitment",
     "pilot_case_selection"
   ]
