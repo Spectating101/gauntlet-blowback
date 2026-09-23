@@ -124,3 +124,35 @@ test('Anthropic ERAP manifest uses the application linked by the official help p
   assert.equal(opportunity.packet_requirements.find((r) => r.id === 'live_form_map').status, 'HUMAN_AT_ENTRY');
   assert.equal(opportunity.packet_requirements.find((r) => r.id === 'model_freshness_gate').status, 'HUMAN_DECISION_REQUIRED');
 });
+
+
+test('Anthropic MHS route is bound to the SPI physical-proof subject without widening authority', async () => {
+  const opportunity = await loadOpportunity('examples/opportunities/anthropic-mhs-preview-hardware-splicer.json');
+  assert.equal(opportunity.execution_state, 'RESEARCH_ONLY');
+  assert.equal(opportunity.direct_control, false);
+  assert.equal(opportunity.device_plan.subject, 'hardware-splicer spi_flash_adapter_v1');
+  assert.equal(opportunity.device_plan.readiness, 'WAITING_FOR_REAL_PHYSICAL_SUBJECT');
+  assert.equal(opportunity.device_plan.tracking, 'Spectating101/hardware-splicer#105');
+  assert.equal(opportunity.device_plan.first_allowed_functional_action.command, '0x9F');
+  assert.equal(opportunity.device_plan.first_allowed_functional_action.spi_mode, 0);
+  assert.equal(opportunity.device_plan.first_allowed_functional_action.frequency_hz, 5000000);
+  assert.equal(opportunity.device_plan.first_allowed_functional_action.write_operation, false);
+  assert.ok(opportunity.device_plan.explicitly_unavailable_initially.includes('program'));
+  assert.ok(opportunity.device_plan.explicitly_unavailable_initially.includes('erase'));
+  assert.ok(opportunity.device_plan.explicitly_unavailable_initially.includes('power-on authority'));
+  assert.equal(opportunity.route_evidence.programmable_device_surface_defined, true);
+  assert.equal(opportunity.route_evidence.physical_device_available, false);
+  assert.equal(opportunity.route_evidence.individual_applicant_class_verified, false);
+  assert.equal(
+    opportunity.packet_requirements.find((r) => r.id === 'programmable_device').status,
+    'WAITING_ON_HS_105_PHYSICAL_SUBJECT'
+  );
+  assert.equal(
+    opportunity.packet_requirements.find((r) => r.id === 'applicant_class').status,
+    'HUMAN_AT_ENTRY'
+  );
+  assert.match(
+    opportunity.packet_requirements.find((r) => r.id === 'mhs_spi_safety_plan').execution_ref,
+    /ANTHROPIC_MHS_SPI_EVALUATION_2026-09-23\.md$/
+  );
+});
