@@ -67,7 +67,8 @@ For ADIAI:
 
 ## Current HS route state
 
-`COMPLIANCE_CLARIFICATION_REQUIRED`
+Gauntlet execution state: `RESEARCH_ONLY`  
+Route-specific blocking gate: `COMPLIANCE_CLARIFICATION_REQUIRED`
 
 This is not a downgrade of Hardware-Splicer. It is a route-specific external rule introduced after the original packet was prepared.
 
