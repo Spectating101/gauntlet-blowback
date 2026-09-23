@@ -28,7 +28,7 @@
     "payment",
     "final_submit"
   ],
-  "execution_state": "EVIDENCE_GATED_PREPARED",
+  "execution_state": "PACKET_READY",
   "deadline_basis": "Sunday, 29 November 2026 AoE",
   "submission_requirements": {
     "paper_type": "Late Breaking Results extended abstract",
