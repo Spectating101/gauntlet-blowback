@@ -27,6 +27,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -43,11 +44,42 @@ FIELDS = ("rank", "fit", "reachable", "annual_twd", "pay_stated", "pay_basis", "
           "company", "title", "location", "url")
 
 
+# Longest first, so 股份有限公司 is removed whole rather than leaving 股份.
+_LEGAL_SUFFIXES = sorted(
+    ("股份有限公司", "有限公司", "公司", "co., ltd.", "co.,ltd.", "co. ltd", "ltd.", "ltd",
+     "inc.", "inc", "corp.", "corp", "limited", "llc"),
+    key=len, reverse=True)
+_LATIN_BRAND_THEN_CJK = re.compile(r"^([a-z0-9][a-z0-9 .&-]*?) +[㐀-鿿豈-﫿]")
+
+
+def company_key(name) -> str:
+    """One key per company, however the boards spell it.
+
+    The same employer appears as "GliaCloud" and "GliaCloud 集雅科技", or with and
+    without 股份有限公司, which listed one role twice in the queue.
+    """
+    if not name:
+        return ""
+    key = re.sub(r"\s+", " ", str(name).lower()).strip()
+    for suffix in _LEGAL_SUFFIXES:
+        if not key.endswith(suffix) or key == suffix:
+            continue
+        rest = key[: -len(suffix)]
+        # A Latin suffix must stand apart ("acme inc"), or "bigcorp" would lose
+        # "corp". CJK suffixes are written joined to the name, so they need no gap.
+        if suffix.isascii() and rest[-1:] not in (" ", ",", "."):
+            continue
+        key = rest.rstrip(" ,.")
+        break
+    brand = _LATIN_BRAND_THEN_CJK.match(key)
+    return brand.group(1).strip() if brand else key
+
+
 def dedupe(rows: list[dict]) -> list[dict]:
     """One row per (company, title). The same role appears on several boards."""
     seen: dict[tuple[str, str], dict] = {}
     for row in rows:
-        key = (str(row.get("company", "")).strip().lower(),
+        key = (company_key(row.get("company")),
                str(row.get("title", "")).strip().lower())
         best = seen.get(key)
         if best is None or (row.get("fit") or 0) > (best.get("fit") or 0):

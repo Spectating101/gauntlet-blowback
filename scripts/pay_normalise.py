@@ -9,6 +9,9 @@ stated=False and the caller decides whether to trust it.
 
 A zero is treated the same way: boards emit "0~0" as a placeholder for an
 empty field, and no job in this corpus pays nothing.
+
+Bases: "annual", "monthly", "daily" (250 working days), "hourly" (2,080 hours),
+"disclosure" (a legal floor, stated=False) and "none" (no usable figure).
 """
 
 from __future__ import annotations
@@ -16,6 +19,7 @@ from __future__ import annotations
 import re
 
 HOURS_PER_YEAR = 2080
+WORKING_DAYS_PER_YEAR = 250
 MONTHS_PER_YEAR = 12
 
 NONE = {"annual_twd": None, "basis": "none", "stated": False}
@@ -38,15 +42,17 @@ _PLAUSIBLE_MAX = 20_000_000
 _DISCLOSURE = re.compile(r"經常性薪資達\s*([\d.]+)\s*萬")
 _NUMBER = re.compile(r"\d[\d,]*(?:\.\d+)?")
 
-# Basis markers, checked in this order. Hourly is checked before monthly so that
-# a string carrying both a 時薪 marker and a stray 月 does not annualise wrongly.
+# Basis markers, checked in this order. Hourly and daily are checked before
+# monthly and annual so that a string carrying 時薪 or 日薪 and a stray 月 does
+# not annualise wrongly.
 _MARKERS = (
     ("hourly", ("時薪", "hourly", "per hour", "/hr")),
+    ("daily", ("日薪", "daily", "per day", "/day")),
     ("annual", ("年薪", "annual", "per year", "/yr", "yearly")),
     ("monthly", ("月薪", "monthly", "per month", "/mo")),
 )
 
-_PER_YEAR = {"hourly": HOURS_PER_YEAR, "annual": 1, "monthly": MONTHS_PER_YEAR}
+_PER_YEAR = {"hourly": HOURS_PER_YEAR, "daily": WORKING_DAYS_PER_YEAR, "annual": 1, "monthly": MONTHS_PER_YEAR}
 
 
 def _basis(text: str) -> str | None:

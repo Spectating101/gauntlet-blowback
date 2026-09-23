@@ -28,3 +28,4 @@ scripts/__pycache__/
 .council/
 .council.yaml
 __pycache__/
+data/*.local.jsonl
