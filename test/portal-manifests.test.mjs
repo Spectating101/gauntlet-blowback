@@ -9,7 +9,6 @@ const FIRE_COPY_REVISION = '328b80b4ca720a04e4bbdfabc481f4dfb68c548b';
 const liveReconManifests = [
   'examples/opportunities/taia-ai-creative-design-2026.json',
   'examples/opportunities/global-ai-finance-2026-policy-lab.json',
-  'examples/opportunities/innoserve-2026-hardware-splicer.json',
   'examples/opportunities/aws-community-day-taiwan-2026-hardware-splicer.json',
   'examples/opportunities/openai-researcher-access-hardware-splicer.json'
 ];
