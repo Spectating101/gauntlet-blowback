@@ -19,6 +19,8 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+_KEY_ENV = ("JEV_API_KEY", "TYPESAFE_API_KEY", *(f"JEV_API_KEY_{n}" for n in range(1, 6)))
+
 # Recorded from the live api.typesafe.ai/v1/systemone endpoint on 2026-09-22,
 # not hand-written: a noul answer carries a bare probability and no confidence,
 # score is a 0-indexed float with the legend the service echoes back, and the
@@ -53,6 +55,17 @@ class Handler(BaseHTTPRequestHandler):
 
     def log_message(self, *args):
         pass
+
+
+def _clear_keys(monkeypatch):
+    for name in _KEY_ENV:
+        monkeypatch.delenv(name, raising=False)
+
+
+@pytest.fixture(autouse=True)
+def isolate_from_repo_dotenv(monkeypatch, tmp_path):
+    """Point JEV_ENV_FILE at a missing path so tests never open checkout .env.local."""
+    monkeypatch.setenv("JEV_ENV_FILE", str(tmp_path / "isolated.env"))
 
 
 @pytest.fixture
@@ -192,3 +205,103 @@ def test_the_numbered_keys_outrank_the_vendor_alias(server, monkeypatch):
         jev.ask(state={"x": 1}, questions=q)
     used = {c["auth"].split()[-1] for c in Handler.calls}
     assert len(used) == 5, f"rotation must survive the alias, got {used}"
+
+
+def test_default_env_file_is_repo_root_dotenv_local(monkeypatch):
+    monkeypatch.delenv("JEV_ENV_FILE", raising=False)
+    jev = fresh()
+    assert jev._env_file_path() == ROOT / ".env.local"
+
+
+def test_jev_env_file_selects_another_file(monkeypatch, tmp_path, server):
+    _clear_keys(monkeypatch)
+    chosen = tmp_path / "alt.env"
+    chosen.write_text("JEV_API_KEY=from-alt-file\nOTHER=ignore-me\n", encoding="utf-8")
+    monkeypatch.setenv("JEV_ENV_FILE", str(chosen))
+    jev = fresh()
+    assert jev._env_file_path() == chosen
+    assert jev.available() is True
+    jev.ask(state={"x": 1}, questions={"q": jev.boolean("is it?")})
+    assert Handler.calls[0]["auth"].endswith("from-alt-file")
+    assert os.environ.get("JEV_API_KEY") in (None, "")
+    assert os.environ.get("OTHER") in (None, "")
+
+
+def test_process_env_outranks_the_env_file(monkeypatch, tmp_path, server):
+    env_file = tmp_path / "jev.env"
+    env_file.write_text("JEV_API_KEY=from-file\nJEV_API_KEY_1=file-1\n", encoding="utf-8")
+    monkeypatch.setenv("JEV_ENV_FILE", str(env_file))
+    monkeypatch.setenv("JEV_API_KEY", "from-process")
+    jev = fresh()
+    jev.ask(state={"x": 1}, questions={"q": jev.boolean("is it?")})
+    assert Handler.calls[0]["auth"].endswith("from-process")
+
+
+def test_process_numbered_keys_outrank_file_primary(monkeypatch, tmp_path, server):
+    """A file JEV_API_KEY must not replace a complete process numbered set."""
+    monkeypatch.delenv("JEV_API_KEY", raising=False)
+    for n in range(1, 6):
+        monkeypatch.setenv(f"JEV_API_KEY_{n}", f"env-{n}")
+    env_file = tmp_path / "jev.env"
+    env_file.write_text("JEV_API_KEY=from-file\n", encoding="utf-8")
+    monkeypatch.setenv("JEV_ENV_FILE", str(env_file))
+    jev = fresh()
+    q = {"r": jev.boolean("is it?")}
+    for _ in range(5):
+        jev.ask(state={"x": 1}, questions=q)
+    used = [c["auth"].split()[-1] for c in Handler.calls]
+    assert used == [f"env-{n}" for n in range(1, 6)]
+    assert "from-file" not in used
+
+
+def test_numbered_keys_from_file_rotate(monkeypatch, tmp_path, server):
+    _clear_keys(monkeypatch)
+    env_file = tmp_path / "jev.env"
+    env_file.write_text(
+        "\n".join(f"JEV_API_KEY_{n}=file-{n}" for n in range(1, 6)) + "\n",
+        encoding="utf-8",
+    )
+    monkeypatch.setenv("JEV_ENV_FILE", str(env_file))
+    jev = fresh()
+    q = {"reachable": jev.boolean("is it?")}
+    for _ in range(6):
+        jev.ask(state={"x": 1}, questions=q)
+    used = [c["auth"].split()[-1] for c in Handler.calls]
+    assert used[:5] == [f"file-{n}" for n in range(1, 6)]
+    assert used[0] == used[5], "rotation wraps around"
+
+
+def test_numbered_file_keys_outrank_typesafe(monkeypatch, tmp_path, server):
+    _clear_keys(monkeypatch)
+    env_file = tmp_path / "jev.env"
+    lines = [f"JEV_API_KEY_{n}=file-{n}" for n in range(1, 6)]
+    lines.append("TYPESAFE_API_KEY=vendor-file")
+    env_file.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    monkeypatch.setenv("JEV_ENV_FILE", str(env_file))
+    jev = fresh()
+    q = {"r": jev.boolean("is it?")}
+    for _ in range(5):
+        jev.ask(state={"x": 1}, questions=q)
+    used = {c["auth"].split()[-1] for c in Handler.calls}
+    assert used == {f"file-{n}" for n in range(1, 6)}
+    assert "vendor-file" not in used
+
+
+def test_missing_env_file_and_keys_stay_unconfigured(monkeypatch, tmp_path, server):
+    _clear_keys(monkeypatch)
+    monkeypatch.setenv("JEV_ENV_FILE", str(tmp_path / "missing.env"))
+    jev = fresh()
+    assert jev.available() is False
+    assert jev.ask(state={"x": 1}, questions={"q": jev.boolean("is it?")}) is None
+    assert not Handler.calls, "no request is attempted without a key"
+
+
+def test_invalid_utf8_env_file_stays_unconfigured(monkeypatch, tmp_path, server):
+    _clear_keys(monkeypatch)
+    bad = tmp_path / "bad.env"
+    bad.write_bytes(b"JEV_API_KEY=\xff\xfe\x00not-utf8\n")
+    monkeypatch.setenv("JEV_ENV_FILE", str(bad))
+    jev = fresh()
+    assert jev.available() is False
+    assert jev.ask(state={"x": 1}, questions={"q": jev.boolean("is it?")}) is None
+    assert not Handler.calls, "no request is attempted without a key"

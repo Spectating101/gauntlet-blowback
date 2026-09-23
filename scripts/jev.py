@@ -17,6 +17,12 @@ Environment (do not place any key value in this file or in docs):
 
 - JEV_API_KEY, or JEV_API_KEY_1 through JEV_API_KEY_5 when the single key is
   unset. When several numbered keys are configured they rotate round-robin.
+- Process environment takes precedence as a complete set. If no process
+  key exists, the same names and order are read from repo-root .env.local,
+  or from JEV_ENV_FILE when that is set. Only those key names are read;
+  file contents are not exported or logged.
+- TYPESAFE_API_KEY is accepted when neither the primary nor numbered keys
+  are set. Numbered keys outrank it.
 - JEV_API_BASE, default https://api.typesafe.ai/v1/systemone
 """
 
@@ -27,12 +33,64 @@ import os
 import sys
 import urllib.error
 import urllib.request
+from pathlib import Path
 
 DEFAULT_API_BASE = "https://api.typesafe.ai/v1/systemone"
 DEFAULT_MODEL = "jev-latest"
 DEFAULT_TIMEOUT = 20
 
+_FILE_KEY_NAMES = frozenset(
+    ("JEV_API_KEY", "TYPESAFE_API_KEY", *(f"JEV_API_KEY_{n}" for n in range(1, 6)))
+)
+_REPO_ROOT = Path(__file__).resolve().parent.parent
+
 _rotate = 0
+
+
+def _env_file_path() -> Path:
+    override = os.environ.get("JEV_ENV_FILE") or ""
+    if override:
+        return Path(override)
+    return _REPO_ROOT / ".env.local"
+
+
+def _keys_from_file() -> dict[str, str]:
+    try:
+        text = _env_file_path().read_text(encoding="utf-8")
+    except (OSError, UnicodeError):
+        return {}
+    found: dict[str, str] = {}
+    for raw in text.splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        name, value = line.split("=", 1)
+        name = name.strip()
+        if name not in _FILE_KEY_NAMES:
+            continue
+        value = value.strip()
+        if value:
+            found[name] = value
+    return found
+
+
+def _select_keys(source) -> list[str]:
+    """Pick a complete key set from one source, in existing precedence order."""
+    primary = source.get("JEV_API_KEY") or ""
+    if primary:
+        return [primary]
+    keys = []
+    for n in range(1, 6):
+        value = source.get(f"JEV_API_KEY_{n}") or ""
+        if value:
+            keys.append(value)
+    if keys:
+        # The numbered set outranks the vendor name: rotating five keys spreads
+        # the rate limit, and TYPESAFE_API_KEY is normally an alias of one of
+        # them, so preferring it would silently collapse the rotation.
+        return keys
+    fallback = source.get("TYPESAFE_API_KEY") or ""
+    return [fallback] if fallback else []
 
 
 def _configured_keys() -> list[str]:
@@ -42,21 +100,10 @@ def _configured_keys() -> list[str]:
     the host, Jev the model -- and other checkouts here read only that one. Both
     names are accepted so a single exported key serves every repo.
     """
-    primary = os.environ.get("JEV_API_KEY") or ""
-    if primary:
-        return [primary]
-    keys = []
-    for n in range(1, 6):
-        value = os.environ.get(f"JEV_API_KEY_{n}") or ""
-        if value:
-            keys.append(value)
-    if keys:
-        # The numbered set outranks the vendor name: rotating five keys spreads
-        # the rate limit, and TYPESAFE_API_KEY is normally an alias of one of
-        # them, so preferring it would silently collapse the rotation.
-        return keys
-    fallback = os.environ.get("TYPESAFE_API_KEY") or ""
-    return [fallback] if fallback else []
+    from_env = _select_keys(os.environ)
+    if from_env:
+        return from_env
+    return _select_keys(_keys_from_file())
 
 
 def available() -> bool:

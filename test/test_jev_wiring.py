@@ -58,7 +58,11 @@ def jev_server():
 def run_fit(tmp_path, env=None, *args):
     master = tmp_path / "m.json"
     master.write_text(json.dumps({"records": ROUTES}))
-    full = {"PATH": "/usr/bin:/bin", **(env or {})}
+    full = {
+        "PATH": "/usr/bin:/bin",
+        "JEV_ENV_FILE": str(tmp_path / "isolated.env"),
+        **(env or {}),
+    }
     p = subprocess.run([sys.executable, str(FIT), "--master", str(master), "--today", "2026-09-21", "--json", *args],
                        capture_output=True, text=True, timeout=120, env=full)
     assert p.returncode == 0, p.stderr
