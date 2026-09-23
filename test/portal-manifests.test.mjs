@@ -214,6 +214,12 @@ test('InnoServe HS route fails closed on the 2026-08-27 model-origin declaration
   assert.equal(opportunity.route_evidence.hs_repo_contains_historical_qwen_deepseek_usage, true);
   assert.equal(opportunity.route_evidence.declaration_scope_for_historical_optional_model_usage_verified, false);
   assert.equal(opportunity.compliance_gate.state, 'BLOCKING_CLARIFICATION');
+  assert.equal(opportunity.compliance_gate.contact_state, 'CONTACT_READY_NOT_SENT');
+  assert.deepEqual(opportunity.compliance_gate.official_contacts.emails, [
+    'maris@mail.tca.org.tw',
+    'yuanhan@mail.tca.org.tw'
+  ]);
+  assert.match(opportunity.compliance_gate.outbound_message, /INNOSERVE_2026_HS_MODEL_ORIGIN_CLARIFICATION_2026-09-23\.md$/);
   assert.match(opportunity.compliance_gate.question_for_organizer, /historical optional experiments/i);
   assert.equal(
     opportunity.packet_requirements.find((r) => r.id === 'signed_declaration_privacy_portrait').status,
