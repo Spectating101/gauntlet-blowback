@@ -179,3 +179,24 @@ test('DATE 2027 LBR route stays evidence-gated and matches current official form
   assert.deepEqual(opportunity.field_map, {});
   assert.match(opportunity.finalization_runbook, /DATE_2027_HS_EVIDENCE_FINALIZATION_2026-09-23\.md$/);
 });
+
+
+test('Anthropic AI for Science HS route stays evidence/consent gated and preserves credit-cap uncertainty', async () => {
+  const opportunity = await loadOpportunity('examples/opportunities/anthropic-ai-for-science-hardware-splicer.json');
+  const validation = validateOpportunity(opportunity);
+  assert.equal(validation.ok, true, validation.errors.join('\n'));
+  assert.equal(opportunity.execution_state, 'RESEARCH_ONLY');
+  assert.equal(opportunity.direct_control, false);
+  assert.equal(opportunity.route_evidence.latest_expansion_announcement_verified, true);
+  assert.equal(opportunity.route_evidence.any_researcher_announcement_language_verified, true);
+  assert.equal(opportunity.route_evidence.august_27_announcement_up_to_50000_per_project, true);
+  assert.equal(opportunity.route_evidence.help_center_up_to_20000_for_six_months, true);
+  assert.equal(opportunity.route_evidence.published_credit_cap_conflict, true);
+  assert.equal(opportunity.route_evidence.current_credit_cap_requires_live_application_recheck, true);
+  assert.equal(opportunity.route_evidence.institutional_consent_if_affiliated_verified, true);
+  assert.equal(opportunity.route_evidence.credits_applied_to_identified_organization_verified, true);
+  assert.equal(opportunity.packet_requirements.find((r) => r.id === 'fresh_physical_evidence').status, 'WAITING_ON_HS_105');
+  assert.equal(opportunity.packet_requirements.find((r) => r.id === 'credit_cap_reconciliation').status, 'BLOCKING_RECHECK');
+  assert.match(opportunity.wake_gate.physical_evidence, /Hardware-Splicer #105/i);
+  assert.match(opportunity.finalization_runbook, /ANTHROPIC_AI_FOR_SCIENCE_HS_WAKE_GATE_2026-09-23\.md$/);
+});
