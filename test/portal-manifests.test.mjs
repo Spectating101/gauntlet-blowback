@@ -9,7 +9,6 @@ const FIRE_COPY_REVISION = '328b80b4ca720a04e4bbdfabc481f4dfb68c548b';
 const liveReconManifests = [
   'examples/opportunities/taia-ai-creative-design-2026.json',
   'examples/opportunities/global-ai-finance-2026-policy-lab.json',
-  'examples/opportunities/innoserve-2026-hardware-splicer.json',
   'examples/opportunities/aws-community-day-taiwan-2026-hardware-splicer.json',
   'examples/opportunities/openai-researcher-access-hardware-splicer.json'
 ];
@@ -199,4 +198,30 @@ test('Anthropic AI for Science HS route stays evidence/consent gated and preserv
   assert.equal(opportunity.packet_requirements.find((r) => r.id === 'credit_cap_reconciliation').status, 'BLOCKING_RECHECK');
   assert.match(opportunity.wake_gate.physical_evidence, /Hardware-Splicer #105/i);
   assert.match(opportunity.finalization_runbook, /ANTHROPIC_AI_FOR_SCIENCE_HS_WAKE_GATE_2026-09-23\.md$/);
+});
+
+
+test('InnoServe HS route fails closed on the 2026-08-27 model-origin declaration', async () => {
+  const opportunity = await loadOpportunity('examples/opportunities/innoserve-2026-hardware-splicer.json');
+  const validation = validateOpportunity(opportunity);
+  assert.equal(validation.ok, true, validation.errors.join('\n'));
+  assert.equal(opportunity.execution_state, 'RESEARCH_ONLY');
+  assert.equal(opportunity.direct_control, false);
+  assert.equal(opportunity.route_evidence.masters_student_eligible, true);
+  assert.equal(opportunity.route_evidence.advisor_requirement_verified, true);
+  assert.equal(opportunity.route_evidence.advisor_count_required, '1-2');
+  assert.equal(opportunity.route_evidence.august_27_declaration_update_verified, true);
+  assert.equal(opportunity.route_evidence.hs_repo_contains_historical_qwen_deepseek_usage, true);
+  assert.equal(opportunity.route_evidence.declaration_scope_for_historical_optional_model_usage_verified, false);
+  assert.equal(opportunity.compliance_gate.state, 'BLOCKING_CLARIFICATION');
+  assert.match(opportunity.compliance_gate.question_for_organizer, /historical optional experiments/i);
+  assert.equal(
+    opportunity.packet_requirements.find((r) => r.id === 'signed_declaration_privacy_portrait').status,
+    'BLOCKED_ON_MODEL_ORIGIN_CLARIFICATION'
+  );
+  assert.equal(
+    opportunity.packet_requirements.find((r) => r.id === 'model_origin_compliance').status,
+    'BLOCKING_CLARIFICATION'
+  );
+  assert.match(opportunity.clarification_runbook, /INNOSERVE_2026_HS_MODEL_ORIGIN_CLARIFICATION_2026-09-23\.md$/);
 });
