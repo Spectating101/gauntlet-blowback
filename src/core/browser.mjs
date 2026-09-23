@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import './playwright-home.mjs'; // must precede 'playwright': it fixes the browser path at import
 import { chromium, firefox, webkit } from 'playwright';
 import { resolveAuthScope } from './routes.mjs';
 

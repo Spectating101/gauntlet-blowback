@@ -1,3 +1,4 @@
+import '../core/playwright-home.mjs'; // must precede 'playwright': it fixes the browser path at import
 import { chromium } from 'playwright';
 import { setTimeout as wait } from 'node:timers/promises';
 import { buildMasterRegistry } from '../../scripts/build-gauntlet-master.mjs';

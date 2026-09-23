@@ -7,6 +7,7 @@ import { recipeAdapter } from '../src/adapters/recipe.mjs';
 import { collectReconSnapshot } from '../src/commands/recon.mjs';
 
 let chromium;
+await import('../src/core/playwright-home.mjs'); // before playwright: it fixes the browser path at import
 try { ({ chromium } = await import('playwright')); } catch { chromium = null; }
 
 test('generic adapter fills mapped fields but never clicks submit', { skip: !chromium && 'playwright is not installed in this environment' }, async (t) => {
