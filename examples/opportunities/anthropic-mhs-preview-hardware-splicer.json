@@ -18,7 +18,7 @@
     "applicant_name": "$profile.name",
     "affiliation": "$profile.affiliation",
     "repo_url": "$project.repo_url",
-    "proposed_contribution": "Independent safety-evaluation/control harness for testing evidence sufficiency, authority escalation and failure recovery around an MHS-enabled programmable physical device."
+    "proposed_contribution": "Use Hardware-Splicer as an independent safety-evaluation and release-assurance wrapper around MHS on one revision-bound SPI flash adapter, testing whether device discovery/control remains subordinate to physical evidence, stale-evidence invalidation and explicit human authority."
   },
   "field_map": {},
   "uploads": [],
@@ -31,26 +31,73 @@
     },
     {
       "id": "programmable_device",
-      "description": "Name a real programmable physical device/model, its interface, bounded actions and location/access plan.",
-      "status": "BLOCKING_DEPENDENCY"
+      "description": "Concrete device surface is defined as Hardware-Splicer's spi_flash_adapter_v1. The physical subject does not yet exist; route activation waits for #105 to bind a real board/revision before any MHS command is permitted.",
+      "status": "WAITING_ON_HS_105_PHYSICAL_SUBJECT",
+      "canonical_ref": "https://github.com/Spectating101/hardware-splicer/issues/105"
     },
     {
       "id": "applicant_class",
-      "description": "Inspect the live interest form and verify whether an individual university researcher is accepted; if not, identify a YZU faculty/lab route.",
-      "status": "BLOCKING_DEPENDENCY"
+      "description": "Public MHS material invites stakeholders across science and industry but does not explicitly establish individual-student eligibility. Enter truthfully as an individual university researcher unless the live application requires an institutional/lab wrapper; use YZU faculty/lab affiliation only with actual confirmation.",
+      "status": "HUMAN_AT_ENTRY"
+    },
+    {
+      "id": "mhs_spi_safety_plan",
+      "description": "Prepared bounded evaluation plan for discovery/control, authority refusal, stale-evidence invalidation and failure recovery on the SPI physical-proof subject.",
+      "status": "PACKET_SOURCE_READY",
+      "canonical_ref": "https://github.com/Spectating101/gauntlet-blowback/blob/execution/anthropic-mhs-spi-device-20260923/docs/execution/ANTHROPIC_MHS_SPI_EVALUATION_2026-09-23.md"
     }
   ],
   "compliance_checks": [
     "Do not claim Hardware-Splicer implements MHS before preview integration exists.",
     "Do not represent the applicant as a manufacturing lab or institutional stakeholder unless that is actually true.",
     "Do not fire a software-only interest pitch without a concrete programmable hardware surface.",
-    "Keep pending live-model and physical evidence pending."
+    "Keep pending live-model and physical evidence pending.",
+    "Do not enable program, erase, status-write or reset operations in the initial MHS evaluation surface.",
+    "MHS transport or device discovery never grants fabrication, power-on, functional-test or release authority.",
+    "Do not claim a physical MHS evaluation until #105 establishes a real board identity and the required authority gate."
   ],
   "route_evidence": {
-    "verified_at": "2026-09-04",
+    "verified_at": "2026-09-23",
     "program_scope_verified": true,
+    "official_site_verified": true,
+    "official_site": "https://modelhardwarestandard.com/",
+    "public_scope": "limited research preview; stakeholders across science and industry; devices require a programmable interface; safety evaluations are an explicit preview objective",
+    "programmable_device_surface_defined": true,
+    "physical_device_available": false,
+    "physical_device_gate": "Spectating101/hardware-splicer#105",
     "individual_applicant_class_verified": false,
     "form_fields_verified": false
   },
-  "human_required": ["login", "eligibility_attestation", "advisor_confirmation", "terms_acceptance", "final_submit"]
+  "human_required": [
+    "login",
+    "eligibility_attestation",
+    "advisor_confirmation",
+    "terms_acceptance",
+    "final_submit"
+  ],
+  "registration_url": "https://modelhardwarestandard.com/",
+  "device_plan": {
+    "subject": "hardware-splicer spi_flash_adapter_v1",
+    "tracking": "Spectating101/hardware-splicer#105",
+    "readiness": "WAITING_FOR_REAL_PHYSICAL_SUBJECT",
+    "interface": "Host SPI -> TXU0304 level shifter -> W25Q128JW",
+    "first_allowed_functional_action": {
+      "command": "0x9F",
+      "description": "read JEDEC ID",
+      "spi_mode": 0,
+      "frequency_hz": 5000000,
+      "write_operation": false
+    },
+    "explicitly_unavailable_initially": [
+      "program",
+      "erase",
+      "status-write",
+      "reset",
+      "fabrication authority",
+      "power-on authority",
+      "release authority"
+    ],
+    "mhs_role": "device discovery and command transport only; Hardware-Splicer remains the evidence/authority boundary",
+    "activation_gate": "Only after #105 binds a real board identity and reaches the explicit functional-test authority boundary."
+  }
 }
