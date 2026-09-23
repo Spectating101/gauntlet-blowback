@@ -25,20 +25,30 @@ Machine-readable route overlay: `data/hs-route-rebalance-2026-09-23.json`.
 
 ## Current route allocation
 
-### HS primary
+This section is synchronized to the individual execution manifests as of the 2026-09-23 closeout pass. The machine-readable overlay is authoritative for route allocation; the individual route manifests remain authoritative for their detailed gates.
 
-- **SPI external physical/FCT proof** — highest priority.
-- **Anthropic MHS Research Preview** — direct programmable-device / physical-agent / authority fit.
-- **Anthropic External Researcher Access** — existing consequential-agent evidence/authorization experiment remains native to HS.
+### P0 — HS physical proof / provider contact
 
-### HS after new evidence
+- **SPI external physical/FCT proof** — **HS PRIMARY / CONTACT READY**.
+- Canonical release: `gauntlet-spi-flash-adapter-v1-20260916`.
+- Exact provider candidates: JLCPCB and PCBWay.
+- Provider-reply evaluator is merged in `hardware-splicer#108`.
+- Next action is external: send the same frozen package and engineering-review request to both providers, then stop before checkout/payment.
+- A quote, DFM response, or positive feasibility reply grants **no** fabrication, power, FCT, or release authority.
 
-- **DATE 2027 LBR** — wake after fresh revision-bound physical proof or comparable substantive external evidence.
-- **Anthropic AI for Science** — wake after physical evidence plus current eligibility/data-rights clearance.
+### HS primary external routes
 
-### HS conditional
+- **Anthropic External Researcher Access** — **HUMAN_SUBMIT_READY**. Gauntlet #61 removed the browser-automation dependency; exact live form labels and final submit remain human.
+- **Anthropic MHS Research Preview** — **RESEARCH_ONLY / SPI SUBJECT DEFINED**. Gauntlet #63 binds the route to `spi_flash_adapter_v1`. MHS is transport/discovery; HS remains the evidence/revision/authority boundary. Physical execution waits for #105.
+- **DATE 2027 LBR** — **PACKET_READY / EVIDENCE GATED**. Gauntlet #64 records the current two-page double-blind format and 2026-11-29 AoE deadline. Results wake only on substantive empirical evidence; MCP infrastructure alone is insufficient.
 
-- **InnoServe Industrial AI** — continue only if adviser/team/category gates clear with low marginal work; do not trigger another broad product sprint.
+### HS conditional / blocked external route
+
+- **InnoServe Industrial AI** — **RESEARCH_ONLY / COMPLIANCE CLARIFICATION REQUIRED**. Gauntlet #67 records the 2026-08-27 model-origin declaration conflict with historical optional Qwen/DeepSeek work in the broader HS repo. Ask the organizer whether an auditable clean competition build is eligible; do not sign without a clear answer. The separate 1–2 school-adviser requirement must also clear.
+
+### HS after new evidence + consent
+
+- **Anthropic AI for Science** — **RESEARCH_ONLY**. Gauntlet #66 binds it to #105 physical evidence, a frozen Claude/API scientific workload, institutional consent, receiving organization/account, data/IP rights, and live reconciliation of the public US$20k vs US$50k credit-cap discrepancy.
 
 ### Another asset currently leads
 
@@ -51,6 +61,18 @@ These are allocation choices, not judgments that Hardware-Splicer should become 
 ### Archive
 
 Past TAIA, TAS, TAAI and AWS Community Day routes remain historical conversion evidence. WanRun remains explicit negative evidence.
+
+### Current HS program consequence
+
+The internal build phase is no longer the bottleneck. Current useful progress comes from:
+
+1. provider contact / external engineering review;
+2. human submission of already-ready research routes;
+3. real physical evidence;
+4. route-specific clarification/consent;
+5. targeted engineering only when those external collisions expose a concrete HS-native gap.
+
+Do not open a generic HS feature sprint merely because a route exists.
 
 ## Relationship to Refinery
 
