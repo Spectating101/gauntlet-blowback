@@ -8,7 +8,7 @@
   "recon_stage": "source",
   "deadline": "2026-10-05T16:00:00+08:00",
   "mode": "inspect",
-  "execution_state": "COMPLIANCE_CLARIFICATION_REQUIRED",
+  "execution_state": "RESEARCH_ONLY",
   "direct_control": false,
   "profile": "../profiles/christ.json",
   "project": "../projects/hardware-splicer.json",
