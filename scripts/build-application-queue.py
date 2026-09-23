@@ -39,7 +39,7 @@ from pay_normalise import normalise  # noqa: E402
 DEFAULT_TRIAGE = ROOT / "output/phd-taiwan-2027/jev-triage-2026-09-22.json"
 REACHABLE_FLOOR = 0.5
 
-FIELDS = ("rank", "fit", "reachable", "annual_twd", "pay_stated", "plausible",
+FIELDS = ("rank", "fit", "reachable", "annual_twd", "pay_stated", "pay_basis", "plausible",
           "company", "title", "location", "url")
 
 
@@ -60,8 +60,20 @@ def enrich(row: dict) -> dict:
     out = dict(row)
     out["annual_twd"] = pay["annual_twd"]
     out["pay_stated"] = pay["stated"]
+    out["pay_basis"] = pay["basis"]
     out["plausible"] = pay.get("plausible", True)
     return out
+
+
+def pay_cell(row: dict) -> str:
+    """Readable pay: stated figure, disclosure floor, or a dash."""
+    annual = row.get("annual_twd")
+    if (row.get("pay_stated") and row.get("plausible", True)
+            and isinstance(annual, (int, float)) and annual is not None):
+        return f"{annual:,}"
+    if row.get("pay_basis") == "disclosure" and annual is not None:
+        return f"≥{annual:,} (floor)"
+    return "—"
 
 
 def sort_key(row: dict):
@@ -121,7 +133,7 @@ def main() -> int:
         "| --: | --: | --: | --- | --- |",
     ]
     for row in ordered[:args.top]:
-        pay = f"{row['annual_twd']:,}" if (row["pay_stated"] and row["plausible"]) else "—"
+        pay = pay_cell(row)
         company = str(row.get("company", ""))[:28].replace("|", "/")
         title = str(row.get("title", ""))[:58].replace("|", "/")
         lines.append(f"| {row['rank']} | {row['fit']:.2f} | {pay} | {company} | {title} |")
