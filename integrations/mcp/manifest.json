@@ -1,0 +1,33 @@
+{
+  "schema":"portfolio.mcp.manifest.v1",
+  "project":"gauntlet",
+  "repository":"Spectating101/gauntlet-blowback",
+  "mode":"bridge",
+  "required_files":["src/cli.mjs"],
+  "timeout_seconds":60,
+  "runner_source":"Spectating101/cite-refinery@c9559e4e217f9f266aa451008cda32c96eee544e:integrations/portfolio-mcp",
+  "tools":[
+    {
+      "name":"gauntlet_validate_opportunity",
+      "description":"Validate a supplied opportunity using native rules. A native validation failure remains ok=false, not a successful opportunity. No browser or external action.",
+      "effect":"compute",
+      "input_schema":{"type":"object","properties":{"opportunity":{"type":"object"}},"required":["opportunity"],"additionalProperties":false},
+      "argv":["$NODE","src/cli.mjs","validate",{"json_file":"opportunity"}],
+      "accepted_exit_codes":[0,1]
+    },
+    {
+      "name":"gauntlet_next_mission",
+      "description":"Retrieve the native next mission from the current generated control-plane data. Does not execute it, certify current external eligibility, or grant submission authority.",
+      "effect":"read",
+      "input_schema":{"type":"object","properties":{},"required":[],"additionalProperties":false},
+      "argv":["$NODE","src/cli.mjs","next"]
+    },
+    {
+      "name":"gauntlet_mission",
+      "description":"Retrieve one registered route's existing browser mission and protected gates. No submission, attestation, arbitrary URL navigation or checkpoint mutation.",
+      "effect":"read",
+      "input_schema":{"type":"object","properties":{"route_id":{"type":"string","pattern":"^[A-Za-z0-9][A-Za-z0-9_-]{0,199}$"}},"required":["route_id"],"additionalProperties":false},
+      "argv":["$NODE","src/cli.mjs","mission",{"arg":"route_id"}]
+    }
+  ]
+}
