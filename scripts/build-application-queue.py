@@ -6,12 +6,19 @@ ranking decides is which ones you send first, so the early applications are the
 ones most likely to land rather than whichever the scraper happened to return
 first.
 
-Three inputs decide the order:
+Four inputs decide the order:
 
-- Jev's fit score, which ranks well and scores badly. Measured against hand
-  labels its rank correlation is +0.70 where the keyword heuristic manages
-  +0.40, but its output compresses into roughly 1.5-3.5 on a 1-5 scale, so the
-  ordering is used and the magnitude is not.
+- The rules tier from job-watch.py's curate_row (keep-A, keep-B, maybe, skip),
+  which picks the best roles better than Jev does. On 40 hand-labelled roles,
+  Jev alone put 2 of the 7 best into its top ten; rules tier first, then Jev
+  within each tier, put 4 of 7 there while keeping most of Jev's overall rank
+  correlation (+0.59 against +0.66). Seven positives is a small sample, so this
+  is the better-supported order, not a settled one. A "skip" sinks a role; it
+  never removes it, because the rules are known to skip real roles posted
+  through recruiting agencies.
+- Jev's fit score, within each tier. It ranks well overall and scores badly:
+  its output compresses into roughly 1.5-3.5 on a 1-5 scale, so the ordering is
+  used and the magnitude is not.
 - Jev's reachability probability, used only to push roles that cannot be held
   from Taiwan to the back. They are not dropped: the model sees a title, a
   company and a location, which is not enough to retire a role permanently.
@@ -37,10 +44,21 @@ if str(SCRIPTS) not in sys.path:
     sys.path.insert(0, str(SCRIPTS))
 from pay_normalise import normalise  # noqa: E402
 
+import importlib.util  # noqa: E402
+
+_spec = importlib.util.spec_from_file_location("job_watch", SCRIPTS / "job-watch.py")
+_job_watch = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(_job_watch)
+
 DEFAULT_TRIAGE = ROOT / "output/phd-taiwan-2027/jev-triage-2026-09-22.json"
 REACHABLE_FLOOR = 0.5
 
-FIELDS = ("rank", "fit", "reachable", "annual_twd", "pay_stated", "pay_basis", "plausible",
+# Lower sends first. Anything curate_row does not return here sorts with "skip".
+TIER_ORDER = {("keep", "A"): 0, ("keep", "B"): 1, ("maybe", "A"): 2, ("maybe", "B"): 2,
+              ("maybe", "C"): 2, ("skip", "A"): 3, ("skip", "B"): 3, ("skip", "C"): 3}
+TIER_LABEL = {0: "keep-A", 1: "keep-B", 2: "maybe", 3: "skip"}
+
+FIELDS = ("rank", "tier", "fit", "reachable", "annual_twd", "pay_stated", "pay_basis", "plausible",
           "company", "title", "location", "url")
 
 
@@ -94,6 +112,9 @@ def enrich(row: dict) -> dict:
     out["pay_stated"] = pay["stated"]
     out["pay_basis"] = pay["basis"]
     out["plausible"] = pay.get("plausible", True)
+    curated = _job_watch.curate_row({k: row.get(k) for k in ("title", "company", "location", "pay")})
+    out["tier_rank"] = TIER_ORDER.get((curated.get("verdict"), curated.get("tier")), 3)
+    out["tier"] = TIER_LABEL[out["tier_rank"]]
     return out
 
 
@@ -109,14 +130,14 @@ def pay_cell(row: dict) -> str:
 
 
 def sort_key(row: dict):
-    """Reachable first, then Jev's order, then better stated pay.
+    """Reachable first, then the rules tier, then Jev's order, then better stated pay.
 
     A pay figure only breaks ties when it is both stated and believable, so an
     implausible row cannot jump the queue on the strength of a bad number.
     """
     reachable = (row.get("reachable") or 0) >= REACHABLE_FLOOR
     pay = row["annual_twd"] if (row["pay_stated"] and row["plausible"]) else -1
-    return (0 if reachable else 1, -(row.get("fit") or 0), -(pay or -1))
+    return (0 if reachable else 1, row.get("tier_rank", 3), -(row.get("fit") or 0), -(pay or -1))
 
 
 def build(rows: list[dict]) -> list[dict]:
@@ -161,14 +182,14 @@ def main() -> int:
         "",
         f"## First {args.top}",
         "",
-        "| # | fit | pay (NT$/yr) | company | role |",
-        "| --: | --: | --: | --- | --- |",
+        "| # | tier | fit | pay (NT$/yr) | company | role |",
+        "| --: | --- | --: | --: | --- | --- |",
     ]
     for row in ordered[:args.top]:
         pay = pay_cell(row)
         company = str(row.get("company", ""))[:28].replace("|", "/")
         title = str(row.get("title", ""))[:58].replace("|", "/")
-        lines.append(f"| {row['rank']} | {row['fit']:.2f} | {pay} | {company} | {title} |")
+        lines.append(f"| {row['rank']} | {row['tier']} | {row['fit']:.2f} | {pay} | {company} | {title} |")
     lines += ["", f"Full ordered list: `{args.out_csv.relative_to(ROOT)}`", ""]
     args.out_md.write_text("\n".join(lines), encoding="utf-8")
 

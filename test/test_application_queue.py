@@ -79,3 +79,40 @@ def test_a_missing_fit_does_not_crash_the_sort():
     rows.append({"company": "B", "title": "unscored", "reachable": 0.9, "pay": "not stated"})
     out = q.build(rows)
     assert len(out) == 2 and out[0]["title"] == "scored"
+
+
+def _stub_rules(monkeypatch, verdicts):
+    """Pin curate_row's verdict per title, so these tests check the ordering and
+    not the content of job-watch's rules."""
+    monkeypatch.setattr(q._job_watch, "curate_row",
+                        lambda r: dict(zip(("verdict", "tier"), verdicts.get(r.get("title"), ("skip", "C")))))
+
+
+def test_the_rules_tier_outranks_a_higher_jev_score(monkeypatch):
+    """Measured on 40 hand-labelled roles: Jev alone put 2 of the 7 best in its
+    top ten, rules tier first put 4. Jev only orders within a tier."""
+    _stub_rules(monkeypatch, {"kept": ("keep", "A"), "skipped": ("skip", "C")})
+    out = q.build([row("B", "skipped", 3.4), row("A", "kept", 1.8)])
+    assert [r["title"] for r in out] == ["kept", "skipped"]
+    assert [r["tier"] for r in out] == ["keep-A", "skip"]
+
+
+def test_jev_orders_roles_within_one_tier(monkeypatch):
+    _stub_rules(monkeypatch, {"low": ("keep", "B"), "high": ("keep", "B")})
+    out = q.build([row("A", "low", 1.5), row("B", "high", 3.1)])
+    assert [r["title"] for r in out] == ["high", "low"]
+
+
+def test_a_skipped_role_sinks_but_is_never_dropped(monkeypatch):
+    """The rules skip real roles posted through recruiting agencies, so a skip
+    may only move a role down the queue."""
+    _stub_rules(monkeypatch, {f"r{i}": ("keep", "A") for i in range(3)})
+    rows = [row("A", f"r{i}", 2.0) for i in range(3)] + [row("Agency", "via recruiter", 3.9)]
+    out = q.build(rows)
+    assert len(out) == 4 and out[-1]["title"] == "via recruiter" and out[-1]["tier"] == "skip"
+
+
+def test_reachability_still_comes_before_the_tier(monkeypatch):
+    _stub_rules(monkeypatch, {"abroad": ("keep", "A"), "local": ("skip", "C")})
+    out = q.build([row("A", "abroad", 3.0, reachable=0.1), row("B", "local", 1.0, reachable=0.9)])
+    assert [r["title"] for r in out] == ["local", "abroad"]

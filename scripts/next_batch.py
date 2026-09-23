@@ -71,20 +71,38 @@ def _reachable(row: dict) -> bool:
         return False
 
 
-def next_batch(rows, sent, n=10, include_unreachable=False) -> list[dict]:
+def next_batch(rows, sent, n=10, include_unreachable=False, per_company=None) -> list[dict]:
+    """The next n unsent roles in queue order.
+
+    per_company caps how many roles one employer gets in a single batch. The
+    queue's top is crowded by one employer (Binance's accelerator lists a dozen
+    near-identical roles), and a day spent on one recruiter's inbox wastes
+    applications. Capped roles are not skipped for good: they come back in a
+    later batch. None means no cap.
+    """
     if n <= 0:
         return []
     batch = []
+    per = {}
     for row in rows:
         url = row.get("url") or ""
         if not url or url in sent:
             continue
         if not include_unreachable and not _reachable(row):
             continue
+        if per_company is not None:
+            key = _company(row)
+            if per.get(key, 0) >= per_company:
+                continue
+            per[key] = per.get(key, 0) + 1
         batch.append(row)
         if len(batch) == n:
             break
     return batch
+
+
+def _company(row: dict) -> str:
+    return " ".join(str(row.get("company") or "").lower().split())
 
 
 def _pay(row: dict) -> str:
@@ -109,6 +127,8 @@ def main(argv=None) -> int:
     ap.add_argument("--ledger", type=Path, default=DEFAULT_LEDGER)
     ap.add_argument("--n", type=int, default=10)
     ap.add_argument("--include-unreachable", action="store_true")
+    ap.add_argument("--per-company", type=int, default=2,
+                    help="at most this many roles from one employer per batch (0 or less: no cap)")
     ap.add_argument("--mark-sent", metavar="URL")
     ap.add_argument("--today", default=date.today().isoformat())
     args = ap.parse_args(argv)
@@ -117,7 +137,8 @@ def main(argv=None) -> int:
         print("recorded" if mark_sent(args.ledger, args.mark_sent, args.today) else "already recorded")
         return 0
     rows = load_queue(args.queue)
-    print(render(next_batch(rows, load_sent(args.ledger), args.n, args.include_unreachable)))
+    cap = args.per_company if args.per_company and args.per_company > 0 else None
+    print(render(next_batch(rows, load_sent(args.ledger), args.n, args.include_unreachable, cap)))
     return 0
 
 
