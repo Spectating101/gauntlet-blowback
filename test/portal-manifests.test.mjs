@@ -156,3 +156,26 @@ test('Anthropic MHS route is bound to the SPI physical-proof subject without wid
     /ANTHROPIC_MHS_SPI_EVALUATION_2026-09-23\.md$/
   );
 });
+
+
+test('DATE 2027 LBR route stays evidence-gated and matches current official format', async () => {
+  const opportunity = await loadOpportunity('examples/opportunities/date-2027-lbr-hardware-splicer.json');
+  const validation = validateOpportunity(opportunity);
+  assert.equal(validation.ok, true, validation.errors.join('\n'));
+  assert.equal(opportunity.mode, 'inspect');
+  assert.equal(opportunity.execution_state, 'EVIDENCE_GATED_PREPARED');
+  assert.equal(opportunity.direct_control, false);
+  assert.equal(opportunity.deadline_basis, 'Sunday, 29 November 2026 AoE');
+  assert.equal(opportunity.submission_requirements.main_pages, 2);
+  assert.equal(opportunity.submission_requirements.references_only_pages_optional, 1);
+  assert.equal(opportunity.submission_requirements.double_blind, true);
+  assert.equal(opportunity.submission_requirements.title_prefix_required, 'Late Breaking Results:');
+  assert.equal(opportunity.submission_requirements.submission_portal_status, 'NOT_YET_AVAILABLE_ON_OFFICIAL_CFP_AS_OF_2026-09-23');
+  assert.equal(opportunity.route_evidence.substantive_result_available, false);
+  assert.equal(opportunity.route_evidence.current_physical_state, 'PACKAGED_NOT_PHYSICAL');
+  assert.equal(opportunity.route_evidence.physical_correctness, 'UNPROVEN');
+  assert.match(opportunity.wake_gate.preferred_trigger, /revision-bound physical evidence/i);
+  assert.match(opportunity.wake_gate.forbidden_trigger, /infrastructure-only MCP transport/i);
+  assert.deepEqual(opportunity.field_map, {});
+  assert.match(opportunity.finalization_runbook, /DATE_2027_HS_EVIDENCE_FINALIZATION_2026-09-23\.md$/);
+});
