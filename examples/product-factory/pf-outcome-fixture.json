@@ -1,0 +1,37 @@
+{
+  "schema": "hardware_splicer.product_factory_run.v1",
+  "run_id": "PF-TEST-001",
+  "product_id": "proofpod-v0",
+  "stages": [
+    {"id":"DISCOVER","state":"PASS"},
+    {"id":"SELECT","state":"PASS"},
+    {"id":"SPECIFY","state":"PASS"},
+    {"id":"DESIGN_SCHEMATIC","state":"PASS"},
+    {"id":"VERIFY_SCHEMATIC","state":"PASS"},
+    {"id":"DESIGN_PCB","state":"PASS"},
+    {"id":"VERIFY_PCB","state":"PASS"},
+    {"id":"SOURCE","state":"PASS"},
+    {"id":"BUILD","state":"PASS"},
+    {"id":"PROVE","state":"PASS"},
+    {"id":"BENCHMARK","state":"PASS"},
+    {"id":"SELL","state":"BLOCKED_ON_GAUNTLET_AND_HUMAN_DECISION"},
+    {"id":"LEARN","state":"ACTIVE_CONTINUOUS"}
+  ],
+  "metrics": {
+    "target_msrp_usd": 99,
+    "proposed_sale_price_usd": 99,
+    "landed_cogs_ceiling_usd": 30,
+    "realized_landed_cogs_usd": 27,
+    "target_min_gross_margin_fraction": 0.65
+  },
+  "benchmark": {
+    "verdict": "COMMERCIAL_CASE_SUPPORTED",
+    "named_incumbents": ["professional-a", "professional-b"],
+    "claim_boundary": "Bounded benchmark only."
+  },
+  "authority": {
+    "physical_authority_granted": true,
+    "fabrication_ready": true,
+    "commercial_superiority": "BOUNDED_BENCHMARK_ONLY"
+  }
+}
