@@ -11,6 +11,7 @@ def test_review_holds_skip_roles_until_reopened(tmp_path):
                        b'{"url":"b","status":"BLOCKED"}\n'
                        b'{"url":"a","status":"READY"}\n'
                        b'{"url":[],"status":"HOLD"}\n'
+                       b'{"url":"c","status":[]}\n'
                        b'broken\n')
     assert nb.load_review_holds(review) == {"b"}
     rows = [{"url": "a", "company": "A", "rank": "1", "reachable": "1"},

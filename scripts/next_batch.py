@@ -71,7 +71,7 @@ def load_review_holds(path) -> set[str]:
         if not isinstance(entry, dict):
             continue
         url, status = entry.get("url"), entry.get("status")
-        if isinstance(url, str) and url and status in {"HOLD", "BLOCKED", "READY"}:
+        if isinstance(url, str) and url and isinstance(status, str) and status in {"HOLD", "BLOCKED", "READY"}:
             verdicts[url] = status
     return {url for url, status in verdicts.items() if status != "READY"}
 
