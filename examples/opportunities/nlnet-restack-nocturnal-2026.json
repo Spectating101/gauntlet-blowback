@@ -1,0 +1,77 @@
+{
+  "id": "nlnet-restack-nocturnal",
+  "name": "NLnet Restack — Nocturnal Open Matter Bundles",
+  "portal": "generic",
+  "portal_family": "grant_form",
+  "auth_scope": "nlnet-propose",
+  "source_url": "https://nlnet.nl/restack/",
+  "submission_url": "https://nlnet.nl/propose/",
+  "recon_stage": "human_rewrite_and_portfolio_bakeoff",
+  "deadline": "2026-11-03T12:00:00+01:00",
+  "deadline_note": "Restack first call deadline is November 3, 2026 at 12:00 CET. Reverify the call and GenAI policy before submission.",
+  "mode": "inspect",
+  "execution_state": "PACKET_READY",
+  "direct_control": true,
+  "profile": "../profiles/christ.json",
+  "project": "../projects/nocturnal.json",
+  "packet_revision": "b6a3b7026b2d9ad4d0359fec78c7099f4ae473cc",
+  "packet_source": "https://github.com/Spectating101/gauntlet-blowback/blob/main/docs/nocturnal-conversion/NLNET_RESTACK_APPLICATION.md",
+  "fields": {
+    "applicant_name": "$profile.name",
+    "email": "$profile.email",
+    "affiliation": "$profile.affiliation",
+    "country": "$profile.country",
+    "project_name": "$project.name"
+  },
+  "field_map": {},
+  "uploads": [],
+  "packet_requirements": [
+    {
+      "id": "portfolio_bakeoff",
+      "description": "NLnet first-grant portfolio bakeoff must select Nocturnal before this route is promoted into FIRE.",
+      "status": "HUMAN_PORTFOLIO_GATE"
+    },
+    {
+      "id": "human_rewrite",
+      "description": "Applicant must write the actual proposal answers in their own words; the AI-assisted workbook is structure/fact support only.",
+      "status": "HUMAN_AUTHORSHIP_GATE"
+    },
+    {
+      "id": "open_release",
+      "description": "Applicant must approve exact FLOS/open-access release boundary for funded outputs.",
+      "status": "HUMAN_COMMITMENT_GATE"
+    },
+    {
+      "id": "genai_log",
+      "description": "Current NLnet form/policy requires disclosure of AI assistance and relevant prompts/interactions/output. Reverify the latest policy and prepare the required log.",
+      "status": "HUMAN_COMPLIANCE_GATE"
+    }
+  ],
+  "compliance_checks": [
+    "Do not paste the AI-assisted workbook as if it were applicant-written final prose.",
+    "Do not claim a European collaborator/user unless one actually exists.",
+    "Do not promise a public/open release until the owner approves the exact release boundary.",
+    "Do not hide ChatGPT/GPT-5.6 Sol assistance from the NLnet disclosure.",
+    "Do not represent completed Nocturnal UI/product work as new grant-funded work."
+  ],
+  "route_evidence": {
+    "verified_at": "2026-09-17",
+    "current_call_open": true,
+    "deadline_verified": true,
+    "application_structure_verified": true,
+    "genai_policy_reverified": true,
+    "planning_workbook_ready": true,
+    "final_submission_copy_ready": false,
+    "portfolio_bakeoff_complete": false,
+    "open_release_approved": false,
+    "human_rewrite_complete": false
+  },
+  "human_required": [
+    "portfolio_selection",
+    "authorship_rewrite",
+    "open_source_release_commitment",
+    "genai_disclosure",
+    "privacy_terms",
+    "final_submit"
+  ]
+}

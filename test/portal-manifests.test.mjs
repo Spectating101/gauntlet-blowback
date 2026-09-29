@@ -9,10 +9,11 @@ const FIRE_COPY_REVISION = '328b80b4ca720a04e4bbdfabc481f4dfb68c548b';
 const liveReconManifests = [
   'examples/opportunities/taia-ai-creative-design-2026.json',
   'examples/opportunities/global-ai-finance-2026-policy-lab.json',
-  'examples/opportunities/innoserve-2026-hardware-splicer.json',
-  'examples/opportunities/embedded-world-2027-hardware-splicer.json',
   'examples/opportunities/aws-community-day-taiwan-2026-hardware-splicer.json',
-  'examples/opportunities/openai-researcher-access-hardware-splicer.json',
+  'examples/opportunities/openai-researcher-access-hardware-splicer.json'
+];
+
+const manualSubmitManifests = [
   'examples/opportunities/anthropic-external-researcher-access-hardware-splicer.json'
 ];
 
@@ -42,6 +43,19 @@ for (const manifestPath of liveReconManifests) {
     assert.equal(opportunity.mode, 'inspect');
     assert.equal(opportunity.execution_state, 'PORTAL_RECON_REQUIRED');
     assert.deepEqual(opportunity.field_map, {});
+  });
+}
+
+for (const manifestPath of manualSubmitManifests) {
+  test(`manual-submit manifest validates: ${manifestPath}`, async () => {
+    const opportunity = await loadOpportunity(manifestPath);
+    const validation = validateOpportunity(opportunity);
+    assert.equal(validation.ok, true, validation.errors.join('\n'));
+    assert.equal(opportunity.mode, 'inspect');
+    assert.equal(opportunity.execution_state, 'HUMAN_SUBMIT_READY');
+    assert.equal(opportunity.manual_only, true);
+    assert.deepEqual(opportunity.field_map, {});
+    assert.ok(opportunity.human_required.includes('final_submit'));
   });
 }
 
@@ -101,6 +115,121 @@ test('Anthropic ERAP manifest uses the application linked by the official help p
   assert.equal(opportunity.route_evidence.official_google_form_link_verified, true);
   assert.equal(opportunity.route_evidence.final_submission_copy_ready, true);
   assert.equal(opportunity.route_evidence.form_fields_verified, false);
+  assert.equal(opportunity.route_evidence.manual_submission_ready, true);
+  assert.equal(opportunity.route_evidence.default_credit_award_usd, 1000);
+  assert.equal(opportunity.route_evidence.review_cadence, 'first Monday of each month');
+  assert.equal(opportunity.route_evidence.next_nominal_review_date, '2026-10-05');
+  assert.match(opportunity.manual_submission_runbook, /ANTHROPIC_ERAP_MANUAL_SUBMISSION_2026-09-23\.md$/);
+  assert.equal(opportunity.packet_requirements.find((r) => r.id === 'live_form_map').status, 'HUMAN_AT_ENTRY');
+  assert.equal(opportunity.packet_requirements.find((r) => r.id === 'model_freshness_gate').status, 'HUMAN_DECISION_REQUIRED');
+});
+
+
+test('Anthropic MHS route is bound to the SPI physical-proof subject without widening authority', async () => {
+  const opportunity = await loadOpportunity('examples/opportunities/anthropic-mhs-preview-hardware-splicer.json');
+  assert.equal(opportunity.execution_state, 'RESEARCH_ONLY');
+  assert.equal(opportunity.direct_control, false);
+  assert.equal(opportunity.device_plan.subject, 'hardware-splicer spi_flash_adapter_v1');
+  assert.equal(opportunity.device_plan.readiness, 'WAITING_FOR_REAL_PHYSICAL_SUBJECT');
+  assert.equal(opportunity.device_plan.tracking, 'Spectating101/hardware-splicer#105');
+  assert.equal(opportunity.device_plan.first_allowed_functional_action.command, '0x9F');
+  assert.equal(opportunity.device_plan.first_allowed_functional_action.spi_mode, 0);
+  assert.equal(opportunity.device_plan.first_allowed_functional_action.frequency_hz, 5000000);
+  assert.equal(opportunity.device_plan.first_allowed_functional_action.write_operation, false);
+  assert.ok(opportunity.device_plan.explicitly_unavailable_initially.includes('program'));
+  assert.ok(opportunity.device_plan.explicitly_unavailable_initially.includes('erase'));
+  assert.ok(opportunity.device_plan.explicitly_unavailable_initially.includes('power-on authority'));
+  assert.equal(opportunity.route_evidence.programmable_device_surface_defined, true);
+  assert.equal(opportunity.route_evidence.physical_device_available, false);
+  assert.equal(opportunity.route_evidence.individual_applicant_class_verified, false);
+  assert.equal(
+    opportunity.packet_requirements.find((r) => r.id === 'programmable_device').status,
+    'WAITING_ON_HS_105_PHYSICAL_SUBJECT'
+  );
+  assert.equal(
+    opportunity.packet_requirements.find((r) => r.id === 'applicant_class').status,
+    'HUMAN_AT_ENTRY'
+  );
+  assert.match(
+    opportunity.packet_requirements.find((r) => r.id === 'mhs_spi_safety_plan').execution_ref,
+    /ANTHROPIC_MHS_SPI_EVALUATION_2026-09-23\.md$/
+  );
+});
+
+
+test('DATE 2027 LBR route stays evidence-gated and matches current official format', async () => {
+  const opportunity = await loadOpportunity('examples/opportunities/date-2027-lbr-hardware-splicer.json');
+  const validation = validateOpportunity(opportunity);
+  assert.equal(validation.ok, true, validation.errors.join('\n'));
+  assert.equal(opportunity.mode, 'inspect');
+  assert.equal(opportunity.execution_state, 'PACKET_READY');
+  assert.equal(opportunity.direct_control, false);
+  assert.equal(opportunity.deadline_basis, 'Sunday, 29 November 2026 AoE');
+  assert.equal(opportunity.submission_requirements.main_pages, 2);
+  assert.equal(opportunity.submission_requirements.references_only_pages_optional, 1);
+  assert.equal(opportunity.submission_requirements.double_blind, true);
+  assert.equal(opportunity.submission_requirements.title_prefix_required, 'Late Breaking Results:');
+  assert.equal(opportunity.submission_requirements.submission_portal_status, 'NOT_YET_AVAILABLE_ON_OFFICIAL_CFP_AS_OF_2026-09-23');
+  assert.equal(opportunity.route_evidence.substantive_result_available, false);
+  assert.equal(opportunity.route_evidence.current_physical_state, 'PACKAGED_NOT_PHYSICAL');
+  assert.equal(opportunity.route_evidence.physical_correctness, 'UNPROVEN');
+  assert.match(opportunity.wake_gate.preferred_trigger, /revision-bound physical evidence/i);
+  assert.match(opportunity.wake_gate.forbidden_trigger, /infrastructure-only MCP transport/i);
+  assert.deepEqual(opportunity.field_map, {});
+  assert.match(opportunity.finalization_runbook, /DATE_2027_HS_EVIDENCE_FINALIZATION_2026-09-23\.md$/);
+});
+
+
+test('Anthropic AI for Science HS route stays evidence/consent gated and preserves credit-cap uncertainty', async () => {
+  const opportunity = await loadOpportunity('examples/opportunities/anthropic-ai-for-science-hardware-splicer.json');
+  const validation = validateOpportunity(opportunity);
+  assert.equal(validation.ok, true, validation.errors.join('\n'));
+  assert.equal(opportunity.execution_state, 'RESEARCH_ONLY');
+  assert.equal(opportunity.direct_control, false);
+  assert.equal(opportunity.route_evidence.latest_expansion_announcement_verified, true);
+  assert.equal(opportunity.route_evidence.any_researcher_announcement_language_verified, true);
+  assert.equal(opportunity.route_evidence.august_27_announcement_up_to_50000_per_project, true);
+  assert.equal(opportunity.route_evidence.help_center_up_to_20000_for_six_months, true);
+  assert.equal(opportunity.route_evidence.published_credit_cap_conflict, true);
+  assert.equal(opportunity.route_evidence.current_credit_cap_requires_live_application_recheck, true);
+  assert.equal(opportunity.route_evidence.institutional_consent_if_affiliated_verified, true);
+  assert.equal(opportunity.route_evidence.credits_applied_to_identified_organization_verified, true);
+  assert.equal(opportunity.packet_requirements.find((r) => r.id === 'fresh_physical_evidence').status, 'WAITING_ON_HS_105');
+  assert.equal(opportunity.packet_requirements.find((r) => r.id === 'credit_cap_reconciliation').status, 'BLOCKING_RECHECK');
+  assert.match(opportunity.wake_gate.physical_evidence, /Hardware-Splicer #105/i);
+  assert.match(opportunity.finalization_runbook, /ANTHROPIC_AI_FOR_SCIENCE_HS_WAKE_GATE_2026-09-23\.md$/);
+});
+
+
+test('InnoServe HS route fails closed on the 2026-08-27 model-origin declaration', async () => {
+  const opportunity = await loadOpportunity('examples/opportunities/innoserve-2026-hardware-splicer.json');
+  const validation = validateOpportunity(opportunity);
+  assert.equal(validation.ok, true, validation.errors.join('\n'));
+  assert.equal(opportunity.execution_state, 'RESEARCH_ONLY');
+  assert.equal(opportunity.direct_control, false);
+  assert.equal(opportunity.route_evidence.masters_student_eligible, true);
+  assert.equal(opportunity.route_evidence.advisor_requirement_verified, true);
+  assert.equal(opportunity.route_evidence.advisor_count_required, '1-2');
+  assert.equal(opportunity.route_evidence.august_27_declaration_update_verified, true);
+  assert.equal(opportunity.route_evidence.hs_repo_contains_historical_qwen_deepseek_usage, true);
+  assert.equal(opportunity.route_evidence.declaration_scope_for_historical_optional_model_usage_verified, false);
+  assert.equal(opportunity.compliance_gate.state, 'BLOCKING_CLARIFICATION');
+  assert.equal(opportunity.compliance_gate.contact_state, 'CONTACT_READY_NOT_SENT');
+  assert.deepEqual(opportunity.compliance_gate.official_contacts.emails, [
+    'maris@mail.tca.org.tw',
+    'yuanhan@mail.tca.org.tw'
+  ]);
+  assert.match(opportunity.compliance_gate.outbound_message, /INNOSERVE_2026_HS_MODEL_ORIGIN_CLARIFICATION_2026-09-23\.md$/);
+  assert.match(opportunity.compliance_gate.question_for_organizer, /historical optional experiments/i);
+  assert.equal(
+    opportunity.packet_requirements.find((r) => r.id === 'signed_declaration_privacy_portrait').status,
+    'BLOCKED_ON_MODEL_ORIGIN_CLARIFICATION'
+  );
+  assert.equal(
+    opportunity.packet_requirements.find((r) => r.id === 'model_origin_compliance').status,
+    'BLOCKING_CLARIFICATION'
+  );
+  assert.match(opportunity.clarification_runbook, /INNOSERVE_2026_HS_MODEL_ORIGIN_CLARIFICATION_2026-09-23\.md$/);
 });
 
 test('TAAI packet is ready while live OpenReview mapping and final submit remain gated', async () => {

@@ -30,17 +30,18 @@
     },
     {
       "id": "live_model_evidence",
-      "description": "At least one artifact-backed live external-model run on the unchanged corpus.",
+      "description": "At least one artifact-backed frozen Claude/API experimental run must exist so the scientific workload and API-credit budget are evidence-based.",
       "status": "BLOCKING_DEPENDENCY"
     },
     {
       "id": "fresh_physical_evidence",
-      "description": "At least one fresh revision-bound physical case with measurement and failure/repair lineage.",
-      "status": "BLOCKING_DEPENDENCY"
+      "description": "Hardware-Splicer #105 must produce at least one fresh revision-bound real physical result or preserved failure with measurement lineage.",
+      "status": "WAITING_ON_HS_105",
+      "execution_ref": "https://github.com/Spectating101/hardware-splicer/issues/105"
     },
     {
       "id": "applicant_rules_recheck",
-      "description": "Re-read current age/residency/jurisdiction, sanctions/export-control and eligibility rules for the actual applicant before promotion from HOLD.",
+      "description": "Current rules allow individual applicants, but affiliated researchers must obtain required institutional consent. Recheck the live application and applicant-specific terms before firing.",
       "status": "BLOCKING_DEPENDENCY"
     },
     {
@@ -50,31 +51,58 @@
     },
     {
       "id": "receiving_org_account",
-      "description": "Fix the applicant/organization/account that would receive credits and confirm its terms before submission.",
+      "description": "Identify the organization/account that would receive credits; current official rules place credits on the organization identified in the application.",
       "status": "BLOCKING_DEPENDENCY"
     },
     {
       "id": "publicity_participation_terms",
       "description": "Review current publicity/release and research-survey/interview obligations before accepting a selected-researcher position.",
       "status": "BLOCKING_DEPENDENCY"
+    },
+    {
+      "id": "credit_cap_reconciliation",
+      "description": "Resolve current public-source conflict: Aug 27 expansion announcement says up to US$50,000/project while Help Center still states up to US$20,000 for six months. Use live application/current terms, not the larger headline by default.",
+      "status": "BLOCKING_RECHECK"
     }
   ],
   "compliance_checks": [
-    "Do not fire solely because the maximum credit award is large.",
-    "Do not treat 'any researcher may apply' as overriding the official jurisdiction, sanctions/export-control, rights or institutional-consent rules.",
-    "Do not include confidential professor/partner/industry data without explicit authority under the then-current program terms.",
-    "Do not claim external-model or fresh physical results before artifacts exist.",
-    "Derive the requested credit amount from the actual scientific workload rather than automatically requesting US$50,000."
+    "Do not fire solely because a public announcement advertises a large maximum credit award.",
+    "Do not choose US$50,000 over US$20,000 without reconciling the current live application/terms.",
+    "Do not treat 'any researcher may apply' as eliminating institutional consent when applying as an affiliated university researcher.",
+    "Do not include confidential professor/partner/industry data without explicit rights and consent.",
+    "Do not claim Claude or fresh physical results before artifact-backed evidence exists.",
+    "Derive requested credits from the actual frozen scientific workload and model mix.",
+    "Credits and application identity must match the receiving organization/account declared in the application."
   ],
   "route_evidence": {
-    "verified_at": "2026-09-04",
+    "verified_at": "2026-09-23",
+    "latest_expansion_announcement_verified": true,
     "any_researcher_announcement_language_verified": true,
-    "up_to_50000_credits_verified": true,
-    "institutional_consent_requirement_verified": true,
-    "jurisdiction_and_rights_rules_verified_as_existing": true,
-    "applicant_specific_rules_cleared": false,
+    "august_27_announcement_up_to_50000_per_project": true,
+    "help_center_up_to_20000_for_six_months": true,
+    "published_credit_cap_conflict": true,
+    "current_credit_cap_requires_live_application_recheck": true,
+    "official_rules_updated": "2026-08-25",
+    "individual_age_requirement_verified": true,
+    "institutional_consent_if_affiliated_verified": true,
+    "credits_applied_to_identified_organization_verified": true,
+    "applicant_specific_consent_cleared": false,
     "external_proof_ready": false,
     "form_fields_verified": false
   },
-  "human_required": ["login", "eligibility_attestation", "terms_acceptance", "final_submit"]
+  "human_required": [
+    "login",
+    "eligibility_attestation",
+    "terms_acceptance",
+    "final_submit"
+  ],
+  "wake_gate": {
+    "state": "WAIT_FOR_SCIENTIFIC_EVIDENCE_AND_ACCOUNTABILITY",
+    "physical_evidence": "Hardware-Splicer #105 reaches a real revision-bound functional result or preserved physical failure with simulated:false evidence",
+    "claude_evidence": "at least one frozen Claude/API experimental run exists with artifacts adequate to define the scientific workload",
+    "institutional_gate": "required YZU/research-institution consent and receiving organization/account are identified",
+    "data_rights_gate": "all corpus, hardware, partner and unpublished-data rights are explicit",
+    "budget_gate": "live application/current terms resolve the public $20k vs $50k cap and requested credits are derived from the actual workload"
+  },
+  "finalization_runbook": "docs/execution/ANTHROPIC_AI_FOR_SCIENCE_HS_WAKE_GATE_2026-09-23.md"
 }

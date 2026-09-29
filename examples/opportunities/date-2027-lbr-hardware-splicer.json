@@ -3,9 +3,9 @@
   "name": "DATE 2027 — Late Breaking Results — Hardware-Splicer",
   "portal": "generic",
   "entry_url": "https://date27.date-conference.com/call-for-papers",
-  "deadline": "2026-11-29T23:59:00-12:00",
+  "deadline": "2026-11-29T23:59:59-12:00",
   "mode": "inspect",
-  "direct_control": true,
+  "direct_control": false,
   "profile": "../profiles/christ.json",
   "project": "../projects/hardware-splicer.json",
   "packet_source": "https://github.com/Spectating101/hardware-splicer/blob/agent/submission-package-2026q3/docs/external_assessment/submissions/DATE_2027_LBR_DRAFT.md",
@@ -17,13 +17,44 @@
     "project_summary": "$project.description",
     "limitations": "$project.limitations"
   },
-  "field_map": {
-    "paper_title": {"label": "Title"},
-    "author_name": {"label": "Author"},
-    "affiliation": {"label": "Affiliation"},
-    "project_summary": {"label": "Abstract"},
-    "limitations": {"label": "Limitations"}
-  },
+  "field_map": {},
   "uploads": [],
-  "human_required": ["login", "authorship_attestation", "originality_attestation", "terms_acceptance", "payment", "final_submit"]
+  "human_required": [
+    "login",
+    "authorship_attestation",
+    "originality_attestation",
+    "blind_review_check",
+    "terms_acceptance",
+    "payment",
+    "final_submit"
+  ],
+  "execution_state": "PACKET_READY",
+  "deadline_basis": "Sunday, 29 November 2026 AoE",
+  "submission_requirements": {
+    "paper_type": "Late Breaking Results extended abstract",
+    "main_pages": 2,
+    "references_only_pages_optional": 1,
+    "double_blind": true,
+    "title_prefix_required": "Late Breaking Results:",
+    "template_required": true,
+    "accepted_camera_ready_required": true,
+    "submission_portal_status": "NOT_YET_AVAILABLE_ON_OFFICIAL_CFP_AS_OF_2026-09-23"
+  },
+  "route_evidence": {
+    "verified_at": "2026-09-23",
+    "official_cfp_verified": true,
+    "final_paper_deadline_verified": true,
+    "form_fields_verified": false,
+    "substantive_result_available": false,
+    "physical_result_gate": "Spectating101/hardware-splicer#105",
+    "current_physical_state": "PACKAGED_NOT_PHYSICAL",
+    "physical_correctness": "UNPROVEN"
+  },
+  "wake_gate": {
+    "state": "WAIT_FOR_SUBSTANTIVE_EMPIRICAL_RESULT",
+    "preferred_trigger": "revision-bound physical evidence from HS #105 through at least a bounded real functional result or preserved physical failure",
+    "alternate_trigger": "comparably substantive frozen external-agent/cross-model empirical result",
+    "forbidden_trigger": "infrastructure-only MCP transport result or speculative physical claim"
+  },
+  "finalization_runbook": "docs/execution/DATE_2027_HS_EVIDENCE_FINALIZATION_2026-09-23.md"
 }

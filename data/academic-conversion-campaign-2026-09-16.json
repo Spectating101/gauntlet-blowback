@@ -1,0 +1,317 @@
+{
+  "schema": "blowback.academic_conversion_campaign.v1",
+  "snapshot": "2026-09-16",
+  "scope": {
+    "includes": [
+      "paper development",
+      "thesis-linked research",
+      "research grants attached to papers",
+      "conference and workshop validation",
+      "working-paper and archive release",
+      "peer-reviewed proceedings",
+      "journal publication"
+    ],
+    "excludes": [
+      "phd",
+      "job",
+      "research employment",
+      "main quest placement"
+    ],
+    "main_quest_relationship": "UPSTREAM_EVIDENCE_PRODUCER"
+  },
+  "doctrine": {
+    "research_asset_is_planning_unit": true,
+    "research_program_may_have_distinct_child_papers": true,
+    "calendar_entry_is_not_plan": true,
+    "route_requires_campaign_role": true,
+    "evidence_gate_overrides_deadline": true,
+    "conference_count_is_not_success_metric": true,
+    "single_overlapping_peer_review_per_manuscript": true,
+    "duplicate_publication_requires_explicit_overlap_check": true,
+    "immature_papers_do_not_receive_external_route_pressure": true,
+    "portfolio_projects_require_separable_academic_derivative_before_entry": true
+  },
+  "route_roles": [
+    "FUND_EXTEND",
+    "SPECIALIST_VALIDATE",
+    "CROSS_DOMAIN_STRESS_TEST",
+    "DISSEMINATE",
+    "PUBLISH"
+  ],
+  "programs": [
+    {
+      "id": "program-cl-eci",
+      "name": "CL-ECI research program",
+      "state": "ACTIVE",
+      "authority_asset": "CL-ECI synthesis",
+      "child_campaigns": [
+        "academic-eci",
+        "academic-cl",
+        "academic-cl-eci-synthesis"
+      ],
+      "program_rule": "ECI, CL, and the CL-ECI synthesis are related but non-interchangeable papers. A route must state which contribution it is evaluating, and overlapping full-paper submissions require an explicit originality/overlap check."
+    }
+  ],
+  "campaigns": [
+    {
+      "id": "academic-cl-eci-synthesis",
+      "asset": "From Energy Signals to Constrained Claims",
+      "alias": "CL-ECI",
+      "program_id": "program-cl-eci",
+      "priority": 1,
+      "state": "ACTIVE",
+      "stage": "PRIMARY_EXTERNAL_REVIEW",
+      "terminal_objective": "Externally reviewed synthesis paper that preserves the layered progression from admissible economic signal to claim-level evidence to binding constraint without claiming monetary performance that has not been demonstrated.",
+      "current_decisive_gate": "Protect the synthesis as the primary integrated manuscript and prevent CL, ECI, Policy Lab, or fallback venues from becoming duplicate publication variants of the same contribution.",
+      "sequence": [
+        "SYNTHESIS_AUTHORITY_FREEZE",
+        "OVERLAP_AND_ORIGINALITY_CHECK",
+        "PRIMARY_PEER_REVIEW_ROUTE",
+        "EXTERNAL_FEEDBACK",
+        "REVISION_WITH_BOUNDARY_NONCLAIMS",
+        "NEXT_PUBLICATION_DECISION",
+        "OUTCOME_TRACKING"
+      ],
+      "routes": [
+        {
+          "route_id": "fc27-cl-eci",
+          "role": "PUBLISH",
+          "order": 1,
+          "primary": true,
+          "current_deadline_override": "2026-09-24",
+          "current_source_state": "OFFICIAL_CFP_REVERIFIED_2026-09-16_DEADLINE_EXTENDED",
+          "note": "Official FC'27 CFP now lists 2026-09-24 23:59 AoE as the firm paper deadline; the older master route still carries 2026-09-17 and requires later registry reconciliation."
+        },
+        {
+          "route_id": "ftsid-2026-cl-eci",
+          "role": "PUBLISH",
+          "order": 2,
+          "fallback": true,
+          "blocked_by": "FC27_PRIMARY_MANUSCRIPT_DECISION"
+        }
+      ],
+      "next_actions": [
+        "Treat FC'27 as the live primary integrated-paper route and use the official 2026-09-24 firm deadline, not the stale Sep-17 registry date.",
+        "Run a manuscript-fit and page-budget check against FC'27 short-paper requirements before submission packaging.",
+        "Keep FTSID as a fallback only if FC'27 is stopped or the artifact is demonstrably non-overlapping.",
+        "Record any reviewer feedback against the four-boundary synthesis rather than promoting the Policy Lab implementation into evidence the papers do not contain."
+      ],
+      "nonclaims": [
+        "Do not claim that energy adjacency alone creates economic information.",
+        "Do not claim that economic information alone creates claim-level evidence.",
+        "Do not claim that claim-level evidence alone creates a binding financial constraint.",
+        "Do not claim monetary performance, legal-money status, market adoption, or general acceptability from the current prototype."
+      ],
+      "success_signals": [
+        "peer-reviewed external verdict on the synthesis",
+        "reviewer-driven improvement to boundary definitions or evidence",
+        "proceedings publication or a stronger non-overlapping journal path",
+        "preserved separation between academic evidence and executable demonstration"
+      ]
+    },
+    {
+      "id": "academic-eci",
+      "asset": "When Does Energy Track the Real Economy?",
+      "alias": "ECI",
+      "program_id": "program-cl-eci",
+      "priority": 2,
+      "state": "ACTIVE_SELECTIVE",
+      "stage": "STANDALONE_MANUSCRIPT_REVALIDATION",
+      "terminal_objective": "Standalone measurement/admissibility paper establishing when an energy-adjacent signal deserves economic interpretation for a defined real-activity purpose.",
+      "current_decisive_gate": "Demonstrate that the ECI paper remains a distinct standalone contribution after the synthesis freeze and is submission-ready without copying the CL-ECI integrated argument.",
+      "sequence": [
+        "STANDALONE_CONTRIBUTION_CHECK",
+        "EMPIRICAL_REPRODUCIBILITY_CHECK",
+        "OVERLAP_MAP_VS_SYNTHESIS",
+        "TARGETED_SUSTAINABLE_FINANCE_ROUTE_CENSUS",
+        "SPECIALIST_VALIDATION",
+        "PUBLICATION_DECISION"
+      ],
+      "routes": [],
+      "historical_routes": [
+        {
+          "route_id": "grasfi-asia-2027-eci",
+          "role": "SPECIALIST_VALIDATE",
+          "status": "DEADLINE_PASSED_2026-08-31",
+          "lesson": "Strong native fit for energy finance/sustainable-finance specificity; use that venue profile when searching the next route rather than forcing ECI into generic software calls."
+        }
+      ],
+      "next_actions": [
+        "Reconfirm the standalone ECI manuscript and empirical reproduction package against the frozen synthesis.",
+        "If distinct and ready, run a targeted sustainable-finance/energy-finance venue census rather than a generic finance CFP sweep.",
+        "Do not reuse FC'27 synthesis copy as an ECI submission."
+      ]
+    },
+    {
+      "id": "academic-cl",
+      "asset": "The Constrained Ledger: When Does Energy Actually Discipline Digital Money?",
+      "alias": "CL",
+      "program_id": "program-cl-eci",
+      "priority": 3,
+      "state": "ACTIVE_SELECTIVE",
+      "stage": "ARCHITECTURE_LANE_SELECTION",
+      "terminal_objective": "Distinct institutional-constraint paper explaining when evidence becomes a binding financial constraint through issuance, pricing, settlement, and governance conditions.",
+      "current_decisive_gate": "Preserve CL as a general institutional architecture rather than merely extracting the architecture sections of the CL-ECI synthesis under a new title.",
+      "sequence": [
+        "ARCHITECTURE_CONTRIBUTION_FREEZE",
+        "OVERLAP_MAP_VS_SYNTHESIS",
+        "VENUE_FIT_RECON",
+        "ARCHITECTURE_OR_INSTITUTIONAL_VALIDATION",
+        "PUBLICATION_DECISION"
+      ],
+      "routes": [
+        {
+          "route_id": "wu-tax-tech-2027-il-cl",
+          "role": "CROSS_DOMAIN_STRESS_TEST",
+          "order": 1,
+          "conditional": true,
+          "note": "Only a genuine IL x CL tax-workflow/agentic-AI derivative qualifies; this is not the default CL manuscript route."
+        }
+      ],
+      "next_actions": [
+        "Freeze what CL contributes independently of ECI and the synthesis.",
+        "Do not create a second full-paper submission by retitling the integrated CL-ECI contribution.",
+        "Use architecture/institutional venues only where authorization, policy-as-code, settlement, governance, or evidence-to-authority boundaries are native fit."
+      ]
+    },
+    {
+      "id": "academic-fiscal-choke-points",
+      "asset": "Fiscal Choke Points",
+      "alias": "DT",
+      "priority": 4,
+      "state": "ACTIVE",
+      "stage": "EXTERNAL_VALIDATION",
+      "terminal_objective": "Externally tested, archived, journal-submission-ready comparative digital-tax paper followed by one deliberate journal submission.",
+      "current_decisive_gate": "Convert specialist feedback and funding without diluting transaction-path comparison, activation specificity, transaction-control constraint, or Stage A versus Stage B capacity.",
+      "sequence": [
+        "FROZEN_RESEARCH_OBJECT",
+        "ARCHIVE_AND_PROVENANCE",
+        "FUND_OR_SPECIALIST_VALIDATE",
+        "OPTIONAL_CROSS_DOMAIN_STRESS_TEST",
+        "REVISION_FROM_EXTERNAL_FEEDBACK",
+        "ONE_JOURNAL_CHOICE",
+        "JOURNAL_SUBMISSION",
+        "OUTCOME_TRACKING"
+      ],
+      "routes": [
+        {"route_id": "tax-academy-sg-il", "role": "FUND_EXTEND", "order": 1},
+        {"route_id": "atta-2027-fiscal-choke-points", "role": "SPECIALIST_VALIDATE", "order": 2},
+        {"route_id": "atax-2027-fiscal-choke-points", "role": "SPECIALIST_VALIDATE", "order": 3},
+        {"route_id": "ipsa-2027-rc30-fiscal-choke-points", "role": "CROSS_DOMAIN_STRESS_TEST", "order": 4},
+        {"route_id": "icpp8-2027-fiscal-choke-points", "role": "CROSS_DOMAIN_STRESS_TEST", "order": 5},
+        {"route_id": "irspm-2027-fiscal-choke-points", "role": "CROSS_DOMAIN_STRESS_TEST", "order": 6},
+        {"route_id": "ata-jltr-2027-fiscal-choke-points", "role": "SPECIALIST_VALIDATE", "order": 7, "selective": true},
+        {"route_id": "journal-regulation-governance-fiscal-choke-points", "role": "PUBLISH", "order": 8},
+        {"route_id": "journal-world-tax-journal-fiscal-choke-points", "role": "PUBLISH", "order": 8},
+        {"route_id": "journal-ejtr-fiscal-choke-points", "role": "PUBLISH", "order": 8},
+        {"route_id": "journal-jcpa-fiscal-choke-points", "role": "PUBLISH", "order": 8}
+      ],
+      "next_actions": [
+        "Resolve Tax Academy live mechanics and eligibility for the already-prepared Singapore extension packet.",
+        "Keep ATTA abstract as the first specialist submission sequence.",
+        "Keep ATAx abstract second while preserving acceptance-stage cost gating.",
+        "Treat IPSA as funding-dependent rather than prestige-driven.",
+        "Wait for genuine ICPP8 and IRSPM panel/call fit before additional packet work.",
+        "Defer final journal choice until useful external feedback arrives or conference validation stops adding value."
+      ],
+      "success_signals": [
+        "external research funding",
+        "accepted and presented specialist conference paper",
+        "documented revision caused by external scholarly feedback",
+        "stable archived research object",
+        "one deliberate journal submission",
+        "peer-reviewed publication"
+      ]
+    },
+    {
+      "id": "academic-invisible-ledger",
+      "asset": "Invisible Ledger",
+      "alias": "IL",
+      "priority": 5,
+      "state": "ACTIVE_GATED",
+      "stage": "EMPIRICAL_AUTHORITY_GATE",
+      "terminal_objective": "Frozen, reproducible, thesis-backed flagship paper on cross-record economic observability followed by external field validation and journal submission.",
+      "current_decisive_gate": "Explicitly freeze the issuer/sample perimeter and canonical empirical hierarchy before presenting the empirical core externally.",
+      "sequence": [
+        "ISSUER_SAMPLE_PERIMETER_DECISION",
+        "CANONICAL_EMPIRICAL_HIERARCHY_FREEZE",
+        "REPRODUCIBILITY_CERTIFICATION_RERUN",
+        "THESIS_MANUSCRIPT_ALIGNMENT",
+        "EXTERNAL_FIELD_VALIDATION",
+        "FULL_MANUSCRIPT_REVISION",
+        "JOURNAL_SUBMISSION",
+        "OUTCOME_TRACKING"
+      ],
+      "routes": [
+        {"route_id": "sase-2027-invisible-ledger", "role": "SPECIALIST_VALIDATE", "order": 1, "blocked_by": "ISSUER_SAMPLE_PERIMETER_DECISION"},
+        {"route_id": "journal-ecra-invisible-ledger", "role": "PUBLISH", "order": 2, "blocked_by": "REPRODUCIBILITY_CERTIFICATION_RERUN"}
+      ],
+      "next_actions": [
+        "Obtain explicit advisor ratification or rejection of the proposed scope-labelled issuer rule.",
+        "Update canonical authority files only after that decision.",
+        "Rerun certification and reproducibility under the approved rule.",
+        "Align thesis and manuscript to the same empirical hierarchy.",
+        "Only then convert SASE Network J or another genuinely matching field-validation route."
+      ],
+      "nonclaims": [
+        "Do not revive the hidden-economy residual framing.",
+        "Do not equate GTV, issuer revenue, merchant sales, payment flows, GDP/value added, or taxable base.",
+        "Do not relax comparability to increase sample size for a venue."
+      ]
+    },
+    {
+      "id": "academic-ceir-energy-anchoring",
+      "asset": "CEIR / Energy Anchoring",
+      "priority": 6,
+      "state": "QUEUED",
+      "stage": "INTERNAL_RESEARCH_UPGRADE",
+      "terminal_objective": "Reproducible publication candidate or explicitly retained falsification result that survives replication and identification audit.",
+      "current_decisive_gate": "Replicate the original estimates and preserve CEIR's role as a tested shortcut falsification rather than silently treating it as ECI or claim-level evidence.",
+      "sequence": [
+        "REPLICATE_ORIGINAL_ESTIMATES",
+        "DATA_CODE_PROVENANCE_AUDIT",
+        "IDENTIFICATION_SPECIFICATION_AUDIT",
+        "RELATIONSHIP_TO_ECI_CL_ECI_FREEZE",
+        "ROBUSTNESS_AND_CONTRIBUTION_DECISION",
+        "PUBLICATION_CANDIDATE_OR_SUPPORTING_RESULT",
+        "ROUTE_CENSUS_IF_DISTINCT"
+      ],
+      "routes": [],
+      "route_discovery_allowed": false
+    },
+    {
+      "id": "academic-esg-rebrand",
+      "asset": "ESG Rebrand",
+      "priority": 7,
+      "state": "QUEUED",
+      "stage": "INTERNAL_RESEARCH_UPGRADE",
+      "terminal_objective": "Defensible empirical working paper with complete sample, identification, robustness, and contribution boundaries.",
+      "current_decisive_gate": "Complete data/sample audit and identification/DiD design audit before route discovery.",
+      "sequence": [
+        "DATA_COMPLETENESS_SAMPLE_AUDIT",
+        "IDENTIFICATION_DID_DESIGN_AUDIT",
+        "ROBUSTNESS_MECHANISM_CHECKS",
+        "CONTRIBUTION_FREEZE",
+        "WORKING_PAPER_CANDIDATE",
+        "ROUTE_CENSUS"
+      ],
+      "routes": [],
+      "route_discovery_allowed": false
+    }
+  ],
+  "portfolio_rules": {
+    "active_outward_campaigns": [
+      "academic-cl-eci-synthesis",
+      "academic-eci",
+      "academic-cl",
+      "academic-fiscal-choke-points",
+      "academic-invisible-ledger"
+    ],
+    "primary_integrated_manuscript": "academic-cl-eci-synthesis",
+    "queued_internal_campaigns": [
+      "academic-ceir-energy-anchoring",
+      "academic-esg-rebrand"
+    ],
+    "default_new_project_policy": "NO_ACADEMIC_CAMPAIGN_UNTIL_SEPARABLE_RESEARCH_OBJECT_EXISTS"
+  }
+}

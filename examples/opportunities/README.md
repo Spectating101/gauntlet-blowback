@@ -17,7 +17,7 @@ Current route assessment: `../radar/hardware-splicer-candidate-assessments-2026-
 
 - `aws-community-day-taiwan-2026-hardware-splicer.json` — immediate speaking CFP; packet ready, live form still needs mapping.
 - `openai-researcher-access-hardware-splicer.json` — API-credit research route; packet ready, experiment budget/window and live form remain.
-- `anthropic-external-researcher-access-hardware-splicer.json` — safety/control research-credit route; packet ready, Claude budget/form remain.
+- `anthropic-external-researcher-access-hardware-splicer.json` — safety/control research-credit route; **manual human submission ready**. Exact Google Form labels remain human-at-entry; current program terms and model-freshness gate are captured in `docs/execution/ANTHROPIC_ERAP_MANUAL_SUBMISSION_2026-09-23.md`.
 - `anthropic-mhs-preview-hardware-splicer.json` — research-preview route; blocked on real programmable device and applicant-class verification.
 - `nchc-university-ai-compute-yzu-hardware-splicer.json` — institutional YZU route; university sponsorship/contact and real local-model workload required.
 - `aws-cloud-credit-research-yzu-hardware-splicer.json` — geographic eligibility must be verified before cloud proposal work.

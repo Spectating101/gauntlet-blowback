@@ -107,17 +107,39 @@
       ]
     },
     {
+      "id": "fiscal-choke-points",
+      "name": "Fiscal Choke Points / Digital Tax",
+      "opportunity_types": ["grant"],
+      "discovery_queries": ["tax administration research grant", "digital tax research", "comparative tax policy", "platform VAT administration", "regulatory intermediation tax", "digital economy tax administration"],
+      "keywords": [
+        {"term": "tax administration", "weight": 3},
+        {"term": "digital taxation", "weight": 3},
+        {"term": "VAT", "weight": 2},
+        {"term": "withholding", "weight": 2},
+        {"term": "platform liability", "weight": 3},
+        {"term": "regulatory intermediaries", "weight": 2.5},
+        {"term": "comparative policy", "weight": 2},
+        {"term": "fiscal capacity", "weight": 2},
+        {"term": "e-commerce", "weight": 1.5},
+        {"term": "ASEAN", "weight": 1.5}
+      ]
+    },
+    {
       "id": "invisible-ledger",
       "name": "Invisible Ledger",
       "opportunity_types": ["grant"],
-      "discovery_queries": ["digital assets research", "financial economics", "cryptocurrency research", "digital finance", "stablecoin research", "digital asset markets"],
+      "discovery_queries": ["digital economy measurement", "platform economy research", "e-commerce measurement", "official statistics digital economy", "digital payments research", "platform accounting measurement"],
       "keywords": [
-        {"term": "digital assets", "weight": 3},
-        {"term": "financial economics", "weight": 3},
-        {"term": "cryptocurrency", "weight": 2},
-        {"term": "digital finance", "weight": 2},
-        {"term": "stablecoin", "weight": 3},
-        {"term": "financial", "weight": 1}
+        {"term": "digital economy", "weight": 3},
+        {"term": "platform economy", "weight": 3},
+        {"term": "e-commerce", "weight": 2.5},
+        {"term": "economic measurement", "weight": 3},
+        {"term": "accounting comparability", "weight": 2},
+        {"term": "official statistics", "weight": 2},
+        {"term": "digital payments", "weight": 2},
+        {"term": "administrative data", "weight": 2},
+        {"term": "economic observability", "weight": 3},
+        {"term": "Indonesia", "weight": 1.5}
       ]
     }
   ]

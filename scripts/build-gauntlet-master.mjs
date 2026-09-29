@@ -16,6 +16,7 @@ const DEFAULTS = {
   infrastructureRadar: path.join(ROOT, 'data/student-research-infrastructure-radar-2026-09-01.json'),
   researchResourceRadar: path.join(ROOT, 'data/research-resource-radar-2026-09-04.json'),
   expandedOpportunityRadar: path.join(ROOT, 'data/expanded-opportunity-radar-2026-09-12.json'),
+  researchConversionRadar: path.join(ROOT, 'data/research-conversion-radar-2026-09-15.json'),
   fireExecutionRoutes: path.join(ROOT, 'data/fire-execution-routes-2026-09-05.json'),
   routeAdditions: path.join(ROOT, 'data/route-additions-2026-09-21.json'),
   routeCorrections: path.join(ROOT, 'data/route-corrections-2026-09-21.json'),
@@ -202,6 +203,7 @@ export function buildMasterRegistry({
   infrastructureRadarPath = DEFAULTS.infrastructureRadar,
   researchResourceRadarPath = DEFAULTS.researchResourceRadar,
   expandedOpportunityRadarPath = DEFAULTS.expandedOpportunityRadar,
+  researchConversionRadarPath = DEFAULTS.researchConversionRadar,
   fireExecutionRoutesPath = DEFAULTS.fireExecutionRoutes,
   routeAdditionsPath = DEFAULTS.routeAdditions,
   routeCorrectionsPath = DEFAULTS.routeCorrections,
@@ -219,6 +221,7 @@ export function buildMasterRegistry({
   const infrastructureRadar = JSON.parse(fs.readFileSync(infrastructureRadarPath, 'utf8'));
   const researchResourceRadar = JSON.parse(fs.readFileSync(researchResourceRadarPath, 'utf8'));
   const expandedOpportunityRadar = JSON.parse(fs.readFileSync(expandedOpportunityRadarPath, 'utf8'));
+  const researchConversionRadar = JSON.parse(fs.readFileSync(researchConversionRadarPath, 'utf8'));
   const fireExecutionRoutes = JSON.parse(fs.readFileSync(fireExecutionRoutesPath, 'utf8'));
   const routeAdditions = JSON.parse(fs.readFileSync(routeAdditionsPath, 'utf8'));
   const routeCorrections = JSON.parse(fs.readFileSync(routeCorrectionsPath, 'utf8'));
@@ -265,6 +268,12 @@ export function buildMasterRegistry({
   // audits so current official program mechanics supersede stale provider rows.
   addSupplementRoutes(records, expandedOpportunityRadar.routes, 'expanded-opportunity-radar');
   applyOverrides(records, expandedOpportunityRadar.overrides, 'expanded-opportunity-radar');
+
+  // The Sep-15 research-conversion tranche is paper-native opportunity truth. It loads
+  // after resource/access routes so newly frozen contribution lanes can add or re-own
+  // conference, grant and journal routes without rewriting older discovery history.
+  addSupplementRoutes(records, researchConversionRadar.routes, 'research-conversion-radar');
+  applyOverrides(records, researchConversionRadar.overrides, 'research-conversion-radar');
 
   // FIRE execution mapping is intentionally separate from opportunity truth. It only
   // attaches a vetted local manifest to routes whose application copy is already ready.

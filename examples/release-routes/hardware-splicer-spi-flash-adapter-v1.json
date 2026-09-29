@@ -1,0 +1,78 @@
+{
+  "schema": "blowback.external_release_route.v1",
+  "id": "hardware-splicer-spi-flash-adapter-v1-remote-fct",
+  "project": "../projects/hardware-splicer.json",
+  "release": {
+    "repository": "Spectating101/hardware-splicer",
+    "revision": "f892facd67c5124e2362860ebc999625afedc5d5",
+    "tag": "gauntlet-spi-flash-adapter-v1-20260916",
+    "url": "https://github.com/Spectating101/hardware-splicer/releases/tag/gauntlet-spi-flash-adapter-v1-20260916"
+  },
+  "artifacts": [
+    {
+      "role": "candidate_package",
+      "name": "spi-flash-adapter-v1-remote-fct-main-f892fac.zip",
+      "url": "https://github.com/Spectating101/hardware-splicer/releases/download/gauntlet-spi-flash-adapter-v1-20260916/spi-flash-adapter-v1-remote-fct-main-f892fac.zip",
+      "sha256": "6d4c76feaeebdab1223ed6c4be21d63835212baea731aea9d3933f2525be1edd"
+    },
+    {
+      "role": "checksums",
+      "name": "SHA256SUMS.txt",
+      "url": "https://github.com/Spectating101/hardware-splicer/releases/download/gauntlet-spi-flash-adapter-v1-20260916/SHA256SUMS.txt"
+    },
+    {
+      "role": "handoff",
+      "name": "PACKAGE_HANDOFF.md",
+      "url": "https://github.com/Spectating101/hardware-splicer/releases/download/gauntlet-spi-flash-adapter-v1-20260916/PACKAGE_HANDOFF.md"
+    }
+  ],
+  "verification": {
+    "package_sha256_verified": true,
+    "outer_zip_members_verified": 24,
+    "nested_zip_members_verified": 4,
+    "campaign_audit_pass": true,
+    "campaign_audit_blockers": 0,
+    "byte_identical_rebuild": true,
+    "kicad_version": "9.0.2",
+    "named_focused_tests_passed": 64,
+    "named_focused_tests_failed": 0,
+    "main_push_workflows_passed": 14,
+    "tag_push_workflows_passed": 22
+  },
+  "authority": {
+    "gauntlet_state": "PACKAGED_NOT_PHYSICAL",
+    "physical_correctness": "UNPROVEN",
+    "provider_selected": false,
+    "provider_engaged": false,
+    "fabrication_authorized": false,
+    "fabricated": false,
+    "assembled": false,
+    "powered": false,
+    "externally_submitted": false
+  },
+  "routing": {
+    "state": "READY_FOR_TARGET_SELECTION",
+    "provider": null,
+    "evaluator": null,
+    "allowed_next_actions": [
+      "independently download and verify the immutable release",
+      "select an evaluator or quotation-only fabrication/FCT provider",
+      "prepare a capability-review or quotation request from the frozen handoff",
+      "record DFM questions or evaluator findings without changing physical authority"
+    ],
+    "human_gates": [
+      "provider_selection",
+      "legal_terms",
+      "payment",
+      "fabrication_authorization",
+      "physical_test_authorization"
+    ],
+    "forbidden": [
+      "silently reuse a historical provider engagement",
+      "claim the package was externally submitted",
+      "claim provider endorsement",
+      "claim fabrication or powered testing occurred",
+      "promote physical correctness above UNPROVEN"
+    ]
+  }
+}
