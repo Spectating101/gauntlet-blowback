@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { parseDeadline, routeEvents, renderCalendar } from '../scripts/build-calendar.mjs';
+import { action, parseDeadline, routeEvents, renderCalendar } from '../scripts/build-calendar.mjs';
 import { buildMasterRegistry } from '../scripts/build-gauntlet-master.mjs';
 
 const route = (id, deadline, status = 'FIRE_AFTER_GATE', extra = {}) => ({
@@ -57,4 +57,23 @@ test('every event in the real calendar binds to a live route', () => {
   const events = routeEvents(records, { today: '2026-09-30' });
   assert.ok(events.length > 40, `expected the dated live routes, got ${events.length}`);
   for (const e of events) assert.ok(live.has(e.uid.replace(/-\d{8}@blowback$/, '')), e.uid);
+});
+
+test('the leading qualifier wins: a held, watched or checked FIRE route is not an application', () => {
+  // HOLD_FIRE_LATER, WATCH_FIRE and CHECK_FIRE were all labelled Apply by a FIRE-first match.
+  assert.equal(action('HOLD_FIRE_LATER'), 'On hold');
+  assert.equal(action('WATCH_FIRE'), 'Watch');
+  assert.equal(action('CHECK_FIRE'), 'Check');
+  assert.equal(action('VERIFY'), 'Check');
+});
+
+test('every FIRE variant in the live list that is an application gets a reminder', () => {
+  // Raised in review: a fixed allowlist missed STRETCH_FIRE, FIRE_IF_ELIGIBLE and others.
+  for (const status of ['FIRE', 'FIRE_NOW', 'STRETCH_FIRE', 'FIRE_IF_ELIGIBLE', 'FIRE_SELECTIVELY',
+    'FIRE_AFTER_REPO_AND_USE_CASE_VERIFY', 'SELECTIVE_FIRE', 'DEFAULT_PRIMARY_FIRE']) {
+    const [e] = routeEvents([route('x', '2026-10-15', status)], { today: '2026-09-30' });
+    assert.equal(e.remind, true, status);
+  }
+  const [held] = routeEvents([route('x', '2026-10-15', 'HOLD_FIRE_LATER')], { today: '2026-09-30' });
+  assert.equal(held.remind, false);
 });

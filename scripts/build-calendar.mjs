@@ -26,20 +26,23 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const DEFAULT_OUTPUT = path.join(ROOT, 'calendar', 'gauntlet-live.ics');
 const TZ = 'Asia/Taipei';
 
-// Statuses that mean "an application to make", which earn a reminder.
-const APPLY = /^(FIRE|FIRE_NOW|FIRE_SOON|FIRE_AFTER_GATE|FIRE_IF_FIT|FIRE_AFTER_PRIMARY_DECISION|DEFAULT_PRIMARY_FIRE|SELECTIVE_FIRE|PRIMARY_FIRE|HIGH_FIT_ALTERNATIVE|ARTIFACT_ROUTE|PORTFOLIO_BAKEOFF_HUMAN_REWRITE_REQUIRED|HOLD_SCREENCAST_RECORDING)$/;
-
+// The leading word qualifies the rest: HOLD_FIRE_LATER is a hold, WATCH_FIRE a watch,
+// CHECK_FIRE a check. Only after those does any FIRE status count as an application,
+// so new variants (STRETCH_FIRE, FIRE_IF_ELIGIBLE, ...) need no list update.
 const ACTION = [
   [/^HOLD_SCREENCAST_RECORDING$/, 'Record + apply'],
+  [/^(HOLD|FUNDING_GATED|FALLBACK)/, 'On hold'],
+  [/^WATCH/, 'Watch'],
+  [/^(CHECK|VERIFY|REVERIFY)/, 'Check'],
   [/FIRE|ARTIFACT_ROUTE|HIGH_FIT_ALTERNATIVE|BAKEOFF/, 'Apply'],
-  [/VERIFY|REVERIFY|CHECK/, 'Check'],
-  [/WATCH/, 'Watch'],
   [/DEVELOP|PREP/, 'Prepare'],
   [/NETWORK/, 'Event'],
-  [/HOLD|FUNDING_GATED|FALLBACK/, 'On hold'],
 ];
 
-function action(status = '') {
+// Reminders follow the label, so the two cannot disagree.
+const REMIND = new Set(['Apply', 'Record + apply']);
+
+export function action(status = '') {
   const found = ACTION.find(([rx]) => rx.test(status));
   return found ? found[1] : 'Deadline';
 }
@@ -102,13 +105,14 @@ export function routeEvents(records, { today }) {
     const when = parseDeadline(record.deadline);
     if (!when || when.end < today) continue;
     const status = String(record.status ?? '');
+    const label = action(status);
     const title = [record.organization, record.opportunity].filter(Boolean).join(' — ');
     const closes = when.time ? ` (closes ${when.time} Taipei)` : '';
     events.push({
       uid: `${record.id}-${compact(when.start)}@blowback`,
       start: when.start,
       endExclusive: nextDay(when.end),
-      summary: `${action(status)}: ${title}${closes}`,
+      summary: `${label}: ${title}${closes}`,
       description: [
         `Status: ${status}`,
         record.gate ? `Gate: ${record.gate}` : null,
@@ -118,7 +122,7 @@ export function routeEvents(records, { today }) {
         `Deadline as recorded: ${record.deadline}`,
       ].filter(Boolean).join('\n'),
       url: /^https?:\/\//.test(String(record.source ?? '')) ? record.source : null,
-      remind: APPLY.test(status),
+      remind: REMIND.has(label),
     });
   }
   return events.sort((a, b) => a.start.localeCompare(b.start) || a.uid.localeCompare(b.uid));
