@@ -7,7 +7,9 @@ import { resolveBrowsersPath } from '../src/core/playwright-home.mjs';
 
 function home(withBrowsers) {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'pw-home-'));
-  if (withBrowsers) fs.mkdirSync(path.join(dir, '.cache', 'ms-playwright'), { recursive: true });
+  fs.mkdirSync(path.join(dir, '.cache', 'ms-playwright'), { recursive: true });
+  // "With browsers" means a browser is installed, not merely that the folder exists.
+  if (withBrowsers) fs.mkdirSync(path.join(dir, '.cache', 'ms-playwright', 'chromium_headless_shell-1234'));
   return dir;
 }
 
@@ -29,4 +31,18 @@ test('a per-session HOME with no browsers falls back to the account home', () =>
 
 test('with browsers nowhere, nothing is invented', () => {
   assert.equal(resolveBrowsersPath({ HOME: home(false) }, home(false)), null);
+});
+
+test('a HOME cache with no browser in it does not count', () => {
+  // The real case on 2026-09-30: the student profile's ~/.cache/ms-playwright held only
+  // a stray `b/` directory, so trusting the folder's existence sent every launch there.
+  const session = home(false);
+  fs.mkdirSync(path.join(session, '.cache', 'ms-playwright', 'b'));
+  const account = home(true);
+  assert.equal(resolveBrowsersPath({ HOME: session }, account),
+    path.join(account, '.cache', 'ms-playwright'));
+});
+
+test('a HOME cache with a browser in it is trusted', () => {
+  assert.equal(resolveBrowsersPath({ HOME: home(true) }, home(true)), null);
 });

@@ -13,14 +13,24 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 
+// A cache folder can exist with nothing usable in it -- the student profile's held
+// only a stray `b/` directory -- so it counts only if a browser is installed there.
+function hasBrowsers(dir) {
+  try {
+    return fs.readdirSync(dir).some((name) => /^(chromium|firefox|webkit)/.test(name));
+  } catch {
+    return false;
+  }
+}
+
 export function resolveBrowsersPath(env = process.env, accountHome = os.userInfo().homedir) {
   if (env.PLAYWRIGHT_BROWSERS_PATH) return env.PLAYWRIGHT_BROWSERS_PATH;
   const fromHome = env.HOME ? path.join(env.HOME, '.cache', 'ms-playwright') : null;
-  if (fromHome && fs.existsSync(fromHome)) return null;
+  if (fromHome && hasBrowsers(fromHome)) return null;
   // The password database, not HOME, knows the real home: HOME is the value
   // that was wrong.
   const fromAccount = path.join(accountHome, '.cache', 'ms-playwright');
-  return fs.existsSync(fromAccount) ? fromAccount : null;
+  return hasBrowsers(fromAccount) ? fromAccount : null;
 }
 
 const resolved = resolveBrowsersPath();
