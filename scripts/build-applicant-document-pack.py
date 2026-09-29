@@ -1,4 +1,10 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.11"
+# dependencies = ["python-docx", "pyyaml"]
+# ///
+# Declares its own dependencies so `uv run` supplies them; it no longer relies on a
+# hand-made .venv-docs in the checkout, which VS Code activated in every terminal.
 """Build evidence-bounded applicant documents for immediate calendar routes."""
 
 from __future__ import annotations
