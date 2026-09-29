@@ -21,6 +21,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildMasterRegistry } from './build-gauntlet-master.mjs';
+import { applicantDocumentAuthority, isPhdRoute } from '../src/allocation/submission-readiness.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const DEFAULT_OUTPUT = path.join(ROOT, 'calendar', 'gauntlet-live.ics');
@@ -99,9 +100,20 @@ function fold(line) {
   return out.join('\r\n ');
 }
 
-export function routeEvents(records, { today }) {
+// Routes the applicant has closed out stay on record but are not scheduled. On
+// 2026-09-30 that is every PhD route, plus PhD-only funding, after the last two
+// PhD applications went in (data/applicant-document-readiness-2026-09-12.json).
+export function closedOutFilter(policy = applicantDocumentAuthority().policy) {
+  const phd = policy?.phd_applications_closed;
+  if (!phd) return () => false;
+  const alsoExcluded = new Set(phd.also_excluded_route_ids ?? []);
+  return (record) => isPhdRoute(record) || alsoExcluded.has(record.id);
+}
+
+export function routeEvents(records, { today, exclude = closedOutFilter() }) {
   const events = [];
   for (const record of records) {
+    if (exclude(record)) continue;
     const when = parseDeadline(record.deadline);
     if (!when || when.end < today) continue;
     const status = String(record.status ?? '');

@@ -7,7 +7,7 @@ X-WR-CALNAME:Gauntlet deadlines
 X-WR-TIMEZONE:Asia/Taipei
 BEGIN:VEVENT
 UID:freeway-bridge-2026-20260930@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20260930
 DTEND;VALUE=DATE:20261001
 SUMMARY:Check: Freeway AI — Bridge Deterioration Prediction
@@ -20,7 +20,7 @@ URL:https://www.freeway.gov.tw/Publish.aspx?cnid=193&p=43590
 END:VEVENT
 BEGIN:VEVENT
 UID:freeway-pricing-2026-20260930@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20260930
 DTEND;VALUE=DATE:20261001
 SUMMARY:Apply: Freeway AI — Congestion Pricing
@@ -42,7 +42,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:ftsid-2026-cl-eci-20260930@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20260930
 DTEND;VALUE=DATE:20261001
 SUMMARY:On hold: Asia University FTSID — 2026 full-paper lane
@@ -54,67 +54,8 @@ TRANSP:TRANSPARENT
 URL:https://ftimc.asia.edu.tw/international-academic-conference/submission/
 END:VEVENT
 BEGIN:VEVENT
-UID:phd-nthu-tm-20260930@blowback
-DTSTAMP:20260929T185038Z
-DTSTART;VALUE=DATE:20260930
-DTEND;VALUE=DATE:20261001
-SUMMARY:Apply: National Tsing Hua University — Technology Management PhD
-DESCRIPTION:Status: FIRE_AFTER_GATE\nGate: 116 call/funding\nUses: Policy L
- ab|AI Systems|Technology Management\nRoute: phd-nthu-tm\nDeadline as recor
- ded: 2026-09-30
-TRANSP:TRANSPARENT
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:one week: Apply: National Tsing Hua University — Technology M
- anagement PhD
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:tomorrow: Apply: National Tsing Hua University — Technology M
- anagement PhD
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:phd-nycu-iais-20260930@blowback
-DTSTAMP:20260929T185038Z
-DTSTART;VALUE=DATE:20260930
-DTEND;VALUE=DATE:20261001
-SUMMARY:Apply: NYCU IAIS — Institute of Intelligent Systems PhD
-DESCRIPTION:Status: FIRE_AFTER_GATE\nGate: 116 admission dates + founder co
- mpensation + pre-existing IP\nUses: Cite|YZU|Citation Engine|Hardware Spli
- cer\nSource: https://iais.nycu.edu.tw/en/scholarship.html\nRoute: phd-nycu
- -iais\nDeadline as recorded: 2026-09-30
-TRANSP:TRANSPARENT
-URL:https://iais.nycu.edu.tw/en/scholarship.html
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:one week: Apply: NYCU IAIS — Institute of Intelligent Systems
-  PhD
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:tomorrow: Apply: NYCU IAIS — Institute of Intelligent Systems
-  PhD
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:phd-nycu-imf-20260930@blowback
-DTSTAMP:20260929T185038Z
-DTSTART;VALUE=DATE:20260930
-DTEND;VALUE=DATE:20261001
-SUMMARY:Watch: NYCU — Information Management & Finance / Finance PhD
-DESCRIPTION:Status: WATCH\nGate: admission/funding specifics\nUses: Finance
- |Sharpe|Research Papers\nRoute: phd-nycu-imf\nDeadline as recorded: 2026-0
- 9-30
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
 UID:ssi-fellowship-2027-policy-lab-20261005@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261005
 DTEND;VALUE=DATE:20261006
 SUMMARY:Record + apply: Software Sustainability Institute — Fellowship Pr
@@ -146,7 +87,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:lab-sinica-der-nian-yang-ra-2026-20261006@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261006
 DTEND;VALUE=DATE:20261007
 SUMMARY:Apply: Academia Sinica IIS / Der-Nian Yang Lab — Research assista
@@ -177,7 +118,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:atta-2027-fiscal-choke-points-20261012@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261012
 DTEND;VALUE=DATE:20261013
 SUMMARY:Apply: Australasian Tax Teachers Association — ATTA 2027 Melbourn
@@ -205,7 +146,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:field-energy-netzero-2026-20261014@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261014
 DTEND;VALUE=DATE:20261017
 SUMMARY:Check: Energy Taiwan / Net-Zero Taiwan — 2026 field/network chann
@@ -217,7 +158,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:internship-oist-research-2027-20261015@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261015
 DTEND;VALUE=DATE:20261016
 SUMMARY:Apply: Okinawa Institute of Science and Technology — Research Int
@@ -245,30 +186,8 @@ DESCRIPTION:tomorrow: Apply: Okinawa Institute of Science and Technology
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:phd-nccu-mis-20261015@blowback
-DTSTAMP:20260929T185038Z
-DTSTART;VALUE=DATE:20261015
-DTEND;VALUE=DATE:20261016
-SUMMARY:Apply: National Chengchi University — MIS PhD
-DESCRIPTION:Status: FIRE_AFTER_GATE\nGate: 116 call + funding\nUses: Cite|Y
- ZU|Citation Engine|Data\nSource: https://mis2.nccu.edu.tw\nRoute: phd-nccu
- -mis\nDeadline as recorded: 2026-10-15
-TRANSP:TRANSPARENT
-URL:https://mis2.nccu.edu.tw
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:one week: Apply: National Chengchi University — MIS PhD
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:tomorrow: Apply: National Chengchi University — MIS PhD
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:ata-jltr-2027-fiscal-choke-points-20261016@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261016
 DTEND;VALUE=DATE:20261017
 SUMMARY:Apply: American Taxation Association / Journal of Legal Tax Researc
@@ -297,33 +216,8 @@ DESCRIPTION:tomorrow: Apply: American Taxation Association / Journal of Leg
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:phd-usn-audit-ai-20261016@blowback
-DTSTAMP:20260929T185038Z
-DTSTART;VALUE=DATE:20261016
-DTEND;VALUE=DATE:20261017
-SUMMARY:Apply: University of South-Eastern Norway — AI transformation of 
- auditing sector
-DESCRIPTION:Status: FIRE_SOON\nGate: outside-work/IP terms\nUses: Finance|P
- olicy Lab|Citation Engine|AI Systems\nSource: https://www.usn.no/english/v
- acancies/\nRoute: phd-usn-audit-ai\nDeadline as recorded: 2026-10-16
-TRANSP:TRANSPARENT
-URL:https://www.usn.no/english/vacancies/
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:one week: Apply: University of South-Eastern Norway — AI tran
- sformation of auditing sector
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:tomorrow: Apply: University of South-Eastern Norway — AI tran
- sformation of auditing sector
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:field-taitronics-aiot-2026-20261020@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261020
 DTEND;VALUE=DATE:20261023
 SUMMARY:Apply: TAITRONICS / AIoT Taiwan / Taiwan Industry Week — 2026 fie
@@ -347,7 +241,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:ncue-ai-2026-20261022@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261022
 DTEND;VALUE=DATE:20261023
 SUMMARY:Apply: National Industry-Academia Innovation — AI & Applications
@@ -372,7 +266,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:ncue-green-2026-20261022@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261022
 DTEND;VALUE=DATE:20261023
 SUMMARY:Check: National Industry-Academia Innovation — Green Technology
@@ -384,7 +278,7 @@ URL:https://eedept.ncue.edu.tw/innovation2026/intro.html
 END:VEVENT
 BEGIN:VEVENT
 UID:ncue-info-2026-20261022@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261022
 DTEND;VALUE=DATE:20261023
 SUMMARY:Apply: National Industry-Academia Innovation — Information & Elec
@@ -410,7 +304,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:ncue-mech-2026-20261022@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261022
 DTEND;VALUE=DATE:20261023
 SUMMARY:Apply: National Industry-Academia Innovation — Mechanical & Autom
@@ -435,7 +329,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:field-fintech-taipei-2026-20261023@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261023
 DTEND;VALUE=DATE:20261025
 SUMMARY:Watch: FinTech Taipei — 2026 event/showcase channel
@@ -446,7 +340,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:icse-2027-seis-refinery-20261023@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261023
 DTEND;VALUE=DATE:20261024
 SUMMARY:Apply: ICSE 2027 — Software Engineering in Society (SEIS)
@@ -473,7 +367,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:msr-2027-technical-refinery-20261023@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261023
 DTEND;VALUE=DATE:20261024
 SUMMARY:Apply: MSR 2027 — Technical Papers
@@ -497,7 +391,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:saner-2027-agentic-ai4se-refinery-20261023@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261023
 DTEND;VALUE=DATE:20261024
 SUMMARY:On hold: SANER 2027 — Agentic AI4SE
@@ -513,7 +407,7 @@ URL:https://conf.researchr.org/track/saner-2027/saner-2027-agentic-ai4se-tr
 END:VEVENT
 BEGIN:VEVENT
 UID:saner-2027-tool-demo-refinery-20261023@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261023
 DTEND;VALUE=DATE:20261024
 SUMMARY:Apply: SANER 2027 — Tool Demo
@@ -538,7 +432,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:climatechain-2026-policy-eci-20261025@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261025
 DTEND;VALUE=DATE:20261026
 SUMMARY:Watch: ClimateChain — 2026 climate / Policy Lab route
@@ -550,7 +444,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:atax-2027-fiscal-choke-points-20261030@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261030
 DTEND;VALUE=DATE:20261031
 SUMMARY:Apply: UNSW School of Accounting\, Auditing and Taxation — 17th I
@@ -581,7 +475,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:sase-2027-invisible-ledger-20261101@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261101
 DTEND;VALUE=DATE:20261102
 SUMMARY:Watch: Society for the Advancement of Socio-Economics — SASE 2027
@@ -599,7 +493,7 @@ URL:https://sase.org/events/2027-glasgow/
 END:VEVENT
 BEGIN:VEVENT
 UID:facct-2027-policy-family-20261103@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261103
 DTEND;VALUE=DATE:20261104
 SUMMARY:Check: ACM FAccT — 2027 research route
@@ -613,7 +507,7 @@ URL:https://facctconference.org/2027/cfp.html
 END:VEVENT
 BEGIN:VEVENT
 UID:nlnet-codesupply-refinery-20261103@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261103
 DTEND;VALUE=DATE:20261104
 SUMMARY:Watch: NLnet Foundation — CodeSupply - Launch-to-Artifact Provena
@@ -627,7 +521,7 @@ URL:https://nlnet.nl/propose/
 END:VEVENT
 BEGIN:VEVENT
 UID:nlnet-restack-nocturnal-20261103@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261103
 DTEND;VALUE=DATE:20261104
 SUMMARY:Apply: NLnet Foundation — Restack - Nocturnal (closes 19:00 Taipe
@@ -658,7 +552,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:nlnet-restack-policy-lab-2026-20261103@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261103
 DTEND;VALUE=DATE:20261104
 SUMMARY:On hold: NLnet Foundation — Restack / Sep-Nov 2026 call family (c
@@ -672,7 +566,7 @@ URL:https://nlnet.nl/propose/
 END:VEVENT
 BEGIN:VEVENT
 UID:ipsa-2027-rc30-fiscal-choke-points-20261104@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261104
 DTEND;VALUE=DATE:20261105
 SUMMARY:On hold: International Political Science Association / RC30 Compara
@@ -688,32 +582,8 @@ TRANSP:TRANSPARENT
 URL:https://wc2027.ipsa.org/wc/submit-paper
 END:VEVENT
 BEGIN:VEVENT
-UID:phd-ntu-im-20261105@blowback
-DTSTAMP:20260929T185038Z
-DTSTART;VALUE=DATE:20261105
-DTEND;VALUE=DATE:20261106
-SUMMARY:Apply: National Taiwan University — Information Management PhD
-DESCRIPTION:Status: FIRE_AFTER_GATE\nGate: 116 call + funding\nUses: Cite|Y
- ZU|Citation Engine|Research Papers\nSource: https://management.ntu.edu.tw/
- IM/admission/phd\nRoute: phd-ntu-im\nDeadline as recorded: 2026-11-05
-TRANSP:TRANSPARENT
-URL:https://management.ntu.edu.tw/IM/admission/phd
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:one week: Apply: National Taiwan University — Information Man
- agement PhD
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:tomorrow: Apply: National Taiwan University — Information Man
- agement PhD
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:msr-2027-data-tool-refinery-20261110@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261110
 DTEND;VALUE=DATE:20261111
 SUMMARY:Apply: MSR 2027 — Data and Tool Showcase
@@ -739,7 +609,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:interledger-local-2026-20261111@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261111
 DTEND;VALUE=DATE:20261112
 SUMMARY:Apply: Interledger Foundation — Local Impact Mini-Grant
@@ -763,7 +633,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:field-meet-taipei-2026-20261119@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261119
 DTEND;VALUE=DATE:20261122
 SUMMARY:Event: Meet Taipei — 2026 startup/network channel
@@ -774,7 +644,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:date-2027-lbr-hardware-splicer-20261129@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261129
 DTEND;VALUE=DATE:20261130
 SUMMARY:On hold: DATE 2027 — Late Breaking Results
@@ -788,7 +658,7 @@ URL:https://www.date-conference.com/call-for-papers
 END:VEVENT
 BEGIN:VEVENT
 UID:legaltech-tech-2026-20261130@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261201
 SUMMARY:Check: LegalTech & Computer Audit — Technical
@@ -800,142 +670,8 @@ TRANSP:TRANSPARENT
 URL:https://ec.ccu.edu.tw/p/406-1149-87925%2Cr4399.php?Lang=zh-tw
 END:VEVENT
 BEGIN:VEVENT
-UID:phd-cuhk-hkpfs-2027-20261201@blowback
-DTSTAMP:20260929T185038Z
-DTSTART;VALUE=DATE:20261201
-DTEND;VALUE=DATE:20261202
-SUMMARY:Check: CUHK — PhD via HKPFS\, Fall 2027 — software engineering 
- and NLP groups are the fit to check (closes 23:59 Taipei)
-DESCRIPTION:Status: VERIFY\nGate: Confirm a supervisor in software engineer
- ing or NLP before using one of the two HKPFS choices on this programme.\nU
- ses: Cite\nSource: https://cerg1.ugc.edu.hk/hkpfs/enquiry.html\nRoute: phd
- -cuhk-hkpfs-2027\nDeadline as recorded: 2026-12-01T23:59:00+08:00
-TRANSP:TRANSPARENT
-URL:https://cerg1.ugc.edu.hk/hkpfs/enquiry.html
-END:VEVENT
-BEGIN:VEVENT
-UID:phd-hkpfs-2027-20261201@blowback
-DTSTAMP:20260929T185038Z
-DTSTART;VALUE=DATE:20261201
-DTEND;VALUE=DATE:20261202
-SUMMARY:Apply: Research Grants Council\, Hong Kong — Hong Kong PhD Fellow
- ship Scheme (HKPFS) 2027/28 — one initial application\, then up to two p
- rogrammes at the eight UGC universities (closes 12:00 Taipei)
-DESCRIPTION:Status: FIRE_AFTER_GATE\nGate: Only one initial application per
-  person. Choose at most two programmes. Contact a supervisor before applyi
- ng. A missing full university application voids the RGC file.\nUses: Resea
- rch Papers|Cite\nSource: https://cerg1.ugc.edu.hk/hkpfs/apply.html\nRoute:
-  phd-hkpfs-2027\nDeadline as recorded: 2026-12-01T12:00:00+08:00
-TRANSP:TRANSPARENT
-URL:https://cerg1.ugc.edu.hk/hkpfs/apply.html
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:one week: Apply: Research Grants Council\, Hong Kong — Hong K
- ong PhD Fellowship Scheme (HKPFS) 2027/28 — one initial application\, th
- en up to two programmes at the eight UGC universities (closes 12:00 Taipei
- )
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:tomorrow: Apply: Research Grants Council\, Hong Kong — Hong K
- ong PhD Fellowship Scheme (HKPFS) 2027/28 — one initial application\, th
- en up to two programmes at the eight UGC universities (closes 12:00 Taipei
- )
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:phd-hkust-cse-hkpfs-2027-20261201@blowback
-DTSTAMP:20260929T185038Z
-DTSTART;VALUE=DATE:20261201
-DTEND;VALUE=DATE:20261202
-SUMMARY:Apply: HKUST — CSE PhD via HKPFS\, Fall 2027\; Spring 2027 intake
-  still needs a live check (closes 23:59 Taipei)
-DESCRIPTION:Status: FIRE_AFTER_GATE\nGate: Contact a supervisor first. Repo
- rted class-rank and English bars were not re-read on the HKUST page. Check
-  whether a Spring 2027 programme is still open.\nUses: Cite\nSource: https
- ://cerg1.ugc.edu.hk/hkpfs/enquiry.html\nRoute: phd-hkust-cse-hkpfs-2027\nD
- eadline as recorded: 2026-12-01T23:59:00+08:00
-TRANSP:TRANSPARENT
-URL:https://cerg1.ugc.edu.hk/hkpfs/enquiry.html
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:one week: Apply: HKUST — CSE PhD via HKPFS\, Fall 2027\; Spri
- ng 2027 intake still needs a live check (closes 23:59 Taipei)
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:tomorrow: Apply: HKUST — CSE PhD via HKPFS\, Fall 2027\; Spri
- ng 2027 intake still needs a live check (closes 23:59 Taipei)
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:phd-singa-aug-2027-20261201@blowback
-DTSTAMP:20260929T185038Z
-DTSTART;VALUE=DATE:20261201
-DTEND;VALUE=DATE:20261202
-SUMMARY:Apply: A*STAR / SINGA — Singapore International Graduate Award 
- — August 2027 intake (A*STAR\, NUS\, NTU\, SUTD\, SMU\, SIT) (closes 23:
- 59 Taipei)
-DESCRIPTION:Status: FIRE_AFTER_GATE\nGate: Name a supervisor. Referees uplo
- ad through the portal. Pure finance is outside the stated science and engi
- neering scope. Confirm the deadline on the A*STAR page before relying on i
- t.\nUses: Research Papers|Cite\nSource: https://www.a-star.edu.sg/Scholars
- hips/for-graduate-studies/singapore-international-graduate-award-singa\nRo
- ute: phd-singa-aug-2027\nDeadline as recorded: 2026-12-01T23:59:00+08:00
-TRANSP:TRANSPARENT
-URL:https://www.a-star.edu.sg/Scholarships/for-graduate-studies/singapore-i
- nternational-graduate-award-singa
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:one week: Apply: A*STAR / SINGA — Singapore International Gra
- duate Award — August 2027 intake (A*STAR\, NUS\, NTU\, SUTD\, SMU\, SIT)
-  (closes 23:59 Taipei)
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:tomorrow: Apply: A*STAR / SINGA — Singapore International Gra
- duate Award — August 2027 intake (A*STAR\, NUS\, NTU\, SUTD\, SMU\, SIT)
-  (closes 23:59 Taipei)
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:phd-smu-scis-david-lo-2027-20261201@blowback
-DTSTAMP:20260929T185038Z
-DTSTART;VALUE=DATE:20261201
-DTEND;VALUE=DATE:20261202
-SUMMARY:Apply: Singapore Management University — School of Computing and 
- Information Systems PhD — Prof. David Lo\, software analytics\, via SING
- A or SMU funding
-DESCRIPTION:Status: FIRE_AFTER_GATE\nGate: Confirm on his current page that
-  he is taking students\, then name him in the SINGA or SMU application.\nU
- ses: Cite\nSource: https://www.smu.edu.sg/\nRoute: phd-smu-scis-david-lo-2
- 027\nDeadline as recorded: 2026-12-01
-TRANSP:TRANSPARENT
-URL:https://www.smu.edu.sg/
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:one week: Apply: Singapore Management University — School of 
- Computing and Information Systems PhD — Prof. David Lo\, software analyt
- ics\, via SINGA or SMU funding
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:tomorrow: Apply: Singapore Management University — School of 
- Computing and Information Systems PhD — Prof. David Lo\, software analyt
- ics\, via SINGA or SMU funding
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:websci-2027-nocturnal-20261215@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261215
 DTEND;VALUE=DATE:20261216
 SUMMARY:Prepare: ACM Web Science 2027 — Full paper — correction-aware c
@@ -951,7 +687,7 @@ URL:https://websci27.webscience.org/call-for-papers
 END:VEVENT
 BEGIN:VEVENT
 UID:satc-2027-hardware-splicer-20261220@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261220
 DTEND;VALUE=DATE:20261221
 SUMMARY:Prepare: IEEE Secure and Trustworthy CyberInfrastructure Conference
@@ -968,7 +704,7 @@ URL:https://www.satcconf.com/call-for-paper.html
 END:VEVENT
 BEGIN:VEVENT
 UID:lab-sinica-aiiu-embodied-ai-ra-2026-20261231@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
 SUMMARY:Apply: Academia Sinica CITI / AIIU Lab — Research assistant — C
@@ -997,7 +733,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:lab-sinica-ti-rong-wu-agents-ra-2026-20261231@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
 SUMMARY:Check: Academia Sinica IIS / Ti-Rong Wu Lab — Research assistant 
@@ -1013,22 +749,8 @@ TRANSP:TRANSPARENT
 URL:https://www.sinica.edu.tw/recruitment_content/53/11035
 END:VEVENT
 BEGIN:VEVENT
-UID:phd-nhh-main-2027-20270115@blowback
-DTSTAMP:20260929T185038Z
-DTSTART;VALUE=DATE:20270115
-DTEND;VALUE=DATE:20270116
-SUMMARY:Watch: NHH Norwegian School of Economics — Main 2027 PhD admissio
- n round
-DESCRIPTION:Status: WATCH\nGate: November vacancy set\nUses: Finance|Resear
- ch|AI Systems\nSource: https://www.nhh.no/en/study-programmes/phd-programm
- e-at-nhh/admission/\nRoute: phd-nhh-main-2027\nDeadline as recorded: 2027-
- 01-15
-TRANSP:TRANSPARENT
-URL:https://www.nhh.no/en/study-programmes/phd-programme-at-nhh/admission/
-END:VEVENT
-BEGIN:VEVENT
 UID:icwsm-2027-demo-nocturnal-20270116@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20270116
 DTEND;VALUE=DATE:20270117
 SUMMARY:Prepare: ICWSM 2027 — Demo paper — Nocturnal interactive inform
@@ -1044,7 +766,7 @@ URL:https://www.icwsm.org/2027/submit/
 END:VEVENT
 BEGIN:VEVENT
 UID:cav-2027-hardware-splicer-20270120@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20270120
 DTEND;VALUE=DATE:20270121
 SUMMARY:Prepare: International Conference on Computer Aided Verification 
@@ -1061,7 +783,7 @@ URL:https://conferences.i-cav.org/2027/
 END:VEVENT
 BEGIN:VEVENT
 UID:icpp8-2027-fiscal-choke-points-20270129@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20270129
 DTEND;VALUE=DATE:20270130
 SUMMARY:Prepare: International Public Policy Association — ICPP8 Rennes 2
@@ -1078,7 +800,7 @@ URL:https://www.ippapublicpolicy.org/conference/icpp8-rennes-2027/29
 END:VEVENT
 BEGIN:VEVENT
 UID:job-hku-ai-agents-aec-ra-2026-20270131@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20270131
 DTEND;VALUE=DATE:20270201
 SUMMARY:Apply: University of Hong Kong / Architecture and Construction — 
@@ -1113,7 +835,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:global-tax-symposium-2027-il-20270201@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20270201
 DTEND;VALUE=DATE:20270202
 SUMMARY:Prepare: Global Tax Symposium — 2027 Auckland paper
@@ -1128,66 +850,8 @@ TRANSP:TRANSPARENT
 URL:https://www.lse.ac.uk/law/research/taxation-global-tax-symposium
 END:VEVENT
 BEGIN:VEVENT
-UID:tigp-sinica-phd-2027-20270201@blowback
-DTSTAMP:20260929T185038Z
-DTSTART;VALUE=DATE:20270201
-DTEND;VALUE=DATE:20270202
-SUMMARY:Apply: Academia Sinica TIGP — Taiwan International Graduate Progr
- am — PhD\, English-taught\, 12+ interdisciplinary programmes including S
- ocial Networks and Human-Centered Computing
-DESCRIPTION:Status: FIRE_AFTER_GATE\nGate: Applications run 1 Nov to 1 Feb 
- for the following Fall\; results late June/early July. Confirm programme f
- it and English test requirements.\nUses: Cite|Hardware Splicer|Policy Lab|
- Research Drive\nSource: https://tigp.sinica.edu.tw/\nRoute: tigp-sinica-ph
- d-2027\nDeadline as recorded: 2027-02-01
-TRANSP:TRANSPARENT
-URL:https://tigp.sinica.edu.tw/
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:one week: Apply: Academia Sinica TIGP — Taiwan International 
- Graduate Program — PhD\, English-taught\, 12+ interdisciplinary programm
- es including Social Networks and Human-Centered Computing
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:tomorrow: Apply: Academia Sinica TIGP — Taiwan International 
- Graduate Program — PhD\, English-taught\, 12+ interdisciplinary programm
- es including Social Networks and Human-Centered Computing
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:moe-taiwan-scholarship-2027-20270331@blowback
-DTSTAMP:20260929T185038Z
-DTSTART;VALUE=DATE:20270331
-DTEND;VALUE=DATE:20270401
-SUMMARY:Apply: Ministry of Education\, Taiwan — Taiwan Scholarship (MOE) 
- — PhD funding\, applied for separately from admission
-DESCRIPTION:Status: FIRE_AFTER_GATE\nGate: Apply through the TECO in the co
- untry of nationality (Indonesia)\; local offices often close earlier\, som
- e in the first week of March. Cannot be combined with university awards th
- at exclude government scholarship holders.\nUses: n/a\nSource: https://tai
- wanscholarship.moe.gov.tw/\nRoute: moe-taiwan-scholarship-2027\nDeadline a
- s recorded: 2027-03-31
-TRANSP:TRANSPARENT
-URL:https://taiwanscholarship.moe.gov.tw/
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:one week: Apply: Ministry of Education\, Taiwan — Taiwan Scho
- larship (MOE) — PhD funding\, applied for separately from admission
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:tomorrow: Apply: Ministry of Education\, Taiwan — Taiwan Scho
- larship (MOE) — PhD funding\, applied for separately from admission
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:lab-sinica-ku-nlp-ra-2026-20270531@blowback
-DTSTAMP:20260929T185038Z
+DTSTAMP:20260929T185242Z
 DTSTART;VALUE=DATE:20270531
 DTEND;VALUE=DATE:20270601
 SUMMARY:Apply: Academia Sinica IIS / Lun-Wei Ku NLP Lab — Full-time / par

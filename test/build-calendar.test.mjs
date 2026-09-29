@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { action, parseDeadline, routeEvents, renderCalendar } from '../scripts/build-calendar.mjs';
+import { action, closedOutFilter, parseDeadline, routeEvents, renderCalendar } from '../scripts/build-calendar.mjs';
 import { buildMasterRegistry } from '../scripts/build-gauntlet-master.mjs';
 
 const route = (id, deadline, status = 'FIRE_AFTER_GATE', extra = {}) => ({
@@ -76,4 +76,25 @@ test('every FIRE variant in the live list that is an application gets a reminder
   }
   const [held] = routeEvents([route('x', '2026-10-15', 'HOLD_FIRE_LATER')], { today: '2026-09-30' });
   assert.equal(held.remind, false);
+});
+
+test('closed-out PhD routes and PhD-only funding stay off the calendar', () => {
+  const policy = { phd_applications_closed: { also_excluded_route_ids: ['moe-taiwan-scholarship-2027'] } };
+  const events = routeEvents([
+    route('phd-ntu-im', '2026-11-05', 'FIRE_AFTER_GATE', { lane: 'PhD' }),
+    route('moe-taiwan-scholarship-2027', '2027-03-31', 'FIRE_AFTER_GATE', { lane: 'GRANT' }),
+    route('msr-2027-technical-refinery', '2026-10-23', 'DEFAULT_PRIMARY_FIRE', { lane: 'RESEARCH' }),
+  ], { today: '2026-09-30', exclude: closedOutFilter(policy) });
+  assert.deepEqual(events.map((e) => e.uid), ['msr-2027-technical-refinery-20261023@blowback']);
+});
+
+test('without a closed-out policy, PhD routes are scheduled like any other', () => {
+  const events = routeEvents([route('phd-ntu-im', '2026-11-05', 'FIRE_AFTER_GATE', { lane: 'PhD' })],
+    { today: '2026-09-30', exclude: closedOutFilter({}) });
+  assert.equal(events.length, 1);
+});
+
+test('the real calendar carries no PhD route after the applicant closed them', () => {
+  const events = routeEvents(buildMasterRegistry(), { today: '2026-09-30' });
+  assert.ok(!events.some((e) => /^phd-|tigp-sinica-phd|moe-taiwan-scholarship/.test(e.uid)));
 });

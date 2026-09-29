@@ -21,7 +21,7 @@
   },
   "policy": {
     "phd_automatic_queue": "HOLD_UNTIL_USER_REOPENS_AND_ROUTE_DOCUMENT_SET_IS_VERIFIED",
-    "reason": "The applicant is not currently pursuing PhD applications and the required personal-document sets are not verified.",
+    "reason": "The applicant submitted NYCU IAIS and NTHU on 2026-09-30 and is not making further PhD applications; the automatic queue and the calendar both leave PhD routes out.",
     "automatic_queue_excluded_routes": [
       "job-hku-ai-engineer-mcp-ra2-2026",
       "job-hku-ai-agents-aec-ra-2026",
@@ -34,7 +34,19 @@
     "automatic_queue_exclusion_note": "Named routes remain available for explicit audit/history but do not consume the automatic execution queue while the applicant has paused them. MIT FutureTech is excluded because the applicant explicitly declined Cambridge relocation and does not hold current U.S. work authorization.",
     "named_route_audit_allowed": true,
     "automatic_drafting_allowed": true,
-    "drafting_boundary": "Evidence-bounded CVs, letters, essays, proposals and research lists may be generated without treating them as submission authority. Formal records, eligibility facts, personal commitments and protected portal actions remain gated."
+    "drafting_boundary": "Evidence-bounded CVs, letters, essays, proposals and research lists may be generated without treating them as submission authority. Formal records, eligibility facts, personal commitments and protected portal actions remain gated.",
+    "phd_applications_closed": {
+      "on": "2026-09-30",
+      "last_submitted": [
+        "phd-nycu-iais",
+        "phd-nthu-tm"
+      ],
+      "note": "Stated by the applicant after submitting both: no further PhD applications. PhD routes stay on record for audit but are not scheduled or queued.",
+      "also_excluded_route_ids": [
+        "moe-taiwan-scholarship-2027"
+      ],
+      "also_excluded_reason": "PhD funding that only applies after a PhD admission."
+    }
   },
   "independent_review": {
     "reviewed_at": "2026-09-12",
