@@ -17,7 +17,9 @@ import path from 'node:path';
 // only a stray `b/` directory -- so it counts only if a browser is installed there.
 function hasBrowsers(dir) {
   try {
-    return fs.readdirSync(dir).some((name) => /^(chromium|firefox|webkit)/.test(name));
+    // Playwright names each install <browser>-<revision>, e.g. chromium_headless_shell-1234;
+    // a loose prefix would also accept a stray `chromium-old` and reproduce the failure.
+    return fs.readdirSync(dir).some((name) => /^(chromium|chromium_headless_shell|firefox|webkit)-\d+$/.test(name));
   } catch {
     return false;
   }

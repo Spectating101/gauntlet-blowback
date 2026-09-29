@@ -46,3 +46,11 @@ test('a HOME cache with no browser in it does not count', () => {
 test('a HOME cache with a browser in it is trusted', () => {
   assert.equal(resolveBrowsersPath({ HOME: home(true) }, home(true)), null);
 });
+
+test('a stray folder that only looks like a browser does not count', () => {
+  // Raised in review: a loose name prefix would accept `chromium-old`.
+  const session = home(false);
+  fs.mkdirSync(path.join(session, '.cache', 'ms-playwright', 'chromium-old'));
+  const account = home(true);
+  assert.equal(resolveBrowsersPath({ HOME: session }, account), path.join(account, '.cache', 'ms-playwright'));
+});
