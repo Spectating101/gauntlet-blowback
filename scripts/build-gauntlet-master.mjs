@@ -22,6 +22,7 @@ const DEFAULTS = {
   routeCorrections: path.join(ROOT, 'data/route-corrections-2026-09-21.json'),
   archivedRoutes: path.join(ROOT, 'data/archived-routes-2026-09-17.json'),
   policyArchivedRoutes: path.join(ROOT, 'data/policy-archived-routes-2026-09-17.json'),
+  applicantClosedRoutes: path.join(ROOT, 'data/archived-routes-2026-09-30.json'),
   outputCsv: path.join(ROOT, 'docs/gauntlet-master.csv'),
   outputJson: path.join(ROOT, 'docs/gauntlet-master.json'),
 };
@@ -209,6 +210,7 @@ export function buildMasterRegistry({
   routeCorrectionsPath = DEFAULTS.routeCorrections,
   archivedRoutesPath = DEFAULTS.archivedRoutes,
   policyArchivedRoutesPath = DEFAULTS.policyArchivedRoutes,
+  applicantClosedRoutesPath = DEFAULTS.applicantClosedRoutes,
   includeArchived = false,
 } = {}) {
   const longtail = parseCsv(fs.readFileSync(longtailPath, 'utf8')).map(normalizeLongtail);
@@ -225,8 +227,7 @@ export function buildMasterRegistry({
   const fireExecutionRoutes = JSON.parse(fs.readFileSync(fireExecutionRoutesPath, 'utf8'));
   const routeAdditions = JSON.parse(fs.readFileSync(routeAdditionsPath, 'utf8'));
   const routeCorrections = JSON.parse(fs.readFileSync(routeCorrectionsPath, 'utf8'));
-  const archivedRoutes = JSON.parse(fs.readFileSync(archivedRoutesPath, 'utf8'));
-  const policyArchivedRoutes = JSON.parse(fs.readFileSync(policyArchivedRoutesPath, 'utf8'));
+  const archives = readArchives({ archivedRoutesPath, policyArchivedRoutesPath, applicantClosedRoutesPath });
 
   const records = new Map();
   for (const record of [...longtail, ...postgrad]) {
@@ -287,12 +288,15 @@ export function buildMasterRegistry({
   // earlier radar. Each entry records how it was verified.
   applyOverrides(records, routeCorrections.overrides, 'route-corrections');
 
-  const staleArchivedIds = new Set((archivedRoutes.routes ?? []).map((route) => route.id));
-  const policyArchivedIds = new Set((policyArchivedRoutes.routes ?? []).map((route) => route.id));
-  const overlap = [...staleArchivedIds].filter((id) => policyArchivedIds.has(id));
-  if (overlap.length) throw new Error(`route appears in both stale and policy archives: ${overlap.join(', ')}`);
-  const archivedIds = new Set([...staleArchivedIds, ...policyArchivedIds]);
-  for (const id of archivedIds) {
+  // A route sits in at most one archive, so each archive's count is exact.
+  const archivedIds = new Map();
+  for (const archive of archives) {
+    for (const { id } of archive.data.routes ?? []) {
+      if (archivedIds.has(id)) throw new Error(`route appears in both ${archivedIds.get(id)} and ${archive.kind} archives: ${id}`);
+      archivedIds.set(id, archive.kind);
+    }
+  }
+  for (const id of archivedIds.keys()) {
     if (!records.has(id)) throw new Error(`archived route not found in source registry: ${id}`);
   }
 
@@ -300,6 +304,14 @@ export function buildMasterRegistry({
   const ids = new Set(output.map((record) => record.id));
   if (ids.size !== output.length) throw new Error('master registry contains duplicate ids');
   return output;
+}
+
+function readArchives({ archivedRoutesPath, policyArchivedRoutesPath, applicantClosedRoutesPath }) {
+  return [
+    ['STALE_OR_TERMINAL', archivedRoutesPath],
+    ['CURRENT_POLICY_EXTERNAL_PREREQUISITE', policyArchivedRoutesPath],
+    ['APPLICANT_CLOSED_OUT', applicantClosedRoutesPath],
+  ].map(([kind, file]) => ({ kind, file, data: JSON.parse(fs.readFileSync(file, 'utf8')) }));
 }
 
 export function summarizeMasterRegistry(records) {
@@ -321,26 +333,17 @@ export function writeMasterRegistry(options = {}) {
   const records = buildMasterRegistry(options);
   const outputCsv = options.outputCsv ?? DEFAULTS.outputCsv;
   const outputJson = options.outputJson ?? DEFAULTS.outputJson;
-  const archivedRoutesPath = options.archivedRoutesPath ?? DEFAULTS.archivedRoutes;
-  const policyArchivedRoutesPath = options.policyArchivedRoutesPath ?? DEFAULTS.policyArchivedRoutes;
-  const archivedRoutes = JSON.parse(fs.readFileSync(archivedRoutesPath, 'utf8'));
-  const policyArchivedRoutes = JSON.parse(fs.readFileSync(policyArchivedRoutesPath, 'utf8'));
-  const archiveFilters = [
-    {
-      kind: 'STALE_OR_TERMINAL',
-      schema: archivedRoutes.schema,
-      as_of: archivedRoutes.as_of,
-      excluded_routes: (archivedRoutes.routes ?? []).length,
-      source: path.relative(ROOT, archivedRoutesPath),
-    },
-    {
-      kind: 'CURRENT_POLICY_EXTERNAL_PREREQUISITE',
-      schema: policyArchivedRoutes.schema,
-      as_of: policyArchivedRoutes.as_of,
-      excluded_routes: (policyArchivedRoutes.routes ?? []).length,
-      source: path.relative(ROOT, policyArchivedRoutesPath),
-    },
-  ];
+  const archiveFilters = readArchives({
+    archivedRoutesPath: options.archivedRoutesPath ?? DEFAULTS.archivedRoutes,
+    policyArchivedRoutesPath: options.policyArchivedRoutesPath ?? DEFAULTS.policyArchivedRoutes,
+    applicantClosedRoutesPath: options.applicantClosedRoutesPath ?? DEFAULTS.applicantClosedRoutes,
+  }).map(({ kind, data, file }) => ({
+    kind,
+    schema: data.schema,
+    as_of: data.as_of,
+    excluded_routes: (data.routes ?? []).length,
+    source: path.relative(ROOT, file),
+  }));
   const payload = {
     schema: 'blowback.gauntlet_master.v1',
     source_snapshot: '2026-09-17',

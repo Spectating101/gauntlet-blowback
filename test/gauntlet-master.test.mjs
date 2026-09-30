@@ -28,7 +28,8 @@ test('restores cross-thread flagship routes', () => {
 });
 
 test('includes verified live faculty-pull routes without inventing funding', () => {
-  const route = byId.get('faculty-nthu-shan-hung-wu-ai-2026');
+  // Archived with the other PhD routes on 2026-09-30; its evidence is kept in historical mode.
+  const route = historicalById.get('faculty-nthu-shan-hung-wu-ai-2026');
   assert.ok(route, 'missing Shan-Hung Wu faculty-pull route');
   assert.equal(route.route_class, 'FACULTY_PULL');
   assert.equal(route.status, 'FIRE_NOW');
@@ -272,6 +273,7 @@ test('TAAI route preserves the completed packet while keeping the fee gate expli
 test('active master excludes archived routes while historical mode preserves their evidence', () => {
   const staleArchive = JSON.parse(fs.readFileSync(new URL('../data/archived-routes-2026-09-17.json', import.meta.url), 'utf8'));
   const policyArchive = JSON.parse(fs.readFileSync(new URL('../data/policy-archived-routes-2026-09-17.json', import.meta.url), 'utf8'));
+  const closedArchive = JSON.parse(fs.readFileSync(new URL('../data/archived-routes-2026-09-30.json', import.meta.url), 'utf8'));
   for (const id of [
     'agentrust-2026',
     'gaf-2026-policy-lab',
@@ -282,6 +284,9 @@ test('active master excludes archived routes while historical mode preserves the
     'fellowship-astra-2027',
     'innoserve-info-2026',
     'nvidia-inception',
+    'phd-nycu-iais',
+    'tigp-sinica-phd-2027',
+    'moe-taiwan-scholarship-2027',
   ]) {
     assert.equal(byId.has(id), false, `${id} leaked into active master`);
     assert.equal(historicalById.has(id), true, `${id} was lost from historical audit mode`);
@@ -289,7 +294,11 @@ test('active master excludes archived routes while historical mode preserves the
   assert.equal(staleArchive.routes.length, 48);
   // 69 on 2026-09-17; the three Nocturnal first-pilot routes were released on 2026-09-30.
   assert.equal(policyArchive.routes.length, 66);
-  assert.equal(historicalRecords.length - records.length, staleArchive.routes.length + policyArchive.routes.length);
+  // Every PhD route, plus PhD-only funding, closed out by the applicant on 2026-09-30.
+  assert.equal(closedArchive.routes.length, 28);
+  assert.equal(records.some((record) => /^phd/i.test(record.lane ?? '')), false, 'a PhD route is still live');
+  assert.equal(historicalRecords.length - records.length,
+    staleArchive.routes.length + policyArchive.routes.length + closedArchive.routes.length);
 });
 
 test('verified corrections win over earlier radar optimism', () => {
@@ -334,7 +343,8 @@ test('the written registry carries the corrections, not just the in-memory one',
 });
 
 test('routes found during verification are added and keep their verified detail', () => {
-  const byId = new Map(buildMasterRegistry().map((record) => [record.id, record]));
+  // These three were archived on 2026-09-30 with the other PhD routes; the verified detail stays.
+  const byId = new Map(buildMasterRegistry({ includeArchived: true }).map((record) => [record.id, record]));
   const tigp = byId.get('tigp-sinica-phd-2027');
   assert.ok(tigp, 'TIGP route exists');
   assert.equal(tigp.deadline, '2027-02-01');

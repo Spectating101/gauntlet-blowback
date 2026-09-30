@@ -22,7 +22,7 @@ test('campaign coverage accounts for every currently scoped route without author
 });
 
 test('person-level routes belong to option campaigns while projects remain evidence providers', () => {
-  const phd = campaignRouteAssignment(byId.get('phd-nycu-iais'));
+  const phd = campaignRouteAssignment(historicalById.get('phd-nycu-iais'));
   assert.equal(phd.primary_campaign_id, 'main-quest-funded-phd-options');
   assert.equal(phd.route_function, 'CAREER_CONVERT');
 

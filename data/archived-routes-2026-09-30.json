@@ -1,0 +1,153 @@
+{
+  "schema": "blowback.archived_routes.v1",
+  "as_of": "2026-09-30",
+  "purpose": "Routes the applicant has closed out. On 2026-09-30, after submitting NYCU IAIS and NTHU, the applicant made no further PhD applications. Records are kept for audit; nothing here is scheduled or queued.",
+  "policy": {
+    "active_master_excludes_archived_routes": true,
+    "source_records_are_preserved": true,
+    "future_cycles_require_new_route_ids_or_explicit_reactivation": true,
+    "archive_is_not_an_execution_queue": true
+  },
+  "routes": [
+    {
+      "id": "phd-usn-audit-ai",
+      "final_status": "CLOSED_BY_APPLICANT",
+      "reason": "The applicant is making no further PhD applications."
+    },
+    {
+      "id": "phd-nhh-main-2027",
+      "final_status": "CLOSED_BY_APPLICANT",
+      "reason": "The applicant is making no further PhD applications."
+    },
+    {
+      "id": "phd-nycu-iais",
+      "final_status": "SUBMITTED_2026-09-30",
+      "reason": "Submitted by the applicant on the deadline day."
+    },
+    {
+      "id": "phd-nycu-imf",
+      "final_status": "CLOSED_BY_APPLICANT",
+      "reason": "The applicant is making no further PhD applications."
+    },
+    {
+      "id": "phd-ntu-im",
+      "final_status": "CLOSED_BY_APPLICANT",
+      "reason": "The applicant is making no further PhD applications."
+    },
+    {
+      "id": "phd-nccu-mis",
+      "final_status": "CLOSED_BY_APPLICANT",
+      "reason": "The applicant is making no further PhD applications."
+    },
+    {
+      "id": "phd-ncu-finance",
+      "final_status": "CLOSED_BY_APPLICANT",
+      "reason": "The applicant is making no further PhD applications."
+    },
+    {
+      "id": "phd-nthu-tm",
+      "final_status": "SUBMITTED_2026-09-30",
+      "reason": "Submitted by the applicant on the deadline day."
+    },
+    {
+      "id": "phd-ntust-im",
+      "final_status": "CLOSED_BY_APPLICANT",
+      "reason": "The applicant is making no further PhD applications."
+    },
+    {
+      "id": "phd-yzu-management",
+      "final_status": "CLOSED_BY_APPLICANT",
+      "reason": "The applicant is making no further PhD applications."
+    },
+    {
+      "id": "phd-uio-tik",
+      "final_status": "CLOSED_BY_APPLICANT",
+      "reason": "The applicant is making no further PhD applications."
+    },
+    {
+      "id": "phd-ntnu-responsible-ai",
+      "final_status": "CLOSED_BY_APPLICANT",
+      "reason": "The applicant is making no further PhD applications."
+    },
+    {
+      "id": "phd-uia-is",
+      "final_status": "CLOSED_BY_APPLICANT",
+      "reason": "The applicant is making no further PhD applications."
+    },
+    {
+      "id": "phd-bi-norway",
+      "final_status": "CLOSED_BY_APPLICANT",
+      "reason": "The applicant is making no further PhD applications."
+    },
+    {
+      "id": "phd-tue-is",
+      "final_status": "CLOSED_BY_APPLICANT",
+      "reason": "The applicant is making no further PhD applications."
+    },
+    {
+      "id": "faculty-nthu-shan-hung-wu-ai-2026",
+      "final_status": "CLOSED_BY_APPLICANT",
+      "reason": "The applicant is making no further PhD applications."
+    },
+    {
+      "id": "phd-tudelft-decentralized-trustworthy-ai",
+      "final_status": "CLOSED_BY_APPLICANT",
+      "reason": "The applicant is making no further PhD applications."
+    },
+    {
+      "id": "phd-tilburg-ai-ic-reverse-engineering",
+      "final_status": "CLOSED_BY_APPLICANT",
+      "reason": "The applicant is making no further PhD applications."
+    },
+    {
+      "id": "phd-ntnu-maritime-interactive-agents",
+      "final_status": "CLOSED_BY_APPLICANT",
+      "reason": "The applicant is making no further PhD applications."
+    },
+    {
+      "id": "phd-nmbu-causal-ml",
+      "final_status": "CLOSED_BY_APPLICANT",
+      "reason": "The applicant is making no further PhD applications."
+    },
+    {
+      "id": "tigp-sinica-phd-2027",
+      "final_status": "CLOSED_BY_APPLICANT",
+      "reason": "The applicant is making no further PhD applications."
+    },
+    {
+      "id": "moe-taiwan-scholarship-2027",
+      "final_status": "CLOSED_BY_APPLICANT",
+      "reason": "PhD-only funding; the applicant is making no further PhD applications."
+    },
+    {
+      "id": "phd-hkpfs-2027",
+      "final_status": "CLOSED_BY_APPLICANT",
+      "reason": "The applicant is making no further PhD applications."
+    },
+    {
+      "id": "phd-singa-aug-2027",
+      "final_status": "CLOSED_BY_APPLICANT",
+      "reason": "The applicant is making no further PhD applications."
+    },
+    {
+      "id": "phd-hkust-cse-hkpfs-2027",
+      "final_status": "CLOSED_BY_APPLICANT",
+      "reason": "The applicant is making no further PhD applications."
+    },
+    {
+      "id": "phd-cuhk-hkpfs-2027",
+      "final_status": "CLOSED_BY_APPLICANT",
+      "reason": "The applicant is making no further PhD applications."
+    },
+    {
+      "id": "phd-smu-scis-david-lo-2027",
+      "final_status": "CLOSED_BY_APPLICANT",
+      "reason": "The applicant is making no further PhD applications."
+    },
+    {
+      "id": "faculty-hkust-jieyu-zhao-2027",
+      "final_status": "CLOSED_BY_APPLICANT",
+      "reason": "The applicant is making no further PhD applications."
+    }
+  ]
+}
