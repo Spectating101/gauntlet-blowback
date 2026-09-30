@@ -7,9 +7,10 @@
 // held, NCCU, NTU and HKPFS among them. This builds the calendar from the list, so
 // the two cannot disagree:
 //
-// - one event per live route with a deadline from --today on, and nothing else;
+// - one deadline event per live route, plus source-verified prerequisite milestones;
 // - no repeating events;
-// - reminders 7 days and 1 day before, only on routes that are an application;
+// - reminders 7 days and 1 day before submission deadlines needing action,
+//   including routes whose packets still need preparation;
 // - deadlines with a time are placed on their Asia/Taipei date, with the exact
 //   local time in the title (an 23:59 Anywhere-on-Earth close is the next evening
 //   here);
@@ -33,6 +34,7 @@ const TZ = 'Asia/Taipei';
 const ACTION = [
   [/^HOLD_SCREENCAST_RECORDING$/, 'Record + apply'],
   [/^(HOLD|FUNDING_GATED|FALLBACK)/, 'On hold'],
+  [/^PORTFOLIO_BAKEOFF/, 'On hold'],
   [/^WATCH/, 'Watch'],
   [/^(CHECK|VERIFY|REVERIFY)/, 'Check'],
   [/FIRE|ARTIFACT_ROUTE|HIGH_FIT_ALTERNATIVE|BAKEOFF/, 'Apply'],
@@ -46,6 +48,15 @@ const REMIND = new Set(['Apply', 'Record + apply']);
 export function action(status = '') {
   const found = ACTION.find(([rx]) => rx.test(status));
   return found ? found[1] : 'Deadline';
+}
+
+export function routeAction(record = {}) {
+  const label = action(String(record.status ?? ''));
+  if (label !== 'Apply') return label;
+  if (record.execution_state === 'DEPENDENCY_RECON_REQUIRED') return 'On hold';
+  if (record.execution_state === 'NOT_APPLICABLE') return 'Event';
+  if (record.execution_state === 'RESEARCH_ONLY') return 'Prepare';
+  return label;
 }
 
 function taipeiParts(date) {
@@ -117,7 +128,7 @@ export function routeEvents(records, { today, exclude = closedOutFilter() }) {
     const when = parseDeadline(record.deadline);
     if (!when || when.end < today) continue;
     const status = String(record.status ?? '');
-    const label = action(status);
+    const label = routeAction(record);
     const title = [record.organization, record.opportunity].filter(Boolean).join(' — ');
     const closes = when.time ? ` (closes ${when.time} Taipei)` : '';
     events.push({
@@ -134,8 +145,31 @@ export function routeEvents(records, { today, exclude = closedOutFilter() }) {
         `Deadline as recorded: ${record.deadline}`,
       ].filter(Boolean).join('\n'),
       url: /^https?:\/\//.test(String(record.source ?? '')) ? record.source : null,
-      remind: REMIND.has(label),
+      remind: REMIND.has(label) || (label === 'Prepare' && action(status) === 'Apply'),
     });
+    for (const milestone of record.calendar_milestones ?? []) {
+      const stage = parseDeadline(milestone.deadline);
+      if (!stage || stage.end < today) continue;
+      if (stage.start === when.start) throw new Error(`duplicate calendar date for ${record.id}`);
+      if (stage.start > when.end) throw new Error(`milestone follows route deadline for ${record.id}`);
+      const stageCloses = stage.time ? ` (closes ${stage.time} Taipei)` : '';
+      events.push({
+        uid: `${record.id}-${compact(stage.start)}@blowback`,
+        start: stage.start,
+        endExclusive: nextDay(stage.end),
+        summary: `${milestone.label}: ${title}${stageCloses}`,
+        description: [
+          `Milestone: ${milestone.label}`,
+          `Status: ${status}`,
+          record.gate ? `Gate: ${record.gate}` : null,
+          record.source ? `Source: ${record.source}` : null,
+          `Route: ${record.id}`,
+          `Deadline as recorded: ${milestone.deadline}`,
+        ].filter(Boolean).join('\n'),
+        url: /^https?:\/\//.test(String(record.source ?? '')) ? record.source : null,
+        remind: milestone.remind === true,
+      });
+    }
   }
   return events.sort((a, b) => a.start.localeCompare(b.start) || a.uid.localeCompare(b.uid));
 }

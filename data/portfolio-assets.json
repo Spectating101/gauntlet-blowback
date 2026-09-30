@@ -123,7 +123,7 @@
     {
       "id": "refinery-commons",
       "name": "Refinery / Commons",
-      "repo": "Spectating101/alpha-platform",
+      "repo": "Spectating101/refinery",
       "implementation_stage": "internally_validated",
       "external_evidence_stage": "none",
       "deployment_stage": "public_demo",

@@ -13,8 +13,7 @@ import {
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const DEFAULT_CALENDARS = [
-  path.join(ROOT, 'calendar', 'gauntlet-consolidated-active-2026-2027.ics'),
-  path.join(ROOT, 'calendar', 'gauntlet-consolidated-rolling-watch-2026-2027.ics'),
+  path.join(ROOT, 'calendar', 'gauntlet-live.ics'),
 ];
 const DEFAULT_ACCOUNT_DIR = path.join(ROOT, '.blowback', 'accounts');
 const ACCOUNT_STATES = new Set([

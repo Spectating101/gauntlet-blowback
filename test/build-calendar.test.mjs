@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { action, closedOutFilter, parseDeadline, routeEvents, renderCalendar } from '../scripts/build-calendar.mjs';
+import { action, routeAction, closedOutFilter, parseDeadline, routeEvents, renderCalendar } from '../scripts/build-calendar.mjs';
 import { buildMasterRegistry } from '../scripts/build-gauntlet-master.mjs';
 
 const route = (id, deadline, status = 'FIRE_AFTER_GATE', extra = {}) => ({
@@ -31,6 +31,19 @@ test('only routes still ahead of today become events', () => {
 test('UIDs use the form calendar-onboarding binds to a route exactly', () => {
   const [e] = routeEvents([route('phd-hkpfs-2027', '2026-12-01')], { today: '2026-09-30' });
   assert.equal(e.uid, 'phd-hkpfs-2027-20261201@blowback');
+});
+
+test('a required AoE abstract milestone has its own Taipei event and reminder', () => {
+  const events = routeEvents([route('msr-2027-technical-refinery', '2026-10-23T23:59:00-12:00', 'DEFAULT_PRIMARY_FIRE', {
+    calendar_milestones: [{ deadline: '2026-10-20T23:59:00-12:00', label: 'Abstract deadline', remind: true }],
+  })], { today: '2026-09-30' });
+  assert.deepEqual(events.map((e) => e.start), ['2026-10-21', '2026-10-24']);
+  assert.deepEqual(events.map((e) => e.uid), [
+    'msr-2027-technical-refinery-20261021@blowback',
+    'msr-2027-technical-refinery-20261024@blowback',
+  ]);
+  assert.equal(events[0].remind, true);
+  assert.match(events[0].summary, /Abstract deadline.*19:59 Taipei/);
 });
 
 test('reminders only on applications, never on watch or hold routes', () => {
@@ -65,6 +78,13 @@ test('the leading qualifier wins: a held, watched or checked FIRE route is not a
   assert.equal(action('WATCH_FIRE'), 'Watch');
   assert.equal(action('CHECK_FIRE'), 'Check');
   assert.equal(action('VERIFY'), 'Check');
+});
+
+test('a FIRE label cannot make a research-only or dependent route ready to apply', () => {
+  assert.equal(routeAction(route('paper', '2026-10-23', 'DEFAULT_PRIMARY_FIRE', { execution_state: 'RESEARCH_ONLY' })), 'Prepare');
+  assert.equal(routeAction(route('grant', '2026-11-03', 'FIRE_AFTER_GATE', { execution_state: 'DEPENDENCY_RECON_REQUIRED' })), 'On hold');
+  assert.equal(routeAction(route('field', '2026-10-20', 'FIRE', { execution_state: 'NOT_APPLICABLE' })), 'Event');
+  assert.equal(routeAction(route('ready', '2026-10-20', 'FIRE', { execution_state: 'APPLICATION_READY' })), 'Apply');
 });
 
 test('every FIRE variant in the live list that is an application gets a reminder', () => {

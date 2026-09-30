@@ -146,3 +146,11 @@ test('canonical calendar queue keeps the paused paper out and preserves the scre
   assert.match(queue.routes[0].submission_readiness.packaging_required.join(' '), /CW27 registration, travel, and accommodation are provided separately/);
   assert.match(queue.routes[0].submission_readiness.packaging_required.join(' '), /six-minute-maximum screencast/);
 });
+
+test('the default onboarding queue consumes the generated live calendar', () => {
+  const queue = buildCalendarOnboardingQueue({ today: '2026-09-30', days: 50, limit: 500 });
+  assert.deepEqual(queue.calendar.sources, ['calendar/gauntlet-live.ics']);
+  assert.equal(queue.unbound_calendar_cues.length, 0);
+  const msr = queue.routes.find((route) => route.route_id === 'msr-2027-technical-refinery');
+  assert.ok(msr?.calendar_cues.some((cue) => cue.summary.startsWith('Abstract deadline:')));
+});

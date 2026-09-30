@@ -1,7 +1,63 @@
 {
-  "as_of": "2026-09-21",
+  "as_of": "2026-09-30",
   "purpose": "Corrections verified against live sources, or against dates that have simply passed. Applied last, so they win over earlier radar optimism. Each entry says how it was verified. Outcomes are recorded as fields; status and archiving are left to the user, because retiring a route is a judgement about whether the call recurs.",
   "overrides": [
+    {
+      "id": "msr-2027-technical-refinery",
+      "deadline": "2026-10-23T23:59:00-12:00",
+      "calendar_milestones": [
+        {
+          "deadline": "2026-10-20T23:59:00-12:00",
+          "label": "Abstract deadline",
+          "remind": true
+        }
+      ],
+      "source_state": "OFFICIAL_CFP_REVERIFIED_2026-09-30",
+      "verified_on": "2026-09-30",
+      "verification": "Official MSR 2027 Technical Papers page gives abstract 2026-10-20 AoE and paper 2026-10-23 AoE.",
+      "reason": "Show the required earlier abstract stage and convert both AoE dates to their actual Taipei calendar days."
+    },
+    {
+      "id": "msr-2027-data-tool-refinery",
+      "deadline": "2026-11-10T23:59:00-12:00",
+      "calendar_milestones": [
+        {
+          "deadline": "2026-11-05T23:59:00-12:00",
+          "label": "Abstract deadline",
+          "remind": true
+        }
+      ],
+      "source_state": "OFFICIAL_DATES_REVERIFIED_2026-09-30",
+      "verified_on": "2026-09-30",
+      "verification": "Official MSR 2027 Important Dates page gives Data and Tool Showcase abstract 2026-11-05 and paper 2026-11-10 AoE.",
+      "reason": "Expose the earlier abstract stage and convert the AoE dates to Taipei calendar days."
+    },
+    {
+      "id": "saner-2027-tool-demo-refinery",
+      "deadline": "2026-10-23T23:59:00-12:00",
+      "source_state": "OFFICIAL_CFP_REVERIFIED_2026-09-30",
+      "verified_on": "2026-09-30",
+      "verification": "Official SANER 2027 Tool Demo Track page gives optional abstract 2026-10-19 and paper 2026-10-23, both AoE.",
+      "reason": "Convert the paper deadline to its actual Taipei calendar day; the optional abstract remains in the gate text."
+    },
+    {
+      "id": "freeway-pricing-2026",
+      "status": "HOLD_POSTAL_REGISTRATION_AND_CONSENT",
+      "source_state": "OFFICIAL_2026_RULES_REVERIFIED_2026-09-30",
+      "verified_on": "2026-09-30",
+      "verification": "Official Freeway Bureau announcement and attached 16-page competition rules: registration materials must be mailed by the 2026-09-30 postmark; the initial concept is due online 2026-10-30 12:00 Taiwan time.",
+      "reason": "The old FIRE label treated postal registration with signed personal-data consent as a ready online application.",
+      "gate": "Registration requires a team leader's personal/contact details, a signed personal-data consent form from every member, and postal mailing by the 2026-09-30 postmark. The online concept is due 2026-10-30 12:00 Taiwan time only after registration. Solo entry is permitted; a student adviser is recommended, not required. No route-specific traffic-data/AI packet or registration receipt is designated. Do not schedule the concept stage as an active submission until registration is confirmed."
+    },
+    {
+      "id": "freeway-bridge-2026",
+      "status": "HOLD_POSTAL_REGISTRATION_AND_CONSENT",
+      "source_state": "OFFICIAL_2026_RULES_REVERIFIED_2026-09-30",
+      "verified_on": "2026-09-30",
+      "verification": "Official Freeway Bureau announcement and attached 16-page competition rules: registration materials must be mailed by the 2026-09-30 postmark; the initial concept is due online 2026-10-30 12:00 Taiwan time.",
+      "reason": "The old route did not distinguish postal registration and protected consent from an application packet.",
+      "gate": "Registration requires a team leader's personal/contact details, a signed personal-data consent form from every member, and postal mailing by the 2026-09-30 postmark. The online concept is due 2026-10-30 12:00 Taiwan time only after registration. Solo entry is permitted; a student adviser is recommended, not required. Bridge inspection/repair data require a further signed declaration after registration. No native bridge-deterioration model, packet, or registration receipt is designated. Do not schedule the concept stage as an active submission until registration is confirmed."
+    },
     {
       "id": "shih-hsin-finance-2026-il",
       "verified_on": "2026-09-21",

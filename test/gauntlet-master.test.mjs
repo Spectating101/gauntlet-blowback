@@ -203,7 +203,8 @@ test('preserves research-family ownership and manuscript exclusivity', () => {
 });
 
 test('applies gate-audit corrections to current source rows', () => {
-  assert.equal(byId.get('freeway-bridge-2026').status, 'VERIFY');
+  assert.equal(byId.get('freeway-bridge-2026').status, 'HOLD_POSTAL_REGISTRATION_AND_CONSENT');
+  assert.equal(byId.get('freeway-pricing-2026').status, 'HOLD_POSTAL_REGISTRATION_AND_CONSENT');
   assert.equal(historicalById.get('innoserve-pet-2026').status, 'HOLD');
   assert.equal(historicalById.get('innoserve-oss-2026').status, 'HOLD');
   assert.equal(byId.get('projectdiscovery-oss').status, 'SELECTIVE_SELL');
