@@ -232,9 +232,12 @@
       "id": "dpg-policy-lab",
       "source_url": "https://app.digitalpublicgoods.net/",
       "eligibility_note": "Rolling nominations through the DPGA portal, submitted by an authorised representative of the solution. A 5-minute eligibility test exists. Two review stages against the DPG Standard, typically 4-8 weeks. Recognition lasts one year and must be renewed.",
-      "verified_on": "2026-09-21",
-      "verification": "live source read 2026-09-21",
-      "reason": "record the portal and the real review mechanics"
+      "verified_on": "2026-10-14",
+      "verification": "GitHub repo visibility checked 2026-10-13 (anonymous access 404; Pages demo 200).",
+      "reason": "Repository visibility changed to private; public-source routes cannot proceed.",
+      "status": "HOLD_REPO_PRIVATE",
+      "execution_state": "BLOCKED_SOURCE_NOT_PUBLIC",
+      "gate": "Policy Lab's repository (solarpunk-coin) went private on 2026-10-12. The DPG Standard requires an open licence and publicly accessible source, so nomination cannot proceed. Reopen only if the repo is made public again (delete the archive/* branches first)."
     },
     {
       "id": "phd-nycu-iais",
@@ -1021,6 +1024,24 @@
       "verified_on": "2026-10-10",
       "verification": "Owner clarification in conversation October 10; operator stopped duplicate SheerID flow.",
       "reason": "Existing owner-led Google student application; remove duplicate application work from the active queue."
+    },
+    {
+      "id": "dpg-nocturnal",
+      "status": "HOLD_REPO_PRIVATE",
+      "execution_state": "BLOCKED_SOURCE_NOT_PUBLIC",
+      "gate": "Nocturnal's repository is private and the owner has paused deployment, outreach and public data (handoff 2026-10-13). DPG requires public source; hold until both change.",
+      "verified_on": "2026-10-14",
+      "verification": "GitHub repo visibility checked 2026-10-13 (anonymous access 404; Pages demo 200).",
+      "reason": "Repository visibility changed to private; public-source routes cannot proceed."
+    },
+    {
+      "id": "nlnet-restack-policy-lab-2026",
+      "status": "HOLD_REPO_PRIVATE",
+      "execution_state": "BLOCKED_SOURCE_NOT_PUBLIC",
+      "gate": "NLnet requires open/libre source. Policy Lab's repository went private on 2026-10-12, so this call cannot be met unless the repo is made public before the 2026-11-03 deadline.",
+      "verified_on": "2026-10-14",
+      "verification": "GitHub repo visibility checked 2026-10-13 (anonymous access 404; Pages demo 200).",
+      "reason": "Repository visibility changed to private; public-source routes cannot proceed."
     }
   ],
   "link_sweep_2026_09_21": "145 source links checked from this machine: 127 returned 200, 3 were 404 (career-gogolook, job-appier-ds, job-imc-apac), 3 redirected, 2 were bot-blocked, and 10 raised network errors. The network errors are an artefact of this machine: pages such as the YZU library and NYCU IAIS load fine through another fetcher. Never retire a route on a network error alone.",
