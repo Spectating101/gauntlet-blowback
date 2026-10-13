@@ -1,0 +1,107 @@
+{
+  "schema": "gauntlet.post_master_campaign.v1",
+  "as_of": "2026-10-08",
+  "authority": "Direct user instruction: ATTA travel too costly; prioritize post-master jobs and funding.",
+  "graduation_expected": "2027-01",
+  "preferred_full_time_start": "2027-03",
+  "location": [
+    "Taiwan",
+    "Taiwan-compatible remote"
+  ],
+  "application_fee_budget": 0,
+  "priorities": [
+    {
+      "rank": 1,
+      "category": "SALARIED_JOB",
+      "route_id": "job-point72-qfr",
+      "state": "WAITING_HUMAN",
+      "next": "Operator review complete. Applicant reviews/designates October 9 quant CV and supplies previous Point72 application/military-service facts. Resume live form, replace older note with reviewed copy, then leave privacy consent and final Submit to applicant. Browser draft persistence not newly verified."
+    },
+    {
+      "rank": 2,
+      "category": "SALARIED_JOB_STRETCH",
+      "route_id": "job-worldquant-qr",
+      "state": "PREPARE_VERIFIED",
+      "next": "Package quantitative methods and Python research; disclose degree and conditional work-rights status."
+    },
+    {
+      "rank": 3,
+      "category": "ALTERNATE_SAME_EMPLOYER",
+      "route_id": "job-worldquant-macro",
+      "state": "PREPARE_VERIFIED",
+      "next": "Compare existing macro/energy paper evidence with general QR before choosing initial WorldQuant application."
+    },
+    {
+      "rank": 4,
+      "category": "SALARIED_JOB_STRETCH",
+      "route_id": "job-binance-ai-agent",
+      "state": "PREPARE_PRODUCTION_EVIDENCE_REVIEW",
+      "next": "Match native Cite/Research Drive/Gauntlet deployment history against explicit one-year production requirement."
+    },
+    {
+      "rank": 5,
+      "category": "CASH_PROJECT_GRANT",
+      "route_id": "emergent-commons",
+      "state": "OWNER_WRITING_REQUIRED",
+      "next": "Current official page allows AI only for proofreading. Applicant must write the application themselves; existing AI-prepared narrative is not submit-ready."
+    }
+  ],
+  "secondary_cost_offsets": [
+    {
+      "route_id": "claude-startups-2026",
+      "state": "DECLINED",
+      "category": "API_CREDITS",
+      "next": "Decision supplied by owner. Park immediate retry; exact cause unknown. Live October 9 FAQ says free Team/$1,000 credit offers over capacity. No receipt/email permission required to establish the supplied decline."
+    },
+    {
+      "route_id": "openai-researcher-access-hardware-splicer",
+      "state": "WAITING_HUMAN_LOGIN",
+      "category": "API_CREDITS"
+    }
+  ],
+  "held_routes": [
+    "job-kronos-qr-grad",
+    "job-worldquant-ds",
+    "job-gogolook-ml",
+    "job-gogolook-credit",
+    "job-point72-macro"
+  ],
+  "closed_routes": [
+    "atta-2027-fiscal-choke-points"
+  ],
+  "deferred_route_classes": [
+    "CONFERENCE",
+    "JOURNAL",
+    "RESEARCH_PUBLICATION"
+  ],
+  "internal_milestones": [
+    {
+      "date": "2026-10-09",
+      "task": "Review quant CV and Point72 packet; verify work-rights wording"
+    },
+    {
+      "date": "2026-10-13",
+      "task": "Prepare first verified job applications to safe draft/review state"
+    },
+    {
+      "date": "2026-10-15",
+      "task": "Review applied AI evidence and Refinery cash-grant budget"
+    },
+    {
+      "date": "2026-10-22",
+      "task": "Refresh exact openings and reconcile actual application receipts"
+    }
+  ],
+  "calendar_note": "Internal preparation dates only; rolling roles have no invented external deadlines. No cloud calendar synchronization performed.",
+  "protected_actions": [
+    "legal/privacy consent",
+    "personal or eligibility declarations without explicit verified authority",
+    "final submission"
+  ],
+  "evidence_note": "October 9 recheck: Point72 QFR and WorldQuant QR still listed. Emergent Ventures now expressly allows AI only for proofreading. Other vacancies retain their October 8 verification dates. No new job/grant submission recorded; Claude submission is owner-reported and receipt pending. Claude Startups rejection supplied by owner October 9; decision now recorded and immediate retry held. Current public FAQ supersedes earlier Team/$1,000 offer availability.",
+  "prepared_cv": "output/pdf/Christopher_Ongko_Quant_CV_2026-10-09.pdf",
+  "status_reviewed_on": "2026-10-09",
+  "current_execution_focus": "job-point72-qfr",
+  "named_public_sources_rechecked_on": "2026-10-09",
+  "cv_review": "docs/POINT72_APPLICATION_REVIEW_2026-10-09.md"
+}

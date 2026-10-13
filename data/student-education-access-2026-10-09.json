@@ -1,0 +1,116 @@
+{
+  "schema": "gauntlet.student_education_access_screen.v1",
+  "as_of": "2026-10-09",
+  "report": "docs/STUDENT_EDUCATION_ACCESS_SCREEN_2026-10-09.md",
+  "applicant_basis": {
+    "full_time_student": true,
+    "institution": "Yuan Ze University",
+    "degree": "MSc Finance and Accounting",
+    "expected_graduation": "2027-01",
+    "github_student_pack_recorded_active": true,
+    "current_enrolment_certificate_expires": "2026-10-18"
+  },
+  "account_verification_performed": false,
+  "applications_submitted": false,
+  "priority_order": [
+    "claude-existing-plan-api-credits-2026",
+    "google-ai-plus-students-taiwan-2026",
+    "github-copilot-student-2026",
+    "camber-student-pack-2026",
+    "azure-for-students-2026",
+    "claude-team-for-scientists-yzu-2026"
+  ],
+  "new_routes": [
+    {
+      "id": "claude-existing-plan-api-credits-2026",
+      "organization": "Anthropic",
+      "opportunity": "Existing Max/Team monthly Claude API credits",
+      "status": "CHECK_EXISTING_PLAN",
+      "deadline": "ROLLING",
+      "source": "https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-and-team-plans",
+      "next_gate": "Max 5x: $100/month; Max 20x: $200/month. Active eligible plan for seven days; Pro excluded. Actual account plan unknown. Inspect existing usual account and destination Console organisation; terms and organisation linkage require human review. Do not purchase or upgrade a plan. No rollover."
+    },
+    {
+      "id": "google-ai-plus-students-taiwan-2026",
+      "organization": "Google",
+      "opportunity": "Taiwan student Google AI Plus — one year free",
+      "status": "FIRE_AFTER_GATE",
+      "deadline": "2026-12-31",
+      "source": "https://blog.google/intl/zh-tw/products/explore-get-answers/back-to-school-2026/",
+      "next_gate": "Taiwan higher-education students, 18+, SheerID verification; intended personal Google account, eligible billing region and subscription history must be checked. Card required; auto-renews NT$165/month after year. Existing subscriptions/prior student promotion may need to end first. Student status required to retain offer. Subscription access, not product API credits."
+    },
+    {
+      "id": "github-copilot-student-2026",
+      "organization": "GitHub",
+      "opportunity": "Copilot Student activation and existing-benefit audit",
+      "status": "CHECK_EXISTING_ENTITLEMENT",
+      "deadline": "WHILE_ENROLLED",
+      "source": "https://docs.github.com/en/copilot/get-started/plans",
+      "next_gate": "Active GitHub Student Pack is recorded. Check actual Copilot Student activation independently; current free student plan uses auto model selection, excludes third-party agents, and has an AI credit allowance. Do not promise selectable premium models, unlimited inference or continued old free Pro rules."
+    },
+    {
+      "id": "camber-student-pack-2026",
+      "organization": "Camber / GitHub",
+      "opportunity": "Camber Student — monthly research CPU/GPU allocation",
+      "status": "FIRE_AFTER_GATE",
+      "deadline": "WHILE_ENROLLED",
+      "source": "https://www.cambercloud.com/github-student-pack",
+      "next_gate": "GitHub Student Pack supports public eligibility. Current GitHub catalogue lists 40 CPU hours, 5 GPU hours, 50 GB storage and 50 agent messages/month while enrolled. Check prior redemption, actual account limits and terms before activation or workload execution. No dataset upload or paid resources authorised by this screen."
+    },
+    {
+      "id": "claude-team-for-scientists-yzu-2026",
+      "organization": "Anthropic",
+      "opportunity": "Claude Team plan for scientists — PI-led lab access",
+      "status": "HOLD_PI_AND_FIELD_ELIGIBILITY",
+      "deadline": "ROLLING_LIMITED_TIME",
+      "source": "https://claude.com/programs/team-plan-for-scientists",
+      "next_gate": "PI/equivalent in natural sciences, mathematics, CS, engineering or related fields must apply and verify before adding graduate researchers. Finance/Accounting is not explicitly included. RA affiliation does not establish PI eligibility or adviser commitment. Standard seats free for 12 months; Premium $15/month; card and subsequent renewal. Current help lists separate monthly API credits; confirm on actual account. No application as PI by student."
+    },
+    {
+      "id": "jetbrains-student-pack-2026",
+      "organization": "JetBrains",
+      "opportunity": "Educational IDE licences for research coding",
+      "status": "FIRE_AFTER_GATE",
+      "deadline": "WHILE_ENROLLED",
+      "source": "https://www.jetbrains.com/academy/student-pack/",
+      "next_gate": "Verify university student status through supported evidence or existing GitHub Pack. Educational noncommercial scope must match workload. Free IDE licences do not include continuing paid AI Pro: AI benefit is a trial. Inspect any existing licence before new activation."
+    },
+    {
+      "id": "kiro-students-yzu-2026",
+      "organization": "AWS / Kiro",
+      "opportunity": "Kiro Students — school availability watch",
+      "status": "HOLD_SCHOOL_NOT_LISTED",
+      "deadline": "ROLLING",
+      "source": "https://kiro.dev/students/",
+      "next_gate": "Selected-university offer: 1,000 credits/month for one year, no card; Yuan Ze is absent from current published list. Only school-access request/watch is supported now. Request transmission and personal-data consent require human action; do not encode as currently eligible."
+    }
+  ],
+  "updated_existing_routes": [
+    "azure-for-students-2026",
+    "heroku-github-students-2026",
+    "appwrite-education-2026",
+    "yzu-campus-software-2026",
+    "claude-campus-status-2026-09-04"
+  ],
+  "research_pipeline": {
+    "anthropic_external_researcher_access": "Existing October 3 submission awaits decision; do not duplicate.",
+    "openai_researcher_access": "Existing $300 Hardware Splicer protocol prepared; login and prior-application inspection outstanding. Official programme cap $1000; quarterly review next December."
+  },
+  "deferred": {
+    "claude_campus": "Fall intake closed",
+    "kiro": "YZU not on published eligible list",
+    "chatgpt_student": "Requires eligible US institution",
+    "chatgpt_academic_researchers": "Faculty/postdoctoral eligibility not met by recorded MSc status",
+    "cursor": "Current official page no longer publishes year-free Pro student offer",
+    "perplexity": "Current official offer is paid discount; price needs actual checkout",
+    "digitalocean": "Prior student credits need balance/expiry audit; no new offer found"
+  },
+  "human_gates": [
+    "Final application or benefit activation",
+    "Provider terms and privacy consent",
+    "Payment method, purchase, plan upgrade or renewal commitment",
+    "Console organisation linkage",
+    "PI or adviser commitment",
+    "OTP/CAPTCHA when needed"
+  ]
+}

@@ -1,0 +1,56 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//gauntlet-blowback//build-calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Post-master preparation
+X-WR-TIMEZONE:Asia/Taipei
+BEGIN:VEVENT
+UID:post-master-preparation-20261008-1@blowback
+DTSTAMP:20261007T185701Z
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261010
+SUMMARY:Internal preparation: Review quant CV and Point72 packet\; verify w
+ ork-rights wording
+DESCRIPTION:Operator planning target\, not an employer deadline\, appointme
+ nt or commitment. Source: data/post-master-campaign-2026-10-08.json. Prefe
+ rred employment start March 2027.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:post-master-preparation-20261008-2@blowback
+DTSTAMP:20261007T185701Z
+DTSTART;VALUE=DATE:20261013
+DTEND;VALUE=DATE:20261014
+SUMMARY:Internal preparation: Prepare first verified job applications to sa
+ fe draft/review state
+DESCRIPTION:Operator planning target\, not an employer deadline\, appointme
+ nt or commitment. Source: data/post-master-campaign-2026-10-08.json. Prefe
+ rred employment start March 2027.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:post-master-preparation-20261008-3@blowback
+DTSTAMP:20261007T185701Z
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261016
+SUMMARY:Internal preparation: Review applied AI evidence and Refinery cash-
+ grant budget
+DESCRIPTION:Operator planning target\, not an employer deadline\, appointme
+ nt or commitment. Source: data/post-master-campaign-2026-10-08.json. Prefe
+ rred employment start March 2027.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:post-master-preparation-20261008-4@blowback
+DTSTAMP:20261007T185701Z
+DTSTART;VALUE=DATE:20261022
+DTEND;VALUE=DATE:20261023
+SUMMARY:Internal preparation: Refresh exact openings and reconcile actual a
+ pplication receipts
+DESCRIPTION:Operator planning target\, not an employer deadline\, appointme
+ nt or commitment. Source: data/post-master-campaign-2026-10-08.json. Prefe
+ rred employment start March 2027.
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

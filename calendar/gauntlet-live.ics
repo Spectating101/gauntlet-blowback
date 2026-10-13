@@ -6,210 +6,85 @@ METHOD:PUBLISH
 X-WR-CALNAME:Gauntlet deadlines
 X-WR-TIMEZONE:Asia/Taipei
 BEGIN:VEVENT
-UID:freeway-bridge-2026-20260930@blowback
-DTSTAMP:20260930T071825Z
-DTSTART;VALUE=DATE:20260930
-DTEND;VALUE=DATE:20261001
-SUMMARY:On hold: Freeway AI — Bridge Deterioration Prediction
-DESCRIPTION:Status: HOLD_POSTAL_REGISTRATION_AND_CONSENT\nGate: Registratio
- n requires a team leader's personal/contact details\, a signed personal-da
- ta consent form from every member\, and postal mailing by the 2026-09-30 p
- ostmark. The online concept is due 2026-10-30 12:00 Taiwan time only after
-  registration. Solo entry is permitted\; a student adviser is recommended\
- , not required. Bridge inspection/repair data require a further signed dec
- laration after registration. No native bridge-deterioration model\, packet
- \, or registration receipt is designated. Do not schedule the concept stag
- e as an active submission until registration is confirmed.\nUses: Hardware
-  Splicer\nSource: https://www.freeway.gov.tw/Publish.aspx?cnid=193&p=43590
- \nRoute: freeway-bridge-2026\nDeadline as recorded: 2026-09-30
-TRANSP:TRANSPARENT
-URL:https://www.freeway.gov.tw/Publish.aspx?cnid=193&p=43590
-END:VEVENT
-BEGIN:VEVENT
-UID:freeway-pricing-2026-20260930@blowback
-DTSTAMP:20260930T071825Z
-DTSTART;VALUE=DATE:20260930
-DTEND;VALUE=DATE:20261001
-SUMMARY:On hold: Freeway AI — Congestion Pricing
-DESCRIPTION:Status: HOLD_POSTAL_REGISTRATION_AND_CONSENT\nGate: Registratio
- n requires a team leader's personal/contact details\, a signed personal-da
- ta consent form from every member\, and postal mailing by the 2026-09-30 p
- ostmark. The online concept is due 2026-10-30 12:00 Taiwan time only after
-  registration. Solo entry is permitted\; a student adviser is recommended\
- , not required. No route-specific traffic-data/AI packet or registration r
- eceipt is designated. Do not schedule the concept stage as an active submi
- ssion until registration is confirmed.\nUses: Policy Lab\nSource: https://
- www.freeway.gov.tw/Publish.aspx?cnid=193&p=43590\nRoute: freeway-pricing-2
- 026\nDeadline as recorded: 2026-09-30
-TRANSP:TRANSPARENT
-URL:https://www.freeway.gov.tw/Publish.aspx?cnid=193&p=43590
-END:VEVENT
-BEGIN:VEVENT
-UID:ftsid-2026-cl-eci-20260930@blowback
-DTSTAMP:20260930T071825Z
-DTSTART;VALUE=DATE:20260930
-DTEND;VALUE=DATE:20261001
-SUMMARY:On hold: Asia University FTSID — 2026 full-paper lane
-DESCRIPTION:Status: FALLBACK_ONLY\nGate: only if FC27 primary manuscript la
- ne is stopped or non-overlapping\nUses: CL-ECI|Policy Lab\nSource: https:/
- /ftimc.asia.edu.tw/international-academic-conference/submission/\nRoute: f
- tsid-2026-cl-eci\nDeadline as recorded: 2026-09-30
-TRANSP:TRANSPARENT
-URL:https://ftimc.asia.edu.tw/international-academic-conference/submission/
-END:VEVENT
-BEGIN:VEVENT
-UID:ssi-fellowship-2027-policy-lab-20261005@blowback
-DTSTAMP:20260930T071825Z
-DTSTART;VALUE=DATE:20261005
-DTEND;VALUE=DATE:20261006
-SUMMARY:Record + apply: Software Sustainability Institute — Fellowship Pr
- ogramme 2027
-DESCRIPTION:Status: HOLD_SCREENCAST_RECORDING\nGate: Application copy and r
- evised narration are ready. Correct the deck budget because CW27 travel is
-  provided separately\; then the applicant must record and host the six-min
- ute-maximum screencast before this route can enter FIRE. Personal demograp
- hic answers\, declarations\, and final Submit remain human gates. The £4\
- ,000 is a restricted activity budget\, not salary.\nUses: Policy Lab|Citat
- ion Engine|Cite|Research Drive|Refinery|Commons\nSource: https://www.softw
- are.ac.uk/programmes/fellowship-programme/apply-fellowship-programme\nRout
- e: ssi-fellowship-2027-policy-lab\nDeadline as recorded: 2026-10-05
-TRANSP:TRANSPARENT
-URL:https://www.software.ac.uk/programmes/fellowship-programme/apply-fellow
- ship-programme
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:one week: Record + apply: Software Sustainability Institute —
-  Fellowship Programme 2027
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:tomorrow: Record + apply: Software Sustainability Institute —
-  Fellowship Programme 2027
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:lab-sinica-der-nian-yang-ra-2026-20261006@blowback
-DTSTAMP:20260930T071825Z
-DTSTART;VALUE=DATE:20261006
-DTEND;VALUE=DATE:20261007
-SUMMARY:Apply: Academia Sinica IIS / Der-Nian Yang Lab — Research assista
- nt — data mining\, LLM/deep learning\, social networks and big-data syst
- ems
-DESCRIPTION:Status: FIRE_AFTER_GATE\nGate: G1 CS/EE background preference a
- nd exact appointment economics\; verify degree flexibility\, work authoriz
- ation\, IP and outside-work terms.\nUses: Nocturnal|Research Drive|Citatio
- n Engine|Cite\nSource: https://www.iis.sinica.edu.tw/zh/page/Recruitment/A
- ssistants.html\nRoute: lab-sinica-der-nian-yang-ra-2026\nDeadline as recor
- ded: 2026-10-06
-TRANSP:TRANSPARENT
-URL:https://www.iis.sinica.edu.tw/zh/page/Recruitment/Assistants.html
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:one week: Apply: Academia Sinica IIS / Der-Nian Yang Lab — Re
- search assistant — data mining\, LLM/deep learning\, social networks and
-  big-data systems
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:tomorrow: Apply: Academia Sinica IIS / Der-Nian Yang Lab — Re
- search assistant — data mining\, LLM/deep learning\, social networks and
-  big-data systems
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:atta-2027-fiscal-choke-points-20261012@blowback
-DTSTAMP:20260930T071825Z
-DTSTART;VALUE=DATE:20261012
-DTEND;VALUE=DATE:20261013
-SUMMARY:Apply: Australasian Tax Teachers Association — ATTA 2027 Melbourn
- e — conference paper/abstract
-DESCRIPTION:Status: FIRE_AFTER_GATE\nGate: G2 prepare the <=500-word abstra
- ct from the frozen DT argument. G6 Melbourne attendance/travel economics m
- ust clear before accepting an in-person obligation. Do not reframe as caus
- al economics or a five-country rate survey.\nUses: Fiscal Choke Points\nSo
- urce: https://atta-online.squarespace.com/melbourne-2027\nRoute: atta-2027
- -fiscal-choke-points\nDeadline as recorded: 2026-10-12
-TRANSP:TRANSPARENT
-URL:https://atta-online.squarespace.com/melbourne-2027
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:one week: Apply: Australasian Tax Teachers Association — ATTA
-  2027 Melbourne — conference paper/abstract
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:tomorrow: Apply: Australasian Tax Teachers Association — ATTA
-  2027 Melbourne — conference paper/abstract
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:field-energy-netzero-2026-20261014@blowback
-DTSTAMP:20260930T071825Z
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20261014
 DTEND;VALUE=DATE:20261017
 SUMMARY:Check: Energy Taiwan / Net-Zero Taiwan — 2026 field/network chann
  el
 DESCRIPTION:Status: CHECK_FIRE\nGate: attendance value / schedule\nUses: Po
- licy Lab|ECI|Public-Good\nRoute: field-energy-netzero-2026\nDeadline as re
- corded: 2026-10-14/2026-10-16
+ licy Lab|ECI|Public-Good\nSource: https://www.energytaiwan.com.tw/en/index
+ .html\nRoute: field-energy-netzero-2026\nDeadline as recorded: 2026-10-14/
+ 2026-10-16
 TRANSP:TRANSPARENT
+URL:https://www.energytaiwan.com.tw/en/index.html
 END:VEVENT
 BEGIN:VEVENT
 UID:internship-oist-research-2027-20261015@blowback
-DTSTAMP:20260930T071825Z
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20261015
 DTEND;VALUE=DATE:20261016
-SUMMARY:Apply: Okinawa Institute of Science and Technology — Research Int
- ernship Program — Spring 2027 window
-DESCRIPTION:Status: FIRE_AFTER_GATE\nGate: G6 4-6 month relocation/opportun
- ity cost\; verify exact host-unit fit and stipend amount. Official program
-  covers living support\, accommodation and travel.\nUses: Hardware Splicer
- |Research Drive|Citation Engine|Research Papers\nSource: https://www.oist.
- jp/admissions/research-internship/apply-research-internship\nRoute: intern
- ship-oist-research-2027\nDeadline as recorded: 2026-10-15
+SUMMARY:On hold: Okinawa Institute of Science and Technology — Research I
+ nternship Program — Spring 2027 window (closes 22:59 Taipei)
+DESCRIPTION:Status: HOLD_REFERENCES_FEE_AND_HOST_DECISION\nGate: Select a s
+ uitable host and genuine research purpose\; at least one English recommend
+ ation from professorial-level faculty must be received in the portal befor
+ e submission. Enrolled applicants need home-institution approval. Prepare 
+ transcripts/enrollment evidence\, CV\, <=250-word/1500-character statement
+ \, government ID and recent photo. Nonrefundable JPY 5\,000 application fe
+ e and 4–6 month relocation require applicant decisions. Account/credenti
+ als\, payment\, declarations and final Submit remain human gates. Do not a
+ ssume PhD interest or visa approval.\nUses: Hardware Splicer|Research Driv
+ e|Citation Engine|Research Papers\nSource: https://www.oist.jp/admissions/
+ research-internship/apply-research-internship\nRoute: internship-oist-rese
+ arch-2027\nDeadline as recorded: 2026-10-15T23:59:00+09:00
 TRANSP:TRANSPARENT
 URL:https://www.oist.jp/admissions/research-internship/apply-research-inter
  nship
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:one week: Apply: Okinawa Institute of Science and Technology 
- — Research Internship Program — Spring 2027 window
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:tomorrow: Apply: Okinawa Institute of Science and Technology 
- — Research Internship Program — Spring 2027 window
-END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:ata-jltr-2027-fiscal-choke-points-20261016@blowback
-DTSTAMP:20260930T071825Z
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20261016
 DTEND;VALUE=DATE:20261017
-SUMMARY:On hold: American Taxation Association / Journal of Legal Tax Resea
- rch — 2027 JLTR Conference paper
-DESCRIPTION:Status: SELECTIVE_FIRE\nGate: Secondary route only. Verify in-p
- erson Washington economics and journal/submission exclusivity before firin
- g\; current rules exclude papers already under review at another journal b
- y the deadline. Do not let this route disrupt stronger DT conference/journ
- al sequencing.\nUses: Fiscal Choke Points\nSource: https://aaahq.org/Meeti
- ngs/2027/ATA-Midyear-Meeting/Submissions/JTLR-Conference\nRoute: ata-jltr-
- 2027-fiscal-choke-points\nDeadline as recorded: 2026-10-16
+SUMMARY:Watch: American Taxation Association / Journal of Legal Tax Researc
+ h — 2027 JLTR Conference paper
+DESCRIPTION:Status: WATCH_OWNER_DEFERRED_POST_MASTER_FOCUS\nGate: Secondary
+  route only. Verify in-person Washington economics and journal/submission 
+ exclusivity before firing\; current rules exclude papers already under rev
+ iew at another journal by the deadline. Do not let this route disrupt stro
+ nger DT conference/journal sequencing.\nUses: Fiscal Choke Points\nSource:
+  https://aaahq.org/Meetings/2027/ATA-Midyear-Meeting/Submissions/JTLR-Conf
+ erence\nRoute: ata-jltr-2027-fiscal-choke-points\nDeadline as recorded: 20
+ 26-10-16
 TRANSP:TRANSPARENT
 URL:https://aaahq.org/Meetings/2027/ATA-Midyear-Meeting/Submissions/JTLR-Co
  nference
 END:VEVENT
 BEGIN:VEVENT
+UID:fellowship-anthropic-fellows-2026-20261018@blowback
+DTSTAMP:20261009T083506Z
+DTSTART;VALUE=DATE:20261018
+DTEND;VALUE=DATE:20261019
+SUMMARY:On hold: Anthropic — Anthropic Fellows AI Safety & Security — J
+ anuary cohort consideration
+DESCRIPTION:Status: HOLD_LOCATION_WORK_AUTH_AND_FULL_TIME\nGate: January-co
+ hort October 18 planning cutoff (year inferred from current October 2026 c
+ ontext\; precise cutoff time/timezone unstated). Must reside and have or i
+ ndependently obtain full-time work authorisation in US/UK/Canada during pr
+ ogramme\; Taiwan remote does not satisfy it and no such approval is establ
+ ished. Four months full-time conflicts with current availability. Current 
+ Constellation intake is required\, not Greenhouse submission. No relocatio
+ n\, sponsorship or eligibility assumed.\nUses: Research Drive|Citation Eng
+ ine|Hardware Splicer|Finance|Policy Lab|Sharpe\nSource: https://alignment.
+ anthropic.com/2025/anthropic-fellows-program-2026/\nRoute: fellowship-anth
+ ropic-fellows-2026\nDeadline as recorded: 2026-10-18
+TRANSP:TRANSPARENT
+URL:https://alignment.anthropic.com/2025/anthropic-fellows-program-2026/
+END:VEVENT
+BEGIN:VEVENT
 UID:field-taitronics-aiot-2026-20261020@blowback
-DTSTAMP:20260930T071825Z
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20261020
 DTEND;VALUE=DATE:20261023
 SUMMARY:Event: TAITRONICS / AIoT Taiwan / Taiwan Industry Week — 2026 fie
@@ -220,8 +95,26 @@ DESCRIPTION:Status: FIRE\nGate: attendance value / schedule\nUses: Hardware
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
+UID:saner-2027-agentic-ai4se-refinery-20261020@blowback
+DTSTAMP:20261009T083506Z
+DTSTART;VALUE=DATE:20261020
+DTEND;VALUE=DATE:20261021
+SUMMARY:Mandatory abstract\; route remains held: SANER 2027 — Agentic AI4
+ SE (closes 19:59 Taipei)
+DESCRIPTION:Milestone: Mandatory abstract\; route remains held\nStatus: HOL
+ D_OR_KILL\nGate: Mandatory abstract due 2026-10-19 AoE\; agent behavior mu
+ st genuinely be the empirical object\; double-anonymous ten-page paper\; a
+ ccepted paper requires full author registration and in-person presentation
+ \nSource: https://conf.researchr.org/track/saner-2027/saner-2027-agentic-a
+ i4se-track\nRoute: saner-2027-agentic-ai4se-refinery\nDeadline as recorded
+ : 2026-10-19T23:59:00-12:00
+TRANSP:TRANSPARENT
+URL:https://conf.researchr.org/track/saner-2027/saner-2027-agentic-ai4se-tr
+ ack
+END:VEVENT
+BEGIN:VEVENT
 UID:msr-2027-technical-refinery-20261021@blowback
-DTSTAMP:20260930T071825Z
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20261021
 DTEND;VALUE=DATE:20261022
 SUMMARY:Abstract deadline: MSR 2027 — Technical Papers (closes 19:59 Taip
@@ -249,96 +142,99 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:ncue-ai-2026-20261022@blowback
-DTSTAMP:20260930T071825Z
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20261022
 DTEND;VALUE=DATE:20261023
-SUMMARY:Prepare: National Industry-Academia Innovation — AI & Application
- s
-DESCRIPTION:Status: FIRE_AFTER_GATE\nGate: student eligibility\nUses: Hardw
- are Splicer|Cite|YZU|Public-Good\nSource: https://eedept.ncue.edu.tw/innov
- ation2026/intro.html\nRoute: ncue-ai-2026\nDeadline as recorded: 2026-10-2
- 2
+SUMMARY:On hold: National Industry-Academia Innovation — AI & Application
+ s (closes 23:59 Taipei)
+DESCRIPTION:Status: HOLD_PACKET_SIGNATURES_AND_ADVISER_CLARIFICATION\nGate:
+  One NCUE competition\, not four independent applications. Current Taiwan 
+ graduate-student criterion fits\; choose one native category/project. Requ
+ ired registration\, member description\, work description\, abstract and s
+ canned consent PDF in a RAR archive. Prior official attachment audit found
+  handwritten adviser/student signatures\; whether an adviser is compulsory
+  remains unresolved and none is committed. If selected\, November 19 Chang
+ hua final requires model/product\, self-printed A1 poster and setup before
+  09:00. Protected consent/originality/attendance commitments and final Sub
+ mit remain human gates. Mechanical and green categories require actual nat
+ ive fit.\nUses: Hardware Splicer|Cite|YZU|Public-Good\nSource: https://eed
+ ept.ncue.edu.tw/innovation2026/intro.html\nRoute: ncue-ai-2026\nDeadline a
+ s recorded: 2026-10-22T23:59:00+08:00
 TRANSP:TRANSPARENT
 URL:https://eedept.ncue.edu.tw/innovation2026/intro.html
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:one week: Prepare: National Industry-Academia Innovation — AI
-  & Applications
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:tomorrow: Prepare: National Industry-Academia Innovation — AI
-  & Applications
-END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:ncue-green-2026-20261022@blowback
-DTSTAMP:20260930T071825Z
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20261022
 DTEND;VALUE=DATE:20261023
-SUMMARY:Check: National Industry-Academia Innovation — Green Technology
-DESCRIPTION:Status: VERIFY\nGate: substantive green-tech fit\nUses: Public-
- Good|Policy Lab\nSource: https://eedept.ncue.edu.tw/innovation2026/intro.h
- tml\nRoute: ncue-green-2026\nDeadline as recorded: 2026-10-22
+SUMMARY:On hold: National Industry-Academia Innovation — Green Technology
+  (closes 23:59 Taipei)
+DESCRIPTION:Status: HOLD_PACKET_SIGNATURES_AND_ADVISER_CLARIFICATION\nGate:
+  One NCUE competition\, not four independent applications. Current Taiwan 
+ graduate-student criterion fits\; choose one native category/project. Requ
+ ired registration\, member description\, work description\, abstract and s
+ canned consent PDF in a RAR archive. Prior official attachment audit found
+  handwritten adviser/student signatures\; whether an adviser is compulsory
+  remains unresolved and none is committed. If selected\, November 19 Chang
+ hua final requires model/product\, self-printed A1 poster and setup before
+  09:00. Protected consent/originality/attendance commitments and final Sub
+ mit remain human gates. Mechanical and green categories require actual nat
+ ive fit.\nUses: Public-Good|Policy Lab\nSource: https://eedept.ncue.edu.tw
+ /innovation2026/intro.html\nRoute: ncue-green-2026\nDeadline as recorded: 
+ 2026-10-22T23:59:00+08:00
 TRANSP:TRANSPARENT
 URL:https://eedept.ncue.edu.tw/innovation2026/intro.html
 END:VEVENT
 BEGIN:VEVENT
 UID:ncue-info-2026-20261022@blowback
-DTSTAMP:20260930T071825Z
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20261022
 DTEND;VALUE=DATE:20261023
-SUMMARY:Prepare: National Industry-Academia Innovation — Information & El
- ectronics
-DESCRIPTION:Status: FIRE_AFTER_GATE\nGate: student eligibility\nUses: Hardw
- are Splicer|Citation Engine|Cite\nSource: https://eedept.ncue.edu.tw/innov
- ation2026/intro.html\nRoute: ncue-info-2026\nDeadline as recorded: 2026-10
- -22
+SUMMARY:On hold: National Industry-Academia Innovation — Information & El
+ ectronics (closes 23:59 Taipei)
+DESCRIPTION:Status: HOLD_PACKET_SIGNATURES_AND_ADVISER_CLARIFICATION\nGate:
+  One NCUE competition\, not four independent applications. Current Taiwan 
+ graduate-student criterion fits\; choose one native category/project. Requ
+ ired registration\, member description\, work description\, abstract and s
+ canned consent PDF in a RAR archive. Prior official attachment audit found
+  handwritten adviser/student signatures\; whether an adviser is compulsory
+  remains unresolved and none is committed. If selected\, November 19 Chang
+ hua final requires model/product\, self-printed A1 poster and setup before
+  09:00. Protected consent/originality/attendance commitments and final Sub
+ mit remain human gates. Mechanical and green categories require actual nat
+ ive fit.\nUses: Hardware Splicer|Citation Engine|Cite\nSource: https://eed
+ ept.ncue.edu.tw/innovation2026/intro.html\nRoute: ncue-info-2026\nDeadline
+  as recorded: 2026-10-22T23:59:00+08:00
 TRANSP:TRANSPARENT
 URL:https://eedept.ncue.edu.tw/innovation2026/intro.html
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:one week: Prepare: National Industry-Academia Innovation — In
- formation & Electronics
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:tomorrow: Prepare: National Industry-Academia Innovation — In
- formation & Electronics
-END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:ncue-mech-2026-20261022@blowback
-DTSTAMP:20260930T071825Z
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20261022
 DTEND;VALUE=DATE:20261023
-SUMMARY:Prepare: National Industry-Academia Innovation — Mechanical & Aut
- omation
-DESCRIPTION:Status: FIRE_AFTER_GATE\nGate: student eligibility\nUses: Hardw
- are Splicer\nSource: https://eedept.ncue.edu.tw/innovation2026/intro.html\
- nRoute: ncue-mech-2026\nDeadline as recorded: 2026-10-22
+SUMMARY:On hold: National Industry-Academia Innovation — Mechanical & Aut
+ omation (closes 23:59 Taipei)
+DESCRIPTION:Status: HOLD_PACKET_SIGNATURES_AND_ADVISER_CLARIFICATION\nGate:
+  One NCUE competition\, not four independent applications. Current Taiwan 
+ graduate-student criterion fits\; choose one native category/project. Requ
+ ired registration\, member description\, work description\, abstract and s
+ canned consent PDF in a RAR archive. Prior official attachment audit found
+  handwritten adviser/student signatures\; whether an adviser is compulsory
+  remains unresolved and none is committed. If selected\, November 19 Chang
+ hua final requires model/product\, self-printed A1 poster and setup before
+  09:00. Protected consent/originality/attendance commitments and final Sub
+ mit remain human gates. Mechanical and green categories require actual nat
+ ive fit.\nUses: Hardware Splicer\nSource: https://eedept.ncue.edu.tw/innov
+ ation2026/intro.html\nRoute: ncue-mech-2026\nDeadline as recorded: 2026-10
+ -22T23:59:00+08:00
 TRANSP:TRANSPARENT
 URL:https://eedept.ncue.edu.tw/innovation2026/intro.html
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:one week: Prepare: National Industry-Academia Innovation — Me
- chanical & Automation
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:tomorrow: Prepare: National Industry-Academia Innovation — Me
- chanical & Automation
-END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:field-fintech-taipei-2026-20261023@blowback
-DTSTAMP:20260930T071825Z
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20261023
 DTEND;VALUE=DATE:20261025
 SUMMARY:Watch: FinTech Taipei — 2026 event/showcase channel
@@ -348,51 +244,36 @@ DESCRIPTION:Status: WATCH_FIRE\nGate: current participation/showcase mechan
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:icse-2027-seis-refinery-20261023@blowback
-DTSTAMP:20260930T071825Z
-DTSTART;VALUE=DATE:20261023
-DTEND;VALUE=DATE:20261024
-SUMMARY:Prepare: ICSE 2027 — Software Engineering in Society (SEIS)
+UID:icse-2027-seis-refinery-20261024@blowback
+DTSTAMP:20261009T083506Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261025
+SUMMARY:Prepare: ICSE 2027 — Software Engineering in Society (SEIS) (clos
+ es 19:59 Taipei)
 DESCRIPTION:Status: HIGH_FIT_ALTERNATIVE\nGate: Contribution fit and broade
  r-impact argument\; four-page short or ten-page full/experience paper\; ac
  cepted paper requires author registration\, full-conference attendance\, a
  nd presentation\nUses: Refinery|Commons\nSource: https://conf.researchr.or
  g/track/icse-2027/icse-2027-seis\nRoute: icse-2027-seis-refinery\nDeadline
-  as recorded: 2026-10-23
+  as recorded: 2026-10-23T23:59:00-12:00
 TRANSP:TRANSPARENT
 URL:https://conf.researchr.org/track/icse-2027/icse-2027-seis
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
 DESCRIPTION:one week: Prepare: ICSE 2027 — Software Engineering in Societ
- y (SEIS)
+ y (SEIS) (closes 19:59 Taipei)
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
 DESCRIPTION:tomorrow: Prepare: ICSE 2027 — Software Engineering in Societ
- y (SEIS)
+ y (SEIS) (closes 19:59 Taipei)
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:saner-2027-agentic-ai4se-refinery-20261023@blowback
-DTSTAMP:20260930T071825Z
-DTSTART;VALUE=DATE:20261023
-DTEND;VALUE=DATE:20261024
-SUMMARY:On hold: SANER 2027 — Agentic AI4SE
-DESCRIPTION:Status: HOLD_OR_KILL\nGate: Mandatory abstract due 2026-10-19 A
- oE\; agent behavior must genuinely be the empirical object\; double-anonym
- ous ten-page paper\; accepted paper requires full author registration and 
- in-person presentation\nUses: Refinery\nSource: https://conf.researchr.org
- /track/saner-2027/saner-2027-agentic-ai4se-track\nRoute: saner-2027-agenti
- c-ai4se-refinery\nDeadline as recorded: 2026-10-23
-TRANSP:TRANSPARENT
-URL:https://conf.researchr.org/track/saner-2027/saner-2027-agentic-ai4se-tr
- ack
-END:VEVENT
-BEGIN:VEVENT
 UID:msr-2027-technical-refinery-20261024@blowback
-DTSTAMP:20260930T071825Z
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20261024
 DTEND;VALUE=DATE:20261025
 SUMMARY:Prepare: MSR 2027 — Technical Papers (closes 19:59 Taipei)
@@ -418,35 +299,42 @@ DESCRIPTION:tomorrow: Prepare: MSR 2027 — Technical Papers (closes 19:59
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:saner-2027-tool-demo-refinery-20261024@blowback
-DTSTAMP:20260930T071825Z
+UID:saner-2027-agentic-ai4se-refinery-20261024@blowback
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20261024
 DTEND;VALUE=DATE:20261025
-SUMMARY:Prepare: SANER 2027 — Tool Demo (closes 19:59 Taipei)
-DESCRIPTION:Status: ARTIFACT_ROUTE\nGate: Optional abstract due 2026-10-19 
- AoE\; five-page tool paper\, live artifact URL\, tool-demo framing and ove
- rlap review\; accepted paper requires full author registration and in-pers
- on presentation\nUses: Refinery|Commons\nSource: https://conf.researchr.or
- g/track/saner-2027/saner-2027-tool-demo-track\nRoute: saner-2027-tool-demo
- -refinery\nDeadline as recorded: 2026-10-23T23:59:00-12:00
+SUMMARY:On hold: SANER 2027 — Agentic AI4SE (closes 19:59 Taipei)
+DESCRIPTION:Status: HOLD_OR_KILL\nGate: Mandatory abstract due 2026-10-19 A
+ oE\; agent behavior must genuinely be the empirical object\; double-anonym
+ ous ten-page paper\; accepted paper requires full author registration and 
+ in-person presentation\nUses: Refinery\nSource: https://conf.researchr.org
+ /track/saner-2027/saner-2027-agentic-ai4se-track\nRoute: saner-2027-agenti
+ c-ai4se-refinery\nDeadline as recorded: 2026-10-23T23:59:00-12:00
+TRANSP:TRANSPARENT
+URL:https://conf.researchr.org/track/saner-2027/saner-2027-agentic-ai4se-tr
+ ack
+END:VEVENT
+BEGIN:VEVENT
+UID:saner-2027-tool-demo-refinery-20261024@blowback
+DTSTAMP:20261009T083506Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261025
+SUMMARY:On hold: SANER 2027 — Tool Demo (closes 19:59 Taipei)
+DESCRIPTION:Status: HOLD_COMMERCIALIZATION_POSTURE_AND_ARTIFACT\nGate: Comm
+ ercial products and tools currently under commercialization are excluded. 
+ Resolve actual Refinery posture before pursuing this track\; do not concea
+ l commercial activity. Five-page paper including references\, accessible t
+ ool URL\, overlap review and full author registration/in-person attendance
+  required. Optional abstract October 19 AoE\; paper October 23 AoE.\nUses:
+  Refinery|Commons\nSource: https://conf.researchr.org/track/saner-2027/san
+ er-2027-tool-demo-track\nRoute: saner-2027-tool-demo-refinery\nDeadline as
+  recorded: 2026-10-23T23:59:00-12:00
 TRANSP:TRANSPARENT
 URL:https://conf.researchr.org/track/saner-2027/saner-2027-tool-demo-track
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:one week: Prepare: SANER 2027 — Tool Demo (closes 19:59 Taipe
- i)
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:tomorrow: Prepare: SANER 2027 — Tool Demo (closes 19:59 Taipe
- i)
-END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:climatechain-2026-policy-eci-20261025@blowback
-DTSTAMP:20260930T071825Z
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20261025
 DTEND;VALUE=DATE:20261026
 SUMMARY:Watch: ClimateChain — 2026 climate / Policy Lab route
@@ -457,104 +345,132 @@ DESCRIPTION:Status: WATCH_REVERIFY\nGate: Recovered thread window was Oct 5
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:atax-2027-fiscal-choke-points-20261030@blowback
-DTSTAMP:20260930T071825Z
-DTSTART;VALUE=DATE:20261030
-DTEND;VALUE=DATE:20261031
-SUMMARY:Apply: UNSW School of Accounting\, Auditing and Taxation — 17th I
- nternational ATAx Tax Administration Conference
-DESCRIPTION:Status: FIRE_AFTER_GATE\nGate: G2 abstract can be built from th
- e frozen DT manuscript. G6 conference economics are material: official ful
- l registration is AUD 985 before travel/lodging\; acceptance does not by i
- tself justify purchase. Full paper is due 2027-01-12 if proceeding.\nUses:
-  Fiscal Choke Points\nSource: https://www.unsw.edu.au/business/our-schools
- /accounting-auditing-taxation/news-events/17th-international-atax-tax-admi
- nistration-conference\nRoute: atax-2027-fiscal-choke-points\nDeadline as r
- ecorded: 2026-10-30
-TRANSP:TRANSPARENT
-URL:https://www.unsw.edu.au/business/our-schools/accounting-auditing-taxati
- on/news-events/17th-international-atax-tax-administration-conference
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:one week: Apply: UNSW School of Accounting\, Auditing and Taxat
- ion — 17th International ATAx Tax Administration Conference
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:tomorrow: Apply: UNSW School of Accounting\, Auditing and Taxat
- ion — 17th International ATAx Tax Administration Conference
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:sase-2027-invisible-ledger-20261101@blowback
-DTSTAMP:20260930T071825Z
-DTSTART;VALUE=DATE:20261101
-DTEND;VALUE=DATE:20261102
-SUMMARY:Watch: Society for the Advancement of Socio-Economics — SASE 2027
-  Glasgow / virtual — network or mini-conference paper
-DESCRIPTION:Status: WATCH_STREAM_MATCH\nGate: Mini-conference deadline is 2
- 026-11-01 and network deadline is 2026-12-16. Fire only into a stream that
-  genuinely matches platforms\, digitalization\, measurement\, institutions
- \, or economic visibility. Freeze the IL longitudinal admission/perimeter 
- rule before presenting the empirical core\; prefer virtual participation i
- f Glasgow travel is not funded.\nUses: Invisible Ledger\nSource: https://s
- ase.org/events/2027-glasgow/\nRoute: sase-2027-invisible-ledger\nDeadline 
- as recorded: 2026-11-01
-TRANSP:TRANSPARENT
-URL:https://sase.org/events/2027-glasgow/
-END:VEVENT
-BEGIN:VEVENT
-UID:facct-2027-policy-family-20261103@blowback
-DTSTAMP:20260930T071825Z
-DTSTART;VALUE=DATE:20261103
-DTEND;VALUE=DATE:20261104
-SUMMARY:Check: ACM FAccT — 2027 research route
-DESCRIPTION:Status: REVERIFY\nGate: Mandatory abstract due 2026-10-27 AoE\;
-  native research-question fit + anonymized paper readiness\; accepted pape
- r requires in-person presentation\nUses: Policy Lab|Citation Engine|Noctur
- nal\nSource: https://facctconference.org/2027/cfp.html\nRoute: facct-2027-
- policy-family\nDeadline as recorded: 2026-11-03
+UID:facct-2027-policy-family-20261028@blowback
+DTSTAMP:20261009T083506Z
+DTSTART;VALUE=DATE:20261028
+DTEND;VALUE=DATE:20261029
+SUMMARY:Mandatory abstract registration: ACM FAccT — 2027 research route 
+ (closes 19:59 Taipei)
+DESCRIPTION:Milestone: Mandatory abstract registration\nStatus: VERIFY_PAPE
+ R_AND_REVIEWER_ELIGIBILITY\nGate: Mandatory abstract October 27 AoE (Octob
+ er 28 19:59 Taipei)\, full paper November 3 AoE (November 4 19:59 Taipei).
+  Need publication-ready anonymized paper with substantive social/computati
+ onal engagement. All authors must sign up to review\; published requiremen
+ ts include prior reviewing experience\, which is not established for this 
+ applicant. Required generative-AI usage endmatter statement even if no AI 
+ was used\; substantive AI assistance is permitted with disclosure and huma
+ n responsibility. At least one accepted author registers and presents\; vi
+ rtual option is available for those unable to attend in person\, details a
+ fter acceptance. No reviewer/registration commitment or publication-ready 
+ result is inferred.\nSource: https://facctconference.org/2027/cfp.html\nRo
+ ute: facct-2027-policy-family\nDeadline as recorded: 2026-10-27T23:59:00-1
+ 2:00
 TRANSP:TRANSPARENT
 URL:https://facctconference.org/2027/cfp.html
 END:VEVENT
 BEGIN:VEVENT
+UID:atax-2027-fiscal-choke-points-20261030@blowback
+DTSTAMP:20261009T083506Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+SUMMARY:Watch: UNSW School of Accounting\, Auditing and Taxation — 17th I
+ nternational ATAx Tax Administration Conference
+DESCRIPTION:Status: WATCH_OWNER_DEFERRED_POST_MASTER_FOCUS\nGate: Abstract/
+ proposal October 30\, 2026. Webpage gives tblconferences@unsw.edu.au and f
+ ull paper January 12\; linked CFP gives tblconference@unsw.edu.au and full
+  paper February 12\, with end-of-day Sydney cutoff. Resolve recipient/full
+ -paper date before any send. Completed Fiscal Choke Points manuscript is t
+ he native evidence. Full conference AUD 985 plus travel\; no spend or atte
+ ndance commitment authorized.\nUses: Fiscal Choke Points\nSource: https://
+ www.unsw.edu.au/business/our-schools/accounting-auditing-taxation/news-eve
+ nts/17th-international-atax-tax-administration-conference\nRoute: atax-202
+ 7-fiscal-choke-points\nDeadline as recorded: 2026-10-30
+TRANSP:TRANSPARENT
+URL:https://www.unsw.edu.au/business/our-schools/accounting-auditing-taxati
+ on/news-events/17th-international-atax-tax-administration-conference
+END:VEVENT
+BEGIN:VEVENT
+UID:corrigibility-research-fund-hardware-splicer-2026-20261031@blowback
+DTSTAMP:20261009T083506Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:On hold: Corrigibility Research Fund / Lightcone — Round 2 resear
+ ch grant
+DESCRIPTION:Status: HOLD_RESEARCH_FIT_AND_BUDGET\nGate: October 8 fund-mana
+ ger methodology explicitly distinguishes agent alignment/disposition from 
+ externally enforced control. Existing guard-layer comparison is not yet a 
+ substantiated corrigibility study. Keep the October 3 draft historical\; d
+ o not submit it unchanged or invent alignment results. Prepare an extensio
+ n measuring voluntary error disclosure\, correction and human understandin
+ g\, with controls separating model behavior from hard enforcement. Fit\, f
+ rozen rubric\, current model/budget and public-disclosure scope must clear
+  before final copy. October 31 deadline retained\; public application and 
+ final Submit protected.\nUses: Hardware Splicer\nSource: https://corrigibi
+ lityresearch.org/\nRoute: corrigibility-research-fund-hardware-splicer-202
+ 6\nDeadline as recorded: 2026-10-31
+TRANSP:TRANSPARENT
+URL:https://corrigibilityresearch.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:sase-2027-invisible-ledger-20261101@blowback
+DTSTAMP:20261009T083506Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:Mini-conference cutoff only if that stream is selected: Society for
+  the Advancement of Socio-Economics — SASE 2027 Glasgow / virtual — ne
+ twork or mini-conference paper
+DESCRIPTION:Milestone: Mini-conference cutoff only if that stream is select
+ ed\nStatus: WATCH_OWNER_DEFERRED_POST_MASTER_FOCUS\nGate: Mini-conference 
+ deadline is 2026-11-01 and network deadline is 2026-12-16. Fire only into 
+ a stream that genuinely matches platforms\, digitalization\, measurement\,
+  institutions\, or economic visibility. Freeze the IL longitudinal admissi
+ on/perimeter rule before presenting the empirical core\; prefer virtual pa
+ rticipation if Glasgow travel is not funded.\nSource: https://sase.org/eve
+ nts/2027-glasgow/\nRoute: sase-2027-invisible-ledger\nDeadline as recorded
+ : 2026-11-01
+TRANSP:TRANSPARENT
+URL:https://sase.org/events/2027-glasgow/
+END:VEVENT
+BEGIN:VEVENT
 UID:nlnet-codesupply-refinery-20261103@blowback
-DTSTAMP:20260930T071825Z
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20261103
 DTEND;VALUE=DATE:20261104
 SUMMARY:Watch: NLnet Foundation — CodeSupply - Launch-to-Artifact Provena
  nce Graph (closes 19:00 Taipei)
-DESCRIPTION:Status: WATCH_HIGH_CONDITIONAL\nGate: open slice must be proven
- ance/rights/origin/reproducibility\; no private marketplace layer\nUses: R
- efinery|Commons\nSource: https://nlnet.nl/propose/\nRoute: nlnet-codesuppl
- y-refinery\nDeadline as recorded: 2026-11-03T12:00:00+01:00
+DESCRIPTION:Status: WATCH_HIGH_CONDITIONAL\nGate: November 3 19:00 Taipei. 
+ Fund-specific European dimension for Taiwan-based solo applicant and eligi
+ ble provenance/software-supply-chain scope must clear. Separate open slice
+  must be coherent and deliverable\; no promise to publish private marketpl
+ ace material. Exact proposal AI-use/log policy\, designated artifact relea
+ se and budget require review before drafting/attesting. One fund family\, 
+ not automatic three independent grants.\nUses: Refinery|Commons\nSource: h
+ ttps://nlnet.nl/codesupply/\nRoute: nlnet-codesupply-refinery\nDeadline as
+  recorded: 2026-11-03T12:00:00+01:00
 TRANSP:TRANSPARENT
-URL:https://nlnet.nl/propose/
+URL:https://nlnet.nl/codesupply/
 END:VEVENT
 BEGIN:VEVENT
 UID:nlnet-restack-nocturnal-20261103@blowback
-DTSTAMP:20260930T071825Z
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20261103
 DTEND;VALUE=DATE:20261104
 SUMMARY:On hold: NLnet Foundation — Restack - Nocturnal (closes 19:00 Tai
  pei)
-DESCRIPTION:Status: PORTFOLIO_BAKEOFF_HUMAN_REWRITE_REQUIRED\nGate: G2 firs
- t-grant portfolio bakeoff remains mandatory. The AI-assisted Nocturnal wor
- kbook is not final copy: NLnet asks for answers in the applicant's own wor
- ds. If Nocturnal wins\, personally rewrite the form\, approve fully libre/
- open funded outputs\, preserve a clear European dimension\, confirm the dr
- aft budget/time commitment\, disclose AI assistance and provide the requir
- ed interaction log.\nUses: Nocturnal|Citation Engine\nSource: https://nlne
- t.nl/propose/\nRoute: nlnet-restack-nocturnal\nDeadline as recorded: 2026-
- 11-03T12:00:00+01:00
+DESCRIPTION:Status: HOLD_FUND_GEOGRAPHY_LICENSING_AND_AI_POLICY\nGate: Reve
+ rify exact fund open-call status\, European-dimension eligibility for Taiw
+ an-based solo applicant\, designated artifact open licensing\, and generat
+ ive-AI policy/log requirements. Existing draft readiness does not clear th
+ ese gates\; no false no-AI declaration or public release commitment. Retai
+ n existing technical release boundaries.\nUses: Nocturnal|Citation Engine\
+ nSource: https://nlnet.nl/propose/\nRoute: nlnet-restack-nocturnal\nDeadli
+ ne as recorded: 2026-11-03T12:00:00+01:00
 TRANSP:TRANSPARENT
 URL:https://nlnet.nl/propose/
 END:VEVENT
 BEGIN:VEVENT
 UID:nlnet-restack-policy-lab-2026-20261103@blowback
-DTSTAMP:20260930T071825Z
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20261103
 DTEND;VALUE=DATE:20261104
 SUMMARY:On hold: NLnet Foundation — Restack / Sep-Nov 2026 call family (c
@@ -567,36 +483,65 @@ TRANSP:TRANSPARENT
 URL:https://nlnet.nl/propose/
 END:VEVENT
 BEGIN:VEVENT
-UID:ipsa-2027-rc30-fiscal-choke-points-20261104@blowback
-DTSTAMP:20260930T071825Z
+UID:facct-2027-policy-family-20261104@blowback
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20261104
 DTEND;VALUE=DATE:20261105
-SUMMARY:On hold: International Political Science Association / RC30 Compara
- tive Public Policy — IPSA World Congress 2027 — RC30 Comparative Publi
- c Policy paper
-DESCRIPTION:Status: FUNDING_GATED\nGate: G2 submit only with the comparativ
- e-policy framing intact. G6 Congress participation is in-person in Rome an
- d requires IPSA participation/membership mechanics plus a credible travel/
- funding path\; remote presentation is not a substitute.\nUses: Fiscal Chok
- e Points\nSource: https://wc2027.ipsa.org/wc/submit-paper\nRoute: ipsa-202
- 7-rc30-fiscal-choke-points\nDeadline as recorded: 2026-11-04
+SUMMARY:Check: ACM FAccT — 2027 research route (closes 19:59 Taipei)
+DESCRIPTION:Status: VERIFY_PAPER_AND_REVIEWER_ELIGIBILITY\nGate: Mandatory 
+ abstract October 27 AoE (October 28 19:59 Taipei)\, full paper November 3 
+ AoE (November 4 19:59 Taipei). Need publication-ready anonymized paper wit
+ h substantive social/computational engagement. All authors must sign up to
+  review\; published requirements include prior reviewing experience\, whic
+ h is not established for this applicant. Required generative-AI usage endm
+ atter statement even if no AI was used\; substantive AI assistance is perm
+ itted with disclosure and human responsibility. At least one accepted auth
+ or registers and presents\; virtual option is available for those unable t
+ o attend in person\, details after acceptance. No reviewer/registration co
+ mmitment or publication-ready result is inferred.\nUses: Policy Lab|Citati
+ on Engine|Nocturnal\nSource: https://facctconference.org/2027/cfp.html\nRo
+ ute: facct-2027-policy-family\nDeadline as recorded: 2026-11-03T23:59:00-1
+ 2:00
+TRANSP:TRANSPARENT
+URL:https://facctconference.org/2027/cfp.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ipsa-2027-rc30-fiscal-choke-points-20261104@blowback
+DTSTAMP:20261009T083506Z
+DTSTART;VALUE=DATE:20261104
+DTEND;VALUE=DATE:20261105
+SUMMARY:Watch: International Political Science Association / RC30 Comparati
+ ve Public Policy — IPSA World Congress 2027 — RC30 Comparative Public 
+ Policy paper
+DESCRIPTION:Status: WATCH_OWNER_DEFERRED_POST_MASTER_FOCUS\nGate: Completed
+  Fiscal Choke Points can support comparative-policy proposal. Title <=25 w
+ ords\, abstract <=350 words\; choose fitting open RC30 panel/track. Free I
+ PSA submission account does not cover mandatory membership/registration an
+ d in-person Rome attendance. No travel/spend/participation commitment clea
+ red\; keep dependency hold.\nUses: Fiscal Choke Points\nSource: https://wc
+ 2027.ipsa.org/wc/submit-paper\nRoute: ipsa-2027-rc30-fiscal-choke-points\n
+ Deadline as recorded: 2026-11-04
 TRANSP:TRANSPARENT
 URL:https://wc2027.ipsa.org/wc/submit-paper
 END:VEVENT
 BEGIN:VEVENT
 UID:msr-2027-data-tool-refinery-20261106@blowback
-DTSTAMP:20260930T071825Z
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20261106
 DTEND;VALUE=DATE:20261107
 SUMMARY:Abstract deadline: MSR 2027 — Data and Tool Showcase (closes 19:5
  9 Taipei)
 DESCRIPTION:Milestone: Abstract deadline\nStatus: FIRE_AFTER_PRIMARY_DECISI
- ON\nGate: Abstract due 2026-11-05 AoE\; artifact must be available at subm
- ission with instructions and persistent DOI for publication\; resolve over
- lap with technical paper\; accepted paper requires author registration and
-  presentation\nSource: https://2027.msrconf.org/track/msr-2027-data-and-to
- ol-showcase-track\nRoute: msr-2027-data-tool-refinery\nDeadline as recorde
- d: 2026-11-05T23:59:00-12:00
+ ON\nGate: Abstract November 5 AoE (November 6 19:59 Taipei)\, paper Novemb
+ er 10 AoE (November 11 19:59 Taipei). Four pages plus one references\, aut
+ hors named. Need MSR-relevant reusable artifact\, runnable installation/ex
+ ample and preliminary evaluation. Review artifact can remain confidential 
+ until publication\; publication requires persistent DOI archive. Preserve 
+ designated private/source-release boundaries and resolve technical-paper o
+ verlap. Accepted author registration and presentation remain commitments\;
+  no external use or published prior study is invented.\nSource: https://20
+ 27.msrconf.org/track/msr-2027-data-and-tool-showcase-track\nRoute: msr-202
+ 7-data-tool-refinery\nDeadline as recorded: 2026-11-05T23:59:00-12:00
 TRANSP:TRANSPARENT
 URL:https://2027.msrconf.org/track/msr-2027-data-and-tool-showcase-track
 BEGIN:VALARM
@@ -613,42 +558,22 @@ DESCRIPTION:tomorrow: Abstract deadline: MSR 2027 — Data and Tool Showcas
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:interledger-local-2026-20261111@blowback
-DTSTAMP:20260930T071825Z
-DTSTART;VALUE=DATE:20261111
-DTEND;VALUE=DATE:20261112
-SUMMARY:Prepare: Interledger Foundation — Local Impact Mini-Grant
-DESCRIPTION:Status: FIRE_IF_FIT\nGate: open-payments/financial-access fit\n
- Uses: Policy Lab|Public-Good\nSource: https://interledger.org/grant/local-
- impact\nRoute: interledger-local-2026\nDeadline as recorded: 2026-11-11
-TRANSP:TRANSPARENT
-URL:https://interledger.org/grant/local-impact
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:one week: Prepare: Interledger Foundation — Local Impact Mini
- -Grant
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:tomorrow: Prepare: Interledger Foundation — Local Impact Mini
- -Grant
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:msr-2027-data-tool-refinery-20261111@blowback
-DTSTAMP:20260930T071825Z
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20261111
 DTEND;VALUE=DATE:20261112
 SUMMARY:Prepare: MSR 2027 — Data and Tool Showcase (closes 19:59 Taipei)
-DESCRIPTION:Status: FIRE_AFTER_PRIMARY_DECISION\nGate: Abstract due 2026-11
- -05 AoE\; artifact must be available at submission with instructions and p
- ersistent DOI for publication\; resolve overlap with technical paper\; acc
- epted paper requires author registration and presentation\nUses: Refinery|
- Commons\nSource: https://2027.msrconf.org/track/msr-2027-data-and-tool-sho
- wcase-track\nRoute: msr-2027-data-tool-refinery\nDeadline as recorded: 202
- 6-11-10T23:59:00-12:00
+DESCRIPTION:Status: FIRE_AFTER_PRIMARY_DECISION\nGate: Abstract November 5 
+ AoE (November 6 19:59 Taipei)\, paper November 10 AoE (November 11 19:59 T
+ aipei). Four pages plus one references\, authors named. Need MSR-relevant 
+ reusable artifact\, runnable installation/example and preliminary evaluati
+ on. Review artifact can remain confidential until publication\; publicatio
+ n requires persistent DOI archive. Preserve designated private/source-rele
+ ase boundaries and resolve technical-paper overlap. Accepted author regist
+ ration and presentation remain commitments\; no external use or published 
+ prior study is invented.\nUses: Refinery|Commons\nSource: https://2027.msr
+ conf.org/track/msr-2027-data-and-tool-showcase-track\nRoute: msr-2027-data
+ -tool-refinery\nDeadline as recorded: 2026-11-10T23:59:00-12:00
 TRANSP:TRANSPARENT
 URL:https://2027.msrconf.org/track/msr-2027-data-and-tool-showcase-track
 BEGIN:VALARM
@@ -665,8 +590,26 @@ DESCRIPTION:tomorrow: Prepare: MSR 2027 — Data and Tool Showcase (closes
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:icpp8-2027-fiscal-choke-points-20261116@blowback
+DTSTAMP:20261009T083506Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:Paper call opens\; match an accepted panel: International Public Po
+ licy Association — ICPP8 Rennes 2027 — paper proposal
+DESCRIPTION:Milestone: Paper call opens\; match an accepted panel\nStatus: 
+ WATCH_OWNER_DEFERRED_POST_MASTER_FOCUS\nGate: Paper call opens 2026-11-16.
+  Match DT to an accepted regulation/public-administration/digital-policy p
+ anel before packet work. Virtual panels and remote authors in hybrid panel
+ s materially reduce travel cost\; verify the selected panel's participatio
+ n mode at fire time.\nSource: https://www.ippapublicpolicy.org/conference/
+ icpp8-rennes-2027/29\nRoute: icpp8-2027-fiscal-choke-points\nDeadline as r
+ ecorded: 2026-11-16
+TRANSP:TRANSPARENT
+URL:https://www.ippapublicpolicy.org/conference/icpp8-rennes-2027/29
+END:VEVENT
+BEGIN:VEVENT
 UID:field-meet-taipei-2026-20261119@blowback
-DTSTAMP:20260930T071825Z
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20261119
 DTEND;VALUE=DATE:20261122
 SUMMARY:Event: Meet Taipei — 2026 startup/network channel
@@ -676,199 +619,231 @@ DESCRIPTION:Status: NETWORK\nGate: free-ticket/network value\nUses: Commerc
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:date-2027-lbr-hardware-splicer-20261129@blowback
-DTSTAMP:20260930T071825Z
-DTSTART;VALUE=DATE:20261129
-DTEND;VALUE=DATE:20261130
-SUMMARY:On hold: DATE 2027 — Late Breaking Results
+UID:date-2027-lbr-hardware-splicer-20261130@blowback
+DTSTAMP:20261009T083506Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:On hold: DATE 2027 — Late Breaking Results (closes 19:59 Taipei)
 DESCRIPTION:Status: HOLD_FIRE_LATER\nGate: G4 stronger live/physical eviden
  ce + blind two-page extended abstract\; accepted paper requires full autho
  r registration and in-person presentation\nUses: Hardware Splicer\nSource:
   https://www.date-conference.com/call-for-papers\nRoute: date-2027-lbr-har
- dware-splicer\nDeadline as recorded: 2026-11-29
+ dware-splicer\nDeadline as recorded: 2026-11-29T23:59:00-12:00
 TRANSP:TRANSPARENT
 URL:https://www.date-conference.com/call-for-papers
 END:VEVENT
 BEGIN:VEVENT
 UID:legaltech-tech-2026-20261130@blowback
-DTSTAMP:20260930T071825Z
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261201
-SUMMARY:Check: LegalTech & Computer Audit — Technical
-DESCRIPTION:Status: VERIFY\nGate: technical reuse/no-new-product\nUses: Cit
- ation Engine|Policy Lab\nSource: https://ec.ccu.edu.tw/p/406-1149-87925%2C
- r4399.php?Lang=zh-tw\nRoute: legaltech-tech-2026\nDeadline as recorded: 20
- 26-11-30
+SUMMARY:On hold: LegalTech & Computer Audit — Technical
+DESCRIPTION:Status: HOLD_TEAM_AND_ADVISER\nGate: Official rules require one
+  faculty adviser\, a leader and 1–5 additional members (at least two stu
+ dent members). Current applicant is solo with no committed adviser. No man
+ ufactured team/adviser. Mixed 2025/2026 final-date text also requires clar
+ ification before participation.\nUses: Citation Engine|Policy Lab\nSource:
+  https://ec.ccu.edu.tw/p/406-1149-87925%2Cr4399.php?Lang=zh-tw\nRoute: leg
+ altech-tech-2026\nDeadline as recorded: 2026-11-30
 TRANSP:TRANSPARENT
 URL:https://ec.ccu.edu.tw/p/406-1149-87925%2Cr4399.php?Lang=zh-tw
 END:VEVENT
 BEGIN:VEVENT
 UID:websci-2027-nocturnal-20261215@blowback
-DTSTAMP:20260930T071825Z
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20261215
 DTEND;VALUE=DATE:20261216
-SUMMARY:Prepare: ACM Web Science 2027 — Full paper — correction-aware c
+SUMMARY:On hold: ACM Web Science 2027 — Full paper — correction-aware c
  urrent-state reconstruction
-DESCRIPTION:Status: PILOT_GATED_PREP\nGate: G4 pilot evidence first\; then 
- define a genuine empirical research contribution. The official full-paper 
- deadline is firm. Protect manuscript novelty and overlap with ICWSM demo/p
- ublications.\nUses: Nocturnal|Citation Engine\nSource: https://websci27.we
- bscience.org/call-for-papers\nRoute: websci-2027-nocturnal\nDeadline as re
- corded: 2026-12-15
+DESCRIPTION:Status: HOLD_OWNER_PAUSED\nGate: Owner-paused in automatic exec
+ ution\; calendar entry is retained context only. G4 pilot evidence first\;
+  then define a genuine empirical research contribution. The official full-
+ paper deadline is firm. Protect manuscript novelty and overlap with ICWSM 
+ demo/publications.\nUses: Nocturnal|Citation Engine\nSource: https://websc
+ i27.webscience.org/call-for-papers\nRoute: websci-2027-nocturnal\nDeadline
+  as recorded: 2026-12-15
 TRANSP:TRANSPARENT
 URL:https://websci27.webscience.org/call-for-papers
 END:VEVENT
 BEGIN:VEVENT
+UID:sase-2027-invisible-ledger-20261216@blowback
+DTSTAMP:20261009T083506Z
+DTSTART;VALUE=DATE:20261216
+DTEND;VALUE=DATE:20261217
+SUMMARY:Watch: Society for the Advancement of Socio-Economics — SASE 2027
+  Glasgow / virtual — network or mini-conference paper
+DESCRIPTION:Status: WATCH_OWNER_DEFERRED_POST_MASTER_FOCUS\nGate: Mini-conf
+ erence deadline is 2026-11-01 and network deadline is 2026-12-16. Fire onl
+ y into a stream that genuinely matches platforms\, digitalization\, measur
+ ement\, institutions\, or economic visibility. Freeze the IL longitudinal 
+ admission/perimeter rule before presenting the empirical core\; prefer vir
+ tual participation if Glasgow travel is not funded.\nUses: Invisible Ledge
+ r\nSource: https://sase.org/events/2027-glasgow/\nRoute: sase-2027-invisib
+ le-ledger\nDeadline as recorded: 2026-12-16
+TRANSP:TRANSPARENT
+URL:https://sase.org/events/2027-glasgow/
+END:VEVENT
+BEGIN:VEVENT
 UID:satc-2027-hardware-splicer-20261220@blowback
-DTSTAMP:20260930T071825Z
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20261220
 DTEND;VALUE=DATE:20261221
-SUMMARY:Prepare: IEEE Secure and Trustworthy CyberInfrastructure Conference
-  — SaTC 2027 research paper
-DESCRIPTION:Status: DEVELOP_PAPER\nGate: G2/G4 thematic fit is plausible fo
- r trusted microelectronics\, IoT and AI hardware\, but a conference-ready 
- research question\, threat model\, baselines and external/reproducible res
- ults are still required. Keep separate from the shorter TAAI system abstra
- ct.\nUses: Hardware Splicer|Citation Engine\nSource: https://www.satcconf.
- com/call-for-paper.html\nRoute: satc-2027-hardware-splicer\nDeadline as re
- corded: 2026-12-20
+SUMMARY:Watch: IEEE Secure and Trustworthy CyberInfrastructure Conference 
+ — SaTC 2027 research paper
+DESCRIPTION:Status: WATCH_OWNER_DEFERRED_POST_MASTER_FOCUS\nGate: G2/G4 the
+ matic fit is plausible for trusted microelectronics\, IoT and AI hardware\
+ , but a conference-ready research question\, threat model\, baselines and 
+ external/reproducible results are still required. Keep separate from the s
+ horter TAAI system abstract.\nUses: Hardware Splicer|Citation Engine\nSour
+ ce: https://www.satcconf.com/call-for-paper.html\nRoute: satc-2027-hardwar
+ e-splicer\nDeadline as recorded: 2026-12-20
 TRANSP:TRANSPARENT
 URL:https://www.satcconf.com/call-for-paper.html
 END:VEVENT
 BEGIN:VEVENT
-UID:lab-sinica-aiiu-embodied-ai-ra-2026-20261231@blowback
-DTSTAMP:20260930T071825Z
+UID:google-ai-plus-students-taiwan-2026-20261231@blowback
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
-SUMMARY:Apply: Academia Sinica CITI / AIIU Lab — Research assistant — C
- V\, 3D/digital twins\, Embodied AI\, VLA/VLN\, AI safety
-DESCRIPTION:Status: FIRE_AFTER_GATE\nGate: G1 conventional EE/CS/math backg
- round preference\; verify whether portfolio evidence clears it. FT master'
- s salary listed from NT$44\,968/month\; student/PT range listed NT$6\,000-
- 34\,000/month. Verify exact appointment class\, work permit\, IP\, and out
- side-work terms.\nUses: Hardware Splicer|Citation Engine\nSource: https://
- www.citi.sinica.edu.tw/main/recruit-assistants\nRoute: lab-sinica-aiiu-emb
- odied-ai-ra-2026\nDeadline as recorded: 2026-12-31
+SUMMARY:Apply: Google — Taiwan student Google AI Plus — one year free
+DESCRIPTION:Status: FIRE_AFTER_GATE\nGate: Taiwan higher-education students
+ \, 18+\, SheerID verification\; intended personal Google account\, eligibl
+ e billing region and subscription history must be checked. Card required\;
+  auto-renews NT$165/month after year. Existing subscriptions/prior student
+  promotion may need to end first. Student status required to retain offer.
+  Subscription access\, not product API credits.\nUses: Cite|Research Drive
+ |Hardware Splicer\nSource: https://blog.google/intl/zh-tw/products/explore
+ -get-answers/back-to-school-2026/\nRoute: google-ai-plus-students-taiwan-2
+ 026\nDeadline as recorded: 2026-12-31
 TRANSP:TRANSPARENT
-URL:https://www.citi.sinica.edu.tw/main/recruit-assistants
+URL:https://blog.google/intl/zh-tw/products/explore-get-answers/back-to-sch
+ ool-2026/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P7D
-DESCRIPTION:one week: Apply: Academia Sinica CITI / AIIU Lab — Research a
- ssistant — CV\, 3D/digital twins\, Embodied AI\, VLA/VLN\, AI safety
+DESCRIPTION:one week: Apply: Google — Taiwan student Google AI Plus — o
+ ne year free
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-P1D
-DESCRIPTION:tomorrow: Apply: Academia Sinica CITI / AIIU Lab — Research a
- ssistant — CV\, 3D/digital twins\, Embodied AI\, VLA/VLN\, AI safety
+DESCRIPTION:tomorrow: Apply: Google — Taiwan student Google AI Plus — o
+ ne year free
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:lab-sinica-ti-rong-wu-agents-ra-2026-20261231@blowback
-DTSTAMP:20260930T071825Z
+UID:lab-sinica-aiiu-embodied-ai-ra-2026-20261231@blowback
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
-SUMMARY:Check: Academia Sinica IIS / Ti-Rong Wu Lab — Research assistant 
- — RL\, search/planning\, LLMs and intelligent agents
-DESCRIPTION:Status: VERIFY\nGate: G1 role prefers information/electrical/ST
- EM background and C++/Python/PyTorch/Linux depth. Verify whether demonstra
- ted systems work can substitute for degree-label mismatch. Master's salary
-  listed from NT$44\,968/month.\nUses: Research Drive|Cite|Hardware Splicer
- |Blowback\nSource: https://www.sinica.edu.tw/recruitment_content/53/11035\
- nRoute: lab-sinica-ti-rong-wu-agents-ra-2026\nDeadline as recorded: 2026-1
- 2-31
+SUMMARY:On hold: Academia Sinica CITI / AIIU Lab — Research assistant —
+  CV\, 3D/digital twins\, Embodied AI\, VLA/VLN\, AI safety
+DESCRIPTION:Status: HOLD_NAMED_VACANCY_REVERIFICATION\nGate: Retain Decembe
+ r 31 historical planning date only\; exact named AIIU/embodied-AI role and
+  compensation must be relocated on an official current posting before appl
+ ication. Department listing contains other roles\, not proof that this one
+  remains open. Degree\, PT/full-time schedule and work permission unresolv
+ ed.\nUses: Hardware Splicer|Citation Engine\nSource: https://www.citi.sini
+ ca.edu.tw/main/recruit-assistants\nRoute: lab-sinica-aiiu-embodied-ai-ra-2
+ 026\nDeadline as recorded: 2026-12-31
+TRANSP:TRANSPARENT
+URL:https://www.citi.sinica.edu.tw/main/recruit-assistants
+END:VEVENT
+BEGIN:VEVENT
+UID:lab-sinica-ti-rong-wu-agents-ra-2026-20261231@blowback
+DTSTAMP:20261009T083506Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:On hold: Academia Sinica IIS / Ti-Rong Wu Lab — Research assistan
+ t — RL\, search/planning\, LLMs and intelligent agents
+DESCRIPTION:Status: HOLD_DEGREE_FLEXIBILITY_AND_FULL_TIME_START\nGate: Publ
+ ished posting requires CS/EE/STEM bachelor/master degree\; Finance/Account
+ ing does not automatically satisfy it. Resolve flexibility\, native agent/
+ RL research sample and full-time start against March 2027 preference befor
+ e spending on application. No PT position inferred from this full-time pos
+ ting\; work permission\, IP and sending remain gated.\nUses: Research Driv
+ e|Cite|Hardware Splicer|Blowback\nSource: https://www.sinica.edu.tw/recrui
+ tment_content/53/11035\nRoute: lab-sinica-ti-rong-wu-agents-ra-2026\nDeadl
+ ine as recorded: 2026-12-31
 TRANSP:TRANSPARENT
 URL:https://www.sinica.edu.tw/recruitment_content/53/11035
 END:VEVENT
 BEGIN:VEVENT
 UID:icwsm-2027-demo-nocturnal-20270116@blowback
-DTSTAMP:20260930T071825Z
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20270116
 DTEND;VALUE=DATE:20270117
-SUMMARY:Prepare: ICWSM 2027 — Demo paper — Nocturnal interactive inform
+SUMMARY:On hold: ICWSM 2027 — Demo paper — Nocturnal interactive inform
  ation-state reconstruction (closes 19:59 Taipei)
-DESCRIPTION:Status: PREP_AFTER_PILOT\nGate: G4 obtain one credible external
-  pilot first\; G2 demo paper is up to 3 pages and single-blind. Preserve c
- ontribution novelty against any WebSci manuscript and do not convert inter
- nal product tests into user-impact claims.\nUses: Nocturnal|Citation Engin
- e\nSource: https://www.icwsm.org/2027/submit/\nRoute: icwsm-2027-demo-noct
- urnal\nDeadline as recorded: 2027-01-15T23:59:00-12:00
+DESCRIPTION:Status: HOLD_OWNER_PAUSED\nGate: Owner-paused in automatic exec
+ ution\; calendar entry is retained context only. G4 obtain one credible ex
+ ternal pilot first\; G2 demo paper is up to 3 pages and single-blind. Pres
+ erve contribution novelty against any WebSci manuscript and do not convert
+  internal product tests into user-impact claims.\nUses: Nocturnal|Citation
+  Engine\nSource: https://www.icwsm.org/2027/submit/\nRoute: icwsm-2027-dem
+ o-nocturnal\nDeadline as recorded: 2027-01-15T23:59:00-12:00
 TRANSP:TRANSPARENT
 URL:https://www.icwsm.org/2027/submit/
 END:VEVENT
 BEGIN:VEVENT
 UID:cav-2027-hardware-splicer-20270120@blowback
-DTSTAMP:20260930T071825Z
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20270120
 DTEND;VALUE=DATE:20270121
-SUMMARY:Prepare: International Conference on Computer Aided Verification 
- — CAV 2027 research paper
-DESCRIPTION:Status: DEVELOP_PAPER\nGate: G2/G4 workshop-proposal deadline i
- s 2026-09-15 and paper deadline is 2027-01-20. Skip a rushed workshop prop
- osal unless a credible organizer team exists. For the paper route\, produc
- e an actual verification contribution and externally reproducible evaluati
- on before promotion.\nUses: Hardware Splicer|Technical Refinery\nSource: h
- ttps://conferences.i-cav.org/2027/\nRoute: cav-2027-hardware-splicer\nDead
- line as recorded: 2027-01-20
+SUMMARY:Watch: International Conference on Computer Aided Verification — 
+ CAV 2027 research paper
+DESCRIPTION:Status: WATCH_OWNER_DEFERRED_POST_MASTER_FOCUS\nGate: G2/G4 wor
+ kshop-proposal deadline is 2026-09-15 and paper deadline is 2027-01-20. Sk
+ ip a rushed workshop proposal unless a credible organizer team exists. For
+  the paper route\, produce an actual verification contribution and externa
+ lly reproducible evaluation before promotion.\nUses: Hardware Splicer|Tech
+ nical Refinery\nSource: https://conferences.i-cav.org/2027/\nRoute: cav-20
+ 27-hardware-splicer\nDeadline as recorded: 2027-01-20
 TRANSP:TRANSPARENT
 URL:https://conferences.i-cav.org/2027/
 END:VEVENT
 BEGIN:VEVENT
 UID:icpp8-2027-fiscal-choke-points-20270129@blowback
-DTSTAMP:20260930T071825Z
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20270129
 DTEND;VALUE=DATE:20270130
-SUMMARY:Prepare: International Public Policy Association — ICPP8 Rennes 2
- 027 — paper proposal
-DESCRIPTION:Status: PREPARE_FOR_WINDOW\nGate: Paper call opens 2026-11-16. 
- Match DT to an accepted regulation/public-administration/digital-policy pa
- nel before packet work. Virtual panels and remote authors in hybrid panels
-  materially reduce travel cost\; verify the selected panel's participation
-  mode at fire time.\nUses: Fiscal Choke Points\nSource: https://www.ippapu
- blicpolicy.org/conference/icpp8-rennes-2027/29\nRoute: icpp8-2027-fiscal-c
- hoke-points\nDeadline as recorded: 2027-01-29
+SUMMARY:Watch: International Public Policy Association — ICPP8 Rennes 202
+ 7 — paper proposal
+DESCRIPTION:Status: WATCH_OWNER_DEFERRED_POST_MASTER_FOCUS\nGate: Paper cal
+ l opens 2026-11-16. Match DT to an accepted regulation/public-administrati
+ on/digital-policy panel before packet work. Virtual panels and remote auth
+ ors in hybrid panels materially reduce travel cost\; verify the selected p
+ anel's participation mode at fire time.\nUses: Fiscal Choke Points\nSource
+ : https://www.ippapublicpolicy.org/conference/icpp8-rennes-2027/29\nRoute:
+  icpp8-2027-fiscal-choke-points\nDeadline as recorded: 2027-01-29
 TRANSP:TRANSPARENT
 URL:https://www.ippapublicpolicy.org/conference/icpp8-rennes-2027/29
 END:VEVENT
 BEGIN:VEVENT
 UID:job-hku-ai-agents-aec-ra-2026-20270131@blowback
-DTSTAMP:20260930T071825Z
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20270131
 DTEND;VALUE=DATE:20270201
-SUMMARY:Apply: University of Hong Kong / Architecture and Construction — 
- Senior RA / RA I-II / Student RA — AI agents for architecture and constr
- uction
-DESCRIPTION:Status: FIRE_AFTER_GATE\nGate: G1 reverify current closing date
-  because HKU listings may change\; verify appointment level\, salary\, wor
- k authorization/sponsorship\, IP and outside-work terms. Broad degree elig
- ibility makes this lower-friction than many AI lab roles.\nUses: Hardware 
- Splicer|Research Drive|Cite\nSource: https://jobs.hku.hk/cw/en/job/536608/
- senior-research-assistant-research-assistant-iii-student-research-assistan
- t-in-ai-agents-for-architecture-and-construction\nRoute: job-hku-ai-agents
- -aec-ra-2026\nDeadline as recorded: 2027-01-31
+SUMMARY:On hold: University of Hong Kong / Architecture and Construction 
+ — Senior RA / RA I-II / Student RA — AI agents for architecture and co
+ nstruction
+DESCRIPTION:Status: HOLD_OWNER_PAUSED\nGate: Owner-paused in automatic exec
+ ution\; calendar entry is retained context only. G1 reverify current closi
+ ng date because HKU listings may change\; verify appointment level\, salar
+ y\, work authorization/sponsorship\, IP and outside-work terms. Broad degr
+ ee eligibility makes this lower-friction than many AI lab roles.\nUses: Ha
+ rdware Splicer|Research Drive|Cite\nSource: https://jobs.hku.hk/cw/en/job/
+ 536608/senior-research-assistant-research-assistant-iii-student-research-a
+ ssistant-in-ai-agents-for-architecture-and-construction\nRoute: job-hku-ai
+ -agents-aec-ra-2026\nDeadline as recorded: 2027-01-31
 TRANSP:TRANSPARENT
 URL:https://jobs.hku.hk/cw/en/job/536608/senior-research-assistant-research
  -assistant-iii-student-research-assistant-in-ai-agents-for-architecture-an
  d-construction
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P7D
-DESCRIPTION:one week: Apply: University of Hong Kong / Architecture and Con
- struction — Senior RA / RA I-II / Student RA — AI agents for architect
- ure and construction
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:-P1D
-DESCRIPTION:tomorrow: Apply: University of Hong Kong / Architecture and Con
- struction — Senior RA / RA I-II / Student RA — AI agents for architect
- ure and construction
-END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:global-tax-symposium-2027-il-20270201@blowback
-DTSTAMP:20260930T071825Z
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20270201
 DTEND;VALUE=DATE:20270202
 SUMMARY:Prepare: Global Tax Symposium — 2027 Auckland paper
@@ -884,19 +859,22 @@ URL:https://www.lse.ac.uk/law/research/taxation-global-tax-symposium
 END:VEVENT
 BEGIN:VEVENT
 UID:lab-sinica-ku-nlp-ra-2026-20270531@blowback
-DTSTAMP:20260930T071825Z
+DTSTAMP:20261009T083506Z
 DTSTART;VALUE=DATE:20270531
 DTEND;VALUE=DATE:20270601
 SUMMARY:Apply: Academia Sinica IIS / Lun-Wei Ku NLP Lab — Full-time / par
  t-time research assistant — LLM\, RAG\, AI safety\, fake news and news l
  iteracy
-DESCRIPTION:Status: FIRE_AFTER_GATE\nGate: G1 verify degree/background flex
- ibility\, exact PT compensation\, Taiwan work-permit compatibility\, start
-  timing\, and pre-existing-IP/outside-work terms before acceptance. FT mas
- ter's salary listed from NT$44\,968/month\; PT available but amount unspec
- ified.\nUses: Cite|Research Drive|Citation Engine|Nocturnal\nSource: https
- ://www.sinica.edu.tw/recruitment_content/53/11723\nRoute: lab-sinica-ku-nl
- p-ra-2026\nDeadline as recorded: 2027-05-31
+DESCRIPTION:Status: FIRE_AFTER_GATE\nGate: Native Cite/RAG fit\, but Financ
+ e/Accounting degree does not automatically satisfy CS/related-degree wordi
+ ng\; demonstrate software/research background and resolve flexibility. Par
+ t-time explicitly listed\, compensation unspecified. Masters full-time sal
+ ary NT$44\,968 is not an applicable guaranteed current salary. Prepare des
+ ignated CV and existing transcript\; email sending not authorized. Resolve
+  student work permission\, schedule\, start timing and pre-existing IP bef
+ ore accepting.\nUses: Cite|Research Drive|Citation Engine|Nocturnal\nSourc
+ e: https://www.sinica.edu.tw/recruitment_content/53/11723\nRoute: lab-sini
+ ca-ku-nlp-ra-2026\nDeadline as recorded: 2027-05-31
 TRANSP:TRANSPARENT
 URL:https://www.sinica.edu.tw/recruitment_content/53/11723
 BEGIN:VALARM

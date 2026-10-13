@@ -1,5 +1,7 @@
 # Post-Graduation Conversion Board
 
+> October 8 campaign update: ATTA is closed for attendance cost. Jobs and cash project funding now lead; conference/publication applications are deferred. Earlier counts and priorities below are historical. See [current post-master plan](../POST_MASTER_CAMPAIGN_2026-10-08.md).
+
 Snapshot: 2026-08-26.
 
 This is the post-semester counterpart to the long-tail Blowback radar. The long-tail lane seeks frequent smaller external conversion during the final semester; this lane seeks the strongest external state to enter after graduation.

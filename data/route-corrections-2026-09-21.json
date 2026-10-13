@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-30",
+  "as_of": "2026-10-08",
   "purpose": "Corrections verified against live sources, or against dates that have simply passed. Applied last, so they win over earlier radar optimism. Each entry says how it was verified. Outcomes are recorded as fields; status and archiving are left to the user, because retiring a route is a judgement about whether the call recurs.",
   "overrides": [
     {
@@ -12,8 +12,8 @@
           "remind": true
         }
       ],
-      "source_state": "OFFICIAL_CFP_REVERIFIED_2026-09-30",
-      "verified_on": "2026-09-30",
+      "source_state": "OFFICIAL_CFP_REVERIFIED_2026-10-08",
+      "verified_on": "2026-10-08",
       "verification": "Official MSR 2027 Technical Papers page gives abstract 2026-10-20 AoE and paper 2026-10-23 AoE.",
       "reason": "Show the required earlier abstract stage and convert both AoE dates to their actual Taipei calendar days."
     },
@@ -27,18 +27,22 @@
           "remind": true
         }
       ],
-      "source_state": "OFFICIAL_DATES_REVERIFIED_2026-09-30",
-      "verified_on": "2026-09-30",
-      "verification": "Official MSR 2027 Important Dates page gives Data and Tool Showcase abstract 2026-11-05 and paper 2026-11-10 AoE.",
-      "reason": "Expose the earlier abstract stage and convert the AoE dates to Taipei calendar days."
+      "source_state": "OCTOBER_8_SUBMISSION_RECONCILIATION",
+      "verified_on": "2026-10-08",
+      "verification": "Official current track gives November 5 abstract and November 10 paper AoE; four pages plus one references, single-anonymous, tool available with runnable instructions at review and DOI archive upon publication.",
+      "reason": "Reverify showcase mechanics and protect artifact publication decisions.",
+      "gate": "Abstract November 5 AoE (November 6 19:59 Taipei), paper November 10 AoE (November 11 19:59 Taipei). Four pages plus one references, authors named. Need MSR-relevant reusable artifact, runnable installation/example and preliminary evaluation. Review artifact can remain confidential until publication; publication requires persistent DOI archive. Preserve designated private/source-release boundaries and resolve technical-paper overlap. Accepted author registration and presentation remain commitments; no external use or published prior study is invented."
     },
     {
       "id": "saner-2027-tool-demo-refinery",
       "deadline": "2026-10-23T23:59:00-12:00",
-      "source_state": "OFFICIAL_CFP_REVERIFIED_2026-09-30",
-      "verified_on": "2026-09-30",
-      "verification": "Official SANER 2027 Tool Demo Track page gives optional abstract 2026-10-19 and paper 2026-10-23, both AoE.",
-      "reason": "Convert the paper deadline to its actual Taipei calendar day; the optional abstract remains in the gate text."
+      "source_state": "OFFICIAL_CFP_REVERIFIED_2026-10-08",
+      "verified_on": "2026-10-08",
+      "verification": "Official Tool Demo page excludes commercial products and tools currently under commercialization, requires accessible tool and full author registration/attendance; paper October 23 AoE.",
+      "reason": "Carry the freshly observed commercialization exclusion into the operative route and calendar, rather than leaving it only in prose.",
+      "status": "HOLD_COMMERCIALIZATION_POSTURE_AND_ARTIFACT",
+      "execution_state": "DEPENDENCY_RECON_REQUIRED",
+      "gate": "Commercial products and tools currently under commercialization are excluded. Resolve actual Refinery posture before pursuing this track; do not conceal commercial activity. Five-page paper including references, accessible tool URL, overlap review and full author registration/in-person attendance required. Optional abstract October 19 AoE; paper October 23 AoE."
     },
     {
       "id": "freeway-pricing-2026",
@@ -77,33 +81,49 @@
     {
       "id": "heroku-github-students-2026",
       "source_url": "https://www.heroku.com/github-students/",
-      "eligibility_note": "GitHub Student Developer Pack membership and age 18+. USD 13/month of credits for 24 months. Anyone who already used the programme that began October 2022 cannot reapply.",
-      "verified_on": "2026-09-21",
-      "verification": "live page read 2026-09-21: offer active",
-      "reason": "record the official URL and the real eligibility line"
+      "eligibility_note": "Student Pack supports public eligibility; prior redemption unresolved. Card required and usage beyond $13 monthly credit charged.",
+      "verified_on": "2026-10-09",
+      "verification": "Official provider page read October 9; account not inspected or activated. See docs/STUDENT_EDUCATION_ACCESS_SCREEN_2026-10-09.md",
+      "reason": "October 9 education access screen: current eligibility, duration and account gates",
+      "status": "FIRE_AFTER_GATE",
+      "execution_state": "ELIGIBILITY_RECON_REQUIRED",
+      "gate": "Active GitHub Pack and 18+ recorded. Check prior use: participants in programme begun October 2022 cannot reapply. $13/month for 24 months, no rollover; valid card required and overages charged. Activate only for an actual suitable hosting workload after human billing/terms review.",
+      "source_state": "OFFICIAL_PUBLIC_SOURCE_VERIFIED_2026-10-09"
     },
     {
       "id": "azure-for-students-2026",
       "source_url": "https://azure.microsoft.com/en-us/free/students/",
-      "eligibility_note": "Full-time university students, verified by school email. USD 100 credit for 12 months, renewed annually while enrolled. No credit card required. One account per person.",
-      "verified_on": "2026-09-21",
-      "verification": "live page read 2026-09-21: offer active",
-      "reason": "record the official URL and the real eligibility line"
+      "eligibility_note": "Public student criteria fit; previous account outcome unresolved. $100/12 months with annual renewal while eligible; no card.",
+      "verified_on": "2026-10-10",
+      "verification": "Authenticated Azure portal observed active subscription; see docs/STUDENT_EDUCATION_APPLICATION_PROGRESS_2026-10-10.md",
+      "reason": "Account-level student benefit inspection supersedes public-rule assumptions.",
+      "status": "EXISTING_BENEFIT_ACTIVE",
+      "execution_state": "NOT_APPLICABLE",
+      "gate": "Live university Azure account: Azure for Students Active, Owner access. Billing summary confirms NT$3,182.95 credits remaining, 0.00% used; no deployed resources, current cost 0.00. No new application required. Exact credit expiry unverified; free services expiry shown as October 9, 2027.",
+      "source_state": "OFFICIAL_PUBLIC_SOURCE_VERIFIED_2026-10-09"
     },
     {
       "id": "openai-researcher-access-hardware-splicer",
-      "source_url": "https://grants.openai.com/prog/openai_researcher_access_program/",
-      "apply_url": "https://grants.openai.com/prog/272885/apply/?next=/prog/openai_researcher_access_program/",
-      "verified_on": "2026-09-21",
-      "verification": "URLs taken from the route's own FIRE handoff, which builds READY_FOR_BROWSER_AGENT",
-      "reason": "the route data carried no URL at all"
+      "source_url": "https://openai.com/form/researcher-access-program/",
+      "apply_url": "https://openai.smapply.org/prog/openai_researcher_access_program/",
+      "verified_on": "2026-10-08",
+      "verification": "Real Chrome program and login gate observed; official model pages and supported-country list checked; $102/$204 scenario calculations reproduced from existing native budget. Updated execution manifest verification, not only the master date.",
+      "reason": "Prefer current official application link; retain latest observed login hold without asserting no later owner application exists.",
+      "status": "FIRE_NOW",
+      "execution_state": "PORTAL_RECON_REQUIRED",
+      "gate": "October 8 current program, supported Taiwan access and public Sol/Terra model pricing reverified. Existing matched 300-run protocol and $300 estimated credit request remain supported by its workload calculation; no paid pilot or API execution performed. Automatic bundle preflight restored, preserving frozen copy lineage. Actual Apply reaches password login for the canonical academic email; owner must sign in, then inspect existing application/dashboard before any new draft. Native lead is Hardware Splicer. Live fields and eligibility/terms attestations remain unverified behind login, final Submit protected. Re-price at submission/award timing because current Sol price is promotional."
     },
     {
       "id": "anthropic-external-researcher-access-2026",
       "source_url": "https://forms.gle/pZYC8f6qYqSKvRWn9",
-      "verified_on": "2026-09-21",
-      "verification": "URL taken from the route's own FIRE handoff, which builds READY_FOR_BROWSER_AGENT",
-      "reason": "the route data carried no URL at all"
+      "verified_on": "2026-10-08",
+      "verification": "October 3 blowback.fire_receipt.v1 SUBMITTED receipt includes submitted_at and confirmation reference. October 5 expected review is not itself an approval receipt.",
+      "reason": "Submission receipt outranks old FIRE label; prevent duplicate application.",
+      "outcome": "SUBMITTED",
+      "outcome_note": "Local fire receipt records applicant submission at 2026-10-03T02:01:27+08:00, with confirmation-page reference and submitted-copy file. Approval/credit award has not been established.",
+      "source_state": "OCTOBER_8_SUBMISSION_RECONCILIATION",
+      "status": "SUBMITTED",
+      "gate": "Submitted by applicant October 3 with confirmation reference and saved submitted copy. Await actual decision/credit evidence; no approval or award recorded. Do not resubmit merely because an older queue or packet says FIRE."
     },
     {
       "id": "embedded-world-2027-hardware-splicer",
@@ -116,21 +136,36 @@
     {
       "id": "internship-oist-research-2027",
       "source_url": "https://www.oist.jp/admissions/research-internship/program-description",
-      "deadline_note": "Spring 2027 intake closes 2026-10-15 23:59 JST; internship runs 2027-04-01..09-30, 3 to 6 months.",
+      "deadline_note": "Spring 2027 closes 2026-10-15 23:59 JST (22:59 Taipei). Internship is 4 to 6 months within 2027-04-01..09-30.",
       "eligibility_note": "Open to any nationality. Enrolled in the final two years of a bachelor's, any year of a master's, or a recent bachelor's/master's graduate. Current PhD students and PhD holders are excluded. Allowance JPY 2,400 per working day plus one round-trip air ticket, furnished accommodation and visa assistance.",
-      "eligibility_verdict": "ELIGIBLE — applicant is a full-time master's student graduating 2027-01, so a recent graduate during the internship window; no work authorisation needed",
-      "verified_on": "2026-09-21",
-      "verification": "live source read 2026-09-21",
-      "reason": "strongest near-deadline route: eligible, funded, and no visa blocker"
+      "eligibility_verdict": "EDUCATION_CRITERION_MET — current MSc student/recent graduate pathway exists; host fit, institutional approval, recommendation and personal research intent remain unresolved.",
+      "verified_on": "2026-10-07",
+      "verification": "Official application page confirms JST cutoff, 4–6 months, institutional approval, received faculty recommendation and JPY 5,000 fee.",
+      "reason": "Replace application-ready optimism with verified dependencies and exact Taipei cutoff.",
+      "deadline": "2026-10-15T23:59:00+09:00",
+      "status": "HOLD_REFERENCES_FEE_AND_HOST_DECISION",
+      "execution_state": "DEPENDENCY_RECON_REQUIRED",
+      "gate": "Select a suitable host and genuine research purpose; at least one English recommendation from professorial-level faculty must be received in the portal before submission. Enrolled applicants need home-institution approval. Prepare transcripts/enrollment evidence, CV, <=250-word/1500-character statement, government ID and recent photo. Nonrefundable JPY 5,000 application fee and 4–6 month relocation require applicant decisions. Account/credentials, payment, declarations and final Submit remain human gates. Do not assume PhD interest or visa approval.",
+      "source": "https://www.oist.jp/admissions/research-internship/apply-research-internship",
+      "source_state": "OFFICIAL_REQUIREMENTS_REVERIFIED_2026-10-07"
     },
     {
       "id": "fellowship-anthropic-fellows-2026",
-      "source_url": "https://alignment.anthropic.com/2025/anthropic-fellows-program-2026/",
+      "source_url": "https://job-boards.greenhouse.io/anthropic/jobs/5183044008",
       "eligibility_note": "Requires full-time work authorisation the applicant already holds in the US, UK or Canada, valid for the whole fellowship without employer support. F-1 OPT and STEM OPT do not qualify; nor do statuses needing employer involvement. Stipend USD 3,850/week. Cohorts 1 and 2 are closed; cohort 3 starts 2027-08 with applications reopening 2026-09.",
       "eligibility_verdict": "INELIGIBLE — applicant is an Indonesian national resident in Taiwan with no US/UK/CA work authorisation on file",
-      "verified_on": "2026-09-21",
-      "verification": "live source read 2026-09-21; checked against applicant-authority.local.yaml",
-      "reason": "close the eligibility gate rather than keep packaging for it"
+      "verified_on": "2026-10-08",
+      "verification": "Current official announcement says rolling, apply by October 18 for January cohort. Linked current AI Safety & Security job has US/UK/Canada residence/work-authorisation, no fellowship visa sponsorship, four months full-time; actual applications via Constellation, not Greenhouse Submit.",
+      "reason": "Replace expired job URL and expose verified January-cohort planning cutoff; eligibility remains held.",
+      "source_state": "FULL_CALENDAR_REVIEW_2026-10-08",
+      "source": "https://alignment.anthropic.com/2025/anthropic-fellows-program-2026/",
+      "status": "HOLD_LOCATION_WORK_AUTH_AND_FULL_TIME",
+      "execution_state": "DEPENDENCY_RECON_REQUIRED",
+      "deadline": "2026-10-18",
+      "calendar_milestones": [],
+      "gate": "January-cohort October 18 planning cutoff (year inferred from current October 2026 context; precise cutoff time/timezone unstated). Must reside and have or independently obtain full-time work authorisation in US/UK/Canada during programme; Taiwan remote does not satisfy it and no such approval is established. Four months full-time conflicts with current availability. Current Constellation intake is required, not Greenhouse submission. No relocation, sponsorship or eligibility assumed.",
+      "opportunity": "Anthropic Fellows AI Safety & Security — January cohort consideration",
+      "deadline_type": "COHORT_CONSIDERATION_CUE_NOT_ROLLING_PROGRAM_CLOSURE"
     },
     {
       "id": "fellowship-lasr-winter-2027",
@@ -170,20 +205,28 @@
     {
       "id": "appwrite-education-2026",
       "source_url": "https://appwrite.io/education",
-      "eligibility_note": "Free Education plan for the duration of studies, gated on GitHub Student Developer Pack verification, non-commercial use only.",
-      "eligibility_verdict": "ELIGIBLE — the applicant's GitHub Student Developer Pack is active per the authority file",
-      "verified_on": "2026-09-21",
-      "verification": "live source read 2026-09-21",
-      "reason": "confirm the gate is already satisfied"
+      "eligibility_note": "GitHub Student Pack verification required; current benefit is six months. Account eligibility and current workload/usage terms need inspection.",
+      "eligibility_verdict": "PUBLIC_CRITERIA_FIT_ACCOUNT_AND_TERMS_UNVERIFIED",
+      "verified_on": "2026-10-09",
+      "verification": "Official provider page read October 9; account not inspected or activated. See docs/STUDENT_EDUCATION_ACCESS_SCREEN_2026-10-09.md",
+      "reason": "October 9 education access screen: current eligibility, duration and account gates",
+      "opportunity": "Appwrite Education — six months of Cloud with Pro resources",
+      "status": "HOLD_WORKLOAD_AND_CURRENT_TERMS",
+      "execution_state": "DEPENDENCY_RECON_REQUIRED",
+      "gate": "Current official offer lasts six months, replacing older duration-through-enrolment assumption. Active GitHub Pack supports verification. Select only for an actual backend need; verify current resource caps, commercial-use terms and existing-account redemption before activation.",
+      "source_state": "OFFICIAL_PUBLIC_SOURCE_VERIFIED_2026-10-09"
     },
     {
       "id": "microsoft-student-ambassadors-2026",
       "source_url": "https://mvp.microsoft.com/studentambassadors",
       "eligibility_note": "No competitive application: registration is self-serve via Get Started. Requires 18+, full-time enrolment at an accredited institution, and an Azure for Students account. Previous removed ambassadors and Microsoft employees/contractors are excluded.",
-      "eligibility_verdict": "DEPENDS ON AZURE — the programme requires an Azure for Students account, and the authority file says Azure was likely rejected before and needs verifying. Do Azure first.",
-      "verified_on": "2026-09-21",
-      "verification": "live source read 2026-09-21",
-      "reason": "the real gate is the Azure account, not the ambassador form"
+      "eligibility_verdict": "Azure prerequisite satisfied by live account verification. Public age, student and Azure criteria supported; remaining exclusions and privacy consent require owner attestation.",
+      "verified_on": "2026-10-10",
+      "verification": "Official Microsoft Learn page and authenticated live registration read October 10; checkpoint in output/student-benefits-2026-10-09/.",
+      "reason": "Live Azure verification clears stale account prerequisite; current consent/eligibility gate and community activity requirements replace it.",
+      "status": "FIRE_AFTER_GATE",
+      "execution_state": "ELIGIBILITY_RECON_REQUIRED",
+      "gate": "Active Azure for Students prerequisite now verified. Live registration open at Privacy and Terms. Owner must review privacy consent and attest 18+, full-time enrolment, Azure for Students account, not previously removed from programme, and not Microsoft employee/current contractor. Last two exclusions not established. Registration leads to Discord activity requirements and quarterly invitations, not immediate ambassador benefits."
     },
     {
       "id": "dpg-policy-lab",
@@ -337,10 +380,13 @@
     {
       "id": "job-gogolook-data-research",
       "link_status": "board reachable 2026-09-21",
-      "deadline_note": "No data-research vacancy on the Gogolook board today; the only AI/ML opening is Machine Learning Engineer (Taipei, hybrid).",
-      "verified_on": "2026-09-21",
-      "verification": "live source read 2026-09-21",
-      "reason": "keep the route honest about what is actually open"
+      "deadline_note": "No current Data Research Engineer listing; preserve historical route and verify a distinct matching opening.",
+      "verified_on": "2026-10-08",
+      "verification": "Official Lever board read October 8: no vacancy titled Data Research Engineer.",
+      "reason": "keep the route honest about what is actually open",
+      "status": "WATCH_NO_MATCHING_POSTING",
+      "gate": "Saved data-research route has no current matching vacancy. ML Engineer and Backend Engineer - Data Acquisition are separate roles; do not silently substitute.",
+      "updated_on": "2026-10-08"
     },
     {
       "id": "job-appier-ds",
@@ -385,6 +431,596 @@
       "verified_on": "2026-09-21",
       "verification": "live source read 2026-09-21",
       "reason": "route created from this verification"
+    },
+    {
+      "id": "watch-stanford-siepr-predoc-next",
+      "opportunity": "Predoctoral Research Fellows Program — July 2027 intake",
+      "deadline": "2026-10-08",
+      "status": "CHECK_CURRENT_CALL_AND_CAREER_FIT",
+      "execution_state": "DEPENDENCY_RECON_REQUIRED",
+      "source": "https://siepr.stanford.edu/programs/siepr-predoctoral-research-fellows-program/apply-siepr-predoctoral-research-fellows",
+      "source_url": "https://careersearch.stanford.edu/hcmUI/CandidateExperience/en/sites/stanford/job/201190?mode=location",
+      "gate": "Current intake opened September 24; full consideration by October 8, 2026. No published cutoff time/timezone: this calendar date is an early planning cue, not an exact Taipei deadline. Choose three projects, prepare project-specific cover letter and CV with transcript-folder hyperlink; writing sample optional. July 6, 2027 start, up to two-year appointment and in-person/hybrid relocation need career-fit review. Eligible candidates may receive J-1 sponsorship; no H-1B. No current US work authorization or sponsorship approval is assumed. This is a predoc job, not reactivation of closed PhD applications. Portal state, factual attestations and final Submit remain gated.",
+      "source_state": "OFFICIAL_CURRENT_INTAKE_REVERIFIED_2026-10-07",
+      "verified_on": "2026-10-07",
+      "verification": "Stanford official application page states September 24 opening, October 8 full-consideration date and July 6, 2027 start.",
+      "reason": "September 30 audit found a current call while master retained prior-cycle watch; verified live today."
+    },
+    {
+      "id": "ssi-fellowship-2027-policy-lab",
+      "outcome": "UNKNOWN",
+      "outcome_note": "Official October 5 application deadline has passed. No SSI submission receipt was found in the local Gauntlet receipt directory on October 7; this does not establish that the applicant did not submit elsewhere.",
+      "source_state": "OFFICIAL_DEADLINE_REVERIFIED_2026-10-07",
+      "verified_on": "2026-10-07",
+      "verification": "Official fellowship page retains October 5 applications close, November 3 shortlist and November 12 selection day.",
+      "reason": "Record elapsed deadline with unknown submission outcome; do not invent missed or submitted status."
+    },
+    {
+      "id": "field-energy-netzero-2026",
+      "source": "https://www.energytaiwan.com.tw/en/index.html",
+      "source_state": "OFFICIAL_EVENT_DATES_REVERIFIED_2026-10-07",
+      "verified_on": "2026-10-07",
+      "verification": "Official exhibition site confirms October 14–16 at Taipei Nangang Hall 1.",
+      "reason": "Replace recovered date without source URL with official current event source."
+    },
+    {
+      "id": "aws-activate",
+      "source": "https://aws.amazon.com/startups/credits/",
+      "gate": "Self-funded Founders starts at $1K; selected participants may reach $5K. Resolve actual startup identity, functioning site, founded under ten years/pre-Series B, previous Activate credits and Paid Tier AWS account. Larger Portfolio requires provider Org ID. Verify intended hosting/Bedrock costs before applying. Paid account/billing/consent and final Submit are human gates.",
+      "status": "HOLD_STARTUP_IDENTITY_AND_ELIGIBILITY",
+      "execution_state": "ELIGIBILITY_RECON_REQUIRED",
+      "verified_on": "2026-10-07",
+      "source_state": "OFFICIAL_STARTUP_REQUIREMENTS_REVERIFIED_2026-10-07",
+      "verification": "Official current program eligibility inspected; company eligibility still unresolved.",
+      "reason": "Replace generic company gate with current startup-tier requirements and human prerequisites."
+    },
+    {
+      "id": "ms-startups",
+      "source": "https://learn.microsoft.com/en-us/startups/microsoft-for-startups/getting-started-mfs",
+      "gate": "Entry advertises up to $200 with identity verification; $5K requires registered legal entity. Resolve company-owned for-profit software product and prior credits. Higher tiers require real Azure workload/usage; do not invent workloads to chase $150K. Compare existing student entitlement. Identity/consent/billing/final Submit remain human gates.",
+      "status": "HOLD_STARTUP_IDENTITY_AND_ELIGIBILITY",
+      "execution_state": "ELIGIBILITY_RECON_REQUIRED",
+      "verified_on": "2026-10-07",
+      "source_state": "OFFICIAL_STARTUP_REQUIREMENTS_REVERIFIED_2026-10-07",
+      "verification": "Official current program eligibility inspected; company eligibility still unresolved.",
+      "reason": "Replace generic company gate with current startup-tier requirements and human prerequisites."
+    },
+    {
+      "id": "google-startups",
+      "source": "https://cloud.google.com/startup/benefits",
+      "gate": "Start tier up to $2K/year requires a startup under 24 months, working MVP/business model/roadmap, genuine plans to seek venture funding and no prior Cloud credits beyond trial. Resolve actual company facts, funding intent, domain and billing history. Scale/AI headline amounts depend on funded-stage eligibility. No company or venture intent is inferred from the portfolio.",
+      "status": "HOLD_STARTUP_IDENTITY_AND_ELIGIBILITY",
+      "execution_state": "ELIGIBILITY_RECON_REQUIRED",
+      "verified_on": "2026-10-07",
+      "source_state": "OFFICIAL_STARTUP_REQUIREMENTS_REVERIFIED_2026-10-07",
+      "verification": "Official current program eligibility inspected; company eligibility still unresolved.",
+      "reason": "Replace generic company gate with current startup-tier requirements and human prerequisites."
+    },
+    {
+      "id": "nlnet-restack-nocturnal",
+      "status": "HOLD_FUND_GEOGRAPHY_LICENSING_AND_AI_POLICY",
+      "execution_state": "DEPENDENCY_RECON_REQUIRED",
+      "verified_on": "2026-10-08",
+      "verification": "Current official NLnet general proposal form requires open licensing, fund-specific European dimension and generative-AI-policy compliance, and asks assisted applicants to retain/submit interaction logs. No exact Nocturnal fund eligibility approval established.",
+      "source_url": "https://nlnet.nl/propose/",
+      "gate": "Reverify exact fund open-call status, European-dimension eligibility for Taiwan-based solo applicant, designated artifact open licensing, and generative-AI policy/log requirements. Existing draft readiness does not clear these gates; no false no-AI declaration or public release commitment. Retain existing technical release boundaries.",
+      "reason": "Prevent older draft-ready calendar allocation from bypassing current general fund eligibility and proposal policy checks."
+    },
+    {
+      "id": "interledger-local-2026",
+      "verified_on": "2026-10-08",
+      "source_state": "OCTOBER_8_SUBMISSION_RECONCILIATION",
+      "reason": "Official current programme explicitly pauses applications; remove obsolete November 11 deadline.",
+      "status": "HOLD_CALL_PAUSED",
+      "execution_state": "DEPENDENCY_RECON_REQUIRED",
+      "deadline": "REOPENING_NOT_ANNOUNCED",
+      "source": "https://interledger.org/grant/local-impact-grant/",
+      "gate": "Applications are paused; reopening is not announced. If reopened, require a concrete community open-payments/financial-access activity, two-page concept note, budget and timeline. No organiser compensation/capital spending. No submission or community partner is established.",
+      "verification": "Official programme overview and FAQ both say applications are now paused, with no reopening date."
+    },
+    {
+      "id": "legaltech-tech-2026",
+      "verified_on": "2026-10-08",
+      "source_state": "OCTOBER_8_SUBMISSION_RECONCILIATION",
+      "reason": "Current rules require a faculty adviser and at least two student members; solo profile does not satisfy this.",
+      "status": "HOLD_TEAM_AND_ADVISER",
+      "execution_state": "DEPENDENCY_RECON_REQUIRED",
+      "gate": "Official rules require one faculty adviser, a leader and 1–5 additional members (at least two student members). Current applicant is solo with no committed adviser. No manufactured team/adviser. Mixed 2025/2026 final-date text also requires clarification before participation.",
+      "verification": "Official CCU competition page registration section states required adviser and minimum two members; final-date year remains inconsistent."
+    },
+    {
+      "id": "ncue-ai-2026",
+      "verified_on": "2026-10-08",
+      "source_state": "OCTOBER_8_SUBMISSION_RECONCILIATION",
+      "reason": "Expose one competition with four categories and actual packet, signature and attendance dependencies.",
+      "status": "HOLD_PACKET_SIGNATURES_AND_ADVISER_CLARIFICATION",
+      "execution_state": "DEPENDENCY_RECON_REQUIRED",
+      "deadline": "2026-10-22T23:59:00+08:00",
+      "gate": "One NCUE competition, not four independent applications. Current Taiwan graduate-student criterion fits; choose one native category/project. Required registration, member description, work description, abstract and scanned consent PDF in a RAR archive. Prior official attachment audit found handwritten adviser/student signatures; whether an adviser is compulsory remains unresolved and none is committed. If selected, November 19 Changhua final requires model/product, self-printed A1 poster and setup before 09:00. Protected consent/originality/attendance commitments and final Submit remain human gates. Mechanical and green categories require actual native fit.",
+      "verification": "Official introduction and join pages reverified October 8: October 22 23:59 deadline, five attachments, RAR upload, no entry fee, November 19 physical final. Signature/adviser uncertainty retained from September 30 official attachment audit."
+    },
+    {
+      "id": "ncue-info-2026",
+      "verified_on": "2026-10-08",
+      "source_state": "OCTOBER_8_SUBMISSION_RECONCILIATION",
+      "reason": "Expose one competition with four categories and actual packet, signature and attendance dependencies.",
+      "status": "HOLD_PACKET_SIGNATURES_AND_ADVISER_CLARIFICATION",
+      "execution_state": "DEPENDENCY_RECON_REQUIRED",
+      "deadline": "2026-10-22T23:59:00+08:00",
+      "gate": "One NCUE competition, not four independent applications. Current Taiwan graduate-student criterion fits; choose one native category/project. Required registration, member description, work description, abstract and scanned consent PDF in a RAR archive. Prior official attachment audit found handwritten adviser/student signatures; whether an adviser is compulsory remains unresolved and none is committed. If selected, November 19 Changhua final requires model/product, self-printed A1 poster and setup before 09:00. Protected consent/originality/attendance commitments and final Submit remain human gates. Mechanical and green categories require actual native fit.",
+      "verification": "Official introduction and join pages reverified October 8: October 22 23:59 deadline, five attachments, RAR upload, no entry fee, November 19 physical final. Signature/adviser uncertainty retained from September 30 official attachment audit."
+    },
+    {
+      "id": "ncue-mech-2026",
+      "verified_on": "2026-10-08",
+      "source_state": "OCTOBER_8_SUBMISSION_RECONCILIATION",
+      "reason": "Expose one competition with four categories and actual packet, signature and attendance dependencies.",
+      "status": "HOLD_PACKET_SIGNATURES_AND_ADVISER_CLARIFICATION",
+      "execution_state": "DEPENDENCY_RECON_REQUIRED",
+      "deadline": "2026-10-22T23:59:00+08:00",
+      "gate": "One NCUE competition, not four independent applications. Current Taiwan graduate-student criterion fits; choose one native category/project. Required registration, member description, work description, abstract and scanned consent PDF in a RAR archive. Prior official attachment audit found handwritten adviser/student signatures; whether an adviser is compulsory remains unresolved and none is committed. If selected, November 19 Changhua final requires model/product, self-printed A1 poster and setup before 09:00. Protected consent/originality/attendance commitments and final Submit remain human gates. Mechanical and green categories require actual native fit.",
+      "verification": "Official introduction and join pages reverified October 8: October 22 23:59 deadline, five attachments, RAR upload, no entry fee, November 19 physical final. Signature/adviser uncertainty retained from September 30 official attachment audit."
+    },
+    {
+      "id": "ncue-green-2026",
+      "verified_on": "2026-10-08",
+      "source_state": "OCTOBER_8_SUBMISSION_RECONCILIATION",
+      "reason": "Expose one competition with four categories and actual packet, signature and attendance dependencies.",
+      "status": "HOLD_PACKET_SIGNATURES_AND_ADVISER_CLARIFICATION",
+      "execution_state": "DEPENDENCY_RECON_REQUIRED",
+      "deadline": "2026-10-22T23:59:00+08:00",
+      "gate": "One NCUE competition, not four independent applications. Current Taiwan graduate-student criterion fits; choose one native category/project. Required registration, member description, work description, abstract and scanned consent PDF in a RAR archive. Prior official attachment audit found handwritten adviser/student signatures; whether an adviser is compulsory remains unresolved and none is committed. If selected, November 19 Changhua final requires model/product, self-printed A1 poster and setup before 09:00. Protected consent/originality/attendance commitments and final Submit remain human gates. Mechanical and green categories require actual native fit.",
+      "verification": "Official introduction and join pages reverified October 8: October 22 23:59 deadline, five attachments, RAR upload, no entry fee, November 19 physical final. Signature/adviser uncertainty retained from September 30 official attachment audit."
+    },
+    {
+      "id": "facct-2027-policy-family",
+      "verified_on": "2026-10-08",
+      "source_state": "OCTOBER_8_SUBMISSION_RECONCILIATION",
+      "reason": "Correct AoE calendar cutoff and mandatory AI disclosure, reviewer signup and virtual attendance options.",
+      "status": "VERIFY_PAPER_AND_REVIEWER_ELIGIBILITY",
+      "execution_state": "RESEARCH_ONLY",
+      "deadline": "2026-11-03T23:59:00-12:00",
+      "calendar_milestones": [
+        {
+          "deadline": "2026-10-27T23:59:00-12:00",
+          "label": "Mandatory abstract registration",
+          "remind": false
+        }
+      ],
+      "gate": "Mandatory abstract October 27 AoE (October 28 19:59 Taipei), full paper November 3 AoE (November 4 19:59 Taipei). Need publication-ready anonymized paper with substantive social/computational engagement. All authors must sign up to review; published requirements include prior reviewing experience, which is not established for this applicant. Required generative-AI usage endmatter statement even if no AI was used; substantive AI assistance is permitted with disclosure and human responsibility. At least one accepted author registers and presents; virtual option is available for those unable to attend in person, details after acceptance. No reviewer/registration commitment or publication-ready result is inferred.",
+      "verification": "Current official CFP and 2027 Author Guide inspected. Supersedes September 30 audit references to an AI writing prohibition and unconditional in-person presentation."
+    },
+    {
+      "id": "sase-2027-invisible-ledger",
+      "verified_on": "2026-10-08",
+      "source_state": "OCTOBER_8_SUBMISSION_RECONCILIATION",
+      "reason": "Distinguish network deadline from optional earlier mini-conference cutoff.",
+      "deadline": "2026-12-16",
+      "calendar_milestones": [
+        {
+          "deadline": "2026-11-01",
+          "label": "Mini-conference cutoff only if that stream is selected",
+          "remind": false
+        }
+      ],
+      "verification": "Official 2027 Glasgow page currently lists November 1 mini-conferences, December 16 networks and June 16–18 virtual conference; no stream has been selected. Registration fees TBD.",
+      "status": "WATCH_OWNER_DEFERRED_POST_MASTER_FOCUS",
+      "previous_status_before_post_master_focus": "WATCH_STREAM_MATCH",
+      "campaign_note": "Owner prioritizes post-master jobs and funding on October 8. Publication/conference work deferred; retain source evidence and prior preparation without scheduling submission reminders.",
+      "updated_on": "2026-10-08"
+    },
+    {
+      "id": "atax-2027-fiscal-choke-points",
+      "verified_on": "2026-10-08",
+      "source_state": "OCTOBER_8_SUBMISSION_RECONCILIATION",
+      "reason": "Retain current cutoff but expose unresolved contradictions between the linked official CFP and webpage.",
+      "status": "WATCH_OWNER_DEFERRED_POST_MASTER_FOCUS",
+      "execution_state": "DEPENDENCY_RECON_REQUIRED",
+      "gate": "Abstract/proposal October 30, 2026. Webpage gives tblconferences@unsw.edu.au and full paper January 12; linked CFP gives tblconference@unsw.edu.au and full paper February 12, with end-of-day Sydney cutoff. Resolve recipient/full-paper date before any send. Completed Fiscal Choke Points manuscript is the native evidence. Full conference AUD 985 plus travel; no spend or attendance commitment authorized.",
+      "verification": "Official live webpage and its linked September 2026 v2 two-page CFP both inspected; conflicting recipient, notification and full-paper dates persist.",
+      "previous_status_before_post_master_focus": "HOLD_CFP_CONFLICT_AND_ATTENDANCE_COST",
+      "campaign_note": "Owner prioritizes post-master jobs and funding on October 8. Publication/conference work deferred; retain source evidence and prior preparation without scheduling submission reminders.",
+      "updated_on": "2026-10-08"
+    },
+    {
+      "id": "lab-sinica-ku-nlp-ra-2026",
+      "verified_on": "2026-10-08",
+      "source_state": "OCTOBER_8_SUBMISSION_RECONCILIATION",
+      "reason": "Reverify a native Taiwan part-time research route rather than presenting generic job families as live vacancies.",
+      "verification": "Official Academia Sinica recruitment page inspected October 8: part-time undergraduate-or-higher and full-time bachelor-or-higher, CS/related study and AI/NLP background, CV/resume/transcript via email, May 31 2027 cutoff.",
+      "gate": "Native Cite/RAG fit, but Finance/Accounting degree does not automatically satisfy CS/related-degree wording; demonstrate software/research background and resolve flexibility. Part-time explicitly listed, compensation unspecified. Masters full-time salary NT$44,968 is not an applicable guaranteed current salary. Prepare designated CV and existing transcript; email sending not authorized. Resolve student work permission, schedule, start timing and pre-existing IP before accepting."
+    },
+    {
+      "id": "claude-startups-2026",
+      "verified_on": "2026-10-09",
+      "source_state": "OWNER_SUPPLIED_DECLINE_AND_OFFICIAL_FAQ_RECHECK",
+      "reason": "Owner supplied provider rejection; supersede stale login/receipt gates and hold immediate retry.",
+      "gate": "Cite-Agent application declined. Exact cause unknown: provider message gives generic startup-age/verification reasons. Owner-supplied message recorded in output/startup-applications-2026-10-08/claude-startups-decision-2026-10-09.json. Live official FAQ now says free Team/$1,000 credit offers are over capacity and programme is being reshaped. No immediate reapplication; reassess only with a concrete verified correction and useful current benefits.",
+      "verification": "Owner supplied the rejection text naming Cite-Agent; no inbox access or original message metadata inspected. Official live programme FAQ read October 9. No approval, usable credits, new submission or purchase claimed.",
+      "status": "HOLD_PROVIDER_DECLINED",
+      "execution_state": "BLOCKED_PROVIDER_DECISION"
+    },
+    {
+      "id": "icse-2027-seis-refinery",
+      "verified_on": "2026-10-08",
+      "source_state": "FULL_CALENDAR_REVIEW_2026-10-08",
+      "reason": "Official AoE cutoff must appear on the actual Taipei closing day.",
+      "deadline": "2026-10-23T23:59:00-12:00",
+      "verification": "Current official ICSE SEIS CFP: October 23 23:59 AoE, four-page short or ten-page full/experience paper, double-anonymous. Accepted author attends full three-day technical conference; any remote possibility remains conditional."
+    },
+    {
+      "id": "date-2027-lbr-hardware-splicer",
+      "verified_on": "2026-10-08",
+      "source_state": "FULL_CALENDAR_REVIEW_2026-10-08",
+      "reason": "Convert verified late-breaking AoE cutoff to Taipei.",
+      "deadline": "2026-11-29T23:59:00-12:00",
+      "verification": "Official DATE 2027 CFP: late-breaking final paper November 29 AoE, not ordinary local November 29 midnight. Stronger physical/evaluation evidence still required."
+    },
+    {
+      "id": "saner-2027-agentic-ai4se-refinery",
+      "verified_on": "2026-10-08",
+      "source_state": "FULL_CALENDAR_REVIEW_2026-10-08",
+      "reason": "Expose mandatory abstract and correct paper AoE cutoff without promoting held research.",
+      "deadline": "2026-10-23T23:59:00-12:00",
+      "calendar_milestones": [
+        {
+          "deadline": "2026-10-19T23:59:00-12:00",
+          "label": "Mandatory abstract; route remains held",
+          "remind": false
+        }
+      ],
+      "verification": "Current official SANER Agentic AI4SE CFP: mandatory abstract October 19 AoE, paper October 23 AoE, ten pages plus two references, double-anonymous. Keep existing HOLD_OR_KILL fit/evidence decision."
+    },
+    {
+      "id": "icpp8-2027-fiscal-choke-points",
+      "verified_on": "2026-10-08",
+      "source_state": "FULL_CALENDAR_REVIEW_2026-10-08",
+      "reason": "Add verified paper-call opening to the longer calendar.",
+      "calendar_milestones": [
+        {
+          "deadline": "2026-11-16",
+          "label": "Paper call opens; match an accepted panel",
+          "remind": false
+        }
+      ],
+      "verification": "Official IPPA ICPP8 overview: paper call November 16 2026 to January 29 2027. October 26 is panel-proposal cutoff, not this paper route. Participation mode still requires selected-panel inspection.",
+      "status": "WATCH_OWNER_DEFERRED_POST_MASTER_FOCUS",
+      "previous_status_before_post_master_focus": "PREPARE_FOR_WINDOW",
+      "campaign_note": "Owner prioritizes post-master jobs and funding on October 8. Publication/conference work deferred; retain source evidence and prior preparation without scheduling submission reminders.",
+      "updated_on": "2026-10-08"
+    },
+    {
+      "id": "ipsa-2027-rc30-fiscal-choke-points",
+      "verified_on": "2026-10-08",
+      "source_state": "FULL_CALENDAR_REVIEW_2026-10-08",
+      "reason": "Reverify a native proposal route omitted from the short recap.",
+      "verification": "Official World Congress paper page: November 4 proposal deadline, title max 25 words, abstract max 350 words, free submission account; membership/registration required for participation and no remote presentation.",
+      "gate": "Completed Fiscal Choke Points can support comparative-policy proposal. Title <=25 words, abstract <=350 words; choose fitting open RC30 panel/track. Free IPSA submission account does not cover mandatory membership/registration and in-person Rome attendance. No travel/spend/participation commitment cleared; keep dependency hold.",
+      "status": "WATCH_OWNER_DEFERRED_POST_MASTER_FOCUS",
+      "previous_status_before_post_master_focus": "FUNDING_GATED",
+      "campaign_note": "Owner prioritizes post-master jobs and funding on October 8. Publication/conference work deferred; retain source evidence and prior preparation without scheduling submission reminders.",
+      "updated_on": "2026-10-08"
+    },
+    {
+      "id": "satc-2027-hardware-splicer",
+      "verified_on": "2026-10-08",
+      "source_state": "FULL_CALENDAR_REVIEW_2026-10-08",
+      "reason": "Reverify later paper route without assuming paper readiness or venue-indexing guarantees.",
+      "verification": "Current organiser CFP: December 20 2026 full-paper date; five pages including references and CMT intake. Cutoff timezone unstated; no guarantee of IEEE Xplore inclusion inferred. Existing research/evidence gates retained.",
+      "status": "WATCH_OWNER_DEFERRED_POST_MASTER_FOCUS",
+      "previous_status_before_post_master_focus": "DEVELOP_PAPER",
+      "campaign_note": "Owner prioritizes post-master jobs and funding on October 8. Publication/conference work deferred; retain source evidence and prior preparation without scheduling submission reminders.",
+      "updated_on": "2026-10-08"
+    },
+    {
+      "id": "emergent-commons",
+      "verified_on": "2026-10-08",
+      "source_state": "FULL_CALENDAR_REVIEW_2026-10-08",
+      "reason": "Reverify rolling international grant and readable official intake for Refinery/Commons.",
+      "status": "PREPARE_PERSONAL_ANSWER_AND_BUDGET",
+      "execution_state": "PORTAL_MAPPED",
+      "verification": "Official Mercatus call, readable live intake and real Chrome fields inspected; contact metadata checked visually. Partial form only.",
+      "gate": "October 8 real intake mapped. Supported identity/contact/location, topic/region, short idea and public reviewer URL filled. 529-word factual/project components and proposed $1000 three-month part-time budget prepared for owner review, not pasted as a completed proposal. Applicant personal story and genuinely held consensus view unresolved; do not invent. No draft-save control observed, so local packet is durable and live tab must be preserved. CAPTCHA, consent/charitable-use attestations and final Submit protected. No submission."
+    },
+    {
+      "id": "lab-sinica-ti-rong-wu-agents-ra-2026",
+      "verified_on": "2026-10-08",
+      "source_state": "FULL_CALENDAR_REVIEW_2026-10-08",
+      "reason": "Published degree requirement is stronger than a preference; full-time availability is unresolved.",
+      "status": "HOLD_DEGREE_FLEXIBILITY_AND_FULL_TIME_START",
+      "execution_state": "DEPENDENCY_RECON_REQUIRED",
+      "verification": "Current official Sinica Ti-Rong Wu posting: full-time research assistant, CS/EE/STEM degree wording, C++/Python/PyTorch/Linux, December 31 2026 cutoff.",
+      "gate": "Published posting requires CS/EE/STEM bachelor/master degree; Finance/Accounting does not automatically satisfy it. Resolve flexibility, native agent/RL research sample and full-time start against March 2027 preference before spending on application. No PT position inferred from this full-time posting; work permission, IP and sending remain gated."
+    },
+    {
+      "id": "lab-sinica-aiiu-embodied-ai-ra-2026",
+      "verified_on": "2026-10-08",
+      "source_state": "FULL_CALENDAR_REVIEW_2026-10-08",
+      "reason": "Current source is a department-wide list and no longer identifies the exact named AIIU vacancy.",
+      "status": "HOLD_NAMED_VACANCY_REVERIFICATION",
+      "execution_state": "DEPENDENCY_RECON_REQUIRED",
+      "verification": "Current CITI recruitment listing inspected October 8; exact AIIU/embodied-AI vacancy named in older record was not identified. Other current labs on the listing are not substitute evidence for this vacancy.",
+      "gate": "Retain December 31 historical planning date only; exact named AIIU/embodied-AI role and compensation must be relocated on an official current posting before application. Department listing contains other roles, not proof that this one remains open. Degree, PT/full-time schedule and work permission unresolved."
+    },
+    {
+      "id": "anthropic-mhs-preview-2026",
+      "verified_on": "2026-10-08",
+      "source_state": "FULL_CALENDAR_REVIEW_2026-10-08",
+      "reason": "Confirm preview access route while retaining actual device/lab eligibility gates.",
+      "verification": "Official August 27 Anthropic MHS announcement currently links the modelhardwarestandard.com interest/waitlist route; preview prioritises research labs/manufacturers and programmable devices. No Hardware Splicer MHS implementation or applicant acceptance established."
+    },
+    {
+      "id": "nlnet-codesupply-refinery",
+      "verified_on": "2026-10-08",
+      "source_state": "FULL_CALENDAR_REVIEW_2026-10-08",
+      "reason": "Reverify exact fund deadline and open-release/European-dimension dependencies.",
+      "source": "https://nlnet.nl/codesupply/",
+      "verification": "Current official CodeSupply page: November 3 2026 noon CET; guide requires eligible European dimension, open-access science and recognised open-source licensing of results in entirety.",
+      "gate": "November 3 19:00 Taipei. Fund-specific European dimension for Taiwan-based solo applicant and eligible provenance/software-supply-chain scope must clear. Separate open slice must be coherent and deliverable; no promise to publish private marketplace material. Exact proposal AI-use/log policy, designated artifact release and budget require review before drafting/attesting. One fund family, not automatic three independent grants."
+    },
+    {
+      "id": "job-hku-ai-agents-aec-ra-2026",
+      "verified_on": "2026-10-08",
+      "source_state": "CANONICAL_POLICY_RECONCILED_2026-10-08",
+      "reason": "Preserve canonical owner pause in calendar labels rather than showing Apply/Prepare.",
+      "status": "HOLD_OWNER_PAUSED",
+      "execution_state": "DEPENDENCY_RECON_REQUIRED",
+      "verification": "Canonical document-readiness policy excludes named HKU route and Nocturnal asset from automatic execution. Venue dates were not newly checked by this policy correction.",
+      "gate": "Owner-paused in automatic execution; calendar entry is retained context only. G1 reverify current closing date because HKU listings may change; verify appointment level, salary, work authorization/sponsorship, IP and outside-work terms. Broad degree eligibility makes this lower-friction than many AI lab roles."
+    },
+    {
+      "id": "websci-2027-nocturnal",
+      "verified_on": "2026-10-08",
+      "source_state": "CANONICAL_POLICY_RECONCILED_2026-10-08",
+      "reason": "Preserve canonical owner pause in calendar labels rather than showing Apply/Prepare.",
+      "status": "HOLD_OWNER_PAUSED",
+      "execution_state": "DEPENDENCY_RECON_REQUIRED",
+      "verification": "Canonical document-readiness policy excludes named HKU route and Nocturnal asset from automatic execution. Venue dates were not newly checked by this policy correction.",
+      "gate": "Owner-paused in automatic execution; calendar entry is retained context only. G4 pilot evidence first; then define a genuine empirical research contribution. The official full-paper deadline is firm. Protect manuscript novelty and overlap with ICWSM demo/publications."
+    },
+    {
+      "id": "icwsm-2027-demo-nocturnal",
+      "verified_on": "2026-10-08",
+      "source_state": "CANONICAL_POLICY_RECONCILED_2026-10-08",
+      "reason": "Preserve canonical owner pause in calendar labels rather than showing Apply/Prepare.",
+      "status": "HOLD_OWNER_PAUSED",
+      "execution_state": "DEPENDENCY_RECON_REQUIRED",
+      "verification": "Canonical document-readiness policy excludes named HKU route and Nocturnal asset from automatic execution. Venue dates were not newly checked by this policy correction.",
+      "gate": "Owner-paused in automatic execution; calendar entry is retained context only. G4 obtain one credible external pilot first; G2 demo paper is up to 3 pages and single-blind. Preserve contribution novelty against any WebSci manuscript and do not convert internal product tests into user-impact claims."
+    },
+    {
+      "id": "atta-2027-fiscal-choke-points",
+      "status": "CLOSED_BY_APPLICANT",
+      "execution_state": "CLOSED_BY_APPLICANT",
+      "apply_url": "https://docs.google.com/forms/d/e/1FAIpQLScdrhP60tuETILWDQ9JUQdnnqJdWdX1fYIum6c-qBw5bbRZgQ/viewform",
+      "gate": "Applicant declined ATTA for this cycle on 2026-10-08 because Melbourne attendance and travel would cost too much relative to expected value. Current focus is post-master employment and funding. No submission was made. Draft abstract and autosaved metadata retained as history; no attendance decision or upload is pending.",
+      "verified_on": "2026-10-08",
+      "verification": "Real Chrome inspection of official call and linked Google Form. Required in-person question, PDF/document upload and partial metadata autosave observed. No application submitted.",
+      "reason": "October 8 application automation readiness audit",
+      "calendar_milestones": [],
+      "updated_on": "2026-10-08"
+    },
+    {
+      "id": "corrigibility-research-fund-hardware-splicer-2026",
+      "status": "HOLD_RESEARCH_FIT_AND_BUDGET",
+      "execution_state": "RESEARCH_ONLY",
+      "gate": "October 8 fund-manager methodology explicitly distinguishes agent alignment/disposition from externally enforced control. Existing guard-layer comparison is not yet a substantiated corrigibility study. Keep the October 3 draft historical; do not submit it unchanged or invent alignment results. Prepare an extension measuring voluntary error disclosure, correction and human understanding, with controls separating model behavior from hard enforcement. Fit, frozen rubric, current model/budget and public-disclosure scope must clear before final copy. October 31 deadline retained; public application and final Submit protected.",
+      "verified_on": "2026-10-08",
+      "verification": "Official fund page and directly linked fund-manager methodology reviewed. AI-assisted preparation is not stated as banned; research fit remains a substantive blocker.",
+      "reason": "October 8 application automation readiness audit"
+    },
+    {
+      "id": "cav-2027-hardware-splicer",
+      "status": "WATCH_OWNER_DEFERRED_POST_MASTER_FOCUS",
+      "previous_status_before_post_master_focus": "DEVELOP_PAPER",
+      "campaign_note": "Owner prioritizes post-master jobs and funding on October 8. Publication/conference work deferred; retain source evidence and prior preparation without scheduling submission reminders.",
+      "updated_on": "2026-10-08"
+    },
+    {
+      "id": "irspm-2027-fiscal-choke-points",
+      "status": "WATCH_OWNER_DEFERRED_POST_MASTER_FOCUS",
+      "previous_status_before_post_master_focus": "WATCH_2027",
+      "campaign_note": "Owner prioritizes post-master jobs and funding on October 8. Publication/conference work deferred; retain source evidence and prior preparation without scheduling submission reminders.",
+      "updated_on": "2026-10-08"
+    },
+    {
+      "id": "ata-jltr-2027-fiscal-choke-points",
+      "status": "WATCH_OWNER_DEFERRED_POST_MASTER_FOCUS",
+      "previous_status_before_post_master_focus": "SELECTIVE_FIRE",
+      "campaign_note": "Owner prioritizes post-master jobs and funding on October 8. Publication/conference work deferred; retain source evidence and prior preparation without scheduling submission reminders.",
+      "updated_on": "2026-10-08"
+    },
+    {
+      "id": "journal-regulation-governance-fiscal-choke-points",
+      "status": "WATCH_OWNER_DEFERRED_POST_MASTER_FOCUS",
+      "previous_status_before_post_master_focus": "PREP_AFTER_CONFERENCE_FEEDBACK",
+      "campaign_note": "Owner prioritizes post-master jobs and funding on October 8. Publication/conference work deferred; retain source evidence and prior preparation without scheduling submission reminders.",
+      "updated_on": "2026-10-08"
+    },
+    {
+      "id": "journal-world-tax-journal-fiscal-choke-points",
+      "status": "WATCH_OWNER_DEFERRED_POST_MASTER_FOCUS",
+      "previous_status_before_post_master_focus": "PREP_AFTER_CONFERENCE_FEEDBACK",
+      "campaign_note": "Owner prioritizes post-master jobs and funding on October 8. Publication/conference work deferred; retain source evidence and prior preparation without scheduling submission reminders.",
+      "updated_on": "2026-10-08"
+    },
+    {
+      "id": "journal-ejtr-fiscal-choke-points",
+      "status": "WATCH_OWNER_DEFERRED_POST_MASTER_FOCUS",
+      "previous_status_before_post_master_focus": "PREP_AFTER_CONFERENCE_FEEDBACK",
+      "campaign_note": "Owner prioritizes post-master jobs and funding on October 8. Publication/conference work deferred; retain source evidence and prior preparation without scheduling submission reminders.",
+      "updated_on": "2026-10-08"
+    },
+    {
+      "id": "journal-jcpa-fiscal-choke-points",
+      "status": "WATCH_OWNER_DEFERRED_POST_MASTER_FOCUS",
+      "previous_status_before_post_master_focus": "PREP_AFTER_CONFERENCE_FEEDBACK",
+      "campaign_note": "Owner prioritizes post-master jobs and funding on October 8. Publication/conference work deferred; retain source evidence and prior preparation without scheduling submission reminders.",
+      "updated_on": "2026-10-08"
+    },
+    {
+      "id": "journal-ecra-invisible-ledger",
+      "status": "WATCH_OWNER_DEFERRED_POST_MASTER_FOCUS",
+      "previous_status_before_post_master_focus": "PREP_AFTER_SAMPLE_LOCK",
+      "campaign_note": "Owner prioritizes post-master jobs and funding on October 8. Publication/conference work deferred; retain source evidence and prior preparation without scheduling submission reminders.",
+      "updated_on": "2026-10-08"
+    },
+    {
+      "id": "kemenkeu-cfp-2027-fiscal-choke-points-watch",
+      "status": "WATCH_OWNER_DEFERRED_POST_MASTER_FOCUS",
+      "previous_status_before_post_master_focus": "WATCH_2027_RECURRING",
+      "campaign_note": "Owner prioritizes post-master jobs and funding on October 8. Publication/conference work deferred; retain source evidence and prior preparation without scheduling submission reminders.",
+      "updated_on": "2026-10-08"
+    },
+    {
+      "id": "job-point72-qfr",
+      "verified_on": "2026-10-08",
+      "verification": "October 8 real Chrome inspection confirmed public role and all current form fields. Canonical contact/graduation/hiring-manager note prepared and visually checked. New two-page CV rendered and both pages checked locally; upload awaiting review/designation.",
+      "status": "PREPARE_VERIFIED",
+      "execution_state": "PORTAL_MAPPED",
+      "source": "https://job-boards.greenhouse.io/point72/jobs/7046014002",
+      "apply_url": "https://job-boards.greenhouse.io/point72/jobs/7046014002",
+      "gate": "Partial Chrome form preserved; no autosave verified. Refreshed quant CV PDF awaits applicant review/designation per existing document authority. Prior Point72 application and military-service facts remain unresolved; specific questions sent after repo search. Required privacy consent and final Submit protected; reCAPTCHA visible but no challenge solved. No submission. Expected graduation January 2027; preferred full-time start March 2027.",
+      "campaign_priority": 1,
+      "updated_on": "2026-10-08"
+    },
+    {
+      "id": "job-worldquant-qr",
+      "verified_on": "2026-10-08",
+      "verification": "Official public posting read October 8. Requirements and visible application fields inspected through web; no current Chrome draft or submission is claimed.",
+      "status": "PREPARE_VERIFIED",
+      "execution_state": "PREPARE_VERIFIED",
+      "gate": "Taipei role live. Quantitative degree or equivalent wording requires honest Finance and Accounting degree plus concrete research/programming evidence; no equivalence guarantee. Current CV must be refreshed; official transcripts already located. Current/future sponsorship wording must not be answered unconditionally No based on prospective post-graduate residence. Privacy/final submission protected.",
+      "campaign_priority": 2,
+      "updated_on": "2026-10-08"
+    },
+    {
+      "id": "job-worldquant-macro",
+      "verified_on": "2026-10-08",
+      "verification": "Official public posting read October 8. Requirements and visible application fields inspected through web; no current Chrome draft or submission is claimed.",
+      "status": "PREPARE_VERIFIED",
+      "execution_state": "PREPARE_VERIFIED",
+      "gate": "Taipei role live; quantitative/financial-engineering degree or equivalent. Macro/futures experience is a plus rather than mandatory. Finance degree and research methods must be accurately stated. Same employer as general QR: choose best evidence match first, avoid blind duplicate applications. CV, transcripts, sponsorship and protected consent/final gates remain.",
+      "campaign_priority": 3,
+      "updated_on": "2026-10-08"
+    },
+    {
+      "id": "job-worldquant-ds",
+      "verified_on": "2026-10-08",
+      "verification": "Official public posting read October 8. Requirements and visible application fields inspected through web; no current Chrome draft or submission is claimed.",
+      "status": "HOLD_DEGREE_AND_CPP_EVIDENCE",
+      "source": "https://job-boards.greenhouse.io/worldquant/jobs/4069485006",
+      "apply_url": "https://job-boards.greenhouse.io/worldquant/jobs/4069485006",
+      "gate": "Taipei posting live but calls for completed CS/EE/related masters and proficiency in both C++ and Python. Finance masters and LLM tool-building alone do not establish these requirements; lower priority pending direct supporting evidence.",
+      "updated_on": "2026-10-08"
+    },
+    {
+      "id": "job-kronos-qr-grad",
+      "status": "HOLD_PORTAL_CONFLICT_AND_2027_START",
+      "verified_on": "2026-10-08",
+      "verification": "Official careers website advertises 2026 graduate program, but linked requisition redirects to Greenhouse error=true board showing no current openings.",
+      "gate": "Do not treat stale employer landing-page link as open intake. Verify accessible vacancy and March 2027 start compatibility before preparing a submission.",
+      "apply_url": "https://job-boards.greenhouse.io/kronosresearch/jobs/4322548003",
+      "updated_on": "2026-10-08"
+    },
+    {
+      "id": "job-gogolook-ml",
+      "verified_on": "2026-10-08",
+      "verification": "Official public posting read October 8. Requirements and visible application fields inspected through web; no current Chrome draft or submission is claimed.",
+      "status": "HOLD_DEGREE_AND_MODEL_TRAINING_EVIDENCE",
+      "source": "https://jobs.lever.co/Gogolook/53ccbfd0-9139-4ce6-be17-adb2497c518c",
+      "apply_url": "https://jobs.lever.co/Gogolook/53ccbfd0-9139-4ce6-be17-adb2497c518c",
+      "gate": "Live Taipei hybrid role requests quantitative/CS/ML bachelors, 2-4 related years depending on degree, and hands-on model training/evaluation using standard frameworks. Agent/RAG demos alone do not establish ML training or employment years. English resume required; hold until evidence is matched.",
+      "updated_on": "2026-10-08"
+    },
+    {
+      "id": "job-gogolook-credit",
+      "verified_on": "2026-10-08",
+      "verification": "Official public posting read October 8. Requirements and visible application fields inspected through web; no current Chrome draft or submission is claimed.",
+      "status": "HOLD_CONSUMER_CREDIT_EXPERIENCE",
+      "source": "https://jobs.lever.co/Gogolook/e916bf13-6782-4715-9632-857548a914b9",
+      "apply_url": "https://jobs.lever.co/Gogolook/e916bf13-6782-4715-9632-857548a914b9",
+      "gate": "Live Taipei hybrid role requires 3-5 related years (degree-dependent) and consumer-credit/BNPL/lending data-analysis experience. Finance education and platform-economy research do not establish operational credit-risk experience.",
+      "updated_on": "2026-10-08"
+    },
+    {
+      "id": "job-point72-macro",
+      "verified_on": "2026-10-08",
+      "verification": "Official public posting read October 8. Requirements and visible application fields inspected through web; no current Chrome draft or submission is claimed.",
+      "status": "HOLD_INDUSTRY_QUANT_EXPERIENCE",
+      "source": "https://job-boards.greenhouse.io/point72/jobs/7864033002",
+      "apply_url": "https://job-boards.greenhouse.io/point72/jobs/7864033002",
+      "gate": "Taipei role explicitly requires 2+ years quantitative research/systematic trading at a bank, hedge fund or asset manager. Self-directed portfolio projects are not equivalent employment evidence.",
+      "updated_on": "2026-10-08"
+    },
+    {
+      "id": "job-binance-ai-agent",
+      "status": "PREPARE_PRODUCTION_EVIDENCE_REVIEW",
+      "execution_state": "PACKET_DEVELOPMENT_REQUIRED",
+      "verified_on": "2026-10-08",
+      "updated_on": "2026-10-08",
+      "verification": "Official live Taiwan/Asia Lever requisition and requirements read October 8; no Chrome application started.",
+      "source": "https://jobs.lever.co/binance/3a2ca7e0-e2c9-4248-b8fe-0de5d05dee1c",
+      "apply_url": "https://jobs.lever.co/binance/3a2ca7e0-e2c9-4248-b8fe-0de5d05dee1c",
+      "gate": "Strong agent/RAG/tool-use topic match, but explicitly requires 1+ year production LLM/RAG/agent experience and end-to-end production retrieval. Public/internal demos and internal lab use do not establish that duration or scope. Prepare honest stretch packet and inspect deployment/usage history before answering experience. Taiwan/Asia location listed; remote depends on team. March 2027 start preferred; privacy consent/final submission protected.",
+      "campaign_priority": 4
+    },
+    {
+      "id": "yzu-campus-software-2026",
+      "source": "https://www.yzu.edu.tw/admin/is/index.php/tw/support/softwares",
+      "source_url": "https://www.yzu.edu.tw/admin/is/index.php/tw/support/softwares",
+      "gate": "Existing YZU student institutional access; inspect product-specific licence scope. Official list includes Microsoft 365 A5, Office, SAS and MATLAB. Do not infer paid Microsoft Copilot access from A5. Windows is upgrade-only; KMS renewals apply.",
+      "verified_on": "2026-10-09",
+      "source_state": "OFFICIAL_PUBLIC_SOURCE_VERIFIED_2026-10-09",
+      "verification": "Official provider page read October 9; account not inspected or activated. See docs/STUDENT_EDUCATION_ACCESS_SCREEN_2026-10-09.md",
+      "reason": "October 9 education access screen: current eligibility, duration and account gates"
+    },
+    {
+      "id": "claude-campus-status-2026-09-04",
+      "status": "HOLD_INTAKE_CLOSED",
+      "execution_state": "DEPENDENCY_RECON_REQUIRED",
+      "deadline": "INTAKE_CLOSED",
+      "gate": "Canonical official page inspected October 9 states Fall 2026 programme is closed. School-year participation runs September 2026 to June 2027, beyond current expected January graduation. Do not treat prior Spring status or older third-party intake claims as active applications.",
+      "verified_on": "2026-10-09",
+      "source_state": "OFFICIAL_PUBLIC_SOURCE_VERIFIED_2026-10-09",
+      "verification": "Official provider page read October 9; account not inspected or activated. See docs/STUDENT_EDUCATION_ACCESS_SCREEN_2026-10-09.md",
+      "reason": "October 9 education access screen: current eligibility, duration and account gates"
+    },
+    {
+      "id": "github-copilot-student-2026",
+      "status": "EXISTING_BENEFIT_ACTIVE",
+      "execution_state": "NOT_APPLICABLE",
+      "gate": "Authenticated Spectating101 settings show Copilot Student already active. Education benefits displayed expiry July 25, 2027. Observed 48/200 AI credits used; additional usage disabled. No new application required.",
+      "verified_on": "2026-10-10",
+      "verification": "Authenticated GitHub education and Copilot pages read; existing benefit confirmed.",
+      "reason": "Account-level student benefit inspection supersedes public-rule assumptions."
+    },
+    {
+      "id": "claude-existing-plan-api-credits-2026",
+      "status": "HOLD_CURRENT_PLAN_INELIGIBLE",
+      "execution_state": "DEPENDENCY_RECON_REQUIRED",
+      "gate": "Authenticated usual account shows Pro; Max/Team monthly API benefit does not apply. Separate $100 cloud-session credits are not API credits. No upgrade/purchase authorised.",
+      "verified_on": "2026-10-10",
+      "verification": "Authenticated Claude usage settings show Pro; see education application progress report.",
+      "reason": "Account-level student benefit inspection supersedes public-rule assumptions."
+    },
+    {
+      "id": "camber-student-pack-2026",
+      "status": "EXISTING_BENEFIT_ACTIVE",
+      "execution_state": "NOT_APPLICABLE",
+      "gate": "User completed Camber activation. Authenticated Manage Plan confirms Student $0 Current Plan: 40 CPU hours, 5 GPU hours (single L4), 50 GB storage, 50 LLM messages. No new benefit application needed; workload selection is separate.",
+      "verified_on": "2026-10-10",
+      "verification": "Authenticated plan-page confirmation: output/student-benefits-2026-10-09/camber-student-plan-confirmation-2026-10-10.json",
+      "reason": "User-completed Camber benefit now verified from live account."
+    },
+    {
+      "id": "google-ai-plus-students-taiwan-2026",
+      "status": "EXISTING_APPLICATION_IN_PROGRESS",
+      "execution_state": "NOT_APPLICABLE",
+      "gate": "Owner reports already applied for this student offer and nearly finished. Do not open or submit a duplicate application. Final activation is not independently verified.",
+      "verified_on": "2026-10-10",
+      "verification": "Owner clarification in conversation October 10; operator stopped duplicate SheerID flow.",
+      "reason": "Existing owner-led Google student application; remove duplicate application work from the active queue."
     }
   ],
   "link_sweep_2026_09_21": "145 source links checked from this machine: 127 returned 200, 3 were 404 (career-gogolook, job-appier-ds, job-imc-apac), 3 redirected, 2 were bot-blocked, and 10 raised network errors. The network errors are an artefact of this machine: pages such as the YZU library and NYCU IAIS load fine through another fetcher. Never retire a route on a network error alone.",

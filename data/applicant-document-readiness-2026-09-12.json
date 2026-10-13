@@ -26,12 +26,27 @@
       "job-hku-ai-engineer-mcp-ra2-2026",
       "job-hku-ai-agents-aec-ra-2026",
       "predoc-mit-futuretech-ai-econ-2026",
-      "shih-hsin-finance-2026-il"
+      "shih-hsin-finance-2026-il",
+      "cav-2027-hardware-splicer",
+      "satc-2027-hardware-splicer",
+      "atax-2027-fiscal-choke-points",
+      "ipsa-2027-rc30-fiscal-choke-points",
+      "icpp8-2027-fiscal-choke-points",
+      "sase-2027-invisible-ledger",
+      "irspm-2027-fiscal-choke-points",
+      "ata-jltr-2027-fiscal-choke-points",
+      "journal-regulation-governance-fiscal-choke-points",
+      "journal-world-tax-journal-fiscal-choke-points",
+      "journal-ejtr-fiscal-choke-points",
+      "journal-jcpa-fiscal-choke-points",
+      "journal-ecra-invisible-ledger",
+      "kemenkeu-cfp-2027-fiscal-choke-points-watch",
+      "atta-2027-fiscal-choke-points"
     ],
     "automatic_queue_excluded_assets": [
       "nocturnal-oversight"
     ],
-    "automatic_queue_exclusion_note": "Named routes remain available for explicit audit/history but do not consume the automatic execution queue while the applicant has paused them. MIT FutureTech is excluded because the applicant explicitly declined Cambridge relocation and does not hold current U.S. work authorization.",
+    "automatic_queue_exclusion_note": "Named routes remain available for explicit audit/history but do not consume the automatic execution queue while the applicant has paused them. MIT FutureTech is excluded because the applicant explicitly declined Cambridge relocation and does not hold current U.S. work authorization. October 8: conference and publication campaigns deferred while employment and funding are prioritized; ATTA owner-closed for attendance cost.",
     "named_route_audit_allowed": true,
     "automatic_drafting_allowed": true,
     "drafting_boundary": "Evidence-bounded CVs, letters, essays, proposals and research lists may be generated without treating them as submission authority. Formal records, eligibility facts, personal commitments and protected portal actions remain gated.",
@@ -46,6 +61,22 @@
         "moe-taiwan-scholarship-2027"
       ],
       "also_excluded_reason": "PhD funding that only applies after a PhD admission."
+    },
+    "post_master_campaign_focus": {
+      "on": "2026-10-08",
+      "source": "Direct user instruction: ATTA too costly; prioritize non-academic jobs and funding after masters.",
+      "primary": "Paid employment in Taiwan or genuine Taiwan-compatible remote work",
+      "secondary": "Cash project grants and paid pilots",
+      "cost_offsets": "Provider API/cloud credits; not living-cost income",
+      "deferred_route_classes": [
+        "CONFERENCE",
+        "JOURNAL",
+        "RESEARCH_PUBLICATION"
+      ],
+      "academic_employer_note": "Paid research-engineering roles remain job candidates; do not confuse paid work with publication or attendance campaigns.",
+      "graduation_expected": "2027-01",
+      "preferred_full_time_start": "2027-03",
+      "travel_budget_note": "No paid overseas attendance assumed; ATTA closed this cycle."
     }
   },
   "independent_review": {

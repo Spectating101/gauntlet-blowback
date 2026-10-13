@@ -1,11 +1,11 @@
 {
   "id": "openai-researcher-access-hardware-splicer",
-  "name": "OpenAI Researcher Access Program — Hardware-Splicer",
+  "name": "OpenAI Researcher Access Program \u2014 Hardware-Splicer",
   "portal": "generic",
   "portal_family": "research_access",
   "auth_scope": "openai-researcher-access",
-  "source_url": "https://grants.openai.com/prog/openai_researcher_access_program/",
-  "registration_url": "https://grants.openai.com/prog/272885/apply/?next=/prog/openai_researcher_access_program/",
+  "source_url": "https://openai.smapply.org/prog/openai_researcher_access_program/",
+  "registration_url": "https://openai.smapply.org/prog/272885/apply/?next=/prog/openai_researcher_access_program/",
   "recon_stage": "registration",
   "mode": "inspect",
   "execution_state": "PORTAL_RECON_REQUIRED",
@@ -48,7 +48,7 @@
     },
     {
       "id": "project_window",
-      "description": "Use an 8–12 week execution window beginning after award/credit activation; exact dates remain award-timing dependent.",
+      "description": "Use an 8\u201312 week execution window beginning after award/credit activation; exact dates remain award-timing dependent.",
       "status": "LIVE_FORM_VALUE_REQUIRED"
     },
     {
@@ -66,14 +66,25 @@
     "Request only a workload-derived amount of credits rather than defaulting to the program maximum."
   ],
   "route_evidence": {
-    "verified_at": "2026-09-16",
+    "verified_at": "2026-10-08",
     "eligibility_mechanics_verified": true,
     "source_and_program_mechanics_verified": true,
     "model_and_pricing_snapshot_verified": true,
     "final_submission_copy_ready": true,
     "registration_endpoint_verified": true,
     "login_gate_observed": true,
-    "form_fields_verified": false
+    "form_fields_verified": false,
+    "supported_country_verified_at": "2026-10-08",
+    "pricing_reverification_ref": "docs/OPENAI_RESEARCH_ACCESS_PREFLIGHT_2026-10-08.md",
+    "public_model_ids": [
+      "gpt-5.6-sol",
+      "gpt-5.6-terra"
+    ]
   },
-  "human_required": ["login", "eligibility_attestation", "terms_acceptance", "final_submit"]
+  "human_required": [
+    "login",
+    "eligibility_attestation",
+    "terms_acceptance",
+    "final_submit"
+  ]
 }

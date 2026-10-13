@@ -1,7 +1,7 @@
 {
   "schema": "blowback.archived_routes.v1",
   "as_of": "2026-09-30",
-  "purpose": "Routes the applicant has closed out. On 2026-09-30, after submitting NYCU IAIS and NTHU, the applicant made no further PhD applications. Records are kept for audit; nothing here is scheduled or queued.",
+  "purpose": "Owner-closed routes are retained for audit and removed from the active master, execution queue and calendar. Includes September 30 PhD closure and October 8 ATTA travel-budget decision.",
   "policy": {
     "active_master_excludes_archived_routes": true,
     "source_records_are_preserved": true,
@@ -148,6 +148,13 @@
       "id": "faculty-hkust-jieyu-zhao-2027",
       "final_status": "CLOSED_BY_APPLICANT",
       "reason": "The applicant is making no further PhD applications."
+    },
+    {
+      "id": "atta-2027-fiscal-choke-points",
+      "final_status": "CLOSED_BY_APPLICANT",
+      "closed_on": "2026-10-08",
+      "reason": "Applicant declined ATTA for this cycle on 2026-10-08 because Melbourne attendance and travel would cost too much relative to expected value. Current focus is post-master employment and funding."
     }
-  ]
+  ],
+  "updated_on": "2026-10-08"
 }
