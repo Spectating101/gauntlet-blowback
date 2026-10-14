@@ -173,3 +173,14 @@ test('a manifest marked manual_only never becomes a browser handoff', async () =
   };
   await assert.rejects(buildFireHandoff(record), /manual-only/);
 });
+
+test('the browser contract carries the human gates the manifest declares, not just the built-in list', async () => {
+  const file = 'examples/opportunities/openai-researcher-access-hardware-splicer.json';
+  const manifest = JSON.parse(fs.readFileSync(file, 'utf8'));
+  const record = { id: manifest.id, status: 'FIRE_NOW', execution_manifest: file, deadline: '2099-01-01', organization: 'test', opportunity: 'test' };
+  const handoff = await buildFireHandoff(record);
+  const gates = handoff.browser_agent_contract.human_gate;
+  for (const gate of manifest.human_required) assert.ok(gates.includes(gate), gate);
+  assert.ok(gates.includes('final_submit_send_apply_confirm'));
+  assert.equal(new Set(gates).size, gates.length, 'no duplicates');
+});

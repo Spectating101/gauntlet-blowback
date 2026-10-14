@@ -246,7 +246,8 @@ export async function buildFireHandoff(record, checkpoint = null, options = {}) 
       objective: 'Open the live route, inspect the current form, map the prepared copy to the real fields, complete all safe reversible work, save a draft when possible, and stop at protected commitment gates.',
       auto: mission.permissions.auto,
       resolve_before_asking: mission.permissions.resolve_before_asking,
-      human_gate: mission.permissions.human_gate,
+      // Gates the manifest itself declares (eligibility attestations, organisation ids...) must reach the agent too.
+      human_gate: [...new Set([...mission.permissions.human_gate, ...asStringArray(opportunity?.human_required, 'human_required')])],
       forbidden: mission.permissions.forbidden,
       final_submit_policy: 'HUMAN_PROTECTED',
       do_not_redesign_copy_unless_live_field_limits_require_compression: true,
