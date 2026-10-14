@@ -1,4 +1,4 @@
-import { protectedCommitmentReason, protectedFieldReason } from './guard.mjs';
+import { protectedCommitmentReason, protectedInputReason } from './guard.mjs';
 
 function locatorFor(page, spec) {
   if (spec.role) return page.getByRole(spec.role, { name: spec.name, exact: spec.exact ?? false });
@@ -27,7 +27,7 @@ export const genericAdapter = {
       if (!spec) { actions.push({ name, status: 'skipped_unmapped' }); continue; }
       const protectedReason = spec.action === 'check'
         ? protectedCommitmentReason(name, spec)
-        : protectedFieldReason(name, spec);
+        : protectedInputReason(name, spec);
       if (protectedReason) {
         actions.push({ name, status: 'skipped_protected', reason: protectedReason });
         continue;

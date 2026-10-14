@@ -101,7 +101,7 @@ function verificationDate(opportunity) {
   return null;
 }
 
-export function automaticBundlePreflight(opportunity, asOf = new Date(), firePacket = null) {
+export function automaticBundlePreflight(opportunity, asOf = new Date(), firePacket = null, bundle = null) {
   const asOfDate = toDate(asOf, 'FIRE preflight date');
   const verifiedAt = verificationDate(opportunity);
   const reasons = [];
@@ -113,6 +113,9 @@ export function automaticBundlePreflight(opportunity, asOf = new Date(), firePac
     else if (opportunity.final_copy_revision && firePacket.source_revision !== opportunity.final_copy_revision) {
       reasons.push('final_copy_revision_mismatch_with_fire_packet');
     }
+  }
+  for (const upload of bundle?.uploads ?? []) {
+    if (upload?.path && !fs.existsSync(upload.path)) reasons.push(`upload_file_missing:${upload.name}`);
   }
   let sourceAgeDays = null;
   if (verifiedAt) {
@@ -136,6 +139,7 @@ async function loadExecutionBundle(record, { automatic = false, asOf = new Date(
   const manifestPath = withinRoot(path.join(ROOT, record.execution_manifest));
   const opportunity = await loadOpportunity(manifestPath);
   assertOpportunity(opportunity);
+  if (opportunity.manual_only === true) throw new Error(`execution manifest is manual-only; no browser handoff: ${record.id}`);
   if (opportunity.id !== record.id) {
     throw new Error(`execution manifest id mismatch: master=${record.id} manifest=${opportunity.id}`);
   }
@@ -155,7 +159,7 @@ async function loadExecutionBundle(record, { automatic = false, asOf = new Date(
     throw new Error(`fire packet copy missing or empty: ${record.id}`);
   }
 
-  const preflight = automaticBundlePreflight(opportunity, asOf, firePacket);
+  const preflight = automaticBundlePreflight(opportunity, asOf, firePacket, bundle);
   if (!preflight.canonical_packet_revision) throw new Error(`canonical packet revision missing: ${record.id}`);
   if (!preflight.final_copy_revision) throw new Error(`final copy revision missing: ${record.id}`);
   if (automatic && !preflight.ready) {

@@ -1,4 +1,4 @@
-import { protectedCommitmentReason, protectedFieldReason } from './guard.mjs';
+import { protectedCommitmentReason, protectedInputReason } from './guard.mjs';
 
 function locatorFor(page, spec) {
   if (spec.role) return page.getByRole(spec.role, { name: spec.name, exact: spec.exact ?? false });
@@ -64,7 +64,7 @@ export const recipeAdapter = {
       const locator = locatorFor(page, step.locator);
 
       if (step.action === 'fill') {
-        const protectedReason = protectedFieldReason(step.field ?? id, step.locator);
+        const protectedReason = protectedInputReason(step.field ?? id, step.locator);
         if (protectedReason) {
           actions.push({ id, action: 'fill', status: 'skipped_protected', reason: protectedReason });
           continue;
@@ -76,7 +76,7 @@ export const recipeAdapter = {
       }
 
       if (step.action === 'select') {
-        const protectedReason = protectedFieldReason(step.field ?? id, step.locator);
+        const protectedReason = protectedInputReason(step.field ?? id, step.locator);
         if (protectedReason) {
           actions.push({ id, action: 'select', status: 'skipped_protected', reason: protectedReason });
           continue;
@@ -101,7 +101,13 @@ export const recipeAdapter = {
       }
 
       if (step.action === 'upload') {
-        await locator.setInputFiles(requireUpload(bundle, step).path);
+        const upload = requireUpload(bundle, step);
+        const gate = step.human_gate || upload.human_gate || bundle.opportunity.upload_map?.[step.upload]?.human_gate;
+        if (gate) {
+          actions.push({ id, action: 'upload', status: 'upload_skipped_human_gate', reason: `human_gate:${gate}`, upload: step.upload });
+          continue;
+        }
+        await locator.setInputFiles(upload.path);
         await waitAfter(page, step);
         actions.push({ id, action: 'upload', status: 'uploaded', upload: step.upload });
         continue;
