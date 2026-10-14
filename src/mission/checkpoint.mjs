@@ -15,7 +15,8 @@ function ensureStringArray(value, key) {
   return value;
 }
 
-const SECRET_URL_PARAM = /[?&#;][\w.-]*(?:password|passcode|otp|secret|api_?key|access_?key|token|session_?(?:id|key))[\w.-]*=[^&#\s]+/i;
+const SECRET_PARAM_NAME = /(?:^|[._-])(?:password|passcode|passwd|otp|secret|signature|api[_-]?key|access[_-]?key|(?:access|refresh|id|auth|bearer|session)?[_-]?token|session[_-]?(?:id|key))(?:$|[._-])/i;
+const SECRET_KEY_NAME = /(?:^|_)(?:password|passcode|passwd|otp|2fa|cvv|card_number|credit_card|secret|api_key|apikey|access_key|private_key|session_key|token)(?:_value|_key|_code|_hash|_text)?$/;
 const SAFE_ID = /^[A-Za-z0-9_][A-Za-z0-9._-]*$/;
 
 export function assertSafeId(value, label) {
@@ -25,15 +26,33 @@ export function assertSafeId(value, label) {
   return value;
 }
 
+// Credentials hide in URLs: query/fragment parameters (also inside percent-encoded redirect
+// targets) and user:password@ userinfo. Parameter NAMES are matched as whole words so that
+// ordinary parameters such as rootpath or max_tokens are not mistaken for secrets.
+function holdsSecretUrlParam(text) {
+  const candidates = [text];
+  try {
+    const decoded = decodeURIComponent(text);
+    if (decoded !== text) candidates.push(decoded);
+  } catch {
+    // not percent-encoded; the raw text is enough
+  }
+  return candidates.some((candidate) => (
+    /\/\/[^/\s:@]+:[^/\s@]+@/.test(candidate)
+    || [...candidate.matchAll(/[?&#]([\w.%[\]-]+)=/g)].some((match) => SECRET_PARAM_NAME.test(match[1]))
+  ));
+}
+
 export function assertNoSecretKeys(value, trail = '') {
   if (!value || typeof value !== 'object') return;
   for (const [key, child] of Object.entries(value)) {
     const full = trail ? `${trail}.${key}` : key;
-    if (/(password|passcode|otp|2fa|cvv|card_number|credit_card|secret|api_key|token)$/i.test(key)) {
+    const normalised = key.replace(/([a-z0-9])([A-Z])/g, '$1_$2').replace(/-/g, '_').toLowerCase();
+    if (SECRET_KEY_NAME.test(normalised)) {
       throw new Error(`checkpoint may not store secrets: ${full}`);
     }
     // Values count too: magic links and OAuth redirects carry secrets in query strings.
-    if (typeof child === 'string' && SECRET_URL_PARAM.test(child)) {
+    if (typeof child === 'string' && holdsSecretUrlParam(child)) {
       throw new Error(`checkpoint may not store secrets: ${full} holds a secret-looking URL parameter`);
     }
     assertNoSecretKeys(child, full);
@@ -44,9 +63,9 @@ export function validateCheckpoint(raw) {
   if (!raw || typeof raw !== 'object') throw new Error('checkpoint object required');
   if (!raw.route_id || typeof raw.route_id !== 'string') throw new Error('checkpoint route_id required');
   assertSafeId(raw.route_id, 'checkpoint route_id');
-  if (!raw.mission_id || typeof raw.mission_id !== 'string') throw new Error('checkpoint mission_id required');
+  if (!raw.mission_id || typeof raw.mission_id !== 'string' || !raw.mission_id.trim()) throw new Error('checkpoint mission_id required');
   if (!ALLOWED_STATUS.has(raw.status)) throw new Error(`unsupported checkpoint status: ${raw.status}`);
-  if (!raw.stage || typeof raw.stage !== 'string') throw new Error('checkpoint stage required');
+  if (!raw.stage || typeof raw.stage !== 'string' || !raw.stage.trim()) throw new Error('checkpoint stage required');
   assertNoSecretKeys(raw);
 
   return {

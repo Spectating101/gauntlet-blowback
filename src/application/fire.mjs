@@ -26,14 +26,11 @@ function withinRoot(file) {
   if (!inside(ROOT, resolved)) {
     throw new Error(`path escapes repository root: ${file}`);
   }
-  // A symlink inside the repo can still point outside it.
-  let real = resolved;
-  try {
-    real = fs.realpathSync(resolved);
-  } catch {
-    return resolved;
-  }
-  if (!inside(fs.realpathSync(ROOT), real)) {
+  // A symlink inside the repo can still point outside it, including through a parent
+  // directory when the leaf does not exist yet: check the deepest existing ancestor.
+  let probe = resolved;
+  while (!fs.existsSync(probe) && probe !== path.dirname(probe)) probe = path.dirname(probe);
+  if (!inside(fs.realpathSync(ROOT), fs.realpathSync(probe))) {
     throw new Error(`path escapes repository root via symlink: ${file}`);
   }
   return resolved;
@@ -45,9 +42,22 @@ function optionalString(value, key) {
   return value.trim() === '' ? null : value;
 }
 
+function toDate(value, label) {
+  // new Date(null), new Date(false) and new Date([]) quietly become 1970 or a real date.
+  const plain = value instanceof Date || typeof value === 'string' || typeof value === 'number';
+  const date = plain ? (value instanceof Date ? value : new Date(value)) : null;
+  if (!date || Number.isNaN(date.getTime())) throw new Error(`invalid ${label}: ${String(value)}`);
+  return date;
+}
+
 function assertValidAsOf(asOf) {
-  const date = asOf instanceof Date ? asOf : new Date(asOf);
-  if (Number.isNaN(date.getTime())) throw new Error(`invalid asOf date: ${asOf}`);
+  toDate(asOf, 'asOf date');
+}
+
+function optionalTimestamp(value, key) {
+  const text = optionalString(value, key);
+  if (text === null) return null;
+  return toDate(text, key).toISOString();
 }
 
 function asStringArray(value, key) {
@@ -81,7 +91,7 @@ function verificationDate(opportunity) {
     'live_form_reverified',
   ]) {
     const value = evidence[key];
-    if (typeof value === 'string' && /^\d{4}-\d{2}-\d{2}/.test(value)) {
+    if (typeof value === 'string' && /^\d{4}-\d{2}-\d{2}(?:[T ]|$)/.test(value)) {
       const day = value.slice(0, 10);
       const parsed = new Date(`${day}T00:00:00Z`);
       // Reject shapes like 2026-13-01 that look like dates but are not.
@@ -92,21 +102,21 @@ function verificationDate(opportunity) {
 }
 
 export function automaticBundlePreflight(opportunity, asOf = new Date(), firePacket = null) {
-  const asOfDate = asOf instanceof Date ? asOf : new Date(asOf);
-  if (Number.isNaN(asOfDate.getTime())) throw new Error(`invalid FIRE preflight date: ${asOf}`);
+  const asOfDate = toDate(asOf, 'FIRE preflight date');
   const verifiedAt = verificationDate(opportunity);
   const reasons = [];
   if (!opportunity.packet_revision) reasons.push('canonical_packet_revision_missing');
   if (!opportunity.final_copy_revision) reasons.push('final_copy_revision_missing');
   if (!verifiedAt) reasons.push('official_source_verification_missing');
-  if (firePacket?.source_revision && opportunity.final_copy_revision
-    && firePacket.source_revision !== opportunity.final_copy_revision) {
-    reasons.push('final_copy_revision_mismatch_with_fire_packet');
+  if (firePacket) {
+    if (!firePacket.source_revision) reasons.push('fire_packet_source_revision_missing');
+    else if (opportunity.final_copy_revision && firePacket.source_revision !== opportunity.final_copy_revision) {
+      reasons.push('final_copy_revision_mismatch_with_fire_packet');
+    }
   }
   let sourceAgeDays = null;
   if (verifiedAt) {
     sourceAgeDays = Math.floor((asOfDate.getTime() - Date.parse(`${verifiedAt}T00:00:00Z`)) / 86_400_000);
-    if (!Number.isFinite(sourceAgeDays)) reasons.push('official_source_verification_date_unreadable');
     if (sourceAgeDays < -1) reasons.push('official_source_verification_is_future_dated');
     if (sourceAgeDays > MAX_AUTOMATIC_SOURCE_AGE_DAYS) reasons.push('official_source_verification_stale');
   }
@@ -141,7 +151,7 @@ async function loadExecutionBundle(record, { automatic = false, asOf = new Date(
   if (firePacket?.schema !== 'blowback.fire_packet.v1') throw new Error(`unsupported fire packet schema: ${firePacket?.schema ?? '(missing)'}`);
   if (firePacket.route_id !== record.id) throw new Error(`fire packet route mismatch: master=${record.id} packet=${firePacket.route_id}`);
   if (!firePacket.copy || typeof firePacket.copy !== 'object' || Array.isArray(firePacket.copy)
-    || Object.keys(firePacket.copy).length === 0) {
+    || !Object.values(firePacket.copy).some((v) => v != null && String(v).trim() !== '')) {
     throw new Error(`fire packet copy missing or empty: ${record.id}`);
   }
 
@@ -180,6 +190,8 @@ function receiptTemplate(mission, routes, opportunity) {
 }
 
 export async function buildFireHandoff(record, checkpoint = null, options = {}) {
+  // Fail now, not after the browser agent has finished and its receipt is rejected.
+  assertSafeId(record?.id, 'route id');
   const { opportunity, bundle, firePacket, manifestPath, firePacketPath, preflight } = await loadExecutionBundle(record, options);
   const mission = buildBrowserMission(record, checkpoint);
   const routes = resolveRouteUrls(opportunity);
@@ -320,14 +332,14 @@ export function validateFireReceipt(raw) {
   if (raw.schema && raw.schema !== 'blowback.fire_receipt.v1') throw new Error(`unsupported fire receipt schema: ${raw.schema}`);
   if (!raw.route_id || typeof raw.route_id !== 'string') throw new Error('fire receipt route_id required');
   assertSafeId(raw.route_id, 'fire receipt route_id');
-  if (!raw.mission_id || typeof raw.mission_id !== 'string') throw new Error('fire receipt mission_id required');
+  if (!raw.mission_id || typeof raw.mission_id !== 'string' || !raw.mission_id.trim()) throw new Error('fire receipt mission_id required');
   if (!RECEIPT_STATUSES.has(raw.status)) throw new Error(`unsupported fire receipt status: ${raw.status}`);
-  if (!raw.stage || typeof raw.stage !== 'string') throw new Error('fire receipt stage required');
+  if (!raw.stage || typeof raw.stage !== 'string' || !raw.stage.trim()) throw new Error('fire receipt stage required');
   assertNoSecretKeys(raw);
 
-  const submittedAt = optionalString(raw.submitted_at, 'submitted_at');
+  const submittedAt = optionalTimestamp(raw.submitted_at, 'submitted_at');
   const applicationId = optionalString(raw.application_id, 'application_id');
-  const observedAt = optionalString(raw.observed_at, 'observed_at');
+  const observedAt = optionalTimestamp(raw.observed_at, 'observed_at');
   const receiptRefs = asStringArray(raw.receipt_refs, 'receipt_refs').filter((ref) => ref.trim() !== '');
 
   if (raw.status === 'SUBMITTED' && !submittedAt) throw new Error('submitted fire receipt requires submitted_at');
