@@ -15,12 +15,26 @@ function ensureStringArray(value, key) {
   return value;
 }
 
+const SECRET_URL_PARAM = /[?&#;][\w.-]*(?:password|passcode|otp|secret|api_?key|access_?key|token|session_?(?:id|key))[\w.-]*=[^&#\s]+/i;
+const SAFE_ID = /^[A-Za-z0-9_][A-Za-z0-9._-]*$/;
+
+export function assertSafeId(value, label) {
+  if (typeof value !== 'string' || !SAFE_ID.test(value) || value.includes('..')) {
+    throw new Error(`${label} must be a plain identifier (letters, digits, dot, dash, underscore): ${JSON.stringify(value)}`);
+  }
+  return value;
+}
+
 export function assertNoSecretKeys(value, trail = '') {
   if (!value || typeof value !== 'object') return;
   for (const [key, child] of Object.entries(value)) {
     const full = trail ? `${trail}.${key}` : key;
     if (/(password|passcode|otp|2fa|cvv|card_number|credit_card|secret|api_key|token)$/i.test(key)) {
       throw new Error(`checkpoint may not store secrets: ${full}`);
+    }
+    // Values count too: magic links and OAuth redirects carry secrets in query strings.
+    if (typeof child === 'string' && SECRET_URL_PARAM.test(child)) {
+      throw new Error(`checkpoint may not store secrets: ${full} holds a secret-looking URL parameter`);
     }
     assertNoSecretKeys(child, full);
   }
@@ -29,6 +43,7 @@ export function assertNoSecretKeys(value, trail = '') {
 export function validateCheckpoint(raw) {
   if (!raw || typeof raw !== 'object') throw new Error('checkpoint object required');
   if (!raw.route_id || typeof raw.route_id !== 'string') throw new Error('checkpoint route_id required');
+  assertSafeId(raw.route_id, 'checkpoint route_id');
   if (!raw.mission_id || typeof raw.mission_id !== 'string') throw new Error('checkpoint mission_id required');
   if (!ALLOWED_STATUS.has(raw.status)) throw new Error(`unsupported checkpoint status: ${raw.status}`);
   if (!raw.stage || typeof raw.stage !== 'string') throw new Error('checkpoint stage required');

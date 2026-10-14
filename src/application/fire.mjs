@@ -7,7 +7,7 @@ import { assertOpportunity } from '../core/validate.mjs';
 import { resolveBundle } from '../core/resolve.mjs';
 import { resolveRouteUrls } from '../core/routes.mjs';
 import { buildBrowserMission, rankGauntlet } from '../mission/operator.mjs';
-import { assertNoSecretKeys, persistCheckpoint } from '../mission/checkpoint.mjs';
+import { assertNoSecretKeys, assertSafeId, persistCheckpoint } from '../mission/checkpoint.mjs';
 import { automaticQueueExclusionReasons } from '../allocation/submission-readiness.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -17,12 +17,37 @@ const FIRE_STATUS = /^(PORTAL_READY|FIRE_NOW|PRIMARY_FIRE|FIRE)$/i;
 const RECEIPT_STATUSES = new Set(['IN_PROGRESS', 'WAITING_HUMAN', 'SAFE_COMPLETE', 'SUBMITTED', 'BLOCKED', 'ABANDONED', 'EXPIRED']);
 const MAX_AUTOMATIC_SOURCE_AGE_DAYS = 14;
 
+function inside(root, candidate) {
+  return candidate === root || candidate.startsWith(`${root}${path.sep}`);
+}
+
 function withinRoot(file) {
   const resolved = path.resolve(file);
-  if (resolved !== ROOT && !resolved.startsWith(`${ROOT}${path.sep}`)) {
+  if (!inside(ROOT, resolved)) {
     throw new Error(`path escapes repository root: ${file}`);
   }
+  // A symlink inside the repo can still point outside it.
+  let real = resolved;
+  try {
+    real = fs.realpathSync(resolved);
+  } catch {
+    return resolved;
+  }
+  if (!inside(fs.realpathSync(ROOT), real)) {
+    throw new Error(`path escapes repository root via symlink: ${file}`);
+  }
   return resolved;
+}
+
+function optionalString(value, key) {
+  if (value == null) return null;
+  if (typeof value !== 'string') throw new Error(`${key} must be a string`);
+  return value.trim() === '' ? null : value;
+}
+
+function assertValidAsOf(asOf) {
+  const date = asOf instanceof Date ? asOf : new Date(asOf);
+  if (Number.isNaN(date.getTime())) throw new Error(`invalid asOf date: ${asOf}`);
 }
 
 function asStringArray(value, key) {
@@ -56,12 +81,17 @@ function verificationDate(opportunity) {
     'live_form_reverified',
   ]) {
     const value = evidence[key];
-    if (typeof value === 'string' && /^\d{4}-\d{2}-\d{2}/.test(value)) return value.slice(0, 10);
+    if (typeof value === 'string' && /^\d{4}-\d{2}-\d{2}/.test(value)) {
+      const day = value.slice(0, 10);
+      const parsed = new Date(`${day}T00:00:00Z`);
+      // Reject shapes like 2026-13-01 that look like dates but are not.
+      if (!Number.isNaN(parsed.getTime()) && parsed.toISOString().slice(0, 10) === day) return day;
+    }
   }
   return null;
 }
 
-function automaticBundlePreflight(opportunity, asOf = new Date()) {
+export function automaticBundlePreflight(opportunity, asOf = new Date(), firePacket = null) {
   const asOfDate = asOf instanceof Date ? asOf : new Date(asOf);
   if (Number.isNaN(asOfDate.getTime())) throw new Error(`invalid FIRE preflight date: ${asOf}`);
   const verifiedAt = verificationDate(opportunity);
@@ -69,9 +99,14 @@ function automaticBundlePreflight(opportunity, asOf = new Date()) {
   if (!opportunity.packet_revision) reasons.push('canonical_packet_revision_missing');
   if (!opportunity.final_copy_revision) reasons.push('final_copy_revision_missing');
   if (!verifiedAt) reasons.push('official_source_verification_missing');
+  if (firePacket?.source_revision && opportunity.final_copy_revision
+    && firePacket.source_revision !== opportunity.final_copy_revision) {
+    reasons.push('final_copy_revision_mismatch_with_fire_packet');
+  }
   let sourceAgeDays = null;
   if (verifiedAt) {
     sourceAgeDays = Math.floor((asOfDate.getTime() - Date.parse(`${verifiedAt}T00:00:00Z`)) / 86_400_000);
+    if (!Number.isFinite(sourceAgeDays)) reasons.push('official_source_verification_date_unreadable');
     if (sourceAgeDays < -1) reasons.push('official_source_verification_is_future_dated');
     if (sourceAgeDays > MAX_AUTOMATIC_SOURCE_AGE_DAYS) reasons.push('official_source_verification_stale');
   }
@@ -105,9 +140,12 @@ async function loadExecutionBundle(record, { automatic = false, asOf = new Date(
   const firePacket = await loadStructured(firePacketPath);
   if (firePacket?.schema !== 'blowback.fire_packet.v1') throw new Error(`unsupported fire packet schema: ${firePacket?.schema ?? '(missing)'}`);
   if (firePacket.route_id !== record.id) throw new Error(`fire packet route mismatch: master=${record.id} packet=${firePacket.route_id}`);
-  if (!firePacket.copy || typeof firePacket.copy !== 'object') throw new Error(`fire packet copy missing: ${record.id}`);
+  if (!firePacket.copy || typeof firePacket.copy !== 'object' || Array.isArray(firePacket.copy)
+    || Object.keys(firePacket.copy).length === 0) {
+    throw new Error(`fire packet copy missing or empty: ${record.id}`);
+  }
 
-  const preflight = automaticBundlePreflight(opportunity, asOf);
+  const preflight = automaticBundlePreflight(opportunity, asOf, firePacket);
   if (!preflight.canonical_packet_revision) throw new Error(`canonical packet revision missing: ${record.id}`);
   if (!preflight.final_copy_revision) throw new Error(`final copy revision missing: ${record.id}`);
   if (automatic && !preflight.ready) {
@@ -178,7 +216,7 @@ export async function buildFireHandoff(record, checkpoint = null, options = {}) 
       canonical_packet_source: opportunity.packet_source ?? null,
       canonical_packet_revision: opportunity.packet_revision ?? null,
       final_copy_source: opportunity.final_copy_source ?? firePacket.source_url ?? null,
-      final_copy_revision: opportunity.final_copy_revision ?? firePacket.source_revision ?? null,
+      final_copy_revision: opportunity.final_copy_revision ?? null,
     },
     execution_preflight: preflight,
     live_portal_state: {
@@ -222,6 +260,7 @@ export async function fireHandoffForRoute(routeId, records = buildMasterRegistry
 }
 
 export async function nextFireHandoff(records = buildMasterRegistry(), { asOf = new Date(), includePaused = false, campaignScope = false } = {}) {
+  assertValidAsOf(asOf);
   const ranked = rankGauntlet(records, {
     asOf,
     includePaused,
@@ -242,6 +281,7 @@ export async function nextFireHandoff(records = buildMasterRegistry(), { asOf = 
 }
 
 export async function fireHandoffQueue(records = buildMasterRegistry(), { limit = 10, asOf = new Date(), includePaused = false, campaignScope = false } = {}) {
+  assertValidAsOf(asOf);
   const ranked = rankGauntlet(records, {
     asOf,
     includePaused,
@@ -279,13 +319,19 @@ export function validateFireReceipt(raw) {
   if (!raw || typeof raw !== 'object') throw new Error('fire receipt object required');
   if (raw.schema && raw.schema !== 'blowback.fire_receipt.v1') throw new Error(`unsupported fire receipt schema: ${raw.schema}`);
   if (!raw.route_id || typeof raw.route_id !== 'string') throw new Error('fire receipt route_id required');
+  assertSafeId(raw.route_id, 'fire receipt route_id');
   if (!raw.mission_id || typeof raw.mission_id !== 'string') throw new Error('fire receipt mission_id required');
   if (!RECEIPT_STATUSES.has(raw.status)) throw new Error(`unsupported fire receipt status: ${raw.status}`);
   if (!raw.stage || typeof raw.stage !== 'string') throw new Error('fire receipt stage required');
   assertNoSecretKeys(raw);
 
-  if (raw.status === 'SUBMITTED' && !raw.submitted_at) throw new Error('submitted fire receipt requires submitted_at');
-  if (raw.status === 'SUBMITTED' && !raw.application_id && !(raw.receipt_refs?.length > 0)) {
+  const submittedAt = optionalString(raw.submitted_at, 'submitted_at');
+  const applicationId = optionalString(raw.application_id, 'application_id');
+  const observedAt = optionalString(raw.observed_at, 'observed_at');
+  const receiptRefs = asStringArray(raw.receipt_refs, 'receipt_refs').filter((ref) => ref.trim() !== '');
+
+  if (raw.status === 'SUBMITTED' && !submittedAt) throw new Error('submitted fire receipt requires submitted_at');
+  if (raw.status === 'SUBMITTED' && !applicationId && receiptRefs.length === 0) {
     throw new Error('submitted fire receipt requires application_id or receipt_refs');
   }
 
@@ -295,18 +341,18 @@ export function validateFireReceipt(raw) {
     route_id: raw.route_id,
     status: raw.status,
     stage: raw.stage,
-    current_url: raw.current_url ?? null,
+    current_url: optionalString(raw.current_url, 'current_url'),
     visited_urls: asStringArray(raw.visited_urls, 'visited_urls'),
     completed_actions: asStringArray(raw.completed_actions, 'completed_actions'),
     unresolved_items: asStringArray(raw.unresolved_items, 'unresolved_items'),
     human_required: asStringArray(raw.human_required, 'human_required'),
-    receipt_refs: asStringArray(raw.receipt_refs, 'receipt_refs'),
-    application_id: raw.application_id ?? null,
-    submitted_at: raw.submitted_at ?? null,
-    next_expected_event: raw.next_expected_event ?? null,
+    receipt_refs: receiptRefs,
+    application_id: applicationId,
+    submitted_at: submittedAt,
+    next_expected_event: optionalString(raw.next_expected_event, 'next_expected_event'),
     resource_or_award_terms: raw.resource_or_award_terms ?? null,
-    note: raw.note ?? null,
-    observed_at: raw.observed_at ?? new Date().toISOString(),
+    note: optionalString(raw.note, 'note'),
+    observed_at: observedAt ?? new Date().toISOString(),
   };
 }
 
