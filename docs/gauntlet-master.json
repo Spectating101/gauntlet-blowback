@@ -28,9 +28,9 @@
     ]
   },
   "summary": {
-    "total": 197,
+    "total": 198,
     "lanes": {
-      "JOB": 68,
+      "JOB": 69,
       "RESEARCH": 36,
       "STUDENT_INFRASTRUCTURE": 15,
       "APPLY": 12,
@@ -57,7 +57,7 @@
       "RESEARCH_GRANT": 1
     },
     "route_classes": {
-      "JOB": 67,
+      "JOB": 68,
       "APPLY": 43,
       "STUDENT_BENEFIT": 12,
       "CONFERENCE": 7,
@@ -91,7 +91,7 @@
     "statuses": {
       "WATCH": 25,
       "VERIFY": 17,
-      "FIRE_AFTER_GATE": 15,
+      "FIRE_AFTER_GATE": 16,
       "WATCH_OWNER_DEFERRED_POST_MASTER_FOCUS": 14,
       "FIRE_NOW": 11,
       "STRETCH_FIRE": 11,
@@ -178,8 +178,8 @@
       "PORTAL_RECON_REQUIRED": 7,
       "APPLICATION_RECON_REQUIRED": 5,
       "APPLICATION_READY": 4,
+      "ATS_FORM": 4,
       "OUTREACH_READY": 4,
-      "ATS_FORM": 3,
       "BLOCKED_SOURCE_NOT_PUBLIC": 3,
       "PACKET_DEVELOPMENT_REQUIRED": 3,
       "PORTAL_MAPPED": 3,
@@ -4469,6 +4469,26 @@
       "source_state": "VERIFIED_2026-10-04",
       "source": "https://job-boards.greenhouse.io/aift/jobs/6206118004",
       "origin": "added 2026-10-14 from jobs wave 2"
+    },
+    {
+      "id": "contract-alignerr-indonesian-expert",
+      "lane": "JOB",
+      "organization": "Alignerr",
+      "opportunity": "Indonesian Language Expert: check AI-generated Indonesian for accuracy and naturalness; US$40-120/hour, 10-40 h/week, remote hourly contract",
+      "route_class": "JOB",
+      "assets": "Languages",
+      "contribution_view": "Native Indonesian plus strong written English; no degree or AI experience required. Uses the one skill no other route does.",
+      "status": "FIRE_AFTER_GATE",
+      "execution_state": "ATS_FORM",
+      "execution_manifest": "",
+      "deadline": "ROLLING",
+      "gate": "No residence restriction stated, but a remote contract for a foreign company may fall outside the student work permit: confirm with YZU international office before accepting work. Keep total under 20 h/week during semester.",
+      "shared_evidence_family": "",
+      "mutual_exclusion_group": "",
+      "parent_route": "",
+      "source_state": "VERIFIED_2026-10-14",
+      "source": "https://www.alignerr.com/en/jobs/0d4200ef-e969-42d0-a977-18211895fe67",
+      "origin": "added 2026-10-14 from Indonesian-language AI evaluation search"
     }
   ]
 }
