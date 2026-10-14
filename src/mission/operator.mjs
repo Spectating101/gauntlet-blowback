@@ -5,6 +5,7 @@ import { buildMasterRegistry } from '../../scripts/build-gauntlet-master.mjs';
 import { resolvePortfolioAllocation } from '../allocation/portfolio.mjs';
 import { routeInCampaignScope } from '../allocation/campaign-scope.mjs';
 import { isAutomaticQueueExcluded } from '../allocation/submission-readiness.mjs';
+import { isSafeId } from '../core/safe-id.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '../..');
@@ -107,6 +108,7 @@ export function currentCycleExpired(record, asOf = new Date()) {
 }
 
 function loadCheckpoint(routeId) {
+  if (!isSafeId(routeId)) return null;
   const file = path.join(STATE_DIR, `${routeId}.json`);
   if (!fs.existsSync(file)) return null;
   try {

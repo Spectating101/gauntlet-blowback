@@ -74,7 +74,6 @@ const ROUTE_ALIASES = new Map(Object.entries({
   'eu-info-integrity': 'watch-eu-information-integrity-consortium-2026',
   ssi: 'ssi-fellowship-2027-policy-lab',
   'sinica-der-nian': 'lab-sinica-der-nian-yang-ra-2026',
-  'usn-ai-audit': 'phd-usn-ai-auditing',
   'msr-technical': 'msr-2027-technical-refinery',
   'saner-tool': 'saner-2027-tool-demo-refinery',
   'saner-agentic': 'saner-2027-agentic-ai4se-refinery',

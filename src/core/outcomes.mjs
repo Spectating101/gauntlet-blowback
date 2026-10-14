@@ -19,7 +19,7 @@ export function normalizeOutcome(record) {
 
   if (normalized.compensation) {
     for (const key of ['currency', 'amount', 'period']) {
-      if (!normalized.compensation[key]) throw new Error(`compensation requires ${key}`);
+      if (normalized.compensation[key] == null || normalized.compensation[key] === '') throw new Error(`compensation requires ${key}`);
     }
   }
   return normalized;

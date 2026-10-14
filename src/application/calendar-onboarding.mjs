@@ -250,7 +250,15 @@ export function validateAccountCheckpoint(raw) {
   };
 }
 
+const EMAIL_ADDRESS = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/;
+
 export function persistAccountCheckpoint(raw, { accountDir = DEFAULT_ACCOUNT_DIR } = {}) {
+  // Account checkpoints hold state only; reject email addresses before anything is written.
+  for (const field of ['note', 'portal_url']) {
+    if (typeof raw?.[field] === 'string' && EMAIL_ADDRESS.test(raw[field])) {
+      throw new Error(`account checkpoint ${field} may not contain an email address`);
+    }
+  }
   const checkpoint = validateAccountCheckpoint(raw);
   fs.mkdirSync(accountDir, { recursive: true });
   const file = accountFile(accountDir, checkpoint.scope);

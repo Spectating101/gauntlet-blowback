@@ -22,8 +22,9 @@ export async function openBrowser(opportunity) {
   return {
     browser, context, page, statePath, authScope,
     async persistAuth() {
-      fs.mkdirSync(authDir, { recursive: true });
+      fs.mkdirSync(authDir, { recursive: true, mode: 0o700 });
       await context.storageState({ path: statePath });
+      fs.chmodSync(statePath, 0o600); // session cookies: owner only
     }
   };
 }

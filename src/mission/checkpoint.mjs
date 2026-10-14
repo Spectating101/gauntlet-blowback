@@ -1,6 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { assertSafeId } from '../core/safe-id.mjs';
+
+export { assertSafeId };
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '../..');
@@ -16,28 +19,37 @@ function ensureStringArray(value, key) {
 }
 
 const SECRET_PARAM_NAME = /(?:^|[._-])(?:password|passcode|passwd|otp|secret|signature|api[_-]?key|access[_-]?key|(?:access|refresh|id|auth|bearer|session)?[_-]?token|session[_-]?(?:id|key))(?:$|[._-])/i;
-const SECRET_KEY_NAME = /(?:^|_)(?:password|passcode|passwd|otp|2fa|cvv|card_number|credit_card|secret|api_key|apikey|access_key|private_key|session_key|token)(?:_value|_key|_code|_hash|_text)?$/;
-const SAFE_ID = /^[A-Za-z0-9_][A-Za-z0-9._-]*$/;
+const SECRET_KEY_NAME = /(?:^|_)(?:(?:password|passcode|passwd|secret|api_key|apikey|access_key|private_key|session_key|client_secret)s?|otp|2fa|cvv|card_number|credit_card|token|authorization|cookies?|bearer|jwt|credentials?)(?:_value|_key|_code|_hash|_text)?$/;
+// Well-known credential shapes, wherever they appear in free text.
+const SECRET_VALUE = /(?:\bBearer\s+[A-Za-z0-9._~+/=-]{16,}|\beyJ[A-Za-z0-9_-]{8,}\.eyJ[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}|\b(?:sk|pk|rk)-[A-Za-z0-9_-]{16,}|\bghp_[A-Za-z0-9]{20,}|\bgithub_pat_[A-Za-z0-9_]{20,}|\bAKIA[0-9A-Z]{16}\b|\bAIza[0-9A-Za-z_-]{30,}|\bxox[abprs]-[A-Za-z0-9-]{10,}|\b(?:password|passcode|passwd|otp|secret)\s*[:=]\s*\S{4,})/i;
 
-export function assertSafeId(value, label) {
-  if (typeof value !== 'string' || !SAFE_ID.test(value) || value.includes('..')) {
-    throw new Error(`${label} must be a plain identifier (letters, digits, dot, dash, underscore): ${JSON.stringify(value)}`);
+// Percent-decode up to three layers (redirect targets are often double-encoded) and tolerate
+// malformed sequences instead of giving up on the whole string.
+function decodeLayers(text) {
+  const layers = [text];
+  let current = text;
+  for (let i = 0; i < 3; i += 1) {
+    let next;
+    try {
+      next = decodeURIComponent(current);
+    } catch {
+      next = current.replace(/%([0-9A-Fa-f]{2})/g, (match, hex) => {
+        const code = Number.parseInt(hex, 16);
+        return code < 0x80 ? String.fromCharCode(code) : match;
+      });
+    }
+    if (next === current) break;
+    layers.push(next);
+    current = next;
   }
-  return value;
+  return layers;
 }
 
 // Credentials hide in URLs: query/fragment parameters (also inside percent-encoded redirect
 // targets) and user:password@ userinfo. Parameter NAMES are matched as whole words so that
 // ordinary parameters such as rootpath or max_tokens are not mistaken for secrets.
 function holdsSecretUrlParam(text) {
-  const candidates = [text];
-  try {
-    const decoded = decodeURIComponent(text);
-    if (decoded !== text) candidates.push(decoded);
-  } catch {
-    // not percent-encoded; the raw text is enough
-  }
-  return candidates.some((candidate) => (
+  return decodeLayers(text).some((candidate) => (
     /\/\/[^/\s:@]+:[^/\s@]+@/.test(candidate)
     || [...candidate.matchAll(/[?&#]([\w.%[\]-]+)=/g)].some((match) => SECRET_PARAM_NAME.test(match[1]))
   ));
@@ -54,6 +66,9 @@ export function assertNoSecretKeys(value, trail = '') {
     // Values count too: magic links and OAuth redirects carry secrets in query strings.
     if (typeof child === 'string' && holdsSecretUrlParam(child)) {
       throw new Error(`checkpoint may not store secrets: ${full} holds a secret-looking URL parameter`);
+    }
+    if (typeof child === 'string' && SECRET_VALUE.test(child)) {
+      throw new Error(`checkpoint may not store secrets: ${full} holds a secret-looking value`);
     }
     assertNoSecretKeys(child, full);
   }
