@@ -6,6 +6,7 @@ import { resolvePortfolioAllocation } from '../allocation/portfolio.mjs';
 import { routeInCampaignScope } from '../allocation/campaign-scope.mjs';
 import { isAutomaticQueueExcluded } from '../allocation/submission-readiness.mjs';
 import { isSafeId } from '../core/safe-id.mjs';
+import { deadlineExpired } from '../core/deadline.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '../..');
@@ -103,8 +104,8 @@ function currentDateKey(asOf = new Date()) {
 }
 
 export function currentCycleExpired(record, asOf = new Date()) {
-  const deadline = String(record?.deadline ?? '').match(/\d{4}-\d{2}-\d{2}/)?.[0];
-  return Boolean(deadline && deadline < currentDateKey(asOf));
+  currentDateKey(asOf); // validates asOf with the queue's own error message
+  return deadlineExpired(record?.deadline, asOf);
 }
 
 function loadCheckpoint(routeId) {

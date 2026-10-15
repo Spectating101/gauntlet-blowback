@@ -8,7 +8,7 @@ import json
 import re
 import sys
 from dataclasses import dataclass
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 
@@ -44,9 +44,25 @@ def load_routes(data):
     raise ValueError("master must be a JSON list of routes, or a dict containing one list")
 
 
+RANGE_RE = re.compile(r"^\s*(\d{4}-\d{2}-\d{2})\s*/\s*(\d{4}-\d{2}-\d{2})\s*$")
+INSTANT_RE = re.compile(r"^\s*\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(?::\d{2}(?:\.\d+)?)?(?:Z|[+-]\d{2}:?\d{2})\s*$")
+
+
 def parse_deadline(value) -> date | None:
     if value is None:
         return None
+    text = str(value).strip()
+    window = RANGE_RE.match(text)
+    if window:  # an event window stays open until its last day
+        try:
+            return date.fromisoformat(window.group(2))
+        except ValueError:
+            return None
+    if INSTANT_RE.match(text):  # 23:59 Anywhere-on-Earth is the next UTC day
+        try:
+            return datetime.fromisoformat(text.replace("Z", "+00:00")).astimezone(timezone.utc).date()
+        except ValueError:
+            pass
     match = DATE_RE.search(str(value))
     if not match:
         return None

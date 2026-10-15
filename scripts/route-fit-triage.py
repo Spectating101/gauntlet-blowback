@@ -118,12 +118,19 @@ def is_expired(deadline: str, today: str) -> bool:
     return found is not None and found < today
 
 
+def _phrase_pattern(phrase: str) -> re.Pattern:
+    # A phrase must start at a word edge: "e-3" (a visa class) is not in "Stage-3", "l-1" is not in
+    # "Level-1", "ntu" (a university) is not in "quantum" or "venture". Short or numbered phrases must also
+    # end at a word edge ("e-3" is not "e-30"); longer words keep suffixes ("visa" still matches "visas").
+    tail = r"(?![A-Za-z0-9])" if re.search(r"\d", phrase) or len(phrase) <= 3 else ""
+    return re.compile(r"(?<![A-Za-z0-9])" + re.escape(phrase) + tail, re.IGNORECASE)
+
+
 def find_listed_phrase(text: str, phrases: tuple[str, ...]) -> str | None:
-    lower = text.lower()
     for phrase in phrases:
-        idx = lower.find(phrase.lower())
-        if idx != -1:
-            return text[idx : idx + len(phrase)]
+        match = _phrase_pattern(phrase).search(text)
+        if match:
+            return text[match.start() : match.end()]
     return None
 
 

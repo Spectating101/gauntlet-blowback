@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 
 import { routeCampaignDecision } from './campaign-scope.mjs';
+import { deadlineUtcDay } from '../core/deadline.mjs';
 
 const DEFAULT_GRAPH = JSON.parse(fs.readFileSync(
   new URL('../../data/portfolio-campaign-graph-2026-09-16.json', import.meta.url),
@@ -83,8 +84,7 @@ function outcomeCampaign(lane) {
 }
 
 function hardDate(deadline) {
-  const match = String(deadline ?? '').match(/^(\d{4}-\d{2}-\d{2})/);
-  return match?.[1] ?? null;
+  return deadlineUtcDay(deadline);
 }
 
 function isPastHardDeadline(deadline, asOf) {
