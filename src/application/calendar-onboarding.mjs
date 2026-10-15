@@ -111,11 +111,17 @@ export function expandCalendarEvents(events, { from, through }) {
       }
       continue;
     }
-    const interval = rule.FREQ === 'BIWEEKLY' ? 14 : 7;
-    const allowedDays = new Set(String(rule.BYDAY ?? weekdayKey(event.start)).split(','));
+    // Weekly rules as RFC 5545 reads them: every INTERVAL-th week (counted from the week that holds DTSTART,
+    // Monday first), on every day named in BYDAY. FREQ=BIWEEKLY is this tool's own spelling of INTERVAL=2.
+    // (The earlier version only tested whole multiples of 7 days from DTSTART, so BYDAY=MO,WE produced only
+    // Mondays and INTERVAL was ignored.)
+    const intervalWeeks = rule.FREQ === 'BIWEEKLY' ? 2 : Math.max(1, Math.floor(Number(rule.INTERVAL)) || 1);
+    const allowedDays = new Set(String(rule.BYDAY ?? weekdayKey(event.start)).split(',').map((day) => day.trim()));
+    const mondayIndex = (dateKey) => (dateFromKey(dateKey).getUTCDay() + 6) % 7;
+    const startWeek = plusDays(event.start, -mondayIndex(event.start));
     for (let occurrence = event.start; occurrence <= end && emitted < count; occurrence = plusDays(occurrence, 1)) {
-      const offset = Math.floor((dateFromKey(occurrence) - dateFromKey(event.start)) / 86_400_000);
-      if (offset < 0 || offset % interval !== 0 || !allowedDays.has(weekdayKey(occurrence))) continue;
+      const weekIndex = Math.floor((dateFromKey(occurrence) - dateFromKey(startWeek)) / (7 * 86_400_000));
+      if (weekIndex % intervalWeeks !== 0 || !allowedDays.has(weekdayKey(occurrence))) continue;
       if (occurrence < from) { emitted += 1; continue; }
       output.push({ ...event, start: occurrence, original_start: event.start });
       emitted += 1;
