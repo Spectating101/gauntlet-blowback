@@ -72,8 +72,21 @@ def parse_deadline(value) -> date | None:
         return None
 
 
+# A status is active when FIRE, PREPARE or VERIFY appears as a word in it, unless it leads with a stop word.
+# The earlier test was "starts with", which skipped STRETCH_FIRE, CHECK_FIRE, DEFAULT_PRIMARY_FIRE and
+# WATCH_FIRE (15 routes, including a paper due 2026-10-23) although the queue (operator.mjs) treats any
+# status containing FIRE as fire-priority. HOLD_FIRE_LATER stays out: it leads with HOLD.
+ACTIVE_WORDS = frozenset({"FIRE", "PREPARE", "VERIFY"})
+INACTIVE_LEADS = frozenset({"HOLD", "KILL", "REJECT", "REJECTED", "EXPIRED", "CLOSED", "WITHDRAWN", "SUBMITTED", "DONE"})
+
+
 def is_active(status) -> bool:
-    return isinstance(status, str) and status.startswith(ACTIVE_PREFIXES)
+    if not isinstance(status, str):
+        return False
+    words = [w for w in re.split(r"[^A-Z0-9]+", status.upper()) if w]
+    if not words or words[0] in INACTIVE_LEADS:
+        return False
+    return status.startswith(ACTIVE_PREFIXES) or bool(ACTIVE_WORDS.intersection(words))
 
 
 def has_manifest(route: dict) -> bool:
