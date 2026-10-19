@@ -18,7 +18,7 @@
       "region": "Taipei",
       "status": "PRIORITIZE_PACKET",
       "source_tier": "official_employer",
-      "source_url": "https://jobs.citi.com/job/taipei/banking-commercial-banking-full-time-analyst-taiwan-apac-2027/287/101437508560",
+      "source_url": "https://jobs.citi.com/job/taipei/banking-commercial-banking-full-time-analyst-taiwan-apac-2027/287/102161061216",
       "posting_date": "2026-10-02",
       "deadline": "2026-11-27",
       "start": "2027-07",
@@ -38,7 +38,9 @@
       "reason": "Strongest newly discovered graduate route; no stated prior industry tenure requirement",
       "next": "Prepare finance analyst CV and evidence-backed cover note; check official portal questions and prior application receipts",
       "career_tier": "A",
-      "tier_rationale": "Exceptional upside or structured graduate hiring route, not a prediction of hiring probability."
+      "tier_rationale": "Exceptional upside or structured graduate hiring route, not a prediction of hiring probability.",
+      "superseded_url": "https://jobs.citi.com/job/taipei/banking-commercial-banking-full-time-analyst-taiwan-apac-2027/287/101437508560",
+      "source_update": "2026-10-20: Official Citi careers page now shows requisition 26995362 posted Oct 19 2026, with updated URL; final Apply/Workday flow still needs rendered browser verification."
     },
     {
       "key": "ibm-data-eng-2027",
