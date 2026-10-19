@@ -38,18 +38,21 @@ application preparation, and **actual submission receipts** as separate states.
 1. Run `npm run jobs:next` for broad discovery; 355 previously collected records are inventory, not live application approvals.
 2. Run `npm run jobs:landscape` to read the dated, manually sourced broader market review (Citi, IBM, local banking, blockers).
    This does not automatically reverify web listings and never authorizes applications.
-3. Run `npm run jobs:research` for an official ATS recheck of the human-reviewed priority list. See
+3. For prepared CV variants, employer packet requirements and deadline order, consult
+   `docs/POSTGRAD_CV_AND_APPLICATION_RUNBOOK_2026-10-19.md`. All applicant CV/PDF files
+   live in the ignored Optiplex output folder; never commit contact, transcripts, or forms.
+4. Run `npm run jobs:research` for an official ATS recheck of the human-reviewed priority list. See
    `docs/POST_MASTER_JOB_RESEARCH_2026-10-19.md` and `data/jobs/postgrad-research-targets.json`.
-4. A live posting check does not establish eligibility, pay, permitted location, ability to start,
+5. A live posting check does not establish eligibility, pay, permitted location, ability to start,
    sponsorship exemption, or an unsubmitted application. Inspect live requirements and reconcile prior receipts.
-5. Do not shrink discovery to the top three or only elite employers: retain three career-value tiers
+6. Do not shrink discovery to the top three or only elite employers: retain three career-value tiers
    (A exceptional, B strong, C worthwhile) independently from eligibility and source freshness.
    A lower-prestige, soundly paid role or research assistant post can be economically preferable to
    an elite stretch. Preserve B/C options in the funnel; do not auto-promote held or blocked leads.
-6. Prepare evidence-matched CV and field copy only for supported routes. Cite-Agent is shelved; do not
+7. Prepare evidence-matched CV and field copy only for supported routes. Cite-Agent is shelved; do not
    lead new applications with an active Cite-Agent product claim. Do not inflate hobby research into
    industrial tenure, strategy backtests into live profitability, or test coverage into adoption.
-7. Before external Submit, preserve the human gates below. Employer replies, interviews and offers
+8. Before external Submit, preserve the human gates below. Employer replies, interviews and offers
    only count when supported by an external artifact.
 
 ## Start here
