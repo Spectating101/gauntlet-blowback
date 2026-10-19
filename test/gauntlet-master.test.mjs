@@ -65,7 +65,8 @@ test('integrates fellowships and residencies without flattening their economics'
 
   assert.equal(historicalById.get('residency-mats-2027').route_class, 'RESEARCH_RESIDENCY');
   assert.equal(historicalById.get('fellowship-tech-policy-press-2027').status, 'SELECTIVE_FIRE');
-  assert.equal(historicalById.get('fellowship-anthropic-fellows-2026').status, 'VERIFY');
+  // Held by the 2026-10-08 full-calendar review: Taiwan remote does not meet the work-authorisation gate.
+  assert.equal(historicalById.get('fellowship-anthropic-fellows-2026').status, 'HOLD_LOCATION_WORK_AUTH_AND_FULL_TIME');
 });
 
 test('Nocturnal first-pilot queue promotes TFC while keeping alternate partners as fallbacks', () => {
@@ -105,8 +106,9 @@ test('Nocturnal live execution overlay preserves real TWNIC and NLnet gates', ()
   assert.match(twnic.gate, /legal applicant/i);
 
   const nlnet = byId.get('nlnet-restack-nocturnal');
-  assert.equal(nlnet.status, 'PORTFOLIO_BAKEOFF_HUMAN_REWRITE_REQUIRED');
-  assert.equal(nlnet.execution_state, 'PACKET_READY');
+  // Held by the route-corrections fund-eligibility and AI-policy checks; the older bakeoff status is superseded.
+  assert.equal(nlnet.status, 'HOLD_FUND_GEOGRAPHY_LICENSING_AND_AI_POLICY');
+  assert.equal(nlnet.execution_state, 'DEPENDENCY_RECON_REQUIRED');
   assert.equal(nlnet.deadline, '2026-11-03T12:00:00+01:00');
   assert.equal(nlnet.mutual_exclusion_group, 'nlnet-first-grant-portfolio-2026');
   assert.equal(nlnet.execution_manifest, 'examples/opportunities/nlnet-restack-nocturnal-2026.json');
@@ -141,8 +143,9 @@ test('focused Nocturnal audit adds pilot-gated publication routes', () => {
   const websci = byId.get('websci-2027-nocturnal');
   assert.ok(icwsm);
   assert.ok(websci);
-  assert.equal(icwsm.status, 'PREP_AFTER_PILOT');
-  assert.equal(websci.status, 'PILOT_GATED_PREP');
+  // The owner's pause is canonical (2026-10-08): both stay held, with the pilot gate still in the text.
+  assert.equal(icwsm.status, 'HOLD_OWNER_PAUSED');
+  assert.equal(websci.status, 'HOLD_OWNER_PAUSED');
   assert.equal(icwsm.mutual_exclusion_group, 'nocturnal-active-research-publication');
   assert.equal(websci.mutual_exclusion_group, 'nocturnal-active-research-publication');
   assert.match(icwsm.gate, /pilot/i);
@@ -209,7 +212,8 @@ test('applies gate-audit corrections to current source rows', () => {
   assert.equal(historicalById.get('innoserve-pet-2026').status, 'HOLD');
   assert.equal(historicalById.get('innoserve-oss-2026').status, 'HOLD');
   assert.equal(byId.get('projectdiscovery-oss').status, 'SELECTIVE_SELL');
-  assert.equal(byId.get('job-gogolook-credit').status, 'VERIFY');
+  // Finance education alone does not establish production credit-risk experience (route-corrections).
+  assert.equal(byId.get('job-gogolook-credit').status, 'HOLD_CONSUMER_CREDIT_EXPERIENCE');
   assert.equal(byId.get('job-qualcomm-ai-ml').status, 'WATCH');
 });
 
@@ -287,6 +291,7 @@ test('active master excludes archived routes while historical mode preserves the
     'phd-nycu-iais',
     'tigp-sinica-phd-2027',
     'moe-taiwan-scholarship-2027',
+    'atta-2027-fiscal-choke-points',
   ]) {
     assert.equal(byId.has(id), false, `${id} leaked into active master`);
     assert.equal(historicalById.has(id), true, `${id} was lost from historical audit mode`);
@@ -294,8 +299,8 @@ test('active master excludes archived routes while historical mode preserves the
   assert.equal(staleArchive.routes.length, 48);
   // 69 on 2026-09-17; the three Nocturnal first-pilot routes were released on 2026-09-30.
   assert.equal(policyArchive.routes.length, 66);
-  // Every PhD route, plus PhD-only funding, closed out by the applicant on 2026-09-30.
-  assert.equal(closedArchive.routes.length, 28);
+  // The 2026-09-30 closure archive: 28 PhD routes and PhD-only funding, plus ATTA, declined on 2026-10-08.
+  assert.equal(closedArchive.routes.length, 29);
   assert.equal(records.some((record) => /^phd/i.test(record.lane ?? '')), false, 'a PhD route is still live');
   assert.equal(historicalRecords.length - records.length,
     staleArchive.routes.length + policyArchive.routes.length + closedArchive.routes.length);
@@ -318,9 +323,12 @@ test('verified corrections win over earlier radar optimism', () => {
   // Routes carried no URLs at all; verified ones are now recorded.
   const heroku = byId.get('heroku-github-students-2026');
   assert.match(heroku.source_url, /^https:\/\/www\.heroku\.com\//);
-  assert.match(heroku.eligibility_note, /Student Developer Pack/);
+  // Reworded by the 2026-10-09 education access screen; the GitHub Pack gate itself stays in the gate text.
+  assert.match(heroku.eligibility_note, /Student Pack/);
+  assert.match(heroku.gate, /Active GitHub Pack/);
   const openai = byId.get('openai-researcher-access-hardware-splicer');
-  assert.match(openai.apply_url, /^https:\/\/grants\.openai\.com\//);
+  // Re-pointed on 2026-10-08 to the official application portal observed in a live check.
+  assert.match(openai.apply_url, /^https:\/\/openai\.smapply\.org\//);
 });
 
 test('the written registry carries the corrections, not just the in-memory one', async (t) => {

@@ -86,13 +86,14 @@ test('Sep-4 research/resource tranche enters the Gauntlet master with explicit e
   assert.equal(openai.status, 'FIRE_NOW');
   assert.equal(openai.execution_state, 'PORTAL_RECON_REQUIRED');
   assert.equal(openai.assets, 'Hardware Splicer');
-  assert.match(openai.gate, /300-run default/i);
+  assert.match(openai.gate, /300-run protocol/i);
 
+  // Submitted 2026-10-03 (receipt on file), so the October 8 reconciliation outranks the old FIRE label.
   const anthropic = master.get('anthropic-external-researcher-access-2026');
-  assert.equal(anthropic.status, 'FIRE_NOW');
+  assert.equal(anthropic.status, 'SUBMITTED');
   assert.equal(anthropic.execution_state, 'PORTAL_RECON_REQUIRED');
-  assert.match(anthropic.gate, /AI safety\/control work/i);
-  assert.match(anthropic.gate, /300-run default/i);
+  assert.match(anthropic.gate, /Submitted by applicant/i);
+  assert.match(anthropic.gate, /Do not resubmit/i);
 
   const nchc = historicalMaster.get('nchc-university-ai-compute-yzu-2026');
   assert.equal(nchc.status, 'DEPENDENCY_REQUIRED');
@@ -151,8 +152,9 @@ test('Sep-4 overrides keep high-upside routes from outrunning eligibility or evi
   assert.match(awsResearch.gate, /90-120 days/i);
 
   const claudeCampus = master.get('claude-campus-status-2026-09-04');
-  assert.equal(claudeCampus.status, 'HOLD');
-  assert.match(claudeCampus.gate, /prior Spring 2026 application as closed/i);
+  // Canonical page re-inspected 2026-10-09: the Fall 2026 programme is closed.
+  assert.equal(claudeCampus.status, 'HOLD_INTAKE_CLOSED');
+  assert.match(claudeCampus.gate, /Fall 2026 programme is closed/i);
 });
 
 test('application compiler distinguishes benefit claims, research credits and PI dependencies', () => {
