@@ -8,6 +8,12 @@ const campaign = JSON.parse(
 );
 const master = buildMasterRegistry();
 const masterById = new Map(master.map((record) => [record.id, record]));
+// Routes archived on 2026-09-30 leave the active master but stay canonical in historical mode.
+const historicalById = new Map(buildMasterRegistry({ includeArchived: true }).map((record) => [record.id, record]));
+const closedOutArchive = JSON.parse(
+  fs.readFileSync(new URL('../data/archived-routes-2026-09-30.json', import.meta.url), 'utf8')
+);
+const closedOutIds = new Set(closedOutArchive.routes.map((route) => route.id));
 const campaignsById = new Map(campaign.campaigns.map((item) => [item.id, item]));
 const programsById = new Map((campaign.programs ?? []).map((item) => [item.id, item]));
 
@@ -98,12 +104,19 @@ test('DT and IL remain separate active academic campaigns with different stage l
 
 test('every live academic route reference resolves to canonical Gauntlet route truth', () => {
   const allowedRoles = new Set(campaign.route_roles);
+  const closedReferences = [];
   for (const academicCampaign of campaign.campaigns) {
     for (const route of academicCampaign.routes) {
-      assert.ok(masterById.has(route.route_id), `missing canonical route ${route.route_id}`);
+      assert.ok(historicalById.has(route.route_id), `missing canonical route ${route.route_id}`);
+      if (!masterById.has(route.route_id)) {
+        assert.ok(closedOutIds.has(route.route_id), `${route.route_id} is neither live nor closed out on 2026-09-30`);
+        closedReferences.push(route.route_id);
+      }
       assert.ok(allowedRoles.has(route.role), `invalid role ${route.role} on ${route.route_id}`);
     }
   }
+  // The only academic reference the applicant closed out is the ATTA Fiscal Choke Points route.
+  assert.deepEqual(closedReferences, ['atta-2027-fiscal-choke-points']);
 });
 
 test('DT routes have plan roles rather than behaving as a flat calendar', () => {
@@ -116,7 +129,8 @@ test('DT routes have plan roles rather than behaving as a flat calendar', () => 
 
   const taxAcademy = dt.routes.find((route) => route.route_id === 'tax-academy-sg-il');
   assert.equal(taxAcademy.role, 'FUND_EXTEND');
-  assert.equal(masterById.get('atta-2027-fiscal-choke-points').deadline, '2026-10-12');
+  // ATTA was closed out by the applicant on 2026-10-08; its verified deadline is still read in historical mode.
+  assert.equal(historicalById.get('atta-2027-fiscal-choke-points').deadline, '2026-10-12');
 });
 
 test('queued secondary papers cannot accumulate external routes before research gates clear', () => {
