@@ -1,6 +1,6 @@
 # Local gate for gauntlet-blowback (GitHub Actions is billing-blocked). Run: repo-check [--tier fast|full]
 # format: name | fast|full | command   (fast runs at the end of every agent turn, full also before a push)
 syntax | fast | node scripts/check-syntax.mjs
-node-tests | fast | test-ratchet test/known-failures.txt -- node --test test/*.test.mjs
+node-tests | fast | test-ratchet test/known-failures.txt -- node --test --test-reporter=tap test/*.test.mjs
 # The Jev test fails only when a JEV key is present in the environment; it is a known environment dependency.
 python-tests | full | python3 -m pytest -q test --deselect test/test_jev.py::test_without_a_key_it_reports_unavailable_instead_of_failing

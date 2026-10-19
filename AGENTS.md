@@ -30,6 +30,22 @@ Use Chrome for:
 
 Do **not** hardcode a portal-specific path just to finish one mission. Reusable recipes are optional optimizations after a real flow has been observed; they are not prerequisites for navigation.
 
+## Post-graduation employment lane (October 2026)
+
+Jobs and paid opportunities are the near-term priority. Keep discovery, verification, applicant fit,
+application preparation, and **actual submission receipts** as separate states.
+
+1. Run `npm run jobs:next` for broad discovery; 355 previously collected records are inventory, not live application approvals.
+2. Run `npm run jobs:research` for an official ATS recheck of the human-reviewed priority list. See
+   `docs/POST_MASTER_JOB_RESEARCH_2026-10-19.md` and `data/jobs/postgrad-research-targets.json`.
+3. A live posting check does not establish eligibility, pay, permitted location, ability to start,
+   sponsorship exemption, or an unsubmitted application. Inspect live requirements and reconcile prior receipts.
+4. Prepare evidence-matched CV and field copy only for supported routes. Cite-Agent is shelved; do not
+   lead new applications with an active Cite-Agent product claim. Do not inflate hobby research into
+   industrial tenure, strategy backtests into live profitability, or test coverage into adoption.
+5. Before external Submit, preserve the human gates below. Employer replies, interviews and offers
+   only count when supported by an external artifact.
+
 ## Start here
 
 ### Immediate FIRE execution

@@ -33,6 +33,11 @@
   },
   {
     "ats": "greenhouse",
+    "company": "point72",
+    "label": "Point72 / Cubist"
+  },
+  {
+    "ats": "greenhouse",
     "company": "worldquant",
     "label": "WorldQuant"
   },

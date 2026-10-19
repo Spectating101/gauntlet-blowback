@@ -51,7 +51,7 @@ def split_csv(raw: str) -> list[str]:
 
 
 # A remote role tied to another region is not reachable: the applicant may work in Taiwan without a
-# permit from 2027-01, and nowhere else. "Remote", "Remote - APAC" and "Remote, Taiwan" count;
+# blanket location filters do not establish work authorization. "Remote", "Remote - APAC" and "Remote, Taiwan" count;
 # "Remote, US" and "Remote (EMEA)" do not.
 # A blocklist of regions cannot keep up ("Remote Finland", "Remote - California"), so invert it:
 # a remote role is reachable only when everything in its location is either the word remote, a
@@ -786,8 +786,8 @@ def write_curated_json(path: Path, inventory_n: int, rows: list[dict]) -> None:
         "schema": "blowback.job_curated.v1",
         "generated_at": f"{date.today().isoformat()}T00:00:00+08:00",
         "profile": (
-            "Finance master's completing 2027-01. Intern/accelerator now; "
-            "full-time from the graduate work window. Taipei LLM / data / quant / ML. "
+            "Finance master's expected 2027-01. Intern/accelerator only if schedule and permit allow; "
+            "full-time preferred 2027-03 after checking actual authorization. Taipei LLM / data / quant / ML. "
             "Keep/skip is prototype-centroid fit, not a title keyword OR-list. "
             "Agencies and generic OEM software are skip, not this table."
         ),
@@ -985,10 +985,10 @@ def shot_why(row: dict) -> str:
     timing = row.get("timing")
     family = row.get("family")
     if timing == "now_intern":
-        return f"Reachable now as a student: {family} intern/accelerator, not a 2027-01 full-time gate."
+        return f"Potential student {family} intern/accelerator; confirm current student work-hour capacity, start date and employer terms."
     if timing == "later_senior":
         return f"Profile-close {family} but senior-titled; treat as later unless the posting is explicitly junior."
-    return f"Profile-close {family} full-time: legally open from 2027-01 under the graduate work window."
+    return f"Profile-close {family} full-time lead for preferred 2027-03 start; post-graduation authorization and future sponsorship are not yet established."
 
 
 def shot_human_gate(row: dict) -> list[str]:
@@ -1058,11 +1058,11 @@ def write_handoff(path: Path, rows: list[dict], shots: list[dict], csv_rel: str 
             "family_counts": dict(families),
             "timing_counts": dict(timings),
             "now_intern": timings.get("now_intern", 0),
-            "ft_from_2027_01": timings.get("ft", 0),
+            "postgrad_full_time_leads": timings.get("ft", 0),
             "later_senior": timings.get("later_senior", 0),
             "notes": [
                 "Most rows are generic 工程師 at Compal/Foxconn; they are inventory, not shots.",
-                "Intern/BAP/實習 is the only slice reachable before 2027-01.",
+                "Intern/BAP/實習 are only leads; student work-hour limits, dates and eligibility must be checked.",
                 "104.db is a local intern/corridor crawl, not a full-time 104 catalog.",
                 "Named Gauntlet JOB routes with empty execution_manifest are a watchlist, not packaged FIRE.",
                 "Shots prefer data/jobs/curated-shots.json when those URLs are still live; agencies and TWD 0~0 are not next-shots.",
