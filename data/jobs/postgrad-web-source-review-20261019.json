@@ -303,6 +303,374 @@
       ],
       "reason": "Better treated as longer-run opportunity; project development is not automatically two years of employed experience",
       "next": "Do not prioritize now"
+    },
+    {
+      "key": "blackrock-2027-apac",
+      "company": "BlackRock",
+      "title": "2027 Full-Time Analyst Program — APAC",
+      "track": "finance_graduate",
+      "region": "Taipei, Taiwan",
+      "status": "PRIORITIZE_PACKET",
+      "source_tier": "official_employer",
+      "source_url": "https://careers.blackrock.com/job/sydney/2027-full-time-analyst-program-apac/45831/90599500976",
+      "deadline": "2026-11-29",
+      "start": "2027",
+      "requirements": [
+        "Graduation window Sept 2025-Aug 2027; Taipei included; application allows two functions only"
+      ],
+      "risks": [
+        "Taiwan eligibility and track allocation require review; five-day assessment window following application"
+      ],
+      "evidence_fit": [
+        "Finance MSc, quant RA, rigorous portfolio evaluation"
+      ],
+      "reason": "Manual expanded search; source must be checked again before submission",
+      "next": "Check exact eligibility and existing receipts; prepare applicant-approved packet"
+    },
+    {
+      "key": "dbs-taiwan-ma-2027",
+      "company": "DBS",
+      "title": "Taiwan 2027 Management Associate Programme",
+      "track": "banking_graduate",
+      "region": "Taipei, Taiwan",
+      "status": "FIT_AND_TIMING_REVIEW",
+      "source_tier": "official_employer",
+      "source_url": "https://www.dbs.com/careers/management-associate-programme/taiwan",
+      "deadline": null,
+      "start": "2027-07",
+      "requirements": [
+        "Taiwan consumer banking, institutional banking, and operations; 12-month programme"
+      ],
+      "risks": [
+        "Applications only through October; July 2027 commencement not flexible; legal work rights unknown"
+      ],
+      "evidence_fit": [
+        "Finance MSc, RA, business research"
+      ],
+      "reason": "Manual expanded search; source must be checked again before submission",
+      "next": "Verify requirements, timing and work rights; do not auto-apply"
+    },
+    {
+      "key": "citi-kyc-analyst",
+      "company": "Citi",
+      "title": "KYC Operations Analyst",
+      "track": "banking_operations",
+      "region": "Taipei, Taiwan",
+      "status": "PRIORITIZE_PACKET",
+      "source_tier": "official_employer",
+      "source_url": "https://jobs.citi.com/job/taipei/kyc-operations-analyst/287/96291600480",
+      "deadline": null,
+      "start": null,
+      "requirements": [
+        "Explicitly states fresh graduates welcome, English communication, university degree"
+      ],
+      "risks": [
+        "Potential immediate start; future work authorisation and Mandarin use need check"
+      ],
+      "evidence_fit": [
+        "Financial research, data validation, governance"
+      ],
+      "reason": "Manual expanded search; source must be checked again before submission",
+      "next": "Check exact eligibility and existing receipts; prepare applicant-approved packet"
+    },
+    {
+      "key": "citi-cash-trade-representative",
+      "company": "Citi",
+      "title": "Cash and Trade Processing Representative",
+      "track": "banking_operations",
+      "region": "Taipei, Taiwan",
+      "status": "FIT_AND_TIMING_REVIEW",
+      "source_tier": "official_employer",
+      "source_url": "https://jobs.citi.com/job/taipei/cash-and-trade-processing-representative/287/94969048144",
+      "deadline": null,
+      "start": null,
+      "requirements": [
+        "Entry-level transaction operations; bachelor's degree or equivalent"
+      ],
+      "risks": [
+        "Chinese and English typing >=45 characters/min; on-site time-sensitive work; March 2027 start not confirmed"
+      ],
+      "evidence_fit": [
+        "Financial operations and quantitative care"
+      ],
+      "reason": "Manual expanded search; source must be checked again before submission",
+      "next": "Verify requirements, timing and work rights; do not auto-apply"
+    },
+    {
+      "key": "appier-campaign-executive",
+      "company": "Appier",
+      "title": "Campaign Executive",
+      "track": "adtech_early_career",
+      "region": "Taipei, Taiwan",
+      "status": "FIT_AND_TIMING_REVIEW",
+      "source_tier": "official_employer",
+      "source_url": "https://job-boards.greenhouse.io/appier/jobs/5332115",
+      "deadline": null,
+      "start": null,
+      "requirements": [
+        "Explicitly open to fresh graduates; English reading/writing; AI tools and data-monitoring"
+      ],
+      "risks": [
+        "Portal asks native Mandarin yes/no: answer accurately; may be customer-facing/low code; start date unresolved"
+      ],
+      "evidence_fit": [
+        "AI project work, reporting and data quality"
+      ],
+      "reason": "Manual expanded search; source must be checked again before submission",
+      "next": "Verify requirements, timing and work rights; do not auto-apply"
+    },
+    {
+      "key": "appier-digital-ad-analyst",
+      "company": "Appier",
+      "title": "Digital Advertising Data Analyst",
+      "track": "analytics",
+      "region": "Taipei, Taiwan",
+      "status": "HOLD_SKILLS",
+      "source_tier": "official_employer",
+      "source_url": "https://job-boards.greenhouse.io/appier/jobs/8118867",
+      "deadline": null,
+      "start": null,
+      "requirements": [
+        "SQL expert, Python, Tableau, Sheets"
+      ],
+      "risks": [
+        "Expert SQL and client-facing Tableau evidence not established; work authorisation unknown"
+      ],
+      "evidence_fit": [
+        "Large data pipelines and financial analysis"
+      ],
+      "reason": "Manual expanded search; source must be checked again before submission",
+      "next": "Verify requirements, timing and work rights; do not auto-apply"
+    },
+    {
+      "key": "appier-campaign-analyst",
+      "company": "Appier",
+      "title": "Campaign Analyst",
+      "track": "analytics",
+      "region": "Taipei, Taiwan",
+      "status": "HOLD_EXPERIENCE_AND_LANGUAGE",
+      "source_tier": "official_employer",
+      "source_url": "https://job-boards.greenhouse.io/appier/jobs/1501724",
+      "deadline": null,
+      "start": null,
+      "requirements": [
+        "1+ years work; English business fluency; campaign analytics"
+      ],
+      "risks": [
+        "Application asks whether native Mandarin speaker; one year industry work not documented; shift schedule"
+      ],
+      "evidence_fit": [
+        "Analytics and AI-tools experience"
+      ],
+      "reason": "Manual expanded search; source must be checked again before submission",
+      "next": "Verify requirements, timing and work rights; do not auto-apply"
+    },
+    {
+      "key": "appier-ai-engineer-playable",
+      "company": "Appier",
+      "title": "AI Engineer, Playable Ads",
+      "track": "ml_engineering",
+      "region": "Taipei, Taiwan",
+      "status": "HOLD_EXPERIENCE",
+      "source_tier": "official_employer",
+      "source_url": "https://job-boards.greenhouse.io/appier/jobs/8102280",
+      "deadline": null,
+      "start": null,
+      "requirements": [
+        "3+ years production software/ML and ML stack"
+      ],
+      "risks": [
+        "Portfolio projects do not automatically establish 3+ years production engineering"
+      ],
+      "evidence_fit": [
+        "Agent and tool-building portfolio"
+      ],
+      "reason": "Manual expanded search; source must be checked again before submission",
+      "next": "Verify requirements, timing and work rights; do not auto-apply"
+    },
+    {
+      "key": "appier-backend-intern",
+      "company": "Appier",
+      "title": "Software Engineer Intern, Backend Development",
+      "track": "technology_internship",
+      "region": "Taipei, Taiwan",
+      "status": "HOLD_WORK_HOURS",
+      "source_tier": "official_employer",
+      "source_url": "https://job-boards.greenhouse.io/appier/jobs/6820898",
+      "deadline": null,
+      "start": null,
+      "requirements": [
+        "16-32h weekly for >=6 months; student in technical field"
+      ],
+      "risks": [
+        "Current weekly work-hour cap and already committed hours; internship extends into graduation"
+      ],
+      "evidence_fit": [
+        "Python engineering and data systems"
+      ],
+      "reason": "Manual expanded search; source must be checked again before submission",
+      "next": "Verify requirements, timing and work rights; do not auto-apply"
+    },
+    {
+      "key": "appier-tech-intern",
+      "company": "Appier",
+      "title": "Technical Solution Engineer Intern (Ad cloud)",
+      "track": "technology_internship",
+      "region": "Taipei, Taiwan",
+      "status": "EXCLUDE_WORK_HOURS",
+      "source_tier": "official_employer",
+      "source_url": "https://job-boards.greenhouse.io/appier/jobs/5001910",
+      "deadline": null,
+      "start": null,
+      "requirements": [
+        "24h weekly for >=6 months; currently pursuing technical degree"
+      ],
+      "risks": [
+        "24h exceeds current 20h weekly permit, scheduling mismatch"
+      ],
+      "evidence_fit": [
+        "Technical documentation and data/AI tooling"
+      ],
+      "reason": "Manual expanded search; source must be checked again before submission",
+      "next": "Verify requirements, timing and work rights; do not auto-apply"
+    },
+    {
+      "key": "gogolook-credit-risk",
+      "company": "Gogolook",
+      "title": "Credit Risk Data Analyst (Consumer Lending)",
+      "track": "credit_risk",
+      "region": "Taipei, Taiwan",
+      "status": "HOLD_EXPERIENCE",
+      "source_tier": "official_employer",
+      "source_url": "https://jobs.lever.co/Gogolook/e916bf13-6782-4715-9632-857548a914b9",
+      "deadline": null,
+      "start": null,
+      "requirements": [
+        "3-5y relevant loan or fintech credit-risk experience, adjustable for degree"
+      ],
+      "risks": [
+        "No demonstrated commercial consumer-loan data experience; language and start date unknown"
+      ],
+      "evidence_fit": [
+        "Statistical finance MSc and dataset modeling"
+      ],
+      "reason": "Manual expanded search; source must be checked again before submission",
+      "next": "Verify requirements, timing and work rights; do not auto-apply"
+    },
+    {
+      "key": "gogolook-backend-sdet",
+      "company": "Gogolook",
+      "title": "Software Development Engineer in Test (Backend)",
+      "track": "qa_engineering",
+      "region": "Taipei, Taiwan",
+      "status": "HOLD_EXPERIENCE",
+      "source_tier": "official_employer",
+      "source_url": "https://jobs.lever.co/Gogolook/96252062-eae1-427a-a02d-1cb3de76ebaf",
+      "deadline": null,
+      "start": null,
+      "requirements": [
+        "3+y software development/test automation"
+      ],
+      "risks": [
+        "No proven 3y professional QA; technical ownership at employer scale not demonstrated"
+      ],
+      "evidence_fit": [
+        "Python test suites and reliability work"
+      ],
+      "reason": "Manual expanded search; source must be checked again before submission",
+      "next": "Verify requirements, timing and work rights; do not auto-apply"
+    },
+    {
+      "key": "gogolook-data-acquisition",
+      "company": "Gogolook",
+      "title": "Backend Engineer — Data Acquisition",
+      "track": "data_engineering",
+      "region": "Taipei, Taiwan",
+      "status": "HOLD_EXPERIENCE",
+      "source_tier": "official_employer",
+      "source_url": "https://jobs.lever.co/Gogolook/c29db22f-09e7-4a8b-89a5-22b3465e8dc0",
+      "deadline": null,
+      "start": null,
+      "requirements": [
+        "3-7y software engineering with scalable production crawling"
+      ],
+      "risks": [
+        "No proven employer-scale production crawlers; HTTP/TLS expertise and AWS may be gaps"
+      ],
+      "evidence_fit": [
+        "Nocturnal intelligence and research pipelines"
+      ],
+      "reason": "Manual expanded search; source must be checked again before submission",
+      "next": "Verify requirements, timing and work rights; do not auto-apply"
+    },
+    {
+      "key": "worldquant-data-scientist",
+      "company": "WorldQuant",
+      "title": "Data Scientist",
+      "track": "quant_data_science",
+      "region": "Taipei, Taiwan",
+      "status": "HOLD_SKILLS",
+      "source_tier": "official_employer",
+      "source_url": "https://job-boards.greenhouse.io/worldquant/jobs/4069485006",
+      "deadline": null,
+      "start": null,
+      "requirements": [
+        "Master's+ in CS/EE or related, proficient in both C++ and Python"
+      ],
+      "risks": [
+        "Finance degree relatedness and C++ proficiency need evidence"
+      ],
+      "evidence_fit": [
+        "Quant research, rigorous data engineering"
+      ],
+      "reason": "Manual expanded search; source must be checked again before submission",
+      "next": "Verify requirements, timing and work rights; do not auto-apply"
+    },
+    {
+      "key": "bnp-investment-advisory-2027",
+      "company": "BNP Paribas",
+      "title": "2027 APAC Graduate Programme — Wealth Management, Investment Advisory",
+      "track": "banking_graduate",
+      "region": "Taipei, Taiwan",
+      "status": "EXCLUDE_FILLED",
+      "source_tier": "official_employer",
+      "source_url": "https://group.bnpparibas/en/careers/job-offer/2027-apac-graduate-programme-wealth-management-investment-advisory-taiwan",
+      "deadline": null,
+      "start": "2027-07",
+      "requirements": [
+        "Finance graduate programme formally matched degree"
+      ],
+      "risks": [
+        "Official page says already filled despite search appearance"
+      ],
+      "evidence_fit": [
+        "Finance research"
+      ],
+      "reason": "Manual expanded search; source must be checked again before submission",
+      "next": "Verify requirements, timing and work rights; do not auto-apply"
+    },
+    {
+      "key": "morganstanley-industrial-2027",
+      "company": "Morgan Stanley",
+      "title": "2027 Investment Banking Industrial Placement Program — Taipei",
+      "track": "banking_internship",
+      "region": "Taipei, Taiwan",
+      "status": "EXCLUDE_GRADUATION_WINDOW",
+      "source_tier": "official_employer",
+      "source_url": "https://morganstanley.tal.net/vx/lang-en-GB/mobile-0/brand-2/xf-db009d4620d7/spa-1/candidate/so/pm/1/pl/1/opp/22069-2027-Investment-Banking-Industrial-Placement-Program-Taipei/en-GB",
+      "deadline": "2026-10-04",
+      "start": "2027-01",
+      "requirements": [
+        "Penultimate-year student required; graduate Sep 2027 to June 2028"
+      ],
+      "risks": [
+        "Already expired October 4 and graduation window conflicts"
+      ],
+      "evidence_fit": [
+        "Finance MSc"
+      ],
+      "reason": "Manual expanded search; source must be checked again before submission",
+      "next": "Verify requirements, timing and work rights; do not auto-apply"
     }
   ]
 }
