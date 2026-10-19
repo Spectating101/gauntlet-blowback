@@ -42,10 +42,14 @@ application preparation, and **actual submission receipts** as separate states.
    `docs/POST_MASTER_JOB_RESEARCH_2026-10-19.md` and `data/jobs/postgrad-research-targets.json`.
 4. A live posting check does not establish eligibility, pay, permitted location, ability to start,
    sponsorship exemption, or an unsubmitted application. Inspect live requirements and reconcile prior receipts.
-5. Prepare evidence-matched CV and field copy only for supported routes. Cite-Agent is shelved; do not
+5. Do not shrink discovery to the top three or only elite employers: retain three career-value tiers
+   (A exceptional, B strong, C worthwhile) independently from eligibility and source freshness.
+   A lower-prestige, soundly paid role or research assistant post can be economically preferable to
+   an elite stretch. Preserve B/C options in the funnel; do not auto-promote held or blocked leads.
+6. Prepare evidence-matched CV and field copy only for supported routes. Cite-Agent is shelved; do not
    lead new applications with an active Cite-Agent product claim. Do not inflate hobby research into
    industrial tenure, strategy backtests into live profitability, or test coverage into adoption.
-6. Before external Submit, preserve the human gates below. Employer replies, interviews and offers
+7. Before external Submit, preserve the human gates below. Employer replies, interviews and offers
    only count when supported by an external artifact.
 
 ## Start here

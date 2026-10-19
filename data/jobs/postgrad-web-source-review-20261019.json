@@ -36,7 +36,9 @@
         "empirical research, finance modeling and dataset integrity"
       ],
       "reason": "Strongest newly discovered graduate route; no stated prior industry tenure requirement",
-      "next": "Prepare finance analyst CV and evidence-backed cover note; check official portal questions and prior application receipts"
+      "next": "Prepare finance analyst CV and evidence-backed cover note; check official portal questions and prior application receipts",
+      "career_tier": "A",
+      "tier_rationale": "Exceptional upside or structured graduate hiring route, not a prediction of hiring probability."
     },
     {
       "key": "ibm-data-eng-2027",
@@ -66,7 +68,9 @@
         "Python and research data systems, Research Drive"
       ],
       "reason": "Exceptional data-engineering fit, but Mandarin is an explicit barrier",
-      "next": "Locate native job requisition and determine whether spoken/written Mandarin fluency is truly mandatory"
+      "next": "Locate native job requisition and determine whether spoken/written Mandarin fluency is truly mandatory",
+      "career_tier": "B",
+      "tier_rationale": "Strong professional development and relevant analytical, research or engineering skills."
     },
     {
       "key": "cathay-securities-data-eng",
@@ -95,7 +99,9 @@
         "Research Drive and RA evidence"
       ],
       "reason": "More realistic than advertised senior data scientist roles; finance background expressly included",
-      "next": "Verify native 104 application status and ask HR about March 2027 start and sponsorship"
+      "next": "Verify native 104 application status and ask HR about March 2027 start and sponsorship",
+      "career_tier": "B",
+      "tier_rationale": "Strong professional development and relevant analytical, research or engineering skills."
     },
     {
       "key": "sinopac-data-analytics",
@@ -123,7 +129,9 @@
         "Agent and analytics portfolio when presented as independently developed work"
       ],
       "reason": "A credible non-senior banking analytics route with AI/data work",
-      "next": "Confirm exact posting URL, requirements, March start and language expectations"
+      "next": "Confirm exact posting URL, requirements, March start and language expectations",
+      "career_tier": "B",
+      "tier_rationale": "Strong professional development and relevant analytical, research or engineering skills."
     },
     {
       "key": "sinopac-operations-analytics",
@@ -150,7 +158,9 @@
         "Spreadsheet/dashboard and financial reporting skills, if supported"
       ],
       "reason": "A lower-technical-risk option for securing steady employment",
-      "next": "Review exact technical requirements and Chinese communication expectations"
+      "next": "Review exact technical requirements and Chinese communication expectations",
+      "career_tier": "C",
+      "tier_rationale": "Worthwhile employed experience, steady income or a practical bridge; preserve but streamline packet effort."
     },
     {
       "key": "sinopac-turing-2026",
@@ -176,7 +186,9 @@
         "AI agent infrastructure and engineering portfolio"
       ],
       "reason": "Strong conceptual fit if a 2027 intake is opened",
-      "next": "Investigate later cohort and language requirements, not an executable application yet"
+      "next": "Investigate later cohort and language requirements, not an executable application yet",
+      "career_tier": "B",
+      "tier_rationale": "Strong professional development and relevant analytical, research or engineering skills."
     },
     {
       "key": "hsbc-iwpb-graduate-2027",
@@ -203,7 +215,9 @@
         "Finance master's, GPA and analytical research"
       ],
       "reason": "Prominent deadline but explicit hard eligibility gates outweigh superficial fit",
-      "next": "Do not apply unless both employer work-rights and Mandarin gates can be truthfully cleared"
+      "next": "Do not apply unless both employer work-rights and Mandarin gates can be truthfully cleared",
+      "career_tier": "X",
+      "tier_rationale": "Excluded from application preparation because of explicit employer gates."
     },
     {
       "key": "sc-wealth-retail-2027",
@@ -227,7 +241,9 @@
         "Finance background and analytics"
       ],
       "reason": "Graduate programme academically accessible but eligibility condition excludes unsupported assumptions",
-      "next": "No application preparation absent independent proof of permanent legal right"
+      "next": "No application preparation absent independent proof of permanent legal right",
+      "career_tier": "X",
+      "tier_rationale": "Excluded from application preparation because of explicit employer gates."
     },
     {
       "key": "mastercard-launch-2027",
@@ -253,7 +269,9 @@
         "Business data and AI research skills"
       ],
       "reason": "Appealing analyst-style position but English/Mandarin and sponsorship rules are hard gates",
-      "next": "Confirm official Mastercard requisition and actual eligibility before reconsidering"
+      "next": "Confirm official Mastercard requisition and actual eligibility before reconsidering",
+      "career_tier": "X",
+      "tier_rationale": "Excluded from application preparation because of explicit employer gates."
     },
     {
       "key": "citi-commercial-summer-2027",
@@ -277,7 +295,9 @@
         "Financial analytics"
       ],
       "reason": "Distinct from the eligible-looking FULL-TIME analyst route; do not confuse programmes",
-      "next": "Exclude"
+      "next": "Exclude",
+      "career_tier": "X",
+      "tier_rationale": "Excluded from application preparation because of explicit employer gates."
     },
     {
       "key": "ctbc-ai-business-analyst",
@@ -302,7 +322,9 @@
         "Finance+AI R&D projects"
       ],
       "reason": "Better treated as longer-run opportunity; project development is not automatically two years of employed experience",
-      "next": "Do not prioritize now"
+      "next": "Do not prioritize now",
+      "career_tier": "C",
+      "tier_rationale": "Worthwhile employed experience, steady income or a practical bridge; preserve but streamline packet effort."
     },
     {
       "key": "blackrock-2027-apac",
@@ -310,7 +332,7 @@
       "title": "2027 Full-Time Analyst Program — APAC",
       "track": "finance_graduate",
       "region": "Taipei, Taiwan",
-      "status": "PRIORITIZE_PACKET",
+      "status": "HOLD_LANGUAGE",
       "source_tier": "official_employer",
       "source_url": "https://careers.blackrock.com/job/sydney/2027-full-time-analyst-program-apac/45831/90599500976",
       "deadline": "2026-11-29",
@@ -319,13 +341,16 @@
         "Graduation window Sept 2025-Aug 2027; Taipei included; application allows two functions only"
       ],
       "risks": [
+        "Taipei cohort requires local-language proficiency; Mandarin business proficiency has not been established.",
         "Taiwan eligibility and track allocation require review; five-day assessment window following application"
       ],
       "evidence_fit": [
         "Finance MSc, quant RA, rigorous portfolio evaluation"
       ],
       "reason": "Manual expanded search; source must be checked again before submission",
-      "next": "Check exact eligibility and existing receipts; prepare applicant-approved packet"
+      "next": "Confirm Mandarin professional proficiency before any packet; assessment begins shortly after submission.",
+      "career_tier": "A",
+      "tier_rationale": "Exceptional upside or structured graduate hiring route, not a prediction of hiring probability."
     },
     {
       "key": "dbs-taiwan-ma-2027",
@@ -348,7 +373,9 @@
         "Finance MSc, RA, business research"
       ],
       "reason": "Manual expanded search; source must be checked again before submission",
-      "next": "Verify requirements, timing and work rights; do not auto-apply"
+      "next": "Verify requirements, timing and work rights; do not auto-apply",
+      "career_tier": "A",
+      "tier_rationale": "Exceptional upside or structured graduate hiring route, not a prediction of hiring probability."
     },
     {
       "key": "citi-kyc-analyst",
@@ -371,7 +398,9 @@
         "Financial research, data validation, governance"
       ],
       "reason": "Manual expanded search; source must be checked again before submission",
-      "next": "Check exact eligibility and existing receipts; prepare applicant-approved packet"
+      "next": "Check exact eligibility and existing receipts; prepare applicant-approved packet",
+      "career_tier": "B",
+      "tier_rationale": "Strong professional development and relevant analytical, research or engineering skills."
     },
     {
       "key": "citi-cash-trade-representative",
@@ -394,7 +423,9 @@
         "Financial operations and quantitative care"
       ],
       "reason": "Manual expanded search; source must be checked again before submission",
-      "next": "Verify requirements, timing and work rights; do not auto-apply"
+      "next": "Verify requirements, timing and work rights; do not auto-apply",
+      "career_tier": "C",
+      "tier_rationale": "Worthwhile employed experience, steady income or a practical bridge; preserve but streamline packet effort."
     },
     {
       "key": "appier-campaign-executive",
@@ -417,7 +448,9 @@
         "AI project work, reporting and data quality"
       ],
       "reason": "Manual expanded search; source must be checked again before submission",
-      "next": "Verify requirements, timing and work rights; do not auto-apply"
+      "next": "Verify requirements, timing and work rights; do not auto-apply",
+      "career_tier": "C",
+      "tier_rationale": "Worthwhile employed experience, steady income or a practical bridge; preserve but streamline packet effort."
     },
     {
       "key": "appier-digital-ad-analyst",
@@ -440,7 +473,9 @@
         "Large data pipelines and financial analysis"
       ],
       "reason": "Manual expanded search; source must be checked again before submission",
-      "next": "Verify requirements, timing and work rights; do not auto-apply"
+      "next": "Verify requirements, timing and work rights; do not auto-apply",
+      "career_tier": "B",
+      "tier_rationale": "Strong professional development and relevant analytical, research or engineering skills."
     },
     {
       "key": "appier-campaign-analyst",
@@ -463,7 +498,9 @@
         "Analytics and AI-tools experience"
       ],
       "reason": "Manual expanded search; source must be checked again before submission",
-      "next": "Verify requirements, timing and work rights; do not auto-apply"
+      "next": "Verify requirements, timing and work rights; do not auto-apply",
+      "career_tier": "B",
+      "tier_rationale": "Strong professional development and relevant analytical, research or engineering skills."
     },
     {
       "key": "appier-ai-engineer-playable",
@@ -486,7 +523,9 @@
         "Agent and tool-building portfolio"
       ],
       "reason": "Manual expanded search; source must be checked again before submission",
-      "next": "Verify requirements, timing and work rights; do not auto-apply"
+      "next": "Verify requirements, timing and work rights; do not auto-apply",
+      "career_tier": "C",
+      "tier_rationale": "Worthwhile employed experience, steady income or a practical bridge; preserve but streamline packet effort."
     },
     {
       "key": "appier-backend-intern",
@@ -509,7 +548,9 @@
         "Python engineering and data systems"
       ],
       "reason": "Manual expanded search; source must be checked again before submission",
-      "next": "Verify requirements, timing and work rights; do not auto-apply"
+      "next": "Verify requirements, timing and work rights; do not auto-apply",
+      "career_tier": "C",
+      "tier_rationale": "Worthwhile employed experience, steady income or a practical bridge; preserve but streamline packet effort."
     },
     {
       "key": "appier-tech-intern",
@@ -532,7 +573,9 @@
         "Technical documentation and data/AI tooling"
       ],
       "reason": "Manual expanded search; source must be checked again before submission",
-      "next": "Verify requirements, timing and work rights; do not auto-apply"
+      "next": "Verify requirements, timing and work rights; do not auto-apply",
+      "career_tier": "X",
+      "tier_rationale": "Excluded from application preparation because of explicit employer gates."
     },
     {
       "key": "gogolook-credit-risk",
@@ -555,7 +598,9 @@
         "Statistical finance MSc and dataset modeling"
       ],
       "reason": "Manual expanded search; source must be checked again before submission",
-      "next": "Verify requirements, timing and work rights; do not auto-apply"
+      "next": "Verify requirements, timing and work rights; do not auto-apply",
+      "career_tier": "C",
+      "tier_rationale": "Worthwhile employed experience, steady income or a practical bridge; preserve but streamline packet effort."
     },
     {
       "key": "gogolook-backend-sdet",
@@ -578,7 +623,9 @@
         "Python test suites and reliability work"
       ],
       "reason": "Manual expanded search; source must be checked again before submission",
-      "next": "Verify requirements, timing and work rights; do not auto-apply"
+      "next": "Verify requirements, timing and work rights; do not auto-apply",
+      "career_tier": "C",
+      "tier_rationale": "Worthwhile employed experience, steady income or a practical bridge; preserve but streamline packet effort."
     },
     {
       "key": "gogolook-data-acquisition",
@@ -601,7 +648,9 @@
         "Nocturnal intelligence and research pipelines"
       ],
       "reason": "Manual expanded search; source must be checked again before submission",
-      "next": "Verify requirements, timing and work rights; do not auto-apply"
+      "next": "Verify requirements, timing and work rights; do not auto-apply",
+      "career_tier": "C",
+      "tier_rationale": "Worthwhile employed experience, steady income or a practical bridge; preserve but streamline packet effort."
     },
     {
       "key": "worldquant-data-scientist",
@@ -624,7 +673,9 @@
         "Quant research, rigorous data engineering"
       ],
       "reason": "Manual expanded search; source must be checked again before submission",
-      "next": "Verify requirements, timing and work rights; do not auto-apply"
+      "next": "Verify requirements, timing and work rights; do not auto-apply",
+      "career_tier": "B",
+      "tier_rationale": "Strong professional development and relevant analytical, research or engineering skills."
     },
     {
       "key": "bnp-investment-advisory-2027",
@@ -647,7 +698,9 @@
         "Finance research"
       ],
       "reason": "Manual expanded search; source must be checked again before submission",
-      "next": "Verify requirements, timing and work rights; do not auto-apply"
+      "next": "Verify requirements, timing and work rights; do not auto-apply",
+      "career_tier": "X",
+      "tier_rationale": "Excluded from application preparation because of explicit employer gates."
     },
     {
       "key": "morganstanley-industrial-2027",
@@ -670,7 +723,260 @@
         "Finance MSc"
       ],
       "reason": "Manual expanded search; source must be checked again before submission",
-      "next": "Verify requirements, timing and work rights; do not auto-apply"
+      "next": "Verify requirements, timing and work rights; do not auto-apply",
+      "career_tier": "X",
+      "tier_rationale": "Excluded from application preparation because of explicit employer gates."
+    },
+    {
+      "key": "sinica-econ-chen-gongping-ra",
+      "company": "Academia Sinica — Institute of Economics",
+      "title": "Research Assistant (Bachelor's / Master's Level), Researcher Chen Gongping",
+      "region": "Nangang, Taipei",
+      "track": "applied_economics_ra",
+      "status": "FIT_AND_TIMING_REVIEW",
+      "source_tier": "official_employer",
+      "source_url": "https://www.econ.sinica.edu.tw/4d49b1b1-d551-4956-84a5-6bbf392d8417/posts/8484",
+      "deadline": "2026-11-02",
+      "start": null,
+      "requirements": [
+        "Bachelor's or master's in any field; economics/business preferred",
+        "Office proficiency and LaTeX input",
+        "Research support and administration; rolling review"
+      ],
+      "risks": [
+        "Exact start can precede planned January 2027 graduation; conditional later start must be approved",
+        "Research-administration activities may require professional Chinese even though language level is not expressly stated"
+      ],
+      "evidence_fit": [
+        "Finance master's enrolment, current academic research assistant duties",
+        "Financial empirical research and documentation"
+      ],
+      "reason": "Accepts existing bachelor's degree, meaningful paid work, measurable research credentials; not dependent on elite finance hiring",
+      "next": "Ask lab whether January/February 2027 onboarding is possible and which language is needed",
+      "career_tier": "B",
+      "salary_public": "NT$38,388/month bachelor's grade; NT$44,968/month master's grade (once credential conferred)",
+      "tier_rationale": "Strong career-development match after eligibility review."
+    },
+    {
+      "key": "sinica-econ-kim-wicker-ra",
+      "company": "Academia Sinica — Institute of Economics",
+      "title": "Full-Time Research Assistant, Dr. Jeonghyeok Kim and Dr. Till Wicker",
+      "region": "Nangang, Taipei",
+      "track": "applied_economics_ra",
+      "status": "HOLD_START_TIMING",
+      "source_tier": "official_employer",
+      "source_url": "https://www.econ.sinica.edu.tw/4d49b1b1-d551-4956-84a5-6bbf392d8417/posts/8453",
+      "deadline": null,
+      "start": "2026-10-01 (advertised target)",
+      "requirements": [
+        "Bachelor's or master's level; applied economics data preparation and cleaning",
+        "Strong English preferred; basic Stata",
+        "Administrative assistance and RCT / Taiwan administrative data work"
+      ],
+      "risks": [
+        "Advertised start October 1, 2026 is in the past; confirm vacancy still open and whether 2027 joining possible",
+        "Stata experience not established; language demands for government data/admin must be verified"
+      ],
+      "evidence_fit": [
+        "Empirical statistical research and longitudinal data handling",
+        "Academic RA work, careful data cleaning and robustness"
+      ],
+      "reason": "Worthwhile academically relevant role with published compensation, but uncertain late starting date",
+      "next": "Contact academic recruiter only after establishing current vacancy and timing; do not call it immediately actionable",
+      "career_tier": "C",
+      "salary_public": "NT$38,388/month bachelor's, NT$44,968/month master's; stated 1.5-month year-end bonus (prorated)",
+      "tier_rationale": "Practical income or research bridge; confirm timing and job status."
+    },
+    {
+      "key": "sinica-econ-chen-su-ra",
+      "company": "Academia Sinica — Institute of Economics",
+      "title": "Full-Time Master's / Doctoral Research Assistant, Econometrics and Machine Learning",
+      "region": "Nangang, Taipei",
+      "track": "econometrics_ra",
+      "status": "FIT_AND_TIMING_REVIEW",
+      "source_tier": "official_employer",
+      "source_url": "https://www.econ.sinica.edu.tw/4d49b1b1-d551-4956-84a5-6bbf392d8417/posts/7013",
+      "deadline": "2026-12-31",
+      "start": null,
+      "requirements": [
+        "Master's or doctorate in economics, statistics, mathematics or finance-related discipline",
+        "Econometrics and machine-learning projects",
+        "Research plus procurement and administrative work; rolling review"
+      ],
+      "risks": [
+        "Master's diploma may not be conferred until January 2027 after closing date; ask about conditional offer or later start",
+        "Some administrative tasks may require Chinese; not explicit enough to infer"
+      ],
+      "evidence_fit": [
+        "Finance master's thesis, large finance datasets and empirical modeling",
+        "Python research and research assistant experience"
+      ],
+      "reason": "Strong research continuity with published master's monthly pay",
+      "next": "Verify degree-confer date, 2027 start and language expectations",
+      "career_tier": "B",
+      "salary_public": "NT$44,968/month or more for master's level",
+      "tier_rationale": "Strong career-development match after eligibility review."
+    },
+    {
+      "key": "sinica-idlab-offline-rl-ra",
+      "company": "Academia Sinica — Research Center for Information Technology Innovation",
+      "title": "Research Assistant — Offline Reinforcement Learning, Robust RL, Financial Applications",
+      "region": "Nangang, Taipei",
+      "track": "ml_research_ra",
+      "status": "HOLD_SKILLS",
+      "source_tier": "official_employer",
+      "source_url": "https://www.citi.sinica.edu.tw/main/recruit-assistants",
+      "deadline": "2026-12-31",
+      "start": null,
+      "requirements": [
+        "Related CS / EE / statistics / applied math degree",
+        "Academic publications in RL, machine learning, control or optimization",
+        "Python, PyTorch or JAX, modern RL packages; strong English (Chinese unnecessary)"
+      ],
+      "risks": [
+        "Finance MSc is not automatically a qualifying technical degree",
+        "No established RL publication record or PyTorch/JAX depth",
+        "Verify which sublisting corresponds to ID LAB on multi-role recruitment page"
+      ],
+      "evidence_fit": [
+        "Financial research and Sharpe–Terminus experimentation infrastructure",
+        "Software and research rigor across projects"
+      ],
+      "reason": "Interesting cross-domain upside with no Chinese language requirement; technical research credentials need scrutiny",
+      "next": "Assess whether portfolio provides rigorous RL demonstration; otherwise watch, not submit",
+      "career_tier": "B",
+      "salary_public": "NT$44,968/month master's level or higher",
+      "tier_rationale": "Strong career-development match after eligibility review."
+    },
+    {
+      "key": "sinopac-digital-data-business-analyst",
+      "company": "Bank SinoPac",
+      "title": "B-數位金融處-數據商業分析師 Data Business Analyst",
+      "region": "Zhongshan, Taipei",
+      "track": "financial_ai_analytics",
+      "status": "HOLD_LANGUAGE_AND_EXPERIENCE",
+      "source_tier": "employer_listing_on_1111",
+      "source_url": "https://www.1111.com.tw/job/91658373",
+      "deadline": null,
+      "start": "open to negotiation per earlier listings",
+      "requirements": [
+        "Python or R and SQL, finance data analysis, generative AI API and agentic workflows",
+        "At least 1 year work experience stated in role requirements",
+        "Fluent Chinese across reading, writing, listening and speaking explicitly required"
+      ],
+      "risks": [
+        "Mandarin fluency not established",
+        "Professional analyst tenure requirement may not be met by portfolio-only work",
+        "Check if RA experience satisfies hiring manager before packet time"
+      ],
+      "evidence_fit": [
+        "Finance + Python, databases, multi-agent analytics tools",
+        "Research Drive/YZUC data workflows and quality checks"
+      ],
+      "reason": "Unusually good role-content fit and open title, but eligibility not yet cleared",
+      "next": "Seek HR clarification on Chinese and whether academic RA experience meets the 1-year threshold",
+      "career_tier": "B",
+      "salary_public": "Negotiable; listing states recurring pay at or above NT$40,000/month",
+      "tier_rationale": "Strong career-development match after eligibility review."
+    },
+    {
+      "key": "sinopac-digital-data-engineering",
+      "company": "Bank SinoPac",
+      "title": "B-數位金融處-資料工程專業人員 Data Engineering Specialist",
+      "region": "Zhongzheng, Taipei",
+      "track": "financial_data_engineering",
+      "status": "HOLD_LANGUAGE_AND_EXPERIENCE",
+      "source_tier": "employer_listing_on_1111",
+      "source_url": "https://www.1111.com.tw/job/98906863/",
+      "deadline": null,
+      "start": "unspecified/negotiable",
+      "requirements": [
+        "SQL Server, ETL, Airflow, dashboards and data governance",
+        "At least 2 years relevant experience",
+        "Fluent Chinese explicitly required and BI tool experience (Tableau/Power BI)"
+      ],
+      "risks": [
+        "Mandarin fluency and two years employed experience not established",
+        "Specific SQL Server/Airflow production tenure and BI-tool evidence unverified"
+      ],
+      "evidence_fit": [
+        "Large financial data ingestion and Python pipelines",
+        "Persistent dataset systems, SQL/ETL-style research engineering"
+      ],
+      "reason": "Strong technical career trajectory but currently employer requirements are significant",
+      "next": "Keep in worthwhile watchlist; consider if experience/language gates can be independently cleared",
+      "career_tier": "B",
+      "salary_public": "Negotiable; listing states recurring pay at or above NT$40,000/month",
+      "tier_rationale": "Strong career-development match after eligibility review."
+    },
+    {
+      "key": "sinopac-risk-bigdata-analyst",
+      "company": "Bank SinoPac",
+      "title": "B-風險管理處-大數據應用分析人員 Big Data Application Analyst",
+      "region": "Zhongshan, Taipei",
+      "track": "risk_analytics",
+      "status": "HOLD_LANGUAGE_AND_EXPERIENCE",
+      "source_tier": "employer_listing_on_1111",
+      "source_url": "https://www.1111.com.tw/job/132439935/",
+      "deadline": null,
+      "start": "unspecified/negotiable",
+      "requirements": [
+        "Risk data SQL/BI, statistics, AI early-warning models and Python/R/SAS",
+        "At least 2 years experience and finance industry risk experience",
+        "Fluent Chinese explicitly required"
+      ],
+      "risks": [
+        "Mandarin fluency not established",
+        "Finance industry credit/risk employment experience not supported",
+        "Check training path rather than claiming prior lending credit tenure"
+      ],
+      "evidence_fit": [
+        "Empirical finance and statistical pipelines, data governance",
+        "Python and text mining/ETL methods in research portfolio"
+      ],
+      "reason": "Career-useful risk-analysis direction; not immediately eligible without requirement review",
+      "next": "Hold until language and industrial experience clarified",
+      "career_tier": "B",
+      "salary_public": "Negotiable; listing states recurring pay at or above NT$40,000/month",
+      "tier_rationale": "Strong career-development match after eligibility review."
+    },
+    {
+      "key": "sinopac-it-bigdata-analyst",
+      "company": "Bank SinoPac",
+      "title": "B-資訊處-大數據應用分析師 Big Data Application Analyst",
+      "region": "Songshan, Taipei",
+      "track": "data_platform_engineering",
+      "status": "HOLD_LANGUAGE_AND_EXPERIENCE",
+      "source_tier": "employer_listing_on_1111",
+      "source_url": "https://www.1111.com.tw/job/132474295",
+      "deadline": null,
+      "start": "unspecified/negotiable",
+      "requirements": [
+        "Hadoop/Airflow operations, integration/ETL, API development, production testing",
+        "At least 3 years relevant experience",
+        "Fluent Chinese explicitly required"
+      ],
+      "risks": [
+        "Three years industry experience not documented",
+        "Fluent Mandarin not established",
+        "Production Hadoop/Airflow skills may not be evidenced"
+      ],
+      "evidence_fit": [
+        "Large data pipelines, historical/streaming financial datasets",
+        "Engineering QA tests, research datasets"
+      ],
+      "reason": "A possible longer-run employer target, not sensible as current primary application",
+      "next": "Longer-range monitoring; avoid current dossier time",
+      "career_tier": "C",
+      "salary_public": "Negotiable; listing states recurring pay at or above NT$40,000/month",
+      "tier_rationale": "Practical income or research bridge; confirm timing and job status."
     }
-  ]
+  ],
+  "research_scope_update": "2026-10-19 wider A/B/C opportunity expansion; this is a source snapshot, not an automatic live check",
+  "career_tier_policy": {
+    "A": "Exceptional upside, high-value graduate/research opportunity; tailored packet if eligible",
+    "B": "Strong suitable career-building job; normal application priority if eligible",
+    "C": "Worthwhile pay, experience or bridge; retain rather than discard; lean application packet if eligible",
+    "X": "Excluded/blocked by stated hard gate or expired listing; no application packet unless facts change"
+  }
 }
