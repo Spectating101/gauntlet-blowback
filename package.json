@@ -42,7 +42,8 @@
     "check": "node scripts/check-syntax.mjs && npm run gauntlet:master && npm run test:core",
     "install:browsers": "playwright install chromium",
     "calendar": "node scripts/build-calendar.mjs",
-    "jobs:research": "python3 scripts/postgrad-job-research.py"
+    "jobs:research": "python3 scripts/postgrad-job-research.py",
+    "jobs:landscape": "python3 scripts/postgrad-web-review.py"
   },
   "dependencies": {
     "playwright": "1.62.1",

@@ -1,0 +1,308 @@
+{
+  "schema": "blowback.postgrad_web_source_review.v1",
+  "checked_on": "2026-10-19",
+  "discovery_scope": "Taiwan post-graduation finance, financial-data, AI, analyst and 2027 graduate programmes",
+  "source_policy": "Employer pages and official ATS are strongest. 104/1111 are employer-posted local boards requiring a current status check. Third-party syndication requires official corroboration.",
+  "caveats": [
+    "Not an application submission or application receipt check",
+    "A graduate work exemption after approved NIA extension is time-limited and does not satisfy a permanent-work-rights employer rule",
+    "No invented employer pay, language skills, tenure or sponsorship answer",
+    "Position status must be rechecked before application"
+  ],
+  "leads": [
+    {
+      "key": "citi-commercial-ft-2027",
+      "company": "Citi",
+      "title": "Banking — Commercial Banking, Full Time Analyst, Taiwan APAC 2027",
+      "track": "finance_graduate",
+      "region": "Taipei",
+      "status": "PRIORITIZE_PACKET",
+      "source_tier": "official_employer",
+      "source_url": "https://jobs.citi.com/job/taipei/banking-commercial-banking-full-time-analyst-taiwan-apac-2027/287/101437508560",
+      "posting_date": "2026-10-02",
+      "deadline": "2026-11-27",
+      "start": "2027-07",
+      "requirements": [
+        "final-year undergraduate or Master's degree, any discipline",
+        "strong quantitative and analytical capabilities"
+      ],
+      "risks": [
+        "July 2027 start differs from preferred March start",
+        "Taiwan work authorization and future sponsorship answers require truthful review",
+        "native Mandarin expectations not specified on public posting: verify with employer"
+      ],
+      "evidence_fit": [
+        "Finance master's thesis and quantitative RA work",
+        "empirical research, finance modeling and dataset integrity"
+      ],
+      "reason": "Strongest newly discovered graduate route; no stated prior industry tenure requirement",
+      "next": "Prepare finance analyst CV and evidence-backed cover note; check official portal questions and prior application receipts"
+    },
+    {
+      "key": "ibm-data-eng-2027",
+      "company": "IBM Taiwan",
+      "title": "2027 Campus Hire — Associate Data Engineer",
+      "track": "technology_graduate",
+      "region": "Taipei",
+      "status": "HOLD_LANGUAGE",
+      "source_tier": "official_employer_career_page_plus_employer_104",
+      "source_url": "https://www.ibm.com/in-en/careers/data-and-analytics",
+      "crosscheck_url": "https://www.104.com.tw/company/5h3lyhs?page=2",
+      "posting_date": "2026-10-16",
+      "deadline": "2026-12-13",
+      "start": "2027",
+      "requirements": [
+        "2026 or 2027 graduate available to join in 2027",
+        "Fluent English AND Mandarin communication",
+        "working knowledge of Python, SQL, ETL, data processing"
+      ],
+      "risks": [
+        "Mandarin fluency must be established; do not overclaim",
+        "exact IBM workday destination requires browser check",
+        "work-right and onboarding date must be verified"
+      ],
+      "evidence_fit": [
+        "Large cryptocurrency and research data pipeline work",
+        "Python and research data systems, Research Drive"
+      ],
+      "reason": "Exceptional data-engineering fit, but Mandarin is an explicit barrier",
+      "next": "Locate native job requisition and determine whether spoken/written Mandarin fluency is truly mandatory"
+    },
+    {
+      "key": "cathay-securities-data-eng",
+      "company": "Cathay Securities",
+      "title": "資料工程專業人員(資料工程部)_I00008038",
+      "track": "financial_data_engineering",
+      "region": "Taipei",
+      "status": "FIT_AND_TIMING_REVIEW",
+      "source_tier": "employer_listing_on_104",
+      "source_url": "https://www.104.com.tw/job/8thyq",
+      "crosscheck_url": "https://www.104.com.tw/jobs/search/?indcat=1004000000&jobcat=2007001021&order=2&page=1&ro=0",
+      "deadline": null,
+      "start": null,
+      "requirements": [
+        "Accepts finance-related background or development experience",
+        "No minimum experience listed",
+        "Python/C#/VB.NET development, SQL and database/warehouse integration"
+      ],
+      "risks": [
+        "Language and employer sponsorship are not established",
+        "Verify direct job page remains open and software/SQL proficiency details",
+        "Immediate-start assumption must not be made"
+      ],
+      "evidence_fit": [
+        "Finance master's plus Python pipelines and empirical data quality",
+        "Research Drive and RA evidence"
+      ],
+      "reason": "More realistic than advertised senior data scientist roles; finance background expressly included",
+      "next": "Verify native 104 application status and ask HR about March 2027 start and sponsorship"
+    },
+    {
+      "key": "sinopac-data-analytics",
+      "company": "Bank SinoPac",
+      "title": "綜合企劃處-數據分析應用人員 / Data Analytics Specialist",
+      "track": "financial_analytics",
+      "region": "Taipei",
+      "status": "FIT_AND_TIMING_REVIEW",
+      "source_tier": "employer_listing_on_104",
+      "source_url": "https://www.104.com.tw/company/13qu7sqo?jobsource=changejob",
+      "deadline": null,
+      "start": null,
+      "requirements": [
+        "No prior experience listed",
+        "Banking client, product and transaction data analytics",
+        "Generative AI use cases in bank workflows"
+      ],
+      "risks": [
+        "Exact vacancy may require navigating company job roster",
+        "Mandarin usage, interview language and work sponsorship unknown",
+        "Advertised since September: reconfirm posting"
+      ],
+      "evidence_fit": [
+        "Financial research plus data engineering",
+        "Agent and analytics portfolio when presented as independently developed work"
+      ],
+      "reason": "A credible non-senior banking analytics route with AI/data work",
+      "next": "Confirm exact posting URL, requirements, March start and language expectations"
+    },
+    {
+      "key": "sinopac-operations-analytics",
+      "company": "Bank SinoPac",
+      "title": "綜合企劃處-營運分析人員 / Operations Analytics Specialist",
+      "track": "banking_analyst",
+      "region": "Taipei",
+      "status": "BACKUP_FIT_REVIEW",
+      "source_tier": "employer_listing_on_104",
+      "source_url": "https://www.104.com.tw/job/8gki3",
+      "deadline": null,
+      "start": null,
+      "requirements": [
+        "No minimum experience listed",
+        "Business data calculations, PBI/CUBE reporting and operating analysis"
+      ],
+      "risks": [
+        "Language and future authorization unknown",
+        "Less engineering-heavy and may expect Power BI familiarity",
+        "Reconfirm live posting and timing"
+      ],
+      "evidence_fit": [
+        "Finance master's and empirical/statistical work",
+        "Spreadsheet/dashboard and financial reporting skills, if supported"
+      ],
+      "reason": "A lower-technical-risk option for securing steady employment",
+      "next": "Review exact technical requirements and Chinese communication expectations"
+    },
+    {
+      "key": "sinopac-turing-2026",
+      "company": "Bank SinoPac",
+      "title": "2026 Turing Plan — 儲備AI後端工程師",
+      "track": "ai_engineering_graduate",
+      "region": "Taipei",
+      "status": "HOLD_COHORT_TIMING",
+      "source_tier": "employer_listing_on_104",
+      "source_url": "https://www.104.com.tw/job/8daiq",
+      "deadline": null,
+      "start": null,
+      "requirements": [
+        "Master's degree, no required previous work experience listed",
+        "Backend system design/deployment, APIs and AI-enabled financial projects"
+      ],
+      "risks": [
+        "2026 cohort may require immediate onboarding",
+        "Expect highly technical screening and possible Mandarin workplace",
+        "Verify intake cycle and work authorization"
+      ],
+      "evidence_fit": [
+        "AI agent infrastructure and engineering portfolio"
+      ],
+      "reason": "Strong conceptual fit if a 2027 intake is opened",
+      "next": "Investigate later cohort and language requirements, not an executable application yet"
+    },
+    {
+      "key": "hsbc-iwpb-graduate-2027",
+      "company": "HSBC Taiwan",
+      "title": "Business Analyst — International Wealth and Premier Banking Graduate",
+      "track": "banking_graduate",
+      "region": "Taipei",
+      "status": "BLOCKED_WORK_RIGHTS_AND_LANGUAGE",
+      "source_tier": "official_employer",
+      "source_url": "https://apply.careers.hsbc.com/emergingtalent/job/Taipei-Business-Analyst-International-Wealth-and-Premier-Banking-Graduate-Taip-11561/1371304857/",
+      "deadline": "2026-10-31",
+      "start": "2027-07-05",
+      "requirements": [
+        "Fluent Mandarin and English",
+        "Work legally in Taiwan throughout program and beyond, without HSBC sponsorship now or in future",
+        "Degree complete by July 2027, GPA at least 3.0"
+      ],
+      "risks": [
+        "Conditional post-graduation graduate work exemption is not indefinite employer sponsorship exemption",
+        "Current Mandarin ability is not verified as fluent",
+        "Official page observed specifies 24-month programme; do not use older 18-month cached text"
+      ],
+      "evidence_fit": [
+        "Finance master's, GPA and analytical research"
+      ],
+      "reason": "Prominent deadline but explicit hard eligibility gates outweigh superficial fit",
+      "next": "Do not apply unless both employer work-rights and Mandarin gates can be truthfully cleared"
+    },
+    {
+      "key": "sc-wealth-retail-2027",
+      "company": "Standard Chartered Taiwan",
+      "title": "Wealth & Retail Banking Graduate Taiwan 2027",
+      "track": "banking_graduate",
+      "region": "Taipei",
+      "status": "BLOCKED_PERMANENT_WORK_RIGHTS",
+      "source_tier": "official_employer",
+      "source_url": "https://jobs.standardchartered.com/job/Taipei-Wealth-%26-Retail-Banking-Graduate-Taiwan-2027/63803-en_GB/",
+      "deadline": "2026-12-31",
+      "start": "2027-07",
+      "requirements": [
+        "Graduating by July 2027",
+        "Permanent legal right to work in country"
+      ],
+      "risks": [
+        "Prospective time-limited post-graduation residence/work exemption is not permanent right"
+      ],
+      "evidence_fit": [
+        "Finance background and analytics"
+      ],
+      "reason": "Graduate programme academically accessible but eligibility condition excludes unsupported assumptions",
+      "next": "No application preparation absent independent proof of permanent legal right"
+    },
+    {
+      "key": "mastercard-launch-2027",
+      "company": "Mastercard",
+      "title": "Associate Consultant, Launch Graduate Program 2027 — Taipei",
+      "track": "consulting_graduate",
+      "region": "Taipei",
+      "status": "BLOCKED_LANGUAGE_AND_SPONSORSHIP_REVIEW",
+      "source_tier": "third_party_linkedin_listing",
+      "source_url": "https://tw.linkedin.com/jobs/view/associate-consultant-launch-graduate-program-2027-taipei-taiwan-at-mastercard-4479960743",
+      "deadline": "2026-12-07",
+      "start": "2027-07-19",
+      "requirements": [
+        "Dec 2026–Jul 2027 graduation",
+        "English and local office Mandarin",
+        "No Taiwan work visa sponsorship required"
+      ],
+      "risks": [
+        "Employer-hosted application URL not verified",
+        "Mandarin and long-run sponsorship gates unresolved"
+      ],
+      "evidence_fit": [
+        "Business data and AI research skills"
+      ],
+      "reason": "Appealing analyst-style position but English/Mandarin and sponsorship rules are hard gates",
+      "next": "Confirm official Mastercard requisition and actual eligibility before reconsidering"
+    },
+    {
+      "key": "citi-commercial-summer-2027",
+      "company": "Citi",
+      "title": "Banking — Commercial Banking, Summer Analyst Taiwan APAC 2027",
+      "track": "banking_internship",
+      "region": "Taipei",
+      "status": "EXCLUDE_GRADUATION_WINDOW",
+      "source_tier": "official_employer",
+      "source_url": "https://jobs.citi.com/job/taipei/banking-commercial-banking-summer-analyst-taiwan-apac-2027/287/99340948704",
+      "deadline": "2026-11-27",
+      "start": "2027-summer",
+      "requirements": [
+        "Graduation between Dec 2027 and June 2028",
+        "Penultimate year of study"
+      ],
+      "risks": [
+        "Planned graduation by Jan 2027 contradicts required window"
+      ],
+      "evidence_fit": [
+        "Financial analytics"
+      ],
+      "reason": "Distinct from the eligible-looking FULL-TIME analyst route; do not confuse programmes",
+      "next": "Exclude"
+    },
+    {
+      "key": "ctbc-ai-business-analyst",
+      "company": "CTBC Bank",
+      "title": "科技金融_AI與數據商業分析師",
+      "track": "ai_finance_analyst",
+      "region": "Taipei",
+      "status": "HOLD_EXPERIENCE_AND_TIMING",
+      "source_tier": "employer_listing_on_1111",
+      "source_url": "https://www.1111.com.tw/job/132486663/",
+      "crosscheck_url": "https://ctbcholding.wd3.myworkdayjobs.com/zh-TW/External/job/-_JR4373",
+      "deadline": null,
+      "start": "within one month per listing",
+      "requirements": [
+        "Master's degree in relevant quantitative/IS subject",
+        "At least two years of relevant industry work experience"
+      ],
+      "risks": [
+        "Experience requirement and near-immediate start conflict with actual profile"
+      ],
+      "evidence_fit": [
+        "Finance+AI R&D projects"
+      ],
+      "reason": "Better treated as longer-run opportunity; project development is not automatically two years of employed experience",
+      "next": "Do not prioritize now"
+    }
+  ]
+}
