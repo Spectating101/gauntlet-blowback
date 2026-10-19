@@ -1,0 +1,27 @@
+# Known failing tests. This list should only shrink; fix a test, then delete its line.
+Anthropic FIRE handoff preserves narrow AI-control framing instead of generic product development
+DT routes have plan roles rather than behaving as a flat calendar
+Invisible Ledger keeps a separate measurement conversion lane
+NLnet Nocturnal planning manifest cannot dispatch before portfolio and authorship gates
+Nocturnal live execution overlay preserves real TWNIC and NLnet gates
+Sep-15 research conversion radar adds first-class Fiscal Choke Points routes
+Sep-4 overrides keep high-upside routes from outrunning eligibility or evidence
+Sep-4 research/resource tranche enters the Gauntlet master with explicit execution gates
+active master excludes archived routes while historical mode preserves their evidence
+applies gate-audit corrections to current source rows
+automatic FIRE refuses stale official-source observations
+current immediate FIRE routes expose explicit execution manifests in the Gauntlet master
+every live academic route reference resolves to canonical Gauntlet route truth
+every unresolved scoped route has one assessment disposition
+expanded radar replaces stale Codex economics and prevents duplicate spray
+expired hard-date FIRE routes do not stay in the live execution queue
+fire queue holds the executable bundles and leaves the paused Nocturnal campaign to a human
+fire-next ignores expired packets and returns a genuinely executable current route
+focused Nocturnal audit adds pilot-gated publication routes
+generic adapter fills mapped fields but never clicks submit
+generic adapter refuses protected secret and privacy controls
+integrates fellowships and residencies without flattening their economics
+recipe adapter executes verified reversible navigation and stops before final submit
+recipe adapter refuses click steps that look consequential even when marked safe_navigation
+recon snapshot discovers routes and controls without mutating form state
+verified corrections win over earlier radar optimism

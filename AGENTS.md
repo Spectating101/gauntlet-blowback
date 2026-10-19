@@ -184,3 +184,8 @@ Success means one of:
 4. `BLOCKED` — a verified external blocker prevents further progress.
 
 Do not stop merely because the portal is unfamiliar.
+
+## Local gate (GitHub Actions is billing-blocked)
+
+Run `repo-check` before calling work done (`repo-check --tier fast` takes about 3 seconds; the default `full` tier adds the Python suite). Checks live in `.local-check`.
+`test/known-failures.txt` lists tests that were already failing when the gate was added; it may only shrink. A new failing test fails the gate. A pre-push hook runs the full tier (`REPO_CHECK_SKIP=1` bypasses it once), and an agent Stop hook runs the fast tier when the tree has uncommitted changes.
