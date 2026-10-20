@@ -1,0 +1,85 @@
+{
+  "schema": "blowback.conference_abstract_packet.v1",
+  "snapshot": "2026-09-15",
+  "route_id": "atta-2027-fiscal-choke-points",
+  "primary_asset": "Fiscal Choke Points",
+  "state": "ABSTRACT_FROZEN_FORM_MAP_GATE",
+  "strategic_status": "FIRE_AFTER_GATE",
+  "execution_state": "APPLICATION_READY",
+  "human_gate": [
+    "final_abstract_submit",
+    "conference_registration_or_travel_purchase_if_accepted"
+  ],
+  "opportunity": {
+    "organization": "Australasian Tax Teachers Association",
+    "conference": "38th ATTA Annual Conference",
+    "theme": "Tax reform - past, present and future",
+    "dates": [
+      "2027-01-13",
+      "2027-01-14",
+      "2027-01-15"
+    ],
+    "venue": "Monash University Caulfield Campus, Melbourne, Australia",
+    "abstract_deadline": "2026-10-12",
+    "abstract_word_limit": 500,
+    "decision_target": "2026-10-19",
+    "full_paper_deadline_prize": "2026-12-18",
+    "full_paper_deadline_programme": "2027-01-04",
+    "official_cfp": "https://atta-online.squarespace.com/melbourne-2027",
+    "submission_form": "https://forms.gle/YBAZm2v7DMbSsuh87",
+    "submission_form_field_map_state": "LIVE_SESSION_REQUIRED",
+    "registration_page": "https://atta-online.squarespace.com/2027-melbourne-registrations",
+    "current_general_2_5_day_registration_aud": 750,
+    "registration_verified_at": "2026-09-15"
+  },
+  "positioning": {
+    "recommended_title": "Beyond ‘Platform Tax’: Activation Specificity and Transaction Control in Southeast Asian Digital-Tax Administration",
+    "alternate_title": "When Does a Platform Become a Tax Collector? Transaction Control and Digital-Tax Reform in Southeast Asia",
+    "lead_question": "When does a commercially visible digital intermediary become the legally activated node through which a tax obligation is collected, withheld, reported, or reconciled?",
+    "lead_claims": [
+      "digital_intermediary_liability_is_activation_specific",
+      "transaction_level_fiscal_action_is_most_tightly_coupled_where_the_liable_node_has_contemporaneous_access_to_payment_or_transaction_confirmation_events",
+      "legal_node_assignment_and_operational_fiscal_performance_are_separate_analytical_stages"
+    ],
+    "anchor_countercase": "Philippine e-marketplace sale with payment made directly to the nonresident provider outside marketplace control",
+    "do_not_frame_as": [
+      "five_country_asean_survey",
+      "causal_revenue_study",
+      "platforms_are_inherently_optimal_tax_collectors",
+      "country_maturity_ranking"
+    ]
+  },
+  "abstract": {
+    "word_count": 375,
+    "text": "Digital-tax reform is often compared through rates, thresholds, nexus rules, or revenue. This paper starts one step earlier: when does a commercially visible intermediary become the legally activated node through which a tax obligation is collected, withheld, reported, or reconciled?\n\nUsing current primary legal and tax-administration sources, the paper compares seven transaction paths across Malaysia, Indonesia, Vietnam, Thailand, and the Philippines. The unit of analysis is the transaction path rather than the country. Each path is coded through the taxable object, liable node, destination or nexus evidence, activation mechanism, transaction rail, filing/remittance cadence, and reconciliation power. The design also separates node locus—who carries the duty—from event coupling—how tightly fiscal action is tied to the underlying transaction.\n\nThe comparison yields two institutional propositions. First, digital-intermediary liability is activation-specific. Platform presence alone is not sufficient. Thailand conditions platform VAT responsibility on control of the continuous process from offering through payment and delivery; Vietnam ties the selected platform-withholding path to online-ordering and payment functionality; Indonesia’s special PMSE collector role requires formal appointment. The Philippines supplies a particularly sharp within-regime countercase: where an e-marketplace facilitates a sale but payment is made directly to the nonresident digital service provider outside marketplace control, the marketplace is not liable for the VAT in the cited administrative scenario. The same national system can instead place responsibility on the nonresident provider, a domestic business buyer/withholding agent, or a qualifying marketplace depending on transaction class and control conditions.\n\nSecond, transaction-level fiscal action is most tightly coupled where the liable node has contemporaneous access to payment or transaction-confirmation events, but that does not imply superior performance. Filing, amendment, refund, audit, appeal, enforcement, and observed outcomes are a separate layer of operational fiscal capacity.\n\nThe paper therefore reframes a central question for digital-tax reform. The issue is not simply whether governments should ‘tax platforms,’ but which actor should perform which bounded fiscal function for which transaction class, under what activation and information conditions. This transaction-path approach offers a way to compare technology-enabled tax administration without collapsing unlike legal instruments into a common rate panel or maturity score. The contribution is comparative and institutional rather than causal: it identifies the architecture that must be mapped before credible claims about compliance, revenue, equity, or administrative efficiency can be tested."
+  },
+  "keywords": [
+    "digital taxation",
+    "tax administration",
+    "platform liability",
+    "VAT/GST",
+    "e-commerce",
+    "regulatory intermediaries",
+    "transaction control",
+    "Southeast Asia"
+  ],
+  "evidence_boundary": {
+    "new_empirical_results_added_for_venue": false,
+    "causal_effect_claim": false,
+    "country_ranking": false,
+    "performance_superiority_claim": false,
+    "source_currentness_sweep_required_before_submission": true
+  },
+  "attendance_gate": {
+    "active": true,
+    "reason": "Current general registration is AUD 750 before flight and lodging; acceptance alone does not justify expenditure.",
+    "actions_if_accepted": [
+      "reverify_registration_price",
+      "search_external_travel_or_conference_funding",
+      "price_flight_and_lodging",
+      "verify_presentation_attendance_requirements_and_any_remote_option",
+      "make_explicit_go_no_go_economics_decision_before_purchase"
+    ]
+  },
+  "packet_doc": "docs/packets/ATTA_2027_DT_ABSTRACT_2026-09-15.md"
+}
