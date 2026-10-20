@@ -1,0 +1,90 @@
+{
+  "schema": "blowback.conference_abstract_packet.v1",
+  "snapshot": "2026-09-15",
+  "route_id": "atax-2027-fiscal-choke-points",
+  "primary_asset": "Fiscal Choke Points",
+  "state": "ABSTRACT_FROZEN_HUMAN_SEND_GATE",
+  "strategic_status": "FIRE_AFTER_GATE",
+  "execution_state": "APPLICATION_READY",
+  "human_gate": [
+    "insert_author_email",
+    "final_email_send",
+    "registration_or_travel_purchase_if_accepted"
+  ],
+  "opportunity": {
+    "organization": "UNSW School of Accounting, Auditing and Taxation",
+    "conference": "17th International ATAx Tax Administration Conference",
+    "theme": "Resilient Tax Systems: Navigating Uncertainty",
+    "dates": ["2027-04-06", "2027-04-07"],
+    "venue": "Pullman Sydney Hyde Park, Sydney, Australia",
+    "abstract_deadline": "2026-10-30",
+    "deadline_timezone_label_from_source": "Australian Eastern Standard Time",
+    "successful_presenters_notified": "END_2026_11",
+    "presenter_registration_deadline": "2026-12-31",
+    "full_paper_deadline": "2027-01-12",
+    "submission_email": "tblconferences@unsw.edu.au",
+    "current_2027_abstract_word_limit": null,
+    "current_2027_required_field_list": null,
+    "current_full_early_bird_registration_aud": 985,
+    "unsw_student_full_registration_aud": 590,
+    "conference_hotel_from_aud_per_night": 260,
+    "conference_hotel_breakfast_aud_per_person_day": 30,
+    "official_source": "https://www.unsw.edu.au/business/our-schools/accounting-auditing-taxation/news-events/17th-international-atax-tax-administration-conference",
+    "verified_at": "2026-09-15"
+  },
+  "historical_process_evidence": {
+    "source_cycle": "2025 ATAx call",
+    "abstract_words": "200-500",
+    "requested_elements": ["title", "brief_professional_bio_and_contact", "abstract", "conference_theme", "paper_status"],
+    "imported_as_current_requirement": false
+  },
+  "positioning": {
+    "recommended_title": "Fiscal Choke Points and Resilient Digital-Tax Administration: Activation, Transaction Control, and Node Choice in Southeast Asia",
+    "alternate_title": "From Platform Visibility to Fiscal Responsibility: Designing Resilient Digital-Tax Administration in Southeast Asia",
+    "primary_fit": "technology-enabled tax administration and system resilience",
+    "secondary_fit": "service and compliance innovation",
+    "do_not_route_as": [
+      "generic_asean_country_survey",
+      "ai_paper",
+      "causal_revenue_or_compliance_estimate",
+      "country_maturity_ranking"
+    ]
+  },
+  "abstract": {
+    "word_count": 371,
+    "text": "Resilient digital-tax administration depends not only on whether a jurisdiction taxes digital activity, but on whether it can place bounded fiscal duties on actors that are legally reachable and operationally positioned to observe or control the relevant commercial event. This paper develops a transaction-path framework for comparing that placement across seven digital-tax paths in Malaysia, Indonesia, Vietnam, Thailand, and the Philippines.\n\nUsing current primary legislation, regulations, tax-administration guidance, and official administrative material, each path is coded through the taxable object, liable node, destination or nexus evidence, activation mechanism, transaction rail, filing or remittance cadence, and reconciliation power. The analysis also distinguishes node locus—where responsibility is placed in the commercial chain—from event coupling—how closely the fiscal action is tied to payment or transaction-confirmation events.\n\nThe comparison yields two bounded institutional propositions. First, intermediary liability is activation-specific rather than a generic consequence of platform participation. Thailand conditions the selected platform VAT role on control of a continuous process from offering through payment and delivery; Vietnam’s selected withholding path turns on online ordering and payment functionality; and Indonesia’s PMSE collector role requires formal appointment. The Philippines provides a within-regime countercase: where an e-marketplace facilitates a sale but payment is made directly to the nonresident digital service provider outside marketplace control, the cited administrative scenario does not place the VAT liability on the marketplace. The same national system can instead allocate the fiscal node to a nonresident provider, domestic business buyer or withholding agent, or qualifying marketplace depending on transaction class and activation conditions.\n\nSecond, transaction-level fiscal action is most tightly coupled where the liable node has contemporaneous access to payment or transaction-confirmation information. That proposition concerns administrative architecture, not measured effectiveness. Filing, correction, refund, audit, appeal, enforcement, and observed outcomes form a separate layer of operational fiscal capacity, and the paper does not rank countries or infer causal effects on revenue or compliance.\n\nFor resilient tax-system design, the implication is that ‘taxing platforms’ is too coarse a reform category. Administrations must specify which actor performs which fiscal function, for which transaction class, under what legal trigger, and with what information or transaction-control capability. The framework offers a source-controlled way to compare technology-enabled tax administration while preserving the distinction between legal assignment and operational performance."
+  },
+  "author_material": {
+    "name": "Christopher Ongko",
+    "affiliation": "Yuan Ze University, Taiwan",
+    "contact_email": null,
+    "bio_word_count": 73,
+    "bio": "Christopher Ongko is a master's researcher in Finance at Yuan Ze University, Taiwan. His research examines digital-market measurement, tax-administration architecture, and the institutional design of technology-enabled financial systems. His current work on Fiscal Choke Points develops a source-controlled transaction-path framework for comparing how Southeast Asian tax administrations assign fiscal functions to foreign suppliers, digital platforms, buyers, and other intermediaries. He also develops research-software systems for evidence provenance, reproducible analysis, and computational research workflows.",
+    "paper_status": "Unpublished working paper / publication candidate"
+  },
+  "attendance_gate": {
+    "active": true,
+    "decision_window": "immediately_after_end_of_november_acceptance_and_before_2026-12-31_presenter_registration_deadline",
+    "reasons": [
+      "AUD 985 full early-bird registration before travel",
+      "conference hotel offer begins at AUD 260 per night",
+      "presenter registration deadline precedes full-paper deadline"
+    ],
+    "actions_if_accepted": [
+      "reverify_presenter_registration_rules_and_prices",
+      "check_non_unsw_student_or_presenter_support",
+      "search_external_travel_or_conference_funding",
+      "price_flight_lodging_and_local_transport",
+      "verify_physical_attendance_requirement",
+      "make_explicit_go_no_go_decision_before_payment"
+    ]
+  },
+  "evidence_boundary": {
+    "new_empirical_results_added_for_venue": false,
+    "causal_effect_claim": false,
+    "country_ranking": false,
+    "performance_superiority_claim": false,
+    "source_currentness_sweep_required_before_submission": true
+  },
+  "packet_doc": "docs/packets/ATAX_2027_DT_ABSTRACT_2026-09-15.md"
+}
