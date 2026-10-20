@@ -8,16 +8,17 @@ Status: **LIVE / conversion queue operational**
 - Product integration on main: `12ece15ec6042dec786ef50006db2f92251a7840`
 - Portfolio freeze status: `ceb0551e0c148476c51b40b8ffef1713f33efd55`
 - Product state: **PRODUCT_COMPLETE / CONVERSION_READY**
-- Gauntlet current CI baseline: main `45bd473bd11f7be95b019b45a109c19275bb09d0`, core + browser green
+- Canonical product surface: **Now → Read → Research**
+- Gauntlet pre-staging CI baseline: main `45bd473bd11f7be95b019b45a109c19275bb09d0`, core + browser green
 
 No general Nocturnal product construction should be opened from this brief. The job now is external conversion and evidence.
 
 ## Action order
 
-### 1. FIRE NOW — Taiwan FactCheck Center bounded pilot outreach
+### 1. RESTAGE — Taiwan FactCheck Center bounded pilot outreach
 
 Route: `partner-tfc-nocturnal-pilot`  
-State: `FIRE_NOW / PORTAL_RECON_REQUIRED`  
+State: `COPY_REVISED_RESTAGE_REQUIRED`  
 Official surface: `https://tfc-taiwan.org.tw/contact-us/`
 
 Prepared assets:
@@ -25,17 +26,33 @@ Prepared assets:
 - `docs/nocturnal-conversion/TFC_PILOT_OUTREACH.md`
 - `examples/fire-packets/tfc-nocturnal-pilot-2026.json`
 - `examples/opportunities/tfc-nocturnal-pilot-2026.json`
+- `docs/nocturnal-conversion/receipts/TFC_CONTACT_FORM_STAGED_2026-09-17.md`
 
-Execution rule:
+Live portal reconnaissance completed on 2026-09-17:
 
-1. inspect the current contact form and map its live fields;
-2. load the approved Traditional Chinese outreach copy;
-3. stop at the final Send control;
-4. applicant reviews the actual filled form;
-5. final Send is a human-protected action;
-6. if a reply arrives, partner willingness and first-case selection remain separate gates.
+1. verified live fields `我們如何稱呼您？`, `電子郵件地址：*`, and `留下您的訊息*`;
+2. verified final control text `送出`;
+3. observed no required-field or inline validation error on the first staged copy;
+4. observed a non-blocking Cloudflare challenge widget;
+5. did not click `送出`, press Enter, or transmit anything.
 
-Pilot request is deliberately small and falsifiable: one non-sensitive correction-rich public-source case, no cost, negative result acceptable, no endorsement requested.
+After that staging pass, the outreach copy was deliberately revised because the original message under-explained the finished product. The new canonical copy now explicitly states:
+
+- **problem** — longitudinal public-information reconstruction: initial reports are easy to find while later responses, corrections, superseding records and outcomes fragment across pages/time;
+- **solution** — one source-linked matter history preserving previous/current documented state, chronology, corrections/disputes, later outcomes, historical `as_of` state and Before ↔ After comparison;
+- **interface** — `Now` for current readable state, `Read` for `What changed?`/chronology/evidence/historical views, and `Research` for read-only Timeline/Before-After/Subjects/Sources/Evidence inspection;
+- **pilot** — one bounded, non-sensitive, correction-rich public case, compared against the partner's normal workflow with negative results explicitly acceptable.
+
+Canonical external references in the revised copy:
+
+- `https://github.com/Spectating101/nocturnal-oversight`
+- `https://github.com/Spectating101/nocturnal-oversight/blob/main/EVALUATOR_GUIDE.md`
+
+### Hosted preview exclusion
+
+`https://edition-nocturnal-preview.vercel.app` was rechecked during conversion preparation. It is live, but its `/research` path returns 404 and the repository freeze explicitly marks the earlier Edition/RC1 frontend as superseded by Now / Read / Research. Therefore it must **not** be sent to TFC as though it were the current product interface.
+
+The first staging receipt remains valid evidence of portal/field reconnaissance, but it no longer represents the final copy. The next reversible action is to restage the revised Traditional Chinese message, inspect it, and stop again before `送出`. Only then does the route return to `STAGED_HUMAN_SEND_GATE`.
 
 ### 2. HOST NOW — TWNIC Community Grants 2026
 
@@ -91,12 +108,19 @@ The technical concept is ready, but generic information-integrity positioning is
 
 ### TFC outreach
 
-- contact channel;
-- timestamp;
-- exact final message revision;
-- screenshot or confirmation if available;
-- response / no-response state;
-- next follow-up date.
+Current evidence:
+
+- portal/field reconnaissance complete;
+- first copy staged but superseded before transmission;
+- revised problem → solution → interface → pilot copy frozen in the FIRE packet;
+- no message transmitted.
+
+Next:
+
+- restage revised copy;
+- inspect exact form state;
+- human Send decision;
+- after Send only: timestamp, endpoint, final revision, acknowledgement/reference ID if any, response state and follow-up date.
 
 ### TWNIC host outreach
 
@@ -127,6 +151,7 @@ The technical concept is ready, but generic information-integrity positioning is
 
 - Do not reopen Nocturnal UI/product work merely because a richer feature could exist.
 - Do not claim external adoption, workflow improvement or endorsement before receipt evidence exists.
+- Do not use the superseded Edition/RC1 hosted preview as proof of the canonical interface.
 - Do not use a legal host's identity, seal, finances or proposal slot without authority.
 - Do not submit AI-assisted NLnet prose as if it were applicant-written.
 - Do not force OTF fit by inventing an at-risk beneficiary.
@@ -134,13 +159,13 @@ The technical concept is ready, but generic information-integrity positioning is
 
 ## Current operational conclusion
 
-Nocturnal is no longer waiting for an application strategy.
+Nocturnal is no longer waiting for an application strategy or TFC portal reconnaissance.
 
 The conversion system now has:
 
-- one **immediately executable external-evidence route** (TFC outreach);
+- one **revised external-evidence route** requiring a single clean restage before the protected final Send control (TFC outreach);
 - one **deadline-bound host route** with a complete host/proposal packet (TWNIC);
 - one **direct funding route** with a compliant human-authorship workbook and explicit portfolio/open-release gates (NLnet Restack);
 - one **rolling Internet-freedom funding route** with a complete concept framework but a truthful beneficiary/pilot gate (OTF IFF).
 
-The next irreversible action is human review + Send on the TFC contact form. Everything before that point is Gauntlet-preparable and now covered by green core/browser CI.
+The immediate TFC task is restage revised copy → inspect → human `送出` decision. No message has been transmitted.
