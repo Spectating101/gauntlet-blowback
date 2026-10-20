@@ -1,0 +1,152 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Gauntlet Blowback//Main Quest 2026-09-15//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Gauntlet Main Quest — PhD + Full-Time
+X-WR-TIMEZONE:Asia/Taipei
+X-GAUNTLET-SNAPSHOT:20260915
+X-GAUNTLET-POLICY:Thesis remains P0; PhD and serious employment are Main Quest; side quests do not displace Main Quest without hard deadline or extraordinary expected value.
+BEGIN:VEVENT
+UID:mainquest-dossier-20260915@blowback
+DTSTART;VALUE=DATE:20260915
+DTEND;VALUE=DATE:20260921
+SUMMARY:[P0] Build Main Quest master dossier + recommender outreach
+DESCRIPTION:One canonical PhD dossier with route forks. Current technical pair: Kong + Qazi. Management/IS empirical alternative: Kong + Hsin. No recommender agreement is presumed until confirmed.
+END:VEVENT
+BEGIN:VEVENT
+UID:mainquest-job-first-batch-20260916@blowback
+DTSTART;VALUE=DATE:20260916
+DTEND;VALUE=DATE:20260921
+SUMMARY:[FIRE BATCH] Point72 / WorldQuant / Trend / ITRI
+DESCRIPTION:First employment price-discovery batch. Tailor evidence, preserve credential gaps and nonclaims, and record durable receipts only after actual submission.
+END:VEVENT
+BEGIN:VEVENT
+UID:mainquest-nthu-refresh-20260918@blowback
+DTSTART;VALUE=DATE:20260918
+DTEND;VALUE=DATE:20260919
+RRULE:FREQ=WEEKLY;BYDAY=FR;UNTIL=20261016
+SUMMARY:[REVERIFY] NTHU 116 PhD brochure + ISA/ISS route
+DESCRIPTION:Do not assign a hard NTHU deadline until the official 116 doctoral-recommendation brochure is found. Recheck ISA and ISS plus any stronger aligned program.
+END:VEVENT
+BEGIN:VEVENT
+UID:mainquest-nccu-open-20260929@blowback
+DTSTART;TZID=Asia/Taipei:20260929T090000
+DTEND;TZID=Asia/Taipei:20260929T091000
+SUMMARY:[OPEN] NCCU 116 doctoral recommendation registration
+DESCRIPTION:Central NCCU 116 fee-account and registration window opens. MIS academic track is current P1 route.
+END:VEVENT
+BEGIN:VEVENT
+UID:mainquest-ntu-open-20260930@blowback
+DTSTART;TZID=Asia/Taipei:20260930T090000
+DTEND;TZID=Asia/Taipei:20260930T091000
+SUMMARY:[OPEN] NTU 116 doctoral recommendation registration
+DESCRIPTION:Open GINM and CSIE application work. Separate payment/account required per department where applicable. Internal dossier should already be largely frozen.
+END:VEVENT
+BEGIN:VEVENT
+UID:mainquest-nycu-open-20261001@blowback
+DTSTART;TZID=Asia/Taipei:20261001T090000
+DTEND;TZID=Asia/Taipei:20261001T091000
+SUMMARY:[P0 OPEN] NYCU 116 doctoral recommendation portal
+DESCRIPTION:Create IAIS application immediately and trigger official recommender invitations as early as the system permits.
+END:VEVENT
+BEGIN:VEVENT
+UID:mainquest-internal-freeze-20261004@blowback
+DTSTART;VALUE=DATE:20261004
+DTEND;VALUE=DATE:20261006
+SUMMARY:[INTERNAL HARD] Freeze NTU + NYCU PhD packets
+DESCRIPTION:Internal deadline before Oct 7-8 collision. CV, research plan, autobiography/personal statement, thesis/proposal, evidence index, transcripts and recommender support packets should be stable.
+END:VEVENT
+BEGIN:VEVENT
+UID:mainquest-nycu-app-deadline-20261007@blowback
+DTSTART;TZID=Asia/Taipei:20261007T170000
+DTEND;TZID=Asia/Taipei:20261007T170500
+SUMMARY:[P0 HARD] NYCU 116 applicant deadline
+DESCRIPTION:Complete IAIS applicant registration and uploads. No FIRED/RECEIPT state without durable confirmation.
+END:VEVENT
+BEGIN:VEVENT
+UID:mainquest-ntu-registration-deadline-20261007@blowback
+DTSTART;TZID=Asia/Taipei:20261007T235900
+DTEND;TZID=Asia/Taipei:20261008T000000
+SUMMARY:[HARD] NTU 116 registration/payment closes
+DESCRIPTION:Complete GINM/CSIE registration and payment before central cutoff. Application materials have a separate Oct 8 17:00 deadline.
+END:VEVENT
+BEGIN:VEVENT
+UID:mainquest-nycu-rec-deadline-20261008@blowback
+DTSTART;TZID=Asia/Taipei:20261008T170000
+DTEND;TZID=Asia/Taipei:20261008T170500
+SUMMARY:[P0 HARD] NYCU recommendation deadline
+DESCRIPTION:Track recommender status but do not fabricate submission. Current working pair Kong + Qazi remains provisional until both agree.
+END:VEVENT
+BEGIN:VEVENT
+UID:mainquest-ntu-materials-deadline-20261008@blowback
+DTSTART;TZID=Asia/Taipei:20261008T170000
+DTEND;TZID=Asia/Taipei:20261008T170500
+SUMMARY:[HARD] NTU 116 all application materials due
+DESCRIPTION:All required PDFs and department-specific materials due. Missing recommendations/materials may be reviewed as incomplete without a cure period.
+END:VEVENT
+BEGIN:VEVENT
+UID:mainquest-nccu-fee-cutoff-20261013@blowback
+DTSTART;TZID=Asia/Taipei:20261013T120000
+DTEND;TZID=Asia/Taipei:20261013T120500
+SUMMARY:[HARD] NCCU fee-account cutoff
+DESCRIPTION:Central NCCU 116 deadline for obtaining fee account.
+END:VEVENT
+BEGIN:VEVENT
+UID:mainquest-nccu-registration-deadline-20261013@blowback
+DTSTART;TZID=Asia/Taipei:20261013T150000
+DTEND;TZID=Asia/Taipei:20261013T150500
+SUMMARY:[HARD] NCCU registration cutoff
+DESCRIPTION:Complete central registration before 15:00.
+END:VEVENT
+BEGIN:VEVENT
+UID:mainquest-nccu-materials-deadline-20261013@blowback
+DTSTART;TZID=Asia/Taipei:20261013T170000
+DTEND;TZID=Asia/Taipei:20261013T170500
+SUMMARY:[HARD] NCCU online materials cutoff
+DESCRIPTION:Where department uses online upload, complete materials by 17:00. Reverify MIS department-specific submission method before final fire.
+END:VEVENT
+BEGIN:VEVENT
+UID:mainquest-nycu-candidate-20261015@blowback
+DTSTART;TZID=Asia/Taipei:20261015T150000
+DTEND;TZID=Asia/Taipei:20261015T151000
+SUMMARY:[CHECK] NYCU candidate number / application status
+DESCRIPTION:Verify IAIS application status and preserve any second-stage instructions.
+END:VEVENT
+BEGIN:VEVENT
+UID:mainquest-nycu-stage2-20261016@blowback
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261113
+SUMMARY:[WATCH] NYCU possible second-stage period
+DESCRIPTION:Keep IAIS interview/research presentation packet ready. Department-specific timing controls if issued.
+END:VEVENT
+BEGIN:VEVENT
+UID:mainquest-ntu-result-20261119@blowback
+DTSTART;TZID=Asia/Taipei:20261119T120000
+DTEND;TZID=Asia/Taipei:20261119T121000
+SUMMARY:[OUTCOME] NTU 116 doctoral result release
+DESCRIPTION:Central university result release. Record actual outcome; no inference from oral shortlist or faculty contact.
+END:VEVENT
+BEGIN:VEVENT
+UID:mainquest-ntu-reporting-20261124@blowback
+DTSTART;TZID=Asia/Taipei:20261124T100000
+DTEND;TZID=Asia/Taipei:20261127T000000
+SUMMARY:[IF ADMITTED] NTU online reporting window
+DESCRIPTION:Nov 24 10:00 through Nov 26 24:00. Human decision gate: compare actual funding/advisor/IP/research terms with other PhD and job outcomes before accepting.
+END:VEVENT
+BEGIN:VEVENT
+UID:mainquest-job-batch-weekly-20260922@blowback
+DTSTART;VALUE=DATE:20260922
+DTEND;VALUE=DATE:20260923
+RRULE:FREQ=WEEKLY;BYDAY=TU;UNTIL=20261124
+SUMMARY:[MAIN QUEST] Two serious job applications / market refresh
+DESCRIPTION:Prefer upper-tail quant, research-engineering, AI-agent/MCP, R&D and HS-native EDA/physical-AI roles. Do not pad the campaign with low-fit volume.
+END:VEVENT
+BEGIN:VEVENT
+UID:mainquest-comparison-20261127@blowback
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261201
+SUMMARY:[DECISION PREP] Reprice PhD vs job options
+DESCRIPTION:Compare only real outcomes: admission + scholarship/advisor terms versus screens/interviews/offers/compensation. Do not triple-count speculative portfolio value or ungranted funding.
+END:VEVENT
+END:VCALENDAR

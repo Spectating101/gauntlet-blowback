@@ -1,0 +1,177 @@
+{
+  "schema": "blowback.gauntlet_freeze.v1",
+  "snapshot": "2026-09-14",
+  "timezone": "Asia/Taipei",
+  "authority": "PROPOSED_CANONICAL_FREEZE",
+  "doctrine": {
+    "iais_is_protected_p0_until_2026_10_08": true,
+    "one_route_one_lead_narrative": true,
+    "no_new_project_to_fit_route": true,
+    "project_work_requires_live_route_evidence_gap": true,
+    "final_submit_human_gated": true,
+    "receipt_required_for_fired_to_receipt": true,
+    "unknown_deadlines_remain_watch": true
+  },
+  "portfolio_hierarchy": {
+    "research_identity": "refinery-commons",
+    "consequential_testbed": "hardware-splicer",
+    "research_workflow": ["cite-agent", "research-drive"],
+    "policy_public_interest": ["fiscal-choke-points", "nocturnal-oversight"],
+    "empirical_research": ["invisible-ledger", "cl-eci"]
+  },
+  "routes": [
+    {
+      "route_id": "phd-nycu-iais-116-2026",
+      "state": "P0_MUST_FIRE",
+      "lead": "refinery-commons",
+      "support": ["hardware-splicer", "invisible-ledger", "cl-eci"],
+      "hard_dates": [
+        {"at": "2026-10-01T09:00:00+08:00", "event": "portal_open"},
+        {"at": "2026-10-07T17:00:00+08:00", "event": "applicant_deadline"},
+        {"at": "2026-10-08T17:00:00+08:00", "event": "recommendation_deadline"},
+        {"at": "2026-10-15T15:00:00+08:00", "event": "registration_result_candidate_number"}
+      ],
+      "provisional_recommenders": ["De-Rong Kong", "Qazi Mazhar Ul Haq"],
+      "source": "https://exam.nycu.edu.tw/dr-md.html"
+    },
+    {
+      "route_id": "fellowship-tech-policy-press-2027",
+      "state": "FIRE_IF_FIT",
+      "lead": "fiscal-choke-points",
+      "support": ["nocturnal-oversight", "invisible-ledger"],
+      "deadline": "2026-09-24T23:59:00-04:00",
+      "packet": ["CV", "cover_letter_max_2_pages", "published_links", "two_professional_references"],
+      "eligibility_gate": "mid-career/public-interest writing fit and attributable public writing within 3 years",
+      "value": {"type": ["cash", "publication", "network"], "stipend_usd": 10000},
+      "source": "https://www.techpolicy.press/call-for-applications-2027-tech-policy-press-fellowship-program/"
+    },
+    {
+      "route_id": "ssi-fellowship-2027-policy-lab",
+      "state": "FIRE",
+      "lead": "refinery-commons",
+      "support": ["research-drive", "cite-agent"],
+      "deadline_date": "2026-10-05",
+      "packet": ["application_form", "six_minute_screencast"],
+      "source": "https://www.software.ac.uk/programmes/fellowship-programme/apply-fellowship-programme"
+    },
+    {
+      "route_id": "innoserve-genai-2026",
+      "state": "PORTFOLIO_BAKEOFF_FIRE",
+      "lead": "cite-agent",
+      "support": ["research-drive"],
+      "deadline": "2026-10-05T16:00:00+08:00",
+      "gates": ["team", "one_or_two_faculty_advisers", "student_status", "category_fit"],
+      "packet": ["system_overview", "declaration_consent", "student_id_or_enrollment_proof", "three_minute_video", "team_photo"],
+      "source": "https://innoserve.tca.org.tw/Rules/Detail?category=College"
+    },
+    {
+      "route_id": "openai-teen-development-2026",
+      "state": "PARTNER_GATE",
+      "lead": "cite-agent",
+      "support": ["research-drive"],
+      "deadline": "2026-10-06T23:59:00-07:00",
+      "gate": "credible child/adolescent development, wellbeing, HCI, AI-impacts or closely related research fit; do not force solo product pitch",
+      "max_grant_usd": 1000000,
+      "source": "https://openai.smapply.org/prog/openais_ai_and_teen_development_research_grant_program/"
+    },
+    {
+      "route_id": "competition-napai-agentic-ai-2026",
+      "state": "FIRE_AFTER_TEAM_FIELD_GATE",
+      "lead": "research-drive",
+      "support": ["cite-agent", "hardware-splicer"],
+      "deadline": "2026-10-16T23:59:00+08:00",
+      "gates": ["2_to_5_student_team", "real_field_problem", "field_validation_material"],
+      "packet": ["proposal_deck_max_12_pages", "video_max_4_minutes", "field_need_validation", "registration_and_declaration"],
+      "source": "https://napaincu.github.io/aaic2026/en/index.html"
+    },
+    {
+      "route_id": "residency-mats-2027",
+      "state": "PREP_THEN_FIRE",
+      "lead": "hardware-splicer",
+      "support": ["refinery-commons"],
+      "window_open": "2026-08-25",
+      "deadline_date_aoe": "2026-10-31",
+      "note": "Current live route is MATS Residency. Do not confuse with closed Winter 2027 fellowship page.",
+      "source": "https://www.matsprogram.org/residency/apply"
+    },
+    {
+      "route_id": "openai-researcher",
+      "state": "FIRE_THIS_WEEK",
+      "lead": "hardware-splicer",
+      "support": ["refinery-commons", "cite-agent"],
+      "deadline": null,
+      "review_cadence": ["March", "June", "September", "December"],
+      "max_api_credits_usd": 1000,
+      "credit_validity_months": 12,
+      "source": "https://grants.openai.com/prog/openai_researcher_access_program/"
+    },
+    {
+      "route_id": "anthropic-mhs-preview-2026",
+      "state": "FIRE_THIS_WEEK",
+      "lead": "hardware-splicer",
+      "support": ["refinery-commons"],
+      "deadline": null,
+      "gate": "research-preview interest / collaboration fit; physical authority nonclaims preserved",
+      "source": "https://www.anthropic.com/news/model-hardware-standard-research-preview"
+    },
+    {
+      "route_id": "anthropic-ai-for-science-general-2026",
+      "state": "FIRE_IF_RESEARCH_FIT",
+      "lead": "hardware-splicer",
+      "support": ["research-drive", "refinery-commons"],
+      "deadline": null,
+      "max_credits_usd_per_project": 50000,
+      "source": "https://www.anthropic.com/news/expanding-support-for-scientists"
+    },
+    {
+      "route_id": "nchc-ai-rap-2026",
+      "state": "RESOURCE_FIRE_WATCH",
+      "lead": "research-drive",
+      "support": ["hardware-splicer", "refinery-commons"],
+      "deadline": null,
+      "note": "Keep rolling until exact current application mechanics are rehydrated; do not assign fake hard deadline."
+    },
+    {
+      "route_id": "openai-codex-oss-2026",
+      "state": "HOLD_UNTIL_OSS_GATE",
+      "lead": "cite-agent",
+      "support": ["hardware-splicer", "refinery-commons"],
+      "deadline": null,
+      "gate": "genuinely public/open-source vehicle plus ecosystem-fit evidence"
+    },
+    {
+      "route_id": "predoc-mit-futuretech-ai-econ-2026",
+      "state": "QUEUE_AFTER_OCT16",
+      "lead": "invisible-ledger",
+      "support": ["fiscal-choke-points", "cl-eci", "research-drive"],
+      "deadline": null
+    },
+    {
+      "route_id": "job-hku-ai-agents-aec-ra-2026",
+      "state": "QUEUE_AFTER_OCT16",
+      "lead": "hardware-splicer",
+      "support": ["research-drive", "cite-agent"],
+      "deadline_date": "2027-01-31"
+    },
+    {
+      "route_id": "lab-sinica-ku-nlp-ra-2026",
+      "state": "QUEUE_AFTER_OCT16",
+      "lead": "cite-agent",
+      "support": ["nocturnal-oversight", "research-drive"],
+      "deadline_date": "2027-05-31"
+    }
+  ],
+  "remove_from_live_queue": [
+    {"route_id": "fellowship-era-ai-winter-2027", "reason": "Sep 13 deadline passed"},
+    {"route_id": "taai-hs-paper-2026", "reason": "current paper submission cycle closed"},
+    {"route_id": "residency-mats-winter-2027", "reason": "stale fellowship semantics; current live route is MATS Residency"}
+  ],
+  "patch_after_iais_session": [
+    "group_route_mechanics",
+    "eligible_supervisors_and_faculty_fit",
+    "scholarship_mechanics",
+    "english_requirements",
+    "december_2026_graduation_eligibility",
+    "iais_specific_documents"
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "schema": "gauntlet.main_quest_board.v1",
+  "snapshot": "2026-09-15",
+  "timezone": "Asia/Taipei",
+  "doctrine": {
+    "thesis_is_p0": true,
+    "main_quest_a": "funded_phd_option_creation",
+    "main_quest_b": "full_time_and_research_employment_price_discovery",
+    "side_quests_secondary": true,
+    "reuse_one_master_dossier": true,
+    "human_final_submit_gate": true,
+    "no_external_outcome_inference": true
+  },
+  "portfolio_identity": {
+    "primary_research_identity": "refinery-commons",
+    "consequential_testbed": "hardware-splicer",
+    "research_infrastructure_support": ["cite-agent", "research-drive"],
+    "empirical_research_support": ["invisible-ledger", "cl-eci"],
+    "policy_integrity_support": ["fiscal-choke-points", "nocturnal-oversight"]
+  },
+  "phd_routes": [
+    {
+      "route_id": "phd-nycu-iais-116",
+      "institution": "NYCU",
+      "program": "IAIS / Institute of Artificial Intelligence Innovation",
+      "state": "P0_MUST_APPLY",
+      "lead_assets": ["refinery-commons", "hardware-splicer"],
+      "open_at": "2026-10-01T09:00:00+08:00",
+      "applicant_deadline": "2026-10-07T17:00:00+08:00",
+      "recommendation_deadline": "2026-10-08T17:00:00+08:00",
+      "candidate_status_at": "2026-10-15T15:00:00+08:00",
+      "stage2_window": ["2026-10-16", "2026-11-12"],
+      "result_dates": ["2026-11-05", "2026-11-20"],
+      "unresolved": ["group_route_mechanics", "faculty_supervision_fit", "scholarship_mechanics", "english_medium_extent", "december_2026_graduation_handling", "institute_specific_documents"],
+      "source": "https://exam.nycu.edu.tw/dr-md.html"
+    },
+    {
+      "route_id": "phd-ntu-ginm-116",
+      "institution": "NTU",
+      "program": "Graduate Institute of Networking and Multimedia",
+      "state": "P0P1_MUST_SERIOUSLY_APPLY",
+      "lead_assets": ["refinery-commons"],
+      "general_seats": 7,
+      "review_weight": 0.60,
+      "oral_weight": 0.40,
+      "oral_gate_review_score": 80,
+      "registration_open": "2026-09-30T09:00:00+08:00",
+      "registration_deadline": "2026-10-07T23:59:59+08:00",
+      "materials_deadline": "2026-10-08T17:00:00+08:00",
+      "result_at": "2026-11-19T12:00:00+08:00",
+      "reporting_window": ["2026-11-24T10:00:00+08:00", "2026-11-26T23:59:59+08:00"],
+      "fit": ["information_retrieval", "agentic_systems", "software_engineering", "data_science_ai"],
+      "risks": ["non_cs_background_may_require_makeup_courses", "competitive_document_review"],
+      "sources": ["https://exam.aca.ntu.edu.tw/graa/paper/116/brochure_all.pdf", "https://www.inm.ntu.edu.tw/zh_tw/AdmissionsInformation/recruit_1", "https://www.inm.ntu.edu.tw/zh_tw/AdmissionsInformation/FAQ"]
+    },
+    {
+      "route_id": "phd-ntu-csie-116",
+      "institution": "NTU",
+      "program": "Computer Science and Information Engineering",
+      "state": "P1_STRETCH_APPLY",
+      "lead_assets": ["refinery-commons", "hardware-splicer"],
+      "general_seats": 10,
+      "registration_open": "2026-09-30T09:00:00+08:00",
+      "registration_deadline": "2026-10-07T23:59:59+08:00",
+      "materials_deadline": "2026-10-08T17:00:00+08:00",
+      "result_at": "2026-11-19T12:00:00+08:00",
+      "risk": "formal_cs_depth_and_competition",
+      "source": "https://exam.aca.ntu.edu.tw/graa/paper/116/brochure_all.pdf"
+    },
+    {
+      "route_id": "phd-nthu-isa-116",
+      "institution": "NTHU",
+      "program": "Institute of Information Systems and Applications",
+      "state": "P1_PREP_WATCH",
+      "lead_assets": ["refinery-commons"],
+      "fit": ["information_retrieval", "artificial_intelligent_agent", "software_engineering", "information_systems"],
+      "deadline_state": "VERIFY_116_BROCHURE",
+      "source": "https://isa.site.nthu.edu.tw/p/412-1182-15743.php?Lang=en"
+    },
+    {
+      "route_id": "phd-nthu-iss-116",
+      "institution": "NTHU",
+      "program": "Institute of Service Science",
+      "state": "P1_ALTERNATIVE_PREP_WATCH",
+      "lead_assets": ["refinery-commons"],
+      "all_compulsory_phd_courses_english": true,
+      "faculty_contact_recommended": true,
+      "domestic_first_round_window": "October-November",
+      "deadline_state": "VERIFY_116_BROCHURE",
+      "source": "https://www.iss.nthu.edu.tw/PhD"
+    },
+    {
+      "route_id": "phd-nccu-mis-academic-116",
+      "institution": "NCCU",
+      "program": "MIS PhD Academic Track",
+      "state": "P1_APPLY",
+      "lead_assets": ["refinery-commons", "invisible-ledger"],
+      "registration_open": "2026-09-29T09:00:00+08:00",
+      "fee_account_cutoff": "2026-10-13T12:00:00+08:00",
+      "registration_deadline": "2026-10-13T15:00:00+08:00",
+      "online_materials_deadline": "2026-10-13T17:00:00+08:00",
+      "sources": ["https://www.nccu.edu.tw/p/406-1000-23721,r125.php?Lang=zh-tw", "https://mis2.nccu.edu.tw/zh_tw/Admission/"]
+    }
+  ],
+  "job_routes": [
+    {
+      "route_id": "job-point72-cubist-quant-finance-taipei-2026",
+      "state": "FIRE_FIRST_BATCH",
+      "role": "Quantitative Finance Researcher",
+      "location": "Taipei",
+      "lead_assets": ["invisible-ledger", "cl-eci", "sharpe-terminus", "research-drive"],
+      "credential_fit": "HIGH",
+      "notes": "Current posting explicitly accepts MS/PhD candidates in finance or other quantitative disciplines; Python accepted; prior equity quant model experience preferred not required.",
+      "source": "https://careers.point72.com/CSJobDetail?jobCode=CSS-0003552&jobName=quantitative-finance-researcher&locale=English&location=Taipei+City"
+    },
+    {
+      "route_id": "job-worldquant-quant-macro-taipei-2026",
+      "state": "FIRE_FIRST_BATCH",
+      "role": "Quantitative Researcher, Quant Macro",
+      "location": "Taipei",
+      "lead_assets": ["cl-eci", "invisible-ledger", "sharpe-terminus"],
+      "fit": "HIGH_RESEARCH",
+      "source": "https://job-boards.greenhouse.io/worldquant/jobs/4372598006"
+    },
+    {
+      "route_id": "job-trendmicro-trendiq-ai-engineer-2026",
+      "state": "FIRE_FIRST_OR_SECOND_BATCH",
+      "role": "AI Engineer, TrendIQ Core Team",
+      "location": "Taipei",
+      "lead_assets": ["refinery-commons", "cite-agent", "research-drive"],
+      "fit": ["ai_agents", "mcp_tools", "multi_turn_workflows", "api_database_knowledge_integration"],
+      "risk": "formal_cs_ai_ml_credential_expectations",
+      "source": "https://trendmicro.wd3.myworkdayjobs.com/en-US/External/job/AI-Engineer--TrendIQ-Core-Team-_R0009952"
+    },
+    {
+      "route_id": "job-itri-ai-engineer-hsinchu-2026",
+      "state": "FIRE_FIRST_OR_SECOND_BATCH",
+      "role": "AI Engineer",
+      "location": "Hsinchu",
+      "lead_assets": ["refinery-commons", "hardware-splicer"],
+      "listed_monthly_pay_floor_ntd": 55000,
+      "fit": ["harness_engineering", "memory", "skills", "mcp", "multimodal_llm_vlm", "ai_assisted_vibe_coding"],
+      "risk": "listed_degree_fields_im_ee_ece_cs",
+      "source": "https://www.1111.com.tw/job/132030406/"
+    },
+    {
+      "route_id": "job-nvidia-pcb-eda-ai-ncg-2027",
+      "state": "STRETCH_FIRE",
+      "role": "PCB Design EDA and AI Engineer - New College Graduate 2027",
+      "location": "Taipei/Hsinchu",
+      "lead_assets": ["hardware-splicer"],
+      "project_fit": "VERY_HIGH",
+      "risk": "engineering_degree_requirement",
+      "source": "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/Taiwan-Taipei/PCB-Design-EDA-and-AI-Engineer---New-College-Graduate-2027_JR2023370"
+    },
+    {
+      "route_id": "job-hku-ai-agents-aec-ra-2026",
+      "state": "QUEUE_HIGH_FIT",
+      "lead_assets": ["hardware-splicer", "research-drive"]
+    },
+    {
+      "route_id": "lab-sinica-ku-nlp-ra-2026",
+      "state": "QUEUE",
+      "lead_assets": ["cite-agent", "nocturnal-oversight", "research-drive"]
+    },
+    {
+      "route_id": "predoc-mit-futuretech-ai-econ-2026",
+      "state": "QUEUE_HIGH_OPTION_VALUE",
+      "lead_assets": ["invisible-ledger", "cl-eci", "research-drive", "fiscal-choke-points"]
+    }
+  ],
+  "working_recommender_allocation": {
+    "technical_ai_cs_heavy": ["De-Rong Kong", "Qazi Mazhar Ul Haq"],
+    "management_is_empirical": ["De-Rong Kong", "Chin-Wen Hsin"],
+    "status": "PROVISIONAL_NOT_YET_COMMITTED"
+  },
+  "internal_deadlines": {
+    "phd_master_dossier_freeze": "2026-10-04",
+    "job_first_batch_target": "2026-09-20"
+  }
+}
