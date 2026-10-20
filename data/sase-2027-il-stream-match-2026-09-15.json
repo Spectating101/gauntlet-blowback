@@ -1,0 +1,85 @@
+{
+  "schema": "blowback.conference_stream_match.v1",
+  "snapshot": "2026-09-15",
+  "route_id": "sase-2027-invisible-ledger",
+  "primary_asset": "Invisible Ledger",
+  "state": "STREAM_MATCH_RESOLVED_SAMPLE_RATIFICATION_GATE",
+  "canonical_route_status": "WATCH_STREAM_MATCH",
+  "execution_state": "RESEARCH_ONLY",
+  "venue_fit": {
+    "status": "RESOLVED",
+    "primary_network": {
+      "id": "J",
+      "name": "Digital Economy",
+      "fit": "platform economy, digital market processes, consumer data, calculation, governance capacity, governmental digital initiatives, and plural empirical methods",
+      "source": "https://sase.org/networks/j-digital-economy/"
+    },
+    "secondary_networks": [
+      {
+        "id": "P",
+        "name": "Accounting, Economics, and Law",
+        "use_if": "recognition rules, accounting categories, and institutional/legal measurement boundary become the dominant contribution"
+      },
+      {
+        "id": "Q",
+        "name": "Asian Capitalisms",
+        "use_if": "the manuscript becomes explicitly comparative about institutional measurement and platform capitalism in Indonesia/ASEAN"
+      },
+      {
+        "id": "L",
+        "name": "Regulation and Governance",
+        "use_if": "the manuscript pivots toward state governance of visibility and data access"
+      }
+    ]
+  },
+  "conference": {
+    "in_person_dates": ["2027-06-30", "2027-07-03"],
+    "location": "University of Strathclyde, Glasgow, Scotland",
+    "virtual_event_dates": ["2027-06-16", "2027-06-18"],
+    "general_submissions_open": "EARLY_2026_10",
+    "mini_conference_deadline": "2026-11-01",
+    "network_deadline": "2026-12-16",
+    "official_source": "https://sase.org/events/2027-glasgow/",
+    "submission_guidelines": "https://sase.org/conference-submission-guidelines/",
+    "verified_at": "2026-09-15"
+  },
+  "mini_conference": {
+    "state": "WATCH_ACCEPTED_THEME_CATALOGUE",
+    "public_theme_catalogue_stable_for_allocation": false,
+    "rule": "Use a mini-conference only if an accepted 2027 theme is materially stronger than Network J; otherwise use Network J by the standing-network deadline.",
+    "duplicate_same_paper_across_mini_conference_and_network": false
+  },
+  "contribution_frame": "Different platform, corporate, statistical, payment, and administrative ledgers observe different units and recognition rules, constructing materially different views of the same digital economy; Invisible Ledger studies where those records diverge, where they can be reconciled, and what that implies for market measurement and state visibility.",
+  "empirical_dependency": {
+    "repository": "Spectating101/Invisible-ledger",
+    "branch": "research/issuer-admission-policy-20260915",
+    "pull_request": 8,
+    "candidate_policy": "scope-labelled direct issuer longitudinal evidence separated from strict Indonesia-specific evidence",
+    "advisor_approved": false,
+    "blocking_gate": "IL_ADVISOR_RATIFICATION_AND_LONGITUDINAL_PERIMETER",
+    "abstract_drafting_allowed_before_gate": false,
+    "submission_allowed_before_gate": false,
+    "required_resolution": [
+      "advisor explicitly ratifies the candidate inference architecture and CURRENT_STATUS is updated",
+      "or advisor selects a different final sample rule and IL reproducibility outputs are rerun under that rule"
+    ]
+  },
+  "inference_boundary_after_ratification": {
+    "main_geography": "Indonesia",
+    "strict_indonesia_claims": "Indonesia-specific/statistical/payment/institutional evidence only",
+    "direct_issuer_longitudinal": "scope-labelled within-series Tokopedia/Blibli/Bukalapak evidence if ratified",
+    "direct_periods_candidate": 13,
+    "positive_base_transitions_candidate": 9,
+    "pool_as_indonesia_country_panel": false,
+    "grab_shopee": "conditional sensitivity unless thesis authority changes",
+    "bps_bi_asean_global_administrative": "separate modules, never one inflated N"
+  },
+  "execution_doctrine": {
+    "write_outward_abstract_now": false,
+    "next_action": "close the Invisible Ledger advisor sample decision",
+    "virtual_preference_if_glasgow_unfunded": true,
+    "virtual_submission_mechanics_must_be_reverified": true,
+    "purchase_membership_or_registration_before_acceptance": false
+  },
+  "human_readable_note": "docs/longtail/SASE_2027_IL_STREAM_MATCH_2026-09-15.md"
+}
