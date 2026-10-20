@@ -1,0 +1,150 @@
+{
+  "schema": "blowback.research_proposal_packet.v1",
+  "snapshot": "2026-09-15",
+  "route_id": "tax-academy-sg-il",
+  "historical_route_id_retained": true,
+  "primary_asset": "Fiscal Choke Points",
+  "secondary_asset": "Invisible Ledger",
+  "state": "PACKET_DRAFTED_MECHANICS_GATE",
+  "strategic_status": "FIRE_AFTER_GATE",
+  "execution_state": "APPLICATION_READY",
+  "human_gate": [
+    "send_mechanics_inquiry",
+    "final_submit"
+  ],
+  "opportunity": {
+    "organization": "Tax Academy of Singapore",
+    "program": "Research Grant Programme",
+    "theme": "Digital Economy and Tax",
+    "grant_ceiling_sgd": 7500,
+    "deadline": null,
+    "deadline_state": "NO_FIXED_PUBLIC_DEADLINE_OBSERVED_2026-09-15",
+    "official_source": "https://www.taxacademy.sg/research-awards/call-for-papers/",
+    "verified_at": "2026-09-15"
+  },
+  "mechanics_gates": [
+    "applicant_eligibility_including_non_singapore_researchers",
+    "submission_channel",
+    "proposal_format_and_length",
+    "eligible_budget_categories",
+    "deadline_or_review_cycle",
+    "publication_or_exclusivity_terms",
+    "authorship_or_ai_assistance_declarations"
+  ],
+  "source_research_object": {
+    "title": "Fiscal Choke Points: Transaction-Node Architecture and Operational Fiscal Capacity in Southeast Asian Digital Tax Administration",
+    "author": "Christopher Ongko (王新福)",
+    "affiliation": "Yuan Ze University",
+    "date": "2026-09",
+    "jurisdictions": [
+      "Malaysia",
+      "Indonesia",
+      "Vietnam",
+      "Thailand",
+      "Philippines"
+    ],
+    "transaction_paths": 7,
+    "unit_of_analysis": "legally distinct transaction path",
+    "controlled_package": "IE-JDE/Digital_Tax_Design/rebuilt_2026/",
+    "evidence_boundary": "comparative and institutional, not causal; no country ranking or causal performance claim"
+  },
+  "proposal": {
+    "recommended_title": "From Visibility to Liability: Singapore’s Overseas Vendor Registration Regime and Fiscal Choke Points in Southeast Asian Digital Tax Administration",
+    "short_title": "Fiscal Choke Points in Singapore’s Digital Economy",
+    "one_sentence_proposition": "Test how Singapore converts commercially visible digital transactions into administrable GST obligations by assigning bounded duties to specific transaction nodes under legally defined activation conditions.",
+    "research_questions": [
+      "Which actor carries each bounded GST function in Singapore's cross-border digital-economy transaction paths?",
+      "Which thresholds, belonging evidence, GST-registration states, deemed-supplier conditions, transaction classes, and control conditions activate each duty?",
+      "How tightly is fiscal action coupled to the transaction and how is it subsequently filed, corrected, refunded, audited, disputed, and enforced?",
+      "Does Singapore support, falsify, or refine the existing activation-specificity and transaction-control propositions?",
+      "Which architecture choices reduce administrative distance while preserving correction, data, privacy, and intermediary-governance constraints?"
+    ],
+    "candidate_singapore_paths": [
+      {
+        "id": "SG_OVR_B2C_OVERSEAS_SUPPLIER",
+        "node": "overseas supplier",
+        "object": "qualifying B2C remote services and/or low-value goods",
+        "activation": "covered supply plus applicable global-turnover and Singapore B2C supply thresholds",
+        "rail": "simplified pay-only OVR registration and electronic filing",
+        "source": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-and-digital-economy/overseas-businesses"
+      },
+      {
+        "id": "SG_EMO_DEEMED_SUPPLIER",
+        "node": "local or overseas electronic marketplace operator",
+        "object": "covered B2C remote services and/or low-value goods supplied through the marketplace",
+        "activation": "conditions under which the electronic marketplace operator is regarded as the supplier",
+        "rail": "GST collection/accounting by the marketplace operator under OVR where applicable",
+        "source": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-and-digital-economy/overseas-businesses"
+      },
+      {
+        "id": "SG_B2B_REVERSE_CHARGE",
+        "node": "GST-registered Singapore business buyer",
+        "object": "qualifying imported services and low-value goods",
+        "activation": "B2B import and incomplete entitlement to input tax recovery under applicable reverse-charge rules",
+        "rail": "buyer-side GST accounting",
+        "source": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-and-digital-economy/local-businesses"
+      },
+      {
+        "id": "SG_LVG_REDELIVERER",
+        "node": "qualifying redeliverer",
+        "object": "covered low-value goods",
+        "activation": "admit only after the exact deemed-supplier conditions are fully source-coded",
+        "rail": "OVR treatment where applicable",
+        "admission_state": "SOURCE_LOCK_REQUIRED",
+        "source": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-and-digital-economy/overseas-businesses"
+      }
+    ],
+    "method_phases": [
+      "primary_source_lock_and_path_admission",
+      "independent_singapore_matrix_coding",
+      "comparative_proposition_stress_test",
+      "practitioner_or_documentary_validation_subject_to_rules",
+      "paper_policy_brief_reproducibility_and_seminar_outputs"
+    ],
+    "outputs": [
+      "singapore_transaction_path_extension",
+      "source_and_claim_control_updates",
+      "comparative_working_paper_or_article_revision",
+      "2_to_4_page_policy_practitioner_brief",
+      "seminar_ready_presentation",
+      "frozen_public_research_release_where_rights_permit"
+    ],
+    "provisional_duration_weeks": 12
+  },
+  "provisional_budget_sgd": {
+    "status": "PLANNING_ENVELOPE_ONLY_PENDING_ELIGIBLE_COST_RULES",
+    "items": [
+      {
+        "category": "Singapore legal and administrative source expansion and verification",
+        "amount": 1500
+      },
+      {
+        "category": "Practitioner validation and research support where permitted",
+        "amount": 2000
+      },
+      {
+        "category": "Singapore travel and local research logistics if approved and useful",
+        "amount": 2000
+      },
+      {
+        "category": "Data, document, translation, transcription and research services",
+        "amount": 1000
+      },
+      {
+        "category": "Research outputs, reproducibility and dissemination",
+        "amount": 1000
+      }
+    ],
+    "total": 7500,
+    "submit_before_budget_rules_confirmed": false
+  },
+  "nonclaims": [
+    "No claim that the existing five-country paper identifies the revenue/compliance effect of node choice.",
+    "No claim that Singapore's architecture is superior to comparison jurisdictions.",
+    "No claim that marketplace or platform presence automatically creates tax liability.",
+    "No use of public documentation depth as a proxy for operational performance.",
+    "No causal inference from practitioner validation alone.",
+    "No claim that grant funding is required to complete the existing core manuscript."
+  ],
+  "packet_doc": "docs/packets/TAX_ACADEMY_SG_DT_PACKET_2026-09-15.md"
+}
