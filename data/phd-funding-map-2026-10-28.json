@@ -1,0 +1,262 @@
+{
+  "schema": "gauntlet.phd_funding_research.v1",
+  "as_of": "2026-10-28",
+  "authority": "Research and local preparation only; no submissions, messages, nominations, consents or commitments",
+  "active_registry_mutated": false,
+  "personal_current_awards_not_reverified": true,
+  "records": [
+    {
+      "id": "supervisor-research-project",
+      "source_checked_on": "2026-10-28",
+      "route_label_and_sources": "**Supervisor-led research or industry project** — [NYCU research office](https://www.nycu.edu.tw/ord/ch/app/data/list?id=1828&module=nycu0037), [NSTC industry programme](https://www.nstc.gov.tw/spu/ch/list/7f5c7d9b-cbd1-4db2-bd3a-e186a3e840fb)",
+      "sources": [
+        "https://www.nycu.edu.tw/ord/ch/app/data/list?id=1828&module=nycu0037",
+        "https://www.nstc.gov.tw/spu/ch/list/7f5c7d9b-cbd1-4db2-bd3a-e186a3e840fb"
+      ],
+      "published_funding": "No user-specific amount established",
+      "access_and_assessment": "First priority when selecting a supervisor. Seek an actual paid work package involving research data, financial models, workflow evaluation or AI allocation. Standard research applications use institutional/PI eligibility; student status alone does not establish independent PI eligibility.",
+      "cash_treatment": "Count the user's written assistantship/contract payment, never the whole lab grant. Establish whether it is additional to the scholarship match. This is the same RA lane, not a second income merely because a grant funds it.",
+      "research_state": "PRIORITY_AFTER_SUPERVISOR",
+      "funding_kind": "ASSISTANTSHIP_CONTRACT",
+      "additivity": "ADDITIONAL_ONLY_IF_NOT_INCLUDED",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false
+    },
+    {
+      "id": "nycu-nstc-quota",
+      "source_checked_on": "2026-10-28",
+      "route_label_and_sources": "**NYCU NSTC doctoral scholarship, university quota route** — [current notice](https://ce.nycu.edu.tw/en/posts/1006), [university rules, April 2026](https://ce.nycu.edu.tw/storage/civil_all/2026/09-12/1-115420-17909062799VfoZ.pdf)",
+      "sources": [
+        "https://ce.nycu.edu.tw/en/posts/1006",
+        "https://ce.nycu.edu.tw/storage/civil_all/2026/09-12/1-115420-17909062799VfoZ.pdf"
+      ],
+      "published_funding": "NT$40K/month; up to three years under the current framework",
+      "access_and_assessment": "Important eligibility lead. NSTC quota rules exclude HK/Macau/mainland admission categories but do not state the MOE route's ROC-nationality restriction. Exact international-channel access, IAIS allocation, Spring 2027 timing and future cycle must be confirmed. The October 15, 2026 window has closed.",
+      "cash_treatment": "Potential replacement/improvement of base funding. Same-nature government/university scholarships require choosing one. Not another NT$40K automatically on top of IAIS/OIA support.",
+      "research_state": "NEXT_CYCLE_ELIGIBILITY_CHECK",
+      "funding_kind": "SCHOLARSHIP",
+      "additivity": "REPLACEMENT_NOT_AUTOMATIC_ADDITION",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false
+    },
+    {
+      "id": "sentient-open-agi",
+      "source_checked_on": "2026-10-28",
+      "route_label_and_sources": "**Sentient Open Source AGI grant** — [programme](https://sentient.foundation/grants), [product requests](https://sentient.foundation/product-requests)",
+      "sources": [
+        "https://sentient.foundation/grants",
+        "https://sentient.foundation/product-requests"
+      ],
+      "published_funding": "Individual award range unpublished; US$42M is programme-wide commitment",
+      "access_and_assessment": "Best thematic project lead found. Rolling grant track supports researchers/open-source builders. Its requests include agent cost optimisation, capability controls and reproducible security tests. Research on model/tool allocation offers a direct connection. Need an open artifact, credible experiment, budget and recipient/payment terms. Select the grant track rather than assuming its investment track is equivalent.",
+      "cash_treatment": "Possible additional project support; personal labour allowance and disbursement conditions are not established on the public page. Do not invent an award amount or monthly stipend.",
+      "research_state": "RESEARCH_FIT_PRIORITY",
+      "funding_kind": "PROJECT_GRANT",
+      "additivity": "PERSONAL_COMPENSATION_UNVERIFIED",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false
+    },
+    {
+      "id": "futo-microgrant",
+      "source_checked_on": "2026-10-28",
+      "route_label_and_sources": "**FUTO microgrant** — [programme](https://futo.tech/grants)",
+      "sources": [
+        "https://futo.tech/grants"
+      ],
+      "published_funding": "US$1–5K, one time",
+      "access_and_assessment": "Suitable scale for a small usable open/self-hosted research tool. Explain user control and a concrete benefit rather than generic AI ambition. Page says applications open; no deadline or detailed payment-country rules supplied. Large established-project awards are a different lane.",
+      "cash_treatment": "One-time project support; confirm permitted personal compensation and actual expenses. Not recurring monthly support.",
+      "research_state": "RESEARCH_FIT_PRIORITY",
+      "funding_kind": "ONE_TIME_PROJECT_GRANT",
+      "additivity": "PERSONAL_COMPENSATION_UNVERIFIED",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false
+    },
+    {
+      "id": "emergent-ventures",
+      "source_checked_on": "2026-10-28",
+      "route_label_and_sources": "**Emergent Ventures** — [programme and authorship rule](https://www.mercatus.org/emergent-ventures)",
+      "sources": [
+        "https://www.mercatus.org/emergent-ventures"
+      ],
+      "published_funding": "No standard amount published",
+      "access_and_assessment": "Broad international fit for an independently useful research/software idea with social value. Existing `emergent-commons`/`emergent-citation` history must be checked before any action; no duplicate application. Applicant must write the application themselves; AI permitted only for proofreading. This research memo is not application text.",
+      "cash_treatment": "Project-specific possible cash, amount/use subject to award. No salary assumption. Reuse verified factual records, not old AI-written prose.",
+      "research_state": "APPLICANT_AUTHORSHIP_AND_HISTORY_GATE",
+      "funding_kind": "PROJECT_GRANT",
+      "additivity": "AWARD_TERMS_UNVERIFIED",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false
+    },
+    {
+      "id": "google-east-asia-phd",
+      "source_checked_on": "2026-10-28",
+      "route_label_and_sources": "**Google East Asia PhD Fellowship** — [current programme](https://research.google/programs-and-events/phd-fellowship/), [NTHU 2026 nomination notice](https://dcs.site.nthu.edu.tw/p/406-1174-304753%2Cr66.php)",
+      "sources": [
+        "https://research.google/programs-and-events/phd-fellowship/",
+        "https://dcs.site.nthu.edu.tw/p/406-1174-304753%2Cr66.php"
+      ],
+      "published_funding": "US$10K for one year, covering stipend/research/travel",
+      "access_and_assessment": "Strong future research target for HCI, grounding, agent workflows or allocation. University nomination required; most doctoral coursework must be completed by award start. 2026 applications closed April 30; no 2027 call verified. Taiwan study uses the East Asia route; Indonesian citizenship does not confer Southeast Asia funding terms.",
+      "cash_treatment": "Paid through university, not all necessarily living cash. Comparable industry fellowships conflict; government/nonprofit funding is exempt under Google's general rule, but university and other funder conditions still apply.",
+      "research_state": "FUTURE_NOMINATION_COURSEWORK_GATE",
+      "funding_kind": "FELLOWSHIP",
+      "additivity": "INSTITUTION_ADMINISTERED",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false
+    },
+    {
+      "id": "microsoft-research",
+      "source_checked_on": "2026-10-28",
+      "route_label_and_sources": "**Microsoft Research Fellowship** — [2026 programme](https://www.microsoft.com/en-us/research/academic-program/2026-microsoft-research-fellowship/)",
+      "sources": [
+        "https://www.microsoft.com/en-us/research/academic-program/2026-microsoft-research-fellowship/"
+      ],
+      "published_funding": "2026 Taiwan amount US$17K, includes travel",
+      "access_and_assessment": "Future watch. Taiwan-based PhDs were eligible for relevant research challenges, with challenge-specific requirements. 2026 cycle is closed; it used a December 16, 2025 deadline. Page header's November label conflicts with detailed date; neither is a current deadline. No 2027 call verified.",
+      "cash_treatment": "One-time institutional gift distributed under university policy. Not automatically US$17K directly to the student.",
+      "research_state": "FUTURE_CALL_WATCH",
+      "funding_kind": "FELLOWSHIP_GIFT",
+      "additivity": "INSTITUTION_ADMINISTERED",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false
+    },
+    {
+      "id": "nvidia-graduate",
+      "source_checked_on": "2026-10-28",
+      "route_label_and_sources": "**NVIDIA Graduate Fellowship** — [current call](https://research.nvidia.com/graduate-fellowships)",
+      "sources": [
+        "https://research.nvidia.com/graduate-fellowships"
+      ],
+      "published_funding": "Up to US$60K per award, stipend/tuition/mandatory fees",
+      "access_and_assessment": "Later, selective target. Normally complete first doctoral year before applying, relevant thesis research and required in-person summer internship. Current 2027–28 call closes October 30, 2026: the user is not yet a PhD student and should not be treated as qualified. Technical research relevance matters; AI API usage alone is insufficient.",
+      "cash_treatment": "University-administered, with tuition/fees potentially consuming part. Confirm coexistence with existing funding. Not a near-term income forecast.",
+      "research_state": "LATER_PHD_STAGE_NOT_CURRENTLY_QUALIFIED",
+      "funding_kind": "FELLOWSHIP",
+      "additivity": "INSTITUTION_ADMINISTERED_FEES_INCLUDED",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false
+    },
+    {
+      "id": "corrigibility",
+      "source_checked_on": "2026-10-28",
+      "route_label_and_sources": "**Corrigibility Research Fund** — [current round](https://corrigibilityresearch.org/)",
+      "sources": [
+        "https://corrigibilityresearch.org/"
+      ],
+      "published_funding": "Typical US$5–35K; October 31, 2026",
+      "access_and_assessment": "Conditional research-fit hold. Requires a real corrigibility question/experiment. Existing action-control software is evidence of engineering, not automatically a corrigibility result. Applications are public. No rush submission or scope invention.",
+      "cash_treatment": "Project award subject to approved use and overlap; personal compensation not established here.",
+      "research_state": "RESEARCH_FIT_HOLD",
+      "funding_kind": "PROJECT_GRANT",
+      "additivity": "PERSONAL_COMPENSATION_UNVERIFIED",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false
+    },
+    {
+      "id": "ea-transformative-ai",
+      "source_checked_on": "2026-10-28",
+      "route_label_and_sources": "**EA Funds Transformative AI Fund** — [programme](https://funds.effectivealtruism.org/funds/transformative-ai)",
+      "sources": [
+        "https://funds.effectivealtruism.org/funds/transformative-ai"
+      ],
+      "published_funding": "No fresh award band established in this pass",
+      "access_and_assessment": "Open application link observed. Primary focus is reducing global catastrophic risk from advanced AI. General financial research, workflow efficiency or software quality does not establish that fit. Lower priority unless a substantive relevant study emerges.",
+      "cash_treatment": "Possible funded research, not a generic living stipend. Do not import an older typical range as a current promise.",
+      "research_state": "RESEARCH_FIT_HOLD",
+      "funding_kind": "PROJECT_GRANT",
+      "additivity": "AWARD_TERMS_UNVERIFIED",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false
+    },
+    {
+      "id": "nlnet",
+      "source_checked_on": "2026-10-28",
+      "route_label_and_sources": "**NLnet** — [funding overview](https://nlnet.nl/foundation/request/application.html), [October 20 policy update](https://nlnet.nl/news/2026/20261020-AI-policy.html)",
+      "sources": [
+        "https://nlnet.nl/foundation/request/application.html",
+        "https://nlnet.nl/news/2026/20261020-AI-policy.html"
+      ],
+      "published_funding": "Usually EUR5–50K per first grant; fund-specific restrictions",
+      "access_and_assessment": "Poor fit for the current agent-assisted development workflow. New policy prohibits generative proposal writing except accessibility and confines generative development tools to read-only use. AI-project scope and geography restrictions also apply. A non-AI artifact is not automatically compliant. Existing route history is preserved; no new proposal drafted.",
+      "cash_treatment": "Do not include in the present earning plan. Could only reconsider a genuinely eligible project and compliant method.",
+      "research_state": "POOR_FIT_CURRENT_WORKFLOW",
+      "funding_kind": "PROJECT_GRANT",
+      "additivity": "EXCLUDED_FROM_CURRENT_EARNING_PLAN",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false
+    },
+    {
+      "id": "ethereum-esp",
+      "source_checked_on": "2026-10-28",
+      "route_label_and_sources": "**Ethereum Foundation ESP** — [applicants](https://esp.ethereum.foundation/applicants), [open-round status](https://esp.ethereum.foundation/applicants/open-rounds)",
+      "sources": [
+        "https://esp.ethereum.foundation/applicants",
+        "https://esp.ethereum.foundation/applicants/open-rounds"
+      ],
+      "published_funding": "Scope-specific, no universal grant band",
+      "access_and_assessment": "Crypto/NFT data experience supplies domain context, but the project must improve Ethereum's open infrastructure/builders. Current open-round page lists no active rounds; Wishlist/RFP matching remains a separate avenue, not a verified exact match. Generic finance research is insufficient.",
+      "cash_treatment": "Milestone funding, ETH by default; recipient onboarding and budget terms required. No assumed TWD income or current award.",
+      "research_state": "NO_EXACT_WISHLIST_RFP_MATCH_VERIFIED",
+      "funding_kind": "PROJECT_GRANT",
+      "additivity": "MILESTONE_PROJECT_BUDGET",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false
+    },
+    {
+      "id": "taiwan-sbir",
+      "source_checked_on": "2026-10-28",
+      "route_label_and_sources": "**Taiwan SBIR** — [official FAQ](https://sbir.sme.gov.tw/sbir/faq)",
+      "sources": [
+        "https://sbir.sme.gov.tw/sbir/faq"
+      ],
+      "published_funding": "No applicable personal amount established",
+      "access_and_assessment": "Company-side route. Official requirements include company tax/insurance/accounting documents. No eligible applicant company or commercial team is established here. Retain for a future real spinout, rather than create a company merely to chase a ceiling.",
+      "cash_treatment": "Company project budget, not a personal doctoral grant. Personal pay would require an actual approved budget/contract.",
+      "research_state": "COMPANY_GATE",
+      "funding_kind": "COMPANY_GRANT",
+      "additivity": "COMPANY_BUDGET_NOT_PERSONAL_INCOME",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false
+    },
+    {
+      "id": "ibm-phd",
+      "source_checked_on": "2026-10-28",
+      "route_label_and_sources": "**IBM PhD Fellowship** — [current programme status](https://research.ibm.com/labs/yorktown-heights/ibm-academic-awards-program)",
+      "sources": [
+        "https://research.ibm.com/labs/yorktown-heights/ibm-academic-awards-program"
+      ],
+      "published_funding": "No current awards",
+      "access_and_assessment": "2026–27 programme explicitly paused; IBM anticipates a new programme announcement in Q1 2027. Old award amounts/late-PhD criteria cannot be assumed for the replacement.",
+      "cash_treatment": "Watch only; zero in the current funding plan.",
+      "research_state": "PAUSED_WATCH_Q1_2027",
+      "funding_kind": "FELLOWSHIP",
+      "additivity": "NO_CURRENT_AWARD",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false
+    }
+  ],
+  "illustration_only_twd": {
+    "project_total": 300000,
+    "personal_labour": 180000,
+    "compute": 60000,
+    "other_costs": 60000,
+    "funded_months": 12,
+    "annualised_personal_labour_monthly": 15000,
+    "hypothetical_base_monthly": 40000,
+    "hypothetical_additional_ra_monthly": 20000,
+    "hypothetical_total_monthly": 75000,
+    "not_funder_quote_or_actual_award": true,
+    "if_personal_labour_already_pays_ra_increment": 0
+  },
+  "unresolved": [
+    "Individual programme award and admission",
+    "Actual supervision and additional assistantship contract",
+    "Next published scholarship/fellowship cycles",
+    "International-channel access and institutional allocation for NYCU NSTC quota",
+    "Permitted personal compensation, institutional treatment and payment timing for project grants",
+    "Overlapping funding, duties and funded hours",
+    "University outside-funding/IP/release rules and relevant work classification",
+    "Country/payment eligibility where unpublished"
+  ]
+}

@@ -1,0 +1,1189 @@
+{
+  "schema": "gauntlet.portfolio_grant_audit.v1",
+  "as_of": "2026-10-28",
+  "authority": "Research and local preparation only",
+  "active_registry_mutated": false,
+  "external_actions_taken": [],
+  "scope": {
+    "local_directories_inventoried": 22,
+    "live_github_repositories_checked": 13,
+    "asset_families": 13,
+    "paper_lines": 5,
+    "programme_families": 24,
+    "programme_routes": 25,
+    "not_claimed": [
+      "Every repository line or historical branch audited",
+      "All grant programmes worldwide or all active Gauntlet records covered",
+      "Independent scientific peer review",
+      "Ownership or legal work permissions established",
+      "All dependencies safely sandboxed",
+      "Any funding probability or promised personal income"
+    ]
+  },
+  "verdict": {
+    "assessment": "Credible early-stage applied research and software portfolio; strongest for a specific funded experiment, small open-tool improvement, host-linked fellowship or institutional work package.",
+    "core_position": "Research, finance and programming applied to evidence quality, model evaluation and consequential decisions.",
+    "strengths": [
+      "Executable artifacts and substantial empirical work",
+      "Adverse results retained rather than concealed",
+      "Distinct finance and policy domain substance"
+    ],
+    "conversion_gaps": [
+      "One fundable question and achievable new deliverable per route",
+      "Exact reviewer-accessible release and clear IP/licence scope",
+      "Strong baselines and independent reference review",
+      "Specific community need and honest use/adoption record",
+      "Budget, time and funding overlap",
+      "Research-data reuse permissions"
+    ],
+    "income_forecast": "No future awards or additive personal pay confirmed; project budgets and compute credits are not salary."
+  },
+  "assets": [
+    {
+      "id": "cite-refinery",
+      "name": "Cite-Refinery",
+      "role": "LEAD",
+      "path": "/home/phyrexian/Downloads/llm_automation/project_portfolio/cite-refinery",
+      "revision": "b9a37c67a33975b6e24ba871df17a9691dc13cf8 + current working tree",
+      "visibility": "public",
+      "license": "MIT in pyproject.toml; no root LICENSE detected",
+      "strength": "Source-linked research graph, full-text evidence diagnostics, executable provenance checks",
+      "evidence": [
+        "README.md",
+        "docs/COMPETITIVE_SEMANTIC_MAP_GATE_ISSUE60.md",
+        "src/cite_refinery/competitive_gate.py",
+        "scripts/build_public_preview.py",
+        "research_materials/runtime_trials/fulltext_dog_20261020/benchmark_results.json",
+        "research_materials/runtime_trials/fulltext_dog_20261020/replication_assessment.json",
+        "research_materials/runtime_trials/fulltext_dog_20261020/evidence_repair_execution_receipt.json"
+      ],
+      "fresh_checks": [
+        "cite-refinery-core",
+        "cite-refinery-public-preview"
+      ],
+      "limits": [
+        "Ten-case competitive result uses a weak literal/heuristic baseline and constructed cases; not general superiority.",
+        "Full-text source-scope diagnostic: stored 18/21, zero correct unresolved labels; author-defined labels, no blinded human gold.",
+        "Twelve negative-binomial sensitivity fits do not reproduce published estimates; missing original analysis design prevents declaring original authors wrong.",
+        "No verified external adoption or field outcome; subprocess separation is not a hostile-code security sandbox."
+      ],
+      "next": "Reproducible reviewer package plus a pre-specified same-model baseline and independent source-label review."
+    },
+    {
+      "id": "refinery",
+      "name": "Refinery / Commons",
+      "role": "LEAD",
+      "path": "/home/phyrexian/Downloads/llm_automation/project_portfolio/refinery",
+      "revision": "2b03ad20f8ab3d55462adb38852855b940194c94; feature/refinery-research-view-20261008",
+      "visibility": "private",
+      "license": "No explicit project licence established",
+      "strength": "Component evidence, versioned claim records and bounded build-versus-reuse experiments",
+      "evidence": [
+        "HANDOFF.md",
+        "data/public_build_vs_reuse_control_v1_result.json"
+      ],
+      "fresh_checks": [
+        "refinery-search-evidence"
+      ],
+      "limits": [
+        "RFC3986 reuse and rebuild both 42/42; no demonstrated reuse advantage there.",
+        "PSL result is a narrow licensed-list/state advantage, not general runtime routing savings.",
+        "Production registry has zero execution mappings; market graph counts are not users.",
+        "Other worktrees and remote main differ."
+      ],
+      "next": "Choose a releasable component, define actual cost/quality allocation experiment and exact source revision."
+    },
+    {
+      "id": "policy-lab",
+      "name": "Policy Lab / energy-finance research",
+      "role": "LEAD",
+      "path": "/home/phyrexian/Downloads/llm_automation/project_portfolio/policy-lab-gpt6-europe-20261019",
+      "revision": "ec923ae0ee65e86b25230133b48d41567dc913aa; research/plrs5-meter-readiness-20261021",
+      "visibility": "private source; older public demonstration",
+      "license": "MIT; release and data scope still need review",
+      "strength": "Reproducible energy-finance evidence chain with financial assumptions and failed validation retained",
+      "evidence": [
+        "CURRENT_SURFACE.json",
+        "README.md",
+        "scripts/renewables_research_release.mjs",
+        "experiments/external_engines/pvdaq_system4_e6e_adapter.test.mjs",
+        "experiments/external_engines/pvdaq_e6f_weather_only_adapter.test.mjs"
+      ],
+      "fresh_checks": [
+        "policy-lab-release",
+        "policy-lab-pv-validation"
+      ],
+      "limits": [
+        "Frozen E1–E6a release is not the same artifact as subsequent measured-PV experiments.",
+        "Conditional PV fit does not qualify a physical meter or justify financial issuance.",
+        "Weather-only September holdout bias 15.79% fails 15% threshold.",
+        "No demonstrated causal policy effect, investable yield, customer deployment or token backing."
+      ],
+      "next": "Prepare a reviewer-accessible energy-finance methods package; budget external model/measurement validation."
+    },
+    {
+      "id": "hardware-splicer",
+      "name": "Hardware-Splicer",
+      "role": "LEAD_SMALL_GRANT",
+      "path": "/home/phyrexian/Downloads/llm_automation/project_portfolio/Hardware-Splicer",
+      "revision": "445a894520e4305d03c6a8dd738504a0cf2ee4b5 + current working tree; public main 1545ae806f9dd1e260e5da64c2b4475e49496276",
+      "visibility": "public",
+      "license": "MIT",
+      "strength": "Concrete KiCad artifact and reproducible CAD/ERC/DRC/BOM handoff",
+      "evidence": [
+        "README.md",
+        "tests/test_remote_physical_validation.py",
+        "tests/test_evidence_bench_gates.py"
+      ],
+      "fresh_checks": [
+        "hardware-physical-gates"
+      ],
+      "limits": [
+        "No fabricated board, bench measurements or independent physical validation established.",
+        "Contract tests do not establish electrical safety or industrial readiness.",
+        "Source-derived cyberdeck CAD is not a manufactured device."
+      ],
+      "next": "Small open-tool validation work package with an itemised fabrication/measurement plan and real operator review."
+    },
+    {
+      "id": "research-drive",
+      "name": "Research Drive / YZU cluster",
+      "role": "LEAD_INSTITUTIONAL",
+      "path": "/home/phyrexian/Downloads/llm_automation/project_portfolio/yzu-cluster",
+      "revision": "local f4b84c3a168f16eb1442f0dd5a5cdf4975cb6e62; public main 6dc745cdd838bf61daead116d919a4cf0a4e97cc; backend a8535c3e803e4015d0d506756072be41f05b597c",
+      "visibility": "public UI/reference runtime; private backend",
+      "license": "No explicit UI/backend licence established",
+      "strength": "Specific finance-lab data workflow and interoperation contracts",
+      "evidence": [
+        "README.md",
+        "tests/test_yzu_interop_resources.py"
+      ],
+      "fresh_checks": [
+        "research-drive-contract"
+      ],
+      "limits": [
+        "Remote README reports internal one-lab use; actual usage not independently observed this pass.",
+        "Reference-runtime tests are not verification of the deployed UI/backend pair.",
+        "RA/lab ownership, private data and release permission need resolution."
+      ],
+      "next": "Document exact personal contribution, approved sharing scope and an independently checkable lab use case."
+    },
+    {
+      "id": "nocturnal",
+      "name": "Nocturnal Oversight",
+      "role": "CONDITIONAL_LEAD",
+      "path": "/home/phyrexian/Downloads/llm_automation/project_portfolio/nocturnal-oversight",
+      "revision": "remote 0db9beec7557d2444d6b519012f6d45b65d4d1de; local d7f914f6e3b57f6cc65c827de868c284673b8876 older",
+      "visibility": "private",
+      "license": "AGPL-3.0",
+      "strength": "Multilingual source capture, claim review and explicit uncertainty",
+      "evidence": [
+        "README.md",
+        "docs/investigation/LIVE_SEMANTIC_AGENT_V0.md",
+        "docs/investigation/HK2019_CLAIM_ADJUDICATION_GATE_V0.md"
+      ],
+      "fresh_checks": [],
+      "limits": [
+        "Latest remote docs inspected; latest remote code not executed.",
+        "Fourteen pinned June-2019 source URLs, eight proposed relations all unverified; heuristic thresholds uncalibrated.",
+        "Two official captures are not independent publisher groups; reviewer identities self-asserted.",
+        "No truth detector, coordinated-person identity attribution or validated civic deployment."
+      ],
+      "next": "Target an explicit community task; define source independence, review rights, error evaluation and a permitted open component."
+    },
+    {
+      "id": "sharpe",
+      "name": "Sharpe / Terminus / alpha-platform",
+      "role": "RESEARCH_SUPPORT",
+      "path": "/home/phyrexian/Downloads/llm_automation/project_portfolio/alpha-platform",
+      "revision": "f8139ebf5a587a408f754e9884325545d416edbf; agent/empirical-program-v3-20261019",
+      "visibility": "private",
+      "license": "No project licence established",
+      "strength": "Point-in-time financial evaluation, costs, walk-forward splits and negative-result discipline",
+      "evidence": [
+        "AGENTS.md",
+        "docs/ALPHA_SCAN_V1_RESULTS.md",
+        "docs/EMPIRICAL_PROGRAM_V5.md"
+      ],
+      "fresh_checks": [
+        "sharpe-evidence-policy"
+      ],
+      "limits": [
+        "No candidate established net out-of-sample alpha in current scan.",
+        "Investment-performance claims or a profitable live strategy are unsupported.",
+        "V5 is a draft, not registered; holdout stays sealed.",
+        "Fresh tests validate implementation policies, not actual historical profitability."
+      ],
+      "next": "Use as finance-method evidence or PI research software, not as a profitable trading-product pitch."
+    },
+    {
+      "id": "public-good",
+      "name": "Public-Good Control Plane / animal-charity",
+      "role": "CONDITIONAL_PILOT",
+      "path": "output/grant-portfolio-audit-2026-10-28/source-checkouts/animal-charity",
+      "revision": "b728666307149dacf64d5859ec99e6e23190baab",
+      "visibility": "public",
+      "license": "README explicitly says not yet declared",
+      "strength": "Executable decision and evidence workflow for public-good cases",
+      "evidence": [
+        "README.md",
+        "tests/"
+      ],
+      "fresh_checks": [
+        "public-good-core"
+      ],
+      "limits": [
+        "Retrospective case work, no prospective field pilot or established partner.",
+        "No independently measured animal, nutrition or disaster outcomes.",
+        "Overlap with Cite-Refinery dog case cannot be billed twice."
+      ],
+      "next": "Only pursue a pilot after a credible operator and distinct beneficiary question exist."
+    },
+    {
+      "id": "citation-engine",
+      "name": "Citation Engine",
+      "role": "SUPPORT_ONLY",
+      "path": "output/grant-portfolio-audit-2026-10-28/source-checkouts/citation-engine",
+      "revision": "2de452b8ea1e6b54c93d2ada009f2d3b76c9bcab",
+      "visibility": "public",
+      "license": "No explicit licence established",
+      "strength": "Small tested claim/provenance/decision kernel",
+      "evidence": [
+        "README.md",
+        "tests/"
+      ],
+      "fresh_checks": [
+        "citation-engine-core"
+      ],
+      "limits": [
+        "Use across the owner's own repositories is not outside adoption.",
+        "Not yet mature widespread infrastructure."
+      ],
+      "next": "Include as a component of one lead project, consistent with existing campaign scope."
+    },
+    {
+      "id": "geomap",
+      "name": "GeoMap Arbitrage",
+      "role": "DEFER",
+      "path": "output/grant-portfolio-audit-2026-10-28/source-checkouts/geomap-arbitrage",
+      "revision": "9efcd3508e7f0904fd9fb241c9c86e08d586afc6",
+      "visibility": "public",
+      "license": "No explicit licence established",
+      "strength": "Inspectable location/opportunity decision prototype",
+      "evidence": [
+        "README.md",
+        "tests/"
+      ],
+      "fresh_checks": [
+        "geomap-core"
+      ],
+      "limits": [
+        "Synthetic North Harbour cases, no verified real market or income outcome.",
+        "Tests used current Citation Engine source, not clean installation of pinned older dependency."
+      ],
+      "next": "Do not open another grant campaign before higher-evidence leads are packaged."
+    },
+    {
+      "id": "cite-agent",
+      "name": "Cite-Agent / literature layer",
+      "role": "SHELVED_REUSABLE_COMPONENTS",
+      "path": "/home/phyrexian/Downloads/llm_automation/project_portfolio/Cite-Agent",
+      "revision": "d2c6ff807df3fa6aba606b1db35011f63ce740e9",
+      "visibility": "private",
+      "license": "MIT",
+      "strength": "Reusable paper retrieval and panel-statistics components; explicit adverse evaluation",
+      "evidence": [
+        "README.md",
+        "docs/LITERATURE_LAYER.md",
+        "docs/status/generated/competitive-benchmark/v2/final-tests-2026-10-20.md"
+      ],
+      "fresh_checks": [],
+      "limits": [
+        "Shelved; not maintained or deployed for new users.",
+        "Stored same-model and tools-versus-Claude evaluations do not establish advantage; simulated personas are not real user trials.",
+        "Known unfixed cross-account data exposure on this branch; do not revive as public application for grant demonstrations.",
+        "Historical evaluations read, not rerun."
+      ],
+      "next": "Reuse audited isolated functions only after dependency/security review; do not lead with app-success claims."
+    },
+    {
+      "id": "gauntlet",
+      "name": "Gauntlet / Blowback",
+      "role": "SUPPORT_ONLY",
+      "path": "/home/phyrexian/Downloads/llm_automation/project_portfolio/gauntlet-blowback",
+      "revision": "d63e57724877d2f0b81abb7c74df51ed2c9234ad + pre-existing working changes",
+      "visibility": "not reclassified",
+      "license": "Not assessed for an independent grant",
+      "strength": "Evidence, opportunity-state and protected-submission control",
+      "evidence": [
+        "AGENTS.md",
+        "data/portfolio-campaign-scope-2026-09-12.json"
+      ],
+      "fresh_checks": [],
+      "limits": [
+        "An application control plane is not evidence of funding conversion or a standalone grant-worthy product.",
+        "Active route states are not changed by this audit."
+      ],
+      "next": "Use to keep records and prepare packets, without adding unrelated engineering."
+    },
+    {
+      "id": "legacy",
+      "name": "Legacy, infrastructure and earlier worktrees",
+      "role": "CONTEXT_ONLY",
+      "path": "/home/phyrexian/Downloads/llm_automation/project_portfolio/",
+      "revision": "See local-repository-inventory.json",
+      "visibility": "mixed",
+      "license": "Not audited as independent releases",
+      "strength": "Implementation history and supporting infrastructure",
+      "evidence": [
+        "output/grant-portfolio-audit-2026-10-28/local-repository-inventory.json"
+      ],
+      "fresh_checks": [],
+      "limits": [
+        "Twenty-two directories include duplicate roots, worktrees, archives and earlier iterations.",
+        "No independent current grant-readiness review of every legacy product."
+      ],
+      "next": "Consolidate lineage; do not inflate the number of independent validated projects."
+    }
+  ],
+  "papers": [
+    {
+      "id": "invisible-ledger",
+      "name": "Invisible Ledger",
+      "root": "/home/phyrexian/Downloads/Invisible-ledger",
+      "revision": "HEAD b6bfeedc29ecb4a7c7dcdba0324497d1bdbf766f plus dirty October 26–27 working materials",
+      "evidence": [
+        "papers/thesis_2026-10/abstract.md",
+        "papers/thesis_2026-10/ch5_results.md",
+        "papers/thesis_2026-10/DECISIONS.md",
+        "research/option_space_2026-10-01/LICENSED_DATA.md",
+        "research/option_space_2026-10-01/rebuild_all.sh"
+      ],
+      "contribution": "Platform transaction/revenue measurement, seller coverage and reproducible empirical finance/policy methods",
+      "limits": [
+        "Exploratory expanded panel 32 platforms / 213 platform-years is not the registered causal design.",
+        "Few treated platforms and sensitivity to Blibli constrain strong causal conclusions.",
+        "Original generated distributable omitted four new untracked scripts and five required input/aggregate files. Supplemented private audit replay completed; 14 ledgers / 460 claims pass consistency checks, but original packaging remains incomplete.",
+        "BPS thesis-only licensed microdata and other licensed raw data are not grant-reusable or redistributable by default.",
+        "Working paper and thesis filenames do not prove publication, acceptance or submitted final version."
+      ],
+      "fit": [
+        "supervisor-research-project",
+        "sloan",
+        "emergent-ventures",
+        "mozilla-embedded"
+      ]
+    },
+    {
+      "id": "eci",
+      "name": "When Does Energy Track the Real Economy? / ECI",
+      "root": "/home/phyrexian/Downloads/Invisible-ledger/other papers",
+      "revision": "September 20 r2 DOCX inspected via XML",
+      "contribution": "Distinguishes energy/monetary associations from useful independent forecasting",
+      "limits": [
+        "Stablecoin/M2 association is not robust across persistence/dynamic choices.",
+        "WEI partly contains utility information, limiting independence.",
+        "Taiwan semiconductor energy footprint is not established short-term output prediction."
+      ],
+      "fit": [
+        "supervisor-research-project",
+        "fir-pri"
+      ]
+    },
+    {
+      "id": "constrained-ledger",
+      "name": "Constrained Ledger",
+      "root": "/home/phyrexian/Downloads/Invisible-ledger/other papers",
+      "revision": "September 20 r2 DOCX inspected via XML",
+      "contribution": "Necessary measurement and closure constraints for energy-linked monetary claims",
+      "limits": [
+        "Mining-cost ratio matches elapsed-days placebo; not a robust backing signal.",
+        "PPA and guarantee-of-origin coupling is possible under corrected framing.",
+        "Necessary constraints are not a novel impossibility theorem or a launched financial instrument."
+      ],
+      "fit": [
+        "supervisor-research-project",
+        "fir-pri"
+      ]
+    },
+    {
+      "id": "cl-eci",
+      "name": "CL–ECI synthesis",
+      "root": "/home/phyrexian/Downloads/Invisible-ledger/other papers",
+      "revision": "September 20 r2 DOCX inspected via XML",
+      "contribution": "Links measurement, qualification, closure and monetary-performance tests",
+      "limits": [
+        "Synthesis overlaps companion papers; not independent third validation.",
+        "Theory plus prototype, no outside measurement or monetary experiment."
+      ],
+      "fit": [
+        "supervisor-research-project",
+        "fir-pri"
+      ]
+    },
+    {
+      "id": "fiscal-choke-points",
+      "name": "Fiscal Choke Points",
+      "root": "/home/phyrexian/Downloads/Invisible-ledger/other papers",
+      "revision": "2026 CEILING working-paper DOCX inspected via XML",
+      "contribution": "Comparative institutional analysis across five countries and seven transaction paths",
+      "limits": [
+        "Coding and legal activation/control propositions, not causal tax collection impact.",
+        "Current version and permissions/coauthors need confirmation before outward sharing."
+      ],
+      "fit": [
+        "supervisor-research-project",
+        "emergent-ventures"
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "id": "supervisor-research-project",
+      "source_checked_on": "2026-10-28",
+      "route_label_and_sources": "**Supervisor-led research or industry project** — [NYCU research office](https://www.nycu.edu.tw/ord/ch/app/data/list?id=1828&module=nycu0037), [NSTC industry programme](https://www.nstc.gov.tw/spu/ch/list/7f5c7d9b-cbd1-4db2-bd3a-e186a3e840fb)",
+      "sources": [
+        "https://www.nycu.edu.tw/ord/ch/app/data/list?id=1828&module=nycu0037",
+        "https://www.nstc.gov.tw/spu/ch/list/7f5c7d9b-cbd1-4db2-bd3a-e186a3e840fb"
+      ],
+      "published_funding": "No user-specific amount established",
+      "access_and_assessment": "First priority when selecting a supervisor. Seek an actual paid work package involving research data, financial models, workflow evaluation or AI allocation. Standard research applications use institutional/PI eligibility; student status alone does not establish independent PI eligibility.",
+      "cash_treatment": "Count the user's written assistantship/contract payment, never the whole lab grant. Establish whether it is additional to the scholarship match. This is the same RA lane, not a second income merely because a grant funds it.",
+      "research_state": "PRIORITY_AFTER_SUPERVISOR",
+      "funding_kind": "ASSISTANTSHIP_CONTRACT",
+      "additivity": "ADDITIONAL_ONLY_IF_NOT_INCLUDED",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false,
+      "audit_state": "PRIORITY_WITH_PI",
+      "lead_assets": [
+        "policy-lab",
+        "research-drive",
+        "sharpe"
+      ],
+      "supporting_papers": [
+        "invisible-ledger",
+        "eci",
+        "fiscal-choke-points"
+      ],
+      "portfolio_specific_assessment": "Strongest institutional bridge from the actual finance research and functioning lab tools; requires an eligible PI, approved budget and actual personal contract.",
+      "source_access": "Primary pages inspected this audit or same-date funding pass; see source-specific limits."
+    },
+    {
+      "id": "nycu-nstc-quota",
+      "source_checked_on": "2026-10-28",
+      "route_label_and_sources": "**NYCU NSTC doctoral scholarship, university quota route** — [current notice](https://ce.nycu.edu.tw/en/posts/1006), [university rules, April 2026](https://ce.nycu.edu.tw/storage/civil_all/2026/09-12/1-115420-17909062799VfoZ.pdf)",
+      "sources": [
+        "https://ce.nycu.edu.tw/en/posts/1006",
+        "https://ce.nycu.edu.tw/storage/civil_all/2026/09-12/1-115420-17909062799VfoZ.pdf"
+      ],
+      "published_funding": "NT$40K/month; up to three years under the current framework",
+      "access_and_assessment": "Important eligibility lead. NSTC quota rules exclude HK/Macau/mainland admission categories but do not state the MOE route's ROC-nationality restriction. Exact international-channel access, IAIS allocation, Spring 2027 timing and future cycle must be confirmed. The October 15, 2026 window has closed.",
+      "cash_treatment": "Potential replacement/improvement of base funding. Same-nature government/university scholarships require choosing one. Not another NT$40K automatically on top of IAIS/OIA support.",
+      "research_state": "NEXT_CYCLE_ELIGIBILITY_CHECK",
+      "funding_kind": "SCHOLARSHIP",
+      "additivity": "REPLACEMENT_NOT_AUTOMATIC_ADDITION",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false,
+      "audit_state": "FUTURE_INSTITUTIONAL",
+      "lead_assets": [],
+      "supporting_papers": [
+        "invisible-ledger"
+      ],
+      "portfolio_specific_assessment": "Doctoral funding selection uses research record; admission/departmental quota and next cycle unresolved. Not a project grant.",
+      "source_access": "Primary pages inspected this audit or same-date funding pass; see source-specific limits."
+    },
+    {
+      "id": "sentient-open-agi",
+      "source_checked_on": "2026-10-28",
+      "route_label_and_sources": "**Sentient Open Source AGI grant** — [programme](https://sentient.foundation/grants), [product requests](https://sentient.foundation/product-requests)",
+      "sources": [
+        "https://sentient.foundation/grants",
+        "https://sentient.foundation/product-requests"
+      ],
+      "published_funding": "Individual award range unpublished; US$42M is programme-wide commitment",
+      "access_and_assessment": "Best thematic project lead found. Rolling grant track supports researchers/open-source builders. Its requests include agent cost optimisation, capability controls and reproducible security tests. Research on model/tool allocation offers a direct connection. Need an open artifact, credible experiment, budget and recipient/payment terms. Select the grant track rather than assuming its investment track is equivalent.",
+      "cash_treatment": "Possible additional project support; personal labour allowance and disbursement conditions are not established on the public page. Do not invent an award amount or monthly stipend.",
+      "research_state": "RESEARCH_FIT_PRIORITY",
+      "funding_kind": "PROJECT_GRANT",
+      "additivity": "PERSONAL_COMPENSATION_UNVERIFIED",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false,
+      "audit_state": "PREPARE_SCOPE",
+      "lead_assets": [
+        "cite-refinery",
+        "refinery",
+        "hardware-splicer"
+      ],
+      "supporting_papers": [],
+      "portfolio_specific_assessment": "Direct RFP connection: evaluate model/tool allocation and verifiable task output; no current measured general optimisation advantage.",
+      "source_access": "Primary pages inspected this audit or same-date funding pass; see source-specific limits."
+    },
+    {
+      "id": "futo-microgrant",
+      "source_checked_on": "2026-10-28",
+      "route_label_and_sources": "**FUTO microgrant** — [programme](https://futo.tech/grants)",
+      "sources": [
+        "https://futo.tech/grants"
+      ],
+      "published_funding": "US$1–5K, one time",
+      "access_and_assessment": "Suitable scale for a small usable open/self-hosted research tool. Explain user control and a concrete benefit rather than generic AI ambition. Page says applications open; no deadline or detailed payment-country rules supplied. Large established-project awards are a different lane.",
+      "cash_treatment": "One-time project support; confirm permitted personal compensation and actual expenses. Not recurring monthly support.",
+      "research_state": "RESEARCH_FIT_PRIORITY",
+      "funding_kind": "ONE_TIME_PROJECT_GRANT",
+      "additivity": "PERSONAL_COMPENSATION_UNVERIFIED",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false,
+      "audit_state": "PREPARE_SMALL_PROJECT",
+      "lead_assets": [
+        "hardware-splicer",
+        "cite-refinery"
+      ],
+      "supporting_papers": [],
+      "portfolio_specific_assessment": "Public inspectable tools suit an early microgrant if a concrete user-control improvement is specified.",
+      "source_access": "Primary pages inspected this audit or same-date funding pass; see source-specific limits."
+    },
+    {
+      "id": "emergent-ventures",
+      "source_checked_on": "2026-10-28",
+      "route_label_and_sources": "**Emergent Ventures** — [programme and authorship rule](https://www.mercatus.org/emergent-ventures)",
+      "sources": [
+        "https://www.mercatus.org/emergent-ventures"
+      ],
+      "published_funding": "No standard amount published",
+      "access_and_assessment": "Broad international fit for an independently useful research/software idea with social value. Existing `emergent-commons`/`emergent-citation` history must be checked before any action; no duplicate application. Applicant must write the application themselves; AI permitted only for proofreading. This research memo is not application text.",
+      "cash_treatment": "Project-specific possible cash, amount/use subject to award. No salary assumption. Reuse verified factual records, not old AI-written prose.",
+      "research_state": "APPLICANT_AUTHORSHIP_AND_HISTORY_GATE",
+      "funding_kind": "PROJECT_GRANT",
+      "additivity": "AWARD_TERMS_UNVERIFIED",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false,
+      "audit_state": "OWNER_AUTHORED_RESEARCH_CASE",
+      "lead_assets": [
+        "refinery",
+        "cite-refinery",
+        "policy-lab"
+      ],
+      "supporting_papers": [
+        "invisible-ledger",
+        "fiscal-choke-points"
+      ],
+      "portfolio_specific_assessment": "Explain one useful independent idea with actual evidence; inspect prior draft state, no duplicate submission or AI-written application.",
+      "source_access": "Primary pages inspected this audit or same-date funding pass; see source-specific limits."
+    },
+    {
+      "id": "google-east-asia-phd",
+      "source_checked_on": "2026-10-28",
+      "route_label_and_sources": "**Google East Asia PhD Fellowship** — [current programme](https://research.google/programs-and-events/phd-fellowship/), [NTHU 2026 nomination notice](https://dcs.site.nthu.edu.tw/p/406-1174-304753%2Cr66.php)",
+      "sources": [
+        "https://research.google/programs-and-events/phd-fellowship/",
+        "https://dcs.site.nthu.edu.tw/p/406-1174-304753%2Cr66.php"
+      ],
+      "published_funding": "US$10K for one year, covering stipend/research/travel",
+      "access_and_assessment": "Strong future research target for HCI, grounding, agent workflows or allocation. University nomination required; most doctoral coursework must be completed by award start. 2026 applications closed April 30; no 2027 call verified. Taiwan study uses the East Asia route; Indonesian citizenship does not confer Southeast Asia funding terms.",
+      "cash_treatment": "Paid through university, not all necessarily living cash. Comparable industry fellowships conflict; government/nonprofit funding is exempt under Google's general rule, but university and other funder conditions still apply.",
+      "research_state": "FUTURE_NOMINATION_COURSEWORK_GATE",
+      "funding_kind": "FELLOWSHIP",
+      "additivity": "INSTITUTION_ADMINISTERED",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false,
+      "audit_state": "FUTURE_ENROLLED",
+      "lead_assets": [
+        "cite-refinery",
+        "refinery",
+        "policy-lab"
+      ],
+      "supporting_papers": [
+        "invisible-ledger"
+      ],
+      "portfolio_specific_assessment": "Research programme plus doctoral progress and nomination; not an immediate grant for the whole portfolio.",
+      "source_access": "Primary pages inspected this audit or same-date funding pass; see source-specific limits."
+    },
+    {
+      "id": "microsoft-research",
+      "source_checked_on": "2026-10-28",
+      "route_label_and_sources": "**Microsoft Research Fellowship** — [2026 programme](https://www.microsoft.com/en-us/research/academic-program/2026-microsoft-research-fellowship/)",
+      "sources": [
+        "https://www.microsoft.com/en-us/research/academic-program/2026-microsoft-research-fellowship/"
+      ],
+      "published_funding": "2026 Taiwan amount US$17K, includes travel",
+      "access_and_assessment": "Future watch. Taiwan-based PhDs were eligible for relevant research challenges, with challenge-specific requirements. 2026 cycle is closed; it used a December 16, 2025 deadline. Page header's November label conflicts with detailed date; neither is a current deadline. No 2027 call verified.",
+      "cash_treatment": "One-time institutional gift distributed under university policy. Not automatically US$17K directly to the student.",
+      "research_state": "FUTURE_CALL_WATCH",
+      "funding_kind": "FELLOWSHIP_GIFT",
+      "additivity": "INSTITUTION_ADMINISTERED",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false,
+      "audit_state": "FUTURE_CALL",
+      "lead_assets": [
+        "cite-refinery",
+        "refinery",
+        "nocturnal"
+      ],
+      "supporting_papers": [],
+      "portfolio_specific_assessment": "Future challenge must match; a generic AI software portfolio is not enough.",
+      "source_access": "Primary pages inspected this audit or same-date funding pass; see source-specific limits."
+    },
+    {
+      "id": "nvidia-graduate",
+      "source_checked_on": "2026-10-28",
+      "route_label_and_sources": "**NVIDIA Graduate Fellowship** — [current call](https://research.nvidia.com/graduate-fellowships)",
+      "sources": [
+        "https://research.nvidia.com/graduate-fellowships"
+      ],
+      "published_funding": "Up to US$60K per award, stipend/tuition/mandatory fees",
+      "access_and_assessment": "Later, selective target. Normally complete first doctoral year before applying, relevant thesis research and required in-person summer internship. Current 2027–28 call closes October 30, 2026: the user is not yet a PhD student and should not be treated as qualified. Technical research relevance matters; AI API usage alone is insufficient.",
+      "cash_treatment": "University-administered, with tuition/fees potentially consuming part. Confirm coexistence with existing funding. Not a near-term income forecast.",
+      "research_state": "LATER_PHD_STAGE_NOT_CURRENTLY_QUALIFIED",
+      "funding_kind": "FELLOWSHIP",
+      "additivity": "INSTITUTION_ADMINISTERED_FEES_INCLUDED",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false,
+      "audit_state": "INELIGIBLE_CURRENT",
+      "lead_assets": [
+        "nocturnal",
+        "hardware-splicer"
+      ],
+      "supporting_papers": [],
+      "portfolio_specific_assessment": "No completed doctoral year at current deadline; do not force fit through API use.",
+      "source_access": "Primary pages inspected this audit or same-date funding pass; see source-specific limits."
+    },
+    {
+      "id": "corrigibility",
+      "source_checked_on": "2026-10-28",
+      "route_label_and_sources": "**Corrigibility Research Fund** — [current round](https://corrigibilityresearch.org/)",
+      "sources": [
+        "https://corrigibilityresearch.org/"
+      ],
+      "published_funding": "Typical US$5–35K; October 31, 2026",
+      "access_and_assessment": "Conditional research-fit hold. Requires a real corrigibility question/experiment. Existing action-control software is evidence of engineering, not automatically a corrigibility result. Applications are public. No rush submission or scope invention.",
+      "cash_treatment": "Project award subject to approved use and overlap; personal compensation not established here.",
+      "research_state": "RESEARCH_FIT_HOLD",
+      "funding_kind": "PROJECT_GRANT",
+      "additivity": "PERSONAL_COMPENSATION_UNVERIFIED",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false,
+      "audit_state": "HOLD_RESEARCH_MISMATCH",
+      "lead_assets": [
+        "cite-refinery",
+        "gauntlet"
+      ],
+      "supporting_papers": [],
+      "portfolio_specific_assessment": "Software permission gates are not evidence of model corrigibility; a genuinely different causal research question is needed.",
+      "source_access": "Primary pages inspected this audit or same-date funding pass; see source-specific limits."
+    },
+    {
+      "id": "ea-transformative-ai",
+      "source_checked_on": "2026-10-28",
+      "route_label_and_sources": "**EA Funds Transformative AI Fund** — [programme](https://funds.effectivealtruism.org/funds/transformative-ai)",
+      "sources": [
+        "https://funds.effectivealtruism.org/funds/transformative-ai"
+      ],
+      "published_funding": "No fresh award band established in this pass",
+      "access_and_assessment": "Open application link observed. Primary focus is reducing global catastrophic risk from advanced AI. General financial research, workflow efficiency or software quality does not establish that fit. Lower priority unless a substantive relevant study emerges.",
+      "cash_treatment": "Possible funded research, not a generic living stipend. Do not import an older typical range as a current promise.",
+      "research_state": "RESEARCH_FIT_HOLD",
+      "funding_kind": "PROJECT_GRANT",
+      "additivity": "AWARD_TERMS_UNVERIFIED",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false,
+      "audit_state": "HOLD_RESEARCH_MISMATCH",
+      "lead_assets": [
+        "refinery",
+        "nocturnal"
+      ],
+      "supporting_papers": [],
+      "portfolio_specific_assessment": "General reliability and finance tools do not establish catastrophic-risk relevance.",
+      "source_access": "Primary pages inspected this audit or same-date funding pass; see source-specific limits."
+    },
+    {
+      "id": "nlnet",
+      "source_checked_on": "2026-10-28",
+      "route_label_and_sources": "**NLnet** — [funding overview](https://nlnet.nl/foundation/request/application.html), [October 20 policy update](https://nlnet.nl/news/2026/20261020-AI-policy.html)",
+      "sources": [
+        "https://nlnet.nl/foundation/request/application.html",
+        "https://nlnet.nl/news/2026/20261020-AI-policy.html"
+      ],
+      "published_funding": "Usually EUR5–50K per first grant; fund-specific restrictions",
+      "access_and_assessment": "Poor fit for the current agent-assisted development workflow. New policy prohibits generative proposal writing except accessibility and confines generative development tools to read-only use. AI-project scope and geography restrictions also apply. A non-AI artifact is not automatically compliant. Existing route history is preserved; no new proposal drafted.",
+      "cash_treatment": "Do not include in the present earning plan. Could only reconsider a genuinely eligible project and compliant method.",
+      "research_state": "POOR_FIT_CURRENT_WORKFLOW",
+      "funding_kind": "PROJECT_GRANT",
+      "additivity": "EXCLUDED_FROM_CURRENT_EARNING_PLAN",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false,
+      "audit_state": "WORKFLOW_POLICY_HOLD",
+      "lead_assets": [
+        "citation-engine",
+        "cite-refinery"
+      ],
+      "supporting_papers": [],
+      "portfolio_specific_assessment": "Current AI-assisted development and proposal authorship rules are material constraints, independent of good thematic fit.",
+      "source_access": "Primary pages inspected this audit or same-date funding pass; see source-specific limits."
+    },
+    {
+      "id": "ethereum-esp",
+      "source_checked_on": "2026-10-28",
+      "route_label_and_sources": "**Ethereum Foundation ESP** — [applicants](https://esp.ethereum.foundation/applicants), [open-round status](https://esp.ethereum.foundation/applicants/open-rounds)",
+      "sources": [
+        "https://esp.ethereum.foundation/applicants",
+        "https://esp.ethereum.foundation/applicants/open-rounds"
+      ],
+      "published_funding": "Scope-specific, no universal grant band",
+      "access_and_assessment": "Crypto/NFT data experience supplies domain context, but the project must improve Ethereum's open infrastructure/builders. Current open-round page lists no active rounds; Wishlist/RFP matching remains a separate avenue, not a verified exact match. Generic finance research is insufficient.",
+      "cash_treatment": "Milestone funding, ETH by default; recipient onboarding and budget terms required. No assumed TWD income or current award.",
+      "research_state": "NO_EXACT_WISHLIST_RFP_MATCH_VERIFIED",
+      "funding_kind": "PROJECT_GRANT",
+      "additivity": "MILESTONE_PROJECT_BUDGET",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false,
+      "audit_state": "NO_EXACT_LIVE_MATCH",
+      "lead_assets": [
+        "sharpe",
+        "policy-lab"
+      ],
+      "supporting_papers": [
+        "constrained-ledger"
+      ],
+      "portfolio_specific_assessment": "Finance/crypto context alone does not establish a current Ethereum infrastructure RFP.",
+      "source_access": "Primary pages inspected this audit or same-date funding pass; see source-specific limits."
+    },
+    {
+      "id": "taiwan-sbir",
+      "source_checked_on": "2026-10-28",
+      "route_label_and_sources": "**Taiwan SBIR** — [official FAQ](https://sbir.sme.gov.tw/sbir/faq)",
+      "sources": [
+        "https://sbir.sme.gov.tw/sbir/faq"
+      ],
+      "published_funding": "No applicable personal amount established",
+      "access_and_assessment": "Company-side route. Official requirements include company tax/insurance/accounting documents. No eligible applicant company or commercial team is established here. Retain for a future real spinout, rather than create a company merely to chase a ceiling.",
+      "cash_treatment": "Company project budget, not a personal doctoral grant. Personal pay would require an actual approved budget/contract.",
+      "research_state": "COMPANY_GATE",
+      "funding_kind": "COMPANY_GRANT",
+      "additivity": "COMPANY_BUDGET_NOT_PERSONAL_INCOME",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false,
+      "audit_state": "ENTITY_GATE",
+      "lead_assets": [
+        "policy-lab",
+        "research-drive"
+      ],
+      "supporting_papers": [],
+      "portfolio_specific_assessment": "No eligible company applicant established; not personal support.",
+      "source_access": "Primary pages inspected this audit or same-date funding pass; see source-specific limits."
+    },
+    {
+      "id": "ibm-phd",
+      "source_checked_on": "2026-10-28",
+      "route_label_and_sources": "**IBM PhD Fellowship** — [current programme status](https://research.ibm.com/labs/yorktown-heights/ibm-academic-awards-program)",
+      "sources": [
+        "https://research.ibm.com/labs/yorktown-heights/ibm-academic-awards-program"
+      ],
+      "published_funding": "No current awards",
+      "access_and_assessment": "2026–27 programme explicitly paused; IBM anticipates a new programme announcement in Q1 2027. Old award amounts/late-PhD criteria cannot be assumed for the replacement.",
+      "cash_treatment": "Watch only; zero in the current funding plan.",
+      "research_state": "PAUSED_WATCH_Q1_2027",
+      "funding_kind": "FELLOWSHIP",
+      "additivity": "NO_CURRENT_AWARD",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false,
+      "audit_state": "PROGRAMME_PAUSED",
+      "lead_assets": [],
+      "supporting_papers": [],
+      "portfolio_specific_assessment": "Replacement programme criteria and amounts unpublished.",
+      "source_access": "Primary pages inspected this audit or same-date funding pass; see source-specific limits."
+    },
+    {
+      "id": "mozilla-embedded",
+      "name": "Mozilla 2027 Embedded Fellowship — BASAibu",
+      "source_checked_on": "2026-10-28",
+      "audit_state": "PREPARE_SPECIFIC_FIT",
+      "lead_assets": [
+        "cite-refinery",
+        "nocturnal"
+      ],
+      "supporting_papers": [
+        "invisible-ledger",
+        "fiscal-choke-points"
+      ],
+      "published_funding": "US$100,000 total: US$75,000 stipend + US$25,000 project budget, 12 months",
+      "funding_kind": "INDIVIDUAL_FELLOWSHIP",
+      "deadline": "2026-12-17T23:59:00-08:00",
+      "taipei_deadline": "2026-12-18T15:59:00+08:00",
+      "start": "2027-06-01",
+      "sources": [
+        "https://www.mozillafoundation.org/en/what-we-do/grantmaking/fellowship/2027-call-for-applications/faqs/",
+        "https://assets.mofoprod.net/network/documents/PUBLIC_2027_2028_Fellowship_RFP-2.pdf"
+      ],
+      "source_access": "Primary programme source inspected",
+      "portfolio_specific_assessment": "Host challenge asks for community-designed multilingual policy tools integrated with MediaWiki. Indonesian context plus evidence graphs and multilingual source work are specific strengths; translating text alone does not meet the challenge.",
+      "unresolved": [
+        "MediaWiki integration and youth co-design not established.",
+        "Mid-career builder framing is a competitive stretch, not proven eligibility rejection.",
+        "Need reviewer-accessible artifact and accurate personal contribution.",
+        "Legal receipt, doctoral overlap and recipient-country/payment rules unresolved."
+      ],
+      "cash_treatment": "Stipend is distinct from project money; no award or permission to stack established.",
+      "application_ai_policy": "Supportive brainstorming/clarification/translation allowed; do not generate full application responses.",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false
+    },
+    {
+      "id": "mozilla-independent",
+      "name": "Mozilla 2027 Independent Fellowship",
+      "source_checked_on": "2026-10-28",
+      "audit_state": "STRETCH_LEADERSHIP",
+      "lead_assets": [
+        "refinery",
+        "cite-refinery",
+        "policy-lab"
+      ],
+      "supporting_papers": [],
+      "published_funding": "US$125,000 total: US$100,000 stipend + US$25,000 project budget, 12 months",
+      "funding_kind": "INDIVIDUAL_FELLOWSHIP",
+      "deadline": "2026-12-17T23:59:00-08:00",
+      "taipei_deadline": "2026-12-18T15:59:00+08:00",
+      "start": "2027-06-01",
+      "sources": [
+        "https://www.mozillafoundation.org/en/what-we-do/grantmaking/fellowship/2027-call-for-applications/faqs/",
+        "https://www.mozillafoundation.org/en/what-we-do/grantmaking/fellowship/"
+      ],
+      "source_access": "Primary programme source inspected",
+      "portfolio_specific_assessment": "Open research tooling, audit infrastructure and economic conditions align. Portfolio demonstrates construction and research, while senior recognition and independent field leadership remain unestablished.",
+      "unresolved": [
+        "No established field-wide recognition, external adoption or community leadership.",
+        "One coherent achievable project rather than entire portfolio."
+      ],
+      "cash_treatment": "A selective alternative to Embedded, not a second assumed fellowship.",
+      "application_ai_policy": "Same supportive-use-only restriction as Embedded.",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false
+    },
+    {
+      "id": "mozilla-incubator",
+      "name": "Mozilla Human-Scale AI Incubator",
+      "source_checked_on": "2026-10-28",
+      "audit_state": "HOLD_USERS_AND_PRODUCT_FIT",
+      "lead_assets": [
+        "cite-refinery",
+        "nocturnal",
+        "research-drive"
+      ],
+      "supporting_papers": [],
+      "published_funding": "US$300,000 first 12 months; possible additional US$200,000 over two years, conditional",
+      "funding_kind": "PROJECT_GRANT",
+      "deadline": "2026-11-20T23:59:00-08:00",
+      "taipei_deadline": "2026-11-21T15:59:00+08:00",
+      "start": "2027-04",
+      "sources": [
+        "https://www.mozillafoundation.org/en/what-we-do/grantmaking/incubator/human-scale-ai/call-for-proposals/"
+      ],
+      "source_access": "Primary programme source inspected",
+      "portfolio_specific_assessment": "Needs working, deployed AI and early product-community fit. The current evidence does not establish that readiness; internal lab use must be verified and matched to the actual proposed product.",
+      "unresolved": [
+        "No established outside user/community fit.",
+        "AI must be essential and intentionally tailored; not generic wrapper.",
+        "Team and sustainable delivery scope unresolved."
+      ],
+      "cash_treatment": "Project budget, not US$300K personal pay; later continuation not guaranteed.",
+      "application_ai_policy": "Check call-specific terms before any application.",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false
+    },
+    {
+      "id": "sloan",
+      "name": "Sloan Digital Technology / Open Source in Science",
+      "source_checked_on": "2026-10-28",
+      "audit_state": "INSTITUTION_LED_ONLY",
+      "lead_assets": [
+        "refinery",
+        "research-drive"
+      ],
+      "supporting_papers": [
+        "invisible-ledger"
+      ],
+      "published_funding": "Scope-specific; no applicable personal grant amount established",
+      "funding_kind": "INSTITUTIONAL_GRANT",
+      "deadline": null,
+      "taipei_deadline": null,
+      "start": null,
+      "sources": [
+        "https://sloan.org/programs/digital-technology",
+        "https://sloan.org/programs/digital-technology/open-source-in-science",
+        "https://sloan.org/grants/apply"
+      ],
+      "source_access": "Primary programme source inspected",
+      "portfolio_specific_assessment": "Research-software commons, incentives and durable maintenance fit intellectually; an individual student is not the normal recipient.",
+      "unresolved": [
+        "Institution/eligible PI required; geography and programme interest unresolved.",
+        "Two-page LOI is preliminary, full proposal invitation required.",
+        "Completed Better Software for Science programme is not a live call."
+      ],
+      "cash_treatment": "Only an actual institutional compensation contract could count as personal income.",
+      "application_ai_policy": "Not separately established; check current call before writing",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false
+    },
+    {
+      "id": "sequoia-oss",
+      "name": "Sequoia Open Source Fellowship",
+      "source_checked_on": "2026-10-28",
+      "audit_state": "HOLD_ADOPTION",
+      "lead_assets": [
+        "cite-refinery",
+        "hardware-splicer",
+        "citation-engine"
+      ],
+      "supporting_papers": [],
+      "published_funding": "Living-expense stipend for 6–12 months; no fixed applicable amount established",
+      "funding_kind": "MAINTAINER_FELLOWSHIP",
+      "deadline": null,
+      "taipei_deadline": null,
+      "start": null,
+      "sources": [
+        "https://sequoiacap.com/oss"
+      ],
+      "source_access": "Primary programme source inspected",
+      "portfolio_specific_assessment": "Real-world adoption is a stated selection aim. Strong prototypes alone do not establish it; stars are not the criterion.",
+      "unresolved": [
+        "External use and maintainer demand unestablished.",
+        "Project focus and other workload compatibility need confirmation."
+      ],
+      "cash_treatment": "Potential stipend if awarded, not forecast income.",
+      "application_ai_policy": "Not separately established; check current call before writing",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false
+    },
+    {
+      "id": "sovereign-tech",
+      "name": "Sovereign Tech Fund",
+      "source_checked_on": "2026-10-28",
+      "audit_state": "HOLD_MATURITY_AND_SCOPE",
+      "lead_assets": [
+        "citation-engine",
+        "research-drive"
+      ],
+      "supporting_papers": [],
+      "published_funding": "Proposed work costs must exceed EUR50,000 (current minimum); not an award promise",
+      "funding_kind": "INFRASTRUCTURE_WORK_COMMISSION",
+      "deadline": null,
+      "taipei_deadline": null,
+      "start": null,
+      "sources": [
+        "https://www.sovereign.tech/programs/fund/"
+      ],
+      "source_access": "Primary programme source inspected",
+      "portfolio_specific_assessment": "Funds mature open digital base technologies, not prototype applications. Current assets are not established widely relied-on dependencies.",
+      "unresolved": [
+        "Infrastructure criticality, usage and maturity not established.",
+        "FOSS licensing and no duplicate public financing of the same activities."
+      ],
+      "cash_treatment": "Work commission/project cost is not automatic personal stipend.",
+      "application_ai_policy": "Not separately established; check current call before writing",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false
+    },
+    {
+      "id": "numfocus",
+      "name": "NumFOCUS Small Development Grants",
+      "source_checked_on": "2026-10-28",
+      "audit_state": "AFFILIATION_GATE",
+      "lead_assets": [
+        "citation-engine",
+        "research-drive"
+      ],
+      "supporting_papers": [],
+      "published_funding": "Up to US$10,000 per proposal",
+      "funding_kind": "RESTRICTED_PROJECT_GRANT",
+      "deadline": null,
+      "taipei_deadline": null,
+      "start": null,
+      "sources": [
+        "https://numfocus.org/programs/small-development-grants"
+      ],
+      "source_access": "Primary programme source inspected",
+      "portfolio_specific_assessment": "Project must be NumFOCUS-sponsored or affiliated. None of the user's projects is established as such.",
+      "unresolved": [
+        "No eligible project affiliation or maintainer approval.",
+        "Current page lists 2025 rounds; no 2026 open deadline verified."
+      ],
+      "cash_treatment": "Restricted project support; possible contribution to an eligible existing project is a different route.",
+      "application_ai_policy": "Not separately established; check current call before writing",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false
+    },
+    {
+      "id": "fal",
+      "name": "fal Research Grants",
+      "source_checked_on": "2026-10-28",
+      "audit_state": "RESOURCE_SUPPORT_LEAD",
+      "lead_assets": [
+        "nocturnal",
+        "cite-refinery"
+      ],
+      "supporting_papers": [],
+      "published_funding": "Page advertises US$50K average grant check and free compute; cash/compute denomination and actual allocation unresolved",
+      "funding_kind": "COMPUTE_OR_MIXED_UNCONFIRMED",
+      "deadline": null,
+      "taipei_deadline": null,
+      "start": null,
+      "sources": [
+        "https://fal.ai/grants"
+      ],
+      "source_access": "Primary programme source inspected",
+      "portfolio_specific_assessment": "Research and open-source builders need no formal degree; relevant only with a justified model/evaluation compute plan.",
+      "unresolved": [
+        "No GPU-hours/experiments budget yet.",
+        "Do not count headline as US$50K cash."
+      ],
+      "cash_treatment": "Treat as possible cost offsets until actual terms distinguish cash from credits.",
+      "application_ai_policy": "Not separately established; check current call before writing",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false
+    },
+    {
+      "id": "otf",
+      "name": "Open Technology Fund Internet Freedom Fund",
+      "source_checked_on": "2026-10-28",
+      "audit_state": "HOLD_MISSION_AND_SOURCE_ACCESS",
+      "lead_assets": [
+        "nocturnal"
+      ],
+      "supporting_papers": [],
+      "published_funding": "Official indexed page targets US$50K–200K over 6–12 months; individual award not established",
+      "funding_kind": "MISSION_SPECIFIC_PROJECT_GRANT",
+      "deadline": null,
+      "taipei_deadline": null,
+      "start": null,
+      "sources": [
+        "https://www.opentech.fund/funds/internet-freedom-fund/"
+      ],
+      "source_access": "Official search-indexed content available; direct page returned 403, intake not live-verified.",
+      "portfolio_specific_assessment": "Must serve people facing censorship/surveillance and concrete internet-freedom threats. General misinformation or source-graph work does not establish mission fit.",
+      "unresolved": [
+        "Real beneficiary/problem and security requirements absent.",
+        "No partner or verified current intake."
+      ],
+      "cash_treatment": "Project costs, not personal monthly salary.",
+      "application_ai_policy": "Not separately established; check current call before writing",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false
+    },
+    {
+      "id": "fir-pri",
+      "name": "FIR–PRI Finance and Sustainability Awards / PhD research grant",
+      "source_checked_on": "2026-10-28",
+      "audit_state": "FUTURE_FINANCE_ROUTE",
+      "lead_assets": [
+        "policy-lab"
+      ],
+      "supporting_papers": [
+        "eci",
+        "constrained-ledger",
+        "cl-eci"
+      ],
+      "published_funding": "2026 doctoral research grant EUR10K in EUR4K/3K/3K instalments across 2026–2028; separate awards EUR5K",
+      "funding_kind": "RESEARCH_GRANT_OR_PRIZE",
+      "deadline": null,
+      "taipei_deadline": null,
+      "start": null,
+      "sources": [
+        "https://www.fir-pri-awards.org/wp-content/uploads/2026-FIR-PRI-Awards-Rules-Regulations.pdf"
+      ],
+      "source_access": "Primary programme source inspected",
+      "portfolio_specific_assessment": "Europe-focused renewable-energy financial measurement is a stronger exact fit than generic crypto research. Europe as research field appears among eligibility connections; Taiwan residence alone is not an automatic exclusion.",
+      "unresolved": [
+        "2026 closed April 19; 2027 call unverified.",
+        "Future category, European link, academic supervision and stage requirements must be confirmed."
+      ],
+      "cash_treatment": "Multi-year research instalments, not EUR10K per year or unrestricted monthly pay.",
+      "application_ai_policy": "Not separately established; check current call before writing",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false
+    },
+    {
+      "id": "awesome-conservation",
+      "name": "Awesome Foundation Conservation and Climate",
+      "source_checked_on": "2026-10-28",
+      "audit_state": "SMALL_PILOT_ONLY_NOT_PERSONAL_PAY",
+      "lead_assets": [
+        "public-good",
+        "policy-lab"
+      ],
+      "supporting_papers": [],
+      "published_funding": "US$1,000-scale environmental project microgrant",
+      "funding_kind": "RESTRICTED_MICROGRANT",
+      "deadline": "2026-11-27",
+      "taipei_deadline": null,
+      "start": null,
+      "sources": [
+        "https://www.awesomefoundation.org/en/chapters/conservationandclimate"
+      ],
+      "source_access": "Primary programme source inspected",
+      "portfolio_specific_assessment": "Only a concrete near-implementation innovative environmental activity, with a clear tipping-point budget; software/research alone does not establish conservation impact.",
+      "unresolved": [
+        "Real operator and direct environmental deliverable absent.",
+        "Explicitly excludes salaries, personal and operating expenses; payment account required."
+      ],
+      "cash_treatment": "Not a personal-income substitute.",
+      "application_ai_policy": "Not separately established; check current call before writing",
+      "personal_award_or_contract_confirmed": false,
+      "submission_performed_this_pass": false
+    }
+  ],
+  "evidence_bundle": {
+    "root": "output/grant-portfolio-audit-2026-10-28",
+    "local_inventory": "local-repository-inventory.json",
+    "remote_metadata": "github-repository-metadata.json",
+    "execution_log_index": "execution-checks.json",
+    "thesis_original_rebuild": "Stopped at missing h1_controls_h2_province.py in generated package",
+    "thesis_supplement": "Private audit copy supplemented with four scripts, four public input files and one retained aggregate result; script computations completed, final ledger rerun passed. Original source/package not repaired.",
+    "thesis_consistency": {
+      "ledgers": 14,
+      "claim_rows": 460,
+      "all_pass": true,
+      "licensed_raw_reestimated": false
+    },
+    "checks_limit": "Component tests, release hashes and replays support stated narrow behaviours; not field efficacy, external users, safety certification or comparative model superiority."
+  },
+  "next_order": [
+    "Freeze exact evidence revisions and the internal ownership/claim sheet",
+    "Prepare BASAibu host-fit evidence and a single Sentient experimental scope in parallel as documents only",
+    "Prepare one small FUTO work package using an already public artifact",
+    "Map a finance/energy/software work package to a real supervisor or institutional recipient",
+    "Resolve recipient/IP/data/workload terms before any outward commitments"
+  ],
+  "authorship_policy": "Internal audit and factual evidence index only. No full Mozilla responses, no EV application prose, no NLnet proposal generated.",
+  "validation": {
+    "as_of": "2026-10-28",
+    "static_audit_validation": "PASS",
+    "counts": {
+      "assets": 13,
+      "papers": 5,
+      "routes": 25,
+      "ledgers": 14,
+      "claim_rows_pass": 460
+    },
+    "fresh_execution_records": 14,
+    "repository_gate": {
+      "command": "repo-check --tier fast",
+      "syntax": "PASS",
+      "node_tests": "FAIL_EXISTING_CAMPAIGN_REVIEW_ASSERTION",
+      "location": "test/portfolio-campaign-review-queue.test.mjs:19",
+      "detail": "Expected unresolved cloudflare-startups-2026 differs from current campaign queue; unchanged by this audit."
+    },
+    "external_actions": []
+  },
+  "doctoral_profile": {
+    "source": "/home/phyrexian/Downloads/phd/setB_build/v6_sources/PROFILE_POSITIONING.md",
+    "package_context": "/home/phyrexian/Downloads/phd/FINAL_SUBMISSION_PACKAGE.md",
+    "research_spine": [
+      "Discover problems from incomplete records",
+      "Diagnose missing and existing capability",
+      "Allocate evidence, reuse, models and human expertise",
+      "Deploy and measure total cost and task quality",
+      "Retain negative and unresolved results"
+    ],
+    "grant_translation": "Fund one testable phase, not the whole dissertation; update old project descriptions and thesis numbers with current evidence.",
+    "admission_status_boundary": "September checklist is stale; later user reports submission confirmed for both, no outcome established."
+  }
+}
